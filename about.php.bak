@@ -1,0 +1,38 @@
+<?php 
+include("template.php");
+$page = new webPage("SNAP: About Us");
+$page->openPage();
+	$page->pageHeader();
+?>
+		<div id="main_body">
+			<div id="menu_group">
+				<ul class="menu">
+					<li><a href="about.php"><span>About SNAP</span></a></li>
+					<li><a href="blog.php"><span>Blog</span></a></li>
+					<li><a href="people.php"><span>People</span></a></li>
+					<li><a href="media.php"><span>Media Archive</span></a></li>
+					<li><a href="contact.php"><span>Contact Us</span></a></li>
+				</ul>
+				<div id="submenu" ></div>
+			</div>
+
+				<h1>About SNAP</h1>
+				<p> Welcome to SNAP, the Scenarios Network for Alaska &amp; Arctic Planning. We are a collaborative organization linking the University of Alaska, state, federal, and local agencies, and NGOs.</p>
+
+				<p>Our mission is to provide timely access to management-relevant scenarios of future conditions in Alaska.</p>
+
+				<p>Alaska is undergoing rapid changes in climate, human population and demands on natural resources. Future planning that accounts for these changes can reduce costs and liabilities.</p>
+
+				<p>SNAP is a collaborative network of the University of Alaska, state, federal, and local agencies, and NGOs. The primary products of the network are (1) datasets and maps projecting future conditions for selected variables, and (2) rules and models that develop these projections, based on historical conditions and trends.</p>
+
+				<p>Currently most policy and management planning for Alaska and elsewhere assumes that future conditions will be similar to those of our recent past experience. However, there is reasonable consensus within the scientific community that future climatic, ecological, and economic conditions will likely be quite different from those of the past. We now know enough about current and likely future trajectories of climate and other variables to develop credible projections. We can also make projections for other variables that are closely correlated, such as frequency of intense storms, risk of wildfire or flooding, and habitat and wildlife changes associated with these events.</p>
+
+				<p>SNAP scenarios and the data used to produce them will be openly available to all potential users. Stakeholders can access further SNAP network services and expertise by becoming a SNAP collaborator.</p>
+<? 
+			$page->pageFooter();
+?>
+		</div>
+	</div>
+<?php
+$page->closePage();
+?>

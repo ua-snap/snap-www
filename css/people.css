@@ -1,0 +1,14 @@
+.staff_photo {
+	width: 100px;
+	height: 100px;
+	border: 1px solid #6a7173;
+	float: left;
+	margin: 20px;
+	background-color: #6a7a73;
+	cursor: pointer;
+	cursor: hand;
+}
+.staff_photo:hover {
+	background-color: #97a93a;
+	background-position: 0 100px;
+}

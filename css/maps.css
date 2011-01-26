@@ -1,0 +1,29 @@
+#mapMenu {
+	color: #6a7173;
+	position: absolute; 
+	width: 400px;
+	top: 0px;
+	font-weight: bold;
+	padding: 2px;
+}
+#mapMenu:hover {
+	color: #97a93a;
+	cursor: pointer;
+	cursor: hand;
+}
+#loading {
+	background-color: green;
+	height: 100px;
+	width: 200px;
+}
+#loadingmessage {
+	font-weight: bold;
+}
+#location {
+	font-weight: bold;
+	text-align: right;
+	position: relative;
+	top: -100px;
+	visibility: hidden;
+}	
+	

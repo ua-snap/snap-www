@@ -1,0 +1,40 @@
+.news_button {
+
+}
+.news_button:hover {
+	color: #cccccc;
+}
+.news_nav {
+	width: 300px; 
+	text-align: center; 
+	font-size: 16px; 
+	color: #eeeeee; 
+	bottom: 10px;
+	position: relative;
+}
+.news_nav:hover {
+	cursor: pointer;
+	cursor: hand;
+}
+#news_link {
+	margin-top: 20px;
+	font-size: 16px;
+}
+#news_link a:link {
+	color: #6A7173;
+}
+#news_link a:visited {
+	color: #6A7173;
+}
+#news_link a:hover {
+	color: #97A93A;
+}
+#news_title {
+
+}
+#news_image {
+
+}
+#news_content {
+	font-size: 16px;
+}
