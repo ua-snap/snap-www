@@ -207,7 +207,7 @@ function maximize(){
 	init();
 }
 function minimize(){
-	document.getElementById("map_wrapper").style.width = '100%';
+	document.getElementById("map_wrapper").style.width = '948px';
 	document.getElementById("map_wrapper").style.height = '600px';
 	document.getElementById("map_wrapper").style.position = 'relative';
 	document.getElementById("map_canvas").style.width = '100%';

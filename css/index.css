@@ -1,8 +1,17 @@
 .news_button {
-
+	background-color: #dddddd; 
+	height: 50px; 
+	width: 50px; 
+	position: absolute; 
+	z-index: 10; 
+	top: 125px; 
+	border: 1px solid #999999; 
+	-moz-box-shadow: 0 0 5px; 
+	-box-shadow: 0 0 5px; 
+	cursor: pointer; cursor: hand;
 }
 .news_button:hover {
-	color: #cccccc;
+
 }
 .news_nav {
 	width: 300px; 
@@ -37,4 +46,7 @@
 }
 #news_content {
 	font-size: 16px;
+}
+#news_container {
+
 }

@@ -26,4 +26,9 @@
 	top: -100px;
 	visibility: hidden;
 }	
-	
+#map_wrapper {
+	position: relative;
+	width: 948px;
+	height: 600px;
+	border: 1px #6a7173 solid;
+}	

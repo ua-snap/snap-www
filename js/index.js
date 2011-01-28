@@ -36,4 +36,5 @@ function changeContent(current_div, array_name, index, counter){
 	var c_index = c_indexarray[0];
 	current_div.onclick = function(){ changeContent(current_div, array_name, index, counter); };
 	c_index.innerHTML = (i + 1) + " of " + a_name.length;
+	$("div:visible:first").fadeOut(2000);
 }

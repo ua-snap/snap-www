@@ -116,6 +116,31 @@ a:hover {
 	padding: 20px;
 	-moz-border-radius: 5px;
 }
+.content_box_inner_container {
+	width: 280px;
+	text-align: center;
+}
+.content_box_inner_image {
+	margin: 10px; 
+	width: 392px;
+	text-align: center;
+}
+.content_box_inner_image img {
+	margin: auto; 
+}
+.content_box_inner_title {
+	text-align: center;
+	font-size: 24px; 
+	color: #6a7173; 
+	margin: 10px; 
+	width: 392px;
+}
+.content_box_inner_subtext {
+	font-size: 16px; 
+	color: #6a7173; 
+	margin: 10px; 
+	width: 392px;
+}
 #socialbar {
 	width: 975px;
 	margin: auto;

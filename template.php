@@ -46,7 +46,17 @@ class webPage {
 
 		?>
 		<link rel="shortcut icon" href="images/snap.ico" />
+		<script src="js/jquery.js" type="text/javascript" ></script>
 		<script src="js/site.js" type="text/javascript" ></script>
+		<!--<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"></script>-->
+		<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.lite.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+
+		});
+
+
+		</script>
 		<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=snapweb"></script>
 
 	</head>
@@ -54,7 +64,7 @@ class webPage {
 		<?php
 	}
 	public function pageHeader(){ ?>	
-		<div class="slashbar"></div>
+		<!-- <div class="slashbar"></div> -->
 		<div id="header">
 			<a href="index.php"><span id="header_left"><img src="images/snap_acronym_rgb.png" height="90px" alt="SNAP Acronym Logo" /></span></a>
 			<div id="header_right">
@@ -109,7 +119,7 @@ class webPage {
 				<div><a href="http://www.uaf.edu"><img src="images/UAFLogo_A_black_horiz.png" height="55px" style="margin-top: 13px;" alt="UAF Logo" /></a></div>
 			</div>
 		</div>
-	<div class="slashbar"></div>
+	<!-- <div class="slashbar"></div> -->
 	<?php
 	}
 	public function closePage(){
@@ -216,6 +226,35 @@ class webPage {
 				</div>
 			</div>
 		</div>
+		<?php
+	}
+	public function openContentBox2($content_title, $float_side, $content_id){
+		?>
+
+		<div <?php if ($float_side){ echo "style=\"float: $float_side;\""; } ?>>
+			<div class="content_box_title" style="float: left"><?php echo $content_title; ?></div>
+			<div style="float: right; margin: 10px;" class="content_box_nav">
+				<div id="<?php echo $content_id."_prev"; ?>" style="margin: 5px; font-size: 18px; cursor: pointer; cursor: hand; float: left"><img src="images/arrow_left.png" alt="Left Arrow" /></div>
+				<div id="<?php echo $content_id."_next"; ?>" style="margin: 5px; font-size: 18px; cursor: pointer; cursor: hand; float: right"><img src="images/arrow_right.png" alt="Right Arrow" /></div>
+			</div>
+			<div class="content_box_outer" style="clear: both">
+				<div id="<?php echo $content_id; ?>" class="content_box_inner" style="height: 300px;">
+		<?php
+	}
+	public function closeContentBox2($content_id){ ?>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$('#<?php echo $content_id; ?>').cycle({
+				fx:     'fade', 
+				speed:   1000, 
+				timeout: 5000, 
+				next:   '#<?php echo $content_id."_next"; ?>', 
+				prev:   '#<?php echo $content_id."_prev"; ?>', 
+				pause:   1 
+			});
+		</script>
 		<?php
 	}
 }

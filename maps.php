@@ -16,9 +16,10 @@ $page->pageHeader();
 					<input type="button" onclick="javascript:drawPoly();" value="Draw Polygon" class="btn" />
 					<input type="button" onclick="javascript:drawRectangle();" value="Draw Rectangle" class="btn" />
 				</div>
-				<div id="map_wrapper" style="position: relative;">
-					<div id="map_canvas" style="height: 600px; position: relative;"></div>
-			
+				<div id="map_wrapper">
+
+					<div id="map_canvas" style="height: 100%; width: 100%; position: absolute;"></div>
+					<div style="width: 100%; margin: auto; text-align: center; position: absolute; "><img height="50px" style="background-color: #ffffff;"  src="images/snap_rgb.png" alt="SNAP Logo" /></div>
 					<div id="legend_title" style="width: 75px; height: 20px; position: absolute; left: 3px; top: 255px; border: 2px solid #ffffff; background-color: #ace1af; margin: 3px; margin-bottom: 5px; text-align: center; line: height: 40px;">Legend</div>
 					<div id="legend" style="width: 75px; height: 220px; position: absolute; left: 3px; top: 305px; border: 2px solid #ffffff; background-color: #ace1af; margin: 3px;"></div>
 					<div id="mapMenu">
@@ -57,7 +58,7 @@ $page->pageHeader();
 						</div>
 
 
-					<div style="width: 215px; left: 340px; top: 5px; background-color: #ffffff; position: absolute; "><img height="50px"  src="images/snap_rgb.png" alt="SNAP Logo" /></div>
+
 					<div id="size_toggle" style="background-color: #ace1af; border: solid 2px #ffffff; width: 40px; height: 25px; left: 810px; top: 550px; position: absolute;" onclick="javascript:maximize();">Max</div>
 
 				</div>
