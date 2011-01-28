@@ -1,11 +1,11 @@
 .news_button {
 	background-color: #dddddd; 
 	height: 50px; 
-	width: 50px; 
+	width: 30px; 
 	position: absolute; 
 	z-index: 10; 
 	top: 125px; 
-	border: 1px solid #999999; 
+	border: 1px solid #111111; 
 	-moz-box-shadow: 0 0 5px; 
 	-box-shadow: 0 0 5px; 
 	cursor: pointer; cursor: hand;
