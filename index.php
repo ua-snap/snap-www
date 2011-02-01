@@ -8,27 +8,27 @@ $page->pageHeader();
 		<script src="js/index.js" type="text/javascript"></script>
 		<div id="main_content">
 			<div style="width: 100%; min-height: 10px; position: relative; height: 300px; ">
-				<div id="news_container" style="width: 925px; margin: auto;">
-					<div style="position: relative">
-						<img style="position: absolute; width: 100%; height: 300px;" src="images/index_images/1.jpg"  />
-						<div style="news_title">Arctic Shipping Assessment</div>
-						<div style="news_content">As the climate warms and global commerce grows, the prospect of an arctic shipping route becomes more tangible. A new report released by the University of Alaska Fairbanks offers international policymakers guidance for navigating the political and practical ramifications of shipping in the Arctic.</div>
+				<div id="news_container">
+					<div style="position: absolute">
+						<img src="images/index_images/1.jpg"  />
+						<div class="news_title" style="color: #990000;" >Arctic Shipping Assessment</div>
+						<div class="news_content">As the climate warms and global commerce grows, the prospect of an arctic shipping route becomes more tangible. A new report released by the University of Alaska Fairbanks offers international policymakers guidance for navigating the political and practical ramifications of shipping in the Arctic.</div>
 
 					</div>
-					<div style="position: relative; display: none;">
-						<img style="position: absolute; width: 100%; height: 300px;" src="images/index_images/2.jpg" />
-						<div>Alaska Fire Consortium Grant</div>
+					<div style="position: absolute; display: none;">
+						<img src="images/index_images/2.jpg" />
+						<div class="news_title" style="color: #677425">Alaska Fire Consortium Grant</div>
 						<div>The Alaska Fire Science Consortium at UAF has received $435,000 from the Joint Fire Science Program to provide a conduit for professional research to get into the hands of fire and land managers.</div>
 					</div>
-					<div style="position: relative; display: none;">
-						<img style="position: absolute; width: 100%; height: 300px;" src="images/index_images/3.jpg" />
-						<div>Neogeography Lab</div>
+					<div style="position: absolute; display: none;">
+						<img src="images/index_images/3.jpg" />
+						<div class="news_title" style="color: #6a7173">Neogeography Lab</div>
 						<div>A lab in the UA Geography Program is opening new worlds to UAF students. The neogeography lab, just opened in the Scenarios Network for Alaska Planning (SNAP) building, makes Google Earth accessible and fun.</div>
 					</div>
 				</div>
-				<div style="width: 975px;">
-				<div id="news_container_prev" class="news_button" style="left: 5px;"></div>
-				<div id="news_container_next" class="news_button" style="right: 5px;"></div>
+				<div style="width: 950px;">
+					<div id="news_container_prev" class="news_button" style="background-image: url('images/news_left.png'); left: 5px;"></div>
+					<div id="news_container_next" class="news_button" style="background-image: url('images/news_right.png'); right: 5px;"></div>
 				</div>
 				<script type="text/javascript">
 					$("#news_container").cycle({
@@ -98,60 +98,50 @@ $page->pageHeader();
 			<div style="width: 100%; clear: both; ">
 				<div style="height: 60px; width: 100%; position: relative;"></div>
 
-				<?php $page->openContentBox2("Who We Serve", "left", "stakeholders"); ?>
+				<?php $page->openContentBox("Who We Serve", "left", "stakeholders"); ?>
 					<div style="content_box_inner_container">
                                                 <div class="content_box_inner_image"><img src="images/org_images/AKSeal.gif" height="100px" /></div>
                                                 <div class="content_box_inner_title">The State of Alaska</div>
-                                                <div class="content_box_inner_subtext">Subtext 1</div>
                                         </div>
 					<div style="content_box_inner_container">
                                                 <div class="content_box_inner_image"><img src="images/org_images/Wilderness.gif" height="100px" /></div>
                                                 <div class="content_box_inner_title">The Wilderness Society</div>
-                                                <div class="content_box_inner_subtext">Subtext 2</div>
                                         </div>
 					<div style="content_box_inner_container">
                                                 <div class="content_box_inner_image"><img src="images/org_images/nature_conservancy.jpg" height="100px" /></div>
                                                 <div class="content_box_inner_title">The Nature Conservancy</div>
-                                                <div class="content_box_inner_subtext">Subtext 3</div>
                                         </div>
 					<div style="content_box_inner_container">
                                                 <div class="content_box_inner_image"><img src="images/org_images/fnsblogo.gif" height="100px" /></div>
                                                 <div class="content_box_inner_title">Fairbanks North Star Borough</div>
-                                                <div class="content_box_inner_subtext">Subtext 4</div>
                                         </div>
 					<div style="content_box_inner_container">
                                                 <div class="content_box_inner_image"><img src="images/org_images/forest_service.gif" height="100px" /></div>
                                                 <div class="content_box_inner_title">US Forest Service</div>
-                                                <div class="content_box_inner_subtext">Subtext 5</div>
-                                        </div>
+					</div>
 					<div style="content_box_inner_container">
                                                 <div class="content_box_inner_image"><img src="images/org_images/us_fish_wildlife.jpg" height="100px" /></div>
                                                 <div class="content_box_inner_title">US Fish &amp; Wildlife</div>
-                                                <div class="content_box_inner_subtext">Subtext 6</div>
                                         </div>
-				<?php $page->closeContentBox2("stakeholders"); ?>
-				<?php $page->openContentBox2("Our Affiliates", "right", "affiliates"); ?>
+				<?php $page->closeContentBox("stakeholders"); ?>
+				<?php $page->openContentBox("Our Affiliates", "right", "affiliates"); ?>
 					<div style="content_box_inner_container">
 						<div class="content_box_inner_image"><img src="images/org_images/UAFLogo.png" height="100px" /></div>
 						<div class="content_box_inner_title">University of Alaska Fairbanks</div>
-						<div class="content_box_inner_subtext">Subtext 1</div>
 					</div>
 					<div style="content_box_inner_container">
 						<div class="content_box_inner_image"><img src="images/org_images/UAGPLogo.png" height="100px" /></div>
 						<div class="content_box_inner_title">University of Alaska Geography Program</div>
-						<div class="content_box_inner_subtext">Subtext 2</div>
 					</div>
 					<div style="content_box_inner_container">
 						<div class="content_box_inner_image"><img src="images/org_images/ACCAPLogo.gif" height="100px" /></div>
 						<div class="content_box_inner_title">Alaska Center for Climate Assessment &amp; Policy</div>
-						<div class="content_box_inner_subtext">Subtext 3</div>
 					</div>
 					<div style="content_box_inner_container">
 						<div class="content_box_inner_image"><img src="images/org_images/SNRAS.gif" height="100px" /></div>
 						<div class="content_box_inner_title">School of Natural Resources &amp; Agricultural Science</div>
-						<div class="content_box_inner_subtext">Subtext 4</div>
 					</div>
-				<?php $page->closeContentBox2("affiliates"); ?>
+				<?php $page->closeContentBox("affiliates"); ?>
 			</div>
 			<div style="clear: both"></div>
 		</div>

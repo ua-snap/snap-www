@@ -48,8 +48,8 @@ class webPage {
 		<link rel="shortcut icon" href="images/snap.ico" />
 		<script src="js/jquery.js" type="text/javascript" ></script>
 		<script src="js/site.js" type="text/javascript" ></script>
-		<!--<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"></script>-->
-		<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.lite.min.js"></script>
+		<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"></script>
+		<!--<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.lite.min.js"></script>-->
 		<script type="text/javascript">
 		$(document).ready(function() {
 
@@ -83,8 +83,14 @@ class webPage {
 		}
 		?>
 			</div>
-			<div class="horiz_bar_right">
-				<img src="images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/>
+			<script type="text/javascript">
+				var addthis_config =
+				{
+				   ui_508_compliant: true
+				}
+			</script>
+			<div class="horiz_bar_right">	
+				<a class="addthis_button"><img src="images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/></a>
 			</div>
 		</div>
 		<div style="color: #999999; width: 975px; margin: auto; text-align: right; padding-top: 10px;"><a href="blog.php">blog</a> | <a href="contact.php">contact</a> | <a href="sitemap.php">sitemap</a> | <a href="search.php">search</a></div>
@@ -106,7 +112,7 @@ class webPage {
 					<div style="position: absolute; margin-left: 20px;">We just set up this twitter account so now we'll show some tweets right here @twitter, is that how this works? #awkward first tweet</div>
 				</div>
 				<div class="horiz_bar_right">
-					<img src="images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/>
+					<a class="addthis_button"><img src="images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/></a>
 				</div>
 			</div>
 			<div style="text-align: left; margin-left: 50px;"><img src="images/bottom_bubble.png" alt="Bubble Graphic" /></div>
@@ -151,6 +157,7 @@ class webPage {
 						array("people.php", "People"),
 						array("blog.php", "Blog"),
 						array("partners.php", "Partners &amp; Affiliates"),
+						array("sustainability.php", "Sustainability"),
 						array("contact.php", "Contact Us")
 					), 
 					array(
@@ -197,6 +204,7 @@ class webPage {
 				</div>
 		<?php
 	}
+	/*
 	public function openContentBox($content_title, $float_side, $content_array){
 		?>
 		<div <?php if ($float_side){ echo "style=\"float: $float_side;\""; } ?>>
@@ -228,7 +236,8 @@ class webPage {
 		</div>
 		<?php
 	}
-	public function openContentBox2($content_title, $float_side, $content_id){
+	*/
+	public function openContentBox($content_title, $float_side, $content_id){
 		?>
 
 		<div <?php if ($float_side){ echo "style=\"float: $float_side;\""; } ?>>
@@ -238,10 +247,10 @@ class webPage {
 				<div id="<?php echo $content_id."_next"; ?>" style="margin: 5px; font-size: 18px; cursor: pointer; cursor: hand; float: right"><img src="images/arrow_right.png" alt="Right Arrow" /></div>
 			</div>
 			<div class="content_box_outer" style="clear: both">
-				<div id="<?php echo $content_id; ?>" class="content_box_inner" style="height: 300px;">
+				<div id="<?php echo $content_id; ?>" class="content_box_inner" style="height: 150px;">
 		<?php
 	}
-	public function closeContentBox2($content_id){ ?>
+	public function closeContentBox($content_id){ ?>
 				</div>
 			</div>
 		</div>

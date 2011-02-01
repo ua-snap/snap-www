@@ -100,19 +100,21 @@ a:hover {
 	color: #555555;
 }
 .content_box_outer {
-	width: 440px;
+	width: 430px;
 	margin-top: 20px;
 	background-color: #ffffff;
-	border: 1px solid #dddddd;
+	border: 10px solid #ececec;
+	/*
 	-moz-box-shadow: 0 0 3px #999999;
 	-webkit-box-shadow: 0 0 3px #999999;
 	box-shadow: 0 0 3px #999999;
+	*/
 	margin: 10px;
 	-moz-border-radius: 5px;
 }
 .content_box_inner {
 	margin: 7px;
-	border: 7px solid #6a7173;
+	border: 7px solid #ffffff;
 	padding: 20px;
 	-moz-border-radius: 5px;
 }
