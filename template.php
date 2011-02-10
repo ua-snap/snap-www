@@ -13,13 +13,37 @@ class webPage {
 
 	private function mainMenu(){ ?>
 		<div class="menu">
-			<span <?php if ($_SERVER['PHP_SELF'] == "/about.php" || $this->menu == "about"){ echo "style=\"background-image: url('images/top_bubble.png'); background-repeat: no-repeat; padding-bottom: 21px; \""; }?>><a href="about.php" <?php if ($_SERVER['PHP_SELF'] == "/about.php" || $this->menu == "about"){ echo "style=\"color: #111111\""; }?>>About</a></span>
-			<span <?php if ($_SERVER['PHP_SELF'] == "/data.php" || $this->menu == "data"){ echo "style=\"background-image: url('images/top_bubble.png'); background-repeat: no-repeat; padding-bottom: 21px; \""; }?>><a href="data.php" <?php if ($_SERVER['PHP_SELF'] == "/data.php" || $this->menu == "data"){ echo "style=\"color: #111111\""; }?>>Maps &amp; Data</a></span>
-			<span <?php if ($_SERVER['PHP_SELF'] == "/publications.php" || $this->menu == "publications"){ echo "style=\"background-image: url('images/top_bubble.png'); background-repeat: no-repeat; padding-bottom: 21px; \""; }?>><a href="publications.php" <?php if ($_SERVER['PHP_SELF'] == "/publications.php" || $this->menu == "publications"){ echo "style=\"color: #111111\""; }?>>Publications</a></span>
-			<span <?php if ($_SERVER['PHP_SELF'] == "/projects.php" || $this->menu == "projects"){ echo "style=\"background-image: url('images/top_bubble.png'); background-repeat: no-repeat; padding-bottom: 21px; \""; }?>><a href="projects.php" <?php if ($_SERVER['PHP_SELF'] == "/projects.php" || $this->menu == "projects"){ echo "style=\"color: #111111\""; }?>>Projects</a></span>
-		<?php /*
-			<li <?php if ($_SERVER['PHP_SELF'] == "/methods.php" || $this->menu == "methods"){ echo "style=\"background-image: url('images/top_bubble.png'); background-repeat: no-repeat; padding-bottom: 21px; \""; }?>><a href="methods.php" <?php if ($_SERVER['PHP_SELF'] == "/methods.php" || $this->menu == "methods"){ echo "style=\"color: #111111\""; }?>><span>Methods</span></a></li>
-			<li <?php if ($_SERVER['PHP_SELF'] == "/educators.php" || $this->menu == "educators"){ echo "style=\"background-image: url('images/top_bubble.png'); background-repeat: no-repeat; padding-bottom: 21px; \""; }?>><a href="educators.php"  <?php if ($_SERVER['PHP_SELF'] == "/educators.php" || $this->menu == "educators"){ echo "style=\"color: #111111\""; }?>><span>Educators</span></a></li>
+		<?php
+			$menu_items = array(
+				array("About","about.php"),
+				array("Maps &amp; Data","data.php"),
+				array("Publications","publications.php"),
+				array("Projects","projects.php")
+			);
+			for ($i =0; $i < sizeof($menu_items); $i++){
+				echo "<span><div style=\"height: 20px;\"><a href=\"".$menu_items[$i][1]."\" >".$menu_items[$i][0]."</a></div><div style=\"text-align: center; height: 10px;";
+					if ((basename($_SERVER['PHP_SELF']) == "about.php" || $this->menu == "about") && $menu_items[$i][1] == "about.php"){ 
+						echo "\"><image src=\"images/current_arrow.png";
+					}
+					if ((basename($_SERVER['PHP_SELF']) == "data.php" || $this->menu == "data") && $menu_items[$i][1] == "data.php"){ 
+						echo "\"><image src=\"images/current_arrow.png";
+					}
+					if ((basename($_SERVER['PHP_SELF']) == "publications.php" || $this->menu == "publications") && $menu_items[$i][1] == "publications.php"){ 
+						echo "\"><image src=\"images/current_arrow.png";
+					}
+					if ((basename($_SERVER['PHP_SELF']) == "projects.php" || $this->menu == "projects") && $menu_items[$i][1] == "projects.php"){ 
+						echo "\"><image src=\"images/current_arrow.png";
+					}
+				echo "\"></div></span>";
+			}
+		/*
+			<span <?php if ($_SERVER['PHP_SELF'] == "/about.php" || $this->menu == "about"){ echo "style=\"background-image: url('images/current_arrow.png'); background-repeat: no-repeat; padding-bottom: 9px; \""; }?>><a href="about.php" <?php if ($_SERVER['PHP_SELF'] == "/about.php" || $this->menu == "about"){ echo "style=\"color: #111111\""; }?>>About</a></span>
+			<span <?php if ($_SERVER['PHP_SELF'] == "/data.php" || $this->menu == "data"){ echo "style=\"background-image: url('images/current_arrow.png'); background-repeat: no-repeat; padding-bottom: 9px; \""; }?>><a href="data.php" <?php if ($_SERVER['PHP_SELF'] == "/data.php" || $this->menu == "data"){ echo "style=\"color: #111111\""; }?>>Maps &amp; Data</a></span>
+			<span <?php if ($_SERVER['PHP_SELF'] == "/publications.php" || $this->menu == "publications"){ echo "style=\"background-image: url('images/current_arrow.png'); background-repeat: no-repeat; padding-bottom: 9px; \""; }?>><a href="publications.php" <?php if ($_SERVER['PHP_SELF'] == "/publications.php" || $this->menu == "publications"){ echo "style=\"color: #111111\""; }?>>Publications</a></span>
+			<span <?php if ($_SERVER['PHP_SELF'] == "/projects.php" || $this->menu == "projects"){ echo "style=\"background-image: url('images/current_arrow.png'); background-repeat: no-repeat; padding-bottom: 9px; \""; }?>><a href="projects.php" <?php if ($_SERVER['PHP_SELF'] == "/projects.php" || $this->menu == "projects"){ echo "style=\"color: #111111\""; }?>>Projects</a></span>
+
+			<li <?php if ($_SERVER['PHP_SELF'] == "/methods.php" || $this->menu == "methods"){ echo "style=\"background-image: url('images/current_arrow.png'); background-repeat: no-repeat; padding-bottom: 9px; \""; }?>><a href="methods.php" <?php if ($_SERVER['PHP_SELF'] == "/methods.php" || $this->menu == "methods"){ echo "style=\"color: #111111\""; }?>><span>Methods</span></a></li>
+			<li <?php if ($_SERVER['PHP_SELF'] == "/educators.php" || $this->menu == "educators"){ echo "style=\"background-image: url('images/current_arrow.png'); background-repeat: no-repeat; padding-bottom: 9px; \""; }?>><a href="educators.php"  <?php if ($_SERVER['PHP_SELF'] == "/educators.php" || $this->menu == "educators"){ echo "style=\"color: #111111\""; }?>><span>Educators</span></a></li>
 		*/ ?>
 
 		</div>
@@ -73,7 +97,7 @@ class webPage {
 
 		</div>		
 				<?php $this->mainMenu(); ?>
-		<div id="subbar" style="width: 975px; height: 40px; margin-top: 15px; margin: auto; ">
+		<div id="subbar" style="width: 975px; height: 35px; margin-top: 15px; margin: auto;" class="horiz_bar">
 			<div class="horiz_bar_left">
 		<?php
 		if ($this->menu){
@@ -93,7 +117,7 @@ class webPage {
 				<a class="addthis_button"><img src="images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/></a>
 			</div>
 		</div>
-		<div style="color: #999999; width: 975px; margin: auto; text-align: right; padding-top: 10px;"><a href="blog.php">blog</a> | <a href="contact.php">contact</a> | <a href="sitemap.php">sitemap</a> | <a href="search.php">search</a></div>
+		<div style="color: #999999; width: 975px; margin: auto; text-align: right; padding-top: 10px;"><a href="blog.php">blog</a> | <a href="people.php#contact">contact</a> | <a href="sitemap.php">sitemap</a> | <a href="search.php">search</a></div>
 		<?php
 	}
 	public function pageFooter(){ ?>
@@ -108,8 +132,8 @@ class webPage {
 			</div>
 			<div id="footbar">
 				<div class="horiz_bar_left" style="color: #eeeeee; relative; font-size: 12px;">
-					<div style="position: absolute; margin-left: 21px; margin-top: 1px; color: #555555;">We just set up this twitter account so now we'll show some tweets right here @twitter, is that how this works? #awkward first tweet</div>
-					<div style="position: absolute; margin-left: 20px;">We just set up this twitter account so now we'll show some tweets right here @twitter, is that how this works? #awkward first tweet</div>
+					<div style="position: absolute; margin-left: 21px; margin-top: 1px; color: #555555;">We just set up this twitter account so now we'll show some tweets right here @twitter, is that how this works? #awkwardfirsttweet</div>
+					<div style="position: absolute; margin-left: 20px;">We just set up this twitter account so now we'll show some tweets right here @twitter, is that how this works? #awkwardfirsttweet</div>
 				</div>
 				<div class="horiz_bar_right">
 					<a class="addthis_button"><img src="images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/></a>
@@ -119,7 +143,7 @@ class webPage {
 			<div style="margin-bottom: 20px; ">
 				<div style="float: left; margin-right: 40px;">
 					<div><a href="/"><img src="images/snap_acronym_rgb.png" height="53px" alt="SNAP Acronym Logo" /></a></div>
-					<div><a href="blog.php">blog</a> | <a href="contact.php">contact</a> | <a href="sitemap.php">sitemap</a> | <a href="search.php">search</a></div>
+					<div><a href="blog.php">blog</a> | <a href="people.php#contact">contact</a> | <a href="sitemap.php">sitemap</a> | <a href="search.php">search</a></div>
 				</div>
 				<div style ="float: left; width: 450px; text-align: left; margin-top: 13px;">Copyright &copy; 2011 Scenarios Network for Alaska &amp; Arctic Planning, a research institute of the University of Alaska Fairbanks.  UAF is an affirmative action/equal opportunity employer and educational institution.</div>
 				<div><a href="http://www.uaf.edu"><img src="images/UAFLogo_A_black_horiz.png" height="55px" style="margin-top: 13px;" alt="UAF Logo" /></a></div>
@@ -158,7 +182,6 @@ class webPage {
 						array("blog.php", "Blog"),
 						array("partners.php", "Partners &amp; Affiliates"),
 						array("sustainability.php", "Sustainability"),
-						array("contact.php", "Contact Us")
 					), 
 					array(
 						array("maps.php","Map Tool"),

@@ -14,15 +14,22 @@
 .news_button:hover {
 	background-position: 0px -50px;
 }
-.news_nav {
-	width: 300px; 
+#news_nav {
 	text-align: center; 
-	font-size: 16px; 
-	color: #eeeeee; 
-	bottom: 10px;
-	position: relative;
+	position: absolute;
+	right: 23px;
+	z-index: 10;
+	bottom: 0px;
+	padding: 3px;
+	height: 20px;
+	margin: 10px;
 }
-.news_nav:hover {
+#news_nav li {  list-style: none; border: 1px solid #ffffff; float: left; margin: 5px; width: 15px; height: 15px; cursor: pointer; cursor: hand;} 
+#news_nav a { }
+#news_nav li.activeSlide { color: pink; background-color: #ffffff; }
+#news_nav a:focus { outline: none; }
+
+#news_navhover {
 	cursor: pointer;
 	cursor: hand;
 }

@@ -47,23 +47,31 @@ $staff_array = array(
 					<div class="staff_photo" style="background-image: url('images/staff_photos/winslow.jpg');"></div>
 				</div>	
 
+<!-- CONTACT SECTION -->
+			<a name="contact"></a>
+			<div style="clear: both; width: 600px; margin: auto; margin-top: 200px;">
+				<form method="post">
+					<fieldset style="border: 2px solid #97a93a;">
+					<table style="width: 500px;">
+					<legend>Contact Us</legend>
+					<tr><td style="width: 200px;">Your Email Address: </td><td><input type="text" /></td></tr>
+					<tr><td style="width: 200px;">Question: </td>
+						<td><select>
+							<option>Dataset Questions</option>
+							<option>Methods</option>
+							<option>Website</option>
+							<option>Other</option>
+						</select>
+						</td>
+					</tr>
+					<tr><td>Subject:  </td><td><input type="text" /></td></tr>
+					<tr><td>Question: </td><td><textarea style="width: 400px; height: 150px;">
 
-				<!--
-				<div style="width: 710px; margin: auto;">
-					<div class="staff_photo"></div>
-					<div class="staff_photo"></div>
-					<div class="staff_photo"></div>
-					<div class="staff_photo"></div>
-					<div class="staff_photo"></div>
-				</div>
-				<div style="width: 710px; margin: auto;">
-					<div class="staff_photo"></div>
-					<div class="staff_photo"></div>
-					<div class="staff_photo"></div>
-					<div class="staff_photo"></div>
-					<div class="staff_photo"></div>
-				</div>
-				-->
+					</textarea></td></tr>
+					</table>
+					</fieldset>
+				</form>
+			</div>
 		</div>
 	</div>
 <?php

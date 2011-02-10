@@ -1,12 +1,6 @@
 function hideOnLoad(){
-	document.getElementById("searchbox").style.visibility="hidden";
-	document.getElementById("searchlink").style.visibility="visible";
-	document.getElementById("searchlink").style.height="0px";
 }
 function showSearch(){
-	document.getElementById("searchbox").style.visibility="visible";
-	document.getElementById("searchlink").style.visibility="hidden";
-	document.getElementById("searchlink").style.height="0px";
 }
 function showModalBox(){
 	document.getElementById("modalbox").style.visibility="visible";

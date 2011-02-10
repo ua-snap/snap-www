@@ -61,7 +61,6 @@ a:hover {
 	font-size: 18px;
 }
 .horiz_bar {
-
 }
 .horiz_bar_left {
 	float: left; 
@@ -80,12 +79,14 @@ a:hover {
 .horiz_bar_right {
 	float: right; 
 	background-color: #848e90; 
-	width: 140px; 
+	width: 142px; 
+	border-left: 3px white solid;
 	height: 35px; 
 	-moz-border-radius-topright: 3px; 
 	-moz-border-radius-bottomright: 3px; 
 	border-top-right-radius: 3px; 
 	border-bottom-right-radius: 3px;
+	background-color: #97a93a;
 	-moz-box-shadow: 2px 2px 2px #cccccc;
 	-webkit-box-shadow: 2px 2px 2px #cccccc;
 	box-shadow: 2px 2px 2px #cccccc;
@@ -109,7 +110,7 @@ a:hover {
 	-webkit-box-shadow: 0 0 3px #999999;
 	box-shadow: 0 0 3px #999999;
 	*/
-	margin: 10px;
+	margin: 5px;
 	-moz-border-radius: 5px;
 }
 .content_box_inner {
@@ -119,12 +120,17 @@ a:hover {
 	-moz-border-radius: 5px;
 }
 .content_box_inner_container {
-	width: 280px;
-	text-align: center;
+	width: 440px;
+	margin: 10px;
+	border-radius: 3px;
+	border: 3px solid #848e90;
+	-moz-border-radius: 3px;
+	-moz-box-shadow: 2px 2px 3px #999999;
+	-webkit-box-shadow: 2px 2px 3px #999999;
+	box-shadow: 2px 2px  3px #999999;
 }
 .content_box_inner_image {
 	margin: 10px; 
-	width: 392px;
 	text-align: center;
 }
 .content_box_inner_image img {
@@ -154,6 +160,11 @@ a:hover {
 	float: left;
 }
 #footbar {
+	width: 975px; 
+	height: 35px; 
+	margin-top: 15px;
+}
+#subbar {
 	width: 975px; 
 	height: 35px; 
 	margin-top: 15px;
@@ -199,22 +210,20 @@ a:hover {
 }
 .menu {
 	font-family: "privathreepro", sans-serif;
-	height: 60px;
 	list-style: none outside none;
 	width: 975px;
-	padding-left: 40px;
+	padding-left: 25px;
 	margin: auto;
 	font-size: 20px;
+	height: 55px;
 }
 .menu span {
 	float: left;
-	padding-bottom: 9px;
 	padding-top: 13px;
-	height: 26px;
 }
 	
 .menu span a {
-	padding: 0 10px;
+	padding: 0 20px;
 	margin: 0px;
 	float: left;
 	margin: 0px;
@@ -243,6 +252,17 @@ h3 {
 	padding: 0px;
 	color: #6a7173;
 }
+.heading {
+	color: #777777;
+	font-size: 20px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	cursor: pointer;
+	cursor: hand;
+}
+.heading:hover {
+	color: #cccccc;
+}
 #modalbackground {
 	height: 100%;
 	width: 100%;
@@ -264,60 +284,40 @@ h3 {
 	border: 3px solid #97a93a;
 	visibility: hidden;
 }
-#snras_logo {
-	background-image: url("../images/org_images/logos.png");
-	background-position: 0px -100px;
-	height: 50px;
-	width: 57px;
-	float: left;
-	margin: 10px;
-}
-#snras_logo:hover {
-	background-position: 0px -150px;
-	height: 50px;
-	width: 57px;
-}
-#accap_logo {
-	background-image: url("../images/org_images/logos.png");
-	background-position: 0px -300px;
-	height: 50px;
-	width: 151px;
-	float: left;
-	margin: 10px;
-}
-#accap_logo:hover {
-	background-position: 0px -350px;
-	height: 50px;
-	width: 151px;
-}
-#uaf_logo {
-	background-image: url("../images/org_images/logos.png");
-	background-position: 0px 0px;
-	height: 50px;
-	width: 56px;
-	float: left;
-	margin: 10px;
-}
-#uaf_logo:hover {
-	background-position: 0px -50px;
-	height: 50px;
-	width: 56px;
-}
-#uagp_logo {
-	background-image: url("../images/org_images/logos.png");
-	background-position: 0px -200px;
-	height: 50px;
-	width: 127px;
-	float: left;
-	margin: 10px;
-}
-#uagp_logo:hover {
-	background-position: 0px -250px;
-	height: 50px;
-	width: 127px;
-}
 .subHeader {
 	color: #999999; 
-	font-size: 18px; 
+	font-size: 20px; 
 	text-align: right;
+}
+form {
+	color: #111111;
+	font-size: 14px;
+}
+input {
+	border: 1px solid #6a7173;
+	background-color: #dddddd;
+}
+select {
+	border: 1px solid #6a7173;
+	background-color: #dddddd;
+}
+textarea {
+	border: 1px solid #6a7173;
+	background-color: #dddddd;
+}
+legend {
+	color: #6a7173;
+	font-weight: bold;
+}
+table {
+	border-collapse:collapse;
+}
+table {
+
+}
+th {
+
+}
+td {
+	vertical-align: top;
 }
