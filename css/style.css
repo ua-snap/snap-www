@@ -49,6 +49,7 @@ a:hover {
 	float: left;
 	text-align: center;
 }
+
 #header_right {
 	float: right;
 	margin-top: 40px;
@@ -64,7 +65,7 @@ a:hover {
 }
 .horiz_bar_left {
 	float: left; 
-	background-color: #848e90; 
+	background-color: #848d8f; 
 	width: 830px; 
 	height: 35px; 
 	-moz-border-radius-topleft: 3px; 
@@ -78,7 +79,7 @@ a:hover {
 }
 .horiz_bar_right {
 	float: right; 
-	background-color: #848e90; 
+	background-color: #848d8f; 
 	width: 142px; 
 	border-left: 3px white solid;
 	height: 35px; 
@@ -163,6 +164,7 @@ a:hover {
 	width: 975px; 
 	height: 35px; 
 	margin-top: 15px;
+	text-shadow: 1px 1px #333333;
 }
 #subbar {
 	width: 975px; 
@@ -181,7 +183,7 @@ a:hover {
 	margin: auto;
 	padding-left: 20px;
 	line-height: 35px;
-	font-family: "privathreepro", sans-serif;
+	/*font-family: "privathreepro", sans-serif;*/
 	font-size: 16px;
 }
 .submenu span {
@@ -189,19 +191,22 @@ a:hover {
 	float:left; 
 }
 .submenu span a:link {
-	color: #cccccc;
+	color: #dddddd;
 	padding: 3px;
+	text-shadow: 1px 1px #333333;
+
 }
 .submenu span a:visited {
-	color: #cccccc;
+	color: #dddddd;
 	padding: 3px;
+	text-shadow: 1px 1px #333333;
 }
 .submenu span a:hover {
-	color: #eeeeee;
+	color: #ffffff;
 }
 #main_body {
 	margin: auto;
-	margin-top: 40px;
+	margin-top: 20px;
 	width: 950px;
 	background-color: #ffffff;
 }
@@ -209,7 +214,7 @@ a:hover {
 	overflow: hidden;
 }
 .menu {
-	font-family: "privathreepro", sans-serif;
+	/*font-family: "privathreepro", sans-serif;*/
 	list-style: none outside none;
 	width: 975px;
 	padding-left: 25px;
@@ -285,9 +290,9 @@ h3 {
 	visibility: hidden;
 }
 .subHeader {
-	color: #999999; 
-	font-size: 20px; 
-	text-align: right;
+	font-size: 34px; 
+	color: #242d2f; 
+	margin-bottom: 30px;
 }
 form {
 	color: #111111;
@@ -320,4 +325,17 @@ th {
 }
 td {
 	vertical-align: top;
+}
+.tag_nav {
+	padding-right: 12px;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding: 6px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	display: inline-block;
+	color: #555555;
+}
+.tag_nav:hover {
+	background-color: #97a93a;
 }

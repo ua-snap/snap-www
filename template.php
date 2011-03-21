@@ -10,7 +10,14 @@ class webPage {
 		$this->menu = $m;
 	}
 
-
+	public function connectToDatabase(){
+		$server = "localhost";
+		$username = "snapwww_admin";
+		$password = "xargX11";
+		$database = "snapwww";
+		mysql_connect($server, $username, $password) or die("Unable to Connect to Database");
+		mysql_select_db($database);
+	}
 	private function mainMenu(){ ?>
 		<div class="menu">
 		<?php
@@ -21,17 +28,14 @@ class webPage {
 				array("Projects","projects.php")
 			);
 			for ($i =0; $i < sizeof($menu_items); $i++){
-				echo "<span><div style=\"height: 20px;\"><a href=\"".$menu_items[$i][1]."\" >".$menu_items[$i][0]."</a></div><div style=\"text-align: center; height: 10px;";
-					if ((basename($_SERVER['PHP_SELF']) == "about.php" || $this->menu == "about") && $menu_items[$i][1] == "about.php"){ 
-						echo "\"><image src=\"images/current_arrow.png";
+				$x = preg_replace("/(\w+).*/", "$1", $menu_items[$i][1]);
+				echo "<span><div style=\"height: 20px;\"><a ";
+
+					if ((basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || $this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
+						echo "style=\"color: black;\"";
 					}
-					if ((basename($_SERVER['PHP_SELF']) == "data.php" || $this->menu == "data") && $menu_items[$i][1] == "data.php"){ 
-						echo "\"><image src=\"images/current_arrow.png";
-					}
-					if ((basename($_SERVER['PHP_SELF']) == "publications.php" || $this->menu == "publications") && $menu_items[$i][1] == "publications.php"){ 
-						echo "\"><image src=\"images/current_arrow.png";
-					}
-					if ((basename($_SERVER['PHP_SELF']) == "projects.php" || $this->menu == "projects") && $menu_items[$i][1] == "projects.php"){ 
+					echo " href=\"".$menu_items[$i][1]."\" >".$menu_items[$i][0]."</a></div><div style=\"text-align: center; height: 10px;";
+					if ((basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || $this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
 						echo "\"><image src=\"images/current_arrow.png";
 					}
 				echo "\"></div></span>";
@@ -132,8 +136,7 @@ class webPage {
 			</div>
 			<div id="footbar">
 				<div class="horiz_bar_left" style="color: #eeeeee; relative; font-size: 12px;">
-					<div style="position: absolute; margin-left: 21px; margin-top: 1px; color: #555555;">We just set up this twitter account so now we'll show some tweets right here @twitter, is that how this works? #awkwardfirsttweet</div>
-					<div style="position: absolute; margin-left: 20px;">We just set up this twitter account so now we'll show some tweets right here @twitter, is that how this works? #awkwardfirsttweet</div>
+					<div style="position: absolute; margin-left: 20px; ">We just set up this twitter account so now we'll show some tweets right here @twitter, is that how this works? #awkwardfirsttweet</div>
 				</div>
 				<div class="horiz_bar_right">
 					<a class="addthis_button"><img src="images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/></a>
@@ -189,14 +192,16 @@ class webPage {
 						array("methods.php","Methods")
 					),
 					array(
-						array("papers.php", "Papers"),
-						array("reports.php", "Reports"),
-						array("presentations.php", "Presentations")
+						array("publications.php?tags=papers", "Papers"),
+						array("publications.php?tags=presentations", "Presentations"),
+						array("publications.php?tags=reports", "Reports"),
+						array("publications.php?tags=videos", "Videos")
 					),
 					array(
-						array("terrestrial.php", "Terrestrial"),
-						array("hypdrological", "Hydrological"),
-						array("permafrost.php", "Permafrost")
+						array("projects.php", "All Projects"),
+						array("projects.php?tags=hydrology", "Hydrology"),
+						array("projects.php?tags=ecosystem%20change", "Ecosystem Change"),
+						array("projects.php?tags=subsistence", "Subsistence")
 					),
 					array(
 						array("global.php","Global Circulation Models"),
@@ -215,14 +220,17 @@ class webPage {
 			for ($i = 0; $i < sizeof($menu_options[$menu_choice]); $i++){
 				echo "<span><a href=\"".$menu_options[$menu_choice][$i][0]."\" ";
 				$string1 = "/".$menu_options[$menu_choice][$i][0];
-				$string2 = $_SERVER["PHP_SELF"];
-				if ($string1 ==$string2){
+				$string2 = $_SERVER["REQUEST_URI"];
+				//$string2 = $_SERVER["PHP_SELF"];
+				
+				if ($string1 == $string2){
 					echo "style=\"color: #ffffff; \"";
 
 				}
 				echo ">";
 				echo $menu_options[$menu_choice][$i][1]."</a></span>";
 			}
+
 		?>
 				</div>
 		<?php
