@@ -129,7 +129,7 @@ $page->pageHeader();
 				<?php $page->closeContentBox("affiliates"); */ ?>
 			</div>
 			<div style="clear: both"></div>
-			
+			<!--	
 			<div id="carousel" style="width: 975px; margin: auto; z-index: 2; position: relative; overflow: hidden; visibility: visible; border-radius: 1px; -moz-border-radius: 3px;">
 				<ul style="z-index: 1;">
 					<li>
@@ -196,6 +196,7 @@ $page->pageHeader();
 				    });
     				});
 			</script>
+			-->
 			<div style="clear: both;"></div>
 		</div>
 		</div>

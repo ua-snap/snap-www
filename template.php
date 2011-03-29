@@ -121,7 +121,7 @@ class webPage {
 				<a class="addthis_button"><img src="images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/></a>
 			</div>
 		</div>
-		<div style="color: #999999; width: 975px; margin: auto; text-align: right; padding-top: 10px;"><a href="blog.php">blog</a> | <a href="people.php#contact">contact</a> | <a href="sitemap.php">sitemap</a> | <a href="search.php">search</a></div>
+		<div style="color: #999999; width: 975px; margin: auto; text-align: right; padding-top: 10px;" class="contactbar"><a href="blog.php">blog</a> | <a href="people.php#contact">contact</a> | <a href="sitemap.php">sitemap</a> | <a href="search.php">search</a></div>
 		<?php
 	}
 	public function pageFooter(){ ?>
@@ -146,7 +146,7 @@ class webPage {
 			<div style="margin-bottom: 20px; ">
 				<div style="float: left; margin-right: 40px;">
 					<div><a href="/"><img src="images/snap_acronym_rgb.png" height="53px" alt="SNAP Acronym Logo" /></a></div>
-					<div><a href="blog.php">blog</a> | <a href="people.php#contact">contact</a> | <a href="sitemap.php">sitemap</a> | <a href="search.php">search</a></div>
+					<div class="contactbar"><a href="blog.php">blog</a> | <a href="people.php#contact">contact</a> | <a href="sitemap.php">sitemap</a> | <a href="search.php">search</a></div>
 				</div>
 				<div style ="float: left; width: 450px; text-align: left; margin-top: 13px;">Copyright &copy; 2011 Scenarios Network for Alaska &amp; Arctic Planning, a research institute of the University of Alaska Fairbanks.  UAF is an affirmative action/equal opportunity employer and educational institution.</div>
 				<div><a href="http://www.uaf.edu"><img src="images/UAFLogo_A_black_horiz.png" height="55px" style="margin-top: 13px;" alt="UAF Logo" /></a></div>

@@ -1,0 +1,23 @@
+.tab_nav {
+	margin-top: 2px solid #ffffff; 
+	margin-left: 2px solid #ffffff; 
+	margin-right: 2px solid #ffffff;  
+	padding: 8px; 
+	font-size: 16px;
+	display: inline-block; 
+	margin-left: 20px;
+	color: #97a93a;
+	cursor: pointer;
+	cursor: hand;
+}
+.tab_nav_selected {
+	border-top: 2px solid #cccccc; 
+	border-left: 2px solid #cccccc; 
+	border-right: 2px solid #cccccc;  
+	background-color: #ffffff;
+	padding: 8px; 
+	font-size: 16px;
+	display: inline-block; 
+	margin-left: 20px;
+	color: #2a3133;
+}

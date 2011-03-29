@@ -4,6 +4,8 @@ $page = new webPage("SNAP: Projects", "projects.css", "projects");
 $page->openPage();
 $page->pageHeader();
 $page->connectToDatabase();
+$tag_array;
+$tag_array = split(",", $_GET['tags']);
 function getProjectList(){
 	$result = mysql_query("SELECT title,createdate,summary,id FROM projects ORDER BY createdate DESC");
 	while ($row = mysql_fetch_row($result)){
@@ -27,39 +29,55 @@ function getProjectList(){
 }
 function getProjectListSpecial($t){
 	//echo "<div style=\"font-size: 30px; color: #97a93a\">".$t."</div>";
-	
-	$result = mysql_query("SELECT distinct(title),createdate,summary,projects.id FROM projects LEFT JOIN project_tags ON projects.id=project_tags.projectid WHERE project_tags.tag LIKE '%".$t."%' ORDER BY createdate DESC") or die(mysql_error());
+	global $tag_array;
+	$projtag = "";
+	if ($t){
+		$projtag = "WHERE ";
+		for ($i = 0; $i < sizeof($tag_array); $i++){
+			if ($i > 0){
+				$projtag .= " OR ";
+			}
+			$projtag .= "project_tags.tag = '".$tag_array[$i]."'";
+		}
+	}	
+	$countsize = sizeof($tag_array);
+	//$query = "SELECT distinct(title),createdate,summary,projects.id FROM project_tags RIGHT JOIN projects ON project_tags.projectid=projects.id $projtag ORDER BY createdate DESC";
+	$query = "SELECT title, createdate, summary, projects.id, image, count(projects.id) FROM projects JOIN project_tags ON projects.id = project_tags.projectid $projtag GROUP BY id";
+	//echo $query;
+	$result = mysql_query($query) or die(mysql_error());
 	while ($row = mysql_fetch_row($result)){
-		echo "<div style=\"width: 440px; height: 110px; overflow: hidden; display: inline-block; margin: 10px; margin-bottom: 30px; position: relative;\">";
-			echo "<div style=\"width: 180px; height: 110px; position: absolute; background-color: gray;\"><img src=\"\" style=\"background-color: gray\" /></div>";
-			echo "<div style=\"position: absolute; left: 190px; width: 250px;\">";
-				echo "<div style=\"font-size: 13px; color: #111111; font-weight: bold; margin-bottom: 5px;\"><a style=\"color: #333333;\" href=\"project_view.php?projectid=".$row[3]."\">".$row[0]."</a></div>";
-				//echo "<div style=\"\">";
-					/*
-					echo "<div style=\" position: absolute; font-size: 12px; color: #444444;\">Created: ".$row[1]."</div>";
-					echo "<div style=\"position: absolute; font-size: 12px;\"> Topics: ";
-					$tag_result = mysql_query("SELECT tag FROM project_tags WHERE projectid='".$row[3]."'");
-					$tag_row = mysql_fetch_array($tag_result);
-						echo "<a href=\"projects.php?tags=".$tag_row[0]."\">".$tag_row[0]."</a>";
-					while ($tag_row = mysql_fetch_array($tag_result)){
-						echo ", <a href=\"projects.php?tags=".$tag_row[0]."\">".$tag_row[0]."</a>";
-					}
-					echo "</div>";
-					*/
-				//echo "</div>";
-				echo "<div style=\"height: 83px; font-size: 13px; overflow: hidden;\">".preg_replace("/\n/", "<br/>", $row[2])."</div>";
-				//echo "<div style=\"font-size: 13px; color: #666666; margin-top: 5px;\">created ".preg_replace("/\n/", "<br/>", $row[1])."</div>";
-				
-			echo "</div>";
+		if ($row[5] == $countsize || $countsize == 1){
+			echo "<div style=\"width: 440px; height: 110px; overflow: hidden; display: inline-block; margin: 10px; margin-bottom: 30px; position: relative;\">";
+				echo "<div style=\"width: 180px; height: 110px; position: absolute; background-color: gray;\"><img src=\"".$row[4]."\" style=\"width: 180px; height: 110px; background-color: gray\" /></div>";
+				echo "<div style=\"position: absolute; left: 190px; width: 250px;\">";
+					echo "<div style=\"font-size: 13px; color: #111111; font-weight: bold; margin-bottom: 5px;\"><a style=\"color: #333333;\" href=\"project_view.php?projectid=".$row[3]."\">".$row[0]."</a></div>";
+					//echo "<div style=\"\">";
+						/*
+						echo "<div style=\" position: absolute; font-size: 12px; color: #444444;\">Created: ".$row[1]."</div>";
+						echo "<div style=\"position: absolute; font-size: 12px;\"> Topics: ";
+						$tag_result = mysql_query("SELECT tag FROM project_tags WHERE projectid='".$row[3]."'");
+						$tag_row = mysql_fetch_array($tag_result);
+							echo "<a href=\"projects.php?tags=".$tag_row[0]."\">".$tag_row[0]."</a>";
+						while ($tag_row = mysql_fetch_array($tag_result)){
+							echo ", <a href=\"projects.php?tags=".$tag_row[0]."\">".$tag_row[0]."</a>";
+						}
+						echo "</div>";
+						*/
+					//echo "</div>";
+					echo "<div style=\"height: 83px; font-size: 13px; overflow: hidden;\">".preg_replace("/\n/", "<br/>", $row[2])."</div>";
+					//echo "<div style=\"font-size: 13px; color: #666666; margin-top: 5px;\">created ".preg_replace("/\n/", "<br/>", $row[1])."</div>";
+					
+				echo "</div>";
 
-		echo "</div>";
+			echo "</div>";
+		}
 	}
 }
 ?>
 		<div id="main_body">
 			<div id="main_content">
 				<!--<div class="subHeader" style="text-align: left;">see what kind of <img style="vertical-align: middle" height="55" src="images/projects.png" /> we're working on</div>-->
-				<div class="subHeader">Projects</div>
+				<div><div class="subHeader" style="display: inline-block;">Projects</div><div style="display: inline-block; margin-left: 30px;"><a href="projects.php">Show all</a></div></div>
 
 				<!--PROJECTS -->
 					<?php
@@ -69,11 +87,34 @@ function getProjectListSpecial($t){
 							echo "<div style=\"color: #444444; display: inline-block; padding: 6px; font-weight: bold;\">Categories</div>";
                                                	//echo "<a href=\"projects.php?tags=".$tag_row[0]."\">".$tag_row[0]."</a>";
                                         	while ($tag_row = mysql_fetch_array($tag_result)){
+							$taglist = $_GET['tags'];
 							$tagstyle = "";
-							if ($_GET['tags'] == $tag_row[0]){
-								$tagstyle = "style=\"background-color: #97a93a;\"";
+							$tagflag = 0;
+							for ($i = 0; $i < sizeof($tag_array); $i++){
+								if ($tag_array[$i] == $tag_row[0]){
+									$tagstyle = "style=\"background-color: #97a93a;\"";
+								}
+								if ($tag_row[0] == $tag_array[$i]){
+									$tagflag = 1;
+									$cur_tag = $tag_array[$i];
+									$taglist = preg_replace("/$cur_tag/", "", $taglist);
+									
+								}
 							}
-                                                	echo "<a href=\"projects.php?tags=".$tag_row[0]."\"><div $tagstyle class=\"tag_nav\">".$tag_row[0]."</div></a>";
+							if ($tagflag == 0 && isset($taglist)){
+								if (sizeof($tag_array) >= 1 && isset($_GET['tags']) && $_GET['tags'] != ""){
+									$taglist .= ",";
+								}
+								$taglist .= $tag_row[0];
+							} elseif ($tagflag == 0 && !isset($taglist)){
+								$taglist = $tag_row[0];
+							}
+							if ($tagflag == 1){
+								$taglist = preg_replace("/,,/", ",", $taglist);
+								$taglist = preg_replace("/^,/", "", $taglist);
+								$taglist = preg_replace("/,$/", "", $taglist);
+							}
+                                                	echo "<a href=\"projects.php?tags=".$taglist."\"><div $tagstyle class=\"tag_nav\">".$tag_row[0]."</div></a>";
                                         	}
 						echo "</div>";
 
@@ -87,7 +128,13 @@ function getProjectListSpecial($t){
 						echo "</div>";
 					?>
 					<div style="height: 50px; clear: both"></div>
-					<?php getProjectListSpecial($_GET['tags']); ?>
+					<?php 
+						if (isset($_GET['tags'])){
+							getProjectListSpecial($_GET['tags']); 
+						} else {
+							getProjectListSpecial();
+						}
+					?>
 			</div>
 <?php
 ?>
