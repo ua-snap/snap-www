@@ -6,6 +6,8 @@ $page->pageHeader();
 $page->connectToDatabase();
 $tag_array;
 $tag_array = split(",", $_GET['tags']);
+$coll_array;
+$coll_array = split(",", $_GET['coll']);
 $pubImages = array ( "pub_paper.png", "pub_report.png", "pub_presentation.png", "pub_video.png");
 function getPublicationList(){
 	$result = mysql_query("SELECT title,createdate,summary,id FROM publications ORDER BY createdate DESC");
@@ -107,7 +109,6 @@ function getPublicationListSpecial($t){
 	}
 }
 ?>
-		<script src="js/publications.js" type="text/javascript"></script>
 		<div id="main_body">
 			<div id="main_content">
 				<!--<div class="subHeader" style="text-align: left;">see what kind of <img style="vertical-align: middle" height="55" src="images/publications.png" /> we're working on</div>-->
@@ -163,8 +164,37 @@ function getPublicationListSpecial($t){
 							echo "<div style=\"color: #444444; margin-bottom: 6px; margin-left: 6px; font-weight: bold; display: inline-block\">Collaborators</div><div style=\"display: inline-block; margin-left: 30px;\"><a href=\"publications.php?coll=\">Show all</a></div>";
                                                	//echo "<a href=\"publications.php?tags=".$tag_row[0]."\">".$tag_row[0]."</a>";
 						echo  "<div></div>";
-                                        	while ($coll_row = mysql_fetch_array($tag_result)){
-                                                	echo "<a href=\"publications.php?coll=".$coll_row[0]."\"><div class=\"tag_nav\">".$coll_row[1]."</div></a>";
+                                        	while ($coll_row = mysql_fetch_array($coll_result)){
+							$colllist = $_GET['coll'];
+							$collstyle = "";
+							$collflag = 0;
+							for ($i = 0; $i < sizeof($coll_array); $i++){
+								if ($coll_array[$i] == $coll_row[0]){
+									$collstyle = "style=\"background-color: #97a93a;\"";
+								}
+								if ($coll_row[0] == $coll_array[$i]){
+									$collflag = 1;
+									$cur_coll = $coll_array[$i];
+									$colllist = preg_replace("/$cur_coll/", "", $colllist);
+									
+								}
+							}
+							if ($collflag == 0 && isset($colllist)){
+								if (sizeof($coll_array) >= 1 && isset($_GET['coll']) && $_GET['coll'] != ""){
+									$colllist .= ",";
+								}
+								$colllist .= $coll_row[0];
+
+							} elseif ($collflag == 0 && !isset($colllist)){
+								$colllist = $coll_row[0];
+							}
+							if ($collflag == 1){
+								$colllist = preg_replace("/,,/", ",", $colllist);
+								$colllist = preg_replace("/^,/", "", $colllist);
+								$colllist = preg_replace("/,$/", "", $colllist);
+							}
+							
+                                                	echo "<a href=\"publications.php?coll=".$colllist."\"><div $collstyle class=\"tag_nav\">".$coll_row[1]."</div></a>";
                                         	}
 						echo "</div>";
 					?>
