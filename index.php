@@ -8,7 +8,26 @@ $page->pageHeader();
 		<script src="js/index.js" type="text/javascript"></script>
 		<script src="js/jcarousellite_1.0.1.min.js" type="text/javascript"></script>
 		<div id="main_content">
-			<div style="width: 100%; min-height: 10px; position: relative; height: 300px; ">
+			<div style="width: 100%; position: relative; height: 300px; ">
+				<div style="position: absolute;"><img src="images/sticky.jpg" /></div>
+				<div id="news_container">
+					<div style="position: absolute">
+						<div class="news_image"><img src="images/index_images/1.jpg" style="width: 600px; height: 300px;" /></div>
+						<div class="news_title">Arctic Shipping Assessment</div>
+						<div class="news_content">As the climate warms and global commerce grows, the prospect of an arctic shipping route becomes more tangible. A new report released by the University of Alaska Fairbanks offers international policymakers guidance for navigating the political and practical ramifications of shipping in the Arctic.</div>
+					</div>
+					<div style="position: absolute; display: none;">
+						<div class="news_image"><img src="images/index_images/2.jpg" style="width: 600px; height: 300px;" /></div>
+						<div class="news_title">Alaska Fire Consortium Grant</div>
+						<div class="news_content">The Alaska Fire Science Consortium at UAF has received $435,000 from the Joint Fire Science Program to provide a conduit for professional research to get into the hands of fire and land managers.</div>
+					</div>
+					<div style="position: absolute; display: none;">
+						<div class="news_image"><img src="images/index_images/3.jpg" style="width: 600px; height: 300px;" /></div>
+						<div class="news_title">Neogeography Lab</div>
+						<div class="news_content">A lab in the UA Geography Program is opening new worlds to UAF students. The neogeography lab, just opened in the Scenarios Network for Alaska Planning (SNAP) building, makes Google Earth accessible and fun.</div>
+					</div>
+				</div>
+				<!--
 				<div id="news_container">
 					<div style="position: absolute">
 						<img src="images/index_images/1.jpg"  />
@@ -27,6 +46,7 @@ $page->pageHeader();
 						<div>A lab in the UA Geography Program is opening new worlds to UAF students. The neogeography lab, just opened in the Scenarios Network for Alaska Planning (SNAP) building, makes Google Earth accessible and fun.</div>
 					</div>
 				</div>
+				-->
 				<div id="news_nav">
 				</div>
 				<!--
@@ -36,7 +56,7 @@ $page->pageHeader();
 				</div>
 				-->
 				<script type="text/javascript">
-					$("#news_container").cycle({
+					$("#news_container").before('<div id="news_nav">').cycle({
 						fx:     'fade', 
 						speed:   1000, 
 						timeout: 5000, 

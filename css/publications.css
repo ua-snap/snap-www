@@ -1,0 +1,13 @@
+.hover_box {
+	left: 0px; 
+	top: 0px; 
+	position: absolute; 
+	z-index: 100; 
+	display: none; 
+	background-color: #d8d8d8; 
+	border: 1px solid #97a93a; 
+	width: 450px; 
+	-moz-box-shadow: 3px 3px 3px #cccccc;
+	-webkit-box-shadow: 3px 3px 3px #cccccc;
+	box-shadow: 3px 3px 3px #cccccc;
+}

@@ -38,7 +38,7 @@ class webPage {
 					if ((basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || $this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
 						echo "\"><image src=\"images/current_arrow.png";
 					}
-				echo "\"></div></span>";
+				echo "\" /></div></span>";
 			}
 		/*
 			<span <?php if ($_SERVER['PHP_SELF'] == "/about.php" || $this->menu == "about"){ echo "style=\"background-image: url('images/current_arrow.png'); background-repeat: no-repeat; padding-bottom: 9px; \""; }?>><a href="about.php" <?php if ($_SERVER['PHP_SELF'] == "/about.php" || $this->menu == "about"){ echo "style=\"color: #111111\""; }?>>About</a></span>
@@ -151,6 +151,7 @@ class webPage {
 				<div style ="float: left; width: 450px; text-align: left; margin-top: 13px;">Copyright &copy; 2011 Scenarios Network for Alaska &amp; Arctic Planning, a research institute of the University of Alaska Fairbanks.  UAF is an affirmative action/equal opportunity employer and educational institution.</div>
 				<div><a href="http://www.uaf.edu"><img src="images/UAFLogo_A_black_horiz.png" height="55px" style="margin-top: 13px;" alt="UAF Logo" /></a></div>
 			</div>
+			<div style="height: 50px;"></div>
 		</div>
 	<!-- <div class="slashbar"></div> -->
 	<?php
@@ -192,16 +193,10 @@ class webPage {
 						array("methods.php","Methods")
 					),
 					array(
-						array("publications.php?tags=papers", "Papers"),
-						array("publications.php?tags=presentations", "Presentations"),
-						array("publications.php?tags=reports", "Reports"),
-						array("publications.php?tags=videos", "Videos")
+						array("label", "Learn about all of SNAP's publications below.  The list can be narrowed by selecting vategories and collaborators."),
 					),
 					array(
-						array("projects.php", "All Projects"),
-						array("projects.php?tags=hydrology", "Hydrology"),
-						array("projects.php?tags=ecosystem%20change", "Ecosystem Change"),
-						array("projects.php?tags=subsistence", "Subsistence")
+						array("label", "Learn about all of SNAP's projects below.  The list can be narrowed by selecting vategories and collaborators."),
 					),
 					array(
 						array("global.php","Global Circulation Models"),
@@ -218,17 +213,21 @@ class webPage {
 
 			<?php
 			for ($i = 0; $i < sizeof($menu_options[$menu_choice]); $i++){
-				echo "<span><a href=\"".$menu_options[$menu_choice][$i][0]."\" ";
-				$string1 = "/".$menu_options[$menu_choice][$i][0];
-				$string2 = $_SERVER["REQUEST_URI"];
-				//$string2 = $_SERVER["PHP_SELF"];
-				
-				if ($string1 == $string2){
-					echo "style=\"color: #ffffff; \"";
+				if ($menu_options[$menu_choice][$i][0] == "label"){
+					echo "<span style=\"font-size: 13.5px; color: #ffffff; \" >".$menu_options[$menu_choice][$i][1]."</span>";
+				} else {
+					echo "<span><a href=\"".$menu_options[$menu_choice][$i][0]."\" ";
+					$string1 = "/".$menu_options[$menu_choice][$i][0];
+					$string2 = $_SERVER["REQUEST_URI"];
+					//$string2 = $_SERVER["PHP_SELF"];
+					
+					if ($string1 == $string2){
+						echo "style=\"color: #ffffff; \"";
 
+					}
+					echo ">";
+					echo $menu_options[$menu_choice][$i][1]."</a></span>";
 				}
-				echo ">";
-				echo $menu_options[$menu_choice][$i][1]."</a></span>";
 			}
 
 		?>

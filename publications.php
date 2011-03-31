@@ -61,12 +61,14 @@ function getPublicationListSpecial($t){
 			$pubType = $row[1];
 			global $pubImages;
 
-			echo "<div id=\"pub_hover_".$row[2]."\" style=\"left: 0px; top: 0px; position: absolute; z-index: 100; display: none; background-color: #d8d8d8; border: 1px solid #444444; width: 440px; \">";
-				echo "<div style=\"float: left;\">";
-					echo "<img src=\"images/".$pubImages[$pubType -1]."\" style=\"margin: 5px;\" />";
+			echo "<div id=\"pub_hover_".$row[2]."\" class=\"hover_box\" \">";
+				echo "<div style=\"position: relative; \">";
+				echo "<div style=\"position: absolute; \">";
+					echo "<img src=\"images/".$pubImages[$pubType -1]."\" style=\"margin-left: 5px;\" />";
 				echo "</div>";
-				echo "<div style=\"float: left; width: 360px;\">";
+				echo "<div style=\"position: relative;; left: 59px; width: 380px; ;\">";
 					echo "<div style=\"font-size: 15px; color: #111111; font-weight: bold; margin-top: 5px; margin-bottom: 5px;\"  \"><a style=\"color: #333333;\" href=\"publication_view.php?publicationid=".$row[2]."\">".$row[0]."</a></div>";
+					echo "<div style=\"position: relative; width: 420px; margin-bottom: 10px;\"></div>";
 					$query_tags = "SELECT tag FROM publication_tags WHERE publicationid='".$row[2]."'";
 					$result_tags = mysql_query($query_tags);
 					echo "<div style=\"color: #666666;\">Tags: ";
@@ -76,29 +78,49 @@ function getPublicationListSpecial($t){
 						echo ", ".$row_tags[0];
 					}
 					echo "</div>";
+
 				echo "</div>";
-				echo "<div style=\"clear: both; width: 420px; padding: 10px;\">".$row[3]."</div>";
+				echo "</div>";
+				echo "<div style=\"margin-top: 10px;width: 420px; padding: 10px;\">".$row[3]."</div>";
 
 			echo "</div>\n";
-			echo "<div style=\"width: 50px; position: absolute; z-index: 1;\">";
+			echo "<div style=\"width: 50px; padding: 6px; position: absolute; z-index: 1;\">";
 
 			echo "<img src=\"images/".$pubImages[$pubType -1]."\" style=\"\" />";
 			echo "</div>";
-			echo "<div style=\"position: absolute; left: 60px; width: 380px;\">";
-				echo "<div style=\"font-size: 15px; color: #111111; font-weight: bold; margin-bottom: 5px;\"  \"><a style=\"color: #333333;\" href=\"publication_view.php?publicationid=".$row[2]."\">".$row[0]."</a></div>";
-
-				
-
+			echo "<div style=\"position: absolute; padding-top: 6px; left: 60px; width: 380px;\">";
+				echo "<div style=\"font-size: 15px; color: #111111; font-weight: bold; margin-bottom: 5px;\" ><a style=\"color: #333333;\" href=\"publication_view.php?publicationid=".$row[2]."\">".$row[0]."</a></div>";
 			echo "</div>";
+
 
 
 
 			echo "<script>\n";
+				echo "var config = { 
+					over: function(){ $('#pub_hover_".$row[2]."').show(500); },
+					interval: 100,
+					out: function(){ $('#pub_hover_".$row[2]."').hide(0); } 
+					};";
+				echo "$('#pub_box_".$row[2]."').hoverIntent(config)";
+				/*
 				echo "$('#pub_box_".$row[2]."').hover(\n";
 					echo "function(){ $('#pub_hover_".$row[2]."').show(500); },\n";
 					echo "function(){ $('#pub_hover_".$row[2]."').hide(0); }\n";
-
 				echo ");\n";
+				*/
+				/*
+				echo "$('#pub_box_".$row[2]."').bind('mouseover', function() { $('#pub_hover_".$row[2]."').show(500); } );";
+				echo "var _counter = 0;";
+				echo "var _seconds = 0;";
+				echo "$('#pub_box_".$row[2]."').hover(\n";
+					echo "function() { _counter = setInterval(openHover(), 2000); }, \n";
+					echo "function() { clearInterval(_counter); }";
+				echo ");\n";
+				echo "function openHover() {";
+					echo "_seconds++; ";
+					echo "if (_seconds == 3) { _seconds = 0; $('#pub_hover_".$row[2]."').show(500); }";
+				echo "}";	
+				*/
 				//echo "$('#pub_box_".$row[2]."').mouseout(function(){\n";
 				//	echo "$('#pub_hover_".$row[2]."').hide();\n";
 				//echo "});\n";
@@ -110,19 +132,19 @@ function getPublicationListSpecial($t){
 }
 ?>
 		<div id="main_body">
+			<script src="js/jquery.hoverIntent.minified.js" type="text/javascript"></script>
 			<div id="main_content">
 				<!--<div class="subHeader" style="text-align: left;">see what kind of <img style="vertical-align: middle" height="55" src="images/publications.png" /> we're working on</div>-->
 				<div class="subHeader">Publications</div>
 
 
 
-					<div style="float: right; width: 400px;">
 					<?php
 						//Tags
 						$tag_result = mysql_query("SELECT tag FROM publication_tags GROUP BY tag");
                                         	$tag_row = mysql_fetch_array($tag_result);
-						echo "<div style=\"width: 375px; font-size: 15px; float: left;\">";
-							echo "<div style=\"color: #444444; margin-bottom: 6px; margin-left: 6px; font-weight: bold; display: inline-block\">Categories</div><div style=\"display: inline-block; margin-left: 30px;\"><a href=\"publications.php?tags=\">Show all</a></div>";
+						echo "<div style=\"width: 400px; font-size: 15px; float: left; margin-bottom: 50px;\">\n";
+							echo "<div style=\"color: #444444; margin-bottom: 6px; margin-left: 6px; font-weight: bold; display: inline-block\">Categories</div><div style=\"display: inline-block; margin-left: 30px;\"><a href=\"publications.php\">Show all</a></div>";
 							echo "<div></div>";
                                         	while ($tag_row = mysql_fetch_array($tag_result)){
 							$taglist = $_GET['tags'];
@@ -152,16 +174,16 @@ function getPublicationListSpecial($t){
 								$taglist = preg_replace("/^,/", "", $taglist);
 								$taglist = preg_replace("/,$/", "", $taglist);
 							}
-                                                	echo "<a href=\"publications.php?tags=".$taglist."\"><div $tagstyle class=\"tag_nav\">".$tag_row[0]."</div></a>";
+                                                	echo "<a href=\"publications.php?tags=".$taglist."\"><span $tagstyle class=\"tag_nav\">".$tag_row[0]."</span></a>";
                                         	}
 						echo "</div>";
 						//Collaborators
 						$coll_query = "SELECT collaborators.id,collaborators.name FROM collaborators LEFT JOIN publication_collaborators ON collaborators.id=publication_collaborators.collaboratorid GROUP BY collaboratorid";
 						$coll_result = mysql_query($coll_query);
                                         	$coll_row = mysql_fetch_array($coll_result);
-						echo "<div style=\"width: 375px; font-size: 15px; margin-top: 20px; margin-bottom: 50px;\">";
+						echo "<div style=\"float: left; width: 400px; font-size: 15px; margin-bottom: 50px;\">";
 							//echo "<div style=\"color: #444444; display: inline-block; padding-right: 12px; font-weight: bold;\">Collaborators</div>";
-							echo "<div style=\"color: #444444; margin-bottom: 6px; margin-left: 6px; font-weight: bold; display: inline-block\">Collaborators</div><div style=\"display: inline-block; margin-left: 30px;\"><a href=\"publications.php?coll=\">Show all</a></div>";
+							echo "<div style=\"color: #444444; margin-bottom: 6px; margin-left: 6px; font-weight: bold; display: inline-block\">Collaborators</div><div style=\"display: inline-block; margin-left: 30px;\"><a href=\"publications.php\">Show all</a></div>";
                                                	//echo "<a href=\"publications.php?tags=".$tag_row[0]."\">".$tag_row[0]."</a>";
 						echo  "<div></div>";
                                         	while ($coll_row = mysql_fetch_array($coll_result)){
@@ -194,16 +216,13 @@ function getPublicationListSpecial($t){
 								$colllist = preg_replace("/,$/", "", $colllist);
 							}
 							
-                                                	echo "<a href=\"publications.php?coll=".$colllist."\"><div $collstyle class=\"tag_nav\">".$coll_row[1]."</div></a>";
+                                                	echo "<a href=\"publications.php?coll=".$colllist."\"><span $collstyle class=\"tag_nav\">".$coll_row[1]."</span></a>";
                                         	}
 						echo "</div>";
 					?>
 
-					</div>
-					<div>
-						<div style="width: 440px;line-height: 25px; ">A variety of publications and presentations are produced as a result os SNAP's publication collaborations.  They are all available below.  The list can be narrowed by selecting from the options to the right.</div>
-						<div style="margin-top: 40px;"><?php getPublicationListSpecial($_GET['tags']); ?></div>
-					</div>
+					<div style="width: 900px; claer: both; height: 100px;"></div>
+					<div style="margin-top: 40px;"><?php getPublicationListSpecial($_GET['tags']); ?></div>
 
 
 	
@@ -212,10 +231,8 @@ function getPublicationListSpecial($t){
 				<!--PROJECTS -->
 
 
-				<div style="height: 50px; clear: both"></div>
 
 
-			</div>
 <?php
 ?>
 		</div>
