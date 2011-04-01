@@ -82,6 +82,7 @@ function getPublicationListSpecial($t){
 				echo "</div>";
 				echo "</div>";
 				echo "<div style=\"margin-top: 10px;width: 420px; padding: 10px;\">".$row[3]."</div>";
+				echo "<div style=\"position: relative; left: 385px; bottom: 5px; margin-top: 10px;\"><a id=\"pub_close_".$row[2]."\" style=\"cursor: pointer; cursor: hand;\">close &#8855;</a></div>";
 
 			echo "</div>\n";
 			echo "<div style=\"width: 50px; padding: 6px; position: absolute; z-index: 1;\">";
@@ -101,7 +102,10 @@ function getPublicationListSpecial($t){
 					interval: 100,
 					out: function(){ $('#pub_hover_".$row[2]."').hide(0); } 
 					};";
-				echo "$('#pub_box_".$row[2]."').hoverIntent(config)";
+				echo "$('#pub_box_".$row[2]."').hoverIntent(config);";
+				echo "$('#pub_close_".$row[2]."').click(
+					function(){ $('#pub_hover_".$row[2]."').hide(0); }
+				);";
 				/*
 				echo "$('#pub_box_".$row[2]."').hover(\n";
 					echo "function(){ $('#pub_hover_".$row[2]."').show(500); },\n";
@@ -143,16 +147,18 @@ function getPublicationListSpecial($t){
 						//Tags
 						$tag_result = mysql_query("SELECT tag FROM publication_tags GROUP BY tag");
                                         	$tag_row = mysql_fetch_array($tag_result);
-						echo "<div style=\"width: 400px; font-size: 15px; float: left; margin-bottom: 50px;\">\n";
+						echo "<div style=\"width: 450px; font-size: 15px; float: left; margin-bottom: 10px;\">\n";
 							echo "<div style=\"color: #444444; margin-bottom: 6px; margin-left: 6px; font-weight: bold; display: inline-block\">Categories</div><div style=\"display: inline-block; margin-left: 30px;\"><a href=\"publications.php\">Show all</a></div>";
 							echo "<div></div>";
                                         	while ($tag_row = mysql_fetch_array($tag_result)){
 							$taglist = $_GET['tags'];
 							$tagstyle = "";
+							$tagselect = "";
 							$tagflag = 0;
 							for ($i = 0; $i < sizeof($tag_array); $i++){
 								if ($tag_array[$i] == $tag_row[0]){
 									$tagstyle = "style=\"background-color: #97a93a;\"";
+									$tagselect = "<span class=\"tag_x\" >&#8855;</span>";
 								}
 								if ($tag_row[0] == $tag_array[$i]){
 									$tagflag = 1;
@@ -174,14 +180,14 @@ function getPublicationListSpecial($t){
 								$taglist = preg_replace("/^,/", "", $taglist);
 								$taglist = preg_replace("/,$/", "", $taglist);
 							}
-                                                	echo "<a href=\"publications.php?tags=".$taglist."\"><span $tagstyle class=\"tag_nav\">".$tag_row[0]."</span></a>";
+                                                	echo "<a href=\"publications.php?tags=".$taglist."\"><span $tagstyle class=\"tag_nav\">".$tagselect.$tag_row[0]."</span></a>";
                                         	}
 						echo "</div>";
 						//Collaborators
 						$coll_query = "SELECT collaborators.id,collaborators.name FROM collaborators LEFT JOIN publication_collaborators ON collaborators.id=publication_collaborators.collaboratorid GROUP BY collaboratorid";
 						$coll_result = mysql_query($coll_query);
                                         	$coll_row = mysql_fetch_array($coll_result);
-						echo "<div style=\"float: left; width: 400px; font-size: 15px; margin-bottom: 50px;\">";
+						echo "<div style=\"float: left; width: 450px; font-size: 15px; margin-bottom: 10px; margin-left: 10px;\">";
 							//echo "<div style=\"color: #444444; display: inline-block; padding-right: 12px; font-weight: bold;\">Collaborators</div>";
 							echo "<div style=\"color: #444444; margin-bottom: 6px; margin-left: 6px; font-weight: bold; display: inline-block\">Collaborators</div><div style=\"display: inline-block; margin-left: 30px;\"><a href=\"publications.php\">Show all</a></div>";
                                                	//echo "<a href=\"publications.php?tags=".$tag_row[0]."\">".$tag_row[0]."</a>";
@@ -221,7 +227,7 @@ function getPublicationListSpecial($t){
 						echo "</div>";
 					?>
 
-					<div style="width: 900px; claer: both; height: 100px;"></div>
+					<div style="width: 900px; clear: both; height: 1px;"></div>
 					<div style="margin-top: 40px;"><?php getPublicationListSpecial($_GET['tags']); ?></div>
 
 

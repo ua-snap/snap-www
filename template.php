@@ -193,10 +193,10 @@ class webPage {
 						array("methods.php","Methods")
 					),
 					array(
-						array("label", "Learn about all of SNAP's publications below.  The list can be narrowed by selecting vategories and collaborators."),
+						array("label", "Learn about all of SNAP's publications below.  The list can be narrowed by selecting categories and collaborators."),
 					),
 					array(
-						array("label", "Learn about all of SNAP's projects below.  The list can be narrowed by selecting vategories and collaborators."),
+						array("label", "Learn about all of SNAP's projects below.  The list can be narrowed by selecting categories and collaborators."),
 					),
 					array(
 						array("global.php","Global Circulation Models"),

@@ -83,16 +83,18 @@ function getProjectListSpecial($t){
 					<?php
 						$tag_result = mysql_query("SELECT tag FROM project_tags GROUP BY tag");
                                         	$tag_row = mysql_fetch_array($tag_result);
-						echo "<div style=\"width: 375px; font-size: 15px; float: left;\">";
+						echo "<div style=\"width: 450px; font-size: 15px; float: left;\">";
 							echo "<div style=\"color: #444444; display: inline-block; padding: 6px; font-weight: bold;\">Categories</div>";
                                                	//echo "<a href=\"projects.php?tags=".$tag_row[0]."\">".$tag_row[0]."</a>";
                                         	while ($tag_row = mysql_fetch_array($tag_result)){
 							$taglist = $_GET['tags'];
 							$tagstyle = "";
+							$tagselect = "";
 							$tagflag = 0;
 							for ($i = 0; $i < sizeof($tag_array); $i++){
 								if ($tag_array[$i] == $tag_row[0]){
 									$tagstyle = "style=\"background-color: #97a93a;\"";
+									$tagselect = "<span class=\"tag_x\" >&#8855;</span>";
 								}
 								if ($tag_row[0] == $tag_array[$i]){
 									$tagflag = 1;
@@ -114,7 +116,7 @@ function getProjectListSpecial($t){
 								$taglist = preg_replace("/^,/", "", $taglist);
 								$taglist = preg_replace("/,$/", "", $taglist);
 							}
-                                                	echo "<a href=\"projects.php?tags=".$taglist."\"><div $tagstyle class=\"tag_nav\">".$tag_row[0]."</div></a>";
+                                                	echo "<a href=\"projects.php?tags=".$taglist."\"><span $tagstyle class=\"tag_nav\">".$tagselect.$tag_row[0]."</span></a>";
                                         	}
 						echo "</div>";
 

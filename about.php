@@ -28,13 +28,16 @@ $page->connectToDatabase();
 				<div>
 					<div style="float: right; width: 400px;">
 						<div><div style="display: inline-block; font-size: 18px;">Partner's &amp Affiliates</div><div style="margin-left: 120px; display: inline-block; color: #6a7173; font-size: 13px;"><a href="partners.php">view all</a></div></div>
+							<div style="margin-left: 30px; margin-top: 15px;"><img src="images/org_images/accap_rgb.png" /><img src="images/org_images/snras_rgb.png" style="margin-left: 75px;"/></div>
+							<div style="margin-left: 30px; margin-top: 15px;"><img src="images/org_images/uagp_rgb.png"/><img src="images/org_images/AKSeal.gif" style="margin-left: 105px; height: 50px;" /></div>
 						<?php
+							/*
 							$query = "SELECT id,name FROM collaborators ORDER BY RAND() LIMIT 5";
 							$result = mysql_query($query) or die(mysql_error());
 							while ($row = mysql_fetch_array($result)){
 								echo "<div style=\"margin-top: 7px; color: #6a7173; font-weight: bold;\">".$row[1]."</div>";
 							}
-					
+							*/
 						?>
 					</div>
 					<div style="float: left; width: 500px;">
@@ -58,7 +61,7 @@ $page->connectToDatabase();
 					</div>
 
 				</div>
-				<div style="clear: both; width: 100%; height: 30px;"></div>
+				<div style="clear: both; width: 100%; height: 60px;"></div>
 				<div id="tabs">
 				<div style="width: 900px; z-index: 10; position: relative;" id="tabcontrol">
 					<li class="tab_nav_selected" id="tc1">History of SNAP</li>

@@ -360,7 +360,23 @@ td {
 	display: inline-block;
 	color: #555555;
 	margin: 2px;
+	margin-right: 0px;
 }
 .tag_nav:hover {
 	background-color: #97a93a;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+.tag_x {
+	line-height: 16px;
+	font-size: 20px;
+	color: #eeeeee;
+	background-color: #97a93a;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+	-moz-border-radius-topright: 2px;
+	-moz-border-radius-bottomright: 2px;
+}
+.tag_x:hover {
+	
 }

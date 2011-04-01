@@ -17,49 +17,54 @@
 #news_nav {
 	text-align: center; 
 	position: absolute;
-	right: 23px;
+	right: 640px;
 	z-index: 10;
 	bottom: 0px;
 	padding: 3px;
 	height: 20px;
 	margin: 10px;
 }
-#news_nav li {  list-style: none; border: 1px solid #ffffff; float: left; margin: 5px; width: 15px; height: 15px; cursor: pointer; cursor: hand;} 
-#news_nav a { }
+#news_nav li {  list-style: numbered; border: 1px solid #ffffff; float: left; margin: 50px; width: 12px; height: 12px; cursor: pointer; cursor: hand;} 
+#news_nav a { color: #bbbbbb; margin-left: 5px; font-size: 15px; }
+#news_nav a.activeSlide { color: #ffffff }
 #news_nav li.activeSlide { color: pink; background-color: #ffffff; }
-#news_nav a:focus { outline: none; }
+#news_nav li.activeSlide a { color: pink; background-color: #ffffff; }
 
 #news_navhover {
 	cursor: pointer;
 	cursor: hand;
 }
-#news_link {
+.news_link {
+	position: absolute;
 	margin-top: 20px;
 	font-size: 16px;
+	color: #ffffff;
+	width: 50px;
+	top: 225px;
+	left: 10px;
+	width: 150px;
 }
-#news_link a:link {
-	color: #6A7173;
+.news_link a:link {
+	color: #ffffff;
 }
-#news_link a:visited {
-	color: #6A7173;
+.news_link a:visited {
+	color: #ffffff;
 }
-#news_link a:hover {
-	color: #97A93A;
+.news_link a:hover {
+	color: #dddddd;
 }
 .news_title {
-	position: absolute;
-	width: 300px;
-	top: 10px;
+	width: 280px;
 	font-size: 20px;
-	z-index: 5;
-	line-height: 30px;
 	color: #ffffff;
+	margin-bottom: 10px;
 }
 .news_content {
 	position: absolute;
-	width: 300px;
+	width: 280px;
+	left: 10px;
 	z-index: 5;
-	top: 50px;
+	top: 20px;
 	color: #ffffff;
 }
 .news_image {
