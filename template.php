@@ -29,16 +29,16 @@ class webPage {
 			);
 			for ($i =0; $i < sizeof($menu_items); $i++){
 				$x = preg_replace("/(\w+).*/", "$1", $menu_items[$i][1]);
-				echo "<span><div style=\"height: 20px;\"><a ";
+				echo "<span style=\"margin-bottom:17px;\"><span style=\"height: 20px;\"><a ";
 
 					if ((basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || $this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
 						echo "style=\"color: black;\"";
 					}
-					echo " href=\"".$menu_items[$i][1]."\" >".$menu_items[$i][0]."</a></div><div style=\"text-align: center; height: 10px;";
+					echo " href=\"".$menu_items[$i][1]."\" >".$menu_items[$i][0]."</a></span><div style=\"text-align: center; height: 10px;\" >";
 					if ((basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || $this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
-						echo "\"><image src=\"images/current_arrow.png";
+						echo "<img alt=\"Current Selection\" src=\"images/current_arrow.png\" />";
 					}
-				echo "\" /></div></span>";
+				echo "</div></span>";
 			}
 		/*
 			<span <?php if ($_SERVER['PHP_SELF'] == "/about.php" || $this->menu == "about"){ echo "style=\"background-image: url('images/current_arrow.png'); background-repeat: no-repeat; padding-bottom: 9px; \""; }?>><a href="about.php" <?php if ($_SERVER['PHP_SELF'] == "/about.php" || $this->menu == "about"){ echo "style=\"color: #111111\""; }?>>About</a></span>
