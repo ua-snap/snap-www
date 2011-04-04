@@ -50,7 +50,7 @@ $staff_array = array(
 <!-- CONTACT SECTION -->
 			<a name="contact"></a>
 			<div style="clear: both; width: 600px; margin: auto; margin-top: 200px;">
-				<form method="post">
+				<form method="post" action="people.php?contact=true">
 					<fieldset style="border: 2px solid #97a93a;">
 					<table style="width: 500px;">
 					<legend>Contact Us</legend>
@@ -65,7 +65,7 @@ $staff_array = array(
 						</td>
 					</tr>
 					<tr><td>Subject:  </td><td><input type="text" /></td></tr>
-					<tr><td>Question: </td><td><textarea style="width: 400px; height: 150px;">
+					<tr><td>Question: </td><td><textarea style="width: 400px; height: 150px;" rows="0" cols="0">
 
 					</textarea></td></tr>
 					</table>

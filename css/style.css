@@ -205,6 +205,19 @@ a:hover {
 	margin: auto;
 	width: 975px;
 }
+#twitter_update_list {
+	list-style: none;
+}
+#twitter_update_list a:link {
+	color: #ffffff;
+}
+#twitter_update_list a:visited {
+	color: #ffffff;
+}
+#twitter_update_list a:hover {
+	color: #cccccc;
+}
+
 .submenu {
 	width: 975px; 
 	margin: auto;

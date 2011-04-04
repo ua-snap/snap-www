@@ -135,8 +135,13 @@ class webPage {
 				<span style="margin-left: 40px;"><a href="">email updates</a></span>
 			</div>
 			<div id="footbar">
-				<div class="horiz_bar_left" style="color: #eeeeee; relative; font-size: 12px;">
-					<div style="position: absolute; margin-left: 20px; ">We just set up this twitter account so now we'll show some tweets right here @twitter, is that how this works? #awkwardfirsttweet</div>
+				<div class="horiz_bar_left" style="color: #eeeeee; relative; font-size: 11.5px;">
+					<div style="position: absolute; margin-left: 20px; ">
+					<!--We just set up this twitter account so now we'll show some tweets right here @twitter, is that how this works? #awkwardfirsttweet-->
+						<div id="twitter_update_list"></div>
+						<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
+						<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/newsminer.json?callback=twitterCallback2&count=1"></script>
+					</div>
 				</div>
 				<div class="horiz_bar_right">
 					<a class="addthis_button"><img src="images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/></a>

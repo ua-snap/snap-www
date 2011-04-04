@@ -27,7 +27,7 @@ $page->connectToDatabase();
 				<div style="clear: both; width: 100%; height: 30px;"></div>
 				<div>
 					<div style="float: right; width: 400px;">
-						<div><div style="display: inline-block; font-size: 18px;">Partner's &amp Affiliates</div><div style="margin-left: 120px; display: inline-block; color: #6a7173; font-size: 13px;"><a href="partners.php">view all</a></div></div>
+						<div><div style="display: inline-block; font-size: 18px;">Partner's &amp; Affiliates</div><div style="margin-left: 120px; display: inline-block; color: #6a7173; font-size: 13px;"><a href="partners.php">view all</a></div></div>
 							<div style="margin-left: 30px; margin-top: 15px;"><img src="images/org_images/accap_rgb.png" /><img src="images/org_images/snras_rgb.png" style="margin-left: 75px;"/></div>
 							<div style="margin-left: 30px; margin-top: 15px;"><img src="images/org_images/uagp_rgb.png"/><img src="images/org_images/AKSeal.gif" style="margin-left: 105px; height: 50px;" /></div>
 						<?php
@@ -43,19 +43,19 @@ $page->connectToDatabase();
 					<div style="float: left; width: 500px;">
 						<div><div style="font-size: 18px; display: inline-block">From SNAP's Blog</div><div style="color: #6a7173; margin-left: 100px; display: inline-block">go to blog | subscribe <img src="images/rss.jpg" style="vertical-align: middle; height: 20px;" /></div></div>
 						<div style="margin-top: 10px; font-weight: bold; color: #555555">
-							<div style="display: inline-block;"><img src="images/pub_paper.png" style="vertical-align: top; height: 20px; " /></div>
+							<div style="display: inline-block;"><img alt="Blog Entry Icon" src="images/pub_paper.png" style="vertical-align: top; height: 20px; " /></div>
 							<div style="display: inline-block; width: 460px; margin-left: 5px;">Report details next steps in arctic shipping policies</div>
 						</div>
 						<div style="margin-top: 10px; font-weight: bold; color: #555555">
-							<img src="images/pub_paper.png" style="vertical-align: top; height: 20px; " />
+							<img alt="Blog Entry Icon" src="images/pub_paper.png" style="vertical-align: top; height: 20px; " />
 							<div style="display: inline-block; width: 460px; margin-left: 5px;">New report outlines potential climate change impacts to Alaska's wildlife and ecosystem</div>
 						</div>
 						<div style="margin-top: 10px; font-weight: bold; color: #555555">
-							<img src="images/pub_paper.png" style="vertical-align: top; height: 20px; " />
+							<img alt="Blog Entry Icon" src="images/pub_paper.png" style="vertical-align: top; height: 20px; " />
 							<div style="display: inline-block; width: 460px; margin-left: 5px;">Neogeography lab helps explore the world</div>
 						</div>
 						<div style="margin-top: 10px; font-weight: bold; color: #555555">
-							<div style="display: inline-block;"><img src="images/pub_paper.png" style="vertical-align: top; height: 20px; " /></div>
+							<div style="display: inline-block;"><img alt="Blog Entry Icon" src="images/pub_paper.png" style="vertical-align: top; height: 20px; " /></div>
 							<div style="display: inline-block; width: 460px; margin-left: 5px;">SNAP delivers climate change data to public's fingers</div>
 						</div>
 					</div>
@@ -96,7 +96,7 @@ $page->connectToDatabase();
 				</div>
 
 
-				<script>
+				<script type="text/javascript">
 					$('#tc1').click(function() {
 					  $('#tab1').show(0, function() { });
 					  $('#tabcontainer>[id!="tab1"]').hide(0, function() { });	
@@ -126,8 +126,7 @@ $page->connectToDatabase();
 					  $('#tabcontrol>[id!="tc4"]').addClass("tab_nav");
 					});
 				</script>
-<? 
-?>
+			</div>
 		</div>
 	</div>
 <?php
