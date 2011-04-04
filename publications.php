@@ -61,13 +61,13 @@ function getPublicationListSpecial($t){
 			$pubType = $row[1];
 			global $pubImages;
 
-			echo "<div id=\"pub_hover_".$row[2]."\" class=\"hover_box\" \">";
+			echo "<div id=\"pub_hover_".$row[2]."\" class=\"hover_box\" >";
 				echo "<div style=\"position: relative; \">";
 				echo "<div style=\"position: absolute; \">";
-					echo "<img src=\"images/".$pubImages[$pubType -1]."\" style=\"margin-left: 5px;\" />";
+					echo "<img alt=\"".$pubImages[$pubType -1]."\" src=\"images/".$pubImages[$pubType -1]."\" style=\"margin-left: 5px;\" />";
 				echo "</div>";
 				echo "<div style=\"position: relative;; left: 59px; width: 380px; ;\">";
-					echo "<div style=\"font-size: 15px; color: #111111; font-weight: bold; margin-top: 5px; margin-bottom: 5px;\"  \"><a style=\"color: #333333;\" href=\"publication_view.php?publicationid=".$row[2]."\">".$row[0]."</a></div>";
+					echo "<div style=\"font-size: 15px; color: #111111; font-weight: bold; margin-top: 5px; margin-bottom: 5px;\" ><a style=\"color: #333333;\" href=\"publication_view.php?publicationid=".$row[2]."\">".$row[0]."</a></div>";
 					echo "<div style=\"position: relative; width: 420px; margin-bottom: 10px;\"></div>";
 					$query_tags = "SELECT tag FROM publication_tags WHERE publicationid='".$row[2]."'";
 					$result_tags = mysql_query($query_tags);
@@ -87,7 +87,7 @@ function getPublicationListSpecial($t){
 			echo "</div>\n";
 			echo "<div style=\"width: 50px; padding: 6px; position: absolute; z-index: 1;\">";
 
-			echo "<img src=\"images/".$pubImages[$pubType -1]."\" style=\"\" />";
+			echo "<img alt=\"".$pubImages[$pubType -1]."\" src=\"images/".$pubImages[$pubType -1]."\" style=\"\" />";
 			echo "</div>";
 			echo "<div style=\"position: absolute; padding-top: 6px; left: 60px; width: 380px;\">";
 				echo "<div style=\"font-size: 15px; color: #111111; font-weight: bold; margin-bottom: 5px;\" ><a style=\"color: #333333;\" href=\"publication_view.php?publicationid=".$row[2]."\">".$row[0]."</a></div>";
@@ -96,7 +96,7 @@ function getPublicationListSpecial($t){
 
 
 
-			echo "<script>\n";
+			echo "<script type=\"text/javascript\">\n";
 				echo "var config = { 
 					over: function(){ $('#pub_hover_".$row[2]."').show(500); },
 					interval: 100,
