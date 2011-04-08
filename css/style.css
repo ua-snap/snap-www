@@ -336,19 +336,22 @@ h3 {
 }
 form {
 	color: #111111;
-	font-size: 14px;
+	font-size: 16px;
 }
 input {
 	border: 1px solid #6a7173;
-	background-color: #dddddd;
+	background-color: #eeeeee;
+	font-size: 16px;
 }
 select {
 	border: 1px solid #6a7173;
-	background-color: #dddddd;
+	background-color: #eeeeee;
+	font-size: 16px;
 }
 textarea {
 	border: 1px solid #6a7173;
-	background-color: #dddddd;
+	background-color: #eeeeee;
+	font-size: 16px;
 }
 legend {
 	color: #6a7173;

@@ -22,24 +22,25 @@ class webPage {
 		<div class="menu">
 		<?php
 			$menu_items = array(
-				array("About","about.php"),
-				array("Maps &amp; Data","data.php"),
-				array("Publications","publications.php"),
-				array("Projects","projects.php")
+				array("About","/about.php"),
+				array("Maps &amp; Data","/data.php"),
+				array("Publications","/publications.php"),
+				array("Projects","/projects.php")
 			);
 			for ($i =0; $i < sizeof($menu_items); $i++){
 				$x = preg_replace("/(\w+).*/", "$1", $menu_items[$i][1]);
+				//echo $this->menu." - ".$x;
 				echo "<span style=\"margin-bottom:17px;\"><span style=\"height: 20px;\"><a ";
-
-					if ((basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || $this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
+					if (("/".basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || "/".$this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
 						echo "style=\"color: black;\"";
 					}
 					echo " href=\"".$menu_items[$i][1]."\" >".$menu_items[$i][0]."</a></span><div style=\"text-align: center; height: 10px;\" >";
-					if ((basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || $this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
-						echo "<img alt=\"Current Selection\" src=\"images/current_arrow.png\" />";
+					if (("/".basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || "/".$this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
+						echo "<img alt=\"Current Selection\" src=\"/images/current_arrow.png\" />";
 					}
 				echo "</div></span>";
 			}
+			echo "<div style=\"clear: both;\"></div>";
 		/*
 			<span <?php if ($_SERVER['PHP_SELF'] == "/about.php" || $this->menu == "about"){ echo "style=\"background-image: url('images/current_arrow.png'); background-repeat: no-repeat; padding-bottom: 9px; \""; }?>><a href="about.php" <?php if ($_SERVER['PHP_SELF'] == "/about.php" || $this->menu == "about"){ echo "style=\"color: #111111\""; }?>>About</a></span>
 			<span <?php if ($_SERVER['PHP_SELF'] == "/data.php" || $this->menu == "data"){ echo "style=\"background-image: url('images/current_arrow.png'); background-repeat: no-repeat; padding-bottom: 9px; \""; }?>><a href="data.php" <?php if ($_SERVER['PHP_SELF'] == "/data.php" || $this->menu == "data"){ echo "style=\"color: #111111\""; }?>>Maps &amp; Data</a></span>
@@ -62,20 +63,20 @@ class webPage {
 		
 	<?php 
 		if (isset($_GET['style'])){
-			echo "<link rel=\"stylesheet\" href=\"css/style".$_GET['style'].".css\" type=\"text/css\" />"; 
+			echo "<link rel=\"stylesheet\" href=\"/css/style".$_GET['style'].".css\" type=\"text/css\" />"; 
 		} else {
-			echo "<link rel=\"stylesheet\" href=\"css/style.css\" type=\"text/css\" />";
+			echo "<link rel=\"stylesheet\" href=\"/css/style.css\" type=\"text/css\" />";
 
 		}
 		
 		if (isset($this->stylesheet)){ 
-			echo "<link rel=\"stylesheet\" href=\"css/$this->stylesheet\" type=\"text/css\" />"; 
+			echo "<link rel=\"stylesheet\" href=\"/css/$this->stylesheet\" type=\"text/css\" />"; 
 		} 
 
 		?>
-		<link rel="shortcut icon" href="images/snap.ico" />
-		<script src="js/jquery.js" type="text/javascript" ></script>
-		<script src="js/site.js" type="text/javascript" ></script>
+		<link rel="shortcut icon" href="/images/snap.ico" />
+		<script src="/js/jquery.js" type="text/javascript" ></script>
+		<script src="/js/site.js" type="text/javascript" ></script>
 		<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"></script>
 		<!--<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.lite.min.js"></script>-->
 		<script type="text/javascript">
@@ -94,9 +95,9 @@ class webPage {
 	public function pageHeader(){ ?>	
 		<!-- <div class="slashbar"></div> -->
 		<div id="header">
-			<a href="index.php"><span id="header_left"><img src="images/snap_acronym_rgb.png" height="90px" alt="SNAP Acronym Logo" /></span></a>
+			<a href="index.php"><span id="header_left"><img src="/images/snap_acronym_rgb.png" height="90px" alt="SNAP Acronym Logo" /></span></a>
 			<div id="header_right">
-				<a href="/"><img src="images/snap_full.png" height="30px" alt="Scenarios Network for Alaska Planning" /></a>
+				<a href="/"><img src="/images/snap_full.png" height="30px" alt="Scenarios Network for Alaska Planning" /></a>
 			</div>
 
 		</div>		
@@ -118,10 +119,10 @@ class webPage {
 				}
 			</script>
 			<div class="horiz_bar_right">	
-				<a class="addthis_button"><img src="images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/></a>
+				<a class="addthis_button"><img src="/images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/></a>
 			</div>
 		</div>
-		<div style="color: #999999; width: 975px; margin: auto; text-align: right; padding-top: 10px;" class="contactbar"><a href="blog.php">blog</a> | <a href="people.php#contact">contact</a> | <a href="sitemap.php">sitemap</a> | <a href="search.php">search</a></div>
+		<div style="color: #999999; width: 975px; margin: auto; text-align: right; padding-top: 10px;" class="contactbar"><a href="/wordpress/">blog</a> | <a href="people.php#contact">contact</a> | <a href="sitemap.php">sitemap</a> | <a href="search.php">search</a></div>
 		<?php
 	}
 	public function pageFooter(){ ?>
@@ -144,35 +145,25 @@ class webPage {
 					</div>
 				</div>
 				<div class="horiz_bar_right">
-					<a class="addthis_button"><img src="images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/></a>
+					<a class="addthis_button"><img src="/images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/></a>
 				</div>
 			</div>
-			<div style="text-align: left; margin-left: 50px;"><img src="images/bottom_bubble.png" alt="Bubble Graphic" /></div>
+			<div style="text-align: left; margin-left: 50px;"><img src="/images/bottom_bubble.png" alt="Bubble Graphic" /></div>
 			<div style="margin-bottom: 20px; ">
 				<div style="float: left; margin-right: 40px;">
-					<div><a href="/"><img src="images/snap_acronym_rgb.png" height="53px" alt="SNAP Acronym Logo" /></a></div>
-					<div class="contactbar"><a href="blog.php">blog</a> | <a href="people.php#contact">contact</a> | <a href="sitemap.php">sitemap</a> | <a href="search.php">search</a></div>
+					<div><a href="/"><img src="/images/snap_acronym_rgb.png" height="53px" alt="SNAP Acronym Logo" /></a></div>
+					<div class="contactbar"><a href="/wordpress/">blog</a> | <a href="people.php#contact">contact</a> | <a href="sitemap.php">sitemap</a> | <a href="search.php">search</a></div>
 				</div>
 				<div style ="float: left; width: 450px; text-align: left; margin-top: 13px;">Copyright &copy; 2011 Scenarios Network for Alaska &amp; Arctic Planning, a research institute of the University of Alaska Fairbanks.  UAF is an affirmative action/equal opportunity employer and educational institution.</div>
-				<div><a href="http://www.uaf.edu"><img src="images/UAFLogo_A_black_horiz.png" height="55px" style="margin-top: 13px;" alt="UAF Logo" /></a></div>
+				<div><a href="http://www.uaf.edu"><img src="/images/UAFLogo_A_black_horiz.png" height="55px" style="margin-top: 13px;" alt="UAF Logo" /></a></div>
 			</div>
 			<div style="height: 50px;"></div>
 		</div>
-	<!-- <div class="slashbar"></div> -->
 	<?php
 	}
 	public function closePage(){
 		?>
 		<?php $this->pageFooter(); ?>
-		<!--
-			<div style="position: fixed; left: 0px; bottom: 20px; color: #006699; width: 100%; text-align: right;" >
-				<?php $page = preg_replace("/\/old\/v\d/", "", $_SERVER['PHP_SELF']); ?>
-				<a href="http://dev.snap.uaf.edu<?php echo $page; ?>" style="color: #006699; font-weight: bold;">Style 1</a> &nbsp;&nbsp;
-				<a href="http://dev.snap.uaf.edu/old/v2/<?php echo basename($_SERVER['PHP_SELF']); ?>" style="color: #006699; font-weight: bold;">Style 2</a> &nbsp;&nbsp;&nbsp;&nbsp;
-				<a href="http://dev.snap.uaf.edu/old/v3/<?php echo basename($_SERVER['PHP_SELF']); ?>" style="color: #006699; font-weight: bold;">Style 3</a> &nbsp;&nbsp;&nbsp;&nbsp;
-				<a href="http://dev.snap.uaf.edu/old/v4/<?php echo basename($_SERVER['PHP_SELF']); ?>" style="color: #006699; font-weight: bold;">Style 4</a> &nbsp;&nbsp;&nbsp;&nbsp;
-			</div>
-		-->
 			</body>
 		</html>
 		<?php
@@ -187,15 +178,15 @@ class webPage {
 		}
 		$menu_options = array(
 					array(
-						array("people.php", "People"),
-						array("blog.php", "Blog"),
-						array("partners.php", "Partners &amp; Affiliates"),
-						array("sustainability.php", "Sustainability"),
+						array("/people.php", "People"),
+						array("/wordpress/", "Blog"),
+						array("/partners.php", "Partners &amp; Affiliates"),
+						array("/sustainability.php", "Sustainability"),
 					), 
 					array(
-						array("maps.php","Map Tool"),
-						array("charts.php","Community Charts"),
-						array("methods.php","Methods")
+						array("/maps.php","Map Tool"),
+						array("/charts.php","Community Charts"),
+						array("/methods.php","Methods")
 					),
 					array(
 						array("label", "Learn about all of SNAP's publications below.  The list can be narrowed by selecting categories and collaborators."),
@@ -204,13 +195,13 @@ class webPage {
 						array("label", "Learn about all of SNAP's projects below.  The list can be narrowed by selecting categories and collaborators."),
 					),
 					array(
-						array("global.php","Global Circulation Models"),
-						array("methods.php","SNAP Methods"),
-						array("derived.php","Derived Data")
+						array("/global.php","Global Circulation Models"),
+						array("/methods.php","SNAP Methods"),
+						array("/derived.php","Derived Data")
 					),
 					array(
-						array("training.php","Training"),
-						array("materials.php","Teaching Materials"),
+						array("/training.php","Training"),
+						array("/materials.php","Teaching Materials"),
 					)
 			);
 		?>
@@ -222,10 +213,11 @@ class webPage {
 					echo "<span style=\"font-size: 13.5px; color: #ffffff; \" >".$menu_options[$menu_choice][$i][1]."</span>";
 				} else {
 					echo "<span><a href=\"".$menu_options[$menu_choice][$i][0]."\" ";
-					$string1 = "/".$menu_options[$menu_choice][$i][0];
+					$string1 = "".$menu_options[$menu_choice][$i][0];
 					$string2 = $_SERVER["REQUEST_URI"];
-					//$string2 = $_SERVER["PHP_SELF"];
-					
+					if (preg_match("/^\/wordpress\/*/", $string2)){
+						$string2 = "/wordpress/";
+					}	
 					if ($string1 == $string2){
 						echo "style=\"color: #ffffff; \"";
 
@@ -278,8 +270,8 @@ class webPage {
 		<div <?php if ($float_side){ echo "style=\"float: $float_side;\""; } ?>>
 			<div class="content_box_title" style="float: left"><?php echo $content_title; ?></div>
 			<div style="float: right; margin: 10px;" class="content_box_nav">
-				<div id="<?php echo $content_id."_prev"; ?>" style="margin: 5px; font-size: 18px; cursor: pointer; cursor: hand; float: left"><img src="images/arrow_left.png" alt="Left Arrow" /></div>
-				<div id="<?php echo $content_id."_next"; ?>" style="margin: 5px; font-size: 18px; cursor: pointer; cursor: hand; float: right"><img src="images/arrow_right.png" alt="Right Arrow" /></div>
+				<div id="<?php echo $content_id."_prev"; ?>" style="margin: 5px; font-size: 18px; cursor: pointer; cursor: hand; float: left"><img src="/images/arrow_left.png" alt="Left Arrow" /></div>
+				<div id="<?php echo $content_id."_next"; ?>" style="margin: 5px; font-size: 18px; cursor: pointer; cursor: hand; float: right"><img src="/images/arrow_right.png" alt="Right Arrow" /></div>
 			</div>
 			<div class="content_box_outer" style="clear: both">
 				<div id="<?php echo $content_id; ?>" class="content_box_inner" style="height: 150px;">

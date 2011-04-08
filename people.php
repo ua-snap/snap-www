@@ -3,7 +3,7 @@ include("template.php");
 $page = new webPage("SNAP: People", "people.css", "about");
 $page->openPage();
 $page->pageHeader();
-
+$page->connectToDatabase();
 $staff_array = array(
 		array(
 			
@@ -37,41 +37,89 @@ $staff_array = array(
 
 
 			<div id="main_content">
-				<div class="subHeader">meet the <img style="vertical-align: middle;" height="55" src="images/people.png" alt="People" /> of SNAP</div>
-
-				<div style="width: 710px; margin: auto;">
-					<div class="staff_photo" style="background-image: url('images/staff_photos/dustin_rice.jpg');" onclick="javascript:showPeopleModalBox('Dustin Rice', 'dustin_rice.jpg' ,'System Administrator', 'drrice', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultricies cursus tellus eu aliquam. Praesent sed erat a nulla egestas iaculis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Curabitur erat dui, sagittis in euismod eget, scelerisque a neque. Praesent vestibulum, risus aliquet laoreet accumsan, odio ante rhoncus sapien, sed euismod risus orci in velit. Nullam lorem dui, pulvinar sit amet dictum euismod, venenatis in est. Aliquam nec purus ut libero porttitor molestie. In tincidunt diam ut mauris rutrum condimentum. Vestibulum aliquet lobortis lectus vitae malesuada. Donec suscipit quam et odio dapibus iaculis. Nulla fringilla aliquam felis in iaculis. Etiam at lorem at lectus egestas condimentum ut quis metus. Curabitur hendrerit posuere condimentum. Sed egestas blandit risus, a interdum dolor venenatis tincidunt. Vivamus tristique nibh tempor lectus aliquam placerat. Fusce sed felis arcu. Pellentesque non leo nisl, ut commodo mauris. Aenean enim augue, semper at volutpat sit amet, mattis a mauris. Pellentesque vehicula, odio id aliquet imperdiet, odio odio lobortis nisl, quis accumsan purus enim vel quam. Donec et dolor magna.  Donec posuere aliquam sem, vel tempor felis consequat in. Curabitur ac ipsum quis est blandit pharetra. In hac habitasse platea dictumst. Duis euismod luctus. ');"></div>
-					<div class="staff_photo" style="background-image: url('images/staff_photos/todd_brinkman.jpg');" onclick="javascript:showPeopleModalBox('Todd Brinkman', 'todd_brinkman.jpg' ,'Researcher', 'tjbrinkman');"></div>
-					<div class="staff_photo" style="background-image: url('images/staff_photos/john_bailey.jpg');" onclick="javascript:showPeopleModalBox('John Bailey', 'john_bailey.jpg' ,'Research Assistant Professor', 'john.bailey');"></div>
-					<div class="staff_photo" style="background-image: url('images/staff_photos/tom_kurkowski.jpg');" onclick="javascript:showPeopleModalBox('Tom Kurkowski','tom_kurkowski.jpg','IS Professional', 'takurkowski');"></div>
-					<div class="staff_photo" style="background-image: url('images/staff_photos/winslow.jpg');"></div>
-				</div>	
+				<div class="subHeader" style="display: inline-block; margin-bottom: 15px;">The People of SNAP</div>
+				<div>Get contact information for individuals below. <a href="#contact">Don't know who you're looking for?</a></div>
+				<div style="width: 900px; margin: auto;">
+					<div style="font-size: 20px; margin-top: 50px; margin-bottom: 30px;">SNAP Leaders</div>
+					<?php
+						$query = "SELECT id, image, title, first, last, position FROM people WHERE organization='1' AND staffgroup='1'";
+						$result = mysql_query($query) or die(mysql_error());
+						$num = 0;
+						while ($row = mysql_fetch_array($result)){
+							/*
+							if ($num < 0){
+								$num = rand(0,20) / 10;
+							} elseif ($num > 0){
+								$num = rand(0,20) / 10 - 2;
+							} else {
+								$num = rand(0,40) / 10 - 2;
+							}
+							*/
+							//echo "<div style=\"-moz-transform: rotate(".$num."deg); -webkit-transform: rotate(".$num."deg); -o-transform: rotate(".$num."deg); width: 33%; display: inline-block;\">";
+							echo "<div style=\"width: 33%; display: inline-block;\">";
+								echo "<div style=\"text-align: center; \"><img alt=\"Photo of ".$row[2]." ".$row[3]." ".$row[4]."\" style=\"padding: 3px; border: 1px solid #6a7173;\" src=\"/images/people/".$row[1]."\" /></div>";
+								echo "<div style=\"font-size: 16px; margin-top: 5px; text-align: center;\">".$row[2]." ".$row[3]." ".$row[4]."</div>";
+								echo "<div style=\"font-size: 14px; margin-top: 5px; text-align: center;\">".$row[5]."</div>";
+							echo "</div>";
+						}
+					?>
+					<div style="font-size: 20px; margin-top: 50px; margin-bottom: 30px;">SNAP Staff</div>
+					<?php
+						$query = "SELECT id, image, title, first, last, position FROM people WHERE organization='1' AND staffgroup='2' OR staffgroup='3' ORDER BY last";
+						$result = mysql_query($query) or die(mysql_error());
+						$num = 0;
+						while ($row = mysql_fetch_array($result)){
+							/*
+							if ($num < 0){
+								$num = rand(0,20) / 10;
+							} elseif ($num > 0){
+								$num = rand(0,20) / 10 - 2;
+							} else {
+								$num = rand(0,40) / 10 - 2;
+							}
+							*/
+							//echo "<div style=\"margin-top: 30px; -moz-transform: rotate(".$num."deg); -webkit-transform: rotate(".$num."deg); -o-transform: rotate(".$num."deg); width: 25%; display: inline-block;\">";
+							echo "<div style=\"margin-top: 30px; width: 25%; display: inline-block;\">";
+								echo "<div style=\"text-align: center; \"><img alt=\"Photo of ".$row[2]." ".$row[3]." ".$row[4]."\" style=\"width: 75%; padding: 3px; border: 1px solid #6a7173;\" src=\"/images/people/".$row[1]."\" /></div>";
+								echo "<div style=\"font-size: 16px; margin-top: 5px; text-align: center;\">".$row[2]." ".$row[3]." ".$row[4]."</div>";
+								echo "<div style=\"font-size: 14px; margin-top: 5px; text-align: center;\">".$row[5]."</div>";
+							echo "</div>";
+						}
+					?>
+					<div style="width: 800px; margin: auto; margin-top: 50px; "><a name="contact"></a>
+						<div style="font-size: 24px;">Contact Us!</div>
+						<div style="font-size: 16px; color: #222222;">
+							<div style="position: relative; margin-top: 20px; height: 20px;">
+								<div style="position: absolute;">Topic</div>
+								<div style="position: absolute; left: 200px">
+									<select style="width: 300px;">
+										<option value="Becoming a SNAP collaborator">Becoming a SNAP collaborator</option>
+										<option value="Questions about the website">Questions about the website</option>
+										<option value="Other">Other</option>
+									</select>
+								</div>
+							</div>
+							<div style="position: relative; margin-top: 20px; height: 20px;">
+								<div style="position: absolute;">Your name</div>
+								<div style="position: absolute; left: 200px"><input style="width: 300px;" name="name" /></div>
+							</div>
+							<div style="position: relative; margin-top: 20px; height: 20px;">
+								<div style="position: absolute;">Your email address</div>
+								<div style="position: absolute; left: 200px"><input style="width: 300px;" name="email" /></div>
+							</div>
+							<div style="position: relative; margin-top: 20px; height: 20px;">
+								<div style="position: absolute;">Subject line</div>
+								<div style="position: absolute; left: 200px"><input style="width: 500px;" name="subject" /></div>
+							</div>
+							<div style="position: relative; margin-top: 20px; height: 300px;">
+								<div style="position: absolute;">Message</div>
+								<div style="position: absolute; left: 200px;"><textarea style="width: 500px; height: 300px;" name="message" ></textarea></div>
+							</div>
+						</div>
+					</div>
+				</div>
 
 <!-- CONTACT SECTION -->
-			<a name="contact"></a>
-			<div style="clear: both; width: 600px; margin: auto; margin-top: 200px;">
-				<form method="post" action="people.php?contact=true">
-					<fieldset style="border: 2px solid #97a93a;">
-					<table style="width: 500px;">
-					<legend>Contact Us</legend>
-					<tr><td style="width: 200px;">Your Email Address: </td><td><input type="text" /></td></tr>
-					<tr><td style="width: 200px;">Question: </td>
-						<td><select>
-							<option>Dataset Questions</option>
-							<option>Methods</option>
-							<option>Website</option>
-							<option>Other</option>
-						</select>
-						</td>
-					</tr>
-					<tr><td>Subject:  </td><td><input type="text" /></td></tr>
-					<tr><td>Question: </td><td><textarea style="width: 400px; height: 150px;" rows="0" cols="0">
-
-					</textarea></td></tr>
-					</table>
-					</fieldset>
-				</form>
-			</div>
 		</div>
 	</div>
 <?php
