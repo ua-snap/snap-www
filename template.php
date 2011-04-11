@@ -141,7 +141,7 @@ class webPage {
 					<!--We just set up this twitter account so now we'll show some tweets right here @twitter, is that how this works? #awkwardfirsttweet-->
 						<div id="twitter_update_list"></div>
 						<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
-						<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/newsminer.json?callback=twitterCallback2&count=1"></script>
+						<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/newsminer.json?callback=twitterCallback2&amp;count=1"></script>
 					</div>
 				</div>
 				<div class="horiz_bar_right">

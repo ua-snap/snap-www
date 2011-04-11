@@ -28,8 +28,8 @@ $page->connectToDatabase();
 				<div>
 					<div style="float: right; width: 400px;">
 						<div><div style="display: inline-block; font-size: 18px;">Partner's &amp; Affiliates</div><div style="margin-left: 120px; display: inline-block; color: #6a7173; font-size: 13px;"><a href="partners.php">view all</a></div></div>
-							<div style="margin-left: 30px; margin-top: 15px;"><img src="images/org_images/accap_rgb.png" /><img src="images/org_images/snras_rgb.png" style="margin-left: 75px;"/></div>
-							<div style="margin-left: 30px; margin-top: 15px;"><img src="images/org_images/uagp_rgb.png"/><img src="images/org_images/AKSeal.gif" style="margin-left: 105px; height: 50px;" /></div>
+							<div style="margin-left: 30px; margin-top: 15px;"><img src="images/collaborators/accap_rgb.png" /><img src="images/collaborators/snras_rgb.png" style="margin-left: 75px;"/></div>
+							<div style="margin-left: 30px; margin-top: 15px;"><img src="images/collaborators/uagp_rgb.png"/><img src="images/collaborators/AKSeal.gif" style="margin-left: 105px; height: 50px;" /></div>
 						<?php
 							/*
 							$query = "SELECT id,name FROM collaborators ORDER BY RAND() LIMIT 5";

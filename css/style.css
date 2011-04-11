@@ -16,6 +16,9 @@ body {
 	height: 100%;
 	width: 100%;
 }
+p {
+	margin-top: 0px;
+}
 a img {
 	margin: 0px;
 	padding: 0px;
@@ -333,6 +336,22 @@ h3 {
 	font-size: 34px; 
 	color: #242d2f; 
 	margin-bottom: 30px;
+}
+.back_button {
+	position: relative;
+	background-color: #848d8f; 
+	font-size: 16px;
+	color: #ffffff;
+	height: 28px;
+	line-height: 28px;
+	text-shadow: 1px 1px #333333;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+	-moz-border-radius-topright: 2px;
+	-moz-border-radius-bottomright: 2px;
+}
+.back_button:hover {
+	background-color: #97a93a;
 }
 form {
 	color: #111111;

@@ -57,9 +57,12 @@ $staff_array = array(
 							*/
 							//echo "<div style=\"-moz-transform: rotate(".$num."deg); -webkit-transform: rotate(".$num."deg); -o-transform: rotate(".$num."deg); width: 33%; display: inline-block;\">";
 							echo "<div style=\"width: 33%; display: inline-block;\">";
-								echo "<div style=\"text-align: center; \"><img alt=\"Photo of ".$row[2]." ".$row[3]." ".$row[4]."\" style=\"padding: 3px; border: 1px solid #6a7173;\" src=\"/images/people/".$row[1]."\" /></div>";
-								echo "<div style=\"font-size: 16px; margin-top: 5px; text-align: center;\">".$row[2]." ".$row[3]." ".$row[4]."</div>";
-								echo "<div style=\"font-size: 14px; margin-top: 5px; text-align: center;\">".$row[5]."</div>";
+								echo "<div style=\"position: relative; text-align: center; width: 200px;\">";
+									echo "<div style=\"text-align: center; \"><img alt=\"Photo of ".$row['title']." ".$row['first']." ".$row['last']."\" style=\"padding: 3px; border: 1px solid #6a7173;\" src=\"/images/people/".$row['image']."\" /></div>";
+									echo "<div style=\"font-size: 16px; margin-top: 5px; text-align: center;\">".$row['title']." ".$row['first']." ".$row['last']."</div>";
+									echo "<div style=\"font-size: 14px; margin-top: 5px; text-align: center;\">".$row['position']."</div>";
+									echo "<a href=\"/people_page.php?id=".$row['id']."\" style=\"position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; padding: 4px;\"></a>";
+								echo "</div>";
 							echo "</div>";
 						}
 					?>
@@ -80,9 +83,12 @@ $staff_array = array(
 							*/
 							//echo "<div style=\"margin-top: 30px; -moz-transform: rotate(".$num."deg); -webkit-transform: rotate(".$num."deg); -o-transform: rotate(".$num."deg); width: 25%; display: inline-block;\">";
 							echo "<div style=\"margin-top: 30px; width: 25%; display: inline-block;\">";
-								echo "<div style=\"text-align: center; \"><img alt=\"Photo of ".$row[2]." ".$row[3]." ".$row[4]."\" style=\"width: 75%; padding: 3px; border: 1px solid #6a7173;\" src=\"/images/people/".$row[1]."\" /></div>";
-								echo "<div style=\"font-size: 16px; margin-top: 5px; text-align: center;\">".$row[2]." ".$row[3]." ".$row[4]."</div>";
-								echo "<div style=\"font-size: 14px; margin-top: 5px; text-align: center;\">".$row[5]."</div>";
+								echo "<div style=\"position: relative; text-align: center; width: 156px;\">";
+									echo "<div style=\"text-align: center; \"><img alt=\"Photo of ".$row['title']." ".$row['first']." ".$row['last']."\" style=\"width: 100%; padding: 3px; border: 1px solid #6a7173;\" src=\"/images/people/".$row['image']."\" /></div>";
+									echo "<div style=\"font-size: 16px; margin-top: 5px; text-align: center;\">".$row['title']." ".$row['first']." ".$row['last']."</div>";
+									echo "<div style=\"font-size: 14px; margin-top: 5px; text-align: center;\">".$row['position']."</div>";
+									echo "<a href=\"/people_page.php?id=".$row['id']."\" style=\"position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; padding: 4px;\"></a>";
+								echo "</div>";
 							echo "</div>";
 						}
 					?>
@@ -94,8 +100,11 @@ $staff_array = array(
 								<div style="position: absolute; left: 200px">
 									<select style="width: 300px;">
 										<option value="Becoming a SNAP collaborator">Becoming a SNAP collaborator</option>
-										<option value="Questions about the website">Questions about the website</option>
-										<option value="Other">Other</option>
+										<option value="Technical data questions">Technical data questions</option>
+										<option value="Our website (report issues, questions about usage)">Our website (report issues, questions about usage)</option>
+										<option value="ALFRESCO fire simulation model">ALFRESCO fire simulation model</option>
+										<option value="SNAP hiring or management">SNAP hiring or management</option>
+										<option value="General inquiry">General inquiry</option>
 									</select>
 								</div>
 							</div>

@@ -10,7 +10,7 @@ function getProjectList(){
 	$result = mysql_query("SELECT title,createdate,summary,id FROM projects ORDER BY createdate DESC");
 	while ($row = mysql_fetch_row($result)){
 		echo "<div style=\"margin-top: 20px; width: 600px;\">";
-			echo "<div style=\"font-size: 20px; color: #6a7173;\"><a href=\"project_view.php?projectid=".$row[3]."\">".$row[0]."</a></div>";
+			echo "<div style=\"font-size: 20px; color: #6a7173;\"><a href=\"project_page.php?projectid=".$row[3]."\">".$row[0]."</a></div>";
 			echo "<div style=\"position: relative; height: 15px; margin-bottom: 5px;\">";
 				echo "<div style=\" position: absolute; font-size: 12px; color: #444444;\">Created: ".$row[1]."</div>";
 				echo "<div style=\"position: absolute; margin-left: 150px; font-size: 12px;\"> Topics: ";
@@ -50,7 +50,7 @@ function getProjectListSpecial($t){
 			echo "<div style=\"width: 440px; height: 110px; overflow: hidden; display: inline-block; margin: 10px; margin-bottom: 30px; position: relative;\">";
 				echo "<div style=\"width: 180px; height: 110px; position: absolute; background-color: gray;\"><img alt=\"".$row[4]."\" src=\"".$row[4]."\" style=\"width: 180px; height: 110px; background-color: gray\" /></div>";
 				echo "<div style=\"position: absolute; left: 190px; width: 250px;\">";
-					echo "<div style=\"font-size: 13px; color: #111111; font-weight: bold; margin-bottom: 5px;\"><a style=\"color: #333333;\" href=\"project_view.php?projectid=".$row[3]."\">".$row[0]."</a></div>";
+					echo "<div style=\"font-size: 13px; color: #111111; font-weight: bold; margin-bottom: 5px;\"><a style=\"color: #333333;\" href=\"project_page.php?projectid=".$row[3]."\">".$row[0]."</a></div>";
 					//echo "<div style=\"\">";
 						/*
 						echo "<div style=\" position: absolute; font-size: 12px; color: #444444;\">Created: ".$row[1]."</div>";
