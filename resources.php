@@ -138,7 +138,6 @@ function getPublicationListSpecial($t){
 		<div id="main_body">
 			<script src="js/jquery.hoverIntent.minified.js" type="text/javascript"></script>
 			<div id="main_content">
-				<!--<div class="subHeader" style="text-align: left;">see what kind of <img style="vertical-align: middle" height="55" src="images/publications.png" /> we're working on</div>-->
 				<div class="subHeader">Publications</div>
 
 
@@ -190,8 +189,8 @@ function getPublicationListSpecial($t){
                                         	$coll_row = mysql_fetch_array($coll_result);
 						echo "<div style=\"float: left; width: 450px; font-size: 15px; margin-bottom: 10px; margin-left: 10px;\">";
 							//echo "<div style=\"color: #444444; display: inline-block; padding-right: 12px; font-weight: bold;\">Collaborators</div>";
-							echo "<div style=\"color: #444444; margin-bottom: 6px; margin-left: 6px; font-weight: bold; display: inline-block\">Collaborators</div><div style=\"display: inline-block; margin-left: 30px;\"><a href=\"publications.php\">Show all</a></div>";
-                                               	//echo "<a href=\"publications.php?tags=".$tag_row[0]."\">".$tag_row[0]."</a>";
+							echo "<div style=\"color: #444444; margin-bottom: 6px; margin-left: 6px; font-weight: bold; display: inline-block\">Collaborators</div><div style=\"display: inline-block; margin-left: 30px;\"><a href=\"resources.php\">Show all</a></div>";
+                                               	//echo "<a href=\"resources.php?tags=".$tag_row[0]."\">".$tag_row[0]."</a>";
 						echo  "<div></div>";
                                         	while ($coll_row = mysql_fetch_array($coll_result)){
 							$colllist = $_GET['coll'];
@@ -223,7 +222,7 @@ function getPublicationListSpecial($t){
 								$colllist = preg_replace("/,$/", "", $colllist);
 							}
 							
-                                                	echo "<a href=\"publications.php?coll=".$colllist."\"><span $collstyle class=\"tag_nav\">".$coll_row[1]."</span></a>";
+                                                	echo "<a href=\"resources.php?coll=".$colllist."\"><span $collstyle class=\"tag_nav\">".$coll_row[1]."</span></a>";
                                         	}
 						echo "</div>";
 						*/
