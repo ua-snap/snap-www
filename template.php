@@ -24,7 +24,7 @@ class webPage {
 			$menu_items = array(
 				array("About","/about.php"),
 				array("Maps &amp; Data","/data.php"),
-				array("Publications","/publications.php"),
+				array("Resources","/resources.php"),
 				array("Projects","/projects.php")
 			);
 			for ($i =0; $i < sizeof($menu_items); $i++){
@@ -41,15 +41,7 @@ class webPage {
 				echo "</div></span>";
 			}
 			echo "<div style=\"clear: both;\"></div>";
-		/*
-			<span <?php if ($_SERVER['PHP_SELF'] == "/about.php" || $this->menu == "about"){ echo "style=\"background-image: url('images/current_arrow.png'); background-repeat: no-repeat; padding-bottom: 9px; \""; }?>><a href="about.php" <?php if ($_SERVER['PHP_SELF'] == "/about.php" || $this->menu == "about"){ echo "style=\"color: #111111\""; }?>>About</a></span>
-			<span <?php if ($_SERVER['PHP_SELF'] == "/data.php" || $this->menu == "data"){ echo "style=\"background-image: url('images/current_arrow.png'); background-repeat: no-repeat; padding-bottom: 9px; \""; }?>><a href="data.php" <?php if ($_SERVER['PHP_SELF'] == "/data.php" || $this->menu == "data"){ echo "style=\"color: #111111\""; }?>>Maps &amp; Data</a></span>
-			<span <?php if ($_SERVER['PHP_SELF'] == "/publications.php" || $this->menu == "publications"){ echo "style=\"background-image: url('images/current_arrow.png'); background-repeat: no-repeat; padding-bottom: 9px; \""; }?>><a href="publications.php" <?php if ($_SERVER['PHP_SELF'] == "/publications.php" || $this->menu == "publications"){ echo "style=\"color: #111111\""; }?>>Publications</a></span>
-			<span <?php if ($_SERVER['PHP_SELF'] == "/projects.php" || $this->menu == "projects"){ echo "style=\"background-image: url('images/current_arrow.png'); background-repeat: no-repeat; padding-bottom: 9px; \""; }?>><a href="projects.php" <?php if ($_SERVER['PHP_SELF'] == "/projects.php" || $this->menu == "projects"){ echo "style=\"color: #111111\""; }?>>Projects</a></span>
-
-			<li <?php if ($_SERVER['PHP_SELF'] == "/methods.php" || $this->menu == "methods"){ echo "style=\"background-image: url('images/current_arrow.png'); background-repeat: no-repeat; padding-bottom: 9px; \""; }?>><a href="methods.php" <?php if ($_SERVER['PHP_SELF'] == "/methods.php" || $this->menu == "methods"){ echo "style=\"color: #111111\""; }?>><span>Methods</span></a></li>
-			<li <?php if ($_SERVER['PHP_SELF'] == "/educators.php" || $this->menu == "educators"){ echo "style=\"background-image: url('images/current_arrow.png'); background-repeat: no-repeat; padding-bottom: 9px; \""; }?>><a href="educators.php"  <?php if ($_SERVER['PHP_SELF'] == "/educators.php" || $this->menu == "educators"){ echo "style=\"color: #111111\""; }?>><span>Educators</span></a></li>
-		*/ ?>
+		 ?>
 
 		</div>
 	<?php 
@@ -169,7 +161,7 @@ class webPage {
 		<?php
 	}
 	public function drawSubMenu($menu_value){
-		$menu_list = array("about", "data", "publications", "projects", "methods", "educators");
+		$menu_list = array("about", "data", "resources", "projects", "methods", "educators");
 		$menu_choice = 0;
 		for ($i = 0; $i < sizeof($menu_list); $i++){
 			if ($menu_value == $menu_list[$i]){
@@ -189,7 +181,7 @@ class webPage {
 						array("/methods.php","Methods")
 					),
 					array(
-						array("label", "Learn about all of SNAP's publications below.  The list can be narrowed by selecting categories and collaborators."),
+						array("label", "Learn about all of SNAP's resources below.  The list can be narrowed by selecting categories and collaborators."),
 					),
 					array(
 						array("label", "Learn about all of SNAP's projects below.  The list can be narrowed by selecting categories and collaborators."),

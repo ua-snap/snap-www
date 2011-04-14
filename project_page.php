@@ -1,6 +1,6 @@
 <?php
 include("template.php");
-$page = new webPage("SNAP: Project", "", "projects");
+$page = new webPage("SNAP: Project", "projects.css", "projects");
 $page->openPage();
 $page->pageHeader();
 $page->connectToDatabase();
@@ -18,22 +18,80 @@ $page->connectToDatabase();
 
 				<div style="width: 950px; margin: auto;">
 					<div style="float: left; width: 520px;">
-						<div style="font-size: 28px; color: #242d2f; margin-left: 20px; margin-bottom: 10px;"><?php echo $project['title']; ?></div>
+						<div style="color: #71797b; margin-left: 20px; font-size: 14px; margin-bottom: 5px;">Project</div>
+						<div style="font-size: 26px; color: #242d2f; margin-left: 20px; margin-bottom: 10px;"><?php echo $project['title']; ?></div>
 						<div style="font-size: 14px; line-height: 20px; color: #242d2f; margin-left: 20px; margin-bottom: 10px;"><?php echo $project['summary']; ?></div>
+
+						<div style="color: #242d2f; margin-left: 20px; font-size: 22px; ">Related Publications</div>
 					</div>
 					<div style="float: right; width: 330px;">
+
 						<div style="line-height: 20px;">
-							<div style="font-weight: bold; color: #6a7173;">Collaborators</div>
-							<div style="">
+
 							<?php 
-								$query = "SELECT collaborators.id,collaborators.name,collaborators.image FROM collaborators JOIN project_collaborators ON collaborators.id=project_collaborators.collaboratorid WHERE project_collaborators.projectid='".$_GET['projectid']."'";
+								$query = "SELECT collaborators.id,collaborators.name,collaborators.image FROM collaborators JOIN project_collaborators ON collaborators.id=project_collaborators.collaboratorid WHERE project_collaborators.projectid='".$_GET['projectid']."' ";
 
 								$result = mysql_query($query);
-								while ($collab = mysql_fetch_array($result)){
-									echo "<div>".$collab['name']."</div>";
+								$result = mysql_query($query) or die (mysql_error());
+								if (mysql_num_rows($result) > 0){
+									echo "<div style=\"font-weight: bold; color: #6a7173; margin-top: 30px; margin-bottom: 10px;\">Collaborators</div>";
+									echo "<div>";
+									while ($collab = mysql_fetch_array($result)){
+										echo "<div style=\"display: inline-block; margin-right: 5px; vertical-align: top \">";
+											$size = getimagesize("images/collaborators/".$collab['image']);
+											$width = $size[0];
+											$height = $size[1];
+											$ratio = $width / ($height / 75);
+											if ($ratio < 75){
+												$ratio = 75;
+											}
+											//echo "<div style=\"width: 150px; margin-bottom: 15px; text-align: left; font-size: 12px;\">".$collab['name']."</div>";
+											echo "<div style=\"height: 150px; width: 150px;\">";
+
+												echo "<img alt=\"".$collab['name']."\" src=\"/images/collaborators/".$collab['image']."\" style=\"width: 150px; vertical-align: middle;\" />";
+											echo "</div>";
+										echo "</div>";
+									}
+									echo "</div>";
 								}
 							?>
-							</div>
+						</div>
+						<div>
+
+							<?php
+								$query = "SELECT people.id, title, first, last, organization FROM people JOIN project_personnel ON people.id = project_personnel.peopleid WHERE project_personnel.projectid = '".$project['id']."' AND scientist=true";
+								$result = mysql_query($query) or die (mysql_error());
+								if (mysql_num_rows($result) > 0){
+									echo "<div style=\"font-weight: bold; color: #6a7173; margin-top: 30px;\">Primary Scientists</div>";
+									echo "<div>";
+									while ($sci = mysql_fetch_array($result)){
+										$fullname = $sci['title']." ".$sci['first']." ".$sci['last'];
+										echo "<div style=\"margin-top: 5px;\"><a href=\"people_page.php?id=".$sci['id']."\">".$fullname."</a> (".$sci['organization'].")</div>";
+									}
+									echo "</div>";
+								}
+							?>
+						</div>
+						<div>
+							<?php
+								$query = "SELECT people.id, title, first, last, email, phone FROM people JOIN project_personnel ON people.id = project_personnel.peopleid WHERE project_personnel.projectid = '".$project['id']."' AND contact=true";
+								$result = mysql_query($query) or die (mysql_error());
+								if (mysql_num_rows($result) > 0){
+									echo "<div style=\"font-weight: bold; color: #6a7173; margin-top: 30px;\">Contacts</div>";
+									echo "<div>";
+									while ($con = mysql_fetch_array($result)){
+
+										$fullname = $con['title']." ".$con['first']." ".$con['last'];
+										echo "<div style=\"margin-bottom: 15px;\">";
+										echo "<div style=\"margin-top: 5px;\"><a href=\"people_page.php?id=".$con['id']."\">".$fullname."</a></div>";
+
+										echo "<div style=\"margin-top: 5px;\"><a href=\"\">".$con['email']."</a></div>";
+										echo "<div style=\"margin-top: 5px;\">".preg_replace("/(\d{3})(\d{3})(\d{4})/", "($1) $2-$3", $con['phone'])."</div>";
+										echo "</div>";
+									}
+									echo "</div>";
+								}
+							?>
 						</div>
 					</div>
 				</div>

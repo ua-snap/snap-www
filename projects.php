@@ -119,7 +119,7 @@ function getProjectListSpecial($t){
                                                 	echo "<a href=\"projects.php?tags=".$taglist."\"><span $tagstyle class=\"tag_nav\">".$tagselect.$tag_row[0]."</span></a>";
                                         	}
 						echo "</div>";
-
+						/*
 						$tag_result = mysql_query("SELECT collaboratorid,project_collaborators.projectid,collaborators.name FROM project_collaborators LEFT JOIN collaborators ON collaborators.id=project_collaborators.collaboratorid GROUP BY collaboratorid");
                                         	//$tag_row = mysql_fetch_array($tag_result);
 						echo "<div style=\"width: 450px; font-size: 15px; float: left; margin-left: 10px;\">";
@@ -128,6 +128,7 @@ function getProjectListSpecial($t){
                                                 	echo "<a href=\"projects.php?collaborators=".$tag_row[0]."\"><div class=\"tag_nav\">".$tag_row[2]."</div></a>";
                                         	}
 						echo "</div>";
+						*/
 					?>
 					<div style="height: 50px; clear: both"></div>
 					<?php 

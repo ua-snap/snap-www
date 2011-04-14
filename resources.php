@@ -1,6 +1,6 @@
 <?php
 include("template.php");
-$page = new webPage("SNAP: Publications", "publications.css", "publications");
+$page = new webPage("SNAP: Publications", "resources.css", "resources");
 $page->openPage();
 $page->pageHeader();
 $page->connectToDatabase();
@@ -148,7 +148,7 @@ function getPublicationListSpecial($t){
 						$tag_result = mysql_query("SELECT tag FROM publication_tags GROUP BY tag");
                                         	$tag_row = mysql_fetch_array($tag_result);
 						echo "<div style=\"width: 450px; font-size: 15px; float: left; margin-bottom: 10px;\">\n";
-							echo "<div style=\"color: #444444; margin-bottom: 6px; margin-left: 6px; font-weight: bold; display: inline-block\">Categories</div><div style=\"display: inline-block; margin-left: 30px;\"><a href=\"publications.php\">Show all</a></div>";
+							echo "<div style=\"color: #444444; margin-bottom: 6px; margin-left: 6px; font-weight: bold; display: inline-block\">Categories</div><div style=\"display: inline-block; margin-left: 30px;\"><a href=\"resources.php\">Show all</a></div>";
 							echo "<div></div>";
                                         	while ($tag_row = mysql_fetch_array($tag_result)){
 							$taglist = $_GET['tags'];
@@ -180,10 +180,11 @@ function getPublicationListSpecial($t){
 								$taglist = preg_replace("/^,/", "", $taglist);
 								$taglist = preg_replace("/,$/", "", $taglist);
 							}
-                                                	echo "<a href=\"publications.php?tags=".$taglist."\"><span $tagstyle class=\"tag_nav\">".$tagselect.$tag_row[0]."</span></a>";
+                                                	echo "<a href=\"resources.php?tags=".$taglist."\"><span $tagstyle class=\"tag_nav\">".$tagselect.$tag_row[0]."</span></a>";
                                         	}
 						echo "</div>";
 						//Collaborators
+						/*
 						$coll_query = "SELECT collaborators.id,collaborators.name FROM collaborators LEFT JOIN publication_collaborators ON collaborators.id=publication_collaborators.collaboratorid GROUP BY collaboratorid";
 						$coll_result = mysql_query($coll_query);
                                         	$coll_row = mysql_fetch_array($coll_result);
@@ -225,6 +226,7 @@ function getPublicationListSpecial($t){
                                                 	echo "<a href=\"publications.php?coll=".$colllist."\"><span $collstyle class=\"tag_nav\">".$coll_row[1]."</span></a>";
                                         	}
 						echo "</div>";
+						*/
 					?>
 
 					<div style="width: 900px; clear: both; height: 1px;"></div>

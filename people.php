@@ -42,7 +42,7 @@ $staff_array = array(
 				<div style="width: 900px; margin: auto;">
 					<div style="font-size: 20px; margin-top: 50px; margin-bottom: 30px;">SNAP Leaders</div>
 					<?php
-						$query = "SELECT id, image, title, first, last, position FROM people WHERE organization='1' AND staffgroup='1'";
+						$query = "SELECT id, image, title, first, last, position FROM people WHERE snap='1' AND staffgroup='1'";
 						$result = mysql_query($query) or die(mysql_error());
 						$num = 0;
 						while ($row = mysql_fetch_array($result)){
@@ -68,7 +68,7 @@ $staff_array = array(
 					?>
 					<div style="font-size: 20px; margin-top: 50px; margin-bottom: 30px;">SNAP Staff</div>
 					<?php
-						$query = "SELECT id, image, title, first, last, position FROM people WHERE organization='1' AND staffgroup='2' OR staffgroup='3' ORDER BY last";
+						$query = "SELECT id, image, title, first, last, position FROM people WHERE snap='1' AND staffgroup='2' OR staffgroup='3' ORDER BY last";
 						$result = mysql_query($query) or die(mysql_error());
 						$num = 0;
 						while ($row = mysql_fetch_array($result)){
