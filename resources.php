@@ -1,6 +1,6 @@
 <?php
 include("template.php");
-$page = new webPage("SNAP: Publications", "resources.css", "resources");
+$page = new webPage("SNAP: Resources", "resources.css", "resources");
 $page->openPage();
 $page->pageHeader();
 $page->connectToDatabase();
@@ -67,7 +67,7 @@ function getPublicationListSpecial($t){
 					echo "<img alt=\"".$pubImages[$pubType -1]."\" src=\"images/".$pubImages[$pubType -1]."\" style=\"margin-left: 5px;\" />";
 				echo "</div>";
 				echo "<div style=\"position: relative;; left: 59px; width: 380px; ;\">";
-					echo "<div style=\"font-size: 15px; color: #111111; font-weight: bold; margin-top: 5px; margin-bottom: 5px;\" ><a style=\"color: #333333;\" href=\"publication_view.php?publicationid=".$row[2]."\">".$row[0]."</a></div>";
+					echo "<div style=\"font-size: 15px; color: #111111; font-weight: bold; margin-top: 5px; margin-bottom: 5px;\" ><a style=\"color: #333333;\" href=\"resource_page.php?resourceid=".$row[2]."\">".$row[0]."</a></div>";
 					echo "<div style=\"position: relative; width: 420px; margin-bottom: 10px;\"></div>";
 					$query_tags = "SELECT tag FROM publication_tags WHERE publicationid='".$row[2]."'";
 					$result_tags = mysql_query($query_tags);
@@ -90,7 +90,7 @@ function getPublicationListSpecial($t){
 			echo "<img alt=\"".$pubImages[$pubType -1]."\" src=\"images/".$pubImages[$pubType -1]."\" style=\"\" />";
 			echo "</div>";
 			echo "<div style=\"position: absolute; padding-top: 6px; left: 60px; width: 380px;\">";
-				echo "<div style=\"font-size: 15px; color: #111111; font-weight: bold; margin-bottom: 5px;\" ><a style=\"color: #333333;\" href=\"publication_view.php?publicationid=".$row[2]."\">".$row[0]."</a></div>";
+				echo "<div style=\"font-size: 15px; color: #111111; font-weight: bold; margin-bottom: 5px;\" ><a style=\"color: #333333;\" href=\"resource_page.php?resourceid=".$row[2]."\">".$row[0]."</a></div>";
 			echo "</div>";
 
 
@@ -138,7 +138,7 @@ function getPublicationListSpecial($t){
 		<div id="main_body">
 			<script src="js/jquery.hoverIntent.minified.js" type="text/javascript"></script>
 			<div id="main_content">
-				<div class="subHeader">Publications</div>
+				<div class="subHeader">Resources</div>
 
 
 

@@ -15,7 +15,7 @@ $page->connectToDatabase();
 				<div style="width: 500px; float: left;">
 					<p style="font-size: 17px; line-height: 24px;">How will the land, resources, industry, infrastructure, and communities of the far north change by 2030?  By 2050?  By the end of this century?  Will permafrost thaw and glaciers disappear?  Will wildfire put us at risk?  Which coastal areas will be lost?  How will wildlife adapt?  Will farmers enjoy a heyday?  Will insect pests spread?</p>
 					<p style="font-size: 14px; line-height: 20px;"><strong>There are no simple answers to these questions.</strong> The future of Alaska and the Arctic – like all futures – is uncertain.  Directional shifts in climate are overlaid with variability in day-to-day and year-to-year weather regimes.  Some changes will occur gradually, while other shifts are likely to be more radical, once tipping points are crossed.  Our own choices, actions, and adaptations will affect the patterns of change.</p>
-					<p style="font-size: 14px; line-height: 20px;"><strong>SNAP’s role is not to predict a single future</strong>, but rather to use state-of-the-art modeling techniques, the best available <a href="data.php">data</a>, and the expertise of all of our <a href="partners.php">partners and collaborators</a> to explore a range of future scenarios that are plausible, divergent, challenging, and relevant to the needs of land managers, community planners, businesses, and individuals.</p>
+					<p style="font-size: 14px; line-height: 20px;"><strong>SNAP’s role is not to predict a single future</strong>, but rather to use state-of-the-art modeling techniques, the best available <a href="data.php">data</a>, and the expertise of all of our <a href="collaborators.php">partners and collaborators</a> to explore a range of future scenarios that are plausible, divergent, challenging, and relevant to the needs of land managers, community planners, businesses, and individuals.</p>
 				</div>
 				<div style="width: 400px; float: right;">
 					<div>
@@ -27,7 +27,7 @@ $page->connectToDatabase();
 				<div style="clear: both; width: 100%; height: 30px;"></div>
 				<div>
 					<div style="float: right; width: 400px;">
-						<div><div style="display: inline-block; font-size: 18px;">Partner's &amp; Affiliates</div><div style="margin-left: 120px; display: inline-block; color: #6a7173; font-size: 13px;"><a href="partners.php">view all</a></div></div>
+						<div><div style="display: inline-block; font-size: 18px;">Collaborators</div><div style="margin-left: 120px; display: inline-block; color: #6a7173; font-size: 13px;"><a href="collaborators.php">view all</a></div></div>
 							<div style="margin-left: 30px; margin-top: 15px;"><img src="images/collaborators/accap_rgb.png" /><img src="images/collaborators/snras_rgb.png" style="margin-left: 75px;"/></div>
 							<div style="margin-left: 30px; margin-top: 15px;"><img src="images/collaborators/uagp_rgb.png"/><img src="images/collaborators/AKSeal.gif" style="margin-left: 105px; height: 50px;" /></div>
 						<?php

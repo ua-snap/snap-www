@@ -27,11 +27,12 @@ a img {
 a:link {
         color: #97a93a;
         color: #336699;
+        color: #0066cc;
         text-decoration: none;
 }
 a:visited {
         color: #97a93a;
-        color: #336699;
+        color: #0066cc;
         text-decoration: none;
 }
 a:hover {
