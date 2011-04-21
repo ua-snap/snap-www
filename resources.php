@@ -9,6 +9,7 @@ $tag_array = split(",", $_GET['tags']);
 $coll_array;
 $coll_array = split(",", $_GET['coll']);
 $pubImages = array ( "pub_paper.png", "pub_report.png", "pub_presentation.png", "pub_video.png");
+$resTypes = array ( "Paper", "Report", "Presentation", "Video");
 function getPublicationList(){
 	$result = mysql_query("SELECT title,createdate,summary,id FROM publications ORDER BY createdate DESC");
 	while ($row = mysql_fetch_row($result)){
