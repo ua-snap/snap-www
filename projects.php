@@ -47,8 +47,8 @@ function getProjectListSpecial($t){
 	$result = mysql_query($query) or die(mysql_error());
 	while ($row = mysql_fetch_row($result)){
 		if ($row[5] == $countsize || $countsize == 1){
-			echo "<div style=\"width: 440px; height: 110px; overflow: hidden; display: inline-block; margin: 10px; margin-bottom: 30px; position: relative;\">";
-				echo "<div style=\"width: 180px; height: 110px; position: absolute; background-color: gray;\"><img alt=\"".$row[4]."\" src=\"".$row[4]."\" style=\"width: 180px; height: 110px; background-color: gray\" /></div>";
+			echo "<div style=\"width: 440px; height: 120px; overflow: hidden; display: inline-block; margin: 10px; margin-bottom: 30px; position: relative;\">";
+				echo "<div style=\"width: 174px; height: 110px; position: absolute; \"><img alt=\"".$row[4]."\" src=\"".$row[4]."\" style=\"border: 1px solid #6a7173; padding: 3px; width: 174px; height: 110px; \" /></div>";
 				echo "<div style=\"position: absolute; left: 190px; width: 250px;\">";
 					echo "<div style=\"font-size: 13px; color: #111111; margin-bottom: 5px;\"><a href=\"project_page.php?projectid=".$row[3]."\">".$row[0]."</a></div>";
 					//echo "<div style=\"\">";

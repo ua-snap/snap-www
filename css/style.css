@@ -264,26 +264,16 @@ a:hover {
 	padding-left: 25px;
 	margin: auto;
 	font-size: 20px;
-	height: 55px;
+	height: 48px;
+	margin-top: 40px;
 }
-.menu span {
-	float: left;
-	padding-top: 13px;
-}
-	
-.menu span a {
-	padding: 0 20px;
-	margin: 0px;
-	float: left;
-	margin: 0px;
-}
-.menu span a:link {
+.menu div a:link {
 	color: #6a7173;
 }
-.menu span a:visited {
+.menu div a:visited {
 	color: #6a7173;
 }
-.menu span a:hover {
+.menu div a:hover {
 	color: #999999;
 }
 h1 {

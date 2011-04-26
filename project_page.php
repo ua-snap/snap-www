@@ -22,12 +22,14 @@ $page->connectToDatabase();
 						<div style="font-size: 26px; color: #242d2f; margin-left: 20px; margin-bottom: 10px;"><?php echo $project['title']; ?></div>
 						<div style="font-size: 14px; line-height: 20px; color: #242d2f; margin-left: 20px; margin-bottom: 10px;"><?php echo $project['summary']; ?></div>
 
-						<div style="color: #242d2f; margin-left: 20px; font-size: 22px; ">Related Publications</div>
+						<!--<div style="color: #242d2f; margin-left: 20px; font-size: 22px; ">Related Publications</div>-->
 					</div>
 					<div style="float: right; width: 330px;">
 
 						<div style="line-height: 20px;">
-
+							<div>
+								<img src="<?php echo $project['image']; ?>" style="width: 95%; border: 1px solid #6a7173; padding: 3px;" />
+							</div>
 							<?php 
 								$query = "SELECT collaborators.id,collaborators.name,collaborators.image FROM collaborators JOIN project_collaborators ON collaborators.id=project_collaborators.collaboratorid WHERE project_collaborators.projectid='".$_GET['projectid']."' ";
 

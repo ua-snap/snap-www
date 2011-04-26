@@ -27,18 +27,35 @@ class webPage {
 				array("Resources","/resources.php"),
 				array("Projects","/projects.php")
 			);
+			//for ($i =0; $i < sizeof($menu_items); $i++){
+				//$x = preg_replace("/(\w+).*/", "$1", $menu_items[$i][1]);
+				//echo $this->menu." - ".$x;
+			//	echo "<span style=\"margin-bottom:17px;\"><span style=\"height: 20px;\"><a ";
+			//		if (("/".basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || "/".$this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
+			//			echo "style=\"color: black;\"";
+			//		}
+			//		echo " href=\"".$menu_items[$i][1]."\" >".$menu_items[$i][0]."</a></span><div style=\"text-align: center; height: 10px;\" >";
+			//		if (("/".basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || "/".$this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
+			//			echo "<img alt=\"Current Selection\" src=\"/images/current_arrow.png\" />";
+			//		}
+			//	echo "</div></span>";
+			//}
+			//echo "<div style=\"clear: both;\"></div>";
 			for ($i =0; $i < sizeof($menu_items); $i++){
 				$x = preg_replace("/(\w+).*/", "$1", $menu_items[$i][1]);
 				//echo $this->menu." - ".$x;
-				echo "<span style=\"margin-bottom:17px;\"><span style=\"height: 20px;\"><a ";
+				//echo "<span style=\"margin-bottom:17px;\"><span style=\"height: 20px;\"><a ";
+				echo "<div style=\"display: inline-block; float: left; height: 48px; position: relative; margin-right: 20px; margin-left: 20px;\">";
+					echo "<div><a ";
 					if (("/".basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || "/".$this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
 						echo "style=\"color: black;\"";
 					}
-					echo " href=\"".$menu_items[$i][1]."\" >".$menu_items[$i][0]."</a></span><div style=\"text-align: center; height: 10px;\" >";
+					echo " href=\"".$menu_items[$i][1]."\" >".$menu_items[$i][0]."</a></div><div style=\"text-align: center; \" >";
 					if (("/".basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || "/".$this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
-						echo "<img alt=\"Current Selection\" src=\"/images/current_arrow.png\" />";
+						echo "<img alt=\"Current Selection\" src=\"/images/current_arrow.png\" style=\"vertical-align: bottom;\" />";
 					}
-				echo "</div></span>";
+					echo "</div>";
+				echo "</div>";
 			}
 			echo "<div style=\"clear: both;\"></div>";
 		 ?>
@@ -172,8 +189,8 @@ class webPage {
 					array(
 						array("/people.php", "People"),
 						array("/blog/", "Blog"),
-						array("/collaborators.php", "Collaborators"),
-						array("/sustainability.php", "Sustainability"),
+						array("/collaborators.php", "Collaborators")
+						//array("/sustainability.php", "Sustainability"),
 					), 
 					array(
 						array("/maps.php","Map Tool"),
