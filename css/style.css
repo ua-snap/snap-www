@@ -24,6 +24,12 @@ a img {
 	padding: 0px;
 	border: 0px;
 }
+a {
+        color: #97a93a;
+        color: #336699;
+        color: #0066cc;
+        text-decoration: none;
+}
 a:link {
         color: #97a93a;
         color: #336699;
@@ -351,7 +357,7 @@ form {
 input {
 	border: 1px solid #6a7173;
 	background-color: #eeeeee;
-	font-size: 16px;
+	font-size: 13px;
 }
 select {
 	border: 1px solid #6a7173;

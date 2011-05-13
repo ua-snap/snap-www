@@ -94,7 +94,7 @@ function getProjectListSpecial($t){
 							for ($i = 0; $i < sizeof($tag_array); $i++){
 								if ($tag_array[$i] == $tag_row[0]){
 									$tagstyle = "style=\"background-color: #97a93a;\"";
-									$tagselect = "<span class=\"tag_x\" >&#8855;</span>";
+									//$tagselect = "<span class=\"tag_x\" >&#8855;</span>";
 								}
 								if ($tag_row[0] == $tag_array[$i]){
 									$tagflag = 1;

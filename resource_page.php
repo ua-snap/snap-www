@@ -27,7 +27,7 @@ $resourceid = $_GET['resourceid'];
 						<?php
 							$att_query = "SELECT * FROM attachments WHERE resourceid='$resourceid' ORDER BY category, id";
 							$att_result = mysql_query($att_query);
-							echo "<div style=\"color: #242d2f; margin-left: 20px; font-size: 22px; \">Attachments</div>";
+							echo "<div style=\"color: #242d2f; margin-left: 20px; font-size: 22px; \">Downloads</div>";
 							echo "<div style=\"margin-left: 20px;\">";
 							$sizes = array(" Bytes", " KB", " MB", " GB", " TB", " PB", " EB", " ZB", " YB");
 							$category;
@@ -57,8 +57,47 @@ $resourceid = $_GET['resourceid'];
 						<div style="line-height: 20px;">
 
 							<?php 
-								$query = "SELECT collaborators.id,collaborators.name,collaborators.image FROM collaborators JOIN project_collaborators ON collaborators.id=project_collaborators.collaboratorid WHERE project_collaborators.projectid='".$_GET['projectid']."' ";
+								$query = "SELECT collaborators.id,collaborators.name,collaborators.image FROM collaborators JOIN publication_collaborators ON collaborators.id=publication_collaborators.collaboratorid WHERE publication_collaborators.publicationid='".$_GET['resourceid']."' ";
 
+
+								$result = mysql_query($query);
+								$result = mysql_query($query) or die (mysql_error());
+								if (mysql_num_rows($result) > 0){
+									echo "<div style=\"font-weight: bold; color: #6a7173; margin-top: 30px; margin-bottom: 10px;\">Collaborators</div>";
+									echo "<div>";
+									while ($collab = mysql_fetch_array($result)){
+										$size = getimagesize("images/collaborators/".$collab['image']);
+										$width = $size[0];
+										$height = $size[1];
+										//echo $width." ".$height;
+										if ($width > $height){
+											$w = 100;
+											$h = ($height * (100 / $width));
+										} else {
+											$h = 100;
+											$w = ($width * (100 / $height));
+										}
+										$h .= "px";
+										$w .= "px";
+										//echo "<div style=\"display: inline-block; width: 80px; height: 80px; margin-right: 25px; margin-left: 25px; text-align: center;\"><a href=\"#org_".$row['id']."\"><img style=\"vertical-align: middle; width: $w; height: $h;\" src=\"images/collaborators/".$row['image']."\"  /></a></div>";
+										echo "<div style=\"display: inline-block; margin-right: 15px; margin-bottom: 15px; margin-top: 15px; \">";
+										//	$size = getimagesize("images/collaborators/".$collab['image']);
+										//	$width = $size[0];
+										//	$height = $size[1];
+										//	$ratio = $width / ($height / 75);
+										//	if ($ratio < 75){
+										//		$ratio = 75;
+										//	}
+											//echo "<div style=\"width: 150px; margin-bottom: 15px; text-align: left; font-size: 12px;\">".$collab['name']."</div>";
+											echo "<div style=\"height: 100px; width: 150px; text-align: center;\">";
+
+												echo "<a href=\"collaborators.php#org_".$collab['id']."\"><img alt=\"".$collab['name']."\" src=\"/images/collaborators/".$collab['image']."\" style=\"width: $w; height: $h; vertical-align: middle;\" /></a>";
+											echo "</div>";
+										echo "</div>";
+									}
+									echo "</div>";
+								}
+								/*
 								$result = mysql_query($query);
 								$result = mysql_query($query) or die (mysql_error());
 								if (mysql_num_rows($result) > 0){
@@ -97,7 +136,9 @@ $resourceid = $_GET['resourceid'];
 										echo "<div style=\"margin-top: 5px;\"><a href=\"people_page.php?id=".$sci['id']."\">".$fullname."</a> (".$sci['organization'].")</div>";
 									}
 									echo "</div>";
+					
 								}
+					*/
 							?>
 						</div>
 						<div>

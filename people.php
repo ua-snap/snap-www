@@ -95,10 +95,11 @@ $staff_array = array(
 					<div style="width: 800px; margin: auto; margin-top: 50px; "><a name="contact"></a>
 						<div style="font-size: 24px;">Contact Us!</div>
 						<div style="font-size: 16px; color: #222222;">
+						<form method="post" action="contact.php">
 							<div style="position: relative; margin-top: 20px; height: 20px;">
 								<div style="position: absolute;">Topic</div>
 								<div style="position: absolute; left: 200px">
-									<select style="width: 300px;">
+									<select style="width: 300px;" name="topic">
 										<option value="Becoming a SNAP collaborator">Becoming a SNAP collaborator</option>
 										<option value="Technical data questions">Technical data questions</option>
 										<option value="Our website (report issues, questions about usage)">Our website (report issues, questions about usage)</option>
@@ -124,6 +125,11 @@ $staff_array = array(
 								<div style="position: absolute;">Message</div>
 								<div style="position: absolute; left: 200px;"><textarea style="width: 500px; height: 300px;" name="message" ></textarea></div>
 							</div>
+							<div style="position: relative; margin-top: 20px; height: 300px;">
+								<div style="position: absolute;">Submit</div>
+								<div style="position: absolute; left: 200px;"><input type="submit" name="submit" value="Send Email" /></div>
+							</div>
+							</form>
 						</div>
 					</div>
 				</div>

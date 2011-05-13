@@ -8,7 +8,7 @@ $page->connectToDatabase();
 		<div id="main_body">
 			<div id="main_content">
 				<div class="subHeader" style="margin-bottom: 10px;">Collaborators</div>
-				<div style="margin-bottom: 20px;width: 500px; line-height: 22px;">We are building a powerful collaborative network of key scientific, social and economic institutions from around the world, applying the combined expertise towards a better understanding of the future dynamics of the Arctic.  <a href="people.php#contact">Contact us</a> if you are interested in joining or utilizing SNAP.</div>
+				<div style="font-size: 15px;margin-bottom: 20px;width: 500px; line-height: 22px;"><img src="images/snap_small.png" style="vertical-align: middle; height: 20px;" /> <span style="color: #6a7173; font-weight: bold;"></span> and <img src="images/accap_small.png" style="vertical-align: middle;" /> <span style="color: #336798; font-weight: bold;"></span> are building a powerful collaborative network of key scientific, social and economic institutions from around the world, applying the combined expertise towards a better understanding of the future dynamics of the Arctic.  <a href="people.php#contact">Contact us</a> if you are interested in joining or utilizing SNAP.</div>
 				<div>	
 				<?php
 					$query = "SELECT * FROM collaborators ORDER BY name";
@@ -44,6 +44,9 @@ $page->connectToDatabase();
 								<div style="margin-top: 5px; margin-bottom: 5px; color: #6a7173; font-size: 14px;"><?php echo $row['city'].", ".$row['state']." ".$row['country']; ?></div>
 								<div style="font-size: 14px;"><a href="<?php echo $row['website']; ?>">go to their website</a></div>
 								<?php 
+								if ($row['description']){
+									echo "<div style=\"font-size: 16px; margin-top: 5px;\">".$row['description']."</div>";
+								}
 									$proj_query = "SELECT * FROM projects JOIN project_collaborators ON projects.id = project_collaborators.projectid WHERE project_collaborators.collaboratorid = '".$row['id']."'";
 									$proj_result = mysql_query($proj_query);
 									if (mysql_num_rows($proj_result) > 0){
