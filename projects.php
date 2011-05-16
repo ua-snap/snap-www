@@ -28,23 +28,56 @@ function getProjectList(){
 	}
 }
 function getProjectListSpecial($t){
-	//echo "<div style=\"font-size: 30px; color: #97a93a\">".$t."</div>";
 	global $tag_array;
 	$projtag = "";
-	if ($t){
-		$projtag = "WHERE ";
-		for ($i = 0; $i < sizeof($tag_array); $i++){
-			if ($i > 0){
-				$projtag .= " OR ";
-			}
-			$projtag .= "project_tags.tag = '".$tag_array[$i]."'";
+	if ((isset($_GET['tags']) && $_GET['tags'] != NULL) || (isset($_GET['collab']) && $_GET['collab'] != NULL)){
+		$adds = "WHERE ";
+	}
+	if (isset($_GET['tags']) && $_GET['tags'] != NULL){
+		$projtag = "pt.tag = '".$_GET['tags']."'";
+	}
+	if (isset($_GET['collab']) && $_GET['collab'] != NULL){
+		$collab = "";
+		if ((isset($_GET['tags']) && $_GET['tags'] != NULL)){
+			$collab = " AND ";
 		}
-	}	
+		$collab .= " pc.collaboratorid = '".$_GET['collab']."'";
+	}
+	//echo "<div style=\"font-size: 30px; color: #97a93a\">".$t."</div>";
 	$countsize = sizeof($tag_array);
 	//$query = "SELECT distinct(title),createdate,summary,projects.id FROM project_tags RIGHT JOIN projects ON project_tags.projectid=projects.id $projtag ORDER BY createdate DESC";
-	$query = "SELECT title, createdate, summary, projects.id, image, count(projects.id) FROM projects JOIN project_tags ON projects.id = project_tags.projectid $projtag GROUP BY id";
+	$order = "ORDER BY proj.createdate";
+	if ($_GET['sort'] == "oldest"){
+		$order = "ORDER BY proj.createdate DESC";
+	}
+	$query = "SELECT title, createdate, summary, proj.id, image FROM projects AS proj LEFT JOIN project_tags AS pt ON proj.id = pt.projectid LEFT JOIN project_collaborators AS pc ON proj.id = pc.projectid $adds $projtag $collab GROUP BY id $order";
 	//echo $query;
 	$result = mysql_query($query) or die(mysql_error());
+	if (mysql_num_rows($result) < 1){
+		echo "<div style=\"font-size: 16px;\">There are no results for the criteria you selected.</div>";
+	} else {
+		echo "<div><span>Displaying ".mysql_num_rows($result)." result";
+		if (mysql_num_rows($result) > 1){
+			echo "s";
+		}
+		echo "</span>";
+		echo "<span style=\"margin-left: 50px;\"> Sort by ";
+		$tagline = "";
+		$getflag = false;
+		if ($_GET['tags'] != NULL){ $tagline .= "tags=".$_GET['tags']."&"; $getflag = true; }
+		if ($_GET['collab'] != NULL){ $tagline .= "collab=".$_GET['collab']."&"; $getflag = true; }
+		$tagline = preg_replace("/(.*)&$/", "$1", $tagline);
+
+			if ($_GET['sort'] == "oldest"){
+				if ($tagline == "" && $getflag == true){ $tagline .= "&"; }
+				echo "<a href=\"/projects.php?$tagline\">Newest First</a> | Oldest First";
+			} else {
+				if ($tagline != "" && $getflag == true){ $tagline .= "&"; }
+				echo "Newest First | <a href=\"/projects.php?$tagline"."sort=oldest\">Oldest First</a>";
+			}
+		echo "</span>"; 
+		echo "</div>";
+	}
 	while ($row = mysql_fetch_row($result)){
 		if ($row[5] == $countsize || $countsize == 1){
 			echo "<div style=\"width: 440px; height: 120px; overflow: hidden; display: inline-block; margin: 10px; margin-bottom: 30px; position: relative;\">";
@@ -77,10 +110,53 @@ function getProjectListSpecial($t){
 		<div id="main_body">
 			<div id="main_content">
 				<!--<div class="subHeader" style="text-align: left;">see what kind of <img style="vertical-align: middle" height="55" src="images/projects.png" /> we're working on</div>-->
-				<div><div class="subHeader" style="display: inline-block;">Projects</div><div style="display: inline-block; margin-left: 30px;"><a href="projects.php">Show all</a></div></div>
+				<div><div class="subHeader" style="display: inline-block;">Projects</div></div>
 
 				<!--PROJECTS -->
+				<div style="font-size: 17px;"><a id="filter_toggle" style="cursor: pointer; cursor: hand;" >+ Filter</a></div>
+				<script type="text/javascript">
+					$("#filter_toggle").click(function() {
+						$(".filters").toggle();
+					});
+				</script>
+					<form method="GET" action="projects.php">
+					<div class="filters" style="display: none; position: relative; margin-top: 5px;">
+					<div style="color: #444444; font-size: 15px; margin-bottom: 6px; margin-left: 6px; font-weight: bold; display: inline-block">Topics</div>
+					<select name="tags" style="position: absolute; left: 175px;" onchange="submit();">
+						<option value="">All</option>
+						<?php
+						$tag_query = "SELECT id, tag from project_tags GROUP BY tag ORDER BY tag";
+						$tag_result = mysql_query($tag_query);
+						while($tag_row = mysql_fetch_array($tag_result)){
+							$selected = "";
+							if ($_GET['tags'] == $tag_row['tag']){
+								$selected = "selected=\"selected\"";
+							}
+							echo "<option $selected value=\"".$tag_row['tag']."\">".$tag_row['tag']."</option>";
+						}
+						?>
+					</select>
+					</div>
+					<div class="filters" style="display: none; position: relative; margin-top: 5px;">
+					<div style="color: #444444; font-size: 15px; margin-bottom: 6px; margin-left: 6px; font-weight: bold; display: inline-block">Collaborator</div>
+					<select name="collab" style="position: absolute; left: 175px;" onchange="submit();">
+						<option value="">All</option>
+						<?php
+						$collab_query = "SELECT id, name from collaborators";
+						$collab_result = mysql_query($collab_query);
+						while($collab_row = mysql_fetch_array($collab_result)){
+							$selected = "";
+							if ($_GET['collab'] == $collab_row['id']){
+								$selected = "selected=\"selected\"";
+							}
+							echo "<option $selected value=\"".$collab_row['id']."\">".$collab_row['name']."</option>";
+						}
+						?>
+					</select>
+					</div>
+				</form>
 					<?php
+					/*
 						$tag_result = mysql_query("SELECT tag FROM project_tags GROUP BY tag");
                                         	$tag_row = mysql_fetch_array($tag_result);
 						echo "<div style=\"width: 450px; font-size: 15px; float: left;\">";
