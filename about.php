@@ -41,23 +41,23 @@ $page->connectToDatabase();
 						?>
 					</div>
 					<div style="float: left; width: 500px;">
-						<div><div style="font-size: 18px; display: inline-block">From SNAP's Blog</div><div style="font-size: 14px;color: #6a7173; margin-left: 100px; display: inline-block"><a href="/blog/">go to blog</a> | subscribe <img src="images/rss.jpg" style="vertical-align: middle; height: 20px;" /></div></div>
-						<div style="margin-top: 10px; font-weight: bold; color: #555555">
-							<div style="display: inline-block;"><img alt="Blog Entry Icon" src="images/pub_paper.png" style="vertical-align: top; height: 20px; " /></div>
-							<div style="display: inline-block; width: 460px; margin-left: 5px;">Report details next steps in arctic shipping policies</div>
-						</div>
-						<div style="margin-top: 10px; font-weight: bold; color: #555555">
-							<img alt="Blog Entry Icon" src="images/pub_paper.png" style="vertical-align: top; height: 20px; " />
-							<div style="display: inline-block; width: 460px; margin-left: 5px;">New report outlines potential climate change impacts to Alaska's wildlife and ecosystem</div>
-						</div>
-						<div style="margin-top: 10px; font-weight: bold; color: #555555">
-							<img alt="Blog Entry Icon" src="images/pub_paper.png" style="vertical-align: top; height: 20px; " />
-							<div style="display: inline-block; width: 460px; margin-left: 5px;">Neogeography lab helps explore the world</div>
-						</div>
-						<div style="margin-top: 10px; font-weight: bold; color: #555555">
-							<div style="display: inline-block;"><img alt="Blog Entry Icon" src="images/pub_paper.png" style="vertical-align: top; height: 20px; " /></div>
-							<div style="display: inline-block; width: 460px; margin-left: 5px;">SNAP delivers climate change data to public's fingers</div>
-						</div>
+						<div><div style="font-size: 18px; display: inline-block">From SNAP's Blog</div><div style="font-size: 14px;color: #6a7173; margin-left: 100px; display: inline-block"><a href="/blog/">go to blog</a> | <a href="/blog/?feed=rss2">subscribe</a> <img src="images/rss.jpg" style="vertical-align: middle; height: 20px;" /></div></div>
+						<div style="margin-top: 10px; ">
+							<?php
+							// Include WordPress 
+							define('WP_USE_THEMES', false);
+							require('./blog/wp-load.php');
+							query_posts('showposts=3');
+
+						?>
+
+						<?php while (have_posts()): the_post(); ?>
+							<div style="display: inline-block; margin-top: 10px;"><img alt="Blog Entry Icon" src="images/pub_paper.png" style="vertical-align: top; height: 20px; " /></div>
+							<div style="display: inline-block; width: 460px; margin-left: 5px;"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
+						<?php endwhile; ?>
+
+
+
 					</div>
 
 				</div>

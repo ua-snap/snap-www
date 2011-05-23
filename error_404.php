@@ -6,7 +6,7 @@ $page->pageHeader();
 ?>
 		<div id="main_body">
 			<div id="main_content">
-				<div class="subHeader" style="font-size: 26px;">Sorry, we couldn't find that page.  Perhaps searching below will help?</div>
+				<div class="subHeader" style="font-size: 26px;">Sorry, we couldn't find that page.  Perhaps a search will help?</div>
 				<div id="cse" style="width: 100%;">Loading</div>
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
 <script type="text/javascript"> 

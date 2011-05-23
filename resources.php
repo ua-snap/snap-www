@@ -159,14 +159,8 @@ function getPublicationListSpecial($t){
 			<script src="js/jquery.hoverIntent.minified.js" type="text/javascript"></script>
 			<div id="main_content">
 				<div class="subHeader">Resources</div>
-				<div style="font-size: 17px;"><a id="filter_toggle" style="cursor: pointer; cursor: hand;" >+ Filter</a></div>
-				<script type="text/javascript">
-					$("#filter_toggle").click(function() {
-						$(".filters").toggle();
-					});
-				</script>
 					<form method="GET" action="resources.php">
-					<div class="filters" style="display: none; position: relative; margin-top: 5px;">
+					<div class="filters" style="position: relative; margin-top: 5px;">
 					<div style="color: #444444; font-size: 15px; margin-bottom: 6px; margin-left: 6px; font-weight: bold; display: inline-block">Publication Type</div>
 
 						<?php
@@ -190,7 +184,7 @@ function getPublicationListSpecial($t){
 						?>
 					</select>
 					</div>
-					<div class="filters" style="display: none; position: relative; margin-top: 5px;">
+					<div class="filters" style="position: relative; margin-top: 5px;">
 					<div style="color: #444444; font-size: 15px; margin-bottom: 6px; margin-left: 6px; font-weight: bold; display: inline-block">Subject</div>
 					<select name="tags" style="position: absolute; left: 175px;" onchange="submit();">
 						<option value="">All</option>
@@ -207,7 +201,7 @@ function getPublicationListSpecial($t){
 						?>
 					</select>
 					</div>
-					<div class="filters" style="display: none; position: relative; margin-top: 5px;">
+					<div class="filters" style="position: relative; margin-top: 5px;">
 					<div style="color: #444444; font-size: 15px; margin-bottom: 6px; margin-left: 6px; font-weight: bold; display: inline-block">Collaborator</div>
 					<select name="collab" style="position: absolute; left: 175px;" onchange="submit();">
 						<option value="">All</option>
@@ -225,7 +219,7 @@ function getPublicationListSpecial($t){
 					</select>
 					</div>
 					</form>
-					<div class="filters" style="display: none;">
+					<div class="filters" style="">
 					<?php
 					/*
 						//Tags

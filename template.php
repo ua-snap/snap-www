@@ -45,7 +45,7 @@ class webPage {
 				$x = preg_replace("/(\w+).*/", "$1", $menu_items[$i][1]);
 				//echo $this->menu." - ".$x;
 				//echo "<span style=\"margin-bottom:17px;\"><span style=\"height: 20px;\"><a ";
-				echo "<div style=\"display: inline-block; float: left; height: 48px; position: relative; margin-right: 20px; margin-left: 20px;\">";
+				echo "<div style=\"display: inline-block; float: left; height: 46px; position: relative; margin-right: 20px; margin-left: 20px;\">";
 					echo "<div><a ";
 					if (("/".basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || "/".$this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
 						echo "style=\"color: black;\"";
@@ -140,9 +140,9 @@ class webPage {
 			<div id="socialbar">
 				<span style="font-weight: bold; margin-left: 20px;">Follow us</span>
 				<span style="margin-left: 40px;"><a href="http://www.facebook.com/pages/SNAP-and-ACCAP/112992248723524?v=wall">facebook</a></span>
-				<span style="margin-left: 40px;"><a href="">twitter</a></span>
-				<span style="margin-left: 40px;"><a href="">blog rss</a></span>
-				<span style="margin-left: 40px;"><a href="">email updates</a></span>
+				<span style="margin-left: 40px;"><a href="http://twitter.com/#!/SNAPandACCAP">twitter</a></span>
+				<span style="margin-left: 40px;"><a href="http://dev.snap.uaf.edu/blog/?feed=rss2">blog rss</a></span>
+				<!--<span style="margin-left: 40px;"><a href="">email updates</a></span>-->
 			</div>
 			<div id="footbar">
 				<div class="horiz_bar_left" style="color: #eeeeee; relative; font-size: 11.5px;">
