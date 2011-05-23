@@ -130,5 +130,7 @@ $page->connectToDatabase();
 		</div>
 	</div>
 <?php
-$page->closePage();
+$page2 = new webPage("SNAP: About", "about.css", "about");
+$page2->openPage();
+$page2->closePage();
 ?>
