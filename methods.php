@@ -8,8 +8,6 @@ $page->pageHeader();
 			<div id="main_content">
 				<div class="subHeader">what <img style="vertical-align: middle;" height="55" src="images/methods.png" /> do we use?</div>
 			</div>
-<?php
-?>
 		</div>
 	</div>
 <?php

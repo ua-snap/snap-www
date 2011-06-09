@@ -163,7 +163,7 @@ class webPage {
 					<div><a href="/"><img src="/images/snap_acronym_rgb.png" height="53px" alt="SNAP Acronym Logo" /></a></div>
 					<div class="contactbar"><a href="/blog/">blog</a> | <a href="people.php#contact">contact</a> | <a href="sitemap.php">sitemap</a> | <a href="search.php">search</a></div>
 				</div>
-				<div style ="float: left; width: 450px; text-align: left; margin-top: 13px;">Copyright &copy; 2011 Scenarios Network for Alaska &amp; Arctic Planning, a research institute of the University of Alaska Fairbanks.  UAF is an affirmative action/equal opportunity employer and educational institution.</div>
+				<div style ="float: left; width: 450px; text-align: left; margin-top: 13px;">Copyright &copy; 2011 <a href="/" style="color: #222222; text-decoration: underline;">Scenarios Network for Alaska &amp; Arctic Planning</a>, a research institute of the <a href="http://www.uaf.edu" style="color: #222222; text-decoration: underline;">University of Alaska Fairbanks</a>.  UAF is an affirmative action/equal opportunity employer and educational institution.</div>
 				<div><a href="http://www.uaf.edu"><img src="/images/UAFLogo_A_black_horiz.png" height="55px" style="margin-top: 13px;" alt="UAF Logo" /></a></div>
 			</div>
 			<div style="height: 50px;"></div>
@@ -198,10 +198,10 @@ class webPage {
 						array("/methods.php","Methods")
 					),
 					array(
-						array("label", "Learn about all of SNAP's resources below.  The list can be narrowed by selecting categories and collaborators."),
+						array("label", "Learn about all of SNAP's resources below.  The list can be narrowed by selecting from the options below."),
 					),
 					array(
-						array("label", "Learn about all of SNAP's projects below.  The list can be narrowed by selecting categories and collaborators."),
+						array("label", "Learn about all of SNAP's projects below.  The list can be narrowed by selecting from the options below."),
 					),
 					array(
 						array("/global.php","Global Circulation Models"),

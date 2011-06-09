@@ -6,9 +6,6 @@ $page->pageHeader();
 $page->connectToDatabase();
 ?>
 		<div id="main_body">
-			<!--
-
-			-->
 
 			<div id="main_content" style="font-size: 15px;" >
 				<div class="subHeader">About</div>
@@ -55,9 +52,6 @@ $page->connectToDatabase();
 							<div style="display: inline-block; margin-top: 10px;"><img alt="Blog Entry Icon" src="images/pub_paper.png" style="vertical-align: top; height: 20px; " /></div>
 							<div style="display: inline-block; width: 460px; margin-left: 5px;"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></div>
 						<?php endwhile; ?>
-
-
-
 					</div>
 
 				</div>

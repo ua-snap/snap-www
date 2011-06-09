@@ -87,13 +87,13 @@ $page->pageHeader();
 				</div>
 				<div style="width: 280px; margin-right: 50px; float: left; margin-top: 80px; font-size: 12px;">
 					<div style="margin-top: 10px; width: 75px; float: right"><img src="images/med_data.png" alt="Med Data Image" width="68px"/></div>
-					<div style="font-size: 18px; font-weight: bold; color: #555555; margin-bottom: 5px;" >Heading</div>
+					<div style="font-size: 18px; font-weight: bold; color: #555555; margin-bottom: 5px;" >Scenarios</div>
 						<div style="line-height: 18px; font-size: 14px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin suscipit faucibus nibh. Etiam velit dolor, ornare sed vehicula nec, accumsan nec augue. In lacinia aliquet lectus volutpat adipiscing. Cras in tortor nibh, eu elementum mi. Pellentesque non dui ut orci bibendum pharetra id ac est. Suspendisse nec tempus nisl. Donec vitae elit sem. Sed vel risus id nibh vulputate hendrerit. Class metus. </div>
 						<div style="margin-top: 10px; line-height: 18px;  font-size: 14px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin suscipit faucibus nibh. Etiam velit dolor, ornare sed vehicula nec, accumsan nec augue. In lacinia aliquet lectus volutpat adipiscing. Cras in tortor nibh, eu elementum mi.</div>
 				</div>
 				<div style="width: 280px; float: left; margin-top: 80px; font-size: 12px;">
 					<div style="margin-top: 10px; width: 75px; float: right"><img src="images/med_data.png" alt="Medium Data Image" width="68px" /></div>
-					<div style="font-size: 18px; font-weight: bold; margin-bottom: 5px; color: #555555;" >Heading</div>
+					<div style="font-size: 18px; font-weight: bold; margin-bottom: 5px; color: #555555;" >Network</div>
 						<div style="line-height: 18px;  font-size: 14px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin suscipit faucibus nibh. Etiam velit dolor, ornare sed vehicula nec, accumsan nec augue. In lacinia aliquet lectus volutpat adipiscing. Cras in tortor nibh, eu elementum mi. Pellentesque non dui ut orci bibendum pharetra id ac est. Suspendisse nec tempus nisl. Donec vitae elit sem. Sed vel risus id nibh vulputate hendrerit. Class metus. </div>
 						<div style="margin-top: 10px; line-height: 18px; font-size: 14px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin suscipit faucibus nibh. Etiam velit dolor, ornare sed vehicula nec, accumsan nec augue. In lacinia aliquet lectus volutpat adipiscing. Cras in tortor nibh, eu elementum mi.</div>
 				</div>
