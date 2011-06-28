@@ -37,7 +37,10 @@ $page->connectToDatabase();
 					$result = mysql_query($query);
 					while ($row = mysql_fetch_array($result)){
 					?>
-						<div style="clear: both; width: 800px; margin: auto; margin-top: 100px;"><a name="org_<?php echo $row['id']; ?>"></a>
+						<div style="clear: both; width: 800px; margin: auto; margin-top: 100px;">
+							<a name="org_<?php echo $row['id']; ?>"></a>
+							<div style="height: 50px;">&nbsp;</div>
+
 							<div style="float: left; margin-bottom: 100px;"><img style="width: 150px;" src="/images/collaborators/<?php echo $row['image']; ?>" /></div>
 							<div style="float: right; width: 600px; font-size: 20px; margin-bottom: 50px;">
 								<div><?php echo $row['name']; ?></div>
