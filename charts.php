@@ -268,7 +268,7 @@ $page->connectToDatabase();
 			</div>
 			<div style="width: 188px; margin-left: 10px; height: 120px; float: left; ">
 				<div style="text-align: right">In cooperation with:</div>
-				<div style="text-align: right;"><a href="http://dev.snap.uaf.edu/collaborators.php#org_17"><img style="height: 135px; vertical-align: top;" src="images/ces.jpg" /></a></div>
+				<div style="text-align: right;"><a href="http://dev.snap.uaf.edu/collaborators.php#org_17"><img style="height: 135px; vertical-align: top;" src="images/collaborators/ces.jpg" /></a></div>
 				<!--
 				<div style="margin: auto; font-size: 18px; margin-bottom: 10px; margin-top: 20px;"><span style="color: #0066cc;">Print</span></div>
 				<div style="margin: auto; font-size: 18px; margin-bottom: 10px;"><span style="color: #0066cc;">Download</span></div>
