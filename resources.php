@@ -88,7 +88,7 @@ function getPublicationListSpecial($t){
 					echo "<img alt=\"".$pubImages[$pubType -1]."\" src=\"images/".$pubImages[$pubType -1]."\" style=\"margin-left: 5px;\" />";
 				echo "</div>";
 				echo "<div style=\"position: relative;; left: 59px; width: 380px; ;\">";
-					echo "<div style=\"font-size: 15px; color: #111111; font-weight: bold; margin-top: 5px; margin-bottom: 5px;\" ><a style=\"color: #333333;\" href=\"resource_page.php?resourceid=".$row[2]."\">".$row[0]."</a></div>";
+					echo "<div style=\"font-size: 15px; color: #111111; margin-top: 5px; margin-bottom: 5px;\" ><a href=\"resource_page.php?resourceid=".$row[2]."\">".$row[0]."</a></div>";
 					echo "<div style=\"position: relative; width: 420px; margin-bottom: 10px;\"></div>";
 					$query_tags = "SELECT tag FROM publication_tags WHERE publicationid='".$row[2]."'";
 					$result_tags = mysql_query($query_tags);
@@ -111,7 +111,7 @@ function getPublicationListSpecial($t){
 			echo "<img alt=\"".$pubImages[$pubType -1]."\" src=\"images/".$pubImages[$pubType -1]."\" style=\"\" />";
 			echo "</div>";
 			echo "<div style=\"position: absolute; padding-top: 6px; left: 60px; width: 380px;\">";
-				echo "<div style=\"font-size: 15px; color: #111111; font-weight: bold; margin-bottom: 5px;\" ><a style=\"color: #333333;\" href=\"resource_page.php?resourceid=".$row[2]."\">".$row[0]."</a></div>";
+				echo "<div style=\"font-size: 15px; color: #111111; margin-bottom: 5px;\" ><a href=\"resource_page.php?resourceid=".$row[2]."\">".$row[0]."</a></div>";
 			echo "</div>";
 
 

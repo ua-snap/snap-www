@@ -193,7 +193,7 @@ class webPage {
 						//array("/sustainability.php", "Sustainability"),
 					), 
 					array(
-						array("/maps.php","Map Tool"),
+						array("/data/","Map Tool"),
 						array("/charts.php","Community Charts"),
 						array("/methods.php","Methods")
 					),
