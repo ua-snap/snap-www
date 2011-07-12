@@ -145,7 +145,7 @@ class webPage {
 				<!--<span style="margin-left: 40px;"><a href="">email updates</a></span>-->
 			</div>
 			<div id="footbar">
-				<div class="horiz_bar_left" style="color: #eeeeee; relative; font-size: 11.5px;">
+				<div class="horiz_bar_left" style="color: #eeeeee; relative; font-size: 11px;">
 					<div style="position: absolute; margin-left: 20px; ">
 					<!--We just set up this twitter account so now we'll show some tweets right here @twitter, is that how this works? #awkwardfirsttweet-->
 						<div id="twitter_update_list"></div>

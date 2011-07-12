@@ -125,7 +125,7 @@ if ($_GET['fetch_type'] == "chart"){
 			echo ", labels: { enabled: true }";
 		echo "},";
 		echo "exporting: {";
-			echo "url: '/exporting-server/',";
+			echo "url: './exporting-server/',";
 			//echo "enableImages: true,";
 			echo "enabled: true,";
 			echo "buttons: {";
