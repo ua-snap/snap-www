@@ -1,5 +1,5 @@
 
-      // Global variables
+	// Global mapping variables
 	var map;
 	var marker1;
 	var marker2;
@@ -10,9 +10,38 @@
 	var marker_list = [];
 	var poly_listener;
 	var fullscreen = false;
-      /**
-       * Called on the initial page load.
-       */
+	// Global individual map data
+	var globalVariable = "";
+	var globalTimeInterval = "";
+	var globalTimeRange = "";
+	var globalScenario = "";
+	var globalModel ="";
+	var globalMapResolution = "";
+	
+	/*
+		Redraw the menu when a new selection is made, or for the first time
+		and add highlights/animations to the menu
+	*/
+	function showVariable(item){
+		$(".menuContentsLeft div").show();
+		$(".menuContents").parent().not("#" + item.id).children(".menuContents").hide();
+		$(".menuSpacer").parent().not("#" + item.id).children(".menuSpacer").removeClass("menuSpacerToggle");
+		$("#" + item.id + " .menuContents").toggle();
+		$("#" + item.id + " > .menuSpacer").toggleClass("menuSpacerToggle");
+	}
+	function updateMenu(){
+		$('.menuOption > div:first-child')
+			.animate( { backgroundColor: '#a7c95a' }, 300)
+			.animate( { backgroundColor: '#a7c95a' }, 600)
+			.animate( { backgroundColor: 'white' }, 900);
+		$('.menuOption > div:first-child').css( "backgroundColor", "white");
+	 }
+
+      	/*
+        * Google Map initialization function
+        * Called on the initial page load.
+	* Sets up default map space, values, etc.
+      	*/
 	function init(fs) {
 		map = new google.maps.Map(document.getElementById('map_canvas'), {
 			'zoom': 4,
@@ -27,7 +56,7 @@
 			mapTypeControlOptions: {
 				style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
 			},
-			'mapTypeId': google.maps.MapTypeId.ROADMAP
+			'mapTypeId': google.maps.MapTypeId.TERRAIN
 		});
 		if (point_list){
 			polygon = new google.maps.Polygon({
@@ -40,8 +69,24 @@
 			polygon.setPaths(point_list);
 
 		}
+		resize();
       }
-      
+	/*
+	  Called when the page is resized
+	*/
+     	function resize() {
+		var h = $("body").height() - $("#map_header").height() - 20;
+		if (h > 0) {
+			$("#map_canvas").height(h);
+		}
+		var w = $("body").width();
+		if (w > 0) {
+			$("#map_header").width(w - 10);
+			$("#map_canvas").width(w - 20);
+			$("#map_footer").width(w - 10);
+		}
+	}
+ 
 	function redraw() {
 		var latLngBounds = new google.maps.LatLngBounds(
 		  marker1.getPosition(),
@@ -51,7 +96,9 @@
 		rectangle.setBounds(latLngBounds);
 		document.getElementById("location").innerHTML = "Marker1: " + marker1.getPosition() + "<br/>Marker2: " + marker2.getPosition();
 	}
-
+	/* 
+	* Adds a map marker to the map
+	*/
 	function placeMarker(location) {
 		var marker = new google.maps.Marker({
 			position: location, 
@@ -80,6 +127,9 @@
 		}
 		document.getElementById("poly_points").innerHTML = coordinate_list;
 	}
+	/*
+		Close the polygon points to create the final polygon and shade it
+	*/
 	function closePoly(){
 		google.maps.event.removeListener(poly_listener);
 		polygon.setPaths(point_list);
@@ -89,6 +139,9 @@
 		} 
 		polyline.setMap(null);
 	}
+	/*
+		Deletes the values of the polygon array
+	*/
 	function hidePoly(){
 		if (poly_listener){
 	                google.maps.event.removeListener(poly_listener);
@@ -106,6 +159,9 @@
 		}
 		document.getElementById("poly_points").innerHTML = "";
 	}
+	/*
+	* Draw a polygon onto the map with as many points as required
+	*/
 	function drawPoly(){
 		if (marker1 || marker2 || rectangle){
 			hideRectangle();
@@ -144,12 +200,18 @@
 		});
 		
 	}
+	/*
+		Deletes a rectangle selection
+	*/
 	function hideRectangle(){
 		marker1.setMap(null);
 		marker2.setMap(null);
 		rectangle.setMap(null);
 		document.getElementById("location").style.visibility = "hidden";
 	}
+	/*
+		Draw a rectangle boundary with 2 labels, allows for drag/drop of corners
+	*/
 	function drawRectangle(){
 		if (polygon || polyline){
 			hidePoly();
@@ -182,77 +244,3 @@
 		});
 		redraw();
 	}
-
-function maximize(){
-	document.getElementById("map_wrapper").style.width = '100%';
-	document.getElementById("map_wrapper").style.height = '100%';
-	document.getElementById("map_wrapper").style.position = 'fixed';
-	document.getElementById("map_wrapper").style.left = '0';
-	document.getElementById("map_wrapper").style.top = '0';
-	document.getElementById("map_canvas").style.width = '100%';
-	document.getElementById("map_canvas").style.height = '100%';
-	document.getElementById("map_canvas").style.position = 'absolute';
-	document.getElementById("map_canvas").style.left = '0';
-	document.getElementById("map_canvas").style.top = '0';
-	document.getElementById("data_query").style.left = '0';
-	document.getElementById("data_query").style.top = '50%';
-	document.getElementById("footer").style.visibility = "hidden";
-	document.getElementById("size_toggle").style.right = "5px";
-	document.getElementById("size_toggle").style.bottom = "5px";
-	document.getElementById("size_toggle").position = "absolute";
-	document.getElementById("size_toggle").innerHTML = "Min";
-
-	fullscreen = true;
-	document.getElementById("size_toggle").onclick = minimize;
-	init();
-}
-function minimize(){
-	document.getElementById("map_wrapper").style.width = '948px';
-	document.getElementById("map_wrapper").style.height = '600px';
-	document.getElementById("map_wrapper").style.position = 'relative';
-	document.getElementById("map_canvas").style.width = '100%';
-	document.getElementById("map_canvas").style.height = '100%';
-	document.getElementById("map_canvas").style.position = 'absolute';
-	document.getElementById("map_canvas").style.left = '0';
-	document.getElementById("map_canvas").style.top = '0';
-	document.getElementById("data_query").style.left = '0';
-	document.getElementById("data_query").style.top = '50%';
-	document.getElementById("footer").style.visibility = "visible";
-	document.getElementById("size_toggle").innerHTML = "Max";
-	document.getElementById("size_toggle").style.right = "5px";
-	fullscreen = false;
-	document.getElementById("size_toggle").onclick = maximize;
-	init();
-}
-function expandQuery(){
-	document.getElementById("data_query").style.width = "100%";
-	document.getElementById("data_query").style.left = "0px";
-	document.getElementById("data_query").style.top = "100%";
-	document.getElementById("data_query").style.height = "50%";
-	document.getElementById("data_query").style.position = "absolute";
-	document.getElementById("data_query").style.opacity = "0.8";
-
-	if (fullscreen == true){
-		document.getElementById("map_canvas").style.height = "50%";
-	} else {
-		document.getElementById("map_canvas").style.height = "300px";
-	}
-	document.getElementById("data_query").onclick = shrinkQuery;
-}
-function shrinkQuery(){
-	document.getElementById("data_query").style.width = "200px";
-	document.getElementById("data_query").style.left = "auto";
-	document.getElementById("data_query").style.top = "50%";
-	document.getElementById("data_query").style.height = "100px";
-	document.getElementById("data_query").style.position = "absolute";
-	document.getElementById("data_query").style.opacity = "0.8";
-	document.getElementById("map_canvas").style.height = "600px";
-
-	
-	if (fullscreen == true){
-		document.getElementById("map_canvas").style.height = "100%";
-	} else {
-		document.getElementById("map_canvas").style.height = "600px";
-	}
-	document.getElementById("data_query").onclick = expandQuery;
-}

@@ -287,7 +287,10 @@ $page->connectToDatabase();
 					$('#link_field').focus().select();
 				});
 				$('#export_image_png').click( function(){
-					chart.exportChart();
+					chart.exportChart({
+						//type: 'image/svg+xml',
+						filename: globalCommunity + '_' + globalScenario + '_' + globalDataset + '_' + globalVariability
+					});
 				});
 				$('#export_image_svg').click( function(){
 					chart.exportChart({
@@ -327,7 +330,7 @@ $page->connectToDatabase();
 		<div>
 			<div style="font-size: 18px; margin-bottom: 10px; margin-top: 10px;">Interpreting the Community Charts</div>
 			<p>These community graphs can be examined for certain key changes and threshold values. For example, mean monthly temperatures shifting above freezing in spring and fall may be of particular interest. This may signify a longer growing season, a loss of ice and/or frozen ground needed for travel or food storage, or a shift in precipitation from snow to rain, which will impact water storage capacity and surface water availability. In many cases, winter temperatures are projected to increase dramatically. This in turn may allow for the growth of less cold-hardy species, including either desirable crops or invasive species, or it may decrease snowpack and increase the frequency of rain on snow events that impact wildlife. Warmer, drier spring weather may be an indicator for increased fire risk. Warmer temperatures across all seasons may impact permafrost and land-fast ice.</p>
-			<p>These graphs show mean outputs from the five GCMs. Results are also averaged across decades. This averaging lessens the impact of normal year-to-year climate variability, and thus tends to make overall projected trends clearer. It is important to note that uncertainty is associated with each of these graphed values. Uncertainty stems from the modeling of atmospheric and oceanic movements used to create the GCMs, from the PRISM downscaling process, and from the assumptions made regarding greenhouse gas levels for each emission scenario. Variability between the five GCMs is generally in the range of 0-4°F for temperature and 0-0.7 inches for precipitation. In general, a higher percentage of uncertainty is associated with precipitation values than with temperature values. It should also be noted that although our models project increases in precipitation, overall water availability is likely to decrease due to longer growing seasons and warmer weather, as detailed in our report on <a href="/project_page.php?projectid=12">climate change impacts on water availability in Alaska</a>.</p>
+			<p>These graphs show mean outputs from the five GCMs. Results are also averaged across decades. This averaging lessens the impact of normal year-to-year climate variability, and thus tends to make overall projected trends clearer. It is important to note that uncertainty is associated with each of these graphed values. Uncertainty stems from the modeling of atmospheric and oceanic movements used to create the GCMs, from the PRISM downscaling process, and from the assumptions made regarding greenhouse gas levels for each emission scenario. Variability between the five GCMs is generally in the range of 0-4°F for temperature and 0-0.7 inches for precipitation. In general, a higher percentage of uncertainty is associated with precipitation values than with temperature values. It should also be noted that although our models project increases in precipitation, growing-season water availability may decrease in some areas due to longer growing seasons and warmer weather</p>
 
 			<div style="font-size: 18px; margin-bottom: 10px; margin-top: 10px;">How the Community Charts Data Was Derived</div>
 

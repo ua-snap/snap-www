@@ -124,7 +124,8 @@ class webPage {
 			<script type="text/javascript">
 				var addthis_config =
 				{
-				   ui_508_compliant: true
+				   ui_508_compliant: true,
+				   services_compact: 'facebook,twitter,google_plusone,print,email'
 				}
 			</script>
 			<div class="horiz_bar_right">	
@@ -195,6 +196,8 @@ class webPage {
 					array(
 						array("/data/","Map Tool"),
 						array("/charts.php","Community Charts"),
+						array("/alfresco.php","ALFRESCO"),
+						array("/gisdata.php","GIS Data"),
 						array("/methods.php","Methods")
 					),
 					array(

@@ -87,15 +87,14 @@ $page->pageHeader();
 				</div>
 				<div style="width: 280px; margin-right: 50px; float: left; margin-top: 80px; font-size: 12px;">
 					<div style="margin-top: 10px; width: 75px; float: right"><img src="images/med_data.png" alt="Med Data Image" width="68px"/></div>
-					<div style="font-size: 18px; font-weight: bold; color: #555555; margin-bottom: 5px;" >Scenarios</div>
-						<div style="line-height: 18px; font-size: 14px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin suscipit faucibus nibh. Etiam velit dolor, ornare sed vehicula nec, accumsan nec augue. In lacinia aliquet lectus volutpat adipiscing. Cras in tortor nibh, eu elementum mi. Pellentesque non dui ut orci bibendum pharetra id ac est. Suspendisse nec tempus nisl. Donec vitae elit sem. Sed vel risus id nibh vulputate hendrerit. Class metus. </div>
-						<div style="margin-top: 10px; line-height: 18px;  font-size: 14px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin suscipit faucibus nibh. Etiam velit dolor, ornare sed vehicula nec, accumsan nec augue. In lacinia aliquet lectus volutpat adipiscing. Cras in tortor nibh, eu elementum mi.</div>
+					<div style="font-size: 18px; font-weight: bold; color: #555555; margin-bottom: 5px;" >SNAP</div>
+						<div style="line-height: 20px; font-size: 15px;">Welcome to SNAP.  SNAP is all <a href="/about.php">about</a> helping people plan in an increasingly changing climate.  We work with a wide range of <a href="/collaborators.php">partners and collaborators</a> on many <a href="/projects.php">projects</a> to explore a range of possible futures based on the best scientific knowledge and <a href="/data.php">data</a> available.  SNAP also strives to make our <a href="/resources.php">resources</a> available and our <a href="/methods.php">methods</a> known.  SNAP has a strong partnership with <a href="/collaborators.php#org_2">ACCAP</a> that allows us to leverage each others strengths in order to inform a broad audience.</div>
+						<div style="margin-top: 10px; line-height: 18px;  font-size: 14px;"></div>
 				</div>
 				<div style="width: 280px; float: left; margin-top: 80px; font-size: 12px;">
 					<div style="margin-top: 10px; width: 75px; float: right"><img src="images/med_data.png" alt="Medium Data Image" width="68px" /></div>
-					<div style="font-size: 18px; font-weight: bold; margin-bottom: 5px; color: #555555;" >Network</div>
-						<div style="line-height: 18px;  font-size: 14px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin suscipit faucibus nibh. Etiam velit dolor, ornare sed vehicula nec, accumsan nec augue. In lacinia aliquet lectus volutpat adipiscing. Cras in tortor nibh, eu elementum mi. Pellentesque non dui ut orci bibendum pharetra id ac est. Suspendisse nec tempus nisl. Donec vitae elit sem. Sed vel risus id nibh vulputate hendrerit. Class metus. </div>
-						<div style="margin-top: 10px; line-height: 18px; font-size: 14px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin suscipit faucibus nibh. Etiam velit dolor, ornare sed vehicula nec, accumsan nec augue. In lacinia aliquet lectus volutpat adipiscing. Cras in tortor nibh, eu elementum mi.</div>
+					<div style="font-size: 18px; font-weight: bold; margin-bottom: 5px; color: #555555;" >Scenarios Network</div>
+						<div style="line-height: 20px;  font-size: 15px;">Yes, it’s ambiguous, but in a good way.  <Planning> for future climate scenarios is not easy to do alone.  SNAP has built a diverse <a href="/collaborators.php">network</a> including university researchers from around the world, state and federal agencies, non-profits, and foreign governments to name a few.  This network allows stakeholders to hold open discussions concerning questions, needs, methods, and future climate scenario planning.  Every member of the network brings their knowledge, skills and questions to the table while SNAP serves as the catalyst to determine needs, develop a plan of action, collect and analyze data, and interpret and present results.</div>
 				</div>
 			</div>
 			<div style="width: 100%; clear: both; ">
