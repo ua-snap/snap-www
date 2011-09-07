@@ -61,6 +61,9 @@ function getProjectListSpecial($t){
 			echo "s";
 		}
 		echo "</span>";
+		if (isset($_GET['tags']) || isset($_GET['collab'])){	
+			echo "<span> | <a href=\"projects.php\">Show All</a></span>";
+		}
 		echo "<span style=\"margin-left: 50px;\"> Sort by ";
 		$tagline = "";
 		$getflag = false;
@@ -119,7 +122,7 @@ function getProjectListSpecial($t){
 					<select name="tags" style="position: absolute; left: 175px;" onchange="submit();">
 						<option value="">All</option>
 						<?php
-						$tag_query = "SELECT id, tag from project_tags GROUP BY tag ORDER BY tag";
+						$tag_query = "SELECT tag from project_tags GROUP BY tag ORDER BY tag";
 						$tag_result = mysql_query($tag_query);
 						while($tag_row = mysql_fetch_array($tag_result)){
 							$selected = "";

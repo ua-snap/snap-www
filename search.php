@@ -1,6 +1,6 @@
 <?php
 include("template.php");
-$page = new webPage("SNAP: Methods", "", "");
+$page = new webPage("SNAP: Search", "", "");
 $page->openPage();
 $page->pageHeader();
 ?>

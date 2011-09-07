@@ -25,7 +25,8 @@ class webPage {
 				array("About","/about.php"),
 				array("Maps &amp; Data","/data.php"),
 				array("Resources","/resources.php"),
-				array("Projects","/projects.php")
+				array("Projects","/projects.php"),
+				array("Methods","/methods.php"),
 			);
 			//for ($i =0; $i < sizeof($menu_items); $i++){
 				//$x = preg_replace("/(\w+).*/", "$1", $menu_items[$i][1]);
@@ -132,7 +133,7 @@ class webPage {
 				<a class="addthis_button"><img src="/images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/></a>
 			</div>
 		</div>
-		<div style="color: #999999; width: 975px; margin: auto; text-align: right; padding-top: 10px;" class="contactbar"><a href="/blog/">blog</a> | <a href="people.php#contact">contact</a> | <a href="sitemap.php">sitemap</a> | <a href="search.php">search</a></div>
+		<div style="color: #999999; width: 975px; margin: auto; text-align: right; padding-top: 10px;" class="contactbar"><a href="/blog/">blog</a> | <a href="/people.php#contact">contact</a> | <a href="/sitemap.php">sitemap</a> | <a href="/search.php">search</a></div>
 		<?php
 	}
 	public function pageFooter(){ ?>
@@ -162,7 +163,7 @@ class webPage {
 			<div style="margin-bottom: 20px; ">
 				<div style="float: left; margin-right: 40px;">
 					<div><a href="/"><img src="/images/snap_acronym_rgb.png" height="53px" alt="SNAP Acronym Logo" /></a></div>
-					<div class="contactbar"><a href="/blog/">blog</a> | <a href="people.php#contact">contact</a> | <a href="sitemap.php">sitemap</a> | <a href="search.php">search</a></div>
+					<div class="contactbar"><a href="/blog/">blog</a> | <a href="/people.php#contact">contact</a> | <a href="/sitemap.php">sitemap</a> | <a href="/search.php">search</a></div>
 				</div>
 				<div style ="float: left; width: 450px; text-align: left; margin-top: 13px;">Copyright &copy; 2011 <a href="/" style="color: #222222; text-decoration: underline;">Scenarios Network for Alaska &amp; Arctic Planning</a>, a research institute of the <a href="http://www.uaf.edu" style="color: #222222; text-decoration: underline;">University of Alaska Fairbanks</a>.  UAF is an affirmative action/equal opportunity employer and educational institution.</div>
 				<div><a href="http://www.uaf.edu"><img src="/images/UAFLogo_A_black_horiz.png" height="55px" style="margin-top: 13px;" alt="UAF Logo" /></a></div>
@@ -194,11 +195,10 @@ class webPage {
 						//array("/sustainability.php", "Sustainability"),
 					), 
 					array(
-						array("/data/","Map Tool"),
+						array("/maps.php","Map Tool"),
 						array("/charts.php","Community Charts"),
 						array("/alfresco.php","ALFRESCO"),
 						array("/gisdata.php","GIS Data"),
-						array("/methods.php","Methods")
 					),
 					array(
 						array("label", "Learn about all of SNAP's resources below.  The list can be narrowed by selecting from the options below."),
@@ -207,8 +207,8 @@ class webPage {
 						array("label", "Learn about all of SNAP's projects below.  The list can be narrowed by selecting from the options below."),
 					),
 					array(
-						array("/global.php","Global Circulation Models"),
-						array("/methods.php","SNAP Methods"),
+						array("/models.php","Models"),
+						array("/planning.php","Planning"),
 						array("/derived.php","Derived Data")
 					),
 					array(

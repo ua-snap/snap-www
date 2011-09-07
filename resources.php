@@ -13,6 +13,8 @@ $resTypes = array ( "Paper", "Report", "Presentation", "Video");
 function getPublicationListSpecial($t){
 	global $tag_array;
 	$pubtag = "";
+	//Check to see if tags, type or collabs are set
+	//There is a more efficient way to do this.  Come back to it.
 	if ((isset($_GET['tags']) && $_GET['tags'] != NULL) || (isset($_GET['type']) && $_GET['type'] != NULL) || (isset($_GET['collab']) && $_GET['collab'] != NULL)){
 		$adds = "WHERE ";
 	}
@@ -33,18 +35,14 @@ function getPublicationListSpecial($t){
 		}
 		$collab .= " pc.collaboratorid = '".$_GET['collab']."'";
 	}
-	//echo "<div style=\"font-size: 30px; color: #97a93a\">".$t."</div>";
-	//if ($t){
-	//	$pubtag = "WHERE publication_tags.tag LIKE '%".$t."%'";
-	//}	
 
 	$countsize = sizeof($tag_array);
-	//$query = "SELECT distinct(title),createdate,summary,projects.id FROM project_tags RIGHT JOIN projects ON project_tags.projectid=projects.id $projtag ORDER BY createdate DESC";
 	$order = "ORDER BY pubs.createdate";
 	if ($_GET['sort'] == "oldest"){
 		$order = "ORDER BY pubs.createdate DESC";
 	}
-	$query = "SELECT title,type,pubs.id,summary FROM publications pubs LEFT JOIN publication_tags AS pt ON pubs.id=pt.publicationid LEFT JOIN publication_collaborators AS pc ON pubs.id=pc.publicationid $adds $pubtag $types $collab GROUP BY pubs.id $order";
+	//Limit displayed resources to filtered list
+	$query = "SELECT title,type,pubs.id,summary FROM resources pubs LEFT JOIN resource_tags AS pt ON pubs.id=pt.resourceid LEFT JOIN resource_collaborators AS pc ON pubs.id=pc.resourceid $adds $pubtag $types $collab GROUP BY pubs.id $order";
 	
 	//echo $query;
 	$result = mysql_query($query) or die(mysql_error());
@@ -56,6 +54,9 @@ function getPublicationListSpecial($t){
 			echo "s";
 		}
 		echo "</span>";
+		if (isset($_GET['tags']) || isset($_GET['type']) || isset($_GET['collab'])){	
+			echo "<span> | <a href=\"resources.php\">Show All</a></span>";
+		}
 		echo "<span style=\"margin-left: 50px;\"> Sort by ";
 		$tagline = "";
 		$getflag = false;
@@ -75,8 +76,6 @@ function getPublicationListSpecial($t){
 		echo "</div>";
 	}
 	while ($row = mysql_fetch_row($result)){
-
-
 		echo "<div id=\"pub_box_".$row[2]."\" style=\"width: 440px; height: 50px; display: inline-block; margin: 10px; margin-bottom: 10px; position: relative; \">";
 
 			$pubType = $row[1];
@@ -90,7 +89,7 @@ function getPublicationListSpecial($t){
 				echo "<div style=\"position: relative;; left: 59px; width: 380px; ;\">";
 					echo "<div style=\"font-size: 15px; color: #111111; margin-top: 5px; margin-bottom: 5px;\" ><a href=\"resource_page.php?resourceid=".$row[2]."\">".$row[0]."</a></div>";
 					echo "<div style=\"position: relative; width: 420px; margin-bottom: 10px;\"></div>";
-					$query_tags = "SELECT tag FROM publication_tags WHERE publicationid='".$row[2]."'";
+					$query_tags = "SELECT tag FROM resource_tags WHERE resourceid='".$row[2]."'";
 					$result_tags = mysql_query($query_tags);
 					echo "<div style=\"color: #666666;\">Tags: ";
 					$row_tags = mysql_fetch_array($result_tags);
@@ -189,7 +188,7 @@ function getPublicationListSpecial($t){
 					<select name="tags" style="position: absolute; left: 175px;" onchange="submit();">
 						<option value="">All</option>
 						<?php
-						$tag_query = "SELECT id, tag from publication_tags GROUP BY tag";
+						$tag_query = "SELECT id, tag from resource_tags GROUP BY tag";
 						$tag_result = mysql_query($tag_query);
 						while($tag_row = mysql_fetch_array($tag_result)){
 							$selected = "";
@@ -218,12 +217,14 @@ function getPublicationListSpecial($t){
 						?>
 					</select>
 					</div>
+
+
 					</form>
 					<div class="filters" style="">
 					<?php
 					/*
 						//Tags
-						$tag_result = mysql_query("SELECT tag FROM publication_tags GROUP BY tag");
+						$tag_result = mysql_query("SELECT tag FROM resource_tags GROUP BY tag");
                                         	$tag_row = mysql_fetch_array($tag_result);
 						echo "<div style=\"font-size: 15px; float: left; margin-bottom: 10px;\">\n";
 							echo "<div style=\"color: #444444; margin-bottom: 6px; margin-left: 6px; font-weight: bold; display: inline-block\">Categories</div><div style=\"display: inline-block; margin-left: 30px;\"><a href=\"resources.php\">Show all</a></div>";
@@ -263,13 +264,15 @@ function getPublicationListSpecial($t){
 						echo "</div>";
 						//Collaborators
 						/*
-						$coll_query = "SELECT collaborators.id,collaborators.name FROM collaborators LEFT JOIN publication_collaborators ON collaborators.id=publication_collaborators.collaboratorid GROUP BY collaboratorid";
+						$coll_query = "SELECT collaborators.id,collaborators.name FROM collaborators LEFT JOIN resource_collaborators ON collaborators.id=resource_collaborators.collaboratorid GROUP BY collaboratorid";
 						$coll_result = mysql_query($coll_query);
                                         	$coll_row = mysql_fetch_array($coll_result);
 						echo "<div style=\"float: left; width: 450px; font-size: 15px; margin-bottom: 10px; margin-left: 10px;\">";
 							//echo "<div style=\"color: #444444; display: inline-block; padding-right: 12px; font-weight: bold;\">Collaborators</div>";
-							echo "<div style=\"color: #444444; margin-bottom: 6px; margin-left: 6px; font-weight: bold; display: inline-block\">Collaborators</div><div style=\"display: inline-block; margin-left: 30px;\"><a href=\"resources.php\">Show all</a></div>";
+						*/
+
                                                	//echo "<a href=\"resources.php?tags=".$tag_row[0]."\">".$tag_row[0]."</a>";
+						/*
 						echo  "<div></div>";
                                         	while ($coll_row = mysql_fetch_array($coll_result)){
 							$colllist = $_GET['coll'];

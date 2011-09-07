@@ -11,6 +11,7 @@ $page->openPage();
 				<script type="text/javascript">
 				      google.maps.event.addDomListener(window, 'load', init);
 					$(window).resize(resize);
+
 				</script>	
 				<!--
 				<div id="controls">
@@ -57,10 +58,9 @@ $page->openPage();
 										<div class='menuSpacer'></div>
 										<div class='menuContents'>
 											<div class="menuContentsLeft">
-												<div>1971-2000</div>
-												<div>2010-2019</div>
-												<div>2050-2059</div>
-												<div>2090-2099</div>
+												<div><span>2010-2019</span></div>
+												<div><span>2050-2059</span></div>
+												<div><span>2090-2099</span></div>
 											</div>
 											<div class="menuContentsRight">XYZ</div>
 										</div>
@@ -73,9 +73,9 @@ $page->openPage();
 										<div class='menuSpacer'></div>
 										<div class='menuContents'>
 											<div class="menuContentsLeft">
-												<div>rapid increases in emissions (A2)</div>
-												<div>mid-range emissions (A1B)</div>
-												<div>leveling and declining emissions (B1)</div>
+												<div>rapid increases in emissions (<span>A2</span>)</div>
+												<div>mid-range emissions (<span>A1B</span>)</div>
+												<div>leveling and declining emissions (<span>B1</span>)</div>
 											</div>
 											<div class="menuContentsRight">XYZ</div>
 										</div>
@@ -113,7 +113,9 @@ $page->openPage();
 										$(this).parents(".menuOption").find(".menuTitle").html($(this).html());
 										//updateMenu();
 										//$menuSpacer.removeClass("menuSpacerToggle");
+										addMap(this, $(this).children("span").html());
 										updateMenu();
+	
 									});
 									</script>
 								

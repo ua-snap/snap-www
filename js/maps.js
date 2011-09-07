@@ -13,11 +13,11 @@
 	// Global individual map data
 	var globalVariable = "";
 	var globalTimeInterval = "";
-	var globalTimeRange = "";
-	var globalScenario = "";
+	var globalTimeRange = "2010-2019";
+	var globalScenario = "a1b";
 	var globalModel ="";
 	var globalMapResolution = "";
-	
+	var globalfoovar;	
 	/*
 		Redraw the menu when a new selection is made, or for the first time
 		and add highlights/animations to the menu
@@ -36,7 +36,30 @@
 			.animate( { backgroundColor: 'white' }, 900);
 		$('.menuOption > div:first-child').css( "backgroundColor", "white");
 	 }
+	function addMap(mapvariable, mapvalue){
+		//alert($(mapvariable).parents(".menuOption").attr("id") + " : " + mapvalue);
+		if ($(mapvariable).parents(".menuOption").attr("id") == "menu_scenario"){
+			globalScenario = mapvalue.toLowerCase();
+		}
+		if ($(mapvariable).parents(".menuOption").attr("id") == "menu_variable"){
+			globalVariable = mapvalue.toLowerCase();
+		}
+		if ($(mapvariable).parents(".menuOption").attr("id") == "menu_range"){
+			globalTimeRange = mapvalue;
+		}
+		globalfoovar = new google.maps.ImageMapType({
+		    getTileUrl: function(tile, zoom) {
+			return "http://hippy.gina.alaska.edu/snaptiles/" + globalScenario + ".comp.temp.annual." + globalTimeRange + "/tile/" + tile.x + "/" + tile.y + "/" + zoom + ".png"; 
+		    },
+		    tileSize: new google.maps.Size(256, 256),
+		    opacity: 0.5
+		});
 
+
+		map.overlayMapTypes.push(null); // create empty overlay entry
+		map.overlayMapTypes.setAt("0",globalfoovar);
+
+	}
       	/*
         * Google Map initialization function
         * Called on the initial page load.

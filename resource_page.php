@@ -11,7 +11,7 @@ $resourceid = $_GET['resourceid'];
 		<div id="main_body">
 			<div id="main_content">
 				<?php
-					$query = "SELECT * FROM publications WHERE id='$resourceid' LIMIT 1";
+					$query = "SELECT * FROM resources WHERE id='$resourceid' LIMIT 1";
 					$result = mysql_query($query);
 					$project = mysql_fetch_array($result);
 				?>
@@ -57,7 +57,7 @@ $resourceid = $_GET['resourceid'];
 						<div style="line-height: 20px;">
 
 							<?php 
-								$query = "SELECT collaborators.id,collaborators.name,collaborators.image FROM collaborators JOIN publication_collaborators ON collaborators.id=publication_collaborators.collaboratorid WHERE publication_collaborators.publicationid='".$_GET['resourceid']."' ";
+								$query = "SELECT collaborators.id,collaborators.name,collaborators.image FROM collaborators JOIN resource_collaborators ON collaborators.id=resource_collaborators.collaboratorid WHERE resource_collaborators.resourceid='".$_GET['resourceid']."' ";
 
 
 								$result = mysql_query($query);

@@ -14,7 +14,13 @@ $page->connectToDatabase();
 					$project = mysql_fetch_array($result);
 				?>
 				
-				<div class="back_button" style="margin-top: 20px; margin-bottom: 30px; width: 200px;"><span><img style="vertical-align: top; display: inline-block;" src="/images/back_arrow.png" /></span><span style="float: right; padding-right: 8px;">View Other Projects<span><a href="projects.php" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"></a></div>
+				<div class="back_button" style="margin-top: 20px; margin-bottom: 30px; width: 200px;"><span><img style="vertical-align: top; display: inline-block;" src="/images/back_arrow.png" /></span><span style="float: right; padding-right: 8px;">View Other Projects<span><a href="projects.php" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"></a>
+				<?php
+					if ($project['id'] == 10){
+				echo "<a href=\"collaborators.php#org_2\"><img style=\"position: absolute; left: 400px; height: 30px;\" src=\"images/accap_small.png\" /></a>";
+					}
+				?>
+				</div>
 
 				<div style="width: 950px; margin: auto;">
 					<div style="float: left; width: 520px;">
