@@ -29,6 +29,35 @@ $page->pageHeader();
 				<div style="margin-top: 20px; font-weight: bold;">External Downloads</div>
 				<div style="margin-top: 10px;"><a href="http://www.r-project.org/">R statistics package</a></div>
 				<div style="margin-top: 10px;"><a href="http://www.textpad.com/">TextPad</a> - For Windows users, we recommend editing ALFRESCO input files with TextPad, a text editor that saves the input files in a format that ALFRESCO expects.</div>
+				<div style="margin-top: 20px; font-weight: bold; margin-bottom: 5px; font-size: 18px">Datasets</div>
+				<div style="margin-bottom: 10px;">The following datasets contain region specific files for use with the Boreal ALFRESCO model. Each of these packages contains the input data for the model at 1 km resolution, including five climate projections used by SNAP and scripts for use in the R statistical package.  </div>
+				<div style="width: 350px; height: 200px; margin-right: 5px; float: left; text-align: center;">
+					<div style="font-size: 14px; font-weight: bold; text-align: center; margin: 5px;">National Park Domains</div>
+					<div style="font-size: 13px; margin: 5px; margin-left: 15px;"><a href="files/datasets/BeringLandBridgeNP.zip">Bering Land Bridge National Preserve</a> (<?php echo getFileSize("files/datasets/BeringLandBridgeNP.zip"); ?>)</div>
+					<div style="font-size: 13px; margin: 5px; margin-left: 15px;"><a href="files/datasets/DenaliNPP.zip">Denali National Park</a> (<?php echo getFileSize("files/datasets/DenaliNPP.zip"); ?>)</div>
+					<div style="font-size: 13px; margin: 5px; margin-left: 15px;"><a href="files/datasets/KobukValleyNP.zip">Kobuk Valley National Park</a> (<?php echo getFileSize("files/datasets/KobukValleyNP.zip"); ?>)</div>
+					<div style="font-size: 13px; margin: 5px; margin-left: 15px;"><a href="files/datasets/YukonCharleyRiversNP.zip">Yukon Charley Rivers National Preserve</a> (<?php echo getFileSize("files/datasets/YukonCharleyRiversNP.zip"); ?>)</div>
+				</div>
+				<div style="width: 340px; height: 300px; margin-left: 5px; margin-right: 5px; float: left; text-align: center;">
+					<div style="font-size: 14px; font-weight: bold; text-align: center; margin: 5px;">National Wildlife Refuge Domains</div>
+					<div style="font-size: 13px; margin: 5px; margin-left: 15px;"><a href="files/datasets/ArcticNWR101.zip">Arctic National Wildlife Refuge</a> (<?php echo getFileSize("files/datasets/ArcticNWR101.zip"); ?>)</div>
+					<div style="font-size: 13px; margin: 5px; margin-left: 15px;"><a href="files/datasets/InnokoNWR101.zip">Innoku National Wildlife Refuge</a> (<?php echo getFileSize("files/datasets/InnokoNWR101.zip"); ?>)</div>
+					<div style="font-size: 13px; margin: 5px; margin-left: 15px;"><a href="files/datasets/KanutiNWR101.zip">Kanuti National Wildlife Refuge</a> (<?php echo getFileSize("files/datasets/KanutiNWR101.zip"); ?>)</div>
+					<div style="font-size: 13px; margin: 5px; margin-left: 15px;"><a href="files/datasets/KenaiNWR101.zip">Kenai National Wildlife Refuge</a> (<?php echo getFileSize("files/datasets/KenaiNWR101.zip"); ?>)</div>
+					<div style="font-size: 13px; margin: 5px; margin-left: 15px;"><a href="files/datasets/KoyukNowitNInnoNWR101.zip">Koyuk National Wildlife Refuge</a> (<?php echo getFileSize("files/datasets/KoyukNowitNInnoNWR101.zip"); ?>)</div>
+					<div style="font-size: 13px; margin: 5px; margin-left: 15px;"><a href="files/datasets/SelawikNWR101.zip">Selawik National Wildlife Refuge</a> (<?php echo getFileSize("files/datasets/SelawikNWR101.zip"); ?>)</div>
+					<div style="font-size: 13px; margin: 5px; margin-left: 15px;"><a href="files/datasets/TetlinNWR101.zip">Tetlin National Wildlife Refuge</a> (<?php echo getFileSize("files/datasets/TetlinNWR101.zip"); ?>)</div>
+					<div style="font-size: 13px; margin: 5px; margin-left: 15px;"><a href="files/datasets/TogiakNWR101.zip">Togiak National Wildlife Refuge</a> (<?php echo getFileSize("files/datasets/TogiakNWR101.zip"); ?>)</div>
+					<div style="font-size: 13px; margin: 5px; margin-left: 15px;"><a href="files/datasets/YukonDeltaNWR101.zip">Yukon Delta National Wildlife Refuge</a> (<?php echo getFileSize("files/datasets/YukonDeltaNWR101.zip"); ?>)</div>
+					<div style="font-size: 13px; margin: 5px; margin-left: 15px;"><a href="files/datasets/YukonFlatsNWR101.zip">Yukon Flats National Wildlife Refuge</a> (<?php echo getFileSize("files/datasets/YukonFlatsNWR101.zip"); ?>)</div>
+				</div>
+				<div style="width: 240px; height: 200px; margin-left: 5px; float: left; text-align: center;">
+					<div style="font-size: 14px; font-weight: bold; text-align: center; margin: 5px;">Miscellaneous Domains</div>
+					<div style="font-size: 13px; margin: 5px; margin-left: 15px;"><a href="files/datasets/DaltonHighway.zip">Dalton Highway</a> (<?php echo getFileSize("files/datasets/DaltonHighway.zip"); ?>)</div>
+					<div style="font-size: 13px; margin: 5px; margin-left: 15px;"><a href="files/datasets/DonnellyTrainingArea.zip">Donnelly Training Area</a> (<?php echo getFileSize("files/datasets/DonnellyTrainingArea.zip"); ?>)</div>
+					<div style="font-size: 13px; margin: 5px; margin-left: 15px;"><a href="files/datasets/KenaiLandscapeArea.zip">Kenai Landscape Area</a> (<?php echo getFileSize("files/datasets/KenaiLandscapeArea.zip"); ?>)</div>
+					<div style="font-size: 13px; margin: 5px; margin-left: 15px;"><a href="files/datasets/YMATananaFlats.zip">YMA Tanana Flats</a> (<?php echo getFileSize("files/datasets/YMATananaFlats.zip"); ?>)</div>
+				</div>
 			</div>
 <?php
 ?>

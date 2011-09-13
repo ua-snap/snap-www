@@ -1,12 +1,12 @@
 <?php
 include("template.php");
-$page = new webPage("SNAP: Methods", "", "methods");
+$page = new webPage("SNAP: Data Downloads", "", "data");
 $page->openPage();
 $page->pageHeader();
 ?>
 		<div id="main_body">
 			<div id="main_content">
-				<div class="subHeader">what <img style="vertical-align: middle;" height="55" src="images/methods.png" /> do we use?</div>
+				<div class="subHeader">Data Downloads</div>
 			</div>
 		</div>
 	</div>

@@ -191,7 +191,8 @@ class webPage {
 					array(
 						array("/people.php", "People"),
 						array("/blog/", "Blog"),
-						array("/collaborators.php", "Collaborators")
+						array("/collaborators.php", "Collaborators"),
+						array("/outreach.php", "Outreach")
 						//array("/sustainability.php", "Sustainability"),
 					), 
 					array(
