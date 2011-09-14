@@ -190,9 +190,10 @@ class webPage {
 		$menu_options = array(
 					array(
 						array("/people.php", "People"),
-						array("/blog/", "Blog"),
 						array("/collaborators.php", "Collaborators"),
-						array("/outreach.php", "Outreach")
+						array("/blog/", "Blog"),
+						array("/outreach.php", "Outreach"),
+						array("/faq.php", "F.A.Q.")
 						//array("/sustainability.php", "Sustainability"),
 					), 
 					array(
@@ -209,6 +210,7 @@ class webPage {
 					),
 					array(
 						array("/models.php","Models"),
+						array("/downscaling.php","Downscaling"),
 						array("/planning.php","Planning"),
 						array("/derived.php","Derived Data")
 					),
