@@ -100,7 +100,7 @@ function getProjectListSpecial($t){
 						echo "</div>";
 						*/
 					//echo "</div>";
-					echo "<div style=\"height: 83px; font-size: 13px; overflow: hidden;\">".preg_replace("/\n/", "<br/>", $row[2])."</div>";
+					echo "<div style=\"font-size: 13px; \">".preg_replace("/\n/", "<br/>", $row[2])."</div>";
 					//echo "<div style=\"font-size: 13px; color: #666666; margin-top: 5px;\">created ".preg_replace("/\n/", "<br/>", $row[1])."</div>";
 					
 				echo "</div>";

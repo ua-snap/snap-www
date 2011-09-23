@@ -107,7 +107,9 @@ class webPage {
 		<div id="header">
 			<a href="index.php"><span id="header_left"><img src="/images/snap_acronym_rgb.png" height="90px" alt="SNAP Acronym Logo" /></span></a>
 			<div id="header_right">
-				<a href="/"><img src="/images/snap_full.png" height="30px" alt="Scenarios Network for Alaska Planning" /></a>
+				<div><a href="/"><img src="/images/snap_full.png" height="30px" alt="Scenarios Network for Alaska Planning" /></a></div>
+				<div style="text-align: center; color: #999999; top: -7px; position: relative;">Exploring our future in a changing Arctic</div>
+				
 			</div>
 
 		</div>		
@@ -118,7 +120,7 @@ class webPage {
 		if ($this->menu){
 			$this->drawSubMenu($this->menu);
 		} else {
-			echo "<div id=\"tagline\">climate change information brought to the communities of the arctic</div>";
+			echo "<div id=\"tagline\">Exploring our future in a changing Arctic</div>";
 		}
 		?>
 			</div>
@@ -197,7 +199,7 @@ class webPage {
 						//array("/sustainability.php", "Sustainability"),
 					), 
 					array(
-						array("/maps.php","Map Tool"),
+						array("/maps.php\" target=\"new\"","Map Tool"),
 						array("/charts.php","Community Charts"),
 						array("/alfresco.php","ALFRESCO"),
 						array("/gisdata.php","GIS Data"),
@@ -211,8 +213,10 @@ class webPage {
 					array(
 						array("/models.php","Models"),
 						array("/downscaling.php","Downscaling"),
+						array("/derived.php","Derived Data"),
 						array("/planning.php","Planning"),
-						array("/derived.php","Derived Data")
+						array("/uncertainty.php","Uncertainty"),
+
 					),
 					array(
 						array("/training.php","Training"),
