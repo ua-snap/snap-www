@@ -22,7 +22,7 @@ $resourceid = $_GET['resourceid'];
 					<div style="float: left; width: 520px;">
 						<div style="color: #71797b; margin-left: 20px; font-size: 14px; margin-bottom: 5px;"><?php echo $resTypes[$project['type'] - 1]; ?></div>
 						<div style="font-size: 26px; color: #242d2f; margin-left: 20px; margin-bottom: 10px;"><?php echo $project['title']; ?></div>
-						<div style="font-size: 14px; line-height: 20px; color: #242d2f; margin-left: 20px; margin-bottom: 10px;"><?php echo $project['summary']; ?></div>
+						<div style="font-size: 14px; line-height: 20px; color: #242d2f; margin-left: 20px; margin-bottom: 10px;"><?php echo preg_replace("/\n/", "<br />", $project['summary']); ?></div>
 
 						<?php
 							$att_query = "SELECT * FROM attachments WHERE resourceid='$resourceid' ORDER BY category, id";

@@ -68,7 +68,7 @@ $staff_array = array(
 					?>
 					<div style="font-size: 20px; margin-top: 50px; margin-bottom: 30px;">SNAP Staff</div>
 					<?php
-						$query = "SELECT id, image, title, first, last, position FROM people WHERE snap='1' AND staffgroup='2' OR staffgroup='3' ORDER BY last";
+						$query = "SELECT id, image, title, first, last, position FROM people WHERE snap='1' AND staffgroup='2' OR staffgroup='3' AND status='1' ORDER BY last";
 						$result = mysql_query($query) or die(mysql_error());
 						$num = 0;
 						while ($row = mysql_fetch_array($result)){
@@ -125,7 +125,7 @@ $staff_array = array(
 								<div style="position: absolute;">Message</div>
 								<div style="position: absolute; left: 200px;"><textarea style="width: 500px; height: 300px;" name="message" ></textarea></div>
 							</div>
-							<div style="position: relative; margin-top: 20px; height: 300px;">
+							<div style="position: relative; margin-top: 20px; height: 20px;">
 								<div style="position: absolute;">Submit</div>
 								<div style="position: absolute; left: 200px;"><input type="submit" name="submit" value="Send Email" /></div>
 							</div>

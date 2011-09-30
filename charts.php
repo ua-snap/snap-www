@@ -67,7 +67,7 @@ $page->connectToDatabase();
 					?>
 					function fetchComm(comm_n){
 						$.get(
-						"ajax_fetch_data.php", { fetch_type: "comm_name", comm_name: comm_n },
+						"charts_fetch_data.php", { fetch_type: "comm_name", comm_name: comm_n },
 						function(data){
 							$('#community_list').html(data);
 						}, "html");
@@ -75,7 +75,7 @@ $page->connectToDatabase();
 					}
 					function fetchData(comm, type, scen, vari, fetch_t){
 						$.get(
-							"ajax_fetch_data.php", { community : comm, dataset: type, scenario : scen, variability: vari, fetch_type: fetch_t },
+							"charts_fetch_data.php", { community : comm, dataset: type, scenario : scen, variability: vari, fetch_type: fetch_t },
 							function(data){
 								$('#display').html(data);
 								drawChart();

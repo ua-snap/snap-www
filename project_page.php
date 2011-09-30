@@ -26,7 +26,7 @@ $page->connectToDatabase();
 					<div style="float: left; width: 520px;">
 						<div style="color: #71797b; margin-left: 20px; font-size: 14px; margin-bottom: 5px;">Project</div>
 						<div style="font-size: 26px; color: #242d2f; margin-left: 20px; margin-bottom: 10px;"><?php echo $project['title']; ?></div>
-						<div style="font-size: 14px; line-height: 20px; color: #242d2f; margin-left: 20px; margin-bottom: 10px;"><?php echo $project['description']; ?></div>
+						<div style="font-size: 14px; line-height: 20px; color: #242d2f; margin-left: 20px; margin-bottom: 10px;"><?php echo preg_replace("/\n/", "<br />", $project['description']); ?></div>
 
 						<!--<div style="color: #242d2f; margin-left: 20px; font-size: 22px; ">Related Publications</div>-->
 					</div>

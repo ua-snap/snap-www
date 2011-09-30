@@ -28,25 +28,11 @@ class webPage {
 				array("Projects","/projects.php"),
 				array("Methods","/methods.php"),
 			);
-			//for ($i =0; $i < sizeof($menu_items); $i++){
-				//$x = preg_replace("/(\w+).*/", "$1", $menu_items[$i][1]);
-				//echo $this->menu." - ".$x;
-			//	echo "<span style=\"margin-bottom:17px;\"><span style=\"height: 20px;\"><a ";
-			//		if (("/".basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || "/".$this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
-			//			echo "style=\"color: black;\"";
-			//		}
-			//		echo " href=\"".$menu_items[$i][1]."\" >".$menu_items[$i][0]."</a></span><div style=\"text-align: center; height: 10px;\" >";
-			//		if (("/".basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || "/".$this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
-			//			echo "<img alt=\"Current Selection\" src=\"/images/current_arrow.png\" />";
-			//		}
-			//	echo "</div></span>";
-			//}
-			//echo "<div style=\"clear: both;\"></div>";
 			for ($i =0; $i < sizeof($menu_items); $i++){
 				$x = preg_replace("/(\w+).*/", "$1", $menu_items[$i][1]);
 				//echo $this->menu." - ".$x;
 				//echo "<span style=\"margin-bottom:17px;\"><span style=\"height: 20px;\"><a ";
-				echo "<div style=\"display: inline-block; float: left; height: 46px; position: relative; margin-right: 20px; margin-left: 20px;\">";
+				echo "<div style=\"display: inline-block; float: left; height: 48px; position: relative; margin-right: 20px; margin-left: 20px;\">";
 					echo "<div><a ";
 					if (("/".basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || "/".$this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
 						echo "style=\"color: black;\"";
@@ -87,6 +73,7 @@ class webPage {
 		<link rel="shortcut icon" href="/images/snap.ico" />
 		<script src="/js/jquery.js" type="text/javascript" ></script>
 		<script src="/js/site.js" type="text/javascript" ></script>
+		<script src="js/jquery.hoverIntent.minified.js" type="text/javascript"></script>
 		<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"></script>
 		<!--<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.lite.min.js"></script>-->
 		<script type="text/javascript">
@@ -108,7 +95,19 @@ class webPage {
 			<a href="index.php"><span id="header_left"><img src="/images/snap_acronym_rgb.png" height="90px" alt="SNAP Acronym Logo" /></span></a>
 			<div id="header_right">
 				<div><a href="/"><img src="/images/snap_full.png" height="30px" alt="Scenarios Network for Alaska Planning" /></a></div>
-				<div style="text-align: center; color: #999999; top: -7px; position: relative;">Exploring our future in a changing Arctic</div>
+				<?php
+				if (basename($_SERVER['PHP_SELF']) != "index.php"){
+					echo "<div id=\"motto\" style=\"text-align: center; display: none; color: #999999; top: -7px; position: relative;\">Exploring our future in a changing Arctic</div>";
+					echo "<script type=\"text/javascript\">\n";
+						echo "var config = { 
+							over: function(){ $('#motto').fadeIn(500); },
+							interval: 100,
+							out: function(){ $('#motto').fadeOut(500); } 
+							};";
+						echo "$('#header_right').hoverIntent(config);";
+					echo "</script>";
+				}
+				?>
 				
 			</div>
 
@@ -149,7 +148,7 @@ class webPage {
 				<!--<span style="margin-left: 40px;"><a href="">email updates</a></span>-->
 			</div>
 			<div id="footbar">
-				<div class="horiz_bar_left" style="color: #eeeeee; relative; font-size: 11px;">
+				<div class="horiz_bar_left" style="color: #eeeeee; relative; font-size: 10px;">
 					<div style="position: absolute; margin-left: 20px; ">
 					<!--We just set up this twitter account so now we'll show some tweets right here @twitter, is that how this works? #awkwardfirsttweet-->
 						<div id="twitter_update_list"></div>

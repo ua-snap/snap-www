@@ -29,6 +29,14 @@
 		$("#" + item.id + " .menuContents").toggle();
 		$("#" + item.id + " > .menuSpacer").toggleClass("menuSpacerToggle");
 	}
+	function buildMenu(vari){
+		//alert(vari);
+		$.get(
+			"maps_update.php", { variable : vari },
+			function(data){
+				$('#menu_items').html(data);
+			}, "html");
+	}
 	function updateMenu(){
 		$('.menuOption > div:first-child')
 			.animate( { backgroundColor: '#a7c95a' }, 300)
@@ -44,6 +52,9 @@
 		if ($(mapvariable).parents(".menuOption").attr("id") == "menu_variable"){
 			globalVariable = mapvalue.toLowerCase();
 		}
+		if ($(mapvariable).parents(".menuOption").attr("id") == "menu_interval"){
+			globalTimeInterval = mapvalue;
+		}
 		if ($(mapvariable).parents(".menuOption").attr("id") == "menu_range"){
 			globalTimeRange = mapvalue;
 		}
@@ -52,7 +63,7 @@
 			return "http://hippy.gina.alaska.edu/snaptiles/" + globalScenario + ".comp.temp.annual." + globalTimeRange + "/tile/" + tile.x + "/" + tile.y + "/" + zoom + ".png"; 
 		    },
 		    tileSize: new google.maps.Size(256, 256),
-		    opacity: 0.5
+		    opacity: 0.7
 		});
 
 
@@ -98,7 +109,7 @@
 	  Called when the page is resized
 	*/
      	function resize() {
-		var h = $("body").height() - $("#map_header").height() - 20;
+		var h = $("body").height() - $("#map_header").height() - 50;
 		if (h > 0) {
 			$("#map_canvas").height(h);
 		}

@@ -118,7 +118,7 @@ function getPublicationListSpecial($t){
 
 			echo "<script type=\"text/javascript\">\n";
 				echo "var config = { 
-					over: function(){ $('#pub_hover_".$row[2]."').show(500); },
+					over: function(){ $('#pub_hover_".$row[2]."').fadeIn(300); },
 					interval: 100,
 					out: function(){ $('#pub_hover_".$row[2]."').hide(0); } 
 					};";
@@ -155,7 +155,6 @@ function getPublicationListSpecial($t){
 }
 ?>
 		<div id="main_body">
-			<script src="js/jquery.hoverIntent.minified.js" type="text/javascript"></script>
 			<div id="main_content">
 				<div class="subHeader">Resources</div>
 					<form method="GET" action="resources.php">
