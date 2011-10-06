@@ -40,13 +40,37 @@
 	cursor: pointer;
 	cursor: hand;
 }
+.news_caption {
+	position: absolute;
+	line-height: 40px;
+	color: white;
+	width: 585px;
+	padding-right: 15px;
+	text-align: right;
+	height: 40px;
+	background-color: #000000;
+	opacity: 0.5;
+	top: 269px;
+	left: 329px;
+}
+#news_pause {
+	display: none;
+	left: 20px;
+	position: absolute;
+	bottom: 0px;
+	z-index: 10;
+	font-size: 30px;
+	color: #ffffff;
+	font-weight: bold;
+	
+}
 .news_link {
 	position: absolute;
 	padding-top: 20px;
 	font-size: 16px;
 	color: #ffffff;
 	width: 50px;
-	top: 225px;
+	top: 200px;
 	left: 10px;
 	width: 150px;
 	/*

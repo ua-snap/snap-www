@@ -17,11 +17,9 @@
 	var globalScenario = "a1b";
 	var globalModel ="";
 	var globalMapResolution = "";
-	var globalfoovar;	
-	/*
-		Redraw the menu when a new selection is made, or for the first time
-		and add highlights/animations to the menu
-	*/
+	var newmap;	
+
+	//Show the sub menu for a selected variable
 	function showVariable(item){
 		$(".menuContentsLeft div").show();
 		$(".menuContents").parent().not("#" + item.id).children(".menuContents").hide();
@@ -29,6 +27,7 @@
 		$("#" + item.id + " .menuContents").toggle();
 		$("#" + item.id + " > .menuSpacer").toggleClass("menuSpacerToggle");
 	}
+	//Build the menu when there are changes
 	function buildMenu(vari){
 		//alert(vari);
 		$.get(
@@ -37,6 +36,7 @@
 				$('#menu_items').html(data);
 			}, "html");
 	}
+	//Highlight the menu to show changes from new options
 	function updateMenu(){
 		$('.menuOption > div:first-child')
 			.animate( { backgroundColor: '#a7c95a' }, 300)
@@ -44,8 +44,8 @@
 			.animate( { backgroundColor: 'white' }, 900);
 		$('.menuOption > div:first-child').css( "backgroundColor", "white");
 	 }
+	//Adds a new map layer overlay, based on current user settings
 	function addMap(mapvariable, mapvalue){
-		//alert($(mapvariable).parents(".menuOption").attr("id") + " : " + mapvalue);
 		if ($(mapvariable).parents(".menuOption").attr("id") == "menu_scenario"){
 			globalScenario = mapvalue.toLowerCase();
 		}
@@ -58,7 +58,7 @@
 		if ($(mapvariable).parents(".menuOption").attr("id") == "menu_range"){
 			globalTimeRange = mapvalue;
 		}
-		globalfoovar = new google.maps.ImageMapType({
+		newmap = new google.maps.ImageMapType({
 		    getTileUrl: function(tile, zoom) {
 			return "http://hippy.gina.alaska.edu/snaptiles/" + globalScenario + ".comp.temp.annual." + globalTimeRange + "/tile/" + tile.x + "/" + tile.y + "/" + zoom + ".png"; 
 		    },
@@ -68,7 +68,7 @@
 
 
 		map.overlayMapTypes.push(null); // create empty overlay entry
-		map.overlayMapTypes.setAt("0",globalfoovar);
+		map.overlayMapTypes.setAt("0", newmap);
 
 	}
       	/*
@@ -120,7 +120,7 @@
 			$("#map_footer").width(w - 10);
 		}
 	}
- 
+	//Shows XY of points
 	function redraw() {
 		var latLngBounds = new google.maps.LatLngBounds(
 		  marker1.getPosition(),

@@ -28,20 +28,22 @@ class webPage {
 				array("Projects","/projects.php"),
 				array("Methods","/methods.php"),
 			);
+			//Draw the main menu
 			for ($i =0; $i < sizeof($menu_items); $i++){
 				$x = preg_replace("/(\w+).*/", "$1", $menu_items[$i][1]);
-				//echo $this->menu." - ".$x;
-				//echo "<span style=\"margin-bottom:17px;\"><span style=\"height: 20px;\"><a ";
-				echo "<div style=\"display: inline-block; float: left; height: 48px; position: relative; margin-right: 20px; margin-left: 20px;\">";
-					echo "<div><a ";
+				echo "<div style=\"display: inline-block; float: left; height: 45px; position: relative; margin-right: 20px; margin-left: 20px;\">";
+					echo "<div style=\"height: 25px;\"><a ";
+					//If selected, menu option changes color
 					if (("/".basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || "/".$this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
 						echo "style=\"color: black;\"";
 					}
-					echo " href=\"".$menu_items[$i][1]."\" >".$menu_items[$i][0]."</a></div><div style=\"text-align: center; \" >";
+					//If selected, arrow is displayed for current selection 
+					echo " href=\"".$menu_items[$i][1]."\" >".$menu_items[$i][0]."</a></div><div style=\"text-align: center; height: 22px; ";
 					if (("/".basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || "/".$this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
-						echo "<img alt=\"Current Selection\" src=\"/images/current_arrow.png\" style=\"vertical-align: bottom;\" />";
+						echo "background-image: url('/images/current_arrow.png'); background-position: center bottom; background-repeat: no-repeat;";
+						//echo "<img alt=\"Current Selection\" src=\"/images/current_arrow.png\" style=\"vertical-align: bottom;\" />";
 					}
-					echo "</div>";
+					echo "\" /></div>";
 				echo "</div>";
 			}
 			echo "<div style=\"clear: both;\"></div>";
@@ -71,6 +73,19 @@ class webPage {
 
 		?>
 		<link rel="shortcut icon" href="/images/snap.ico" />
+		<script type="text/javascript">
+
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-3978613-3']);
+			  _gaq.push(['_trackPageview']);
+
+			  (function() {
+			    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+
+		</script>
 		<script src="/js/jquery.js" type="text/javascript" ></script>
 		<script src="/js/site.js" type="text/javascript" ></script>
 		<script src="js/jquery.hoverIntent.minified.js" type="text/javascript"></script>
@@ -92,7 +107,7 @@ class webPage {
 	public function pageHeader(){ ?>	
 		<!-- <div class="slashbar"></div> -->
 		<div id="header">
-			<a href="index.php"><span id="header_left"><img src="/images/snap_acronym_rgb.png" height="90px" alt="SNAP Acronym Logo" /></span></a>
+			<a href="/"><span id="header_left"><img src="/images/snap_acronym_rgb.png" height="90px" alt="SNAP Acronym Logo" /></span></a>
 			<div id="header_right">
 				<div><a href="/"><img src="/images/snap_full.png" height="30px" alt="Scenarios Network for Alaska Planning" /></a></div>
 				<?php
@@ -149,7 +164,7 @@ class webPage {
 			</div>
 			<div id="footbar">
 				<div class="horiz_bar_left" style="color: #eeeeee; relative; font-size: 10px;">
-					<div style="position: absolute; margin-left: 20px; ">
+					<div style="position: absolute; margin-left: 20px; text-align: left; ">
 					<!--We just set up this twitter account so now we'll show some tweets right here @twitter, is that how this works? #awkwardfirsttweet-->
 						<div id="twitter_update_list"></div>
 						<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>

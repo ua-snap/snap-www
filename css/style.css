@@ -89,8 +89,10 @@ a:hover {
 	font-size: 18px;
 }
 .horiz_bar {
+	z-index: 10;
 }
 .horiz_bar_left {
+	z-index: 10;
 	float: left; 
 	background-color: #848d8f; 
 	width: 830px; 
@@ -103,6 +105,7 @@ a:hover {
 	-moz-box-shadow: 2px 2px 2px #cccccc;
 	-webkit-box-shadow: 2px 2px 2px #cccccc;
 	box-shadow: 2px 2px 2px #cccccc;
+
 }
 .horiz_bar_right {
 	float: right; 
@@ -272,8 +275,11 @@ a:hover {
 	padding-left: 25px;
 	margin: auto;
 	font-size: 20px;
-	height: 46px;
+	height: 44px;
 	margin-top: 40px;
+}
+.menu div div:last-child {
+	overflow: hidden;
 }
 .menu div a:link {
 	color: #6a7173;
