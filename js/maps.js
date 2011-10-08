@@ -18,7 +18,7 @@
 	var globalModel ="";
 	var globalMapResolution = "";
 	var newmap;	
-
+	var gmnames;
 	//Show the sub menu for a selected variable
 	function showVariable(item){
 		$(".menuContentsLeft div").show();
@@ -63,12 +63,26 @@
 			return "http://hippy.gina.alaska.edu/snaptiles/" + globalScenario + ".comp.temp.annual." + globalTimeRange + "/tile/" + tile.x + "/" + tile.y + "/" + zoom + ".png"; 
 		    },
 		    tileSize: new google.maps.Size(256, 256),
-		    opacity: 0.7
+		    opacity: 0.7 
 		});
-
-
 		map.overlayMapTypes.push(null); // create empty overlay entry
 		map.overlayMapTypes.setAt("0", newmap);
+		gnames = new google.maps.ImageMapType({
+		      getTileUrl: function(a, z) {
+			var tiles = 1 << z, X = (a.x % tiles);
+			if(X < 0) { X += tiles; }
+			return "http://mt0.google.com/vt/v=apt.116&hl=en-US&x=" +
+			       X + "&y=" + a.y + "&z=" + z + "&s=G&lyrs=h";
+		      },
+		      tileSize: new google.maps.Size(256, 256),
+		      isPng: false,
+		      maxZoom: 20,
+		      name: "lyrs=h",
+		      alt: "Hybrid labels"
+		    })
+
+		map.overlayMapTypes.push(null); // create empty overlay entry
+		map.overlayMapTypes.setAt("1",gnames );
 
 	}
       	/*
@@ -87,10 +101,7 @@
 			},
 			scaleControl: true,
 			mapTypeControl: true,
-			mapTypeControlOptions: {
-				style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
-			},
-			'mapTypeId': google.maps.MapTypeId.TERRAIN
+			mapTypeId: google.maps.MapTypeId.TERRAIN
 		});
 		if (point_list){
 			polygon = new google.maps.Polygon({

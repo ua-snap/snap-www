@@ -108,6 +108,7 @@ a:hover {
 
 }
 .horiz_bar_right {
+	z-index: 10;
 	float: right; 
 	background-color: #848d8f; 
 	width: 142px; 

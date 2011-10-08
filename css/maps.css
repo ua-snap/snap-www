@@ -50,13 +50,14 @@
 }
 .menuContents div div {
 	padding: 2px;
-        color: #0066cc;
+
 	font-size: 13px;
 }
 .menuContents div div:hover {
 	background-color: #eeeeee;
 }
 .menuContentsLeft {
+        color: #0066cc;
 	float: left; 
 	padding: 10px; 
 	padding-right: 0px; 

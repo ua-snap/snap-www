@@ -109,6 +109,15 @@
     	-moz-transform-origin: 60% 100%;
 	*/
 }
+.news_content a {
+	color: #999999;
+	color: #bbbbbb;
+}
+.news_content a:hover {
+	color: #cccccc;
+	color: #999999;
+
+}
 .news_image {
 	width: 600px;
 	position: absolute;

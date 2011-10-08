@@ -55,7 +55,6 @@ $page->connectToDatabase();
 							<span style="margin-right: 15px;"><a href="">Stats</a></span>
 							<span style="margin-right: 15px;"><a href="">Print</a></span>
 							<span style="margin-right: 15px;"><a href="">Link</a></span>
-							<span style="margin-right: 15px;"><a href="">Download</a></span>
 						</div>
 					</div>
 				</div>

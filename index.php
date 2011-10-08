@@ -36,10 +36,11 @@ $page->pageHeader();
 						<div class="news_image"><img alt="Landscape Connectivity" src="images/index_images/connectivity.jpg" style="width: 600px; height: 300px;" /></div>
 						<div class="news_content"><div class="news_title">Landscape Connectivity</div>Utilizing climate projection data from SNAP, the Connecting Alaska Landscapes into the Future Project used selected species to identify areas of Alaska that may become important in maintaining landscape-level connectivity given a changing climate.</div>
 						<div class="news_link"><a href="">read more &gt;&gt;</a></div>
+						<div class="news_caption">Photo Courtesy of Chuck Young, U.S. Fish &amp; Wildlife Service</div>
 					</div>
 					<div style="position: absolute; display: none;">
 						<div class="news_image"><img alt="Downscaled Climate Projections" src="images/index_images/downscaling.png" style="width: 600px; height: 300px;" /></div>
-						<div class="news_content"><div class="news_title">Downscaled Climate Projections</div>Utilizing climate projection data from SNAP, the Connecting Alaska Landscapes into the Future Project used selected species to identify areas of Alaska that may become important in maintaining landscape-level connectivity given a changing climate.</div>
+						<div class="news_content"><div class="news_title">Downscaled Climate Projections</div>SNAP takes coarse resolution global climate model (GCM) data and downscales it to higher resolution.  This makes it more useful for agencies and decision makers to plan for climate change.</div>
 						<div class="news_link"><a href="">read more &gt;&gt;</a></div>
 					</div>
 				</div>
