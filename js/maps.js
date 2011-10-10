@@ -13,9 +13,9 @@
 	// Global individual map data
 	var globalVariable = "";
 	var globalTimeInterval = "";
-	var globalTimeRange = "2010-2019";
-	var globalScenario = "a1b";
-	var globalModel ="";
+	var globalTimeRange = "";
+	var globalScenario = "";
+	var globalModel = "";
 	var globalMapResolution = "";
 	var newmap;	
 	var gmnames;
@@ -29,12 +29,24 @@
 	}
 	//Build the menu when there are changes
 	function buildMenu(vari){
-		//alert(vari);
+		$.ajax({
+                    url: 'maps_update.php',
+                    type: 'GET',
+		    async: false,
+                    data: "variable=" + vari + "&requesttype=build",
+                    success: function(resp) {
+			$('#menu_items').html(resp);
+                    }
+            });
+		/*
 		$.get(
-			"maps_update.php", { variable : vari },
+			"maps_update.php", { variable : vari, requesttype : "build" },
 			function(data){
-				$('#menu_items').html(data);
+				var lower = "</div><div>Variable=" + globalVariable + " : Interval=" + globalTimeInterval + " : Range=" + globalTimeRange;
+				lower += " : Scenario=" + globalScenario + " : Model=" + globalModel + " : Resolution=" + globalMapResolution + "</div>";
+				$('#menu_items').html(data + lower);
 			}, "html");
+		*/
 	}
 	//Highlight the menu to show changes from new options
 	function updateMenu(){
@@ -46,21 +58,27 @@
 	 }
 	//Adds a new map layer overlay, based on current user settings
 	function addMap(mapvariable, mapvalue){
-		if ($(mapvariable).parents(".menuOption").attr("id") == "menu_scenario"){
-			globalScenario = mapvalue.toLowerCase();
-		}
-		if ($(mapvariable).parents(".menuOption").attr("id") == "menu_variable"){
-			globalVariable = mapvalue.toLowerCase();
-		}
-		if ($(mapvariable).parents(".menuOption").attr("id") == "menu_interval"){
-			globalTimeInterval = mapvalue;
-		}
-		if ($(mapvariable).parents(".menuOption").attr("id") == "menu_range"){
-			globalTimeRange = mapvalue;
-		}
+		if ($(mapvariable).parents(".menuOption").attr("id") == "menu_variable"){ globalVariable = mapvalue; }
+		else if ($(mapvariable).parents(".menuOption").attr("id") == "menu_interval"){ globalTimeInterval = mapvalue; }
+		else if ($(mapvariable).parents(".menuOption").attr("id") == "menu_range"){ globalTimeRange = mapvalue; }
+		else if ($(mapvariable).parents(".menuOption").attr("id") == "menu_scenario"){ globalScenario = mapvalue; }
+		else if ($(mapvariable).parents(".menuOption").attr("id") == "menu_model"){ globalModel = mapvalue; }
+		else if ($(mapvariable).parents(".menuOption").attr("id") == "menu_resolution"){ globalMapResolution = mapvalue; }
+		var tilepath = "";
+		var requestinfo = "requesttype=newmap&variable=" + globalVariable + "&interval=" + globalTimeInterval + "&range=" + globalTimeRange + "&scenario=" + globalScenario + "&model=" + globalModel + "&resolution=" + globalMapResolution;
+		$.ajax({
+                    url: 'maps_update.php',
+                    type: 'GET',
+		    async: false,
+                    data: requestinfo,
+                    success: function(resp) {
+			tilepath = resp;
+                    }
+            });
+
 		newmap = new google.maps.ImageMapType({
 		    getTileUrl: function(tile, zoom) {
-			return "http://hippy.gina.alaska.edu/snaptiles/" + globalScenario + ".comp.temp.annual." + globalTimeRange + "/tile/" + tile.x + "/" + tile.y + "/" + zoom + ".png"; 
+			return tilepath + tile.x + "/" + tile.y + "/" + zoom + ".png";
 		    },
 		    tileSize: new google.maps.Size(256, 256),
 		    opacity: 0.7 
@@ -83,6 +101,7 @@
 
 		map.overlayMapTypes.push(null); // create empty overlay entry
 		map.overlayMapTypes.setAt("1",gnames );
+		map.overlayMapTypes.setAt("0", newmap);
 
 	}
       	/*
