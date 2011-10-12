@@ -28,12 +28,12 @@
 		$("#" + item.id + " > .menuSpacer").toggleClass("menuSpacerToggle");
 	}
 	//Build the menu when there are changes
-	function buildMenu(vari){
+	function buildMenu(vari,interval,range,scenario,model,resolution){
 		$.ajax({
                     url: 'maps_update.php',
                     type: 'GET',
 		    async: false,
-                    data: "variable=" + vari + "&requesttype=build",
+                    data: "requesttype=build&variable=" + vari + "&interval=" + interval + "&range=" + range + "&scenario=" + scenario + "&model=" + model + "&resolution=" + resolution,
                     success: function(resp) {
 			$('#menu_items').html(resp);
                     }
@@ -101,7 +101,8 @@
 
 		map.overlayMapTypes.push(null); // create empty overlay entry
 		map.overlayMapTypes.setAt("1",gnames );
-		map.overlayMapTypes.setAt("0", newmap);
+
+
 
 	}
       	/*

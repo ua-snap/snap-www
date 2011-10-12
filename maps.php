@@ -2,7 +2,6 @@
 include_once("template.php");
 $page = new webPage("SNAP: Maps", "maps.css", "data");
 $page->openPage();
-//$page->pageHeader();
 $page->connectToDatabase();
 ?>
 
@@ -21,23 +20,34 @@ $page->connectToDatabase();
 				</div>
 				-->
 				<?php
-					$g_var = "Mean Annual Precipitation";
-					if ($_GET['var']){
-						$g_var = " WHERE variable='".mysql_real_escape_string($_GET['var'])."'";
+					$v = "";
+					if ($_GET['v']){ $v = " WHERE variable='".mysql_real_escape_string($_GET['v'])."'"; }
+					$query = "SELECT variable FROM tileset $v GROUP BY variable";
+					$result = mysql_query($query) or die(mysql_error());
+					$variable = "";
+					if (mysql_num_rows($result) > 0){
+						$row = mysql_fetch_array($result);
+						$variable = $row['variable'];
 					}
-					$query = "SELECT variable FROM tileset GROUP BY variable";
-					$result = mysql_query($query);
+					$int = "";
+					if ($_GET['int']){ $int = mysql_real_escape_string($_GET['int']); }
+					$ran = "";
+					if ($_GET['ran']){ $ran = mysql_real_escape_string($_GET['ran']); }
+					$sce = "";
+					if ($_GET['sce']){ $sce = mysql_real_escape_string($_GET['sce']); }
+					$mod = "";
+					if ($_GET['mod']){ $mod = mysql_real_escape_string($_GET['mod']); }
+					$res = "";
+					if ($_GET['res']){ $res = mysql_real_escape_string($_GET['res']); }
 				?>	
 				<div id="map_header" style="height: auto;">
 					<div style="margin-top: 0px; margin-bottom: 0px;">
 						<div style="float: left;"><img style="margin-top: 20px; margin-bottom: 20px; vertical-align: middle" src="images/logo_snap_maps_stats.png" /></div>
 						<div id="model_menu" style="float: left;">
 							<div id="snap_name" style="color: #505a5c; margin-left: 30px; font-size: 20px; margin-top: 40px;">Scenarios Network for Alaska &amp; Arctic Planning</div>	
-						<div id="menu_items" style="display: none; color: #505a5c; margin-left: 50px; font-size: 14px; margin-top: 10px;">
-						<?php //include("maps_update.php"); ?>
-						</div>
+						<div id="menu_items" style="display: none; color: #505a5c; margin-left: 50px; font-size: 14px; margin-top: 10px;"></div>
 						<script type="text/javascript">
-							buildMenu("Mean Annual Temperature");
+							<?php echo "buildMenu('$variable', '$int', '$ran', '$sce', '$mod', '$res');" ?>
 						</script>
 					</div>
 				</div>

@@ -7,9 +7,9 @@ if ($_GET['requesttype'] == "build"){
 	$addVar = "";
 	if ($_GET['variable']){
 		$activeVariable = mysql_real_escape_string($_GET['variable']);
-		$addVar = " WHERE variable='$activeVariable'";
+		$addVar = " ORDER BY FIELD(variable, '$activeVariable') DESC";
 	}
-	$query = "SELECT variable,description FROM tileset LEFT JOIN tileset_descriptions ON variable=name GROUP BY variable";
+	$query = "SELECT variable,description FROM tileset LEFT JOIN tileset_descriptions ON variable=name GROUP BY variable $addVar";
 	$result = mysql_query($query);
 	$count = 0;
 ?>
@@ -17,12 +17,23 @@ if ($_GET['requesttype'] == "build"){
 <div style="margin-top: 5px;" id="mapMenu">
 	<div>	
 		<div class='menuOption' id='menu_variable' style="font-size: 18px;">
-			<div><span class="menuTitle"><?php echo $activeVariable; ?></span></div>
+			<div><span class="menuTitle">
+			<?php 
+				$left = "";
+				$right = "";
+				$row = mysql_fetch_array($result);
+				$left .= "<div id='var_$count'><span>".$row['variable']."</span></div>";
+				$right .= "<div id='desc_$count' style='display: none;'>".$row['description']."</div>";
+				$count++;
+				$activeVariable = $row['variable'];
+				echo "<script type='text/javascript'>globalVariable = '".$row['variable']."';</script>";
+				echo $activeVariable; 
+			?>
+			</span></div>
 			<div class='menuSpacer'><span></span></div>
 			<div class='menuContents'>
 				<?php
-				$left = "";
-				$right = "";
+
 				while ($row = mysql_fetch_array($result)){
 					$left .= "<div id='var_$count'><span>".$row['variable']."</span></div>";
 					$right .= "<div id='desc_$count' style='display: none;'>".$row['description']."</div>";
@@ -53,7 +64,19 @@ if ($_GET['requesttype'] == "build"){
 			</div>
 		</div>
 		<div class='menuOption' id='menu_range' style="font-size: 18px;">
-			<div>from <span class="menuTitle" style="font-size: 18px;">2050-2059</span></div>
+			<div>from <span class="menuTitle" style="font-size: 18px;">
+				<?php
+					$addRan = "";
+					if ($_GET['range']){
+						$addRan = " ORDER BY FIELD(daterange, '".$_GET['range']."') DESC";
+					}
+					$subquery = "SELECT daterange FROM tileset WHERE variable='$activeVariable' GROUP BY daterange $addRan";
+					$subresult = mysql_query($subquery) or die(mysql_error());
+					$subrow = mysql_fetch_array($subresult);
+					echo $subrow['daterange']; 
+					echo "<script type='text/javascript'>globalTimeRange = '".$subrow['daterange']."';</script>";
+				?>
+			</span></div>
 			<div class='menuSpacer'></div>
 			<div class='menuContents'>
 				<?php
@@ -114,7 +137,19 @@ if ($_GET['requesttype'] == "build"){
 		</div>
 	</div>
 	<div class='menuOption' id='menu_resolution'>
-		<div>downscaled to <span class="menuTitle" style="font-size: 10px;">2km</span> resolution</div>
+		<div>downscaled to <span class="menuTitle" style="font-size: 10px;">
+		<?php
+			$addRes = "";
+			if ($_GET['resolution']){
+				$addRan = " ORDER BY FIELD(resolution, '".$_GET['resolution']."') DESC";
+			}
+			$subquery = "SELECT resolution FROM tileset WHERE variable='$activeVariable' GROUP BY resolution $addRes";
+			$subresult = mysql_query($subquery) or die(mysql_error());
+			$subrow = mysql_fetch_array($subresult);
+			echo $subrow['resolution']; 
+			echo "<script type='text/javascript'>globalMapResolution = '".$subrow['resolution']."';</script>";
+		?>
+		</span> resolution</div>
 		<div class='menuSpacer'></div>
 		<div class='menuContents'>
 			<?php
