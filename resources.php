@@ -126,28 +126,6 @@ function getPublicationListSpecial($t){
 				echo "$('#pub_close_".$row[2]."').click(
 					function(){ $('#pub_hover_".$row[2]."').hide(0); }
 				);";
-				/*
-				echo "$('#pub_box_".$row[2]."').hover(\n";
-					echo "function(){ $('#pub_hover_".$row[2]."').show(500); },\n";
-					echo "function(){ $('#pub_hover_".$row[2]."').hide(0); }\n";
-				echo ");\n";
-				*/
-				/*
-				echo "$('#pub_box_".$row[2]."').bind('mouseover', function() { $('#pub_hover_".$row[2]."').show(500); } );";
-				echo "var _counter = 0;";
-				echo "var _seconds = 0;";
-				echo "$('#pub_box_".$row[2]."').hover(\n";
-					echo "function() { _counter = setInterval(openHover(), 2000); }, \n";
-					echo "function() { clearInterval(_counter); }";
-				echo ");\n";
-				echo "function openHover() {";
-					echo "_seconds++; ";
-					echo "if (_seconds == 3) { _seconds = 0; $('#pub_hover_".$row[2]."').show(500); }";
-				echo "}";	
-				*/
-				//echo "$('#pub_box_".$row[2]."').mouseout(function(){\n";
-				//	echo "$('#pub_hover_".$row[2]."').hide();\n";
-				//echo "});\n";
 			echo "</script>\n";
 
 		echo "</div>";
@@ -157,18 +135,9 @@ function getPublicationListSpecial($t){
 		<div id="main_body">
 			<div id="main_content">
 				<div class="subHeader">Resources</div>
-					<form method="GET" action="resources.php">
+					<form method="get" action="resources.php">
 					<div class="filters" style="position: relative; margin-top: 5px;">
 					<div style="color: #444444; font-size: 15px; margin-bottom: 6px; margin-left: 6px; font-weight: bold; display: inline-block">Publication Type</div>
-
-						<?php
-						
-						//for ($i = 0; $i < sizeof($resTypes); $i++){
-						//	echo "<a href=\"\"><span class=\"tag_nav\"".($i + 1)."\">".$resTypes[$i]."</span></a>";
-						//}
-						?>
-					
-
 					<select name="type" style="position: absolute; left: 175px;" onchange="submit();">
 						<option value="">All</option>
 						<?php
@@ -219,9 +188,10 @@ function getPublicationListSpecial($t){
 
 
 					</form>
-					<div class="filters" style="">
 					<?php
 					/*
+					<div class="filters" style="">
+
 						//Tags
 						$tag_result = mysql_query("SELECT tag FROM resource_tags GROUP BY tag");
                                         	$tag_row = mysql_fetch_array($tag_result);
@@ -306,9 +276,11 @@ function getPublicationListSpecial($t){
                                                 	echo "<a href=\"resources.php?coll=".$colllist."\"><span $collstyle class=\"tag_nav\">".$coll_row[1]."</span></a>";
                                         	}
 						echo "</div>";
+
+
+					</div>
 						*/
 					?>
-					</div>
 
 					<div style="width: 900px; clear: both; height: 1px;"></div>
 					<div style="margin-top: 40px;"><?php getPublicationListSpecial($_GET['tags']); ?></div>
@@ -322,8 +294,6 @@ function getPublicationListSpecial($t){
 
 
 
-<?php
-?>
 		</div>
 	</div>
 <?php

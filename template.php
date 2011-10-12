@@ -43,7 +43,7 @@ class webPage {
 						echo "background-image: url('/images/current_arrow.png'); background-position: center bottom; background-repeat: no-repeat;";
 						//echo "<img alt=\"Current Selection\" src=\"/images/current_arrow.png\" style=\"vertical-align: bottom;\" />";
 					}
-					echo "\" /></div>";
+					echo "\" ></div>";
 				echo "</div>";
 			}
 			echo "<div style=\"clear: both;\"></div>";
