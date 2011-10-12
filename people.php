@@ -123,7 +123,7 @@ $staff_array = array(
 							</div>
 							<div style="position: relative; margin-top: 20px; height: 300px;">
 								<div style="position: absolute;">Message</div>
-								<div style="position: absolute; left: 200px;"><textarea style="width: 500px; height: 300px;" name="message" ></textarea></div>
+								<div style="position: absolute; left: 200px;"><textarea style="width: 500px; height: 300px;" name="message" rows="0" cols="0" ></textarea></div>
 							</div>
 							<div style="position: relative; margin-top: 20px; height: 20px;">
 								<div style="position: absolute;">Submit</div>

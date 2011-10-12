@@ -19,7 +19,6 @@ $page->pageHeader();
 				</script>
 			</div>
 		</div>
-	</div>
 <?php
 $page->closePage();
 ?>

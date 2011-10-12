@@ -142,7 +142,6 @@ Date of thaw and date of freeze were derived by creating a running average of me
 				</div>
 			</div>
 		</div>
-	</div>
 <?php
 $page->closePage();
 ?>
