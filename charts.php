@@ -17,15 +17,13 @@ $page->connectToDatabase();
     <script type="text/javascript" src="js/exporting.src.js"></script>
     <!--<script type="text/javascript" src="https://www.google.com/jsapi"></script>-->
 
-  </head>
-  <body>
 	<div style="margin: auto;">
 		<div style="height: 150px; margin: auto; margin-bottom: 20px; width: 950px;">
 			<div style="width: 300px; float: left;">
 				<div>
 					<div style="text-align: right;">
 						Filter the list: 
-						<input id="comm_select" autocomplete="off" type="text" style="width: 180px; padding: 3px;  margin-bottom: 5px;"/>
+						<input id="comm_select" type="text" style="width: 180px; padding: 3px;  margin-bottom: 5px;" />
 					</div>	
 					<script type="text/javascript">
 						$('#comm_select').keyup( function(){ 
@@ -82,7 +80,7 @@ $page->connectToDatabase();
 								$('#location').html(": " + globalCommunity);
 								$('#comm_block').hide();
 								$('#export_options').show();
-								$('#link_field').val("http://dev.snap.uaf.edu/charts.php?community=" + globalCommunity + "&dataset=" + globalDataset + "&scenario=" + globalScenario + "&variability=" + globalVariability);
+								$('#link_field').val("http://dev.snap.uaf.edu/charts.php?community=" + globalCommunity + "&amp;dataset=" + globalDataset + "&amp;scenario=" + globalScenario + "&amp;variability=" + globalVariability);
 							}, "html");
 					}
 					$(document).ready(function(){
@@ -158,7 +156,7 @@ $page->connectToDatabase();
 					</script>
 				</div>
 				<div style="color: #666666; margin: auto; font-size: 14px; text-align: center; margin-top: 0px;">Emissions Scenario</div>
-				<div id="" style="margin: auto; font-size: 18px; text-align: center; margin-bottom: 15px;">
+				<div style="margin: auto; font-size: 18px; text-align: center; margin-bottom: 15px;">
 					<?php if ($_GET['scenario'] == 'B1'){
 						 echo "<span class=\"selected_option\"  id=\"scen_low\">Low</span>";
 					      } else {
@@ -234,7 +232,7 @@ $page->connectToDatabase();
 					</script>
 				</div>
 				<div style="color: #666666; margin: auto; font-size: 14px; text-align: center; margin-top: 0px;">Model Variability</div>
-				<div id="" style="margin: auto; font-size: 18px; text-align: center; margin-bottom: 5px;">
+				<div style="margin: auto; font-size: 18px; text-align: center; margin-bottom: 5px;">
 					<?php if ($_GET['variability'] == '0' || !isset($_GET['variability'])){
 						 echo "<span class=\"selected_option\" id=\"model_vari_off\">Off</span>";
 					      } else {
@@ -268,7 +266,7 @@ $page->connectToDatabase();
 			</div>
 			<div style="width: 188px; margin-left: 10px; height: 120px; float: left; ">
 				<div style="text-align: right">In cooperation with:</div>
-				<div style="text-align: right;"><a href="http://dev.snap.uaf.edu/collaborators.php#org_17"><img style="height: 135px; vertical-align: top;" src="images/collaborators/ces.jpg" /></a></div>
+				<div style="text-align: right;"><a href="http://dev.snap.uaf.edu/collaborators.php#org_17"><img alt="Cooperative Extension Services" style="height: 135px; vertical-align: top;" src="images/collaborators/ces.jpg" /></a></div>
 				<!--
 				<div style="margin: auto; font-size: 18px; margin-bottom: 10px; margin-top: 20px;"><span style="color: #0066cc;">Print</span></div>
 				<div style="margin: auto; font-size: 18px; margin-bottom: 10px;"><span style="color: #0066cc;">Download</span></div>
@@ -281,8 +279,7 @@ $page->connectToDatabase();
 			</div>
 			<script type="text/javascript">
 				$('#export_link').click( function(){
-					//alert("http://dev.snap.uaf.edu/charts.php?community=" + globalCommunity + "&dataset=" + globalDataset + "&scenario=" + globalScenario + "&variability=" + globalVariability);
-					$('#link_field').val("http://dev.snap.uaf.edu/charts.php?community=" + globalCommunity + "&dataset=" + globalDataset + "&scenario=" + globalScenario + "&variability=" + globalVariability);
+					$('#link_field').val("http://dev.snap.uaf.edu/charts.php?community=" + globalCommunity + "&amp;dataset=" + globalDataset + "&amp;scenario=" + globalScenario + "&amp;variability=" + globalVariability);
 					$('#link_box').fadeIn();
 					$('#link_field').focus().select();
 				});
@@ -320,7 +317,7 @@ $page->connectToDatabase();
 				</script>
 			</div>
 			<div style="top: 20px; position: absolute; width: 950px;" id="display">
-				<img style="margin: auto; width: 920px; opacity: 0.4; margin-left: 15px;" src="/images/def_chart.png" />
+				<img alt="Sample Chart" style="margin: auto; width: 920px; opacity: 0.4; margin-left: 15px;" src="/images/def_chart.png" />
 			</div>
 
 			<!--
@@ -339,7 +336,6 @@ $page->connectToDatabase();
 		</div>
 	</div>
 		</div>
-	</div>
 <?php
 $page->closePage();
 ?>

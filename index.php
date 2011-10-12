@@ -45,7 +45,7 @@ $page->pageHeader();
 					</div>
 				</div>
 				<div id="news_nav"></div>
-				<div id="news_pause"><img style="height: 40px;" src="images/pause.png" /></div>
+				<div id="news_pause"><img alt="Pause Image" style="height: 40px;" src="images/pause.png" /></div>
 				<script type="text/javascript">
 					$("#news_container").cycle({
 						fx:     'fade', 

@@ -213,7 +213,7 @@ class webPage {
 						//array("/sustainability.php", "Sustainability"),
 					), 
 					array(
-						array("/maps.php\" target=\"new\"","Map Tool"),
+						array("/maps.php\" target=\"_blank","Map Tool"),
 						array("/charts.php","Community Charts"),
 						array("/alfresco.php","ALFRESCO"),
 						array("/gisdata.php","GIS Data"),

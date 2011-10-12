@@ -116,7 +116,7 @@ function getProjectListSpecial($t){
 				<div><div class="subHeader" style="display: inline-block;">Projects</div></div>
 
 				<!--PROJECTS -->
-					<form method="GET" action="projects.php">
+					<form method="get" action="projects.php">
 					<div class="filters" style="position: relative; margin-top: 5px;">
 					<div style="color: #444444; font-size: 15px; margin-bottom: 6px; margin-left: 6px; font-weight: bold; display: inline-block">Topics</div>
 					<select name="tags" style="position: absolute; left: 175px;" onchange="submit();">

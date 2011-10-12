@@ -9,7 +9,6 @@ $page->pageHeader();
 				<div class="subHeader">Methods</div>
 			</div>
 		</div>
-	</div>
 <?php
 $page->closePage();
 ?>
