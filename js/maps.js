@@ -12,11 +12,11 @@
 	var fullscreen = false;
 	// Global individual map data
 	var globalVariable = "";
-	var globalTimeInterval = "";
-	var globalTimeRange = "";
+	var globalInterval = "";
+	var globalRange = "";
 	var globalScenario = "";
 	var globalModel = "";
-	var globalMapResolution = "";
+	var globalResolution = "";
 	var newmap;	
 	var gmnames;
 	//Show the sub menu for a selected variable
@@ -42,8 +42,8 @@
 		$.get(
 			"maps_update.php", { variable : vari, requesttype : "build" },
 			function(data){
-				var lower = "</div><div>Variable=" + globalVariable + " : Interval=" + globalTimeInterval + " : Range=" + globalTimeRange;
-				lower += " : Scenario=" + globalScenario + " : Model=" + globalModel + " : Resolution=" + globalMapResolution + "</div>";
+				var lower = "</div><div>Variable=" + globalVariable + " : Interval=" + globalInterval + " : Range=" + globalRange;
+				lower += " : Scenario=" + globalScenario + " : Model=" + globalModel + " : Resolution=" + globalResolution + "</div>";
 				$('#menu_items').html(data + lower);
 			}, "html");
 		*/
@@ -59,13 +59,13 @@
 	//Adds a new map layer overlay, based on current user settings
 	function addMap(mapvariable, mapvalue){
 		if ($(mapvariable).parents(".menuOption").attr("id") == "menu_variable"){ globalVariable = mapvalue; }
-		else if ($(mapvariable).parents(".menuOption").attr("id") == "menu_interval"){ globalTimeInterval = mapvalue; }
-		else if ($(mapvariable).parents(".menuOption").attr("id") == "menu_range"){ globalTimeRange = mapvalue; }
+		else if ($(mapvariable).parents(".menuOption").attr("id") == "menu_interval"){ globalInterval = mapvalue; }
+		else if ($(mapvariable).parents(".menuOption").attr("id") == "menu_range"){ globalRange = mapvalue; }
 		else if ($(mapvariable).parents(".menuOption").attr("id") == "menu_scenario"){ globalScenario = mapvalue; }
 		else if ($(mapvariable).parents(".menuOption").attr("id") == "menu_model"){ globalModel = mapvalue; }
-		else if ($(mapvariable).parents(".menuOption").attr("id") == "menu_resolution"){ globalMapResolution = mapvalue; }
+		else if ($(mapvariable).parents(".menuOption").attr("id") == "menu_resolution"){ globalResolution = mapvalue; }
 		var tilepath = "";
-		var requestinfo = "requesttype=newmap&variable=" + globalVariable + "&interval=" + globalTimeInterval + "&range=" + globalTimeRange + "&scenario=" + globalScenario + "&model=" + globalModel + "&resolution=" + globalMapResolution;
+		var requestinfo = "requesttype=newmap&variable=" + globalVariable + "&interval=" + globalInterval + "&range=" + globalRange + "&scenario=" + globalScenario + "&model=" + globalModel + "&resolution=" + globalResolution;
 		$.ajax({
                     url: 'maps_update.php',
                     type: 'GET',

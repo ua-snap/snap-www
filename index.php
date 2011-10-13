@@ -62,15 +62,15 @@ $page->pageHeader();
 			</div>
 			<div style="width: 100%; clear: both; margin-bottom: 20px; position: relative; line-height: 20px;">
 				<div style="width: 310px; margin-right: 30px;  float: left; margin-top: 60px;">
-					<div style="font-size: 18px; color: #555555; font-weight: bold; margin-bottom: 5px;">Who we are.</div>
+					<div style="font-size: 18px; color: #555555; font-weight: bold; margin-bottom: 5px;">SNAP</div>
 					<div style="font-size: 14px;">
 						<p>We develop plausible <a style="font-size: 18px;" href="">scenarios</a> of future conditions through a diverse and varied <a style="font-size: 18px;" href="">network</a> of people and organizations,  which allow better <a style="font-size: 18px;" href="">planning</a> for the uncertain future of Alaska and the Arctic.</p>
 					</div>
 				</div>
 				<div style="width: 600px; float: left; margin-top: 60px; font-size: 12px;">
-					<div style="font-size: 18px; color: #555555; font-weight: bold; margin-bottom: 5px;">What we do.</div>
+					<div style="font-size: 18px; color: #555555; font-weight: bold; margin-bottom: 5px;">What we do</div>
 					<div style="font-size: 14px;">
-						<p>SNAP is all <a href="about.php">about</a> helping people plan in an increasingly changing climate.  We work with a wide range of partners and <a href="collaborators.php">collaborators</a> on many <a href="projects.php">projects</a> to explore a range of possible futures based on the best scientific knowledge and <a href="data.php">data</a> available. SNAP also strives to make our <a href="resources.php">resources</a> available and our <a href="methods.php">methods</a> known.  SNAP has a strong partnership with <a href="collaborators.php#org_2">ACCAP</a> that allows us to leverage each others strengths in order to inform a broad audience.</p>
+						<p>SNAP is all <a href="about.php">about</a> helping people plan in a changing climate.  We work with a wide range of partners and <a href="collaborators.php">collaborators</a> on many <a href="projects.php">projects</a> to explore a range of possible futures based on the best scientific knowledge and <a href="data.php">data</a> available. SNAP also strives to make our <a href="resources.php">resources</a> available and our <a href="methods.php">methods</a> known.  SNAP has a strong partnership with <a href="collaborators.php#org_2">ACCAP</a> that allows us to leverage each other's strengths in order to inform a broad audience.</p>
 					</div>
 				</div>
 

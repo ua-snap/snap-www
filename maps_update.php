@@ -22,9 +22,6 @@ if ($_GET['requesttype'] == "build"){
 				$left = "";
 				$right = "";
 				$row = mysql_fetch_array($result);
-				$left .= "<div id='var_$count'><span>".$row['variable']."</span></div>";
-				$right .= "<div id='desc_$count' style='display: none;'>".$row['description']."</div>";
-				$count++;
 				$activeVariable = $row['variable'];
 				echo "<script type='text/javascript'>globalVariable = '".$row['variable']."';</script>";
 				echo $activeVariable; 
@@ -33,7 +30,8 @@ if ($_GET['requesttype'] == "build"){
 			<div class='menuSpacer'><span></span></div>
 			<div class='menuContents'>
 				<?php
-
+				$query = "SELECT variable,description FROM tileset LEFT JOIN tileset_descriptions ON variable=name GROUP BY variable";
+				$result = mysql_query($query);
 				while ($row = mysql_fetch_array($result)){
 					$left .= "<div id='var_$count'><span>".$row['variable']."</span></div>";
 					$right .= "<div id='desc_$count' style='display: none;'>".$row['description']."</div>";
@@ -45,7 +43,19 @@ if ($_GET['requesttype'] == "build"){
 			</div>
 		</div>
 		<div class='menuOption' id='menu_interval' style="font-size: 18px;">
-			<div>as <span class="menuTitle" style="font-size: 18px;">10 year averages</span></div>
+			<div>as <span class="menuTitle" style="font-size: 18px;">
+				<?php
+					$addInt = "";
+					if ($_GET['interval']){
+						$addInt = " ORDER BY FIELD(dateinterval, '".$_GET['interval']."') DESC";
+					}
+					$subquery = "SELECT dateinterval FROM tileset WHERE variable='$activeVariable' GROUP BY dateinterval $addInt";
+					$subresult = mysql_query($subquery) or die(mysql_error());
+					$subrow = mysql_fetch_array($subresult);
+					echo $subrow['dateinterval']; 
+					echo "<script type='text/javascript'>globalInterval = '".$subrow['dateinterval']."';</script>";
+				?>
+			</span></div>
 			<div class='menuSpacer'></div>
 			<div class='menuContents'>
 				<?php
@@ -74,7 +84,7 @@ if ($_GET['requesttype'] == "build"){
 					$subresult = mysql_query($subquery) or die(mysql_error());
 					$subrow = mysql_fetch_array($subresult);
 					echo $subrow['daterange']; 
-					echo "<script type='text/javascript'>globalTimeRange = '".$subrow['daterange']."';</script>";
+					echo "<script type='text/javascript'>globalRange = '".$subrow['daterange']."';</script>";
 				?>
 			</span></div>
 			<div class='menuSpacer'></div>
@@ -112,13 +122,26 @@ if ($_GET['requesttype'] == "build"){
 				$left .= "<div id='var_$count'>leveling and declining emissions (<span>B1</span>)</div>";
 				$right .= "<div id='desc_$count' style='display: none;'>The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The B1 scenario describes a convergent world, with the same global population as A1B, but with more rapid changes in economic structures toward a service and information economy.</div>";
 				$count++;
+			echo "<script type='text/javascript'>globalScenario = 'A1B';</script>";
 			?>
 			<div class="menuContentsLeft"> <?php echo $left; ?> </div>
 			<div class="menuContentsRight"> <?php echo $right; ?> </div>
 		</div>
 	</div>
 	<div class='menuOption' id='menu_model'>
-		<div>using the <span class="menuTitle" style="font-size: 10px;">GCM 5 average</span></div>
+		<div>using the <span class="menuTitle" style="font-size: 10px;">
+		<?php
+			$addMod = "";
+			if ($_GET['model']){
+				$addMod = " ORDER BY FIELD(model, '".$_GET['model']."') DESC";
+			}
+			$subquery = "SELECT model FROM tileset WHERE variable='$activeVariable' GROUP BY model $addMod";
+			$subresult = mysql_query($subquery) or die(mysql_error());
+			$subrow = mysql_fetch_array($subresult);
+			echo $subrow['model']; 
+			echo "<script type='text/javascript'>globalModel = '".$subrow['model']."';</script>";
+		?>
+		</span></div>
 		<div class='menuSpacer'></div>
 		<div class='menuContents'>
 			<?php
@@ -147,7 +170,7 @@ if ($_GET['requesttype'] == "build"){
 			$subresult = mysql_query($subquery) or die(mysql_error());
 			$subrow = mysql_fetch_array($subresult);
 			echo $subrow['resolution']; 
-			echo "<script type='text/javascript'>globalMapResolution = '".$subrow['resolution']."';</script>";
+			echo "<script type='text/javascript'>globalResolution = '".$subrow['resolution']."';</script>";
 		?>
 		</span> resolution</div>
 		<div class='menuSpacer'></div>
@@ -170,6 +193,7 @@ if ($_GET['requesttype'] == "build"){
 
 <script type="text/javascript">
 	// On hover of the menu items, display the corresponding help text
+	//alert(globalVariable + " : " + globalInterval + " : " + globalRange + " : " + globalScenario + " : " + globalModel + " : " + globalResolution);
 	$(".menuContentsLeft > div").hover( 
 		function() {
 			var tmp = $(this).children("span").html();
@@ -191,10 +215,11 @@ if ($_GET['requesttype'] == "build"){
 	$('.menuContentsLeft div').click( function() {
 		$(this).parents(".menuOption").find(".menuTitle").html($(this).html());
 		addMap(this, $(this).children("span").html());
-		updateMenu();
+
 		if ($(this).parents(".menuOption").attr("id") == "menu_variable"){
 			buildMenu($(this).children("span").html());
 		}
+		updateMenu();
 	});
 </script>
 

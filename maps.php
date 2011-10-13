@@ -47,7 +47,9 @@ $page->connectToDatabase();
 							<div id="snap_name" style="color: #505a5c; margin-left: 30px; font-size: 20px; margin-top: 40px;">Scenarios Network for Alaska &amp; Arctic Planning</div>	
 						<div id="menu_items" style="display: none; color: #505a5c; margin-left: 50px; font-size: 14px; margin-top: 10px;"></div>
 						<script type="text/javascript">
-							<?php echo "buildMenu('$variable', '$int', '$ran', '$sce', '$mod', '$res');" ?>
+							<?php 
+							echo "buildMenu('$variable', '$int', '$ran', '$sce', '$mod', '$res');" 
+							?>
 						</script>
 					</div>
 				</div>
