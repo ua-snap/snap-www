@@ -107,7 +107,21 @@ if ($_GET['requesttype'] == "build"){
 	</div>
 <div style="margin-top: 15px; font-size: 10px;">
 	<div class='menuOption' id='menu_scenario'>
-		<div>assuming <span class="menuTitle" style="font-size: 10px;">mid-range emissions (A1B)</span></div>
+		<div>assuming <span class="menuTitle" style="font-size: 10px;">
+			<?php
+			$addSce = "";
+			if ($_GET['scenario']){
+				$addSce = $_GET['scenario'];
+			}
+			if ($addSce == "A1B"){ echo "mid-range emissions (A1B)"; }
+			else if ($addSce == "A2"){ echo "rapid increases in emissions (A2)"; }
+			else if ($addSce == "B1"){ echo "leveling and declining emissions (B1)"; }
+			else {
+				$addSce = "A1B"; 
+				echo "mid-range emissions (A1B)";
+			}
+			?>
+		</span></div>
 		<div class='menuSpacer'></div>
 		<div class='menuContents'>
 			<?php
@@ -122,7 +136,7 @@ if ($_GET['requesttype'] == "build"){
 				$left .= "<div id='var_$count'>leveling and declining emissions (<span>B1</span>)</div>";
 				$right .= "<div id='desc_$count' style='display: none;'>The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The B1 scenario describes a convergent world, with the same global population as A1B, but with more rapid changes in economic structures toward a service and information economy.</div>";
 				$count++;
-			echo "<script type='text/javascript'>globalScenario = 'A1B';</script>";
+			echo "<script type='text/javascript'>globalScenario = '$addSce';</script>";
 			?>
 			<div class="menuContentsLeft"> <?php echo $left; ?> </div>
 			<div class="menuContentsRight"> <?php echo $right; ?> </div>
@@ -170,7 +184,7 @@ if ($_GET['requesttype'] == "build"){
 			$subresult = mysql_query($subquery) or die(mysql_error());
 			$subrow = mysql_fetch_array($subresult);
 			echo $subrow['resolution']; 
-			echo "<script type='text/javascript'>globalResolution = '".$subrow['resolution']."';</script>";
+			echo "<script type='text/javascript'>globalResolution = '".$subrow['resolution']."'; </script>";
 		?>
 		</span> resolution</div>
 		<div class='menuSpacer'></div>
@@ -204,7 +218,6 @@ if ($_GET['requesttype'] == "build"){
 			$(this).parents('.menuContents').children(".menuContentsRight").children("div[id^='desc_']").hide();
 		}
 	);
-
 	//On click on the variable, show the menu and options	
 	$('#menu_variable').click( function() { showVariable(this); } );
 	$('#menu_interval').click( function() { showVariable(this); } );
@@ -215,7 +228,6 @@ if ($_GET['requesttype'] == "build"){
 	$('.menuContentsLeft div').click( function() {
 		$(this).parents(".menuOption").find(".menuTitle").html($(this).html());
 		addMap(this, $(this).children("span").html());
-
 		if ($(this).parents(".menuOption").attr("id") == "menu_variable"){
 			buildMenu($(this).children("span").html());
 		}

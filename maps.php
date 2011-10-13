@@ -9,9 +9,14 @@ $page->connectToDatabase();
 				<script type="text/javascript" src="js/plugins.js"></script>
 				<script type="text/javascript" src="js/maps.js"></script>
 				<script type="text/javascript">
-				      google.maps.event.addDomListener(window, 'load', init);
+				      google.maps.event.addDomListener(window, 'load', function(){
+						init();
+						google.maps.event.addListenerOnce(map, 'idle', function(){
+							addMap();
+						});
+					});
 					$(window).resize(resize);
-
+					//google.maps.event.addListenerOnce(map, 'idle', addMap);
 				</script>	
 				<!--
 				<div id="controls">
@@ -20,6 +25,7 @@ $page->connectToDatabase();
 				</div>
 				-->
 				<?php
+
 					$v = "";
 					if ($_GET['v']){ $v = " WHERE variable='".mysql_real_escape_string($_GET['v'])."'"; }
 					$query = "SELECT variable FROM tileset $v GROUP BY variable";
@@ -47,9 +53,18 @@ $page->connectToDatabase();
 							<div id="snap_name" style="color: #505a5c; margin-left: 30px; font-size: 20px; margin-top: 40px;">Scenarios Network for Alaska &amp; Arctic Planning</div>	
 						<div id="menu_items" style="display: none; color: #505a5c; margin-left: 50px; font-size: 14px; margin-top: 10px;"></div>
 						<script type="text/javascript">
+							var currenthash = window.location.hash.substring(1).split("/");
+							var variable = currenthash[0];
+							var interval = currenthash[1];
+							var range = currenthash[2];
+							var scenario = currenthash[3];
+							var model = currenthash[4];
+							var resolution = currenthash[6];
+							buildMenu(variable, interval, range, scenario, model, resolution);
 							<?php 
-							echo "buildMenu('$variable', '$int', '$ran', '$sce', '$mod', '$res');" 
+							//echo "buildMenu('$variable', '$int', '$ran', '$sce', '$mod', '$res');" 
 							?>
+
 						</script>
 					</div>
 				</div>
@@ -60,7 +75,7 @@ $page->connectToDatabase();
 						</script>
 					<div class="map_bar" style="clear: both;">
 						<div style="float: left; margin-left: 20px; font-size: 20px;"><a href="">Main Menu</a></div>
-						<div style="float: right; margin-left: 20px; font-size: 20px; height: 38px; border-left: 4px solid #ffffff; background-color: #97A93A"><a href="" style="color: #ffffff;"><img alt="Share" style="margin-left: 20px; margin-right: 20px;" src="/images/share.png" /></a></div>
+						<div style="float: right; margin-left: 20px; font-size: 20px; height: 38px; border-left: 4px solid #ffffff; background-color: #97A93A"><a class="addthis_button" style="color: #ffffff;"><img alt="Share" style="margin-left: 20px; margin-right: 20px;" src="/images/share.png" /></a></div>
 						<div style="float: right; margin-left: 20px; font-size: 14px;">
 							<span style="margin-right: 10px;">This Map: </span>
 							<span style="margin-right: 15px;"><a href="">Info</a></span>

@@ -99,6 +99,13 @@ class webPage {
 
 		</script>
 		<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=snapweb"></script>
+			<script type="text/javascript">
+				var addthis_config =
+				{
+				   ui_508_compliant: true,
+				   services_compact: 'facebook,twitter,google_plusone,print,email'
+				}
+			</script>
 
 	</head>
 	<body onload="javascript:hideOnLoad();">
@@ -138,13 +145,6 @@ class webPage {
 		}
 		?>
 			</div>
-			<script type="text/javascript">
-				var addthis_config =
-				{
-				   ui_508_compliant: true,
-				   services_compact: 'facebook,twitter,google_plusone,print,email'
-				}
-			</script>
 			<div class="horiz_bar_right">	
 				<a class="addthis_button"><img src="/images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/></a>
 			</div>

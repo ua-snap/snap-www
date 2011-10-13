@@ -48,6 +48,10 @@
 			}, "html");
 		*/
 	}
+	//Update address to reflect new hash
+	function writeHash(){
+		window.location.hash = globalVariable + "/" + globalInterval + "/" + globalRange + "/" + globalScenario + "/" + globalModel + "/" + globalResolution;
+	}
 	//Highlight the menu to show changes from new options
 	function updateMenu(){
 		$('.menuOption > div:first-child')
@@ -102,7 +106,7 @@
 		map.overlayMapTypes.push(null); // create empty overlay entry
 		map.overlayMapTypes.setAt("1",gnames );
 
-
+		writeHash();
 
 	}
       	/*
