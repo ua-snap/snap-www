@@ -216,25 +216,24 @@ class webPage {
 						array("/maps.php\" target=\"_blank","Map Tool"),
 						array("/charts.php","Community Charts"),
 						array("/alfresco.php","ALFRESCO"),
-						array("/gisdata.php","GIS Data"),
+						array("/gisdata.php","GIS Data")
 					),
 					array(
-						array("label", "Learn about all of SNAP's resources below.  The list can be narrowed by selecting from the options below."),
+						array("label", "Learn about all of SNAP's resources below.  The list can be narrowed by selecting from the options below.")
 					),
 					array(
-						array("label", "Learn about all of SNAP's projects below.  The list can be narrowed by selecting from the options below."),
+						array("label", "Learn about all of SNAP's projects below.  The list can be narrowed by selecting from the options below.")
 					),
 					array(
-						array("/models.php","Models"),
 						array("/downscaling.php","Downscaling"),
+						array("/modeling.php","Modeling"),
 						array("/derived.php","Derived Data"),
-						array("/planning.php","Planning"),
 						array("/uncertainty.php","Uncertainty"),
-
+						array("/planning.php","Planning")
 					),
 					array(
 						array("/training.php","Training"),
-						array("/materials.php","Teaching Materials"),
+						array("/materials.php","Teaching Materials")
 					)
 			);
 		?>

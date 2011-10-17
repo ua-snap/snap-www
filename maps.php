@@ -9,10 +9,23 @@ $page->connectToDatabase();
 				<script type="text/javascript" src="js/plugins.js"></script>
 				<script type="text/javascript" src="js/maps.js"></script>
 				<script type="text/javascript">
+					var currenthash = window.location.hash.substring(1).split("/");
+					var variable = currenthash[0];
+					var interval = currenthash[1];
+					var range = currenthash[2];
+					var scenario = currenthash[3];
+					var model = currenthash[4];
+					var resolution = currenthash[5];
+					var zoomlevel = currenthash[6];
+					var loclat = currenthash[7];
+					var loclng = currenthash[8];
 				      google.maps.event.addDomListener(window, 'load', function(){
-						init();
+						init(zoomlevel, loclat, loclng);
 						google.maps.event.addListenerOnce(map, 'idle', function(){
 							addMap();
+							google.maps.event.addListener(map, 'idle', function(){
+								writeHash();
+							});
 						});
 					});
 					$(window).resize(resize);
@@ -53,18 +66,7 @@ $page->connectToDatabase();
 							<div id="snap_name" style="color: #505a5c; margin-left: 30px; font-size: 20px; margin-top: 40px;">Scenarios Network for Alaska &amp; Arctic Planning</div>	
 						<div id="menu_items" style="display: none; color: #505a5c; margin-left: 50px; font-size: 14px; margin-top: 10px;"></div>
 						<script type="text/javascript">
-							var currenthash = window.location.hash.substring(1).split("/");
-							var variable = currenthash[0];
-							var interval = currenthash[1];
-							var range = currenthash[2];
-							var scenario = currenthash[3];
-							var model = currenthash[4];
-							var resolution = currenthash[6];
 							buildMenu(variable, interval, range, scenario, model, resolution);
-							<?php 
-							//echo "buildMenu('$variable', '$int', '$ran', '$sce', '$mod', '$res');" 
-							?>
-
 						</script>
 					</div>
 				</div>
@@ -80,8 +82,8 @@ $page->connectToDatabase();
 							<span style="margin-right: 10px;">This Map: </span>
 							<span style="margin-right: 15px;"><a href="">Info</a></span>
 							<span style="margin-right: 15px;"><a href="">Stats</a></span>
-							<span style="margin-right: 15px;"><a href="">Print</a></span>
-							<span style="margin-right: 15px;"><a href="">Link</a></span>
+							<span style="margin-right: 15px;"><a href="" onclick="window.print()">Print</a></span>
+							<span style="margin-right: 15px;"><a href="" >Link</a></span>
 						</div>
 					</div>
 				</div>

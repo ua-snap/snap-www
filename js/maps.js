@@ -50,16 +50,22 @@
 	}
 	//Update address to reflect new hash
 	function writeHash(){
-		window.location.hash = globalVariable + "/" + globalInterval + "/" + globalRange + "/" + globalScenario + "/" + globalModel + "/" + globalResolution;
+		window.location.hash = globalVariable + "/" + globalInterval + "/" + globalRange + "/" + globalScenario + "/" + globalModel + "/" + globalResolution + "/" + map.getZoom() + "/" + (map.getCenter()).lat() + "/" + (map.getCenter()).lng();
 	}
 	//Highlight the menu to show changes from new options
 	function updateMenu(){
-		$('.menuOption > div:first-child')
+		//$('.menuOption > div:first-child')  //This doesn't work in Chrome, works in IE/FF.  Chrome doesn't recognize the sub css selectors
+		$('.menuOption').find('div:first-child')  //Done to workaround chrome issue
 			.animate( { backgroundColor: '#a7c95a' }, 300)
 			.animate( { backgroundColor: '#a7c95a' }, 600)
 			.animate( { backgroundColor: 'white' }, 900);
-		$('.menuOption > div:first-child').css( "backgroundColor", "white");
+		//$('.menuOption > div:first-child').css( "backgroundColor", "white");  //Doesn't work in Chrome
+		$('.menuOption').find('div:first-child').css( "backgroundColor", "white"); //Done for Chrome workaround
 	 }
+	//Draw the Legend
+	function drawLegend(leg){
+		
+	}
 	//Adds a new map layer overlay, based on current user settings
 	function addMap(mapvariable, mapvalue){
 		if ($(mapvariable).parents(".menuOption").attr("id") == "menu_variable"){ globalVariable = mapvalue; }
@@ -114,10 +120,26 @@
         * Called on the initial page load.
 	* Sets up default map space, values, etc.
       	*/
-	function init(fs) {
+	function init(zl, la, ln) {
+		var zoomlevel;
+		if (zl >= 0 && zl <= 15){
+			zoomlevel = parseInt(zl);
+		} else {
+			zoomlevel = 4;
+		}
+		if (parseInt(la) <= Math.abs(90)){
+			loclat = parseFloat(la);
+		} else {
+			loclat = 63.5;
+		}
+		if (parseInt(ln) <= 180){
+			loclng = parseFloat(ln);
+		} else {
+			loclng = -147;
+		}
 		map = new google.maps.Map(document.getElementById('map_canvas'), {
-			'zoom': 4,
-			'center': new google.maps.LatLng(63.5, -147),
+			zoom: zoomlevel,
+			'center': new google.maps.LatLng(loclat, loclng),
 			disableDefaultUI: true,
 			navigationControl: true,
 			navigationControlOptions: {
