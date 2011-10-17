@@ -55,16 +55,28 @@
 	//Highlight the menu to show changes from new options
 	function updateMenu(){
 		//$('.menuOption > div:first-child')  //This doesn't work in Chrome, works in IE/FF.  Chrome doesn't recognize the sub css selectors
-		$('.menuOption').find('div:first-child')  //Done to workaround chrome issue
+		$('.menuOption').children('div:first-child')  //Done to workaround chrome issue
 			.animate( { backgroundColor: '#a7c95a' }, 300)
 			.animate( { backgroundColor: '#a7c95a' }, 600)
 			.animate( { backgroundColor: 'white' }, 900);
 		//$('.menuOption > div:first-child').css( "backgroundColor", "white");  //Doesn't work in Chrome
-		$('.menuOption').find('div:first-child').css( "backgroundColor", "white"); //Done for Chrome workaround
+		$('.menuOption').children('div:first-child').css( "backgroundColor", "white"); //Done for Chrome workaround
 	 }
 	//Draw the Legend
 	function drawLegend(leg){
-		
+		var legendString = "";
+		if (leg != ""){
+			var boxes = leg.split(",");
+			var box;
+			for (i = 0; i < boxes.length; i++){
+				box = boxes[i].split(":");
+				legendString += "<div>";
+				legendString += "<div style='display: inline-block; background-color: #" + box[1] + "'></div>";
+				legendString += "<div style='display: inline-block;'>" + box[0]+ "</div>";
+				legendString += "</div>";
+			}
+		}
+		return legendString;
 	}
 	//Adds a new map layer overlay, based on current user settings
 	function addMap(mapvariable, mapvalue){
@@ -185,7 +197,7 @@
 
 		);
 		rectangle.setBounds(latLngBounds);
-		document.getElementById("location").innerHTML = "Marker1: " + marker1.getPosition() + "<br/>Marker2: " + marker2.getPosition();
+		$("#location").html("Marker1: " + marker1.getPosition() + "<br/>Marker2: " + marker2.getPosition());
 	}
 	/* 
 	* Adds a map marker to the map

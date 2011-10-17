@@ -9,9 +9,10 @@ if ($_GET['requesttype'] == "build"){
 		$activeVariable = mysql_real_escape_string($_GET['variable']);
 		$addVar = " ORDER BY FIELD(variable, '$activeVariable') DESC";
 	}
-	$query = "SELECT variable,description FROM tileset LEFT JOIN tileset_descriptions ON variable=name GROUP BY variable $addVar";
+	$query = "SELECT variable,description,legend FROM tileset LEFT JOIN tileset_descriptions ON variable=name GROUP BY variable $addVar";
 	$result = mysql_query($query);
 	$count = 0;
+
 ?>
 <div style="color: #444444; font-size: 12px;">currently viewing</div>
 <div style="margin-top: 5px;" id="mapMenu">
@@ -22,6 +23,8 @@ if ($_GET['requesttype'] == "build"){
 				$left = "";
 				$right = "";
 				$row = mysql_fetch_array($result);
+				$legend = $row['legend'];
+				echo "<script type='text/javascript'>$('#legend').html(drawLegend('$legend'));</script>";
 				$activeVariable = $row['variable'];
 				echo "<script type='text/javascript'>globalVariable = '".$row['variable']."';</script>";
 				echo $activeVariable; 

@@ -89,6 +89,7 @@ $page->connectToDatabase();
 				</div>
 				<div id="map_wrapper">
 					<div id="map_canvas"></div>
+					<div id="legend"></div>
 				</div>
 				<div id="map_footer">
 					<div class="map_bar">

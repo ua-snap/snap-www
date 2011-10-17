@@ -116,10 +116,10 @@ if ($_GET['fetch_type'] == "chart"){
 			}
 			echo "title: {";
 				if ($_GET['dataset'] == 1){
-					echo "text: 'Temperature (°F)'";	
+					echo "text: 'Temperature °F'";	
 				}
 				if ($_GET['dataset'] == 2){
-					echo "text: 'Precipitation (inches)'";	
+					echo "text: 'Total Precipitation in inches'";	
 				}
 			echo "}";
 			echo ", labels: { enabled: true }";

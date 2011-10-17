@@ -87,6 +87,7 @@
 	margin: auto;
 }	
 #map_canvas {
+	min-height: 350px;
 	margin: auto;
 	z-index: 0;
 	-moz-box-shadow: 2px 2px 2px #888;
@@ -119,4 +120,22 @@
 }
 .map_bar img {
 	vertical-align: middle;
+}
+#legend {
+	font-size: 12px;
+	position: absolute;
+	top: 15px;
+	left: 30px;
+}
+#legend div > div:first-child {
+	margin-bottom: 5px;
+	border: 1px solid black;
+	width: 30px;
+	height: 15px;
+	vertical-align: top;
+}
+#legend div > div:last-child {
+	line-height: 15px;
+	vertical-align: top;
+	margin-left: 5px;
 }
