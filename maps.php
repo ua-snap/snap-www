@@ -80,8 +80,10 @@ $page->connectToDatabase();
 						<div style="float: right; margin-left: 20px; font-size: 20px; height: 38px; border-left: 4px solid #ffffff; background-color: #97A93A"><a class="addthis_button" style="color: #ffffff;"><img alt="Share" style="margin-left: 20px; margin-right: 20px;" src="/images/share.png" /></a></div>
 						<div style="float: right; margin-left: 20px; font-size: 14px;">
 							<span style="margin-right: 10px;">This Map: </span>
+							<!--
 							<span style="margin-right: 15px;"><a href="">Info</a></span>
 							<span style="margin-right: 15px;"><a href="">Stats</a></span>
+							-->
 							<span style="margin-right: 15px;"><a href="" onclick="window.print()">Print</a></span>
 							<span style="margin-right: 15px;"><a href="" >Link</a></span>
 						</div>
@@ -89,7 +91,11 @@ $page->connectToDatabase();
 				</div>
 				<div id="map_wrapper">
 					<div id="map_canvas"></div>
-					<div id="legend"></div>
+					<div id="legend_wrapper">
+						<div id="legend_background"></div>
+						<div id="legend"></div>	
+
+					</div>
 				</div>
 				<div id="map_footer">
 					<div class="map_bar">

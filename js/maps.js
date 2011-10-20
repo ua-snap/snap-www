@@ -32,7 +32,7 @@
 		$.ajax({
                     url: 'maps_update.php',
                     type: 'GET',
-		    async: false,
+		    async: false, //Required to be synchronous for it to properly reflect current values
                     data: "requesttype=build&variable=" + vari + "&interval=" + interval + "&range=" + range + "&scenario=" + scenario + "&model=" + model + "&resolution=" + resolution,
                     success: function(resp) {
 			$('#menu_items').html(resp);
@@ -66,15 +66,19 @@
 	function drawLegend(leg){
 		var legendString = "";
 		if (leg != ""){
+			$('#legend_wrapper').show();
 			var boxes = leg.split(",");
 			var box;
-			for (i = 0; i < boxes.length; i++){
+			legendString += "<div style='margin-bottom: 5px; font-weight: bold; width: 130px; text-align: center;'>" + boxes[0] + "</div>";
+			for (i = 1; i < boxes.length; i++){
 				box = boxes[i].split(":");
 				legendString += "<div>";
 				legendString += "<div style='display: inline-block; background-color: #" + box[1] + "'></div>";
 				legendString += "<div style='display: inline-block;'>" + box[0]+ "</div>";
 				legendString += "</div>";
 			}
+		} else {
+			$('#legend_wrapper').hide();
 		}
 		return legendString;
 	}
@@ -91,7 +95,7 @@
 		$.ajax({
                     url: 'maps_update.php',
                     type: 'GET',
-		    async: false,
+		    async: false, //Required to be synchronous to load correct map on load and after
                     data: requestinfo,
                     success: function(resp) {
 			tilepath = resp;
@@ -124,7 +128,7 @@
 		map.overlayMapTypes.push(null); // create empty overlay entry
 		map.overlayMapTypes.setAt("1",gnames );
 
-		writeHash();
+		writeHash(); //Needed as otherwise it doesn't trigger from the idle event as moving/zooming does
 
 	}
       	/*
@@ -199,9 +203,7 @@
 		rectangle.setBounds(latLngBounds);
 		$("#location").html("Marker1: " + marker1.getPosition() + "<br/>Marker2: " + marker2.getPosition());
 	}
-	/* 
-	* Adds a map marker to the map
-	*/
+	//Adds a map marker to the map
 	function placeMarker(location) {
 		var marker = new google.maps.Marker({
 			position: location, 
@@ -262,9 +264,7 @@
 		}
 		document.getElementById("poly_points").innerHTML = "";
 	}
-	/*
-	* Draw a polygon onto the map with as many points as required
-	*/
+	// Draw a polygon onto the map with as many points as required
 	function drawPoly(){
 		if (marker1 || marker2 || rectangle){
 			hideRectangle();

@@ -121,11 +121,24 @@
 .map_bar img {
 	vertical-align: middle;
 }
-#legend {
+#legend_wrapper {
 	font-size: 12px;
 	position: absolute;
-	top: 15px;
-	left: 30px;
+	top: 10px;
+	left: 20px;
+}
+#legend_background {
+	border: 3px solid black;
+	border-radius: 6px;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: #ffffff;
+	opacity: 0.5;
+}
+#legend {
+	position: relative;
+	margin: 10px;
 }
 #legend div > div:first-child {
 	margin-bottom: 5px;
@@ -135,7 +148,10 @@
 	vertical-align: top;
 }
 #legend div > div:last-child {
+	color: #000000;
 	line-height: 15px;
 	vertical-align: top;
 	margin-left: 5px;
+	/*text-shadow: -1px 0 black, 0 1px black,
+      1px 0 black, 0 -1px black;*/
 }

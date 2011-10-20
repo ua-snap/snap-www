@@ -103,6 +103,7 @@ class webPage {
 				var addthis_config =
 				{
 				   ui_508_compliant: true,
+				   ui_hover_direction: 1,
 				   services_compact: 'facebook,twitter,google_plusone,print,email'
 				}
 			</script>

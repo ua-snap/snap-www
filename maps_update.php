@@ -24,7 +24,7 @@ if ($_GET['requesttype'] == "build"){
 				$right = "";
 				$row = mysql_fetch_array($result);
 				$legend = $row['legend'];
-				echo "<script type='text/javascript'>$('#legend').html(drawLegend('$legend'));</script>";
+				echo "<script type='text/javascript'>$(document).ready(function(){ $('#legend').html(drawLegend('$legend')); });</script>";
 				$activeVariable = $row['variable'];
 				echo "<script type='text/javascript'>globalVariable = '".$row['variable']."';</script>";
 				echo $activeVariable; 
