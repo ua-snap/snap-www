@@ -246,7 +246,14 @@ $page->connectToDatabase();
 						 echo "<span id=\"model_vari_on\"><a>On</a></span>";
 					      }
 					?>
+					<div id="vari_hover" style="z-index: 100; display: none; position: absolute; margin-left: 50px; background-color: #f8f8f8; border: 1px solid #999999;">
+						<div style="width: 350px; left: 50px; font-size: 12px; padding: 10px;">
+							<div style="padding: 3px; border-bottom: 1px solid #0066cc; font-size: 14px; ">Model Variability</div>
+							<div style="text-align: left; margin-top: 5px;">Model variability refers to the standard deviation (SD), which provides a measure of dispersion around the mean. The vertical bars represent the SD across the five models. Their lengths represent one SD above and below this value. A small SD indicates the models are in relative agreement, whereas a large SD suggests choice of model is relatively important. Drawing inferences from overlapping or non-overlapping bars is discouraged. The only comparison to make is of their relative size, as it pertains to changes in the degree of agreement among the models.</div>
+						</div>
+					</div>
 					<script type="text/javascript">
+						$('#model_vari_on').hoverIntent({ over: showScenario, timeout: 500, out: hideScenario });
 						$('#model_vari_on').click( function() { 
 							fetchData(globalCommunity, globalDataset, globalScenario, 1, "chart"); 
 							$('#model_vari_on').html("On");
@@ -283,23 +290,31 @@ $page->connectToDatabase();
 					$('#link_box').fadeIn();
 					$('#link_field').focus().select();
 				});
+				var filenameDataset = "";
+				var filenameVariability = "";
 				$('#export_image_png').click( function(){
+					if(globalDataset == 2){ filenameDataset = "Precip"; } else if (globalDataset == 1){ filenameDataset = "Temp"; }
+				//	if(globalVariability == 0){ filenameVariability = ""; } else if (globalVariability == 1){ filenameVariability = "_StdDev"; }
 					chart.exportChart({
 						//type: 'image/svg+xml',
-						filename: globalCommunity + '_' + globalScenario + '_' + globalDataset + '_' + globalVariability
+						filename: globalCommunity + '_' + globalScenario + '_' + filenameDataset + filenameVariability
 					});
 				});
 				$('#export_image_svg').click( function(){
+					if(globalDataset == 2){ filenameDataset = "Precip"; } else if (globalDataset == 1){ filenameDataset = "Temp"; }
+				//	if(globalVariability == 0){ filenameVariability = ""; } else if (globalVariability == 1){ filenameVariability = "_StdDev"; }
 					chart.exportChart({
 						type: 'image/svg+xml',
-						filename: 'chart'
+						filename: globalCommunity + '_' + globalScenario + '_' + filenameDataset + filenameVariability
 					});
 				});
 
 				$('#export_pdf').click( function(){
+					if(globalDataset == 2){ filenameDataset = "Precip"; } else if (globalDataset == 1){ filenameDataset = "Temp"; }
+				//	if(globalVariability == 0){ filenameVariability = ""; } else if (globalVariability == 1){ filenameVariability = "_StdDev"; }
 					chart.exportChart({
 						type: 'application/pdf',
-						filename: 'chart'
+						filename: globalCommunity + '_' + globalScenario + '_' + filenameDataset + filenameVariability
 					});
 				});
 			</script>

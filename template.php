@@ -24,9 +24,9 @@ class webPage {
 			$menu_items = array(
 				array("About","/about.php"),
 				array("Maps &amp; Data","/data.php"),
-				array("Resources","/resources.php"),
-				array("Projects","/projects.php"),
 				array("Methods","/methods.php"),
+				array("Projects","/projects.php"),
+				array("Resources","/resources.php"),
 			);
 			//Draw the main menu
 			for ($i =0; $i < sizeof($menu_items); $i++){

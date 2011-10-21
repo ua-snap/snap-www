@@ -128,13 +128,13 @@
 	left: 20px;
 }
 #legend_background {
-	border: 3px solid black;
+	border: 3px solid #222222;
 	border-radius: 6px;
 	position: absolute;
 	height: 100%;
 	width: 100%;
 	background-color: #ffffff;
-	opacity: 0.5;
+	opacity: 0.7;
 }
 #legend {
 	position: relative;
