@@ -120,15 +120,7 @@ class webPage {
 				<div><a href="/"><img src="/images/snap_full.png" height="30px" alt="Scenarios Network for Alaska Planning" /></a></div>
 				<?php
 				if (basename($_SERVER['PHP_SELF']) != "index.php"){
-					echo "<div id=\"motto\" style=\"text-align: center; display: none; color: #999999; top: -7px; position: relative;\">Exploring our future in a changing Arctic</div>";
-					echo "<script type=\"text/javascript\">\n";
-						echo "var config = { 
-							over: function(){ $('#motto').fadeIn(500); },
-							interval: 100,
-							out: function(){ $('#motto').fadeOut(500); } 
-							};";
-						echo "$('#header_right').hoverIntent(config);";
-					echo "</script>";
+					echo "<div id=\"motto\" style=\"text-align: center; color: #999999; top: -8px; position: relative;\">Exploring our future in a changing Arctic</div>";
 				}
 				?>
 				
@@ -216,7 +208,6 @@ class webPage {
 					array(
 						array("/maps.php\" target=\"_blank","Map Tool"),
 						array("/charts.php","Community Charts"),
-						array("/alfresco.php","ALFRESCO"),
 						array("/gisdata.php","GIS Data")
 					),
 					array(

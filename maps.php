@@ -94,7 +94,9 @@ $page->connectToDatabase();
 					<div id="legend_wrapper">
 						<div id="legend_background"></div>
 						<div id="legend"></div>	
-
+					</div>
+					<div style="position: absolute; width: 300px; height: 50px; border: 1px solid #555555; right: 149px; top: 0px; background-color: #eeeeee;">
+						<div style="margin-top: 20px; margin-left: 20px;"><input style="text" style="width: 300px;" /></div>
 					</div>
 				</div>
 				<div id="map_footer">

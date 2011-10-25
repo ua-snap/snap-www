@@ -166,7 +166,7 @@ $page->connectToDatabase();
 					<div id="scen_low_hover" style="z-index: 100; display: none; position: absolute; margin-left: 50px; background-color: #f8f8f8; border: 1px solid #999999;">
 						<div style="width: 350px; left: 50px; font-size: 12px; padding: 10px;">
 							<div style="padding: 3px; border-bottom: 1px solid #0066cc; font-size: 14px; ">Emissions leveling and declining (B1)</div>
-							<div style="text-align: left; margin-top: 5px;">The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The B1 scenario describes a convergent world, with the same global population as A1B, but with more rapid changes in economic structures toward a service and information economy.</div>
+							<div style="text-align: left; margin-top: 5px;">The B1 scenario describes a convergent world, with the same global population as A1B, but with more rapid changes in economic structures toward a service and information economy.</div>
 						</div>
 					</div>
 					 | 
@@ -179,7 +179,7 @@ $page->connectToDatabase();
 					<div id="scen_med_hover" style="z-index: 100; display: none; position: absolute; margin-left: 50px; background-color: #f8f8f8; border: 1px solid #999999;">
 						<div style="width: 350px; left: 50px; font-size: 12px; padding: 10px;">
 							<div style="padding: 3px; border-bottom: 1px solid #0066cc; font-size: 14px; ">Mid-range emissions (A1B)</div>
-							<div style="text-align: left; margin-top: 5px;">The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The Scenario A1B assumes a world of very rapid economic growth, a global population that peaks in mid-century, rapid introduction of new and more efficient technologies, and a balance between fossil fuels and other energy sources.</div>
+							<div style="text-align: left; margin-top: 5px;">The A1B scenario assumes a world of very rapid economic growth, a global population that peaks in mid-century, rapid introduction of new and more efficient technologies, and a balance between fossil fuels and other energy sources.</div>
 						</div>
 					</div>
 					 | 
@@ -192,7 +192,7 @@ $page->connectToDatabase();
 					<div id="scen_high_hover" style="z-index: 100; display: none; position: absolute; margin-left: 50px; background-color: #f8f8f8; border: 1px solid #999999;">
 						<div style="width: 350px; left: 50px; font-size: 12px; padding: 10px;">
 							<div style="padding: 3px; border-bottom: 1px solid #0066cc; font-size: 14px; ">Rapid increases in emissions (A2)</div>
-							<div style="text-align: left; margin-top: 5px;">The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The A2 scenario describes a very heterogeneous world with high population growth, slow economic development and slow technological change.</div>
+							<div style="text-align: left; margin-top: 5px;">The A2 scenario describes a very heterogeneous world with high population growth, slow economic development and slow technological change.</div>
 						</div>
 					</div>
 					<script src="js/jquery.hoverIntent.minified.js" type="text/javascript"></script>
@@ -239,6 +239,12 @@ $page->connectToDatabase();
 						 echo "<span id=\"model_vari_off\"><a>Off</a></span>";
 					      }
 					?>
+					<div id="vari_hover" style="z-index: 100; display: none; position: absolute; margin-left: 50px; background-color: #f8f8f8; border: 1px solid #999999;">
+						<div style="width: 350px; left: 50px; font-size: 12px; padding: 10px;">
+							<div style="padding: 3px; border-bottom: 1px solid #0066cc; font-size: 14px; ">Model Variability</div>
+							<div style="text-align: left; margin-top: 5px;">Model variability refers to the standard deviation (SD), which provides a measure of dispersion around the mean. The vertical bars represent the SD across the five models. Their lengths represent one SD above and below this value. A small SD indicates the models are in relative agreement, whereas a large SD suggests choice of model is relatively important. Drawing inferences from overlapping or non-overlapping bars is discouraged. The only comparison to make is of their relative size, as it pertains to changes in the degree of agreement among the models.</div>
+						</div>
+					</div>
 					 | 
 					<?php if ($_GET['variability'] == '1'){
 						 echo "<span class=\"selected_option\" id=\"model_vari_on\">On</span>";
@@ -253,6 +259,7 @@ $page->connectToDatabase();
 						</div>
 					</div>
 					<script type="text/javascript">
+						$('#model_vari_off').hoverIntent({ over: showScenario, timeout: 500, out: hideScenario });
 						$('#model_vari_on').hoverIntent({ over: showScenario, timeout: 500, out: hideScenario });
 						$('#model_vari_on').click( function() { 
 							fetchData(globalCommunity, globalDataset, globalScenario, 1, "chart"); 

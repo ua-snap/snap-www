@@ -82,7 +82,7 @@ $staff_array = array(
 							}
 							*/
 							//echo "<div style=\"margin-top: 30px; -moz-transform: rotate(".$num."deg); -webkit-transform: rotate(".$num."deg); -o-transform: rotate(".$num."deg); width: 25%; display: inline-block;\">";
-							echo "<div style=\"margin-top: 30px; width: 25%; display: inline-block;\">";
+							echo "<div style=\"margin-top: 30px; width: 25%; display: inline-block; vertical-align: top;\">";
 								echo "<div style=\"position: relative; text-align: center; width: 156px;\">";
 									echo "<div style=\"text-align: center; \"><img alt=\"Photo of ".$row['title']." ".$row['first']." ".$row['last']."\" style=\"width: 100%; padding: 3px; border: 1px solid #6a7173;\" src=\"/images/people/".$row['image']."\" /></div>";
 									echo "<div style=\"font-size: 16px; margin-top: 5px; text-align: center;\">".$row['title']." ".$row['first']." ".$row['last']."</div>";

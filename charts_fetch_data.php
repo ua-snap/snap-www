@@ -83,13 +83,13 @@ if ($_GET['fetch_type'] == "chart"){
 		echo "subtitle: {
 			y: 30,";
 			if ($_GET['scenario'] == 'B1'){
-				echo "text: 'Low-range emissions (B1)'";
+				echo "text: '5 Model Average, Low-range emissions (B1)'";
 			}
 			if ($_GET['scenario'] == 'A1B'){
-				echo "text: 'Mid-range emissions (A1B)'";
+				echo "text: '5 Model Average, Mid-range emissions (A1B)'";
 			}
 			if ($_GET['scenario'] == 'A2'){
-				echo "text: 'High-range emissions (A2)'";
+				echo "text: '5 Model Average, High-range emissions (A2)'";
 			}
 		echo "},";
 		echo "xAxis: {";
