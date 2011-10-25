@@ -104,6 +104,7 @@ if ($_GET['fetch_type'] == "chart"){
 				$row = mysql_fetch_array($result);
 				echo "min: ".floor($row['min(value)']).",";
 				echo "max: ".ceil($row['max(value)']).",";
+				echo "tickInterval: 5,";
 				//echo "plotLines: [{ value: 32, color: '#000000', width: 1.5 }],";
 				echo "plotBands: [{ value: 32, color: '#000000', width: 1.5, label: { text: '32°', align: 'right', style: { fontSize: '10px' } } }],";
 			}
