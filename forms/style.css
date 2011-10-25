@@ -1,0 +1,61 @@
+a {
+	color: #0066cc;
+	text-decoration: none;
+	cursor: pointer; cursor: hand;
+}
+a:hover {
+	color: #999999;
+}
+
+input {
+	border: 1px solid #717171;
+	background-color: #dddddd;
+	border-radius: 5px;
+	padding: 2px;
+	font-size: 15px;
+}
+textarea {
+	border: 1px solid #717171;
+	background-color: #dddddd;
+	border-radius: 5px;
+	padding: 2px;
+	font-size: 15px;
+}
+.deleteX {
+	font-size: 20px;
+	font-family: sans-serif;
+	font-weight: bold;
+	color: #ff0000;
+}
+.deleteX:hover {
+	font-size: 50px;
+	text-decoration: underline;
+	color: gray;
+}
+.Contact {
+	margin-bottom: 10px;
+	border: solid 1px #cccccc;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #222222;
+}
+.Contact div {
+	display: inline-block;
+	border-radius: 3px;
+	padding: 3px;
+	vertical-align: middle;
+}
+.Collaborator {
+	margin-bottom: 10px;
+	border: solid 1px #cccccc;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: #222222;
+}
+.Collaborator > div {
+	display: inline-block;
+	border-radius: 3px;
+	padding: 3px;
+	vertical-align: middle;
+
+}
