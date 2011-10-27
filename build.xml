@@ -148,8 +148,8 @@
         <exclude name="**/*.min.js" />
     </fileset>
     <pathconvert pathsep=" " property="jsfiles.clean" refid="jsfiles.raw" />
-    <exec executable="java" output="build/logs/jslint.xml">
-        <arg line="-jar build/vendor/jslint4java-2.0.1/jslint4java.jar --report xml ${jsfiles.clean}" />
+    <exec executable="java" output="${basedir}/build/logs/jslint.xml">
+        <arg line="-jar ${basedir}/build/vendor/jslint4java-2.0.1/jslint4java.jar --report xml ${jsfiles.clean}" />
     </exec>
  </target>
 
