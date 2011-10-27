@@ -85,12 +85,14 @@ class webPage {
 			    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 			  })();
 
+        <!-- make-dev -->
 		</script>
 		<script src="/js/jquery.js" type="text/javascript" ></script>
 		<script src="/js/site.js" type="text/javascript" ></script>
 		<script src="js/jquery.hoverIntent.minified.js" type="text/javascript"></script>
 		<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"></script>
 		<!--<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.lite.min.js"></script>-->
+        <!-- end-make-dev -->
 		<script type="text/javascript">
 		$(document).ready(function() {
 
