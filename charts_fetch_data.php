@@ -24,6 +24,7 @@ if ($_GET['fetch_type'] == "chart"){
 	echo "chart = new Highcharts.Chart({";
 		echo "chart: {";
 			echo "height: '400',";
+			echo "border: '#ffffff',";
 			echo "renderTo: 'chart_div',";
 			echo "defaultSeriesType: 'column',";
 			//echo "plotBackgroundImage: 'http://dev.snap.uaf.edu/images/snap_chart_bg.png',";
@@ -104,7 +105,6 @@ if ($_GET['fetch_type'] == "chart"){
 				$row = mysql_fetch_array($result);
 				echo "min: ".floor($row['min(value)']).",";
 				echo "max: ".ceil($row['max(value)']).",";
-				echo "tickInterval: 5,";
 				//echo "plotLines: [{ value: 32, color: '#000000', width: 1.5 }],";
 				echo "plotBands: [{ value: 32, color: '#000000', width: 1.5, label: { text: '32°', align: 'right', style: { fontSize: '10px' } } }],";
 			}
