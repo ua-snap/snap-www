@@ -134,6 +134,17 @@
     <exec executable="phpunit" failonerror="true"/>
  </target>
 
+    <target name="jasmine" description="Run unit tests with Jasmine">
+        <exec executable="${basedir}/tests/js/jasmine-reporters/test/phantomjs.runner.sh">
+            <arg line="${basedir}/tests/js/jasmine-reporters/test/JUnitRunner.html"/>
+        </exec>
+        <copy todir="${basedir}/build/logs">
+            <fileset dir="${basedir}/tests/js/jasmine-reporters/test">
+                <include name="**/TEST*" />
+            </fileset>
+        </copy>
+    </target>
+
  <target name="phpcb"
          description="Aggregate tool output with PHP_CodeBrowser">
   <exec executable="phpcb">

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>JUnit XML Reporter Spec</title>
+
+<link rel="stylesheet" href="../ext/jasmine.css" type="text/css" />
+<script type="text/javascript" src="../ext/jasmine.js"></script>
+<script type="text/javascript" src="../ext/jasmine-html.js"></script>
+<script type="text/javascript" src="../src/jasmine.junit_reporter.js"></script>
+
+<script type="text/javascript" src="lib/jquery-1.6.4.js"></script>
+<script type="text/javascript" src="../../../../js/jquery.blockUI.js"></script>
+<script type="text/javascript" src="lib/jasmine-jquery-1.3.1.js"></script>
+<script type="text/javascript" src="lib/sinon-1.2.0.js"></script>
+<script type="text/javascript" src="lib/jasmine-fixture-0.0.5.js"></script>
+
+<!-- include spec files here... -->
+<script type="text/javascript" src="specs/ChartSpec.js"></script>
+
+<!-- include source files here... -->
+<script type="text/javascript" src="../../../../js/charts.js"></script>
+
+<!-- include CSS files if required for tests -->
+<link rel="stylesheet" type="text/css" href="../../../../css/charts.css">
+
+</head>
+<body>
+<script type="text/javascript">
+
+$( function() {
+    // Alias inject function
+    window.inject = $.jasmine.inject;  
+});
+
+jasmine.getEnv().addReporter(new jasmine.TrivialReporter());
+jasmine.getEnv().addReporter(new jasmine.JUnitXmlReporter());
+jasmine.getEnv().execute();
+</script>
+</body>
+</html>
