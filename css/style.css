@@ -12,7 +12,7 @@ body {
 	font-size: 14px;
 	border: 0px;
 	margin: 0px;
-	background-color: #ffffff;
+	background-color: transparent;
 	height: 100%;
 	width: 100%;
 }
@@ -264,7 +264,6 @@ a:hover {
 	margin: auto;
 	margin-top: 20px;
 	width: 950px;
-	background-color: #ffffff;
 }
 #main_content {
 	/*overflow: hidden;*/
@@ -420,4 +419,12 @@ td {
 }
 .tag_x:hover {
 	
+}
+
+#motto {
+	text-align: center;
+	display: none;
+	color: #999999;
+	top: -2px;
+	position: relative;
 }

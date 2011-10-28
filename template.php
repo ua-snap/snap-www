@@ -3,19 +3,23 @@ class webPage {
 	private $pageTitle;
 	private $stylesheet;
 	private $menu;
-	public $SITE = "http://www.snap.uaf.edu";
+	public $SITE = "http://www.snap.uaf.edu"; //TODO: move to configuration
 	public function __construct($t, $s, $m){
 		$this->pageTitle = $t;
 		$this->stylesheet = $s;
 		$this->menu = $m;
 	}
 
-	public function connectToDatabase(){
+	public function connectToDatabase(){ //TODO:move to configuration
 		$server = "localhost";
 		$username = "snapwww_admin";
-		$password = "xargX11";
+		$password = "xorgX11";
 		$database = "snapwww";
-		mysql_connect($server, $username, $password) or die("Unable to Connect to Database");
+		 if( !mysql_connect($server, $username, $password)) {
+			mysql_error();	
+			die("Unable to Connect to Database");	//TODO: make logging happen?
+		} 
+
 		mysql_select_db($database);
 	}
 	private function mainMenu(){ ?>
@@ -87,11 +91,15 @@ class webPage {
 
         <!-- make-dev -->
 		</script>
+		
+		<!-- make-dev -->
 		<script src="/js/jquery.js" type="text/javascript" ></script>
 		<script src="/js/site.js" type="text/javascript" ></script>
+		<script src="js/jquery.blockUI.js" type="text/javascript" ></script>
 		<script src="js/jquery.hoverIntent.minified.js" type="text/javascript"></script>
 		<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"></script>
-		<!--<script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.lite.min.js"></script>-->
+		<!-- end-make-dev -->
+
         <!-- end-make-dev -->
 		<script type="text/javascript">
 		$(document).ready(function() {
@@ -121,8 +129,21 @@ class webPage {
 			<div id="header_right">
 				<div><a href="/"><img src="/images/snap_full.png" height="30px" alt="Scenarios Network for Alaska Planning" /></a></div>
 				<?php
-				if (basename($_SERVER['PHP_SELF']) != "index.php"){
-					echo "<div id=\"motto\" style=\"text-align: center; color: #999999; top: -8px; position: relative;\">Exploring our future in a changing Arctic</div>";
+				if (basename($_SERVER['PHP_SELF']) != "index.php") {
+				?>
+
+					<div id="motto">Exploring our future in a changing Arctic</div>
+					<script type="text/javascript">
+
+					$('#header_right').hoverIntent({ 
+						over: function(){ $('#motto').fadeIn(500); },
+						interval: 100,
+						out: function(){ $('#motto').fadeOut(500); } 
+					});
+
+					</script>
+
+<?php
 				}
 				?>
 				
@@ -257,39 +278,7 @@ class webPage {
 				</div>
 		<?php
 	}
-	/*
-	public function openContentBox($content_title, $float_side, $content_array){
-		?>
-		<div <?php if ($float_side){ echo "style=\"float: $float_side;\""; } ?>>
-			<div class="content_box_title" style="float: left"><?php echo $content_title; ?></div>
-			<div style="float: right; margin: 10px;" class="content_box_nav">
-				<div style="margin: 5px; font-size: 18px; cursor: pointer; cursor: hand; float: left" onclick='javascript:changeContent(this, <?php echo $content_array; ?>, -1, <?php echo $content_array; ?>_index);'><img src="images/arrow_left.png" alt="Left Arrow" /></div> 
-				<div style="color: #6a7173; float: left; margin: 5px; font-size: 14px; line-height: 17px;" class="content_index">
-					<script type="text/javascript">
-						a_name = eval(<?php echo $content_array; ?>);
-						document.write('1 of ' + a_name.length);
-					</script>
-				</div>
-				<div style="margin: 5px; font-size: 18px; cursor: pointer; cursor: hand; float: right" onclick='javascript:changeContent(this, <?php echo $content_array; ?>, 1, <?php echo $content_array; ?>_index);'><img src="images/arrow_right.png" alt="Right Arrow" /></div>
-			</div>
-			<div class="content_box_outer" style="clear: both">
-				<div class="content_box_inner" style="height: 300px;">
-					<script type="text/javascript">
-						a_name = eval(<?php echo $content_array; ?>);
-						document.write('<div style="margin: 10px; "><img height="100px" style="margin: auto; display: block" src="' + a_name[0][1] + '" /></div>');
-						document.write('<div style="font-size: 24px; color: #6a7173; margin: 10px; width: 100%;">' + a_name[0][0] + '</div>');
-						document.write('<div style="font-size: 16px; color: #6a7173; margin: 10px; width: 100%;">' + a_name[0][2] + '</div>');
-					</script>
-		<?php
-	}
-	public function closeContentBox(){
-		?>
-				</div>
-			</div>
-		</div>
-		<?php
-	}
-	*/
+
 	public function openContentBox($content_title, $float_side, $content_id){
 		?>
 
@@ -303,6 +292,7 @@ class webPage {
 				<div id="<?php echo $content_id; ?>" class="content_box_inner" style="height: 150px;">
 		<?php
 	}
+
 	public function closeContentBox($content_id){ ?>
 				</div>
 			</div>
