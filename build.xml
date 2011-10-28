@@ -2,10 +2,10 @@
 
 <project name="SNAP-Web" default="build">
  <target name="build"
-   depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdoc,phpcb"/>
+   depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdoc,phpunit,phpcb,jslint"/>
 
  <target name="build-parallel"
-   depends="prepare,lint,tools-parallel,phpcb"/>
+   depends="prepare,lint,tools-parallel,phpunit,phpcb,jslint"/>
 
  <target name="tools-parallel"
          description="Run tools in parallel">
@@ -130,6 +130,10 @@
   </exec>
  </target>
 
+ <target name="phpunit" description="Run unit tests with PHPUnit">
+    <exec executable="phpunit" failonerror="true"/>
+ </target>
+
  <target name="phpcb"
          description="Aggregate tool output with PHP_CodeBrowser">
   <exec executable="phpcb">
@@ -152,6 +156,5 @@
         <arg line="-jar ${basedir}/build/vendor/jslint4java-2.0.1/jslint4java.jar --report xml ${jsfiles.clean}" />
     </exec>
  </target>
-
 
 </project>
