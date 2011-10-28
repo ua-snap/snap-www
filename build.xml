@@ -138,7 +138,7 @@
         <exec executable="${basedir}/tests/js/jasmine-reporters/test/phantomjs.runner.sh">
             <arg line="${basedir}/tests/js/jasmine-reporters/test/JUnitRunner.html"/>
         </exec>
-        <copy todir="${basedir}/build/logs">
+        <copy todir="${basedir}/build/test-results">
             <fileset dir="${basedir}/tests/js/jasmine-reporters/test">
                 <include name="**/TEST*" />
             </fileset>
