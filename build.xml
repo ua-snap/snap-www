@@ -138,6 +138,7 @@
 
     <target name="jasmine" description="Run unit tests with Jasmine">
         <exec executable="${basedir}/tests/js/jasmine-reporters/test/phantomjs.runner.sh">
+            <env key="DISPLAY" value=":0" />
             <arg line="${basedir}/tests/js/jasmine-reporters/test/JUnitRunner.html"/>
         </exec>
         <copy todir="${basedir}/build/test-results">
