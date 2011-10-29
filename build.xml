@@ -110,8 +110,8 @@
    <arg value="--report=checkstyle" />
    <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
    <arg value="--standard=${basedir}/build/phpcs.xml" />
-   <arg path="${basedir}*.php" />
-   <arg path="${basedir}/src" />
+   <arg value="--extensions=php" />
+   <arg path="${basedir}" />
   </exec>
  </target>
 
