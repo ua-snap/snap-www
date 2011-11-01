@@ -4,46 +4,12 @@ $page = new webPage("SNAP: Resources", "resources.css", "resources");
 $page->openPage();
 $page->pageHeader();
 $page->connectToDatabase();
-$tag_array;
-$tag_array = split(",", $_GET['tags']);
-$coll_array;
+
 $coll_array = split(",", $_GET['coll']);
 $pubImages = array ( "pub_paper.png", "pub_report.png", "pub_presentation.png", "pub_video.png");
 $resTypes = array ( "Paper", "Report", "Presentation", "Video");
 function getPublicationListSpecial($t){
-	global $tag_array;
-	$pubtag = "";
-	//Check to see if tags, type or collabs are set
-	//There is a more efficient way to do this.  Come back to it.
-	if ((isset($_GET['tags']) && $_GET['tags'] != NULL) || (isset($_GET['type']) && $_GET['type'] != NULL) || (isset($_GET['collab']) && $_GET['collab'] != NULL)){
-		$adds = "WHERE ";
-	}
-	if (isset($_GET['tags']) && $_GET['tags'] != NULL){
-		$pubtag = "pt.tag = '".$_GET['tags']."'";
-	}
-	if (isset($_GET['type']) && $_GET['type'] != NULL){
-		$types = "";
-		if (isset($_GET['tags']) && $_GET['tags'] != NULL){
-			$types = " AND ";
-		}
-		$types .= "pubs.type ='".$_GET['type']."'";
-	}
-	if (isset($_GET['collab']) && $_GET['collab'] != NULL){
-		$collab = "";
-		if ((isset($_GET['tags']) && $_GET['tags'] != NULL) || (isset($_GET['type']) && $_GET['type'] != NULL)){
-			$collab = " AND ";
-		}
-		$collab .= " pc.collaboratorid = '".$_GET['collab']."'";
-	}
 
-	$countsize = sizeof($tag_array);
-	$order = "ORDER BY pubs.createdate";
-	if ($_GET['sort'] == "oldest"){
-		$order = "ORDER BY pubs.createdate DESC";
-	}
-	//Limit displayed resources to filtered list
-	$query = "SELECT title,type,pubs.id,summary FROM resources pubs LEFT JOIN resource_tags AS pt ON pubs.id=pt.resourceid LEFT JOIN resource_collaborators AS pc ON pubs.id=pc.resourceid $adds $pubtag $types $collab GROUP BY pubs.id $order";
-	
 	//echo $query;
 	$result = mysql_query($query) or die(mysql_error());
 	if (mysql_num_rows($result) < 1){
