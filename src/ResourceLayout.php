@@ -25,6 +25,7 @@ class ResourceLayout {
 
         $where = array();
         $whereQuery = '';
+        $order = '';
         
         // prevent sql injection
         foreach( array('tags' => 'pt.tag', 'collab'=>'pc.collaboratorid', 'type'=>'pubs.type' ) as $key => $column) {
@@ -38,7 +39,7 @@ class ResourceLayout {
         }
 
 
-        if ( "oldest" == $this->reqs['sort'] ) {
+        if ( !empty($this->reqs['sort']) && "oldest" == $this->reqs['sort'] ) {
             $order = " DESC";
         }
 
