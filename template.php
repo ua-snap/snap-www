@@ -13,7 +13,7 @@ class webPage {
 	public function connectToDatabase(){ //TODO:move to configuration
 		$server = "localhost";
 		$username = "snapwww_admin";
-		$password = "xorgX11";
+		$password = "xargX11";
 		$database = "snapwww";
 		 if( !mysql_connect($server, $username, $password)) {
 			mysql_error();	
@@ -279,35 +279,5 @@ class webPage {
 		<?php
 	}
 
-	public function openContentBox($content_title, $float_side, $content_id){
-		?>
-
-		<div <?php if ($float_side){ echo "style=\"float: $float_side;\""; } ?>>
-			<div class="content_box_title" style="float: left"><?php echo $content_title; ?></div>
-			<div style="float: right; margin: 10px;" class="content_box_nav">
-				<div id="<?php echo $content_id."_prev"; ?>" style="margin: 5px; font-size: 18px; cursor: pointer; cursor: hand; float: left"><img src="/images/arrow_left.png" alt="Left Arrow" /></div>
-				<div id="<?php echo $content_id."_next"; ?>" style="margin: 5px; font-size: 18px; cursor: pointer; cursor: hand; float: right"><img src="/images/arrow_right.png" alt="Right Arrow" /></div>
-			</div>
-			<div class="content_box_outer" style="clear: both">
-				<div id="<?php echo $content_id; ?>" class="content_box_inner" style="height: 150px;">
-		<?php
-	}
-
-	public function closeContentBox($content_id){ ?>
-				</div>
-			</div>
-		</div>
-		<script type="text/javascript">
-			$('#<?php echo $content_id; ?>').cycle({
-				fx:     'fade', 
-				speed:   1000, 
-				timeout: 5000, 
-				next:   '#<?php echo $content_id."_next"; ?>', 
-				prev:   '#<?php echo $content_id."_prev"; ?>', 
-				pause:   1 
-			});
-		</script>
-		<?php
-	}
 }
 ?>
