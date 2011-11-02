@@ -18,7 +18,7 @@ class ResourceLayout {
     public function getResultsCount()
     {
         if( empty($this->resultsCount) ) {
-            return '<div style="font-size: 16px;">There are no results for the criteria you selected.</div>';  
+            return '<div id="noResults">There are no results for the criteria you selected.</div>';  
         } else {
             return '<span>Displaying '.count($this->results).' result'.((count($this->results) > 1) ? 's': '').'</span>';
         }
@@ -45,7 +45,7 @@ class ResourceLayout {
             $persist = '';
         }
 
-        return ( !empty($this->reqs['sort']) && 'oldest' == $this->reqs['sort'] ) ? '<span style="margin-left: 50px;"> Sort by <a href="resources.php?'.$persist.'">Newest First</a> | Oldest First</span>' : '<span style="margin-left: 50px;"> Sort by Newest First | <a href="resources.php?'.$persist.'&amp;sort=oldest">Oldest First</a></span>';
+        return ( !empty($this->reqs['sort']) && 'oldest' == $this->reqs['sort'] ) ? '<span id="sortWidget"> Sort by <a href="resources.php?'.$persist.'">Newest First</a> | Oldest First</span>' : '<span id="sortWidget"> Sort by Newest First | <a href="resources.php?'.$persist.'&amp;sort=oldest">Oldest First</a></span>';
 
     }
 
