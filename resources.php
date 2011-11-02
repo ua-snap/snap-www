@@ -10,35 +10,23 @@ $pubImages = array ( "pub_paper.png", "pub_report.png", "pub_presentation.png", 
 $resTypes = array ( "Paper", "Report", "Presentation", "Video");
 function getPublicationListSpecial($t){
 
-	//echo $query;
+	// build query, do query
+
 	$result = mysql_query($query) or die(mysql_error());
 	if (mysql_num_rows($result) < 1){
-		echo "<div style=\"font-size: 16px;\">There are no results for the criteria you selected.</div>";
+		// display no results found warning
 	} else {
-		echo "<div><span>Displaying ".mysql_num_rows($result)." result";
-		if (mysql_num_rows($result) > 1){
-			echo "s";
-		}
-		echo "</span>";
+
+		echo "<div>";
+
+		// draw results counter
+
 		if (isset($_GET['tags']) || isset($_GET['type']) || isset($_GET['collab'])){	
 			echo "<span> | <a href=\"resources.php\">Show All</a></span>";
 		}
-		echo "<span style=\"margin-left: 50px;\"> Sort by ";
-		$tagline = "";
-		$getflag = false;
-		if ($_GET['tags'] != NULL){ $tagline .= "tags=".$_GET['tags']."&"; $getflag = true; }
-		if ($_GET['type'] != NULL){ $tagline .= "type=".$_GET['type']."&"; $getflag = true; }
-		if ($_GET['collab'] != NULL){ $tagline .= "collab=".$_GET['collab']."&"; $getflag = true; }
-		$tagline = preg_replace("/(.*)&$/", "$1", $tagline);
 
-			if ($_GET['sort'] == "oldest"){
-				if ($tagline == "" && $getflag == true){ $tagline .= "&"; }
-				echo "<a href=\"/resources.php?$tagline\">Newest First</a> | Oldest First";
-			} else {
-				if ($tagline != "" && $getflag == true){ $tagline .= "&"; }
-				echo "Newest First | <a href=\"/resources.php?$tagline"."sort=oldest\">Oldest First</a>";
-			}
-		echo "</span>"; 
+
+		
 		echo "</div>";
 	}
 	while ($row = mysql_fetch_row($result)){

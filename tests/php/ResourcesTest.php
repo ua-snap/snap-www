@@ -13,7 +13,7 @@ class ResourcesTest extends PHPUnit_Framework_TestCase
 
         $r = new ResourceLayout();
         $r->setRequests( array( 'tags'=>'xxx', 'collab'=>'xxx', 'type'=>'none') );
-        $this->assertEquals( $r->getResultsCount(), '<div style="font-size: 16px;">There are no results for the criteria you selected.</div>');
+        $this->assertEquals('<div style="font-size: 16px;">There are no results for the criteria you selected.</div>',  $r->getResultsCount(), "User should be notified if no results match.");
 
     }
 
@@ -21,17 +21,21 @@ class ResourcesTest extends PHPUnit_Framework_TestCase
     {
         $r = new ResourceLayout();
         $r->setRequests( array( 'tags'=>'', 'collab'=>'', 'type'=>'') );
-        $this->assertEquals( $r->getResultsCount(), '<span>Displaying 15 results</span>');
+        $r->results = Fixtures::$resources;
+        $this->assertEquals('<span>Displaying 4 results</span>',  $r->getResultsCount(), "User should see total # of results matched");
     }
 
     public function testSortCriteriaBlock()
     {
     	$r = new ResourceLayout();
         $r->setRequests( array( 'tags'=>'', 'collab'=>'', 'type'=>'') );
-        $this->assertEquals( $r->getSortCriteria(), '<div><span style="margin-left: 50px;"> Sort by Newest First | <a href="/resources.php?sort=oldest">Oldest First</a></span></div>');
+        $this->assertEquals('<span style="margin-left: 50px;"> Sort by Newest First | <a href="resources.php?&amp;sort=oldest">Oldest First</a></span>',  $r->getSortCriteria(), "Search should default to newest-first");
+
         $r->setRequests( array( 'tags'=>'', 'collab'=>'', 'type'=>'', 'sort'=>'oldest') );
-        $this->assertEquals( $r->getSortCriteria(), '<span style="margin-left: 50px;"> Sort by <a href="/resources.php?">Newest First</a> | Oldest First</span>');
-	    
+        $this->assertEquals('<span style="margin-left: 50px;"> Sort by <a href="resources.php?">Newest First</a> | Oldest First</span>',  $r->getSortCriteria(), "If user has picked sort-by-oldest, system should show an active link to sort-by-newest");
+
+        $r->setRequests( array( 'tags'=>'climate', 'collab'=>'5', 'type'=>'2', 'sort'=>'oldest') );
+        $this->assertEquals('<span style="margin-left: 50px;"> Sort by <a href="resources.php?tags=climate&amp;collab=5&amp;type=2">Newest First</a> | Oldest First</span>',  $r->getSortCriteria(), "Search criteria should persist beyond changing sorting order");
     }
 
     public function testReportResource()
@@ -110,7 +114,7 @@ html
     {
         $r = new ResourceLayout();
         $r->setRequests( array( 'tags'=>'', 'collab'=>'', 'type'=>'', 'sort'=>'') );
-        $this->assertEquals('SELECT title,type,pubs.id,summary FROM resources pubs LEFT JOIN resource_tags AS pt ON pubs.id=pt.resourceid LEFT JOIN resource_collaborators AS pc ON pubs.id=pc.resourceid GROUP BY pubs.id ORDER BY pubs.createdate', $r->getQueryString(), 'Query string should get all resources, sorted from newest to oldest, if there are no specified criteria.');
+        $this->assertEquals('SELECT title,type,pubs.id,summary FROM resources pubs LEFT JOIN resource_tags AS pt ON pubs.id=pt.resourceid LEFT JOIN resource_collaborators AS pc ON pubs.id=pc.resourceid  GROUP BY pubs.id ORDER BY pubs.createdate ', $r->getQueryString(), 'Query string should get all resources, sorted from newest to oldest, if there are no specified criteria.');
     }
 
     public function testOrderQueryString()
@@ -125,21 +129,21 @@ html
     	// tags == subject, for this test's purposes
         $r = new ResourceLayout();
         $r->setRequests( array( 'tags'=>'climate', 'collab'=>'', 'type'=>'', 'sort'=>'') );
-        $this->assertEquals("SELECT title,type,pubs.id,summary FROM resources pubs LEFT JOIN resource_tags AS pt ON pubs.id=pt.resourceid LEFT JOIN resource_collaborators AS pc ON pubs.id=pc.resourceid WHERE pt.tag = 'climate' GROUP BY pubs.id ORDER BY pubs.createdate",  $r->getQueryString(), "Searching by a single tag (=subject)");
+        $this->assertEquals("SELECT title,type,pubs.id,summary FROM resources pubs LEFT JOIN resource_tags AS pt ON pubs.id=pt.resourceid LEFT JOIN resource_collaborators AS pc ON pubs.id=pc.resourceid  WHERE pt.tag = 'climate' GROUP BY pubs.id ORDER BY pubs.createdate ",  $r->getQueryString(), "Searching by a single tag (=subject)");
     }
 
     public function testCollabTestQueryString()
     {
         $r = new ResourceLayout();
         $r->setRequests( array( 'tags'=>'', 'collab'=>'5', 'type'=>'2', 'sort'=>'') );
-        $this->assertEquals("SELECT title,type,pubs.id,summary FROM resources pubs LEFT JOIN resource_tags AS pt ON pubs.id=pt.resourceid LEFT JOIN resource_collaborators AS pc ON pubs.id=pc.resourceid WHERE pc.collaboratorid = '5' AND pubs.type = '2' GROUP BY pubs.id ORDER BY pubs.createdate",  $r->getQueryString(), "Query should dynamically create AND clause if needed to search multiple criteria");
+        $this->assertEquals("SELECT title,type,pubs.id,summary FROM resources pubs LEFT JOIN resource_tags AS pt ON pubs.id=pt.resourceid LEFT JOIN resource_collaborators AS pc ON pubs.id=pc.resourceid  WHERE pc.collaboratorid = '5' AND pubs.type = '2' GROUP BY pubs.id ORDER BY pubs.createdate ",  $r->getQueryString(), "Query should dynamically create AND clause if needed to search multiple criteria");
     }    
 
     public function testFullQueryString()
     {
         $r = new ResourceLayout();
         $r->setRequests( array( 'tags'=>'climate', 'collab'=>'5', 'type'=>'1', 'sort'=>'oldest') );
-        $this->assertEquals("SELECT title,type,pubs.id,summary FROM resources pubs LEFT JOIN resource_tags AS pt ON pubs.id=pt.resourceid LEFT JOIN resource_collaborators AS pc ON pubs.id=pc.resourceid WHERE pt.tag = 'climate' AND pubs.type = '1' AND pc.collaboratorid = '5' GROUP BY pubs.id ORDER BY pubs.createdate DESC",  $r->getQueryString(), "");
+        $this->assertEquals("SELECT title,type,pubs.id,summary FROM resources pubs LEFT JOIN resource_tags AS pt ON pubs.id=pt.resourceid LEFT JOIN resource_collaborators AS pc ON pubs.id=pc.resourceid  WHERE pt.tag = 'climate' AND pc.collaboratorid = '5' AND pubs.type = '1' GROUP BY pubs.id ORDER BY pubs.createdate  DESC",  $r->getQueryString(), "");
     }   
 }
 
