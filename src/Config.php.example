@@ -1,13 +1,12 @@
 <?php
 // When deploying to production, copy/rename this file to Config.php
 class Config {
-	static public $version = "DEV-VERSION-PLACEHOLDER";
-	static public $database = array(
-		'host' => 'localhost',
-		'user' => 'snapwww',
-		'pass' => 'password',
-		'database' => 'snapwww'
-	);
+    static public $version = "DEV-VERSION-PLACEHOLDER";
+    static public $database = array(
+        'host' => 'localhost',
+        'user' => 'snapwww',
+        'pass' => 'password',
+        'database' => 'snapwww'
+    );
 }
-
 ?>

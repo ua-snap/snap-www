@@ -1,7 +1,0 @@
-<?php
-
-class Config {
-	static public $version = "DEV-VERSION-PLACEHOLDER";
-}
-
-?>
