@@ -5,22 +5,22 @@ $page->openPage();
 $page->pageHeader();
 
 $staff_array = array(
-		array(
-			
-		),
-		array(
+        array(
+            
+        ),
+        array(
 
-		)
-	);
+        )
+    );
 ?>
 
-		<div id="main_body">
+        <div id="main_body">
 
 
-			<div id="main_content">
+            <div id="main_content">
 
-		</div>
-	</div>
+        </div>
+    </div>
 <?php
 $page->closePage();
 ?>
