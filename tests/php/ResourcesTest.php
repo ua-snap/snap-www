@@ -13,7 +13,7 @@ class ResourcesTest extends PHPUnit_Framework_TestCase
 
         $r = new ResourceLayout();
         $r->setRequests( array( 'tags'=>'xxx', 'collab'=>'xxx', 'type'=>'none') );
-        $this->assertEquals('<div style="font-size: 16px;">There are no results for the criteria you selected.</div>',  $r->getResultsCount(), "User should be notified if no results match.");
+        $this->assertEquals('<div id="noResults">There are no results for the criteria you selected.</div>',  $r->getResultsCount(), "User should be notified if no results match.");
 
     }
 
@@ -30,13 +30,13 @@ class ResourcesTest extends PHPUnit_Framework_TestCase
     {
     	$r = new ResourceLayout();
         $r->setRequests( array( 'tags'=>'', 'collab'=>'', 'type'=>'') );
-        $this->assertEquals('<span style="margin-left: 50px;"> Sort by Newest First | <a href="resources.php?&amp;sort=oldest">Oldest First</a></span>',  $r->getSortCriteria(), "Search should default to newest-first");
+        $this->assertEquals('<span id="sortWidget"> Sort by Newest First | <a href="resources.php?&amp;sort=oldest">Oldest First</a></span>',  $r->getSortCriteria(), "Search should default to newest-first");
 
         $r->setRequests( array( 'tags'=>'', 'collab'=>'', 'type'=>'', 'sort'=>'oldest') );
-        $this->assertEquals('<span style="margin-left: 50px;"> Sort by <a href="resources.php?">Newest First</a> | Oldest First</span>',  $r->getSortCriteria(), "If user has picked sort-by-oldest, system should show an active link to sort-by-newest");
+        $this->assertEquals('<span id="sortWidget"> Sort by <a href="resources.php?">Newest First</a> | Oldest First</span>',  $r->getSortCriteria(), "If user has picked sort-by-oldest, system should show an active link to sort-by-newest");
 
         $r->setRequests( array( 'tags'=>'climate', 'collab'=>'5', 'type'=>'2', 'sort'=>'oldest') );
-        $this->assertEquals('<span style="margin-left: 50px;"> Sort by <a href="resources.php?tags=climate&amp;collab=5&amp;type=2">Newest First</a> | Oldest First</span>',  $r->getSortCriteria(), "Search criteria should persist beyond changing sorting order");
+        $this->assertEquals('<span id="sortWidget"> Sort by <a href="resources.php?tags=climate&amp;collab=5&amp;type=2">Newest First</a> | Oldest First</span>',  $r->getSortCriteria(), "Search criteria should persist beyond changing sorting order");
     }
 
     public function testResetFilters()
