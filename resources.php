@@ -6,7 +6,6 @@ $page->pageHeader();
 $page->connectToDatabase();
 
 $coll_array = split(",", $_GET['coll']);
-$pubImages = array ( "pub_paper.png", "pub_report.png", "pub_presentation.png", "pub_video.png");
 $resTypes = array ( "Paper", "Report", "Presentation", "Video");
 function getPublicationListSpecial($t){
 
@@ -19,70 +18,12 @@ function getPublicationListSpecial($t){
 
 		echo "<div>";
 
-		// draw results counter
+// draw filters + reset filters block
 
-		if (isset($_GET['tags']) || isset($_GET['type']) || isset($_GET['collab'])){	
-			echo "<span> | <a href=\"resources.php\">Show All</a></span>";
-		}
-
-
-		
 		echo "</div>";
 	}
 	while ($row = mysql_fetch_row($result)){
-		echo "<div id=\"pub_box_".$row[2]."\" style=\"width: 440px; height: 50px; display: inline-block; margin: 10px; margin-bottom: 10px; position: relative; \">";
-
-			$pubType = $row[1];
-			global $pubImages;
-
-			echo "<div id=\"pub_hover_".$row[2]."\" class=\"hover_box\" >";
-				echo "<div style=\"position: relative; \">";
-				echo "<div style=\"position: absolute; \">";
-					echo "<img alt=\"".$pubImages[$pubType -1]."\" src=\"images/".$pubImages[$pubType -1]."\" style=\"margin-left: 5px;\" />";
-				echo "</div>";
-				echo "<div style=\"position: relative;; left: 59px; width: 380px; ;\">";
-					echo "<div style=\"font-size: 15px; color: #111111; margin-top: 5px; margin-bottom: 5px;\" ><a href=\"resource_page.php?resourceid=".$row[2]."\">".$row[0]."</a></div>";
-					echo "<div style=\"position: relative; width: 420px; margin-bottom: 10px;\"></div>";
-					$query_tags = "SELECT tag FROM resource_tags WHERE resourceid='".$row[2]."'";
-					$result_tags = mysql_query($query_tags);
-					echo "<div style=\"color: #666666;\">Tags: ";
-					$row_tags = mysql_fetch_array($result_tags);
-					echo $row_tags[0];
-					while ($row_tags = mysql_fetch_array($result_tags)){
-						echo ", ".$row_tags[0];
-					}
-					echo "</div>";
-
-				echo "</div>";
-				echo "</div>";
-				echo "<div style=\"margin-top: 10px;width: 420px; padding: 10px;\">".$row[3]."</div>";
-				echo "<div style=\"position: relative; left: 385px; bottom: 5px; margin-top: 10px;\"><a id=\"pub_close_".$row[2]."\" style=\"cursor: pointer; cursor: hand;\">close &#8855;</a></div>";
-
-			echo "</div>\n";
-			echo "<div style=\"width: 50px; padding: 6px; position: absolute; z-index: 1;\">";
-
-			echo "<img alt=\"".$pubImages[$pubType -1]."\" src=\"images/".$pubImages[$pubType -1]."\" style=\"\" />";
-			echo "</div>";
-			echo "<div style=\"position: absolute; padding-top: 6px; left: 60px; width: 380px;\">";
-				echo "<div style=\"font-size: 15px; color: #111111; margin-bottom: 5px;\" ><a href=\"resource_page.php?resourceid=".$row[2]."\">".$row[0]."</a></div>";
-			echo "</div>";
-
-
-
-
-			echo "<script type=\"text/javascript\">\n";
-				echo "var config = { 
-					over: function(){ $('#pub_hover_".$row[2]."').fadeIn(300); },
-					interval: 100,
-					out: function(){ $('#pub_hover_".$row[2]."').hide(0); } 
-					};";
-				echo "$('#pub_box_".$row[2]."').hoverIntent(config);";
-				echo "$('#pub_close_".$row[2]."').click(
-					function(){ $('#pub_hover_".$row[2]."').hide(0); }
-				);";
-			echo "</script>\n";
-
-		echo "</div>";
+		// draw individual result
 	}
 }
 ?>

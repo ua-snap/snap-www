@@ -38,76 +38,36 @@ class ResourcesTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('<span style="margin-left: 50px;"> Sort by <a href="resources.php?tags=climate&amp;collab=5&amp;type=2">Newest First</a> | Oldest First</span>',  $r->getSortCriteria(), "Search criteria should persist beyond changing sorting order");
     }
 
+    public function testResetFilters()
+    {
+    	$r = new ResourceLayout();
+    	$r->setRequests( array( 'tags'=>'tags' ));
+    	$this->assertEquals("<span> | <a href=\"resources.php\">Show All</a></span>", $r->getFilterReset(), "The system should let you reset the filters if you have some selected");
+    }
+
     public function testReportResource()
     {
-    	$r = Resource::factory(Fixtures::$resources[1]); // ID 1 in DB must be a report resource
-    	$this->assertEquals( $r->toSummaryHtml(), <<<html
-<div id="pub_box_10" style="width: 440px; height: 50px; display: inline-block; margin: 10px; margin-bottom: 10px; position: relative; "><div id="pub_hover_10" class="hover_box" ><div style="position: relative; "><div style="position: absolute; "><img alt="pub_report.png" src="images/pub_report.png" style="margin-left: 5px;" /></div><div style="position: relative;; left: 59px; width: 380px; ;"><div style="font-size: 15px; color: #111111; margin-top: 5px; margin-bottom: 5px;" ><a href="resource_page.php?resourceid=10">Reports for Boreal ALFRESCO</a></div><div style="position: relative; width: 420px; margin-bottom: 10px;"></div><div style="color: #666666;">Tags: ecological model</div></div></div><div style="margin-top: 10px;width: 420px; padding: 10px;">As Boreal ALFRESCO finishes modeling specific areas in Alaska, reports will be posted here to download. These reports focus on particular domains within the state and present maps, data, and other interpretations of model output. </div><div style="position: relative; left: 385px; bottom: 5px; margin-top: 10px;"><a id="pub_close_10" style="cursor: pointer; cursor: hand;">close &#8855;</a></div></div>
-<div style="width: 50px; padding: 6px; position: absolute; z-index: 1;"><img alt="pub_report.png" src="images/pub_report.png" style="" /></div><div style="position: absolute; padding-top: 6px; left: 60px; width: 380px;"><div style="font-size: 15px; color: #111111; margin-bottom: 5px;" ><a href="resource_page.php?resourceid=10">Reports for Boreal ALFRESCO</a></div></div><script type="text/javascript">
-var config = { 
-					over: function(){ $('#pub_hover_10').fadeIn(300); },
-					interval: 100,
-					out: function(){ $('#pub_hover_10').hide(0); } 
-					};$('#pub_box_10').hoverIntent(config);$('#pub_close_10').click(
-					function(){ $('#pub_hover_10').hide(0); }
-				);</script>
-</div>
-html
-);
+    	$r = Resource::factory(Fixtures::$resources[1]); 
+    	$this->assertEquals( Fixtures::$resourceSummaries[1], $r->toSummaryHtml(), "User can see summary block of information about a resource, including a Hover functionality that shows more detail");
     }
 
     public function testPaperResource()
     {
-    	$r = Resource::factory(Fixtures::$resources[10]); // ID 10 in DB must be a paper resource
-    	$this->assertEquals( $r->toSummaryHtml(), <<<html
-<div id="pub_box_10" style="width: 440px; height: 50px; display: inline-block; margin: 10px; margin-bottom: 10px; position: relative; "><div id="pub_hover_10" class="hover_box" ><div style="position: relative; "><div style="position: absolute; "><img alt="pub_report.png" src="images/pub_report.png" style="margin-left: 5px;" /></div><div style="position: relative;; left: 59px; width: 380px; ;"><div style="font-size: 15px; color: #111111; margin-top: 5px; margin-bottom: 5px;" ><a href="resource_page.php?resourceid=10">Reports for Boreal ALFRESCO</a></div><div style="position: relative; width: 420px; margin-bottom: 10px;"></div><div style="color: #666666;">Tags: ecological model</div></div></div><div style="margin-top: 10px;width: 420px; padding: 10px;">As Boreal ALFRESCO finishes modeling specific areas in Alaska, reports will be posted here to download. These reports focus on particular domains within the state and present maps, data, and other interpretations of model output. </div><div style="position: relative; left: 385px; bottom: 5px; margin-top: 10px;"><a id="pub_close_10" style="cursor: pointer; cursor: hand;">close &#8855;</a></div></div>
-<div style="width: 50px; padding: 6px; position: absolute; z-index: 1;"><img alt="pub_report.png" src="images/pub_report.png" style="" /></div><div style="position: absolute; padding-top: 6px; left: 60px; width: 380px;"><div style="font-size: 15px; color: #111111; margin-bottom: 5px;" ><a href="resource_page.php?resourceid=10">Reports for Boreal ALFRESCO</a></div></div><script type="text/javascript">
-var config = { 
-					over: function(){ $('#pub_hover_10').fadeIn(300); },
-					interval: 100,
-					out: function(){ $('#pub_hover_10').hide(0); } 
-					};$('#pub_box_10').hoverIntent(config);$('#pub_close_10').click(
-					function(){ $('#pub_hover_10').hide(0); }
-				);</script>
-</div>
-html
-);
+    	$r = Resource::factory(Fixtures::$resources[10]);
+    	$this->assertEquals( Fixtures::$resourceSummaries[10], $r->toSummaryHtml(), "User can see summary block of information about a resource, including a Hover functionality that shows more detail");
+
     }
 
     public function testPresentationResource()
     {
-    	$r = Resource::factory(Fixtures::$resources[11]); // Id 11 in DB must be a presentation resource
-    	$this->assertEquals( $r->toSummaryHtml(), <<<html
-<div id="pub_box_12" style="width: 440px; height: 50px; display: inline-block; margin: 10px; margin-bottom: 10px; position: relative; "><div id="pub_hover_12" class="hover_box" ><div style="position: relative; "><div style="position: absolute; "><img alt="pub_presentation.png" src="images/pub_presentation.png" style="margin-left: 5px;" /></div><div style="position: relative;; left: 59px; width: 380px; ;"><div style="font-size: 15px; color: #111111; margin-top: 5px; margin-bottom: 5px;" ><a href="resource_page.php?resourceid=12">SNAP climate map animations and descriptions</a></div><div style="position: relative; width: 420px; margin-bottom: 10px;"></div><div style="color: #666666;">Tags: climate, SNAP</div></div></div><div style="margin-top: 10px;width: 420px; padding: 10px;">This PowerPoint animation was originally presented in a large-screen format at the SNAP information booth at the Alaska Forum on the Environment, January 2009. It was intended to offer a visual depiction of some of SNAP&#039;s map products to interested members of the public.</div><div style="position: relative; left: 385px; bottom: 5px; margin-top: 10px;"><a id="pub_close_12" style="cursor: pointer; cursor: hand;">close &#8855;</a></div></div>
-<div style="width: 50px; padding: 6px; position: absolute; z-index: 1;"><img alt="pub_presentation.png" src="images/pub_presentation.png" style="" /></div><div style="position: absolute; padding-top: 6px; left: 60px; width: 380px;"><div style="font-size: 15px; color: #111111; margin-bottom: 5px;" ><a href="resource_page.php?resourceid=12">SNAP climate map animations and descriptions</a></div></div><script type="text/javascript">
-var config = { 
-					over: function(){ $('#pub_hover_12').fadeIn(300); },
-					interval: 100,
-					out: function(){ $('#pub_hover_12').hide(0); } 
-					};$('#pub_box_12').hoverIntent(config);$('#pub_close_12').click(
-					function(){ $('#pub_hover_12').hide(0); }
-				);</script>
-</div>
-html
-);
+    	$r = Resource::factory(Fixtures::$resources[11]); 
+    	$this->assertEquals( Fixtures::$resourceSummaries[11], $r->toSummaryHtml(), "User can see summary block of information about a resource, including a Hover functionality that shows more detail");
     }
 
     public function testVideoResource()
     {
-    	$r = Resource::factory(Fixtures::$resources[15]); // Id 15 in DB must be a video resource
-    	$this->assertEquals( $r->toSummaryHtml(), <<<html
-<div id="pub_box_15" style="width: 440px; height: 50px; display: inline-block; margin: 10px; margin-bottom: 10px; position: relative; "><div id="pub_hover_15" class="hover_box" ><div style="position: relative; "><div style="position: absolute; "><img alt="pub_video.png" src="images/pub_video.png" style="margin-left: 5px;" /></div><div style="position: relative;; left: 59px; width: 380px; ;"><div style="font-size: 15px; color: #111111; margin-top: 5px; margin-bottom: 5px;" ><a href="resource_page.php?resourceid=15">Introduction to SNAP</a></div><div style="position: relative; width: 420px; margin-bottom: 10px;"></div><div style="color: #666666;">Tags: </div></div></div><div style="margin-top: 10px;width: 420px; padding: 10px;">Dr. Scott Rupp introduces the Scenarios Network for Alaska &amp; Arctic Planning in this short video</div><div style="position: relative; left: 385px; bottom: 5px; margin-top: 10px;"><a id="pub_close_15" style="cursor: pointer; cursor: hand;">close &#8855;</a></div></div>
-<div style="width: 50px; padding: 6px; position: absolute; z-index: 1;"><img alt="pub_video.png" src="images/pub_video.png" style="" /></div><div style="position: absolute; padding-top: 6px; left: 60px; width: 380px;"><div style="font-size: 15px; color: #111111; margin-bottom: 5px;" ><a href="resource_page.php?resourceid=15">Introduction to SNAP</a></div></div><script type="text/javascript">
-var config = { 
-					over: function(){ $('#pub_hover_15').fadeIn(300); },
-					interval: 100,
-					out: function(){ $('#pub_hover_15').hide(0); } 
-					};$('#pub_box_15').hoverIntent(config);$('#pub_close_15').click(
-					function(){ $('#pub_hover_15').hide(0); }
-				);</script>
-</div>
-html
-);
+    	$r = Resource::factory(Fixtures::$resources[15]); 
+    	$this->assertEquals( Fixtures::$resourceSummaries[15], $r->toSummaryHtml(), "User can see summary block of information about a resource, including a Hover functionality that shows more detail");
     }
 
     public function testQueryStringDefault()
