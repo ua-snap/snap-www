@@ -1,5 +1,8 @@
 <?php
 
+require_once('src/SwDb.php');
+require_once('src/Resource.php');
+
 class ResourceLayout {
 
     public function setRequests($reqs)
@@ -14,7 +17,7 @@ class ResourceLayout {
 
     public function getResultsCount()
     {
-        if( empty($this->results) ) {
+        if( empty($this->resultsCount) ) {
             return '<div style="font-size: 16px;">There are no results for the criteria you selected.</div>';  
         } else {
             return '<span>Displaying '.count($this->results).' result'.((count($this->results) > 1) ? 's': '').'</span>';
@@ -46,8 +49,31 @@ class ResourceLayout {
 
     }
 
-    protected function formRestriction($field, $req) {
-        return $field . " = '".$this->reqs[$req]."'";
+    public function getResourceSummaryHtml() {
+
+        try {
+            $dbh = SwDb::getInstance();
+            $sth = $dbh->query($this->getQueryString());
+            $this->results = $sth->fetchAll();
+            $this->resultsCount = $sth->rowCount();
+        } catch (Exception $e) {
+            throw new Exception($e); // bubble
+        }
+
+        return $this->getResultsCount().$this->getSortCriteria().$this->getFilterReset().$this->getResourcesHtml();
+
+    }
+
+    public function getResourcesHtml() {
+        
+        $html = '';
+        foreach( $this->results as $aResource )
+        {
+            $r = Resource::factory($aResources); 
+            $html .= $r->toSummaryHtml();
+        }
+        return $html;
+
     }
 
     public function getQueryString() {
@@ -67,7 +93,6 @@ class ResourceLayout {
             $whereQuery = ' WHERE '.join( ' AND ', $where);
         }
 
-
         if ( !empty($this->reqs['sort']) && "oldest" == $this->reqs['sort'] ) {
             $order = " DESC";
         }
@@ -76,6 +101,9 @@ class ResourceLayout {
         
     }
 
+    protected function formRestriction($field, $req) {
+        return $field . " = '".$this->reqs[$req]."'";
+    }
 
 }
 

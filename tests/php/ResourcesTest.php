@@ -45,6 +45,7 @@ class ResourcesTest extends PHPUnit_Framework_TestCase
     	$this->assertEquals("<span> | <a href=\"resources.php\">Show All</a></span>", $r->getFilterReset(), "The system should let you reset the filters if you have some selected");
     }
 
+/*
     public function testReportResource()
     {
     	$r = Resource::factory(Fixtures::$resources[1]); 
@@ -63,6 +64,8 @@ class ResourcesTest extends PHPUnit_Framework_TestCase
     	$r = Resource::factory(Fixtures::$resources[11]); 
     	$this->assertEquals( Fixtures::$resourceSummaries[11], $r->toSummaryHtml(), "User can see summary block of information about a resource, including a Hover functionality that shows more detail");
     }
+
+    */
 
     public function testVideoResource()
     {

@@ -1,29 +1,26 @@
 <?php
 include("template.php");
+
+require_once('src/ResourceLayout.php');
+
 $page = new webPage("SNAP: Resources", "resources.css", "resources");
 $page->openPage();
 $page->pageHeader();
 $page->connectToDatabase();
 
-$coll_array = split(",", $_GET['coll']);
 $resTypes = array ( "Paper", "Report", "Presentation", "Video");
-function getPublicationListSpecial($t){
 
-	// build query, do query
+function getPublicationListSpecial($t) {
 
-	$result = mysql_query($query) or die(mysql_error());
-	if (mysql_num_rows($result) < 1){
-		// display no results found warning
-	} else {
+	$resourceLayout = new ResourceLayout();
+	$resourceLayout->setRequests( $_GET );
+	echo $resourceLayout->getResultsCount();
+	if( $resourceLayout->resultsCount ) {
 
 		echo "<div>";
-
-// draw filters + reset filters block
-
+		echo $resourceLayout->getResourceSummaryHtml();
 		echo "</div>";
-	}
-	while ($row = mysql_fetch_row($result)){
-		// draw individual result
+			
 	}
 }
 ?>

@@ -1,4 +1,7 @@
 <?php
+
+require_once('src/Config.php');
+
 class webPage {
 	private $pageTitle;
 	private $stylesheet;
@@ -15,12 +18,12 @@ class webPage {
 		$username = "snapwww_admin";
 		$password = "xargX11";
 		$database = "snapwww";
-		 if( !mysql_connect($server, $username, $password)) {
+		 if( !mysql_connect(Config::$database['host'], Config::$database['user'], Config::$database['pass'])) {
 			mysql_error();	
 			die("Unable to Connect to Database");	//TODO: make logging happen?
 		} 
 
-		mysql_select_db($database);
+		mysql_select_db(Config::$database['database']);
 	}
 	private function mainMenu(){ ?>
 		<div class="menu">
