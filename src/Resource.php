@@ -86,13 +86,14 @@ html;
 	}
 
 	static public function factory($props) {
+
 		switch($props['type']) {
 
 			case 1: return new ReportResource($props); break;
 			case 2: return new PaperResource($props); break;
 			case 3: return new PresentationResource($props); break;
 			case 4: return new VideoResource($props); break;
-			default: throw new Exception('Type of resource was not recognized.');
+			default: throw new Exception('Type of resource ['.$props['type'].'] was not recognized.');
 
 		}
 	}

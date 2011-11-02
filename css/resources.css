@@ -12,6 +12,11 @@
 	box-shadow: 3px 3px 3px #cccccc;
 }
 
-div.resource {
-	style="width: 440px; height: 50px; display: inline-block; margin: 10px; margin-bottom: 10px; position: relative; "
+#resourceSummaries .resource {
+	width: 440px;
+	height: 50px;
+	display: inline-block;
+	margin: 10px;
+	margin-bottom: 10px;
+	position: relative;
 }

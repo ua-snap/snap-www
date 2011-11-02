@@ -51,16 +51,7 @@ class ResourceLayout {
 
     public function getResourceSummaryHtml() {
 
-        try {
-            $dbh = SwDb::getInstance();
-            $sth = $dbh->query($this->getQueryString());
-            $this->results = $sth->fetchAll();
-            $this->resultsCount = $sth->rowCount();
-        } catch (Exception $e) {
-            throw new Exception($e); // bubble
-        }
-
-        return $this->getResultsCount().$this->getSortCriteria().$this->getFilterReset().$this->getResourcesHtml();
+        return $this->getResourcesHtml();
 
     }
 
@@ -69,11 +60,24 @@ class ResourceLayout {
         $html = '';
         foreach( $this->results as $aResource )
         {
-            $r = Resource::factory($aResources); 
+            $r = Resource::factory($aResource); 
             $html .= $r->toSummaryHtml();
         }
         return $html;
 
+    }
+
+    public function fetchResources() {
+    
+        try {
+            $dbh = SwDb::getInstance();
+            $sth = $dbh->query($this->getQueryString());
+            $this->results = $sth->fetchAll();
+            $this->resultsCount = $sth->rowCount();
+        } catch (Exception $e) {
+            throw new Exception($e); // bubble
+        }
+    
     }
 
     public function getQueryString() {

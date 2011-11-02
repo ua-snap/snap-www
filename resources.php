@@ -10,18 +10,20 @@ $page->connectToDatabase();
 
 $resTypes = array ( "Paper", "Report", "Presentation", "Video");
 
-function getPublicationListSpecial($t) {
+function getPublicationListSpecial() {
 
 	$resourceLayout = new ResourceLayout();
 	$resourceLayout->setRequests( $_GET );
-	echo $resourceLayout->getResultsCount();
-	if( $resourceLayout->resultsCount ) {
+	$resourceLayout->fetchResources();
 
-		echo "<div>";
+	echo '<div>'.$resourceLayout->getResultsCount().$resourceLayout->getSortCriteria().$resourceLayout->getFilterReset().'</div>';
+
+	echo '<div id="resourceSummaries">';
+	if( $resourceLayout->resultsCount ) {
 		echo $resourceLayout->getResourceSummaryHtml();
-		echo "</div>";
-			
 	}
+	echo "</div>";
+
 }
 ?>
 		<div id="main_body">
@@ -35,7 +37,7 @@ function getPublicationListSpecial($t) {
 						<?php
 						for ($i = 0; $i < sizeof($resTypes); $i++){
 							$selected = "";
-							if ($_GET['type'] == $i + 1){
+							if ( isset($_GET['type']) && $_GET['type'] == $i + 1){
 								$selected = "selected=\"selected\"";
 							}
 							echo "<option $selected value=\"".($i + 1)."\">".$resTypes[$i]."</option>";
@@ -52,7 +54,7 @@ function getPublicationListSpecial($t) {
 						$tag_result = mysql_query($tag_query);
 						while($tag_row = mysql_fetch_array($tag_result)){
 							$selected = "";
-							if ($_GET['tags'] == $tag_row['tag']){
+							if ( isset($_GET['tags']) && $_GET['tags'] == $tag_row['tag']){
 								$selected = "selected=\"selected\"";
 							}
 							echo "<option $selected value=\"".$tag_row['tag']."\">".$tag_row['tag']."</option>";
@@ -69,7 +71,7 @@ function getPublicationListSpecial($t) {
 						$collab_result = mysql_query($collab_query);
 						while($collab_row = mysql_fetch_array($collab_result)){
 							$selected = "";
-							if ($_GET['collab'] == $collab_row['id']){
+							if ( isset($_GET['collab']) && $_GET['collab'] == $collab_row['id']){
 								$selected = "selected=\"selected\"";
 							}
 							echo "<option $selected value=\"".$collab_row['id']."\">".$collab_row['name']."</option>";
@@ -83,7 +85,7 @@ function getPublicationListSpecial($t) {
 
 
 					<div style="width: 900px; clear: both; height: 1px;"></div>
-					<div style="margin-top: 40px;"><?php getPublicationListSpecial($_GET['tags']); ?></div>
+					<div style="margin-top: 40px;"><?php getPublicationListSpecial(); ?></div>
 
 		</div>
 	</div>
