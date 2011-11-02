@@ -8,11 +8,11 @@ require_once "PHPUnit/Extensions/Database/TestCase.php";
 class SwDbTest extends PHPUnit_Framework_TestCase
 {
 
-	public function testGetDbInstance() {
+    public function testGetDbInstance() {
         $this->markTestSkipped('requires DB driver+instance to run');
-		$d = swDb::getInstance();
-		$this->assertInstanceOf('PDO', $d);
-	}
+        $d = swDb::getInstance();
+        $this->assertInstanceOf('PDO', $d);
+    }
 
 
 }

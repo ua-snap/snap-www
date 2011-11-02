@@ -28,7 +28,7 @@ class ResourcesTest extends PHPUnit_Framework_TestCase
 
     public function testSortCriteriaBlock()
     {
-    	$r = new ResourceLayout();
+        $r = new ResourceLayout();
         $r->setRequests( array( 'tags'=>'', 'collab'=>'', 'type'=>'') );
         $this->assertEquals('<span id="sortWidget"> Sort by Newest First | <a href="resources.php?&amp;sort=oldest">Oldest First</a></span>',  $r->getSortCriteria(), "Search should default to newest-first");
 
@@ -41,38 +41,38 @@ class ResourcesTest extends PHPUnit_Framework_TestCase
 
     public function testResetFilters()
     {
-    	$r = new ResourceLayout();
-    	$r->setRequests( array( 'tags'=>'tags' ));
-    	$this->assertEquals("<span> | <a href=\"resources.php\">Show All</a></span>", $r->getFilterReset(), "The system should let you reset the filters if you have some selected");
+        $r = new ResourceLayout();
+        $r->setRequests( array( 'tags'=>'tags' ));
+        $this->assertEquals("<span> | <a href=\"resources.php\">Show All</a></span>", $r->getFilterReset(), "The system should let you reset the filters if you have some selected");
     }
 
     public function testReportResource()
     {
         $this->markTestSkipped('requires DB + fixtures to run');
-    	$r = Resource::factory(Fixtures::$resources[1]); 
-    	$this->assertEquals( Fixtures::$resourceSummaries[1], $r->toSummaryHtml(), "User can see summary block of information about a resource, including a Hover functionality that shows more detail");
+        $r = Resource::factory(Fixtures::$resources[1]); 
+        $this->assertEquals( Fixtures::$resourceSummaries[1], $r->toSummaryHtml(), "User can see summary block of information about a resource, including a Hover functionality that shows more detail");
     }
 
     public function testPaperResource()
     {
         $this->markTestSkipped('requires DB + fixtures to run');        
-    	$r = Resource::factory(Fixtures::$resources[10]);
-    	$this->assertEquals( Fixtures::$resourceSummaries[10], $r->toSummaryHtml(), "User can see summary block of information about a resource, including a Hover functionality that shows more detail");
+        $r = Resource::factory(Fixtures::$resources[10]);
+        $this->assertEquals( Fixtures::$resourceSummaries[10], $r->toSummaryHtml(), "User can see summary block of information about a resource, including a Hover functionality that shows more detail");
 
     }
 
     public function testPresentationResource()
     {
         $this->markTestSkipped('requires DB + fixtures to run');
-    	$r = Resource::factory(Fixtures::$resources[11]); 
-    	$this->assertEquals( Fixtures::$resourceSummaries[11], $r->toSummaryHtml(), "User can see summary block of information about a resource, including a Hover functionality that shows more detail");
+        $r = Resource::factory(Fixtures::$resources[11]); 
+        $this->assertEquals( Fixtures::$resourceSummaries[11], $r->toSummaryHtml(), "User can see summary block of information about a resource, including a Hover functionality that shows more detail");
     }
 
     public function testVideoResource()
     {
         $this->markTestSkipped('requires DB + fixtures to run');
-    	$r = Resource::factory(Fixtures::$resources[15]); 
-    	$this->assertEquals( Fixtures::$resourceSummaries[15], $r->toSummaryHtml(), "User can see summary block of information about a resource, including a Hover functionality that shows more detail");
+        $r = Resource::factory(Fixtures::$resources[15]); 
+        $this->assertEquals( Fixtures::$resourceSummaries[15], $r->toSummaryHtml(), "User can see summary block of information about a resource, including a Hover functionality that shows more detail");
     }
 
     public function testQueryStringDefault()
@@ -91,7 +91,7 @@ class ResourcesTest extends PHPUnit_Framework_TestCase
 
     public function testSubjectQueryString()
     {
-    	// tags == subject, for this test's purposes
+        // tags == subject, for this test's purposes
         $r = new ResourceLayout();
         $r->setRequests( array( 'tags'=>'climate', 'collab'=>'', 'type'=>'', 'sort'=>'') );
         $this->assertEquals("SELECT title,type,pubs.id,summary FROM resources pubs LEFT JOIN resource_tags AS pt ON pubs.id=pt.resourceid LEFT JOIN resource_collaborators AS pc ON pubs.id=pc.resourceid  WHERE pt.tag = 'climate' GROUP BY pubs.id ORDER BY pubs.createdate ",  $r->getQueryString(), "Searching by a single tag (=subject)");
@@ -129,12 +129,12 @@ existing code breakdown:
 "individual result report": <div id="pub_box_10" style="width: 440px; height: 50px; display: inline-block; margin: 10px; margin-bottom: 10px; position: relative; "><div id="pub_hover_10" class="hover_box" ><div style="position: relative; "><div style="position: absolute; "><img alt="pub_report.png" src="images/pub_report.png" style="margin-left: 5px;" /></div><div style="position: relative;; left: 59px; width: 380px; ;"><div style="font-size: 15px; color: #111111; margin-top: 5px; margin-bottom: 5px;" ><a href="resource_page.php?resourceid=10">Reports for Boreal ALFRESCO</a></div><div style="position: relative; width: 420px; margin-bottom: 10px;"></div><div style="color: #666666;">Tags: ecological model</div></div></div><div style="margin-top: 10px;width: 420px; padding: 10px;">As Boreal ALFRESCO finishes modeling specific areas in Alaska, reports will be posted here to download. These reports focus on particular domains within the state and present maps, data, and other interpretations of model output. </div><div style="position: relative; left: 385px; bottom: 5px; margin-top: 10px;"><a id="pub_close_10" style="cursor: pointer; cursor: hand;">close &#8855;</a></div></div>
 <div style="width: 50px; padding: 6px; position: absolute; z-index: 1;"><img alt="pub_report.png" src="images/pub_report.png" style="" /></div><div style="position: absolute; padding-top: 6px; left: 60px; width: 380px;"><div style="font-size: 15px; color: #111111; margin-bottom: 5px;" ><a href="resource_page.php?resourceid=10">Reports for Boreal ALFRESCO</a></div></div><script type="text/javascript">
 var config = { 
-					over: function(){ $('#pub_hover_10').fadeIn(300); },
-					interval: 100,
-					out: function(){ $('#pub_hover_10').hide(0); } 
-					};$('#pub_box_10').hoverIntent(config);$('#pub_close_10').click(
-					function(){ $('#pub_hover_10').hide(0); }
-				);</script>
+                    over: function(){ $('#pub_hover_10').fadeIn(300); },
+                    interval: 100,
+                    out: function(){ $('#pub_hover_10').hide(0); } 
+                    };$('#pub_box_10').hoverIntent(config);$('#pub_close_10').click(
+                    function(){ $('#pub_hover_10').hide(0); }
+                );</script>
 </div>
 
 "individual result: paper" : <div id="pub_box_2" style="width: 440px; height: 50px; display: inline-block; margin: 10px; margin-bottom: 10px; position: relative; "><div id="pub_hover_2" class="hover_box" ><div style="position: relative; "><div style="position: absolute; "><img alt="pub_paper.png" src="images/pub_paper.png" style="margin-left: 5px;" /></div><div style="position: relative;; left: 59px; width: 380px; ;"><div style="font-size: 15px; color: #111111; margin-top: 5px; margin-bottom: 5px;" ><a href="resource_page.php?resourceid=2">Global Climate Model Performance over Alaska and Greenland</a></div><div style="position: relative; width: 420px; margin-bottom: 10px;"></div><div style="color: #666666;">Tags: climate modeling</div></div></div><div style="margin-top: 10px;width: 420px; padding: 10px;">Walsh, J. et al. 2008. Journal of Climate. v. 21 pp. 6156-6174.
@@ -142,34 +142,34 @@ var config = {
 The performance of a set of 15 global climate models used in the Coupled Model Intercomparison Project is evaluated for Alaska and Greenland, and compared with the performance over broader pan-Arctic and Northern Hemisphere extratropical domains.</div><div style="position: relative; left: 385px; bottom: 5px; margin-top: 10px;"><a id="pub_close_2" style="cursor: pointer; cursor: hand;">close &#8855;</a></div></div>
 <div style="width: 50px; padding: 6px; position: absolute; z-index: 1;"><img alt="pub_paper.png" src="images/pub_paper.png" style="" /></div><div style="position: absolute; padding-top: 6px; left: 60px; width: 380px;"><div style="font-size: 15px; color: #111111; margin-bottom: 5px;" ><a href="resource_page.php?resourceid=2">Global Climate Model Performance over Alaska and Greenland</a></div></div><script type="text/javascript">
 var config = { 
-					over: function(){ $('#pub_hover_2').fadeIn(300); },
-					interval: 100,
-					out: function(){ $('#pub_hover_2').hide(0); } 
-					};$('#pub_box_2').hoverIntent(config);$('#pub_close_2').click(
-					function(){ $('#pub_hover_2').hide(0); }
-				);</script>
+                    over: function(){ $('#pub_hover_2').fadeIn(300); },
+                    interval: 100,
+                    out: function(){ $('#pub_hover_2').hide(0); } 
+                    };$('#pub_box_2').hoverIntent(config);$('#pub_close_2').click(
+                    function(){ $('#pub_hover_2').hide(0); }
+                );</script>
 </div>
 
 "individual result: pub_presentation" : <div id="pub_box_12" style="width: 440px; height: 50px; display: inline-block; margin: 10px; margin-bottom: 10px; position: relative; "><div id="pub_hover_12" class="hover_box" ><div style="position: relative; "><div style="position: absolute; "><img alt="pub_presentation.png" src="images/pub_presentation.png" style="margin-left: 5px;" /></div><div style="position: relative;; left: 59px; width: 380px; ;"><div style="font-size: 15px; color: #111111; margin-top: 5px; margin-bottom: 5px;" ><a href="resource_page.php?resourceid=12">SNAP climate map animations and descriptions</a></div><div style="position: relative; width: 420px; margin-bottom: 10px;"></div><div style="color: #666666;">Tags: climate, SNAP</div></div></div><div style="margin-top: 10px;width: 420px; padding: 10px;">This PowerPoint animation was originally presented in a large-screen format at the SNAP information booth at the Alaska Forum on the Environment, January 2009. It was intended to offer a visual depiction of some of SNAP&#039;s map products to interested members of the public.</div><div style="position: relative; left: 385px; bottom: 5px; margin-top: 10px;"><a id="pub_close_12" style="cursor: pointer; cursor: hand;">close &#8855;</a></div></div>
 <div style="width: 50px; padding: 6px; position: absolute; z-index: 1;"><img alt="pub_presentation.png" src="images/pub_presentation.png" style="" /></div><div style="position: absolute; padding-top: 6px; left: 60px; width: 380px;"><div style="font-size: 15px; color: #111111; margin-bottom: 5px;" ><a href="resource_page.php?resourceid=12">SNAP climate map animations and descriptions</a></div></div><script type="text/javascript">
 var config = { 
-					over: function(){ $('#pub_hover_12').fadeIn(300); },
-					interval: 100,
-					out: function(){ $('#pub_hover_12').hide(0); } 
-					};$('#pub_box_12').hoverIntent(config);$('#pub_close_12').click(
-					function(){ $('#pub_hover_12').hide(0); }
-				);</script>
+                    over: function(){ $('#pub_hover_12').fadeIn(300); },
+                    interval: 100,
+                    out: function(){ $('#pub_hover_12').hide(0); } 
+                    };$('#pub_box_12').hoverIntent(config);$('#pub_close_12').click(
+                    function(){ $('#pub_hover_12').hide(0); }
+                );</script>
 </div>
 
 "individual result: video" : <div id="pub_box_15" style="width: 440px; height: 50px; display: inline-block; margin: 10px; margin-bottom: 10px; position: relative; "><div id="pub_hover_15" class="hover_box" ><div style="position: relative; "><div style="position: absolute; "><img alt="pub_video.png" src="images/pub_video.png" style="margin-left: 5px;" /></div><div style="position: relative;; left: 59px; width: 380px; ;"><div style="font-size: 15px; color: #111111; margin-top: 5px; margin-bottom: 5px;" ><a href="resource_page.php?resourceid=15">Introduction to SNAP</a></div><div style="position: relative; width: 420px; margin-bottom: 10px;"></div><div style="color: #666666;">Tags: </div></div></div><div style="margin-top: 10px;width: 420px; padding: 10px;">Dr. Scott Rupp introduces the Scenarios Network for Alaska &amp; Arctic Planning in this short video</div><div style="position: relative; left: 385px; bottom: 5px; margin-top: 10px;"><a id="pub_close_15" style="cursor: pointer; cursor: hand;">close &#8855;</a></div></div>
 <div style="width: 50px; padding: 6px; position: absolute; z-index: 1;"><img alt="pub_video.png" src="images/pub_video.png" style="" /></div><div style="position: absolute; padding-top: 6px; left: 60px; width: 380px;"><div style="font-size: 15px; color: #111111; margin-bottom: 5px;" ><a href="resource_page.php?resourceid=15">Introduction to SNAP</a></div></div><script type="text/javascript">
 var config = { 
-					over: function(){ $('#pub_hover_15').fadeIn(300); },
-					interval: 100,
-					out: function(){ $('#pub_hover_15').hide(0); } 
-					};$('#pub_box_15').hoverIntent(config);$('#pub_close_15').click(
-					function(){ $('#pub_hover_15').hide(0); }
-				);</script>
+                    over: function(){ $('#pub_hover_15').fadeIn(300); },
+                    interval: 100,
+                    out: function(){ $('#pub_hover_15').hide(0); } 
+                    };$('#pub_box_15').hoverIntent(config);$('#pub_close_15').click(
+                    function(){ $('#pub_hover_15').hide(0); }
+                );</script>
 </div>
 
 
