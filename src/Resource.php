@@ -16,7 +16,8 @@ class Resource {
         $tags = '';
         try {
             $dbh = SwDb::getInstance();
-            $sth = $dbh->query("SELECT GROUP_CONCAT( DISTINCT tag ORDER BY tag SEPARATOR ', ') AS tags FROM resource_tags WHERE resourceid='{$this->props['id']}'");
+            $sth = $dbh->prepare("SELECT GROUP_CONCAT( DISTINCT tag ORDER BY tag SEPARATOR ', ') AS tags FROM resource_tags WHERE resourceid= :resourceId");
+            $sth->execute( array( 'resourceId' => $this->props['id']) );
             $tags = $sth->fetch();
         } catch (Exception $e) {
             throw new Exception($e); // bubble
@@ -86,7 +87,9 @@ html;
     }
 
     static public function factory($props) {
-
+        if(!isset($props['type'])) {
+            throw new Exception('Type of resource is unset (invalid row retrieval)');
+        }
         switch($props['type']) {
 
             case 1: return new ReportResource($props); break;
@@ -96,6 +99,18 @@ html;
             default: throw new Exception('Type of resource ['.$props['type'].'] was not recognized.');
 
         }
+    }
+
+    static public function fetchById($id) {
+        try {
+            $dbh = SwDb::getInstance();
+            $sth = $dbh->prepare("SELECT * FROM resources WHERE id = :resourceId");
+            $sth->execute( array( 'resourceId' => $id ));
+            $props = $sth->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            throw new Exception($e); // bubble
+        }
+        return Resource::factory($props);     
     }
 }
 
@@ -117,6 +132,60 @@ class PresentationResource extends Resource {
 class VideoResource extends Resource {
     public $imgAltText="Video";
     public $imgSrc = "images/pub_video.png";
+
+    public function __construct($props)
+    {
+        parent::__construct($props);
+        $this->populateVideoProperties();
+    }
+
+    protected function populateVideoProperties()
+    {
+        try {
+            $dbh = SwDb::getInstance();
+            $sth = $dbh->prepare("SELECT * FROM videoResource WHERE resourceId = :resourceId");
+            $sth->execute( array( 'resourceId' => $this->props['id'] ));
+            $props = $sth->fetch(PDO::FETCH_ASSOC);
+        } catch (Exception $e) {
+            throw new Exception($e); // bubble
+        }
+
+        $this->embeddedUrl = $props['embeddedUrl'];
+        $this->embeddedTitle = $props['embeddedTitle'];
+        $this->embeddedUserUrl = $props['embeddedUserUrl'];
+        $this->embeddedUser = $props['embeddedUser'];
+        $this->linkedUrl = $props['linkedUrl'];
+        $this->linkedTitle = $props['linkedTitle'];
+        $this->fileVideoHref = $props['fileVideoHref'];
+        $this->fileVideoTitle = $props['fileVideoTitle'];
+        $this->fileVideoType = $props['fileVideoType'];
+        $this->fileVideoSize = filesize($this->fileVideoHref);
+
+    }
+
+    public function getEmbeddedVideo()
+    {
+        return <<<html
+<iframe src="{$this->embeddedUrl}?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe><p><a href="{$this->embeddedUrl}">{$this->embeddedTitle}</a> from <a href="{$this->embeddedUserUrl}">{$this->embeddedUser}</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
+html
+;
+    }
+
+    public function getLinkedVideo()
+    {
+        return <<<html
+<p><a target="_blank" href="{$this->linkedUrl}">{$this->linkedTitle}</a></p>
+html
+;
+    }
+
+    public function getFileVideo()
+    {        
+        return <<<html
+<p class="attachment">Download <a href="{$this->fileVideoHref}" />{$this->fileVideoTitle} (<span>{$this->fileVideoType}/span>, <span>{$this->fileVideoSize}</span> <img src="images/filetypes/video.png" alt=""/></p>
+html
+;
+    }
 }
 
 

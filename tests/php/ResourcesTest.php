@@ -115,7 +115,7 @@ class ResourcesTest extends PHPUnit_Framework_TestCase
     {
         $rByFixtures = Resource::factory(Fixtures::$resources[15]);
         $rById = Resource::fetchById(15);
-        assertEquals($rByFixtures, $rById, "Resources can be fetched by explicit ID lookup in the database");
+        $this->assertEquals($rByFixtures, $rById, "Resources can be fetched by explicit ID lookup in the database");
     }
 }
 
