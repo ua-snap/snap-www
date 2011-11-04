@@ -33,7 +33,7 @@ class SwDb {
 
     static public function setSchemaVersion($version)
     {
-        echo "\n--- Setting version of schema to $version\n";
+
         try {
             $dbh = SwDb::getInstance();
             $dbh->beginTransaction();

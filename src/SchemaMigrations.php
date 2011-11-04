@@ -51,10 +51,9 @@ CREATE TABLE `tileset` (
 
 CREATE TABLE `resources` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `format` varchar(50) DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
   `createdate` date DEFAULT NULL,
-  `summary` blob,
+  `summary` text,
   `updatedate` date DEFAULT NULL,
   `type` int(11) DEFAULT NULL,
   `accap` tinyint(1) DEFAULT NULL,
@@ -205,7 +204,31 @@ DROP TABLE `resource_tags`;
 DROP TABLE `tileset`;
 DROP TABLE `tileset_descriptions`;
 sql
-				)
+				  )
+        ),
+        3 => new Migration(
+          array(
+          'version' => 3,
+          'up' =><<<sql
+CREATE  TABLE `snapwww`.`video_resource` (
+  `resource_id` INT NOT NULL ,
+  `embedded_url` TEXT NULL ,
+  `embedded_title` TEXT NULL ,
+  `embedded_user_url` TEXT NULL ,
+  `embedded_user` TEXT NULL ,
+  `linked_url` TEXT NULL ,
+  `linked_title` TEXT NULL ,
+  `file_video_href` TEXT NULL ,
+  `file_video_title` TEXT NULL ,
+  `file_video_type` TEXT NULL ,
+  `file_video_size` TEXT NULL ,
+  PRIMARY KEY (`resource_id`) ,
+  UNIQUE INDEX `resource_id_UNIQUE` (`resource_id` ASC) )
+COMMENT = 'Properties of video resources, FK to resources.id' ;
+sql
+,         'fixtures' => "INSERT INTO `snapwww`.`video_resource` (`resource_id`, `embedded_url`, `embedded_title`, `embedded_user_url`, `embedded_user`, `linked_url`, `linked_title`, `file_video_href`, `file_video_title`, `file_video_type`, `file_video_size`) VALUES (15, 'http://player.vimeo.com/video/4515275', 'A thousand shades of white', 'http://vimeo.com/icescapestv', 'icescapes', 'http://www.youtube.com/watch?v=u5DiHp76gjs&feature=results_main&playnext=1&list=PLBBDD34F33BAF19CD', 'Alaskan Native thoughts on climate change', 'attachments/path_to_nowhere.mp4', 'Alaskan Native thoughts on climate change', '.mp4', '20 MB');",
+          'down' => 'DROP TABLE `video_resource`;'
+        )
 			)
 		);
 	}

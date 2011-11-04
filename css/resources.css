@@ -28,3 +28,7 @@
 #noResults {
     font-size: 16px;
 }
+
+#resourceWrapper .video {
+    margin-left: 20px;
+}

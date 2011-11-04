@@ -138,7 +138,6 @@ class MigrationSuite
 	public function down($to = null)
 	{
 		$to = ($to !== null) ? $to : $this->at - 1;
-		echo "Going to level [$to]\n";
 		if ( $to >= $this->at )
 		{
 			throw new Exception('Tried to migrate down to a level >= current level of schema');	

@@ -1,4 +1,6 @@
 <?php
+require_once "src/Resource.php";
+
 include("template.php");
 $page = new webPage("SNAP: Resources", "resources.css", "resources");
 $page->openPage();
@@ -6,6 +8,9 @@ $page->pageHeader();
 $page->connectToDatabase();
 $resTypes = array ( "Paper", "Report", "Presentation", "Video");
 $resourceid = $_GET['resourceid'];
+
+$resource = Resource::fetchById($_GET['resourceid']);
+
 ?>
 
         <div id="main_body">
@@ -18,13 +23,16 @@ $resourceid = $_GET['resourceid'];
                 
                 <div class="back_button" style="margin-top: 20px; margin-bottom: 30px; width: 215px;"><span><img style="vertical-align: top; display: inline-block;" src="/images/back_arrow.png" /></span><span style="float: right; padding-right: 8px;">View Other Resources<span><a href="resources.php" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"></a></div>
 
-                <div style="width: 950px; margin: auto;">
+                <div id="resourceWrapper" style="width: 950px; margin: auto;">
                     <div style="float: left; width: 520px;">
                         <div style="color: #71797b; margin-left: 20px; font-size: 14px; margin-bottom: 5px;"><?php echo $resTypes[$project['type'] - 1]; ?></div>
                         <div style="font-size: 26px; color: #242d2f; margin-left: 20px; margin-bottom: 10px;"><?php echo $project['title']; ?></div>
-                        <div style="font-size: 14px; line-height: 20px; color: #242d2f; margin-left: 20px; margin-bottom: 10px;"><?php echo preg_replace("/\n/", "<br />", $project['summary']); ?></div>
+                        <div style="font-size: 14px; line-height: 20px; color: #242d2f; margin-left: 20px; margin-bottom: 10px;"><?php echo nl2br($project['summary']); ?></div>
 
                         <?php
+
+                            echo $resource->render(); // only applies to video type, is no-op for other things 
+                            
                             $att_query = "SELECT * FROM attachments WHERE resourceid='$resourceid' ORDER BY category, id";
                             $att_result = mysql_query($att_query);
                             echo "<div style=\"color: #242d2f; margin-left: 20px; font-size: 22px; \">Downloads</div>";

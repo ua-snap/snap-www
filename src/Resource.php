@@ -31,6 +31,11 @@ class Resource {
 
     }
 
+    public function render()
+    {
+        return; // no-op unless overridden in child classes    
+    }
+
     public function toSummaryHtml() {
 
         $tags = $this->getTagList();
@@ -143,24 +148,29 @@ class VideoResource extends Resource {
     {
         try {
             $dbh = SwDb::getInstance();
-            $sth = $dbh->prepare("SELECT * FROM videoResource WHERE resourceId = :resourceId");
+            $sth = $dbh->prepare("SELECT * FROM video_resource WHERE resource_id = :resourceId");
             $sth->execute( array( 'resourceId' => $this->props['id'] ));
             $props = $sth->fetch(PDO::FETCH_ASSOC);
         } catch (Exception $e) {
             throw new Exception($e); // bubble
         }
 
-        $this->embeddedUrl = $props['embeddedUrl'];
-        $this->embeddedTitle = $props['embeddedTitle'];
-        $this->embeddedUserUrl = $props['embeddedUserUrl'];
-        $this->embeddedUser = $props['embeddedUser'];
-        $this->linkedUrl = $props['linkedUrl'];
-        $this->linkedTitle = $props['linkedTitle'];
-        $this->fileVideoHref = $props['fileVideoHref'];
-        $this->fileVideoTitle = $props['fileVideoTitle'];
-        $this->fileVideoType = $props['fileVideoType'];
-        $this->fileVideoSize = filesize($this->fileVideoHref);
+        $this->embeddedUrl = $props['embedded_url'];
+        $this->embeddedTitle = $props['embedded_title'];
+        $this->embeddedUserUrl = $props['embedded_user_url'];
+        $this->embeddedUser = $props['embedded_user'];
+        $this->linkedUrl = $props['linked_url'];
+        $this->linkedTitle = $props['linked_title'];
+        $this->fileVideoHref = $props['file_video_href'];
+        $this->fileVideoTitle = $props['file_video_title'];
+        $this->fileVideoType = $props['file_video_type'];
+        $this->fileVideoSize = ( $size = @filesize($this->fileVideoHref)) ? $size : $props['file_video_size'];
 
+    }
+
+    public function render()
+    {
+        return '<div class="video">'.$this->getEmbeddedVideo().$this->getLinkedVideo().$this->getFileVideo().'</div>';
     }
 
     public function getEmbeddedVideo()
@@ -182,7 +192,7 @@ html
     public function getFileVideo()
     {        
         return <<<html
-<p class="attachment">Download <a href="{$this->fileVideoHref}" />{$this->fileVideoTitle} (<span>{$this->fileVideoType}/span>, <span>{$this->fileVideoSize}</span> <img src="images/filetypes/video.png" alt=""/></p>
+<p class="attachment"><img src="images/filetypes/video.png" alt=""/> Download <a href="{$this->fileVideoHref}" />{$this->fileVideoTitle} (<span>{$this->fileVideoType}</span>, <span>{$this->fileVideoSize}</span>)</p>
 html
 ;
     }
