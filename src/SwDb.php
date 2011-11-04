@@ -8,7 +8,8 @@ class SwDb {
     static public function getInstance() {
         static $db;
         if(!isset($db)) {
-            $db = new PDO('mysql:host='.Config::$database['host'].';dbname='.Config::$database['database'], Config::$database['user'], Config::$database['pass']);
+            $db = new PDO('mysql:host='.Config::$database['host'].';dbname='.Config::$database['database'], Config::$database['user'], Config::$database['pass'], array(
+PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => true ));
         }
         return $db;
     }
