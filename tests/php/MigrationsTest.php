@@ -8,36 +8,36 @@ class MigrationsTest extends PHPUnit_Framework_TestCase
 
     public function testMigrateUp()
     {
-    	if( Config::$testing['skipDatabase'] ) {
-    		$this->markTestSkipped("No database connection, skipping...");
-    	}    	
-    	$m = new Migration(
-	    	array(
-	    		'version' => 1,
-		    	'up' => "SELECT 'up'",
-		    	'fixtures' => "SELECT 'fixtures'",
-		    	'down' => "SELECT 'down'"
-		    )
-		);
-		$this->assertEquals(array('up'=>'00000', 'fixtures'=>'00000'), $m->up(), "Running a migration->up() returns the SQL result from running the up and fixtures scripts");
-		$this->assertEquals("SELECT 'up'SELECT 'fixtures'", str_replace("\n",'',$m->sql), "The migration logs the SQL it ran");
+        if( Config::$testing['skipDatabase'] ) {
+            $this->markTestSkipped("No database connection, skipping...");
+        }       
+        $m = new Migration(
+            array(
+                'version' => 1,
+                'up' => "SELECT 'up'",
+                'fixtures' => "SELECT 'fixtures'",
+                'down' => "SELECT 'down'"
+            )
+        );
+        $this->assertEquals(array('up'=>'00000', 'fixtures'=>'00000'), $m->up(), "Running a migration->up() returns the SQL result from running the up and fixtures scripts");
+        $this->assertEquals("SELECT 'up'SELECT 'fixtures'", str_replace("\n",'',$m->sql), "The migration logs the SQL it ran");
     }
 
-	public function testMigrateDown()
+    public function testMigrateDown()
     {
-    	if( Config::$testing['skipDatabase'] ) {
-    		$this->markTestSkipped("No database connection, skipping...");
-    	}    	
-    	$m = new Migration(
-	    	array(
-	    		'version' => 1,
-		    	'up' => "SELECT 'up'",
-		    	'fixtures' => "SELECT 'fixtures'",
-		    	'down' => "SELECT 'down'"
-		    )
-		);
-		$this->assertEquals(array('down' => '00000'), $m->down(), "Running a migration->down() returns the SQL result from running the down() script");
-		$this->assertEquals("SELECT 'down'", str_replace("\n",'',$m->sql), "The migration logs the SQL it ran");
+        if( Config::$testing['skipDatabase'] ) {
+            $this->markTestSkipped("No database connection, skipping...");
+        }       
+        $m = new Migration(
+            array(
+                'version' => 1,
+                'up' => "SELECT 'up'",
+                'fixtures' => "SELECT 'fixtures'",
+                'down' => "SELECT 'down'"
+            )
+        );
+        $this->assertEquals(array('down' => '00000'), $m->down(), "Running a migration->down() returns the SQL result from running the down() script");
+        $this->assertEquals("SELECT 'down'", str_replace("\n",'',$m->sql), "The migration logs the SQL it ran");
     }
 }
 

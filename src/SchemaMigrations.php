@@ -4,32 +4,32 @@ require_once 'src/Migrations.php';
 
 class SchemaMigrations
 {
-	public $migrations;
-	public function __construct()
-	{
-		$this->migrations = array(
-		
-			1 => new Migration(
-				array(
-					'version' => 1,
-					'up' => <<<sql
+    public $migrations;
+    public function __construct()
+    {
+        $this->migrations = array(
+        
+            1 => new Migration(
+                array(
+                    'version' => 1,
+                    'up' => <<<sql
 CREATE  TABLE `schema` (
   `version` INT NOT NULL ,
   PRIMARY KEY (`version`) ,
   UNIQUE INDEX `version_UNIQUE` (`version` ASC) );
 sql
-, 					'fixtures' => <<<sql
+,                   'fixtures' => <<<sql
 INSERT INTO `schema` VALUES (1);
 sql
-,					'down' => <<<sql
+,                   'down' => <<<sql
 DROP TABLE `schema`;
 sql
-				)
-			),
-			2 => new Migration(
-				array(
-					'version' => 2,
-					'up' => <<<sql
+                )
+            ),
+            2 => new Migration(
+                array(
+                    'version' => 2,
+                    'up' => <<<sql
 
 CREATE TABLE `tileset_descriptions` (
   `name` varchar(255) DEFAULT NULL,
@@ -185,8 +185,8 @@ CREATE TABLE `attachments` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
 sql
-,					'fixtures' => '',
-					'down' => <<<sql
+,                   'fixtures' => '',
+                    'down' => <<<sql
 DROP TABLE `attachments`;
 DROP TABLE `collaborators`;
 DROP TABLE `community_charts`;
@@ -204,7 +204,7 @@ DROP TABLE `resource_tags`;
 DROP TABLE `tileset`;
 DROP TABLE `tileset_descriptions`;
 sql
-				  )
+                  )
         ),
         3 => new Migration(
           array(
@@ -229,9 +229,9 @@ sql
 ,         'fixtures' => "INSERT INTO `snapwww`.`video_resource` (`resource_id`, `embedded_url`, `embedded_title`, `embedded_user_url`, `embedded_user`, `linked_url`, `linked_title`, `file_video_href`, `file_video_title`, `file_video_type`, `file_video_size`) VALUES (15, 'http://player.vimeo.com/video/4515275', 'A thousand shades of white', 'http://vimeo.com/icescapestv', 'icescapes', 'http://www.youtube.com/watch?v=u5DiHp76gjs&feature=results_main&playnext=1&list=PLBBDD34F33BAF19CD', 'Alaskan Native thoughts on climate change', 'attachments/path_to_nowhere.mp4', 'Alaskan Native thoughts on climate change', '.mp4', '20 MB');",
           'down' => 'DROP TABLE `video_resource`;'
         )
-			)
-		);
-	}
+            )
+        );
+    }
 }
 
 ?>

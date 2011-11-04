@@ -15,55 +15,55 @@ $to = (isset($argv[2]) && is_numeric($argv[2])) ? $argv[2] : null;
 $action = (isset($argv[1])) ? $argv[1] : null;
 
 switch( $action ) {
-	
-	case 'up':
-		try {
-			echo $versionText;
-			echo ($to) ? "Migrating from level [$version] up to level [$to]...\n" : "Migrating from level [$version] to highest patch level...\n";
-			$res = $migrationSuite->up($to);
-			SwDb::setSchemaVersion($res);			
-			echo $migrationSuite->sql;
-			echo "\n...finished migrating to level [$res].\n";
-		} catch (Exception $e) {
-			echo "\nFailed, caught exception:\n$e\n";
-		}
-		break;
+    
+    case 'up':
+        try {
+            echo $versionText;
+            echo ($to) ? "Migrating from level [$version] up to level [$to]...\n" : "Migrating from level [$version] to highest patch level...\n";
+            $res = $migrationSuite->up($to);
+            SwDb::setSchemaVersion($res);           
+            echo $migrationSuite->sql;
+            echo "\n...finished migrating to level [$res].\n";
+        } catch (Exception $e) {
+            echo "\nFailed, caught exception:\n$e\n";
+        }
+        break;
 
-	case 'rebuild':
-		try {
-			echo "Migrating from clean slate up to highest patch level...\n";
-			$migrationSuite->at(0);
-			$res = $migrationSuite->up();
-			SwDb::setSchemaVersion($res);
-			echo $migrationSuite->sql;
-			echo "\n...finished rebuilding to level [$res].\n";
-		} catch (Exception $e) {
-			echo "\nFailed, caught exception:\n$e\n";
-		}
-		break;
+    case 'rebuild':
+        try {
+            echo "Migrating from clean slate up to highest patch level...\n";
+            $migrationSuite->at(0);
+            $res = $migrationSuite->up();
+            SwDb::setSchemaVersion($res);
+            echo $migrationSuite->sql;
+            echo "\n...finished rebuilding to level [$res].\n";
+        } catch (Exception $e) {
+            echo "\nFailed, caught exception:\n$e\n";
+        }
+        break;
 
-	case 'down':
-		try {
-			echo $versionText;
-			if (!$to) { $versionTo = $version -1; }
-			echo ($to) ? "Migrating from level [$version] down to level [$to]...\n" : "Migrating from level [$version] to previous revision [$versionTo]...\n";
-			$res = $migrationSuite->down($to);
+    case 'down':
+        try {
+            echo $versionText;
+            if (!$to) { $versionTo = $version -1; }
+            echo ($to) ? "Migrating from level [$version] down to level [$to]...\n" : "Migrating from level [$version] to previous revision [$versionTo]...\n";
+            $res = $migrationSuite->down($to);
 
-			// if we're at version level #0, we can't update the schema table, so skip this.
-			if(0 !== $res) {
-				SwDb::setSchemaVersion($res);
-			}
+            // if we're at version level #0, we can't update the schema table, so skip this.
+            if(0 !== $res) {
+                SwDb::setSchemaVersion($res);
+            }
 
-			echo $migrationSuite->sql;
-			echo "\n...finished migrating to level [$res].\n";
-		} catch (Exception $e) {
-			echo "\nFailed, caught exception:\n$e\n";
-		}
-		break;
+            echo $migrationSuite->sql;
+            echo "\n...finished migrating to level [$res].\n";
+        } catch (Exception $e) {
+            echo "\nFailed, caught exception:\n$e\n";
+        }
+        break;
 
-	default:
-		
-		echo<<<info
+    default:
+        
+        echo<<<info
 DB Schema maintenance:
 
 * Add a new migration to the end of the ordered array in the src/SchemaMigrations.php file
@@ -89,19 +89,19 @@ $versionText
 
 info;
 
-		break;
+        break;
 }
 exit(0);
 
 function loadMigrationSuite()
 {
-	$ms = new MigrationSuite();
-	$sm = new SchemaMigrations();
-	foreach( $sm->migrations as $aMigration )
-	{
-		$ms->add($aMigration);
-	}
-	return $ms;
+    $ms = new MigrationSuite();
+    $sm = new SchemaMigrations();
+    foreach( $sm->migrations as $aMigration )
+    {
+        $ms->add($aMigration);
+    }
+    return $ms;
 }
 
 ?>
