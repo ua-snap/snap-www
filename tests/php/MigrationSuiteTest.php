@@ -53,8 +53,8 @@ class MigrationSuiteTest extends PHPUnit_Framework_TestCase
 		$ms->add($m);
 		$ms->add($m1);
 		$ms->at(2);
-		$this->assertEquals(0, $ms->down(), "Migration Suite->Down runs down for each migration, returns the final level of the migration");
-		$this->assertEquals(array( 0=>array('down'=>'00000', 'version'=>2), 1=> array('down'=>'00000', 'version'=>1)  ), $ms->log(), "Migration suite logs result responses from each up+fixtures run, in the correct order (big > small)");
+		$this->assertEquals(1, $ms->down(), "Migration Suite->Down runs down for each migration unless specified, only going down ONE level by default, returns the final level of the migration");
+		$this->assertEquals(array( 0=>array('down'=>'00000', 'version'=>2) ), $ms->log(), "Migration suite logs result responses from each up+fixtures run, in the correct order (big > small)");
     }
 
     public function testMigrateUpRanged()
@@ -100,6 +100,7 @@ class MigrationSuiteTest extends PHPUnit_Framework_TestCase
 		$ms->at(2);
 		$this->assertEquals(4, $ms->up(), "Migration Suite->Up runs up+fixtures for each migration, starting at the current At+1, returns the final level of the migration");
 		$this->assertEquals(array( 0 => array('up'=>'00000','fixtures'=>'00000', 'version'=>'3'), 1=>array('up'=>'00000', 'fixtures'=>'00000', 'version'=>'4')), $ms->log(), "Migration suite logs result responses from each up+fixtures run");
+		$this->assertEquals("SELECT 'up2'SELECT 'fixtures2'SELECT 'up3'SELECT 'fixtures3'", str_replace("\n",'',$ms->sql), "All SQL during execution is logged");
     }
 
     public function testMigrateDownRanged()
@@ -144,6 +145,8 @@ class MigrationSuiteTest extends PHPUnit_Framework_TestCase
 		$ms->at(4);
 		$this->assertEquals(2, $ms->down(2), "Migration Suite->Down runs down for each migration, starting at the current At+1, returns the final level of the migration");
 		$this->assertEquals(array( 0=> array('down'=>'00000','version'=>4), 1=> array('down'=>'00000','version'=>3)), $ms->log(), "Migration suite logs result responses from each down run");
+		$this->assertEquals("SELECT 'down3'SELECT 'down2'", str_replace("\n",'',$ms->sql), "All SQL during execution is logged");
+
     }
 }
 

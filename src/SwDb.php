@@ -12,6 +12,41 @@ class SwDb {
         }
         return $db;
     }
+
+    static public function getSchemaVersion()
+    {
+    	try {
+	    	$dbh = SwDb::getInstance();
+	    	$sth = $dbh->query('SELECT `version` FROM `schema` LIMIT 1;');
+	    	if($sth)
+	    	{
+		    	$res = $sth->fetch();
+		    	return $res[0];
+		    } else {
+                // If we can't determine the schema number, assume that it's a problem.
+				return 'unknown/undefined';		    	
+		    }
+	    } catch ( Exception $e ) {
+	    	return 'unknown/undefined';
+	    }
+    }
+
+    static public function setSchemaVersion($version)
+    {
+        echo "\n--- Setting version of schema to $version\n";
+        try {
+            $dbh = SwDb::getInstance();
+            $dbh->beginTransaction();
+            $sth = $dbh->prepare('UPDATE `schema` SET version=?');
+        	if( !$sth->execute(array($version))) {
+                throw new Exception( implode($sth->errorInfo(),'') );
+            }
+            $dbh->commit();
+        } catch (Exception $e) {
+            echo "\nError while trying to set schema version: \n$e\n";
+            $dbh->rollback();
+        }
+    }
 }
 
 ?>

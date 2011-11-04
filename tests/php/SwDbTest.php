@@ -10,11 +10,13 @@ class SwDbTest extends PHPUnit_Framework_TestCase
 
     public function testGetDbInstance() {
         $this->markTestSkipped('requires DB driver+instance to run');
-        $d = swDb::getInstance();
+        $d = SwDb::getInstance();
         $this->assertInstanceOf('PDO', $d);
     }
 
-
+    public function testGetDbSchemaVersion() {
+    	$this->assertGreaterThanOrEqual( 0, SwDb::getSchemaVersion() );
+    }
 }
 
 ?>
