@@ -8,6 +8,9 @@ class MigrationsTest extends PHPUnit_Framework_TestCase
 
     public function testMigrateUp()
     {
+    	if( Config::$testing['skipDatabase'] ) {
+    		$this->markTestSkipped("No database connection, skipping...");
+    	}    	
     	$m = new Migration(
 	    	array(
 	    		'version' => 1,
@@ -22,6 +25,9 @@ class MigrationsTest extends PHPUnit_Framework_TestCase
 
 	public function testMigrateDown()
     {
+    	if( Config::$testing['skipDatabase'] ) {
+    		$this->markTestSkipped("No database connection, skipping...");
+    	}    	
     	$m = new Migration(
 	    	array(
 	    		'version' => 1,

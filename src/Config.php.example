@@ -8,5 +8,8 @@ class Config {
         'pass' => 'password',
         'database' => 'snapwww'
     );
+    static public $testing = array(
+	    'skipDatabase' => true,
+	);
 }
 ?>

@@ -48,14 +48,18 @@ class ResourcesTest extends PHPUnit_Framework_TestCase
 
     public function testReportResource()
     {
-        $this->markTestSkipped('requires DB + fixtures to run');
+        if( Config::$testing['skipDatabase'] ) {
+            $this->markTestSkipped("No database connection, skipping...");
+        }
         $r = Resource::factory(Fixtures::$resources[1]); 
         $this->assertEquals( Fixtures::$resourceSummaries[1], $r->toSummaryHtml(), "User can see summary block of information about a resource, including a Hover functionality that shows more detail");
     }
 
     public function testPaperResource()
     {
-        $this->markTestSkipped('requires DB + fixtures to run');        
+        if( Config::$testing['skipDatabase'] ) {
+            $this->markTestSkipped("No database connection, skipping...");
+        }        
         $r = Resource::factory(Fixtures::$resources[10]);
         $this->assertEquals( Fixtures::$resourceSummaries[10], $r->toSummaryHtml(), "User can see summary block of information about a resource, including a Hover functionality that shows more detail");
 
@@ -63,14 +67,18 @@ class ResourcesTest extends PHPUnit_Framework_TestCase
 
     public function testPresentationResource()
     {
-        $this->markTestSkipped('requires DB + fixtures to run');
+        if( Config::$testing['skipDatabase'] ) {
+            $this->markTestSkipped("No database connection, skipping...");
+        }
         $r = Resource::factory(Fixtures::$resources[11]); 
         $this->assertEquals( Fixtures::$resourceSummaries[11], $r->toSummaryHtml(), "User can see summary block of information about a resource, including a Hover functionality that shows more detail");
     }
 
     public function testVideoResource()
     {
-        $this->markTestSkipped('requires DB + fixtures to run');
+        if( Config::$testing['skipDatabase'] ) {
+            $this->markTestSkipped("No database connection, skipping...");
+        }
         $r = Resource::factory(Fixtures::$resources[15]); 
         $this->assertEquals( Fixtures::$resourceSummaries[15], $r->toSummaryHtml(), "User can see summary block of information about a resource, including a Hover functionality that shows more detail");
     }
@@ -113,6 +121,9 @@ class ResourcesTest extends PHPUnit_Framework_TestCase
 
     public function testFetchById()
     {
+        if( Config::$testing['skipDatabase'] ) {
+            $this->markTestSkipped("No database connection, skipping...");
+        }        
         $rByFixtures = Resource::factory(Fixtures::$resources[15]);
         $rById = Resource::fetchById(15);
         $this->assertEquals($rByFixtures, $rById, "Resources can be fetched by explicit ID lookup in the database");

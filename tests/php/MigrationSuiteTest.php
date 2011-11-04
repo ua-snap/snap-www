@@ -2,12 +2,18 @@
 
 require_once "PHPUnit/Extensions/Database/TestCase.php";
 require_once "src/Migrations.php";
+require_once "src/Config.php";
 
 class MigrationSuiteTest extends PHPUnit_Framework_TestCase
 {
 
     public function testMigrateUp()
     {
+
+    	if( Config::$testing['skipDatabase'] ) {
+    		$this->markTestSkipped("No database connection, skipping...");
+    	}
+
     	$ms = new MigrationSuite();
     	$m = new Migration(
 	    	array(
@@ -33,6 +39,11 @@ class MigrationSuiteTest extends PHPUnit_Framework_TestCase
 
     public function testMigrateDown()
     {
+
+       	if( Config::$testing['skipDatabase'] ) {
+    		$this->markTestSkipped("No database connection, skipping...");
+    	}
+   
     	$ms = new MigrationSuite();
     	$m = new Migration(
 	    	array(
