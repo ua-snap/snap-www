@@ -70,6 +70,11 @@ class MigrationSuiteTest extends PHPUnit_Framework_TestCase
 
     public function testMigrateUpRanged()
     {
+
+    	if( Config::$testing['skipDatabase'] ) {
+            $this->markTestSkipped("No database connection, skipping...");
+        }
+
     	$ms = new MigrationSuite();
     	$m = new Migration(
 	    	array(
@@ -116,6 +121,11 @@ class MigrationSuiteTest extends PHPUnit_Framework_TestCase
 
     public function testMigrateDownRanged()
     {
+
+    	if( Config::$testing['skipDatabase'] ) {
+            $this->markTestSkipped("No database connection, skipping...");
+        }
+    	
     	$ms = new MigrationSuite();
     	$m = new Migration(
 	    	array(
