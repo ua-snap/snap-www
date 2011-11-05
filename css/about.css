@@ -21,3 +21,7 @@
 	margin-left: 20px;
 	color: #2a3133;
 }
+
+#aboutContent img {
+	border: 1px solid #999999; padding: 3px;
+}

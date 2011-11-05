@@ -92,14 +92,14 @@ CREATE TABLE `regions` (
 CREATE TABLE `projects` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) DEFAULT NULL,
-  `summary` blob,
+  `summary` text,
   `createdate` date DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
   `image_source` varchar(255) DEFAULT NULL,
   `snap` tinyint(1) DEFAULT NULL,
   `accap` tinyint(1) DEFAULT NULL,
   `fsc` tinyint(1) DEFAULT NULL,
-  `description` blob,
+  `description` text,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
@@ -141,7 +141,7 @@ CREATE TABLE `people` (
   `fax` varchar(15) DEFAULT NULL,
   `staffgroup` int(11) DEFAULT NULL,
   `image` varchar(255) DEFAULT NULL,
-  `summary` blob,
+  `summary` text,
   `organization` varchar(50) DEFAULT NULL,
   `snap` tinyint(1) DEFAULT NULL,
   `accap` tinyint(1) DEFAULT NULL,
@@ -228,6 +228,17 @@ COMMENT = 'Properties of video resources, FK to resources.id' ;
 sql
 ,         'fixtures' => "INSERT INTO `snapwww`.`video_resource` (`resource_id`, `embedded_url`, `embedded_title`, `embedded_user_url`, `embedded_user`, `linked_url`, `linked_title`, `file_video_href`, `file_video_title`, `file_video_type`, `file_video_size`) VALUES (15, 'http://player.vimeo.com/video/4515275', 'A thousand shades of white', 'http://vimeo.com/icescapestv', 'icescapes', 'http://www.youtube.com/watch?v=u5DiHp76gjs&feature=results_main&playnext=1&list=PLBBDD34F33BAF19CD', 'Alaskan Native thoughts on climate change', 'attachments/path_to_nowhere.mp4', 'Alaskan Native thoughts on climate change', '.mp4', '20 MB');",
           'down' => 'DROP TABLE `video_resource`;'
+        )
+      ),
+        4 => new Migration(
+          array(
+          'version' => 4,
+          'up' => '',
+          'fixtures' => <<<sql
+UPDATE `snapwww`.`people` SET `summary`="Scott Rupp is the Director of the Scenarios Network for Alaska & Arctic Planning (SNAP), principal investigator for the Department of Interior's Alaska Climate Science Center, and co-PI for the NOAA funded Alaska Center for Climate Assessment and Policy. Rupp is a well-established forest ecologist with specialized experience in ecological modeling. He has authored more than 50 peer-reviewed journal articles and book chapters. Rupp received a BS (1993) in Forest Management from Pennsylvania State University and a Ph.D. (1998) in Forest Ecology from UAF. He is Professor of Forestry and has been a faculty member at UAF since 2001." WHERE `id`='1';
+sql
+,
+          'down' => ''
         )
             )
         );

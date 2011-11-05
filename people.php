@@ -46,16 +46,6 @@ $staff_array = array(
                         $result = mysql_query($query) or die(mysql_error());
                         $num = 0;
                         while ($row = mysql_fetch_array($result)){
-                            /*
-                            if ($num < 0){
-                                $num = rand(0,20) / 10;
-                            } elseif ($num > 0){
-                                $num = rand(0,20) / 10 - 2;
-                            } else {
-                                $num = rand(0,40) / 10 - 2;
-                            }
-                            */
-                            //echo "<div style=\"-moz-transform: rotate(".$num."deg); -webkit-transform: rotate(".$num."deg); -o-transform: rotate(".$num."deg); width: 33%; display: inline-block;\">";
                             echo "<div style=\"width: 33%; display: inline-block;\">";
                                 echo "<div style=\"position: relative; text-align: center; width: 200px;\">";
                                     echo "<div style=\"text-align: center; \"><img alt=\"Photo of ".$row['title']." ".$row['first']." ".$row['last']."\" style=\"padding: 3px; border: 1px solid #6a7173;\" src=\"/images/people/".$row['image']."\" /></div>";
@@ -72,16 +62,6 @@ $staff_array = array(
                         $result = mysql_query($query) or die(mysql_error());
                         $num = 0;
                         while ($row = mysql_fetch_array($result)){
-                            /*
-                            if ($num < 0){
-                                $num = rand(0,20) / 10;
-                            } elseif ($num > 0){
-                                $num = rand(0,20) / 10 - 2;
-                            } else {
-                                $num = rand(0,40) / 10 - 2;
-                            }
-                            */
-                            //echo "<div style=\"margin-top: 30px; -moz-transform: rotate(".$num."deg); -webkit-transform: rotate(".$num."deg); -o-transform: rotate(".$num."deg); width: 25%; display: inline-block;\">";
                             echo "<div style=\"margin-top: 30px; width: 25%; display: inline-block; vertical-align: top;\">";
                                 echo "<div style=\"position: relative; text-align: center; width: 156px;\">";
                                     echo "<div style=\"text-align: center; \"><img alt=\"Photo of ".$row['title']." ".$row['first']." ".$row['last']."\" style=\"width: 100%; padding: 3px; border: 1px solid #6a7173;\" src=\"/images/people/".$row['image']."\" /></div>";
