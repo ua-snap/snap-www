@@ -250,10 +250,7 @@ sql
           'version' => 5,
           'up' => '',
           'fixtures' => <<<sql
-INSERT INTO `snapwww`.`people` (`id`, `first`, `middle`, `last`, `title`, `position`, `email`, `phone`, `fax`, `staffgroup`, `summary`, `organization`, `snap`, `accap`, `status`) values ('22', 'Bruce', NULL, 'Crevensten', '', 'Web Programmer', 'becrevensten@alaska.edu', '9074747134', '9074747151', '3', "Bruce Crevensten joined SNAP as a Web Programmer in October, 2011, and works with SNAP's IT team to publish web content and implement web applications to facilitate access to data and services.  His background in software development includes complex web applications, testing and QA initiatives, project and technology management.
-
-Bruce holds a B.S. (2002) in mathematics from Portland State University, enjoys origami and other intersections between art and mathematics, and has an interest in high performance scientific computing frameworks and architectures.
-", 'SNAP', '1', '0', '1');
+INSERT INTO `snapwww`.`people` (`id`, `first`, `middle`, `last`, `title`, `position`, `email`, `phone`, `fax`, `staffgroup`, `summary`, `organization`, `snap`, `accap`, `status`) values ('22', 'Bruce', NULL, 'Crevensten', '', 'Web Programmer', 'becrevensten@alaska.edu', '9074747134', '9074747151', '3', "Bruce Crevensten joined SNAP as a Web Programmer in October, 2011, and works with SNAP's IT team to publish web content and implement web applications to facilitate access to data and services.  His background in software development includes complex web applications, testing and QA initiatives, project and technology management.  Bruce holds a B.S. (2002) in mathematics from Portland State University, enjoys origami and other intersections between art and mathematics, and has an interest in high performance scientific computing frameworks and architectures.", 'SNAP', '1', '0', '1');
 sql
 ,
           'down' => 'DELETE FROM `snapwww`.`people` WHERE `id`=22 LIMIT 1;'
