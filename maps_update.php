@@ -1,13 +1,16 @@
 <?php
-include("template.php");
-$pageX = new webPage("", "", "");
+/**
+* maps_update.php
+*/
+require 'template.php';
+
+$pageX = new webPage('', '', '');
 $pageX->connectToDatabase();
-if ($_GET['requesttype'] == "build"){
-    $activeVariable = "Mean Annual Precipitation";
-    $addVar = "";
-    if ($_GET['variable']){
-        $activeVariable = mysql_real_escape_string($_GET['variable']);
-        $addVar = " ORDER BY FIELD(variable, '$activeVariable') DESC";
+if ($_GET['requesttype'] === 'build') {
+    $activeVariable = 'Mean Annual Precipitation';
+    $addVar = '';
+    if ( true === $_GET['variable'] ) {
+        $addVar = " ORDER BY FIELD(variable, '".mysql_real_escape_string($_GET['variable'])."') DESC";
     }
     $query = "SELECT variable,description,legend FROM tileset LEFT JOIN tileset_descriptions ON variable=name GROUP BY variable $addVar";
     $result = mysql_query($query);
