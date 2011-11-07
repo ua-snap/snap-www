@@ -236,10 +236,6 @@ sql
           'up' => '',
           'fixtures' => <<<sql
 UPDATE `snapwww`.`people` SET `summary`="Scott Rupp is the Director of the Scenarios Network for Alaska & Arctic Planning (SNAP), principal investigator for the Department of Interior's Alaska Climate Science Center, and co-PI for the NOAA funded Alaska Center for Climate Assessment and Policy. Rupp is a well-established forest ecologist with specialized experience in ecological modeling. He has authored more than 50 peer-reviewed journal articles and book chapters. Rupp received a BS (1993) in Forest Management from Pennsylvania State University and a Ph.D. (1998) in Forest Ecology from UAF. He is a Professor of Forestry and has been a faculty member at UAF since 2001." WHERE `id`='1';
-INSERT INTO `snapwww`.`people` (`id`, `first`, `middle`, `last`, `title`, `position`, `email`, `phone`, `fax`, `staffgroup`, `summary`, `organization`, `snap`, `accap`, `status`) values ('22', 'Bruce', NULL, 'Crevensten', '', 'Web Programmer', 'becrevensten@alaska.edu', '9074747134', '9074747151', '3', "Bruce Crevensten joined SNAP as a Web Programmer in October, 2011, and works with SNAP's IT team to publish web content and implement web applications to facilitate access to data and services.  His background in software development includes complex web applications, testing and QA initiatives, project and technology management.
-
-Bruce holds a B.S. (2002) in mathematics from Portland State University, enjoys origami and other intersections between art and mathematics, and has an interest in high performance scientific computing frameworks and architectures.
-", 'SNAP', '1', '0', '1');
 sql
 ,
           'down' => ''
