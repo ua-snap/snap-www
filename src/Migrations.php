@@ -49,6 +49,10 @@ class Migration
 
             if(!empty($this->up)) {
                 $sth = $dbh->prepare( $this->up );
+
+               if( false === $sth ) {
+                       //throw new Exception( implode( " ", $sth->errorInfo() ) ) );
+               }
                 if( !$sth->execute() ) {
                     throw new Exception( implode( " ", $sth->errorInfo() ));
                 }
@@ -58,6 +62,10 @@ class Migration
 
             if(!empty($this->fixtures)) {
                 $sth = $dbh->prepare( $this->fixtures );
+               if( false === $sth ) {
+                       var_dump($dbh->errorInfo());
+                       //throw new Exception( implode( " ", $sth->errorInfo() ) ) );
+               }
                 if( !$sth->execute() ) {
                     throw new Exception( implode( " ", $sth->errorInfo() ) );
                 }
