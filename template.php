@@ -14,7 +14,10 @@ class webPage {
     }
 
     public function connectToDatabase(){ //TODO:move to configuration
-
+        $server = "localhost";
+        $username = "snapwww_admin";
+        $password = "xargX11";
+        $database = "snapwww";
          if( !mysql_connect(Config::$database['host'], Config::$database['user'], Config::$database['pass'])) {
             mysql_error();  
             die("Unable to Connect to Database");   //TODO: make logging happen?
@@ -89,7 +92,7 @@ class webPage {
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
               })();
 
-
+        <!-- make-dev -->
         </script>
         
         <!-- make-dev -->
@@ -100,6 +103,7 @@ class webPage {
         <script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"></script>
         <!-- end-make-dev -->
 
+        <!-- end-make-dev -->
         <script type="text/javascript">
         $(document).ready(function() {
 
