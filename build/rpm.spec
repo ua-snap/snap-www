@@ -42,6 +42,8 @@ mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/js
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/src
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/exporting-server
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/temp
+mkdir -p ${RPM_BUILD_ROOT}/var/log/
+mkdir -p ${RPM_BUILD_ROOT}/etc/httpd/conf.d
 
 touch ${RPM_BUILD_ROOT}/var/log/%{hostname}-error_log
 touch ${RPM_BUILD_ROOT}/var/log/%{hostname}-access_log
