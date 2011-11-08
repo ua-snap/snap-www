@@ -5,7 +5,10 @@ require_once "src/Template.php";
 
 class TemplateTest extends PHPUnit_Framework_TestCase
 {
-	
+	// no-op shim
+	public function testDemo() { 
+        $this->assertEquals(1,1);
+    }	
 
 }
 ?>
