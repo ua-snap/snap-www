@@ -17,7 +17,7 @@ Requires:	php
 Requires:   mysql, mysql-devel
 Requires:   httpd
 
-%define inst_dir /var/www/snapwww
+%define inst_dir /var/www/snap
 
 %description
 This package contains the web site for the Scenarios Network for Alaska and Arctic Planning
@@ -46,6 +46,7 @@ cp -a src/*.php ${RPM_BUILD_ROOT}/%{inst_dir}/src/
 cp -a js/* ${RPM_BUILD_ROOT}/%{inst_dir}/js/
 cp -a css/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/
 cp -aR exporting-server ${RPM_BUILD_ROOT}/%{inst_dir}/exporting-server/
+cp build/snap.conf ${RPM_BUILD_ROOT}/etc/httpd/conf.d/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -58,4 +59,5 @@ rm -rf $RPM_BUILD_ROOT
 %{inst_dir}/js
 %{inst_dir}/src
 %{inst_dir}/exporting-server
+/etc/httpd/conf.d
 %attr(744,apache,apache) %{inst_dir}/temp
