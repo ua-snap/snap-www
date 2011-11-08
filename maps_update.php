@@ -9,7 +9,7 @@ $pageX->connectToDatabase();
 if ($_GET['requesttype'] === 'build') {
     $activeVariable = 'Mean Annual Precipitation';
     $addVar = '';
-    if ( true === $_GET['variable'] ) {
+    if ( $_GET['variable'] ) {
         $addVar = " ORDER BY FIELD(variable, '".mysql_real_escape_string($_GET['variable'])."') DESC";
     }
     $query = "SELECT variable,description,legend FROM tileset LEFT JOIN tileset_descriptions ON variable=name GROUP BY variable $addVar";
