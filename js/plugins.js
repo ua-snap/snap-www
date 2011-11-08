@@ -34,6 +34,10 @@
 		if ( color && color.constructor == Array && color.length == 3 )
 			return color;
 
+		// Look for rgba(num,num,num,num)
+		if (result = /rgba\(\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*\)/.exec(color))
+			return [parseInt(result[1]), parseInt(result[2]), parseInt(result[3])];
+
 		// Look for rgb(num,num,num)
 		if (result = /rgb\(\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*\)/.exec(color))
 			return [parseInt(result[1]), parseInt(result[2]), parseInt(result[3])];

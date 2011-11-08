@@ -251,7 +251,18 @@ sql
 ,
           'down' => 'DELETE FROM `snapwww`.`people` WHERE `id`=22 LIMIT 1;'
         )
-            ),            
+            ),
+             6 => new Migration(
+          array(
+          'version' => 6,
+          'up' => '',
+          'fixtures' => <<<sql
+INSERT INTO `snapwww`.`people` (`id`, `first`, `middle`, `last`, `title`, `position`, `email`, `phone`, `fax`, `staffgroup`, `summary`, `organization`, `snap`, `accap`, `status`) values ('23', 'Carson', NULL, 'Baughman', '', 'Research Assistant', 'becrevensten@alaska.edu', '9074747134', '9074747151', '3', "Carson Baughman is a Master of Science candidate and research assistant at SNAP.  His thesis is focused on quantifying the relationships between climate and peat rich soils within the Arctic Foothills region of Alaska’s North Slope.  Specifically he is looking at how the amount of peat found on the landscape varies with changes in above ground mean annual temperature.  This relationship is important because high latitude peat represents a significant pool of carbon that can act as a source or sink depending on global climate.  After defining these relationships using field based data, Carson will develop a model that can be used to predict peat thickness within the study region based on climate scenario data. This work will increase the understanding of predicted climate change consequences for Alaska’s sub-arctic ecosystems.\nCarson hails from the Nevada high desert, received his Bachelors degree in Ecology from the University of Montana, Missoula in 2008. He arrived in Alaska the summer of 2009.  When not indoors, he can be found piloting canoes and tandem bicycles, frolicking with his chickens,￼and procuring nutriment from the land by various manners.", 'SNAP', '1', '0', '1');
+sql
+,
+          'down' => 'DELETE FROM `snapwww`.`people` WHERE `id`=23 LIMIT 1;'
+        )
+            ),                  
         );
     }
 }
