@@ -10,7 +10,8 @@ License:	BSD
 URL:		http://snap.uaf.edu
 Source0:	snapwww.tgz
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
-BuildArch: noarch
+BuildArch: 	noarch
+ExclusiveArch: noarch
 
 BuildRequires:	php, php-devel
 Requires:	php
@@ -34,9 +35,6 @@ make
 rm -rf ${RPM_BUILD_ROOT}
 echo build root: ${RPM_BUILD_ROOT}
 
-touch ${RPM_BUILD_ROOT}/var/log/%{hostname}-error_log
-touch ${RPM_BUILD_ROOT}/var/log/%{hostname}-access_log
-
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/css
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/images
@@ -44,6 +42,9 @@ mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/js
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/src
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/exporting-server
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/temp
+
+touch ${RPM_BUILD_ROOT}/var/log/%{hostname}-error_log
+touch ${RPM_BUILD_ROOT}/var/log/%{hostname}-access_log
 
 cp -a *.php ${RPM_BUILD_ROOT}/%{inst_dir}/
 cp -a src/*.php ${RPM_BUILD_ROOT}/%{inst_dir}/src/
