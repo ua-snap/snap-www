@@ -30,6 +30,8 @@ are used to determine the region to be replaced with a single script inclusion.
 <script src="js/plugins.js" type="text/javascript"></script>
 <script src="js/highcharts.js" type="text/javascript"></script>
 <script src="js/exporting.js" type="text/javascript"></script>
+<script src="js/google-maps-transparency-slider.js" type="text/javascript"></script>
+
 <script src="js/charts.js" type="text/javascript"></script>
 <script src="js/maps.js" type="text/javascript"></script>
 <!-- end-package -->
