@@ -15,7 +15,8 @@ ExclusiveArch: noarch
 
 BuildRequires:	php, php-devel
 Requires:	php
-Requires:   mysql, mysql-devel
+Requires:   mysql, mysql-devel, php-mysql
+Requires:	php-pdo
 Requires:   httpd
 
 %define inst_dir /var/www/snap
