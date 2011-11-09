@@ -52,8 +52,9 @@ cp -a *.php ${RPM_BUILD_ROOT}/%{inst_dir}/
 cp -a src/*.php ${RPM_BUILD_ROOT}/%{inst_dir}/src/
 cp -a js/* ${RPM_BUILD_ROOT}/%{inst_dir}/js/
 cp -a css/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/
+cp -R images/* ${RPM_BUILD_ROOT}/%{inst_dir}/images/
 cp -aR exporting-server ${RPM_BUILD_ROOT}/%{inst_dir}/exporting-server/
-cp build/snap.conf ${RPM_BUILD_ROOT}/etc/httpd/conf.d/
+cp -a build/snap.conf ${RPM_BUILD_ROOT}/etc/httpd/conf.d/
 
 %clean
 rm -rf $RPM_BUILD_ROOT

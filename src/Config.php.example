@@ -11,5 +11,7 @@ class Config {
     static public $testing = array(
 	    'skipDatabase' => true,
 	);
+    static public $url = "http://dev.snap.uaf.edu";
+
 }
 ?>

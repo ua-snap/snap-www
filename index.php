@@ -5,8 +5,6 @@ $page->openPage();
 $page->pageHeader();
 ?>
     <div id="main_body">
-        <script src="js/index.js" type="text/javascript"></script>
-        <script src="js/jcarousellite_1.0.1.min.js" type="text/javascript"></script>
         <div id="main_content">
             <div style="width: 100%; position: relative; height: 300px; ">
                 <div id="news_sticky" style="position: absolute;"><img alt="Sticky Background" src="images/sticky.jpg" /></div>

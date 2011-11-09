@@ -14,7 +14,6 @@ $staff_array = array(
     );
 ?>
 
-        <script type="text/javascript" src="js/people.js"></script>
         <div id="modalbackground"></div>
         <div id="modalcontainer" style="position: absolute; width: 100%; height: 100%; z-index: -100;">
             <div id="modalbox" style="border: none;">
