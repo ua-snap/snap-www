@@ -17,6 +17,12 @@ class Template {
       })();
 </script>
 
+<!-- package-javascript
+All external javascript file, including the minified SNAP javascript,
+are listed here and in the project makefile to be bundled into a single
+javascript file.  The 'package-javascript' and 'end-package' tokens
+are used to determine the region to be replaced with a single script inclusion.
+-->
 <script src="js/jquery-1.6.4.min.js" type="text/javascript" ></script>
 <script src="js/jquery.blockUI.js" type="text/javascript" ></script>
 <script src="js/jquery.hoverIntent.minified.js" type="text/javascript"></script>
@@ -24,10 +30,9 @@ class Template {
 <script src="js/plugins.js" type="text/javascript"></script>
 <script src="js/highcharts.js" type="text/javascript"></script>
 <script src="js/exporting.js" type="text/javascript"></script>
-
-<!-- make-dev -->
 <script src="js/charts.js" type="text/javascript"></script>
-<!-- end-make-dev -->
+<script src="js/maps.js" type="text/javascript"></script>
+<!-- end-package -->
 
 <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=snapweb"></script>
 <script type="text/javascript" comment="AddThis Configuration">

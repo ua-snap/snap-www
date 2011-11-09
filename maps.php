@@ -7,7 +7,6 @@ $page->connectToDatabase();
 
                 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"> </script>
                 <script type="text/javascript" src="js/plugins.js"></script>
-                <script type="text/javascript" src="js/maps.js"></script>
                 <script type="text/javascript">
                     var currenthash = window.location.hash.substring(1).split("/");
                     var variable = currenthash[0];

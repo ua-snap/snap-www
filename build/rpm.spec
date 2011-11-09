@@ -71,3 +71,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(744,apache,apache) %{inst_dir}/temp
 %ghost %attr(644,apache,apache) /var/log/%{hostname}-error_log
 %ghost %attr(644,apache,apache) /var/log/%{hostname}-access_log
+
+%post
+service httpd restart
