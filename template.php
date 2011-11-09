@@ -1,6 +1,7 @@
 <?php
 
-require_once('src/Config.php');
+require_once 'src/Config.php';
+require_once 'src/Template.php';
 
 class webPage {
     private $pageTitle;
@@ -62,63 +63,20 @@ class webPage {
     <head>
         <title><?php echo $this->pageTitle; ?></title>
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8" /> 
-        
+        <link rel="stylesheet" href="/css/style.css" type="text/css" />
     <?php 
-        if (isset($_GET['style'])){
-            echo "<link rel=\"stylesheet\" href=\"/css/style".$_GET['style'].".css\" type=\"text/css\" />"; 
-        } else {
-            echo "<link rel=\"stylesheet\" href=\"/css/style.css\" type=\"text/css\" />";
 
-        }
-        
         if (isset($this->stylesheet)){ 
             echo "<link rel=\"stylesheet\" href=\"/css/$this->stylesheet\" type=\"text/css\" />"; 
-        } 
+        }
+
+        // Get head javascript includes
+        $t = new Template();
+        echo $t->getHeadJavascript();
 
         ?>
         <link rel="shortcut icon" href="/images/snap.ico" />
-        <script type="text/javascript">
-
-              var _gaq = _gaq || [];
-              _gaq.push(['_setAccount', 'UA-3978613-3']);
-              _gaq.push(['_trackPageview']);
-
-              (function() {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-              })();
-
-
-        </script>
-        
-        <!-- make-dev -->
-        <script src="/js/jquery.js" type="text/javascript" ></script>
-        <script src="/js/site.js" type="text/javascript" ></script>
-        <script src="js/jquery.blockUI.js" type="text/javascript" ></script>
-        <script src="js/jquery.hoverIntent.minified.js" type="text/javascript"></script>
-        <script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"></script>
-        <!-- end-make-dev -->
-
-        <script type="text/javascript">
-        $(document).ready(function() {
-
-        });
-
-
-        </script>
-        <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=snapweb"></script>
-            <script type="text/javascript">
-                var addthis_config =
-                {
-                   ui_508_compliant: true,
-                   ui_hover_direction: 1,
-                   services_compact: 'facebook,twitter,google_plusone,print,email'
-                }
-            </script>
-
-    </head>
-    <body onload="javascript:hideOnLoad();">
+      
         <?php
     }
     public function pageHeader(){ ?>    
