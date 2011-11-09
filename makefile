@@ -14,7 +14,6 @@ javascript :
 	java -jar build/vendor/closure-compiler/compiler.jar \
 --warning_level QUIET \
 --compilation_level SIMPLE_OPTIMIZATIONS \
---js=./js/google-maps-transparency-slider.js \
 --js=./js/maps.js \
 --js=./js/charts.js \
 --js_output_file=./js/snap.min.js
