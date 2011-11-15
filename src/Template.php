@@ -47,7 +47,50 @@ are used to determine the region to be replaced with a single script inclusion.
 </script>
 js;
 	}
-		
-}
+	
+  public function getSubmenu($menu_value) {
+    
+    $menu_options = array(
+      'about' => array(
+        array('link', '/people.php', 'People'),
+        array('link', '/collaborators.php', 'Collaborators'),
+        array('link', '/outreach.php', 'Outreach'),
+        array('link', '/faq.php', 'F.A.Q.')
+      ),
+      'data' => array(
+        array('link', '/maps.php" target="_blank','Map Tool'), // note the quotes so that it works inline below
+        array('link', '/charts.php','Community Charts'),
+        array('link', '/gisdata.php','Data')
+      ),
+      'resources' => array(
+        array('label', 'Learn about all of SNAP&rsquo;s resources below.  The list can be narrowed by selecting from the options below.')
+      ),
+      'projects' => array(
+        array('label', 'Learn about all of SNAP&rsquo;s projects below.  The list can be narrowed by selecting from the options below.')
+      ),
+      'methods' => array(
+        array('ref', '/downscaling.php','Downscaling','downscaling'),
+        array('ref', '/modeling.php','Modeling','modeling'),
+        array('ref', '/derived.php','Derived Data','downscaling'),
+        array('ref', '/uncertainty.php','Uncertainty','downscaling'),
+        array('ref', '/planning.php','Planning','downscaling')
+      )
+    );
+    if( true !== array_key_exists( $menu_value, $menu_options )) {
+      throw new Exception('Menu option unspecified or does not exist.'); 
+    }
 
+    $html = '<div class="submenu">';
+    foreach( $menu_options[$menu_value] as $submenuItem ) {
+      switch($submenuItem[0]) {
+        case 'ref': break;
+        case 'label': $html .= '<span style="font-size: 13.5px; color: #ffffff;">'.$submenuItem[1]."</span>"; break;
+        case 'link': // fallthrough
+        default: $html .= '<span><a href="'.$submenuItem[1].'">'.$submenuItem[2].'</a></span>'; break;
+      }
+    }
+    $html .= '</div>';
+    return $html;
+  }
+}
 ?>

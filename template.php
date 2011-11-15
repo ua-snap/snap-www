@@ -8,10 +8,12 @@ class webPage {
     private $stylesheet;
     private $menu;
     public $SITE = "http://www.snap.uaf.edu"; //TODO: move to configuration
+
     public function __construct($t, $s, $m){
         $this->pageTitle = $t;
         $this->stylesheet = $s;
         $this->menu = $m;
+        $this->template = new Template();
     }
 
     public function connectToDatabase(){ //TODO:move to configuration
@@ -70,9 +72,8 @@ class webPage {
             echo "<link rel=\"stylesheet\" href=\"/css/$this->stylesheet\" type=\"text/css\" />"; 
         }
 
-        // Get head javascript includes
-        $t = new Template();
-        echo $t->getHeadJavascript();
+        // Dump Javascript from src/Template.php wrapper class.
+        echo $this->template->getHeadJavascript();
 
         ?>
         <link rel="shortcut icon" href="/images/snap.ico" />
@@ -161,6 +162,7 @@ class webPage {
         </div>
     <?php
     }
+
     public function closePage(){
         ?>
         <?php $this->pageFooter(); ?>
@@ -168,73 +170,10 @@ class webPage {
         </html>
         <?php
     }
+    
     public function drawSubMenu($menu_value){
-        $menu_list = array("about", "data", "resources", "projects", "methods", "educators");
-        $menu_choice = 0;
-        for ($i = 0; $i < sizeof($menu_list); $i++){
-            if ($menu_value == $menu_list[$i]){
-                $menu_choice = $i;
-            }
-        }
-        $menu_options = array(
-                    array(
-                        array("/people.php", "People"),
-                        array("/collaborators.php", "Collaborators"),
-                        //array("/blog/", "Blog"),
-                        array("/outreach.php", "Outreach"),
-                        array("/faq.php", "F.A.Q.")
-                        //array("/sustainability.php", "Sustainability"),
-                    ), 
-                    array(
-                        array("/maps.php\" target=\"_blank","Map Tool"),
-                        array("/charts.php","Community Charts"),
-                        array("/gisdata.php","GIS Data")
-                    ),
-                    array(
-                        array("label", "Learn about all of SNAP's resources below.  The list can be narrowed by selecting from the options below.")
-                    ),
-                    array(
-                        array("label", "Learn about all of SNAP's projects below.  The list can be narrowed by selecting from the options below.")
-                    ),
-                    array(
-                        array("/downscaling.php","Downscaling"),
-                        array("/modeling.php","Modeling"),
-                        array("/derived.php","Derived Data"),
-                        array("/uncertainty.php","Uncertainty"),
-                        array("/planning.php","Planning")
-                    ),
-                    array(
-                        array("/training.php","Training"),
-                        array("/materials.php","Teaching Materials")
-                    )
-            );
-        ?>
-                <div class="submenu">
-
-            <?php
-            for ($i = 0; $i < sizeof($menu_options[$menu_choice]); $i++){
-                if ($menu_options[$menu_choice][$i][0] == "label"){
-                    echo "<span style=\"font-size: 13.5px; color: #ffffff; \" >".$menu_options[$menu_choice][$i][1]."</span>";
-                } else {
-                    echo "<span><a href=\"".$menu_options[$menu_choice][$i][0]."\" ";
-                    $string1 = "".$menu_options[$menu_choice][$i][0];
-                    $string2 = $_SERVER["REQUEST_URI"];
-                    if (preg_match("/^\/blog\/*/", $string2)){
-                        $string2 = "/blog/";
-                    }   
-                    if ($string1 == $string2){
-                        echo "style=\"color: #ffffff; \"";
-
-                    }
-                    echo ">";
-                    echo $menu_options[$menu_choice][$i][1]."</a></span>";
-                }
-            }
-
-        ?>
-                </div>
-        <?php
+        // Dump content from src/Template.php wrapper script
+        echo $this->template->getSubMenu($menu_value);
     }
-
 }
 ?>

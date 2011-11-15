@@ -13,7 +13,7 @@ function getFileSize($f){
 ?>
         <div id="main_body">
             <div id="main_content">
-                <div class="subHeader">GIS Data</div>
+                <div class="subHeader">Data</div>
                 <div>
                     <p>The following datasets are climate projections for the state of Alaska based on downscaled outputs from five IPCC Global Circulation models. They include average monthly air temperature (degrees Celsius) and total monthly precipitation (millimeters; SWE) grids for the state of Alaska, as well as additional grids derived from these data.</p>
                     <p>These datasets are formatted as zipped folders, which when unzipped yield delimited text files for ASCII (GIS) use. Each file contains grids for the entire state for the years 1980-2099. The three emission scenarios (A2, A1B and B2) refer to the IPCC emission scenarios used in our modeling, where A1B is the midrange scenario, A2 is more pessimistic (higher emissions) and B1 is more optimistic (lower emissions).</p>
