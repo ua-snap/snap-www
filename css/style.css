@@ -296,14 +296,30 @@ h1 {
 	color: #97a93a;
 }
 h2 {
+	font-weight: normal;
 	margin: 0px;
 	padding: 0px;
 	color: #6a7173;
 }
+#methods h2 {
+	font-size: 34px; 
+	color: #242d2f;
+	margin-bottom: 30px;
+}
 h3 {
+	font-weight: normal;
 	margin: 0px;
 	padding: 0px;
 	color: #6a7173;
+}
+#methods h3 {
+	color: #242d2f;
+	margin: 1ex 0;
+	font-size: 25px;
+}
+#methods h4 {
+	margin: 1ex 0 0 0;
+	color: #242d2f;
 }
 .heading {
 	color: #777777;

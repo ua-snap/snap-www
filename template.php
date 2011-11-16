@@ -82,6 +82,7 @@ class webPage {
     }
     public function pageHeader(){ ?>    
         <!-- <div class="slashbar"></div> -->
+        <a name="top"/>
         <div id="header">
             <a href="/"><span id="header_left"><img src="/images/snap_acronym_rgb.png" height="90px" alt="SNAP Acronym Logo" /></span></a>
             <div id="header_right">
@@ -170,7 +171,7 @@ class webPage {
         </html>
         <?php
     }
-    
+
     public function drawSubMenu($menu_value){
         // Dump content from src/Template.php wrapper script
         echo $this->template->getSubMenu($menu_value);
