@@ -37,14 +37,14 @@ class TemplateTest extends PHPUnit_Framework_TestCase
         $html = $t->getSubMenu('projects'); // suppose the 'projects' menu is chosen
         $this->assertSame('<div class="submenu"><span style="font-size: 13.5px; color: #ffffff;">Learn about all of SNAP&rsquo;s projects below.  The list can be narrowed by selecting from the options below.</span></div>', $html, 'ensure Projects submenu displays a static string, no submenu items');
     }
-
+/*
     public function testRefSubmenu() {
         $t = new Template();
         $html = $t->getSubMenu('data'); // suppose the 'projects' menu is chosen
         $this->assertTag(array('tag'=>'a','content'=>'F.A.Q.','attributes'=>array('class'=>'switcher','id'=>'data-faq')), $html, 'ensure Methods submenu is generated with attributes so we can dynamically switch content');
          
     }
-
+*/
     public function testSubmenuException() {
         // This test expects to trigger an exception if it can't match the submenu to its statically-defined list of possible submenus.
         $this->setExpectedException('Exception');

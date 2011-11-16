@@ -14,7 +14,6 @@ class VideoAttachmentTest extends PHPUnit_Framework_TestCase
         if( Config::$testing['skipDatabase'] ) {
             $this->markTestSkipped("No database connection, skipping...");
         }
-                
         $this->video = Resource::fetchById(15);
     }
 
@@ -41,12 +40,4 @@ class VideoAttachmentTest extends PHPUnit_Framework_TestCase
     }
 }
 
-
-/**
-<iframe src="http://player.vimeo.com/video/4515275?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe><p><a href="http://vimeo.com/4515275">A thousand shades of white</a> from <a href="http://vimeo.com/icescapestv">icescapes</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
-
-http://www.youtube.com/watch?v=u5DiHp76gjs&feature=results_main&playnext=1&list=PLBBDD34F33BAF19CD
-
- echo "<div style=\"margin-top: 10px;\"><a href=\"attachments/".$attachment['filename']."\">".$attachment['name']." </a> <img src=\"$mime\" style=\"vertical-align: middle;\" /> ($file_size)";
-**/
 ?>

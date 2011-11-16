@@ -34,3 +34,4 @@ javascript :
 .PHONY: clean
 clean : 
 	rm ./js/snap.min.js
+	rm ./js/min.js
