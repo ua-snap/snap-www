@@ -36,6 +36,11 @@ class Resource {
         return; // no-op unless overridden in child classes    
     }
 
+    public function renderDownloads()
+    {
+        return; // no-op unless overridden in child classes    
+    }
+
     public function toSummaryHtml() {
 
         $tags = $this->getTagList();
@@ -168,9 +173,10 @@ class VideoResource extends Resource {
 
     }
 
+    // Renders the embedded & linked videos
     public function render()
     {
-        return '<div class="video">'.$this->getEmbeddedVideo().$this->getLinkedVideo().$this->getFileVideo().'</div>';
+        return '<div class="video">'.$this->getEmbeddedVideo().$this->getLinkedVideo().'</div>';
     }
 
     public function getEmbeddedVideo()
@@ -189,10 +195,10 @@ html
 ;
     }
 
-    public function getFileVideo()
+    public function renderDownloads()
     {        
         return <<<html
-<p class="attachment"><img src="images/filetypes/video.png" alt=""/> Download <a href="{$this->fileVideoHref}" />{$this->fileVideoTitle} (<span>{$this->fileVideoType}</span>, <span>{$this->fileVideoSize}</span>)</p>
+<p class="attachment"><img src="images/filetypes/video.png" alt=""/> <a href="{$this->fileVideoHref}" />{$this->fileVideoTitle}</a> (<span>{$this->fileVideoType}</span>, <span>{$this->fileVideoSize}</span>)</p>
 html
 ;
     }

@@ -36,7 +36,7 @@ class VideoAttachmentTest extends PHPUnit_Framework_TestCase
         if( Config::$testing['skipDatabase'] ) {
             $this->markTestSkipped("No database connection, skipping...");
         }        
-        $this->assertEquals('<p class="attachment"><img src="images/filetypes/video.png" alt=""/> Download <a href="attachments/path_to_nowhere.mp4" />Alaskan Native thoughts on climate change (<span>.mp4</span>, <span>20 MB</span>)</p>', $this->video->getFileVideo(), "Video should provide a link to a downloadable version of a video");
+        $this->assertEquals('<p class="attachment"><img src="images/filetypes/video.png" alt=""/> <a href="attachments/path_to_nowhere.mp4" />Alaskan Native thoughts on climate change</a> (<span>.mp4</span>, <span>20 MB</span>)</p>', $this->video->renderDownloads(), "Video should provide a link to a downloadable version of a video");
     }
 }
 

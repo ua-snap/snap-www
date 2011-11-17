@@ -36,7 +36,10 @@ $resource = Resource::fetchById($_GET['resourceid']);
                             $att_query = "SELECT * FROM attachments WHERE resourceid='$resourceid' ORDER BY category, id";
                             $att_result = mysql_query($att_query);
                             echo "<div style=\"color: #242d2f; margin-left: 20px; font-size: 22px; \">Downloads</div>";
-                            echo "<div style=\"margin-left: 20px;\">";
+                            echo "<div style=\"margin-left: 20px; margin-top: 10px;\">";
+
+                            echo $resource->renderDownloads();
+
                             $sizes = array(" Bytes", " KB", " MB", " GB", " TB", " PB", " EB", " ZB", " YB");
                             $category;
                             while ($attachment = mysql_fetch_array($att_result)){
