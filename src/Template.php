@@ -4,7 +4,7 @@ class Template {
 	
 	public function getHeadJavascript()
 	{
-		return<<<'js'
+		return<<<js
 <script type="text/javascript" comment="Google Analytics">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-3978613-3']);
