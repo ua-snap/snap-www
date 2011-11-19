@@ -47,13 +47,13 @@ $resource = Resource::fetchById($_GET['resourceid']);
                                 if ($attachment['category']){
                                     if ($category != $attachment['category']){
                                         $category = $attachment['category'];
-                                        echo "<div style=\"margin-top: 10px; font-size: 18px;\">$category</div>";
+                                        echo "<div style=\"margin-top: 15px; font-size: 18px;\">$category</div>";
                                     }
                                 }
                                 $file_size = filesize("attachments/".$attachment['filename']);
                                 $file_size = round($file_size/pow(1024, ($i = floor(log($file_size, 1024)))), $i > 1 ? 2 : 0) . $sizes[$i]; 
                                 $mime = "images/filetypes/".preg_replace("/.*\/(.*)/", "$1", mime_content_type("attachments/".$attachment['filename'])).".gif";
-                                echo "<div style=\"margin-top: 10px;\"><a href=\"attachments/".$attachment['filename']."\">".$attachment['name']." </a> <img src=\"$mime\" style=\"vertical-align: middle;\" /> ($file_size)";
+                                echo "<div><a href=\"attachments/".$attachment['filename']."\">".$attachment['name']." </a> <img src=\"$mime\" style=\"vertical-align: middle;\" /> ($file_size)";
                                 if ($attachment['lowres']){
                                     $lowres_size = filesize("attachments/".$attachment['lowres']);
                                     $lowres_size = round($lowres_size/pow(1024, ($i = floor(log($lowres_size, 1024)))), $i > 1 ? 2 : 0) . $sizes[$i];   
