@@ -64,6 +64,18 @@ a:hover {
 	height: 10px;
 	width: 100%;
 }
+#betabar {
+	position: fixed;
+	bottom: 0;
+	z-index: 500;
+	opacity: .8;
+	background-color: #fd8f9b;
+	color: #2d0005;
+	font-size: 10px;
+	padding: 3px;
+	text-align: center;
+	width: 100%;
+}
 #header {
 	margin: auto;
 	text-align: left;

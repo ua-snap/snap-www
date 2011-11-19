@@ -285,6 +285,17 @@ sql
           'down' => 'DROP TABLE `snapwww`.`project_resource_link`;'
         )
             ),                  
+            8 => new Migration(
+          array(
+          'version' => 8,
+          'up' => '',
+          'fixtures' => <<<sql
+UPDATE `snapwww`.`projects` SET `image`='/images/projects/BiomeShift.jpg' WHERE `id`='8';
+sql
+,
+          'down' => ''
+        )
+            ),   
         );
     }
 }

@@ -81,6 +81,7 @@ class webPage {
         <?php
     }
     public function pageHeader() { ?>    
+        <div id="betabar">Thanks for visiting the <strong>beta version</strong> of the new SNAP web page!</div>
         <a name="top"/>
         <div id="header">
             <a href="/"><span id="header_left"><img src="/images/snap_acronym_rgb.png" height="90px" alt="SNAP Acronym Logo" /></span></a>
