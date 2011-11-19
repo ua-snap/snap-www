@@ -262,6 +262,28 @@ sql
 ,
           'down' => 'DELETE FROM `snapwww`.`people` WHERE `id`=23 LIMIT 1;'
         )
+            ),
+            7 => new Migration(
+          array(
+          'version' => 7,
+          'up' => <<<sql
+CREATE  TABLE `snapwww`.`project_resource_link` (
+  `project_resource_link_id` INT NOT NULL AUTO_INCREMENT,
+  `project_id` INT NULL ,
+  `resource_id` INT NULL ,
+  PRIMARY KEY (`project_resource_link_id`) ,
+  INDEX `index` (`project_id` ASC, `resource_id` ASC) );
+sql
+,
+          'fixtures' => <<<sql
+INSERT INTO `snapwww`.`project_resource_link` (`project_id`, `resource_id`) VALUES (1, 1);
+INSERT INTO `snapwww`.`project_resource_link` (`project_id`, `resource_id`) VALUES (1, 2);
+INSERT INTO `snapwww`.`project_resource_link` (`project_id`, `resource_id`) VALUES (2, 1);
+INSERT INTO `snapwww`.`project_resource_link` (`project_id`, `resource_id`) VALUES (2, 2);
+sql
+,
+          'down' => 'DROP TABLE `snapwww`.`project_resource_link`;'
+        )
             ),                  
         );
     }

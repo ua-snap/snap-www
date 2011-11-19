@@ -80,8 +80,7 @@ class webPage {
       
         <?php
     }
-    public function pageHeader(){ ?>    
-        <!-- <div class="slashbar"></div> -->
+    public function pageHeader() { ?>    
         <a name="top"/>
         <div id="header">
             <a href="/"><span id="header_left"><img src="/images/snap_acronym_rgb.png" height="90px" alt="SNAP Acronym Logo" /></span></a>
@@ -101,13 +100,8 @@ class webPage {
                     });
 
                     </script>
-
-<?php
-                }
-                ?>
-                
+        <?php   }   ?>
             </div>
-
         </div>      
                 <?php $this->mainMenu(); ?>
         <div id="subbar" style="width: 975px; height: 35px; margin-top: 15px; margin: auto;" class="horiz_bar">
@@ -124,7 +118,7 @@ class webPage {
                 <a class="addthis_button"><img src="/images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/></a>
             </div>
         </div>
-        <div style="color: #999999; width: 975px; margin: auto; text-align: right; padding-top: 10px;" class="contactbar"><a href="/blog/">blog</a> | <a href="/people.php#contact">contact</a> | <a href="/sitemap.php">sitemap</a> | <a href="/search.php">search</a></div>
+        <div style="color: #999999; width: 975px; margin: auto; text-align: right; padding-top: 10px;" class="contactbar"><a href="/people.php#contact">contact</a> | <span title="Not implemented yet">sitemap</span> | <span title="Not Implemented Yet">search</span></div>
         <?php
     }
     public function pageFooter(){ ?>
@@ -135,12 +129,10 @@ class webPage {
                 <span style="margin-left: 40px;"><a href="http://www.facebook.com/pages/SNAP-and-ACCAP/112992248723524?v=wall">facebook</a></span>
                 <span style="margin-left: 40px;"><a href="http://twitter.com/#!/SNAPandACCAP">twitter</a></span>
                 <span style="margin-left: 40px;"><a href="http://dev.snap.uaf.edu/blog/?feed=rss2">blog rss</a></span>
-                <!--<span style="margin-left: 40px;"><a href="">email updates</a></span>-->
             </div>
             <div id="footbar">
                 <div class="horiz_bar_left" style="color: #eeeeee; relative; font-size: 10px;">
                     <div style="position: absolute; margin-left: 20px; text-align: left; ">
-                    <!--We just set up this twitter account so now we'll show some tweets right here @twitter, is that how this works? #awkwardfirsttweet-->
                         <div id="twitter_update_list"></div>
                         <script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
                         <script type="text/javascript" src="http://twitter.com/statuses/user_timeline/SNAPandACCAP.json?callback=twitterCallback2&amp;count=1"></script>
@@ -154,7 +146,7 @@ class webPage {
             <div style="margin-bottom: 20px; ">
                 <div style="float: left; margin-right: 40px;">
                     <div><a href="/"><img src="/images/snap_acronym_rgb.png" height="53px" alt="SNAP Acronym Logo" /></a></div>
-                    <div class="contactbar"><a href="/blog/">blog</a> | <a href="/people.php#contact">contact</a> | <a href="/sitemap.php">sitemap</a> | <a href="/search.php">search</a></div>
+                    <div class="contactbar" style="text-align: right;"><a href="/people.php#contact">contact</a> | <span title="Not implemented yet">sitemap</span> | <span title="Not implemented yet">search</span></div>
                 </div>
                 <div style ="float: left; width: 450px; text-align: left; margin-top: 13px;">Copyright &copy; 2011 <a href="/" style="color: #222222; text-decoration: underline;">Scenarios Network for Alaska &amp; Arctic Planning</a>, a research institute of the <a href="http://www.uaf.edu" style="color: #222222; text-decoration: underline;">University of Alaska Fairbanks</a>.  UAF is an affirmative action/equal opportunity employer and educational institution.</div>
                 <div><a href="http://www.uaf.edu"><img src="/images/UAFLogo_A_black_horiz.png" height="55px" style="margin-top: 13px;" alt="UAF Logo" /></a></div>

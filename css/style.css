@@ -321,6 +321,21 @@ h3 {
 	margin: 1ex 0 0 0;
 	color: #242d2f;
 }
+
+#projectLinks h4, #resourceLinks h4 {
+	color: #6a7173;
+	margin-bottom: 5px;
+}
+
+#projectLinks ul, #resourceLinks ul {
+	margin: 0; padding: 0;
+	list-style-type: none;
+}
+
+#projectLinks li, #resourceLinks li {
+	margin: 0; padding: 0;
+}
+
 .heading {
 	color: #777777;
 	font-size: 20px;

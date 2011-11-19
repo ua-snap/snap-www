@@ -1,5 +1,6 @@
 <?php
 require_once "src/Resource.php";
+require_once "src/ProjectResourceLink.php";
 
 include("template.php");
 $page = new webPage("SNAP: Resources", "resources.css", "resources");
@@ -68,6 +69,11 @@ $resource = Resource::fetchById($_GET['resourceid']);
                         <div style="line-height: 20px;">
 
                             <?php 
+
+                                // Render links to projects, if any
+                                $links = new ProjectResourceLink();
+                                echo $links->getHtmlByResource($_GET['resourceid']);
+
                                 $query = "SELECT collaborators.id,collaborators.name,collaborators.image FROM collaborators JOIN resource_collaborators ON collaborators.id=resource_collaborators.collaboratorid WHERE resource_collaborators.resourceid='".$_GET['resourceid']."' ";
 
 
@@ -90,16 +96,9 @@ $resource = Resource::fetchById($_GET['resourceid']);
                                         }
                                         $h .= "px";
                                         $w .= "px";
-                                        //echo "<div style=\"display: inline-block; width: 80px; height: 80px; margin-right: 25px; margin-left: 25px; text-align: center;\"><a href=\"#org_".$row['id']."\"><img style=\"vertical-align: middle; width: $w; height: $h;\" src=\"images/collaborators/".$row['image']."\"  /></a></div>";
+      
                                         echo "<div style=\"display: inline-block; margin-right: 15px; margin-bottom: 15px; margin-top: 15px; \">";
-                                        //  $size = getimagesize("images/collaborators/".$collab['image']);
-                                        //  $width = $size[0];
-                                        //  $height = $size[1];
-                                        //  $ratio = $width / ($height / 75);
-                                        //  if ($ratio < 75){
-                                        //      $ratio = 75;
-                                        //  }
-                                            //echo "<div style=\"width: 150px; margin-bottom: 15px; text-align: left; font-size: 12px;\">".$collab['name']."</div>";
+                        
                                             echo "<div style=\"height: 100px; width: 150px; text-align: center;\">";
 
                                                 echo "<a href=\"collaborators.php#org_".$collab['id']."\"><img alt=\"".$collab['name']."\" src=\"/images/collaborators/".$collab['image']."\" style=\"width: $w; height: $h; vertical-align: middle;\" /></a>";
@@ -108,48 +107,7 @@ $resource = Resource::fetchById($_GET['resourceid']);
                                     }
                                     echo "</div>";
                                 }
-                                /*
-                                $result = mysql_query($query);
-                                $result = mysql_query($query) or die (mysql_error());
-                                if (mysql_num_rows($result) > 0){
-                                    echo "<div style=\"font-weight: bold; color: #6a7173; margin-top: 30px; margin-bottom: 10px;\">Collaborators</div>";
-                                    echo "<div>";
-                                    while ($collab = mysql_fetch_array($result)){
-                                        echo "<div style=\"display: inline-block; margin-right: 5px; vertical-align: top \">";
-                                            $size = getimagesize("images/collaborators/".$collab['image']);
-                                            $width = $size[0];
-                                            $height = $size[1];
-                                            $ratio = $width / ($height / 75);
-                                            if ($ratio < 75){
-                                                $ratio = 75;
-                                            }
-                                            //echo "<div style=\"width: 150px; margin-bottom: 15px; text-align: left; font-size: 12px;\">".$collab['name']."</div>";
-                                            echo "<div style=\"height: 150px; width: 150px;\">";
-
-                                                echo "<img alt=\"".$collab['name']."\" src=\"/images/collaborators/".$collab['image']."\" style=\"width: 150px; vertical-align: middle;\" />";
-                                            echo "</div>";
-                                        echo "</div>";
-                                    }
-                                    echo "</div>";
-                                }
-                            ?>
-                        </div>
-                        <div>
-
-                            <?php
-                                $query = "SELECT people.id, title, first, last, organization FROM people JOIN project_personnel ON people.id = project_personnel.peopleid WHERE project_personnel.projectid = '".$project['id']."' AND scientist=true";
-                                $result = mysql_query($query) or die (mysql_error());
-                                if (mysql_num_rows($result) > 0){
-                                    echo "<div style=\"font-weight: bold; color: #6a7173; margin-top: 30px;\">Primary Scientists</div>";
-                                    echo "<div>";
-                                    while ($sci = mysql_fetch_array($result)){
-                                        $fullname = $sci['title']." ".$sci['first']." ".$sci['last'];
-                                        echo "<div style=\"margin-top: 5px;\"><a href=\"people_page.php?id=".$sci['id']."\">".$fullname."</a> (".$sci['organization'].")</div>";
-                                    }
-                                    echo "</div>";
-                    
-                                }
-                    */
+                             
                             ?>
                         </div>
                         <div>
