@@ -34,7 +34,7 @@ $resource = Resource::fetchById($_GET['resourceid']);
 
                             echo $resource->render(); // only applies to video type, is no-op for other things 
                             
-                            $att_query = "SELECT * FROM attachments WHERE resourceid='$resourceid' ORDER BY category, id";
+                            $att_query = "SELECT * FROM attachments WHERE resourceid='$resourceid' ORDER BY sortorder, category, name ASC, id";
                             $att_result = mysql_query($att_query);
                             echo "<div style=\"color: #242d2f; margin-left: 20px; font-size: 22px; \">Downloads</div>";
                             echo "<div style=\"margin-left: 20px; margin-top: 10px;\">";
@@ -86,7 +86,6 @@ $resource = Resource::fetchById($_GET['resourceid']);
                                         $size = getimagesize("images/collaborators/".$collab['image']);
                                         $width = $size[0];
                                         $height = $size[1];
-                                        //echo $width." ".$height;
                                         if ($width > $height){
                                             $w = 100;
                                             $h = ($height * (100 / $width));
