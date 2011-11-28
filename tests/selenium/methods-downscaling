@@ -17,16 +17,25 @@
 	<td></td>
 </tr>
 <tr>
-	<td>clickAndWait</td>
+	<td>click</td>
 	<td>link=Downscaling</td>
 	<td></td>
 </tr>
 <tr>
 	<td>verifyTextPresent</td>
-	<td>Downscaling is a procedure that takes known information at large scales to make predictions at local scales.&nbsp;&nbsp;As such, the output products are essentially value added products of existing datasets.&nbsp;&nbsp;Therefore, it is essential to give an overview of our data sources.</td>
+	<td>Downscaling is a procedure that takes known information at large scales to make predictions at local scales.</td>
 	<td></td>
 </tr>
-
+<tr>
+	<td>open</td>
+	<td>methods.php#downscaling</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyTextPresent</td>
+	<td>Downscaling is a procedure that takes known information at large scales to make predictions at local scales.</td>
+	<td></td>
+</tr>
 </tbody></table>
 </body>
 </html>

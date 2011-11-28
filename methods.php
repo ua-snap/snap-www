@@ -4,6 +4,7 @@ $page = new webPage("SNAP: Methods", "", "methods");
 $page->openPage();
 $page->pageHeader();
 ?>
+
     <div id="main_body">
         <div id="main_content">
             <div id="methods">
@@ -45,13 +46,43 @@ $page->pageHeader();
                 </div>
             </div>
             <script>
-                $('.submenu span').click( function(e) {
-                    target = $(e.currentTarget).attr('target');
-
-                    $('#methods div').hide();
-                    $('#'+$(e.currentTarget).attr('target')).show();
-                });
+$('.submenu span').click( function(e) {
+    target = $(e.currentTarget).attr('target');
+    $('#methods div').hide();
+    $('#'+$(e.currentTarget).attr('target')).show();
+    window.methodsRouter.navigate($(e.currentTarget).find('a').text().toLowerCase(), true);
+    e.stopPropagation();
+    return false;
+});
             </script>
+            <script type="text/javascript">
+
+var MethodsRouter = Backbone.Router.extend({
+    routes: {
+        "overview" : "overview",
+        "downscaling" : "downscaling",
+        "modeling" : "modeling"
+    },
+    overview: function() {
+        console.log('in route:overview');
+        $('.submenu span[target="methods-index"]').click();
+    },
+    downscaling: function() {
+                console.log('in route:downscaling');
+
+        $('.submenu span[target="methods-downscaling"]').click();
+    },
+    modeling: function() {
+                console.log('in route:modeling');
+
+      $('.submenu span[target="methods-modeling"]').click();
+    }
+});
+
+window.methodsRouter = new MethodsRouter({pushState:false});
+Backbone.history.start();
+
+</script>
         </div>
     </div>
 <?php

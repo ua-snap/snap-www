@@ -5,6 +5,7 @@
 function OpacityControl( overlay ) {
   this.overlay = overlay;
 }
+
 OpacityControl.prototype = new GControl();
 
 // This function positions the slider to match the specified opacity

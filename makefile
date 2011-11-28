@@ -21,6 +21,8 @@ javascript :
 --warning_level QUIET \
 --compilation_level WHITESPACE_ONLY \
 --js=./js/jquery-1.6.4.min.js \
+--js=./js/jquery-underscore-min.js \
+--js=./js/jquery-backbone-min.js \
 --js=./js/jquery.blockUI.js \
 --js=./js/jquery.hoverIntent.minified.js \
 --js=./js/jquery.cycle.all.js \

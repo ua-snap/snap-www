@@ -6,7 +6,7 @@
 	var rectangle;
 	var polygon;
 	var polyline;
-	var point_list = new google.maps.MVCArray();
+	// TODO: var point_list = ( _.isUndefined(google)) ? undefined : new google.maps.MVCArray();
 	var marker_list = [];
 	var poly_listener;
 	var fullscreen = false;
