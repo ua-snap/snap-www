@@ -40,7 +40,23 @@ $page->pageHeader();
 <p>The core statistic of the validation was a root-mean-square error (RMSE) evaluation of the differences between mean model output for each grid point and calendar month, and data from the European Centre for Medium-Range Weather Forecasts (ECMWF) Re-Analysis, <a target="_blank" href="http://www.ecmwf.int/products/data/archive/descriptions/e4/index.html">ERA-40</a>. The ERA-40 directly assimilates observed air temperature and sea level pressure observations into a product spanning 1958-2000. Precipitation is computed by the model used in the data assimilation. The ERA-40 is one of the most consistent and accurate gridded representations of these variables available.</p>
 <p>To facilitate GCM intercomparison and validation against the ERA-40 data, all monthly fields of GCM temperature, precipitation and sea level pressure were interpolated to the common 2.5&deg; × 2.5&deg; latitude–longitude ERA-40 grid. For each model, Walsh et al. calculated RMSEs for each month, each climatic variable, and each region, then added the 108 resulting values (12 months &times; 3 features &times; 3 regions) to create a composite score for each model. A lower score indicated better model performance.</p>
 <p>The specific models that performed best over the larger domains tended to be the ones that performed best over Alaska. Although biases in the annual mean of each model typically accounted for about half of the models’ RMSEs, the systematic errors differed considerably among the models. There was a tendency for the models with the smaller errors to simulate a larger greenhouse warming over the Arctic, as well as larger increases of Arctic precipitation and decreases of Arctic sea level pressure when greenhouse gas concentrations are increased.</p>
-<p>Since several models had substantially smaller systematic errors than the other models, the differences in greenhouse projections implied that the choice of a subset of models might offer a viable approach to narrowing the uncertainty and obtaining more robust estimates of future climate change in regions such as Alaska. Thus, SNAP selected the five best-performing models out of the fifteen: MPI_ECHAM5, GFDL_CM2_1, MIROC3_2_MEDRES, UKMO_HADCM3, and CCCMA_CGCM3_1 These five models are used to generate climate projections independently, as well as in combination, in order to further reduce the error associated with dependence on a single model.</p>
+<p>Since several models had substantially smaller systematic errors than the other models, the differences in greenhouse projections implied that the choice of a subset of models might offer a viable approach to narrowing the uncertainty and obtaining more robust estimates of future climate change in regions such as Alaska. Thus, SNAP selected the five best-performing models out of the fifteen:</p>
+
+<table>
+<thead>
+<tr>
+<th scope="col">Center</th><th scope="col">Model Name and Version</th><th scope="col">Acronym</th>
+</tr>
+</thead>
+<tbody>
+<tr class="first"><td>Canadian Centre for Climate Modelling and Analysis</td><td>General Circulation Model version 3.1 - t47</td><td class="last">cccma_cgcm31</td></tr>
+<tr><td>Max Planck Institute for Meteorology</td><td>European Centre Hamburg Model 5</td><td class="last">mpi_echam5</td></tr>
+<tr><td>Geophysical Fluid Dynamics Laboratory</td><td>Coupled Climate Model 2.1</td><td class="last">gfdl_cm21</td></tr>
+<tr><td>UK Met Office - Hadley Centre</td><td>Coupled Model 3.0</td><td class="last">ukmo_hadcm3</td></tr>
+<tr><td>Center for Climate System Research</td><td>Model for Interdisciplinary Research on Climate medium resolution</td><td class="last">miroc3_2_medres</td></tr>
+</tbody>
+</table>
+<p>These five models are used to generate climate projections independently, as well as in combination, in order to further reduce the error associated with dependence on a single model.</p>
 <code>graphics: images/graphs from the model selection paper, John’s headshot?, map showing all modeling centers around the world</code>
 <p><a href="#top">Back to top</a></p>
                 </div>
