@@ -313,7 +313,13 @@ h2 {
 	padding: 0px;
 	color: #6a7173;
 }
-#methods h2 {
+.methods p {
+	line-height: 1.5 !important;
+}
+.methods h3 a {
+	color: black;
+}
+.methods h2 {
 	font-size: 34px; 
 	color: #242d2f;
 	margin-bottom: 30px;
@@ -324,50 +330,50 @@ h3 {
 	padding: 0px;
 	color: #6a7173;
 }
-#methods h3 {
+.methods h3 {
 	color: #242d2f;
 	margin: 1ex 0;
 	font-size: 25px;
 }
-#methods h4 {
+.methods h4 {
 	margin: 1ex 0 0 0;
 	color: #242d2f;
 }
 
-#methods table {
+.methods table {
 	text-align: left;
 	margin: 1em;
 }
 
-#methods tbody {
+.methods tbody {
 	border-top: 1px solid #ccc;
 }
 
-#methods thead {
+.methods thead {
 	margin-bottom: 1em;
 }
 
-#methods tr:nth-child(even) {
+.methods tr:nth-child(even) {
 	background-color: #f1fcff;
 }
 
-#methods th {
+.methods th {
 	padding: 1ex 1em 1ex 1ex;
 	margin-bottom: 1em;
 }
 
-#methods td {
+.methods td {
 	padding: 1ex 1em 1ex 1ex;
 }
 
-#methods th.last, #methods td.last {
+.methods th.last, .methods td.last {
 	padding-right: 1ex;
 }
 
-#methods tr.first td {
+.methods tr.first td {
 	padding-top: 1em;
 }
-#methods code {
+.methods code {
 	color: #aaa; font-size: 10pt;
 }
 

@@ -60,6 +60,7 @@ class webPage {
     <?php 
     }
     public function openPage(){ ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -77,13 +78,17 @@ class webPage {
 
         ?>
         <link rel="shortcut icon" href="/images/snap.ico" />
-      
+    
+    </head>
+    <body>
+
         <?php
     }
     public function pageHeader() { ?>    
         <div id="betabar">Thanks for visiting the <strong>beta version</strong> of the new SNAP web page!</div>
-        <a name="top"/>
+
         <div id="header">
+            <a name="top"/>
             <a href="/"><span id="header_left"><img src="/images/snap_acronym_rgb.png" height="90px" alt="SNAP Acronym Logo" /></span></a>
             <div id="header_right">
                 <div><a href="/"><img src="/images/snap_full.png" height="30px" alt="Scenarios Network for Alaska Planning" /></a></div>
