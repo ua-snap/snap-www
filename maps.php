@@ -27,36 +27,7 @@ $page->connectToDatabase();
                         });
                     });
                     $(window).resize(resize);
-                    //google.maps.event.addListenerOnce(map, 'idle', addMap);
-                </script>   
-                <!--
-                <div id="controls">
-                    <input type="button" onclick="javascript:drawPoly();" value="Draw Polygon" class="btn" />
-                    <input type="button" onclick="javascript:drawRectangle();" value="Draw Rectangle" class="btn" />
-                </div>
-                -->
-                <?php
-
-                    $v = "";
-                    if ($_GET['v']){ $v = " WHERE variable='".mysql_real_escape_string($_GET['v'])."'"; }
-                    $query = "SELECT variable FROM tileset $v GROUP BY variable";
-                    $result = mysql_query($query) or die(mysql_error());
-                    $variable = "";
-                    if (mysql_num_rows($result) > 0){
-                        $row = mysql_fetch_array($result);
-                        $variable = $row['variable'];
-                    }
-                    $int = "";
-                    if ($_GET['int']){ $int = mysql_real_escape_string($_GET['int']); }
-                    $ran = "";
-                    if ($_GET['ran']){ $ran = mysql_real_escape_string($_GET['ran']); }
-                    $sce = "";
-                    if ($_GET['sce']){ $sce = mysql_real_escape_string($_GET['sce']); }
-                    $mod = "";
-                    if ($_GET['mod']){ $mod = mysql_real_escape_string($_GET['mod']); }
-                    $res = "";
-                    if ($_GET['res']){ $res = mysql_real_escape_string($_GET['res']); }
-                ?>  
+                </script>
                 <div id="map_header" style="height: auto;">
                     <div style="margin-top: 0px; margin-bottom: 0px;">
                         <div style="float: left;"><img alt="Map Tool Logo" style="margin-top: 20px; margin-bottom: 20px; vertical-align: middle" src="images/logo_snap_maps_stats.png" /></div>
@@ -78,10 +49,6 @@ $page->connectToDatabase();
                         <div style="float: right; margin-left: 20px; font-size: 20px; height: 38px; border-left: 4px solid #ffffff; background-color: #97A93A"><a class="addthis_button" style="color: #ffffff;"><img alt="Share" style="margin-left: 20px; margin-right: 20px;" src="/images/share.png" /></a></div>
                         <div style="float: right; margin-left: 20px; font-size: 14px;">
                             <span style="margin-right: 10px;">This Map: </span>
-                            <!--
-                            <span style="margin-right: 15px;"><a href="">Info</a></span>
-                            <span style="margin-right: 15px;"><a href="">Stats</a></span>
-                            -->
                             <span style="margin-right: 15px;"><a href="" onclick="window.print()">Print</a></span>
                             <span style="margin-right: 15px;"><a href="" >Link</a></span>
                         </div>
@@ -93,9 +60,7 @@ $page->connectToDatabase();
                         <div id="legend_background"></div>
                         <div id="legend"></div> 
                     </div>
-                    <div style="position: absolute; width: 300px; height: 50px; border: 1px solid #555555; right: 149px; top: 0px; background-color: #eeeeee;">
-                        <div style="margin-top: 20px; margin-left: 20px;"><input style="text" style="width: 300px;" /></div>
-                    </div>
+
                 </div>
                 <div id="map_footer">
                     <div class="map_bar">
@@ -106,7 +71,3 @@ $page->connectToDatabase();
                 </div>
     </body>
 </html>
-<?php
-
-//$page->closePage();
-?>

@@ -131,30 +131,29 @@
 		writeHash(); //Needed as otherwise it doesn't trigger from the idle event as moving/zooming does
 
 	}
-      	/*
-        * Google Map initialization function
-        * Called on the initial page load.
+  	/*
+    * Google Map initialization function
+    * Called on the initial page load.
 	* Sets up default map space, values, etc.
-      	*/
+  	*/
 	function init(zl, la, ln) {
-		var zoomlevel;
-		if (zl >= 0 && zl <= 15){
-			zoomlevel = parseInt(zl);
-		} else {
-			zoomlevel = 4;
-		}
-		if (parseInt(la) <= Math.abs(90)){
+
+		if (parseInt(la) <= Math.abs(90)) {
 			loclat = parseFloat(la);
 		} else {
 			loclat = 63.5;
 		}
-		if (parseInt(ln) <= 180){
+
+		if (parseInt(ln) <= Math.abs(180)) {
 			loclng = parseFloat(ln);
 		} else {
 			loclng = -147;
 		}
+
 		map = new google.maps.Map(document.getElementById('map_canvas'), {
-			zoom: zoomlevel,
+			zoom: 3,
+			minZoom: 2,
+			maxZoom: 8,
 			'center': new google.maps.LatLng(loclat, loclng),
 			disableDefaultUI: true,
 			navigationControl: true,
@@ -165,23 +164,13 @@
 			mapTypeControl: true,
 			mapTypeId: google.maps.MapTypeId.TERRAIN
 		});
-		if (point_list){
-			polygon = new google.maps.Polygon({
-				map: map,
-				fillColor: "#333333",
-				fillOpacity: "0.2",
-				strokeColor: "#333333",
-				strokeWeight: "4"
-			});
-			polygon.setPaths(point_list);
 
-		}
 		resize();
       }
 	/*
 	  Called when the page is resized
 	*/
-     	function resize() {
+ 	function resize() {
 		var h = $("body").height() - $("#map_header").height() - 50;
 		if (h > 0) {
 			$("#map_canvas").height(h);
@@ -193,6 +182,7 @@
 			$("#map_footer").width(w - 10);
 		}
 	}
+	/*
 	//Shows XY of points
 	function redraw() {
 		var latLngBounds = new google.maps.LatLngBounds(
@@ -234,7 +224,7 @@
 	}
 	/*
 		Close the polygon points to create the final polygon and shade it
-	*/
+
 	function closePoly(){
 		google.maps.event.removeListener(poly_listener);
 		polygon.setPaths(point_list);
@@ -246,7 +236,7 @@
 	}
 	/*
 		Deletes the values of the polygon array
-	*/
+
 	function hidePoly(){
 		if (poly_listener){
 	                google.maps.event.removeListener(poly_listener);
@@ -305,7 +295,7 @@
 	}
 	/*
 		Deletes a rectangle selection
-	*/
+
 	function hideRectangle(){
 		marker1.setMap(null);
 		marker2.setMap(null);
@@ -314,7 +304,7 @@
 	}
 	/*
 		Draw a rectangle boundary with 2 labels, allows for drag/drop of corners
-	*/
+
 	function drawRectangle(){
 		if (polygon || polyline){
 			hidePoly();
@@ -347,3 +337,4 @@
 		});
 		redraw();
 	}
+*/
