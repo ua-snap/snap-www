@@ -295,7 +295,20 @@ sql
 ,
           'down' => ''
         )
-            ),   
+            ),
+            9 => new Migration(
+          array(
+          'version' => 9,
+          'up' => <<<sql
+ALTER TABLE `snapwww`.`attachments` 
+ADD INDEX `resource` (`resourceid` ASC, `category` ASC, `sortorder` ASC, `name` ASC);
+
+sql
+,
+          'fixtures' => '',
+          'down' => ''
+        )
+            ), 
         );
     }
 }

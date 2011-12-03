@@ -58,7 +58,7 @@ cp -a css/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/
 cp -R images/* ${RPM_BUILD_ROOT}/%{inst_dir}/images/
 cp -aR exporting-server ${RPM_BUILD_ROOT}/%{inst_dir}/exporting-server/
 cp -a build/snap.conf ${RPM_BUILD_ROOT}/etc/httpd/conf.d/
-cp -a build/snapweb_database_maintenance.php /etc/cron.weekly/
+cp -a build/snapweb_database_maintenance.php ${RPM_BUILD_ROOT}/etc/cron.weekly/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
