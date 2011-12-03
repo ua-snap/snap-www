@@ -1,5 +1,7 @@
 <?php
 
+define('SNAPWEB_VERSION', 'V_DEV');
+
 class Template {
 	
 	public function getHeadJavascript()

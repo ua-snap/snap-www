@@ -302,6 +302,14 @@ sql
           'up' => <<<sql
 ALTER TABLE `snapwww`.`attachments` 
 ADD INDEX `resource` (`resourceid` ASC, `category` ASC, `sortorder` ASC, `name` ASC);
+ALTER TABLE `snapwww`.`project_collaborators` 
+ADD INDEX `index` (`collaboratorid` ASC, `projectid` ASC) ;
+ALTER TABLE `snapwww`.`community_charts` 
+ADD INDEX `charts` (`community` ASC, `month` ASC, `daterange` ASC, `type` ASC, `scenario` ASC) ;
+ALTER TABLE `snapwww`.`project_personnel` 
+ADD INDEX `index` (`projectid` ASC, `peopleid` ASC) ;
+ALTER TABLE `snapwww`.`project_photos` 
+ADD INDEX `index` (`projectid` ASC) ;
 
 sql
 ,
