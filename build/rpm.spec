@@ -46,6 +46,7 @@ mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/temp
 mkdir -p ${RPM_BUILD_ROOT}/var/log/
 mkdir -p ${RPM_BUILD_ROOT}/etc/httpd/conf.d
 mkdir -p ${RPM_BUILD_ROOT}/home/jenkins/
+mkdir -p ${RPM_BUILD_ROOT}/etc/cron.weekly/
 
 touch ${RPM_BUILD_ROOT}/var/log/%{hostname}-error_log
 touch ${RPM_BUILD_ROOT}/var/log/%{hostname}-access_log
@@ -57,8 +58,8 @@ cp -a js/* ${RPM_BUILD_ROOT}/%{inst_dir}/js/
 cp -a css/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/
 cp -R images/* ${RPM_BUILD_ROOT}/%{inst_dir}/images/
 cp -aR exporting-server ${RPM_BUILD_ROOT}/%{inst_dir}/exporting-server/
-cp -a build/snap.conf ${RPM_BUILD_ROOT}/etc/httpd/conf.d/snap.conf
-cp -a build/snapweb_database_maintenance.php ${RPM_BUILD_ROOT}/etc/cron.weekly/snapweb_database_maintenance.php
+cp -a build/snap.conf ${RPM_BUILD_ROOT}/etc/httpd/conf.d/
+cp -a build/snapweb_database_maintenance.php ${RPM_BUILD_ROOT}/etc/cron.weekly/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
