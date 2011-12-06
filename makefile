@@ -33,7 +33,7 @@ javascript :
 
 .PHONY: version
 version :
-	sed -i "/V_DEV/$(SNAPWWW_RELEASE_VERSION)/g" src/Template.php
+	sed -i "s/V_DEV/$(SNAPWWW_RELEASE_VERSION)/g" src/Template.php
 
 .PHONY: clean
 clean : 
