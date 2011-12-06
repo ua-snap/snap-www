@@ -310,6 +310,10 @@ ALTER TABLE `snapwww`.`project_personnel`
 ADD INDEX `index` (`projectid` ASC, `peopleid` ASC) ;
 ALTER TABLE `snapwww`.`project_photos` 
 ADD INDEX `index` (`projectid` ASC) ;
+ALTER TABLE `snapwww`.`project_resource_link` 
+ADD INDEX `index2` (`project_id` ASC, `resource_id` ASC) ;
+ALTER TABLE `snapwww`.`projects` 
+ADD INDEX `index2` (`snap` ASC, `accap` ASC, `fsc` ASC) ;
 
 sql
 ,

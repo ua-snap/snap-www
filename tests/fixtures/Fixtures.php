@@ -38,14 +38,15 @@ class Fixtures
         ),
         15 => array(
             "id" => 15,
-            "title" => "SNAP climate projections - regional Alaska projections",
+            "format" => NULL,
+            "title" => "Introduction to SNAP",
             "createdate" => '2020-11-03',
-            "summary" => "",
+            "summary" => "Dr. Scott Rupp introduces the Scenarios Network for Alaska &amp; Arctic Planning in this short video",
             "updatedate" => NULL,
             "type" => 4,
-            "fsc" => 0,
             "accap" => 0,
-            "snap" => 1
+            "fsc" => 0,
+            "snap" => 0
         ),
     );
 
@@ -203,12 +204,12 @@ html
             </div>
             <div style="position: relative; left: 59px; width: 380px;">
                 <div style="font-size: 15px; color: #111111; margin-top: 5px; margin-bottom: 5px;" >
-                    <a href="resource_page.php?resourceid=15">SNAP climate projections - regional Alaska projections</a>
+                    <a href="resource_page.php?resourceid=15">Introduction to SNAP</a>
                 </div>
                 <div style="position: relative; width: 420px; margin-bottom: 10px;"><!-- no-op lint --></div>
             </div>
         </div>
-    <div style="margin-top: 10px;width: 420px; padding: 10px;"></div>
+    <div style="margin-top: 10px;width: 420px; padding: 10px;">Dr. Scott Rupp introduces the Scenarios Network for Alaska &amp; Arctic Planning in this short video</div>
     <div style="position: relative; left: 385px; bottom: 5px; margin-top: 10px;">
         <a id="pub_close_15" style="cursor: pointer; cursor: hand;">close &#8855;</a>
     </div>
@@ -218,7 +219,7 @@ html
 </div>
 <div style="position: absolute; padding-top: 6px; left: 60px; width: 380px;">
     <div style="font-size: 15px; color: #111111; margin-bottom: 5px;" >
-        <a href="resource_page.php?resourceid=15">SNAP climate projections - regional Alaska projections</a>
+        <a href="resource_page.php?resourceid=15">Introduction to SNAP</a>
     </div>
 </div>
 <script type="text/javascript">

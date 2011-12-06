@@ -83,6 +83,7 @@ class ResourcesTest extends PHPUnit_Framework_TestCase
         $this->assertEquals( Fixtures::$resourceSummaries[15], $r->toSummaryHtml(), "User can see summary block of information about a resource, including a Hover functionality that shows more detail");
     }
 
+
     public function testQueryStringDefault()
     {
         $r = new ResourceLayout();

@@ -27,7 +27,6 @@ class ProjectResourceLinkTest extends PHPUnit_Framework_TestCase
         }      
         $r = new ProjectResourceLink();
         $html = $r->getHtmlByResource(1);
-        var_dump($html);
         $this->assertTag(array('tag'=>'div','attributes'=>array('id'=>'projectLinks')), $html, 'ensure div wrapper present');
         $this->assertTag(array('tag'=>'h4','content'=>'Related projects'), $html, 'ensure header element present');
         $this->assertTag(array('tag'=>'a','content'=>'North Slope Climate Analysis','attributes'=>array('href'=>'project_page.php?projectid=1')), $html, 'validate 1st link to project');
