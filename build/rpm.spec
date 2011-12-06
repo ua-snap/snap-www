@@ -29,8 +29,8 @@ This package contains the web site for the Scenarios Network for Alaska and Arct
 %setup -c
 
 %build
-# Minifies javascript
-make
+make javascript
+make version
 
 %install
 rm -rf ${RPM_BUILD_ROOT}

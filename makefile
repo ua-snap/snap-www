@@ -31,6 +31,10 @@ javascript :
 --js_output_file=./js/min.js
 	sed -ni '1h;1!H;$${;g;s:<!-- package-javascript.*end-package -->:<script type="text/javascript" src="js/min.js"/>:p;}' src/Template.php
 
+.PHONY: version
+version :
+	sed -i "/V_DEV/$(SNAPWWW_RELEASE_VERSION)/g" src/Template.php
+
 .PHONY: clean
 clean : 
 	rm ./js/snap.min.js
