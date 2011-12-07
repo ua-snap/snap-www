@@ -134,7 +134,6 @@ class webPage {
                 <span style="font-weight: bold; margin-left: 20px;">Follow us</span>
                 <span style="margin-left: 40px;"><a href="http://www.facebook.com/pages/SNAP-and-ACCAP/112992248723524?v=wall">facebook</a></span>
                 <span style="margin-left: 40px;"><a href="http://twitter.com/#!/SNAPandACCAP">twitter</a></span>
-                <span style="margin-left: 40px;"><a href="http://dev.snap.uaf.edu/blog/?feed=rss2">blog rss</a></span>
             </div>
             <div id="footbar">
                 <div class="horiz_bar_left" style="color: #eeeeee; relative; font-size: 10px;">

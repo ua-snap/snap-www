@@ -66,7 +66,7 @@ $page->connectToDatabase();
                     <div class="map_bar">
                         <span style="float: left; margin-left: 20px; color: #333333;"><a href="">Help</a> | <a href="">About this tool</a></span>
                         <span style="float: right; margin-right: 20px; color: #333333;"><a href="http://www.uaf.edu"><img alt="UAF Logo" style="height: 28px;" src="images/UAFLogo_A_white.png" /></a></span>
-                        <span style="float: right; margin-right: 35px; color: #333333;"><a href="http://dev.snap.uaf.edu"><img alt="SNAP Logo" src="images/snap_acronym_white.png" /></a></span>
+                        <span style="float: right; margin-right: 35px; color: #333333;"><a href="<?php echo Config::$url ?>"><img alt="SNAP Logo" src="images/snap_acronym_white.png" /></a></span>
                     </div>
                 </div>
     </body>

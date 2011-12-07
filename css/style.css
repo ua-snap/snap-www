@@ -1,11 +1,7 @@
 html {
 	height: 100%;
 }
-@font-face {
-  font-family: "privathreepro";
-  src: local("."),
-    url("../fonts/PriveThreePro.otf") format("opentype");
-  }
+
 body {
 	/*font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;*/
 	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;	
