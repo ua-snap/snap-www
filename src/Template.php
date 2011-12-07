@@ -46,6 +46,7 @@ are used to determine the region to be replaced with a single script inclusion.
        services_compact: 'facebook,twitter,google_plusone,print,email'
     }
 </script>
+
 js;
 	}
 	

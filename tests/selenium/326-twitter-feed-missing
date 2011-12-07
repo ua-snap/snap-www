@@ -22,11 +22,10 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyTextPresent</td>
+	<td>verifyText</td>
 	<td>id=twitter_update_list</td>
-	<td></td>
+	<td>regexpi:.+</td>
 </tr>
-
 </tbody></table>
 </body>
 </html>

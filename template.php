@@ -141,7 +141,7 @@ class webPage {
                     <div style="position: absolute; margin-left: 20px; text-align: left; ">
                         <div id="twitter_update_list"></div>
                         <script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
-                        <script type="text/javascript" src="http://twitter.com/statuses/user_timeline/SNAPandACCAP.json?callback=twitterCallback2&amp;count=1"></script>
+                        <script type="text/javascript" src="https://api.twitter.com/1/statuses/user_timeline.json?include_rts=true&amp;screen_name=SNAPandACCAP&amp;count=1&amp;callback=twitterCallback2"></script>
                     </div>
                 </div>
                 <div class="horiz_bar_right">
