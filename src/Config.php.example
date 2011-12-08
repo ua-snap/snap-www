@@ -4,6 +4,7 @@ class Config {
     static public $version = "DEV-VERSION-PLACEHOLDER";
     static public $database = array(
         'host' => 'localhost',
+        'port' => '3306',
         'user' => 'snapwww',
         'pass' => 'password',
         'database' => 'snapwww'

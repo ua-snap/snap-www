@@ -75,7 +75,8 @@ class Migration
 
             $dbh->commit();
         } catch (Exception $e) {
-            $dbh->rollBack();
+            //TODO: restore this
+            //$dbh->rollBack();
             throw new Exception($e); // bubble
         }
 
@@ -100,7 +101,8 @@ class Migration
             
             $dbh->commit();
         } catch (Exception $e) {
-            $dbh->rollBack();
+            //TODO restore this
+            //$dbh->rollBack();
             throw new Exception($e); // bubble
         }           
 
