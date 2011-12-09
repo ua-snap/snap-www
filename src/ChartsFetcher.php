@@ -44,6 +44,12 @@ class ChartsFetcher {
     	return $sth->fetchAll();
 	}
 
+	static public function getCommunities() {
+		$dbh = SwDb::getInstance();
+		$sth = $dbh->query('SELECT community FROM community_charts ORDER BY community ASC');
+		return $sth->fetchAll();
+	}
+
 }
 
 ?>

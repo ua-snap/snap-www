@@ -33,13 +33,14 @@ $page->connectToDatabase();
                 </div>
                 <div id="community_list" style="width: 288px; height: 120px; overflow: auto; padding: 5px; border: 1px solid #999999; ">
                 <?php
-                    $query = "SELECT community FROM community_charts GROUP BY community";
-                    $result = mysql_query($query) or die(mysql_error());
-                    while ($row = mysql_fetch_array($result)){
+
+                    $result = ChartsFetcher::getCommunities();
+                    foreach($result as $row) {
                         $comm = preg_replace("/\s/", "-", $row['community']);
                         echo "<div><a style=\"cursor: hand; cursor: pointer;\" id=\"$comm\">".$row['community']."</a></div>";
                     }
                 ?>
+
                 <script type="text/javascript">
 
                     var globalCommunity;
@@ -95,8 +96,8 @@ $page->connectToDatabase();
                         
                     }
                 <?php
-                    $result = mysql_query($query) or die(mysql_error());
-                    while ($row = mysql_fetch_array($result)){
+                
+                    foreach($result as $row) {
                         $comm = preg_replace("/\s/", "-", $row['community']);
                         echo "$('#".$comm."').click( function() { fetchData('$comm', globalDataset, globalScenario, globalVariability, 'chart'); } );";
                     }

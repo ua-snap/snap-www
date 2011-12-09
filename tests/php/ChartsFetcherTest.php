@@ -8,6 +8,10 @@ class ChartsFetcherTest extends PHPUnit_Framework_TestCase
 
 	public function testFetchByTemperature()
 	{
+        if( Config::$testing['skipDatabase'] ) {
+            $this->markTestSkipped("No database connection, skipping...");
+        }
+
 		$d = new ChartsFetcher('Fairbanks');
 		$t = $d->byTemperature();
 		$this->assertEquals( $t['max(value)'], 69 );
@@ -16,14 +20,22 @@ class ChartsFetcherTest extends PHPUnit_Framework_TestCase
 
 	public function testFetchByPrecipitation()
 	{
+		if( Config::$testing['skipDatabase'] ) {
+            $this->markTestSkipped("No database connection, skipping...");
+        }
+
 		$d = new ChartsFetcher('Fairbanks');
 		$t = $d->byPrecipitation();
 		$this->assertEquals( $t['max(value)'], 3 );
 		$this->assertEquals( $t['min(value)'], 0 );
+
 	}
 
 	public function testFetchByProjection()
 	{
+        if( Config::$testing['skipDatabase'] ) {
+            $this->markTestSkipped("No database connection, skipping...");
+        }
 
 		$d = new ChartsFetcher('Fairbanks', 1, 'A2', '2001-2010');
 		$t = $d->fetch();
@@ -37,12 +49,27 @@ class ChartsFetcherTest extends PHPUnit_Framework_TestCase
 	}
 
 	public function testFetchName() {
-
+        
+        if( Config::$testing['skipDatabase'] ) {
+            $this->markTestSkipped("No database connection, skipping...");
+        }
+		
 		$d = new ChartsFetcher('aki');
 		$t = $d->byName();
 		$this->assertEquals( $t[0]['community'], 'Akiachak' );
 		$this->assertEquals( $t[1]['community'], 'Akiak' );
 	
+	}
+
+	public function testFetchCommunities() {
+        
+        if( Config::$testing['skipDatabase'] ) {
+            $this->markTestSkipped("No database connection, skipping...");
+        }
+		// Weak.  But.  :)
+		$c = ChartsFetcher::getCommunities();
+		$this->assertEquals( $c[0]['community'], 'Adak Station' );
+
 	}
 }
 
