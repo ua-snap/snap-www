@@ -1,9 +1,11 @@
 <?php
+
+require_once 'src/Collaborators.php';
+
 include("template.php");
 $page = new webPage("SNAP: Collaborators", "", "about");
 $page->openPage();
 $page->pageHeader();
-$page->connectToDatabase();
 ?>
         <div id="main_body">
             <div id="main_content">
@@ -14,18 +16,18 @@ $page->connectToDatabase();
                     <p>Collaborations with the Bureau of Land Management, National Park Service, U.S. Fish and Wildlife Service, U.S. Geological Survey, Alaska Department of Fish and Game, multiple non-profit organizations, and many others have yielded scenario projections of shifting ecosystems that will aid in planning future resource, land, and wildlife management.  A variety of SNAP services and approaches make information accessible to a wide spectrum of stakeholders with varying levels of technical expertise.</p>
                     <p>SNAP and ACCAP continue to build a powerful collaborative network of key scientific, social and economic institutions from around the world, applying the combined expertise towards a better understanding of the future dynamics of the Arctic. <a href="people.php#contact">Contact</a> us if you are interested in joining the SNAP network.</p>
                 </div>
-                <!--
-                <div style="font-size: 15px;margin-bottom: 20px;width: 500px; line-height: 22px;"><img src="images/snap_small.png" style="vertical-align: middle; height: 20px;" /> <span style="color: #6a7173; font-weight: bold;"></span> and <img src="images/accap_small.png" style="vertical-align: middle;" /> <span style="color: #336798; font-weight: bold;"></span> are building a powerful collaborative network of key scientific, social and economic institutions from around the world, applying the combined expertise towards a better understanding of the future dynamics of the Arctic.  <a href="people.php#contact">Contact us</a> if you are interested in joining or utilizing SNAP.</div>
-                -->
+
                 <div style="clear: both; margin-top: 40px;">    
                 <?php
-                    $query = "SELECT * FROM collaborators ORDER BY name";
-                    $result = mysql_query($query);
-                    while ($row = mysql_fetch_array($result)){
+
+                    $collaborators = new Collaborators();
+                    $result = $collaborators->fetch();
+
+                    foreach($result as $row) {
                         $size = getimagesize("images/collaborators/".$row['image']);
                         $width = $size[0];
                         $height = $size[1];
-                        //echo $width." ".$height;
+
                         if ($width > $height){
                             $w = 80;
                             $h = ($height * (80 / $width));
@@ -41,9 +43,7 @@ $page->connectToDatabase();
                 ?>
                 </div>
                 <?php
-                    $query = "SELECT * FROM collaborators ORDER BY name";
-                    $result = mysql_query($query);
-                    while ($row = mysql_fetch_array($result)){
+                    foreach($result as $row) {
                     ?>
                         <div style="clear: both; width: 800px; margin: auto; margin-top: 100px;">
                             <a name="org_<?php echo $row['id']; ?>"></a>
@@ -54,22 +54,24 @@ $page->connectToDatabase();
                                 <div><?php echo $row['name']; ?></div>
                                 <div style="margin-top: 5px; margin-bottom: 5px; color: #6a7173; font-size: 14px;"><?php echo $row['city'].", ".$row['state']." ".$row['country']; ?></div>
                                 <div style="font-size: 14px;"><a href="<?php echo $row['website']; ?>">go to their website</a></div>
+
                                 <?php 
+
                                 if ($row['description']){
                                     echo "<div style=\"font-size: 16px; margin-top: 5px;\">".$row['description']."</div>";
                                 }
-                                    $proj_query = "SELECT * FROM projects JOIN project_collaborators ON projects.id = project_collaborators.projectid WHERE project_collaborators.collaboratorid = '".$row['id']."'";
-                                    $proj_result = mysql_query($proj_query);
-                                    if (mysql_num_rows($proj_result) > 0){
-                                        echo "<div style=\"font-size: 16px; color: #999999; margin-top: 20px; margin-bottom: 5px;\">Recent Project Collaborations</div>";
-                                    }
-                                    while ($proj = mysql_fetch_array($proj_result)){
+
+                                $proj_result = $collaborators->fetchProjects($row['id']);
+
+                                if (count($proj_result) > 0){
+                                    echo "<div style=\"font-size: 16px; color: #999999; margin-top: 20px; margin-bottom: 5px;\">Recent Project Collaborations</div>";
+                                    foreach($proj_result as $proj) {
                                         echo "<div style=\"clear: both;\">";
-                                        //echo "<div style=\"float: left; margin-right: 15px;\"><img src=\"".$proj['image']."\" style=\"border: 1px solid #6a7173; padding: 3px;width: 200px;\" /></div>";
                                         echo "<div style=\"font-size: 14px; margin-bottom: 10px;\"><a href=\"project_page.php?projectid=".$proj['id']."\">".$proj['title']."</a></div>";
-                                        //echo "<div style=\"font-size: 14px; color: #222222;\">".substr($proj['summary'], 0, 140)."</div>";
                                         echo "</div>";
                                     }
+                                }
+                                
                                 ?>
 
                             </div>
