@@ -1,4 +1,7 @@
 <?php
+
+require_once 'src/ChartsFetcher.php';
+
 include("template.php");
 $page = new webPage("SNAP: Community Charts", "charts.css", "data");
 $page->openPage();

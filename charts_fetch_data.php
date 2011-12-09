@@ -234,7 +234,7 @@ if ($_GET['fetch_type'] == "chart") {
     echo "<script type=\"text/javascript\">";
         echo "$('#export_button').click(function() { 
             chart.exportChart(null, { 
-                chart: { 
+                chart: {
                     backgroundColor: '#eeffff' 
                 }
             }, 
@@ -253,7 +253,7 @@ if ($_GET['fetch_type'] == "comm_name"){
 
     $community_list = "";
     $community_script = "";
-    while ($row = mysql_fetch_array($result)){
+    foreach( $result as $row ) {
         $comm = preg_replace("/\s/", "-", $row['community']);
         $community_list .= "<div><a style=\"cursor: hand; cursor: pointer;\" id=\"$comm\">".$row['community']."</a></div>";
         $community_script .= "$('#".$comm."').click( function() { fetchData('$comm', globalDataset, globalScenario, globalVariability, 'chart'); } );";

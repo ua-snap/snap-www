@@ -46,7 +46,7 @@ class ChartsFetcher {
 
 	static public function getCommunities() {
 		$dbh = SwDb::getInstance();
-		$sth = $dbh->query('SELECT community FROM community_charts ORDER BY community ASC');
+		$sth = $dbh->query('SELECT DISTINCT community FROM community_charts ORDER BY community ASC');
 		return $sth->fetchAll();
 	}
 
