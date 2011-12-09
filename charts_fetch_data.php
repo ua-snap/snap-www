@@ -1,12 +1,9 @@
 <?php
-    $server = "localhost";
-    $username = "snapwww_admin";
-    $password = "xargX11";
-    $database = "snapwww";
-    mysql_connect($server, $username, $password) or die("Unable to Connect to Database");
-    mysql_select_db($database); 
 
-if ($_GET['fetch_type'] == "chart"){
+require 'src/SwDb.php';
+require 'src/ChartsFetcher.php';
+
+if ($_GET['fetch_type'] == "chart") {
     $comm = preg_replace("/-/", " ", $_GET['community']);
     echo "<script type=\"text/javascript\">";
     echo "var chart;";
@@ -95,23 +92,23 @@ if ($_GET['fetch_type'] == "chart"){
         echo "},";
         echo "xAxis: {";
             echo "categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']";
-
         echo "},";
         echo "yAxis: {";
 
             if ($_GET['dataset'] == 1){ 
-                $query = "SELECT max(value),min(value) FROM community_charts WHERE community LIKE '$comm' AND type='1'";
-                $result = mysql_query($query);
-                $row = mysql_fetch_array($result);
+                
+                $d = new ChartsFetcher($comm);
+                $row = $d->byTemperature();
+
                 echo "min: ".floor($row['min(value)']).",";
                 echo "max: ".ceil($row['max(value)']).",";
-                //echo "plotLines: [{ value: 32, color: '#000000', width: 1.5 }],";
                 echo "plotBands: [{ value: 32, color: '#000000', width: 1.5, label: { text: '32°', align: 'right', style: { fontSize: '10px' } } }],";
             }
             if ($_GET['dataset'] == 2){
-                $query = "SELECT max(value),min(value) FROM community_charts WHERE community LIKE '$comm' AND type='2'";
-                $result = mysql_query($query);
-                $row = mysql_fetch_array($result);
+
+                $d = new ChartsFetcher($comm);
+                $row = $d->byPrecipitation();
+
                 echo "min: ".floor($row['min(value)']).",";
                 echo "max: ".ceil($row['max(value)']).",";
             }
@@ -141,9 +138,10 @@ if ($_GET['fetch_type'] == "chart"){
         echo "series: [{";
             //echo "name: '1961-1990 historical', ";
             echo "name: '1961-1990', ";
-            $query = "SELECT * FROM community_charts WHERE community LIKE '$comm' AND type='".$_GET['dataset']."' AND scenario='".$_GET['scenario']."' AND daterange = '1961-1990' ORDER BY FIELD(month, 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')";
-            $result = mysql_query($query);
-            $error = mysql_error();
+
+            $d = new ChartsFetcher($comm, $_GET['dataset'], $_GET['scenario'], '1961-1990');
+            $result = $d->fetch();
+
             echo "data: [";
             for ($i = 0; $i < 12; $i++){
                 $row = mysql_fetch_array($result);
@@ -157,17 +155,18 @@ if ($_GET['fetch_type'] == "chart"){
         $ranges = array("2001-2010", "2031-2040", "2061-2070", "2091-2100");
         for ($i = 0; $i < sizeof($ranges); $i++){
             echo ",{";
-                //echo "name: '".$ranges[$i]." modeled', ";
                 echo "name: '".$ranges[$i]."', ";
                 echo "data: [";
+
                 //Prevent STD DEV from showing in legend or on chart
                 $stddev = ", {name: 'STDDDEV', visible: false, showInLegend: false, data: [";
-                $query = "SELECT * FROM community_charts WHERE community LIKE '$comm' AND type='".$_GET['dataset']."' AND scenario='".$_GET['scenario']."' AND daterange = '".$ranges[$i]."' ORDER BY FIELD(month, 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')";
-                $result = mysql_query($query);
+
+                $d = new ChartsFetcher($comm, $_GET['dataset'], $_GET['scenario'], $ranges[$i]);
+                $result = $d->fetch();
+
                 for ($j = 0; $j < 12; $j++){
-                    $row = mysql_fetch_array($result);
-                    echo $row['value'];
-                    $stddev .= $row['stddev'];
+                    echo $result[$j]['value'];
+                    $stddev .= $result[$j]['stddev'];
                     if ($j < 11){
                         echo ", ";
                         $stddev .= ", ";
@@ -183,9 +182,6 @@ if ($_GET['fetch_type'] == "chart"){
 
             //Multiple of *3 in chart plot is used for specific height chart.  It will need to be manually adjusted if chart height changes from 400
             echo ", function (chart){";
-
-                //echo "chart.renderer.path(['M', 0,Origin, 'L',50,50, 100, 100]).attr({ strokeWidth: 10, zIndex: 100, stroke: 'Black' }).add(); ";
-                //chart.renderer.image('http://dev.snap.uaf.edu/images/snap_acronym_rgb.png', 0, 0, 150, 45).add();";
 
                 if ($_GET['variability'] == 1){
                 echo "var extremes = chart.yAxis[0].getExtremes();";
@@ -247,14 +243,14 @@ if ($_GET['fetch_type'] == "chart"){
                 chart.renderer.image('http://dev.snap.uaf.edu/images/snap_acronym_rgb.png', 0, 0, 150, 45).add();
             });
          });";
-        //echo "$('#export_button').click(function() { chart.exportChart(null, { chart: { backgroundColor: '#0099ff' }, function (chart){ chart.renderer.image('http://dev.snap.uaf.edu/images/snap_acronym_rgb.png', 0, 0, 150, 45).add(); } });  } );";
+
     echo "</script>";
-    //echo "STORE".$storeval;
 } 
 if ($_GET['fetch_type'] == "comm_name"){
-    $comm_name = $_GET['comm_name'];
-    $query = "SELECT id,community FROM community_charts WHERE community LIKE '".$comm_name."%' GROUP BY community";
-    $result = mysql_query($query);
+
+    $d = new ChartsFetcher($_GET['comm_name']);
+    $result = $d->byName();
+
     $community_list = "";
     $community_script = "";
     while ($row = mysql_fetch_array($result)){

@@ -267,15 +267,18 @@ sql
           array(
           'version' => 7,
           'up' => <<<sql
+
 CREATE  TABLE `snapwww`.`project_resource_link` (
   `project_resource_link_id` INT NOT NULL AUTO_INCREMENT,
   `project_id` INT NULL ,
   `resource_id` INT NULL ,
   PRIMARY KEY (`project_resource_link_id`) ,
   INDEX `index` (`project_id` ASC, `resource_id` ASC) );
+
 sql
 ,
           'fixtures' => <<<sql
+
 INSERT INTO `snapwww`.`project_resource_link` (`project_id`, `resource_id`) VALUES (1, 1);
 INSERT INTO `snapwww`.`project_resource_link` (`project_id`, `resource_id`) VALUES (1, 2);
 INSERT INTO `snapwww`.`project_resource_link` (`project_id`, `resource_id`) VALUES (2, 1);
@@ -290,6 +293,7 @@ sql
           'version' => 8,
           'up' => '',
           'fixtures' => <<<sql
+
 UPDATE `snapwww`.`projects` SET `image`='/images/projects/BiomeShift.jpg' WHERE `id`='8';
 sql
 ,
@@ -297,15 +301,16 @@ sql
         )
             ),
             9 => new Migration(
-          array(
-          'version' => 9,
-          'up' => <<<sql
+              array(
+                'version' => 9,
+                'up' => <<<sql
+
 ALTER TABLE `snapwww`.`attachments` 
 ADD INDEX `resource` (`resourceid` ASC, `category` ASC, `sortorder` ASC, `name` ASC);
 ALTER TABLE `snapwww`.`project_collaborators` 
 ADD INDEX `index` (`collaboratorid` ASC, `projectid` ASC) ;
 ALTER TABLE `snapwww`.`community_charts` 
-ADD INDEX `charts` (`community` ASC, `month` ASC, `daterange` ASC, `type` ASC, `scenario` ASC) ;
+ADD INDEX `charts` (`community` ASC, `type` ASC, `daterange` ASC, `scenario` ASC) ;
 ALTER TABLE `snapwww`.`project_personnel` 
 ADD INDEX `index` (`projectid` ASC, `peopleid` ASC) ;
 ALTER TABLE `snapwww`.`project_photos` 
@@ -317,10 +322,23 @@ ADD INDEX `index2` (`snap` ASC, `accap` ASC, `fsc` ASC) ;
 
 sql
 ,
-          'fixtures' => '',
-          'down' => ''
-        )
-            ), 
+                'fixtures' => '',
+                'down' => ''
+              )
+            ),
+            10 => new Migration(
+              array(
+                'version' => 10,
+                'up' => <<<sql
+ALTER TABLE `snapwww`.`community_charts` CHANGE COLUMN `value` `value` DECIMAL(2) NULL DEFAULT NULL  ;
+ALTER TABLE `snapwww`.`community_charts` CHANGE COLUMN `stddev` `stddev` DECIMAL(2) NULL DEFAULT NULL  ;
+
+sql
+,
+                'fixtures' => '',
+                'down' => ''
+              )
+            ),
         );
     }
 }
