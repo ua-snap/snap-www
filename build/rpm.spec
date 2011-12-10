@@ -71,6 +71,7 @@ rm -rf $RPM_BUILD_ROOT
 %{inst_dir}/images
 %{inst_dir}/js
 %{inst_dir}/src
+%config %{inst_dir}/src/Config.php
 %{inst_dir}/exporting-server
 %attr(644,root,root) /etc/httpd/conf.d/snap.conf
 %attr(744,apache,apache) %{inst_dir}/temp
