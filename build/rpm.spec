@@ -60,7 +60,7 @@ cp -R images/* ${RPM_BUILD_ROOT}/%{inst_dir}/images/
 cp -aR exporting-server ${RPM_BUILD_ROOT}/%{inst_dir}/exporting-server/
 cp -a build/snap.conf ${RPM_BUILD_ROOT}/etc/httpd/conf.d/
 cp -a build/snapweb_database_maintenance.php ${RPM_BUILD_ROOT}/etc/cron.weekly/
-cp -a build/php.ini ${RPM_BUILD_ROOT}/etc/
+cp -a build/snap.ini ${RPM_BUILD_ROOT}/etc/php.d/
 cp -a scripts/migrate.php ${RPM_BUILD_ROOT}/usr/bin/snapwww/
 
 %clean
@@ -74,7 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 %{inst_dir}/js
 %attr(744,apache,apache) /usr/lib64/snapwww/src/
 %config /usr/lib64/snapwww/src/Config.php
-%config /etc/php.ini
+%config /etc/php.d/snap.ini
 %{inst_dir}/exporting-server
 %attr(644,root,root) /etc/httpd/conf.d/snap.conf
 %attr(744,apache,apache) %{inst_dir}/temp
