@@ -226,7 +226,7 @@ CREATE  TABLE `snapwww`.`video_resource` (
   UNIQUE INDEX `resource_id_UNIQUE` (`resource_id` ASC) )
 COMMENT = 'Properties of video resources, FK to resources.id' ;
 sql
-,         'fixtures' => "INSERT INTO `snapwww`.`video_resource` (`resource_id`, `embedded_url`, `embedded_title`, `embedded_user_url`, `embedded_user`, `linked_url`, `linked_title`, `file_video_href`, `file_video_title`, `file_video_type`, `file_video_size`) VALUES (15, 'http://player.vimeo.com/video/4515275', 'A thousand shades of white', 'http://vimeo.com/icescapestv', 'icescapes', 'http://www.youtube.com/watch?v=u5DiHp76gjs&feature=results_main&playnext=1&list=PLBBDD34F33BAF19CD', 'Alaskan Native thoughts on climate change', 'attachments/path_to_nowhere.mp4', 'Alaskan Native thoughts on climate change', '.mp4', '20 MB');",
+,         'fixtures' => '',
           'down' => 'DROP TABLE `video_resource`;'
         )
       ),
@@ -241,29 +241,8 @@ sql
           'down' => ''
         )
             ),
- 5 => new Migration(
-          array(
-          'version' => 5,
-          'up' => '',
-          'fixtures' => <<<sql
-INSERT INTO `snapwww`.`people` (`id`, `first`, `middle`, `last`, `title`, `position`, `email`, `phone`, `fax`, `staffgroup`, `summary`, `organization`, `snap`, `accap`, `status`) values ('22', 'Bruce', NULL, 'Crevensten', '', 'Web Programmer', 'becrevensten@alaska.edu', '9074747134', '9074747151', '3', "Bruce Crevensten joined SNAP as a Web Programmer in October, 2011, and works with SNAP's IT team to publish web content and implement web applications to facilitate access to data and services.  His background in software development includes complex web applications, testing and QA initiatives, project and technology management.  Bruce holds a B.S. (2002) in mathematics from Portland State University, enjoys origami and other intersections between art and mathematics, and has an interest in high performance scientific computing frameworks and architectures.", 'SNAP', '1', '0', '1');
-sql
-,
-          'down' => 'DELETE FROM `snapwww`.`people` WHERE `id`=22 LIMIT 1;'
-        )
-            ),
-             6 => new Migration(
-          array(
-          'version' => 6,
-          'up' => '',
-          'fixtures' => <<<sql
-INSERT INTO `snapwww`.`people` (`id`, `first`, `middle`, `last`, `title`, `position`, `email`, `phone`, `fax`, `staffgroup`, `summary`, `organization`, `snap`, `accap`, `status`) values ('23', 'Carson', NULL, 'Baughman', '', 'Graduate Student Research Assistant', 'cabaughman2@alaska.edu', '9074745750', '9074747151', '2', "Carson Baughman is a Master of Science candidate and research assistant at SNAP.  His thesis is focused on quantifying the relationships between climate and peat rich soils within the Arctic Foothills region of Alaska’s North Slope.  Specifically he is looking at how the amount of peat found on the landscape varies with changes in above ground mean annual temperature.  This relationship is important because high latitude peat represents a significant pool of carbon that can act as a source or sink depending on global climate.  After defining these relationships using field based data, Carson will develop a model that can be used to predict peat thickness within the study region based on climate scenario data. This work will increase the understanding of predicted climate change consequences for Alaska’s sub-arctic ecosystems.\nCarson hails from the Nevada high desert, received his Bachelors degree in Ecology from the University of Montana, Missoula in 2008. He arrived in Alaska the summer of 2009.  When not indoors, he can be found piloting canoes and tandem bicycles, frolicking with his chickens,￼and procuring nutriment from the land by various manners.", 'SNAP', '1', '0', '1');
-sql
-,
-          'down' => 'DELETE FROM `snapwww`.`people` WHERE `id`=23 LIMIT 1;'
-        )
-            ),
-            7 => new Migration(
+ 
+            5 => new Migration(
           array(
           'version' => 7,
           'up' => <<<sql
@@ -277,30 +256,19 @@ CREATE  TABLE `snapwww`.`project_resource_link` (
 
 sql
 ,
-          'fixtures' => <<<sql
-
-INSERT INTO `snapwww`.`project_resource_link` (`project_id`, `resource_id`) VALUES (1, 1);
-INSERT INTO `snapwww`.`project_resource_link` (`project_id`, `resource_id`) VALUES (1, 2);
-INSERT INTO `snapwww`.`project_resource_link` (`project_id`, `resource_id`) VALUES (2, 1);
-INSERT INTO `snapwww`.`project_resource_link` (`project_id`, `resource_id`) VALUES (2, 2);
-sql
-,
+          'fixtures' => '',
           'down' => 'DROP TABLE `snapwww`.`project_resource_link`;'
         )
             ),                  
-            8 => new Migration(
+            6 => new Migration(
           array(
           'version' => 8,
           'up' => '',
-          'fixtures' => <<<sql
-
-UPDATE `snapwww`.`projects` SET `image`='/images/projects/BiomeShift.jpg' WHERE `id`='8';
-sql
-,
+          'fixtures' => '',
           'down' => ''
         )
             ),
-            9 => new Migration(
+            7 => new Migration(
               array(
                 'version' => 9,
                 'up' => <<<sql
@@ -326,7 +294,7 @@ sql
                 'down' => ''
               )
             ),
-            10 => new Migration(
+            8 => new Migration(
               array(
                 'version' => 10,
                 'up' => <<<sql

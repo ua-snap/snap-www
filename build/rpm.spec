@@ -52,6 +52,7 @@ mkdir -p ${RPM_BUILD_ROOT}/etc/php.d/
 
 touch ${RPM_BUILD_ROOT}/var/log/%{hostname}-error_log
 touch ${RPM_BUILD_ROOT}/var/log/%{hostname}-access_log
+touch ${RPM_BUILD_ROOT}/var/log/%{hostname}-update_log
 
 cp -a *.php ${RPM_BUILD_ROOT}/%{inst_dir}/
 cp -a src/*.php ${RPM_BUILD_ROOT}/usr/lib64/snapwww/src
@@ -85,5 +86,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(700,root,root) /usr/bin/snapwww/migrate.php
 
 %post
-/usr/bin/snapwww/migrate.php up
+/usr/bin/snapwww/migrate.php up >> /var/log/%{hostname}-update_log 2>&1
 service httpd restart
