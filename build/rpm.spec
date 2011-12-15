@@ -53,7 +53,7 @@ touch ${RPM_BUILD_ROOT}/var/log/%{hostname}-error_log
 touch ${RPM_BUILD_ROOT}/var/log/%{hostname}-access_log
 
 cp -a *.php ${RPM_BUILD_ROOT}/%{inst_dir}/
-cp -a src/*.php ${RPM_BUILD_ROOT}/usr/lib64/src/
+cp -a src/*.php ${RPM_BUILD_ROOT}/usr/lib64/snapwww/src/
 cp -a js/* ${RPM_BUILD_ROOT}/%{inst_dir}/js/
 cp -a css/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/
 cp -R images/* ${RPM_BUILD_ROOT}/%{inst_dir}/images/
