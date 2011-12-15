@@ -82,6 +82,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(744,apache,apache) %{inst_dir}/temp
 %ghost %attr(644,apache,apache) /var/log/%{hostname}-error_log
 %ghost %attr(644,apache,apache) /var/log/%{hostname}-access_log
+%ghost %attr(644,jenkins,jenkins) /var/log/%{hostname}-update_log
 %attr(700,root,root) /etc/cron.weekly/snapweb_database_maintenance.php
 %attr(700,root,root) /usr/bin/snapwww/migrate.php
 
