@@ -53,7 +53,8 @@ touch ${RPM_BUILD_ROOT}/var/log/%{hostname}-error_log
 touch ${RPM_BUILD_ROOT}/var/log/%{hostname}-access_log
 
 cp -a *.php ${RPM_BUILD_ROOT}/%{inst_dir}/
-cp -a src/*.php ${RPM_BUILD_ROOT}/usr/lib64/snapwww/src/
+cp -a src/*.php ${RPM_BUILD_ROOT}/usr/lib64/snapwww/ls
+src/
 cp -a js/* ${RPM_BUILD_ROOT}/%{inst_dir}/js/
 cp -a css/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/
 cp -R images/* ${RPM_BUILD_ROOT}/%{inst_dir}/images/
@@ -72,8 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 %{inst_dir}/css
 %{inst_dir}/images
 %{inst_dir}/js
-%{inst_dir}/src
-%config %{inst_dir}/src/Config.php
+%config /usr/lib64/snapwww/src/Config.php
 %config /etc/php.ini
 %{inst_dir}/exporting-server
 %attr(644,root,root) /etc/httpd/conf.d/snap.conf
