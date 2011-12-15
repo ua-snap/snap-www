@@ -72,6 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 %{inst_dir}/css
 %{inst_dir}/images
 %{inst_dir}/js
+%attr(744,apache,apache) /usr/lib64/snapwww/src/
 %config /usr/lib64/snapwww/src/Config.php
 %config /etc/php.ini
 %{inst_dir}/exporting-server
