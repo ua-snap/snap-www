@@ -40,26 +40,28 @@ mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/css
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/images
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/js
-mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/src
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/exporting-server
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/temp
 mkdir -p ${RPM_BUILD_ROOT}/var/log/
 mkdir -p ${RPM_BUILD_ROOT}/etc/httpd/conf.d
 mkdir -p ${RPM_BUILD_ROOT}/home/jenkins/
 mkdir -p ${RPM_BUILD_ROOT}/etc/cron.weekly/
+mkdir -p ${RPM_BUILD_ROOT}/usr/lib64/snapwww/src
+mkdir -p ${RPM_BUILD_ROOT}/usr/bin/snapwww/src
 
 touch ${RPM_BUILD_ROOT}/var/log/%{hostname}-error_log
 touch ${RPM_BUILD_ROOT}/var/log/%{hostname}-access_log
 
-cp -a build/update_snap_web.sh ${RPM_BUILD_ROOT}/home/jenkins/
 cp -a *.php ${RPM_BUILD_ROOT}/%{inst_dir}/
-cp -a src/*.php ${RPM_BUILD_ROOT}/%{inst_dir}/src/
+cp -a src/*.php ${RPM_BUILD_ROOT}/usr/lib64/src/
 cp -a js/* ${RPM_BUILD_ROOT}/%{inst_dir}/js/
 cp -a css/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/
 cp -R images/* ${RPM_BUILD_ROOT}/%{inst_dir}/images/
 cp -aR exporting-server ${RPM_BUILD_ROOT}/%{inst_dir}/exporting-server/
 cp -a build/snap.conf ${RPM_BUILD_ROOT}/etc/httpd/conf.d/
 cp -a build/snapweb_database_maintenance.php ${RPM_BUILD_ROOT}/etc/cron.weekly/
+cp -a build/php.ini ${RPM_BUILD_ROOT}/etc/
+cp -a scripts/migrate.php ${RPM_BUILD_ROOT}/usr/bin/snapwww/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -72,13 +74,15 @@ rm -rf $RPM_BUILD_ROOT
 %{inst_dir}/js
 %{inst_dir}/src
 %config %{inst_dir}/src/Config.php
+%config /etc/php.ini
 %{inst_dir}/exporting-server
 %attr(644,root,root) /etc/httpd/conf.d/snap.conf
 %attr(744,apache,apache) %{inst_dir}/temp
 %ghost %attr(644,apache,apache) /var/log/%{hostname}-error_log
 %ghost %attr(644,apache,apache) /var/log/%{hostname}-access_log
-%attr(700,jenkins,jenkins) /home/jenkins/update_snap_web.sh
 %attr(700,root,root) /etc/cron.weekly/snapweb_database_maintenance.php
+%attr(700,root,root) /usr/bin/snapwww/migrate.php
 
 %post
+/usr/bin/snapwww/migrate.php up
 service httpd restart
