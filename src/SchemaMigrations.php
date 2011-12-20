@@ -244,7 +244,7 @@ sql
  
             5 => new Migration(
           array(
-          'version' => 7,
+          'version' => 5,
           'up' => <<<sql
 
 CREATE  TABLE `snapwww`.`project_resource_link` (
@@ -262,7 +262,7 @@ sql
             ),                  
             6 => new Migration(
           array(
-          'version' => 8,
+          'version' => 6,
           'up' => '',
           'fixtures' => '',
           'down' => ''
@@ -270,7 +270,7 @@ sql
             ),
             7 => new Migration(
               array(
-                'version' => 9,
+                'version' => 7,
                 'up' => <<<sql
 
 ALTER TABLE `snapwww`.`attachments` 
@@ -296,8 +296,9 @@ sql
             ),
             8 => new Migration(
               array(
-                'version' => 10,
+                'version' => 8,
                 'up' => <<<sql
+                
 ALTER TABLE `snapwww`.`community_charts` CHANGE COLUMN `value` `value` DECIMAL(2) NULL DEFAULT NULL  ;
 ALTER TABLE `snapwww`.`community_charts` CHANGE COLUMN `stddev` `stddev` DECIMAL(2) NULL DEFAULT NULL  ;
 

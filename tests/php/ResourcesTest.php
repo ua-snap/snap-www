@@ -125,9 +125,9 @@ class ResourcesTest extends PHPUnit_Framework_TestCase
         if( Config::$testing['skipDatabase'] ) {
             $this->markTestSkipped("No database connection, skipping...");
         }        
-        $rByFixtures = Resource::factory(Fixtures::$resources[15]);
         $rById = Resource::fetchById(15);
-        $this->assertEquals($rByFixtures, $rById, "Resources can be fetched by explicit ID lookup in the database");
+        // Trivial test here, just to ensure the fetch/create cycle works
+        $this->assertEquals($rById->props['id'], 15, "Resources can be fetched by explicit ID lookup in the database");
     }
 
 }
