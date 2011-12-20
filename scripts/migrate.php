@@ -39,14 +39,14 @@ switch( $action ) {
 
     case 'rebuild':
         try {
-            echo "Migrating from clean slate up to highest patch level...\n";
+            $log->log("Migrating from clean slate up to highest patch level...\n");
             $migrationSuite->at(0);
             $res = $migrationSuite->up();
             SwDb::setSchemaVersion($res);
-            echo $migrationSuite->sql;
-            echo "\n...finished rebuilding to level [$res].\n";
+            $log->log($migrationSuite->sql, PEAR_LOG_DEBUG);
+            $log->log("...finished rebuilding to level [$res].");
         } catch (Exception $e) {
-            echo "\nFailed, caught exception:\n$e\n";
+            $log->log("Failed, caught exception: $e", PEAR_LOG_FATAL);
         }
         break;
 
