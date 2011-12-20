@@ -210,7 +210,7 @@ sql
           array(
           'version' => 3,
           'up' =><<<sql
-CREATE  TABLE `snapwww`.`video_resource` (
+CREATE  TABLE `video_resource` (
   `resource_id` INT NOT NULL ,
   `embedded_url` TEXT NULL ,
   `embedded_title` TEXT NULL ,
@@ -230,24 +230,13 @@ sql
           'down' => 'DROP TABLE `video_resource`;'
         )
       ),
-        4 => new Migration(
-          array(
-          'version' => 4,
-          'up' => '',
-          'fixtures' => <<<sql
-UPDATE `snapwww`.`people` SET `summary`="Scott Rupp is the Director of the Scenarios Network for Alaska & Arctic Planning (SNAP), principal investigator for the Department of Interior's Alaska Climate Science Center, and co-PI for the NOAA funded Alaska Center for Climate Assessment and Policy. Rupp is a well-established forest ecologist with specialized experience in ecological modeling. He has authored more than 50 peer-reviewed journal articles and book chapters. Rupp received a BS (1993) in Forest Management from Pennsylvania State University and a Ph.D. (1998) in Forest Ecology from UAF. He is a Professor of Forestry and has been a faculty member at UAF since 2001." WHERE `id`='1';
-sql
-,
-          'down' => ''
-        )
-            ),
  
-            5 => new Migration(
-          array(
-          'version' => 5,
+      4 => new Migration(
+        array(
+          'version' => 4,
           'up' => <<<sql
 
-CREATE  TABLE `snapwww`.`project_resource_link` (
+CREATE  TABLE `project_resource_link` (
   `project_resource_link_id` INT NOT NULL AUTO_INCREMENT,
   `project_id` INT NULL ,
   `resource_id` INT NULL ,
@@ -257,20 +246,20 @@ CREATE  TABLE `snapwww`.`project_resource_link` (
 sql
 ,
           'fixtures' => '',
-          'down' => 'DROP TABLE `snapwww`.`project_resource_link`;'
+          'down' => 'DROP TABLE `project_resource_link`;'
         )
             ),                  
-            6 => new Migration(
-          array(
-          'version' => 6,
+      5 => new Migration(
+        array(
+          'version' => 5,
           'up' => '',
           'fixtures' => '',
           'down' => ''
         )
             ),
-            7 => new Migration(
+      6 => new Migration(
               array(
-                'version' => 7,
+                'version' => 6,
                 'up' => <<<sql
 
 ALTER TABLE `snapwww`.`attachments` 
@@ -294,11 +283,11 @@ sql
                 'down' => ''
               )
             ),
-            8 => new Migration(
+        7 => new Migration(
               array(
-                'version' => 8,
+                'version' => 7,
                 'up' => <<<sql
-                
+
 ALTER TABLE `snapwww`.`community_charts` CHANGE COLUMN `value` `value` DECIMAL(2) NULL DEFAULT NULL  ;
 ALTER TABLE `snapwww`.`community_charts` CHANGE COLUMN `stddev` `stddev` DECIMAL(2) NULL DEFAULT NULL  ;
 

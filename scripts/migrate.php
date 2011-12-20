@@ -4,11 +4,13 @@
 require 'src/Migrations.php';
 require 'src/SchemaMigrations.php';
 require_once 'src/SwDb.php';
+require_once 'Log.php';
 
+$log = Log::factory('console', '', 'snapwww');
 $version = SwDb::getSchemaVersion();
 if( !is_numeric($version) ) { $version = 'undefined or unknown!'; }
 $versionText = "\n\nCurrent patch level: $version\n\n";
-if( !is_numeric($version) ) { echo "\nNOTE: Patch level can't be determined, run rebuild to start from migration 1 to newest.\n";}
+if( !is_numeric($version) ) { $log->log( "Patch level can't be determined, run rebuild to start from migration 1 to newest."); }
 $migrationSuite = loadMigrationSuite();
 $migrationSuite->at($version);
 $to = (isset($argv[2]) && is_numeric($argv[2])) ? $argv[2] : null;
@@ -18,14 +20,20 @@ switch( $action ) {
     
     case 'up':
         try {
-            echo $versionText;
-            echo ($to) ? "Migrating from level [$version] up to level [$to]...\n" : "Migrating from level [$version] to highest patch level...\n";
+            $log->log("currently at revision [$versionText]");
+            
+            if ($to) {
+                $log->log("Migrating from level [$version] up to level [$to]...");
+            } else {    
+                $log->log("Migrating from level [$version] to highest patch level...");
+            }
+
             $res = $migrationSuite->up($to);
             SwDb::setSchemaVersion($res);           
-            echo $migrationSuite->sql;
-            echo "\n...finished migrating to level [$res].\n";
+            $log->log($migrationSuite->sql, PEAR_LOG_DEBUG);
+            $log->log("...finished migrating to level [$res].");
         } catch (Exception $e) {
-            echo "\nFailed, caught exception:\n$e\n";
+            $log->log("Failed, caught exception: $e", PEAR_LOG_FATAL);
         }
         break;
 
