@@ -262,19 +262,19 @@ sql
                 'version' => 6,
                 'up' => <<<sql
 
-ALTER TABLE `snapwww`.`attachments` 
+ALTER TABLE `attachments` 
 ADD INDEX `resource` (`resourceid` ASC, `category` ASC, `sortorder` ASC, `name` ASC);
-ALTER TABLE `snapwww`.`project_collaborators` 
+ALTER TABLE `project_collaborators` 
 ADD INDEX `index` (`collaboratorid` ASC, `projectid` ASC) ;
-ALTER TABLE `snapwww`.`community_charts` 
+ALTER TABLE `community_charts` 
 ADD INDEX `charts` (`community` ASC, `type` ASC, `daterange` ASC, `scenario` ASC) ;
-ALTER TABLE `snapwww`.`project_personnel` 
+ALTER TABLE `project_personnel` 
 ADD INDEX `index` (`projectid` ASC, `peopleid` ASC) ;
-ALTER TABLE `snapwww`.`project_photos` 
+ALTER TABLE `project_photos` 
 ADD INDEX `index` (`projectid` ASC) ;
-ALTER TABLE `snapwww`.`project_resource_link` 
+ALTER TABLE `project_resource_link` 
 ADD INDEX `index2` (`project_id` ASC, `resource_id` ASC) ;
-ALTER TABLE `snapwww`.`projects` 
+ALTER TABLE `projects` 
 ADD INDEX `index2` (`snap` ASC, `accap` ASC, `fsc` ASC) ;
 
 sql
@@ -288,8 +288,8 @@ sql
                 'version' => 7,
                 'up' => <<<sql
 
-ALTER TABLE `snapwww`.`community_charts` CHANGE COLUMN `value` `value` DECIMAL(2) NULL DEFAULT NULL  ;
-ALTER TABLE `snapwww`.`community_charts` CHANGE COLUMN `stddev` `stddev` DECIMAL(2) NULL DEFAULT NULL  ;
+ALTER TABLE `community_charts` CHANGE COLUMN `value` `value` DECIMAL(2) NULL DEFAULT NULL  ;
+ALTER TABLE `community_charts` CHANGE COLUMN `stddev` `stddev` DECIMAL(2) NULL DEFAULT NULL  ;
 
 sql
 ,
