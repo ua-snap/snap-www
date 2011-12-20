@@ -75,7 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 %{inst_dir}/images
 %{inst_dir}/js
 %attr(744,apache,apache) /usr/lib64/snapwww/src/
-%config /usr/lib64/snapwww/src/Config.php
+%ghost /usr/lib64/snapwww/src/Config.php
 %config /etc/php.d/snap.ini
 %{inst_dir}/exporting-server
 %attr(644,root,root) /etc/httpd/conf.d/snap.conf
