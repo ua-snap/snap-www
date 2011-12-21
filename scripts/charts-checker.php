@@ -39,7 +39,7 @@ $dateMap = array(
 	'2090_2099' => '2091-2100',	
 );
 $count = 0;
-while( $count < 1 && $row = $new->fetch() ) {
+while( $row = $new->fetch() ) {
 	++$count;
 	$out = $row['community'].','.$row['type'].','.$row['scenario'].','.$row['daterange'].',';
 	foreach($months as $month) {
