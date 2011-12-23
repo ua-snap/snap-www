@@ -15,6 +15,42 @@ LOAD DATA INFILE '/var/lib/mysql/snapwww/community_charts_new_ingest.csv'
 INTO TABLE `community_charts_new_ingest`
 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
 IGNORE 1 LINES;
+
+DB structure --
+
+communities
+communityId
+region
+name
+country
+population
+lat
+lon
+country
+
+charts_data
+communityId
+type (1 = temp, 2 = precip)
+scenario
+daterange
+unit
+jan
+janSd
+feb
+febSd
+mar
+marSd
+apr
+aprSd
+may
+maySd
+jun
+junSd
+jul
+...etc
+
+
+
 */
 
 $db = SwDb::getInstance();

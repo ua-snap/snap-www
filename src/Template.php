@@ -24,14 +24,18 @@ All external javascript file, including the minified SNAP javascript,
 are listed here and in the project makefile to be bundled into a single
 javascript file.  The 'package-javascript' and 'end-package' tokens
 are used to determine the region to be replaced with a single script inclusion.
+
+If you add a file here, you must add it to the makefile for packaging.  See the README in the js/ directory.
 -->
 <script src="js/jquery-1.6.4.min.js" type="text/javascript" ></script>
 <script src="js/jquery.blockUI.js" type="text/javascript" ></script>
 <script src="js/jquery.hoverIntent.minified.js" type="text/javascript"></script>
 <script src="js/jquery.cycle.all.js" type="text/javascript"></script>
+<script src="js/jquery.url.js" type="text/javascript"></script>
 <script src="js/plugins.js" type="text/javascript"></script>
 <script src="js/highcharts.js" type="text/javascript"></script>
 <script src="js/exporting.js" type="text/javascript"></script>
+<script src="js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
 
 <script src="js/charts.js" type="text/javascript"></script>
 <script src="js/maps.js" type="text/javascript"></script>

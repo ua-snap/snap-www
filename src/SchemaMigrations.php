@@ -297,6 +297,63 @@ sql
                 'down' => ''
               )
             ),
+
+            8 => new Migration(
+                array(
+                  'version' => 8,
+                  'up' => <<<sql
+
+CREATE TABLE `communities` (
+  `id` int(11) unsigned NOT NULL,
+  `country` varchar(32) DEFAULT NULL,
+  `region` varchar(32) DEFAULT NULL,
+  `community` varchar(256) DEFAULT NULL,
+  `population` int(11) DEFAULT NULL,
+  `lat_alaska_albers` decimal(12,4) DEFAULT NULL,
+  `lon_alaska_albers` decimal(12,4) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `community` (`community`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+CREATE TABLE `charts_data` (
+  `communityId` int(11) unsigned NOT NULL,
+  `type` int(4) NOT NULL,
+  `scenario` enum('a1b','a2','b1') NOT NULL DEFAULT 'a1b',
+  `daterange` varchar(16) NOT NULL DEFAULT '',
+  `unit` varchar(16) NOT NULL DEFAULT '',
+  `jan` decimal(12,4) NOT NULL,
+  `janSd` decimal(12,4) NOT NULL,
+  `feb` decimal(12,4) NOT NULL,
+  `febSd` decimal(12,4) NOT NULL,
+  `mar` decimal(12,4) NOT NULL,
+  `marSd` decimal(12,4) NOT NULL,
+  `apr` decimal(12,4) NOT NULL,
+  `aprSd` decimal(12,4) NOT NULL,
+  `may` decimal(12,4) NOT NULL,
+  `maySd` decimal(12,4) NOT NULL,
+  `jun` decimal(12,4) NOT NULL,
+  `junSd` decimal(12,4) NOT NULL,
+  `jul` decimal(12,4) NOT NULL,
+  `julSd` decimal(12,4) NOT NULL,
+  `aug` decimal(12,4) NOT NULL,
+  `augSd` decimal(12,4) NOT NULL,
+  `sep` decimal(12,4) NOT NULL,
+  `sepSd` decimal(12,4) NOT NULL,
+  `oct` decimal(12,4) NOT NULL,
+  `octSd` decimal(12,4) NOT NULL,
+  `nov` decimal(12,4) NOT NULL,
+  `novSd` decimal(12,4) NOT NULL,
+  `dec` decimal(12,4) NOT NULL,
+  `decSd` decimal(12,4) NOT NULL,
+ PRIMARY KEY (`communityId`,`type`,`scenario`,`daterange`,`unit`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+sql
+,
+                  'fixtures' => '',
+                  'down' => 'drop table `communities`; drop table `charts_data`;'
+                )
+              ),
         );
     }
 }

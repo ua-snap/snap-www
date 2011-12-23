@@ -1,0 +1,17 @@
+Note on adding new Javascript files to this project:
+
+The Javascript is minified & packaged in the makefile for this project.  The makefile is invoked during the build process on Jenkins.
+
+If you add a new javascript file, follow these steps:
+
+- Include it in the src/Template.php class in Template::getHeadJavascript() function, between the
+<!-- package-javascript -->
+and
+<!-- end-package -->
+comment flags.
+
+- Add it to the right part of the makefile:
+-- if it's custom-written javascript, put it in the section marked # ** custom SNAP javascript belongs here
+-- if it's a vendor script, put it in the section marked # ** vendor (3rd party) javascript belongs here
+
+Custom-written JS is minified, vendor JS is whitespace-minified, and all are bundled together into a single file.

@@ -6,106 +6,36 @@ include("template.php");
 $page = new webPage("SNAP: Community Charts", "charts.css", "data");
 $page->openPage();
 $page->pageHeader();
-$page->connectToDatabase();
+//$page->connectToDatabase();
+
 ?>
-        <div id="main_body">
-            <div id="main_content">
-                <div class="subHeader">Community Charts<span id="location"></span></div>
-            </div>
+<div id="main_body">
 
-    <script type="text/javascript" src="js/highcharts.js"></script>
-    <script type="text/javascript" src="js/exporting.js"></script>
-    <script type="text/javascript" src="js/exporting.src.js"></script>
-
-    <!--<script type="text/javascript" src="https://www.google.com/jsapi"></script>-->
+    <div id="main_content">
+        <div class="subHeader">Community Charts<span id="location"></span></div>
+    </div>
 
     <div style="margin: auto;">
         <div style="height: 150px; margin: auto; margin-bottom: 20px; width: 950px;">
             <div style="width: 300px; float: left;">
                 <div>
-                    <div style="text-align: right;">
-                        Filter the list: 
-                        <input id="comm_select" type="text" style="width: 180px; padding: 3px;  margin-bottom: 5px;" />
-                    </div>  
-                    <script type="text/javascript">
-                        $('#comm_select').keyup( function(){ 
-                            var str = $('#comm_select').val();
-                            fetchComm(str);
-                        } );
-                    </script>
+                    <div class="ui-widget">
+                        <label for="comm_select">Filter the list: </label>
+                        <input id="comm_select" type="text" placeholder="Enter your community name here" />
+                    </div>
                 </div>
                 <div id="community_list" style="width: 288px; height: 120px; overflow: auto; padding: 5px; border: 1px solid #999999; ">
-                <?php
-
-                    $result = ChartsFetcher::getCommunities();
-                    foreach($result as $row) {
-                        $comm = preg_replace("/\s/", "-", $row['community']);
-                        echo "<div><a style=\"cursor: hand; cursor: pointer;\" id=\"$comm\">".$row['community']."</a></div>";
-                    }
-                ?>
-
                 <script type="text/javascript">
 
-                    var globalCommunity;
-                    <?php 
-                        if ($_GET['community']){ echo "globalCommunity = '".$_GET['community']."';"; } 
-                        else { echo "globalCommunity = '';"; }
-                    ?>
-                    var globalDataset;
-                    <?php 
-                        if ($_GET['dataset']){ echo "globalDataset = '".$_GET['dataset']."';"; } 
-                        else { echo "globalDataset = 1;"; }
-                    ?>
-                    var globalScenario;
-                    <?php 
-                        if ($_GET['scenario']){ echo "globalScenario = '".$_GET['scenario']."';"; } 
-                        else { echo "globalScenario = 'A1B';"; }
-                    ?>
-                    var globalVariability;
-                    <?php 
-                        if ($_GET['variability']){ echo "globalVariability = '".$_GET['variability']."';"; } 
-                        else { echo "globalVariability = '0';"; }
-                    ?>
-                    function fetchComm(comm_n){
-                        $.get(
-                        "charts_fetch_data.php", { fetch_type: "comm_name", comm_name: comm_n },
-                        function(data){
-                            $('#community_list').html(data);
-                        }, "html");
+                    snapCharts.data.community = $.url().param('community') || null;
+                    snapCharts.data.dataset = $.url().param('dataset') || 1; // default temp
+                    snapCharts.data.scenario = $.url().param('scenario') || 'a1b'; // default mid-scenario
+                    snapCharts.data.variability = $.url().param('variability') || 0; // default no variability
 
+                    if( null != snapCharts.data.community ) {
+                        snapCharts.fetchData();
                     }
 
-                    // Redirect existing functionality to enable testing
-                    function fetchData(comm, type, scen, vari, fetch_t){
-                        snapCharts.fetchData(comm, type, scen, vari, fetch_t);
-                    }
-
-                    $(document).ready(function(){
-                    <?php
-                    if ($_GET['community']){
-                        $vari = 0;
-                        if (isset($_GET['variability'])){
-                            $vari = $_GET['variability'];
-                        }
-                        if (isset($_GET['scenario'])){
-                            $scenario = $_GET['scenario'];
-                        }
-                        echo "fetchData(globalCommunity, globalDataset, globalScenario, globalVariability, 'chart');";
-
-                    }
-                    ?>
-
-                    function buildControls(){
-                        
-                    }
-                <?php
-                
-                    foreach($result as $row) {
-                        $comm = preg_replace("/\s/", "-", $row['community']);
-                        echo "$('#".$comm."').click( function() { fetchData('$comm', globalDataset, globalScenario, globalVariability, 'chart'); } );";
-                    }
-                ?>
-                    });
                 </script>
                 </div>
             </div>
@@ -136,14 +66,16 @@ $page->connectToDatabase();
                     ?>
                     <script type="text/javascript">
                         $('#temp').click( function() { 
-                            fetchData(globalCommunity, 1, globalScenario, globalVariability, "chart"); 
+                            snapCharts.data.dataset = 1;
+                            snapCharts.fetchData();
                             $('#temp').html("Temperature");
                             $('#temp').addClass("selected_option");
                             $('#precip').html("<a>Precipitation</a>");
                             $('#precip').removeClass("selected_option");
                         });
                         $('#precip').click( function() { 
-                            fetchData(globalCommunity, 2, globalScenario, globalVariability, "chart"); 
+                            snapCharts.data.dataset = 2;
+                            snapCharts.fetchData();
                             $('#temp').html("<a>Temperature</a>");
                             $('#temp').removeClass("selected_option");
                             $('#precip').html("Precipitation");
@@ -191,7 +123,6 @@ $page->connectToDatabase();
                             <p>The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The A2 scenario describes a very heterogeneous world with high population growth, slow economic development and slow technological change.</p>
                         </div>
                     </div>
-                    <script src="js/jquery.hoverIntent.minified.js" type="text/javascript"></script>
                     <script type="text/javascript">
                         function showScenario() { $(this).next().fadeIn(); }
                         function hideScenario() { $(this).next().fadeOut(); }
@@ -199,7 +130,8 @@ $page->connectToDatabase();
                         $('#scen_med').hoverIntent({ over: showScenario, timeout: 500, out: hideScenario });
                         $('#scen_high').hoverIntent({ over: showScenario, timeout: 500, out: hideScenario });
                         $('#scen_low').click( function() { 
-                            fetchData(globalCommunity, globalDataset, 'B1', globalVariability, "chart"); 
+                            snapCharts.data.scenario='b1';
+                            snapCharts.fetchData();
                             $('#scen_low').html("Low");
                             $('#scen_low').addClass("selected_option");
                             $('#scen_med').html("<a>Medium</a>");
@@ -208,7 +140,8 @@ $page->connectToDatabase();
                             $('#scen_high').removeClass("selected_option");
                         });
                         $('#scen_med').click( function() { 
-                            fetchData(globalCommunity, globalDataset, 'A1B', globalVariability, "chart"); 
+                            snapCharts.data.scenario='a1b';
+                            snapCharts.fetchData();                            
                             $('#scen_low').html("<a>Low</a>");
                             $('#scen_low').removeClass("selected_option");
                             $('#scen_med').html("Medium");
@@ -217,7 +150,8 @@ $page->connectToDatabase();
                             $('#scen_high').removeClass("selected_option");
                         });
                         $('#scen_high').click( function() { 
-                            fetchData(globalCommunity, globalDataset, 'A2', globalVariability, "chart"); 
+                            snapCharts.data.scenario='a2';
+                            snapCharts.fetchData(); 
                             $('#scen_low').html("<a>Low</a>");
                             $('#scen_low').removeClass("selected_option");
                             $('#scen_med').html("<a>Medium</a>");
@@ -258,14 +192,16 @@ $page->connectToDatabase();
                         $('#model_vari_off').hoverIntent({ over: showScenario, timeout: 500, out: hideScenario });
                         $('#model_vari_on').hoverIntent({ over: showScenario, timeout: 500, out: hideScenario });
                         $('#model_vari_on').click( function() { 
-                            fetchData(globalCommunity, globalDataset, globalScenario, 1, "chart"); 
+                            snapCharts.data.variability = 1;
+                            snapCharts.fetchData();
                             $('#model_vari_on').html("On");
                             $('#model_vari_on').addClass("selected_option");
                             $('#model_vari_off').html("<a>Off</a>");
                             $('#model_vari_off').removeClass("selected_option");
                         });
                         $('#model_vari_off').click( function() { 
-                            fetchData(globalCommunity, globalDataset, globalScenario, 0, "chart"); 
+                            snapCharts.data.variability = 0;
+                            snapCharts.fetchData();                            
                             $('#model_vari_on').html("<a>On</a>");
                             $('#model_vari_on').removeClass("selected_option");
                             $('#model_vari_off').html("Off");
@@ -277,10 +213,6 @@ $page->connectToDatabase();
             <div style="width: 188px; margin-left: 10px; height: 120px; float: left; ">
                 <div style="text-align: right">In cooperation with:</div>
                 <div style="text-align: right;"><a href="<?php echo Config::$url ?>/collaborators.php#org_17"><img alt="Cooperative Extension Services" style="height: 135px; vertical-align: top;" src="images/collaborators/ces.jpg" /></a></div>
-                <!--
-                <div style="margin: auto; font-size: 18px; margin-bottom: 10px; margin-top: 20px;"><span style="color: #0066cc;">Print</span></div>
-                <div style="margin: auto; font-size: 18px; margin-bottom: 10px;"><span style="color: #0066cc;">Download</span></div>
-                -->
             <div id="export_options" style="margin-top: 0px; z-index: 10; display: none; text-align: right; font-size: 12px;">
             Export as: <a id="export_link">Link</a>, 
                 <a id="export_image_png">PNG</a>, 
@@ -288,24 +220,22 @@ $page->connectToDatabase();
                 <a id="export_pdf">PDF</a>
             </div>
             <script type="text/javascript">
-                $('#export_link').click( function(){
-                    $('#link_field').val("http://dev.snap.uaf.edu/charts.php?community=" + globalCommunity + "&amp;dataset=" + globalDataset + "&amp;scenario=" + globalScenario + "&amp;variability=" + globalVariability);
+                $('#export_link').click( function() {
+                    $('#link_field').val("<?php echo Config::$url ?>/charts.php?community=" + snapCharts.data.community + "&amp;dataset=" + snapCharts.data.dataset + "&amp;scenario=" + snapCharts.data.scenario + "&amp;variability=" + snapCharts.data.variability);
                     $('#link_box').fadeIn();
                     $('#link_field').focus().select();
                 });
                 var filenameDataset = "";
                 var filenameVariability = "";
                 $('#export_image_png').click( function(){
+                    /// PICKUP
                     if(globalDataset == 2){ filenameDataset = "Precip"; } else if (globalDataset == 1){ filenameDataset = "Temp"; }
-                //  if(globalVariability == 0){ filenameVariability = ""; } else if (globalVariability == 1){ filenameVariability = "_StdDev"; }
                     chart.exportChart({
-                        //type: 'image/svg+xml',
                         filename: globalCommunity + '_' + globalScenario + '_' + filenameDataset + filenameVariability
                     });
                 });
                 $('#export_image_svg').click( function(){
                     if(globalDataset == 2){ filenameDataset = "Precip"; } else if (globalDataset == 1){ filenameDataset = "Temp"; }
-                //  if(globalVariability == 0){ filenameVariability = ""; } else if (globalVariability == 1){ filenameVariability = "_StdDev"; }
                     chart.exportChart({
                         type: 'image/svg+xml',
                         filename: globalCommunity + '_' + globalScenario + '_' + filenameDataset + filenameVariability
@@ -314,7 +244,6 @@ $page->connectToDatabase();
 
                 $('#export_pdf').click( function(){
                     if(globalDataset == 2){ filenameDataset = "Precip"; } else if (globalDataset == 1){ filenameDataset = "Temp"; }
-                //  if(globalVariability == 0){ filenameVariability = ""; } else if (globalVariability == 1){ filenameVariability = "_StdDev"; }
                     chart.exportChart({
                         type: 'application/pdf',
                         filename: globalCommunity + '_' + globalScenario + '_' + filenameDataset + filenameVariability
@@ -337,10 +266,6 @@ $page->connectToDatabase();
             <div style="top: 20px; position: absolute; width: 950px;" id="display">
                 <img alt="Sample Chart" style="margin: auto; width: 920px; opacity: 0.4; margin-left: 15px;" src="/images/def_chart.png" />
             </div>
-
-            <!--
-            <div style="height: 100px; position: absolute; "><img src="http://dev.snap.uaf.edu/images/snap_acronym_rgb.png" style="height: 50px; margin-left: 110px; margin-top: 30px;" /></div>
-            -->
         </div>
         <div>
             <div style="font-size: 18px; margin-bottom: 10px; margin-top: 10px;">Interpreting the Community Charts</div>
@@ -353,10 +278,29 @@ $page->connectToDatabase();
 
         </div>
     </div>
-        </div>
+</div>
 
 <script type="text/javascript" src="js/charts.js"></script>
-
+<script type="text/javascript">
+$(function() {
+    var communities = <?php echo ChartsFetcher::fetchCommunitiesAsJson(); ?>;
+    $('#comm_select').focus().autocomplete(
+        {
+            source: communities      
+        }
+    ).bind('autocompletechange', function(event, ui) {
+        $('#comm_select').val(ui.item.label);
+    }).bind('autocompletefocus', function(event, ui) {
+        event.preventDefault();
+        $('#comm_select').val(ui.item.label);
+    }).bind('autocompleteselect', function(event, ui) {
+        event.preventDefault();
+        $('#comm_select').val(ui.item.label);
+        snapCharts.data.community = ui.item.value;
+        snapCharts.fetchData();
+    });
+});
+</script>
 <?php
 $page->closePage();
 ?>

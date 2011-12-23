@@ -14,16 +14,20 @@ javascript :
 	java -jar build/vendor/closure-compiler/compiler.jar \
 --warning_level QUIET \
 --compilation_level SIMPLE_OPTIMIZATIONS \
+# ** custom SNAP javascript belongs here
 --js=./js/maps.js \
 --js=./js/charts.js \
 --js_output_file=./js/snap.min.js
 	java -jar build/vendor/closure-compiler/compiler.jar \
 --warning_level QUIET \
 --compilation_level WHITESPACE_ONLY \
+# ** vendor (3rd party) javascript belongs here
 --js=./js/jquery-1.6.4.min.js \
+--js=./js/jquery-ui-1.8.16.custom.min.js \
 --js=./js/jquery.blockUI.js \
 --js=./js/jquery.hoverIntent.minified.js \
 --js=./js/jquery.cycle.all.js \
+--js=./js/jquery.url.js \
 --js=./js/plugins.js \
 --js=./js/highcharts.js \
 --js=./js/exporting.js \
