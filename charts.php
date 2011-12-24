@@ -27,6 +27,7 @@ $page->pageHeader();
                 <div id="community_list" style="width: 288px; height: 120px; overflow: auto; padding: 5px; border: 1px solid #999999; ">
                 <script type="text/javascript">
 
+
                     snapCharts.data.community = $.url().param('community') || null;
                     snapCharts.data.dataset = $.url().param('dataset') || 1; // default temp
                     snapCharts.data.scenario = $.url().param('scenario') || 'a1b'; // default mid-scenario

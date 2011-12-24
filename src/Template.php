@@ -1,11 +1,15 @@
 <?php
 
 define('SNAPWEB_VERSION', 'V_DEV');
+require_once 'src/Config.php';
 
 class Template {
 	
 	public function getHeadJavascript()
 	{
+
+    $url = Config::$url;
+
 		return<<<js
 <script type="text/javascript" comment="Google Analytics">
       var _gaq = _gaq || [];
@@ -49,6 +53,12 @@ If you add a file here, you must add it to the makefile for packaging.  See the 
        ui_hover_direction: 1,
        services_compact: 'facebook,twitter,google_plusone,print,email'
     }
+</script>
+
+<script type="text/javascript">
+var snapConfig = {
+  url: '$url'
+}
 </script>
 
 js;

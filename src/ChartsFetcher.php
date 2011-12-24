@@ -122,8 +122,45 @@ class ChartsFetcher {
 		$sth->execute();
 
 		while( $row = $sth->fetch() ) {
-			$json['series'][$row['daterange']] = $row;
+
+			$json['series'][$row['daterange']] = array(
+				$row['jan'],
+				$row['feb'],
+				$row['mar'],
+				$row['apr'],
+				$row['may'],
+				$row['jun'],
+				$row['jul'],
+				$row['aug'],
+				$row['sep'],
+				$row['oct'],
+				$row['nov'],
+				$row['dec']
+			);
 		}
+
+		$sth = $dbh->prepare(<<<sql
+
+SELECT MIN(minimum) minimum, MAX(maximum) maximum FROM 
+	(
+	SELECT LEAST(`Jan`, `Feb`, `Mar`, `Apr`, `Jun`, `Jul`, `Aug`, `Sep`, `Oct`, `Nov`, `Dec`) minimum,
+	GREATEST(`Jan`, `Feb`, `Mar`, `Apr`, `Jun`, `Jul`, `Aug`, `Sep`, `Oct`, `Nov`, `Dec`) maximum
+	FROM charts_data
+	WHERE `communityId` = :community AND `scenario` = :scenario AND `type` = :dataset
+	) AS `values`
+
+sql
+);
+
+		$sth->bindParam(':community', $community, PDO::PARAM_INT);
+		$sth->bindParam(':dataset', $dataset, PDO::PARAM_INT);
+		$sth->bindParam(':scenario', $scenario, PDO::PARAM_STR);
+		$sth->setFetchMode(PDO::FETCH_ASSOC);
+		$sth->execute();
+		$row = $sth->fetch();
+
+		$json['minimum'] = $row['minimum'];
+		$json['maximum'] = $row['maximum'];
 
 		return json_encode($json);
 

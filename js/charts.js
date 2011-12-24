@@ -8,7 +8,17 @@ $( function() {
 var snapCharts = {
 
 	chart: null, // is defined when the chart is drawn
-	data: {}, // populated by ajax call and/or decomposing the URL.
+	data: {
+		communityId: null,
+		communityName: null,
+		scenario: 'a1b',
+		variability: 0,
+		dataset: 1, // default temperature
+		series: null,
+		yAxisTitle: null,
+		title: null,
+		subtitle: null
+	},
 
 	// Intended to be called on page ready() event
 	initialize : function() {
@@ -27,33 +37,34 @@ var snapCharts = {
 			$(this).block( {'message':'<img src="images/ajax-loader.gif" alt="" />&nbsp;Loading&hellip;'} );
 		}).ajaxStop( function() {
 			$(this).unblock();
-		});		
+		});	
 	},
 
-	fetchData : function (comm, type, scen, vari) {
+	fetchData : function() {
 		$.get(
-
 			"charts_fetch_data.php", 
 			{ 
-				community : comm, 
-				dataset: type, 
-				scenario : scen, 
-				variability: vari 
+				community : snapCharts.data.community,
+				dataset: snapCharts.data.dataset,
+				scenario : snapCharts.data.scenario,
+				variability: snapCharts.data.variability
 			},
 			function(data) {
 				snapCharts.data = data;
 				snapCharts.drawChart();
-				$('#location').html(": " + globalCommunity);
+				$('#location').html(": " + snapCharts.data.communityName);
 				$('#comm_block').hide();
 				$('#export_options').show();
-				$('#link_field').val("http://dev.snap.uaf.edu/charts.php?community=" + globalCommunity + "&amp;dataset=" + globalDataset + "&amp;scenario=" + globalScenario + "&amp;variability=" + globalVariability);
-			}
-			
+				$('#link_field').val(snapConfig.url + "/charts.php?community=" + snapCharts.data.communityId + "&amp;dataset=" + snapCharts.data.dataset + "&amp;scenario=" + snapCharts.data.scenario + "&amp;variability=" + snapCharts.data.variability);
+			},
+			'json'
 		);
 	},
 
 	drawChart: function() {
 
+		console.log(snapCharts.data);
+		
 		if(1 === snapCharts.data.dataset) {
 			Highcharts.setOptions({ colors: ['#00b2ee', '#308014', '#999999', '#ffff00', '#999999', '#ff7f00', '#999999', '#cc1100', '#999999'] });
 		} else {
@@ -130,7 +141,21 @@ var snapCharts = {
 			yAxis: {
 				min: snapCharts.data.minimum,
 				max: snapCharts.data.maximum,
-				// plotBands: belongs here
+				// only for temp
+				plotBands: [
+					{	
+						value: 32, 
+						color: '#000000', 
+						width: 1.5, 
+						label: { 
+							text: '32&deg;', 
+							align: 'right', 
+							style: { 
+								fontSize: '10px' 
+							} 
+						} 
+					}
+				],				
 				title: snapCharts.data.yAxisTitle,
 				labels: {
 					enabled: true
@@ -151,15 +176,15 @@ var snapCharts = {
 			},
 			series: [
 				{
-					name: '1961-1990',
-					data: snapCharts.data.series['1961-1990']
+					name: 'Historical',
+					data: snapCharts.data.series.Historical
 				},
 				{
-					name: '2001-2010',
-					data: snapCharts.data.series['2001-2010']
+					name: '2011-2020',
+					data: snapCharts.data.series['2011-2020']
 				},
 				{
-					name: '2031-2040',
+					name: '2041-2050',
 					data: snapCharts.data.series['2031-2040']
 				},
 				{
