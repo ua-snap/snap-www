@@ -8,6 +8,7 @@ $( function() {
 var snapCharts = {
 
 	chart: null, // is defined when the chart is drawn
+
 	data: {
 		communityId: null,
 		communityName: null,
@@ -41,10 +42,11 @@ var snapCharts = {
 	},
 
 	fetchData : function() {
+
 		$.get(
 			"charts_fetch_data.php", 
 			{ 
-				community : snapCharts.data.community,
+				community : snapCharts.data.communityId,
 				dataset: snapCharts.data.dataset,
 				scenario : snapCharts.data.scenario,
 				variability: snapCharts.data.variability
@@ -62,11 +64,11 @@ var snapCharts = {
 	},
 
 	drawChart: function() {
-
-		console.log(snapCharts.data);
 		
 		if(1 === snapCharts.data.dataset) {
-			Highcharts.setOptions({ colors: ['#00b2ee', '#308014', '#999999', '#ffff00', '#999999', '#ff7f00', '#999999', '#cc1100', '#999999'] });
+			Highcharts.setOptions(
+				{ colors: ['#00b2ee', '#308014', '#999999', '#ffff00', '#999999', '#ff7f00', '#999999', '#cc1100', '#999999'] }
+			);
 		} else {
 			Highcharts.setOptions({ colors: ['#97ffff', '#00ffff', '#999999', '#00b2ee', '#999999', '#007ca7', '#999999', '#0045b3', '#999999'] });
 		}
@@ -75,7 +77,7 @@ var snapCharts = {
 			
 			chart: {
 				height: 400,
-				border: '#fff',
+				border: '#ffffff',
 				renderTo: 'chart_div',
 				defaultSeriesType: 'column',
 				margin: [100,30,70,50]
@@ -84,7 +86,7 @@ var snapCharts = {
 			tooltip: {
 				formatter: function() {
 					if( 1 === snapCharts.data.dataset ) {
-						return '<span style="color: #999999;">' + this.x + ' </span><br/><span>' + this.y + ' &deg;F (' + ((5/9) * (this.y - 32)).toFixed(1) + ' &deg;C)</span>';
+						return '<span style="color: #999999;">' + this.x + ' </span><br/><span>' + this.y + ' °F (' + ((5/9) * (this.y - 32)).toFixed(1) + ' °C)</span>';
 					} else {
 						return '<span style="color: #999999;">' + this.x + ' </span><br/><span>' + this.y + ' in. (' + (this.y * 25.4).toFixed(1) + ' mm.)</span>';
 					}
@@ -146,11 +148,11 @@ var snapCharts = {
 					{	
 						value: 32, 
 						color: '#000000', 
-						width: 1.5, 
-						label: { 
-							text: '32&deg;', 
+						width: 1.5,
+						label: {
+							text: '32°', 
 							align: 'right', 
-							style: { 
+							style: {
 								fontSize: '10px' 
 							} 
 						} 

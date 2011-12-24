@@ -2,7 +2,7 @@
 
 require 'src/ChartsFetcher.php';
 
-header('Content type: application/json');
+//header('Content-Type: application/json');
 echo ChartsFetcher::fetchChart(
     $_GET['community'],
     $_GET['dataset'],

@@ -72,7 +72,12 @@ class ChartsFetcher {
 
 	static public function fetchChart($community, $dataset, $scenario, $variability) {
 
-		$yAxisTitle = (1 === $dataset) ? 'Temperature &deg;F' : 'Total precipitation in inches';
+		// Juggle types
+		$community = (int) $community;
+		$dataset = (int) $dataset;
+		$variability = (int) $variability;
+
+		$yAxisTitle = (1 === $dataset) ? 'Temperature °F' : 'Total precipitation in inches';
 		switch ($scenario) {
 			case 'a2':
 				$subtitle = "5 Model Average, High-range emissions (A2)";
@@ -124,18 +129,18 @@ class ChartsFetcher {
 		while( $row = $sth->fetch() ) {
 
 			$json['series'][$row['daterange']] = array(
-				$row['jan'],
-				$row['feb'],
-				$row['mar'],
-				$row['apr'],
-				$row['may'],
-				$row['jun'],
-				$row['jul'],
-				$row['aug'],
-				$row['sep'],
-				$row['oct'],
-				$row['nov'],
-				$row['dec']
+				(float) $row['jan'],
+				(float) $row['feb'],
+				(float) $row['mar'],
+				(float) $row['apr'],
+				(float) $row['may'],
+				(float) $row['jun'],
+				(float) $row['jul'],
+				(float) $row['aug'],
+				(float) $row['sep'],
+				(float) $row['oct'],
+				(float) $row['nov'],
+				(float) $row['dec']
 			);
 		}
 
@@ -159,8 +164,8 @@ sql
 		$sth->execute();
 		$row = $sth->fetch();
 
-		$json['minimum'] = $row['minimum'];
-		$json['maximum'] = $row['maximum'];
+		$json['minimum'] = (float) $row['minimum'];
+		$json['maximum'] = (float) $row['maximum'];
 
 		return json_encode($json);
 

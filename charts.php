@@ -27,13 +27,12 @@ $page->pageHeader();
                 <div id="community_list" style="width: 288px; height: 120px; overflow: auto; padding: 5px; border: 1px solid #999999; ">
                 <script type="text/javascript">
 
-
-                    snapCharts.data.community = $.url().param('community') || null;
+                    snapCharts.data.communityId = $.url().param('community') || null;
                     snapCharts.data.dataset = $.url().param('dataset') || 1; // default temp
                     snapCharts.data.scenario = $.url().param('scenario') || 'a1b'; // default mid-scenario
                     snapCharts.data.variability = $.url().param('variability') || 0; // default no variability
 
-                    if( null != snapCharts.data.community ) {
+                    if( null != snapCharts.data.communityId ) {
                         snapCharts.fetchData();
                     }
 
@@ -266,6 +265,7 @@ $page->pageHeader();
             </div>
             <div style="top: 20px; position: absolute; width: 950px;" id="display">
                 <img alt="Sample Chart" style="margin: auto; width: 920px; opacity: 0.4; margin-left: 15px;" src="/images/def_chart.png" />
+                <div style="position: absolute; top: 20px; width: 930px; height: 420px; margin-left: 20px;" id="chart_div"></div>
             </div>
         </div>
         <div>
@@ -281,7 +281,6 @@ $page->pageHeader();
     </div>
 </div>
 
-<script type="text/javascript" src="js/charts.js"></script>
 <script type="text/javascript">
 $(function() {
     var communities = <?php echo ChartsFetcher::fetchCommunitiesAsJson(); ?>;
@@ -290,18 +289,36 @@ $(function() {
             source: communities      
         }
     ).bind('autocompletechange', function(event, ui) {
-        $('#comm_select').val(ui.item.label);
+        if( null != ui.item ) {
+            $('#comm_select').val(ui.item.label);
+        }
     }).bind('autocompletefocus', function(event, ui) {
-        event.preventDefault();
-        $('#comm_select').val(ui.item.label);
+        if( null != ui.item) {
+            event.preventDefault();
+            $('#comm_select').val(ui.item.label);
+        }
     }).bind('autocompleteselect', function(event, ui) {
         event.preventDefault();
         $('#comm_select').val(ui.item.label);
-        snapCharts.data.community = ui.item.value;
+        snapCharts.data.communityId = ui.item.value;
         snapCharts.fetchData();
     });
+
+    $('#export_button').click(function() { 
+        chart.exportChart(null, { 
+            chart: {
+                backgroundColor: '#eeffff' 
+            }
+        }, 
+        function (chart){
+            chart.renderer.image(snapConfig.url + '/images/snap_acronym_rgb.png', 0, 0, 150, 45).add();
+            chart.renderer.image(snapConfig.url + '/images/snap_acronym_rgb.png', 0, 0, 150, 45).add();
+        });
+    });
 });
+
 </script>
+
 <?php
 $page->closePage();
 ?>
