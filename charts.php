@@ -17,27 +17,15 @@ $page->pageHeader();
 
     <div style="margin: auto;">
         <div style="height: 150px; margin: auto; margin-bottom: 20px; width: 950px;">
-            <div style="width: 300px; float: left;">
+            <div style="width: 300px; float: left; position: relative;">
+                <img id="community_list" src="images/placeholder-map-extent.png" style="display: block; position: absolute; top: -25px; z-index: -10" />
                 <div>
-                    <div class="ui-widget">
-                        <label for="comm_select">Filter the list: </label>
-                        <input id="comm_select" type="text" placeholder="Enter your community name here" />
+                    <div class="ui-widget" style="padding: 0 5px; position: relative; top: 120px; z-index: 10000">
+                        <label for="comm_select">Enter your community&rsquo;s name:</label>
+                        <input id="comm_select" type="text" style="width: 95%" placeholder="Enter your community name here" />
                     </div>
                 </div>
-                <div id="community_list" style="width: 288px; height: 120px; overflow: auto; padding: 5px; border: 1px solid #999999; ">
-                <script type="text/javascript">
-
-                    snapCharts.data.communityId = $.url().param('community') || null;
-                    snapCharts.data.dataset = $.url().param('dataset') || 1; // default temp
-                    snapCharts.data.scenario = $.url().param('scenario') || 'a1b'; // default mid-scenario
-                    snapCharts.data.variability = $.url().param('variability') || 0; // default no variability
-
-                    if( null != snapCharts.data.communityId ) {
-                        snapCharts.fetchData();
-                    }
-
-                </script>
-                </div>
+                
             </div>
             <div style="width: 426px; margin-left: 10px; height: 140px; float: left;  border: 1px solid #ffffff;">
                 <?php
@@ -85,7 +73,7 @@ $page->pageHeader();
                 </div>
                 <div style="color: #666666; margin: auto; font-size: 14px; text-align: center; margin-top: 0px;">Emissions Scenario</div>
                 <div style="margin: auto; font-size: 18px; text-align: center; margin-bottom: 15px;">
-                    <?php if ($_GET['scenario'] == 'B1'){
+                    <?php if ($_GET['scenario'] == 'b1'){
                          echo "<span class=\"selected_option\"  id=\"scen_low\">Low</span>";
                           } else {
                          echo "<span id=\"scen_low\"><a>Low</a></span>";
@@ -98,7 +86,7 @@ $page->pageHeader();
                         </div>
                     </div>
                      | 
-                    <?php if ($_GET['scenario'] == 'A1B' || !isset($_GET['scenario'])){
+                    <?php if ($_GET['scenario'] == 'a1b' || !isset($_GET['scenario'])){
                          echo "<span class=\"selected_option\" id=\"scen_med\">Medium</span>";
                           } else {
                          echo "<span id=\"scen_med\"><a>Medium</a></span>";
@@ -111,7 +99,7 @@ $page->pageHeader();
                         </div>
                     </div>
                      | 
-                    <?php if ($_GET['scenario'] == 'A2'){
+                    <?php if ($_GET['scenario'] == 'a2'){
                          echo "<span class=\"selected_option\" id=\"scen_high\">High</span>";
                           } else {
                          echo "<span id=\"scen_high\"><a>High</a></span>";
@@ -221,7 +209,7 @@ $page->pageHeader();
             </div>
             <script type="text/javascript">
                 $('#export_link').click( function() {
-                    $('#link_field').val("<?php echo Config::$url ?>/charts.php?community=" + snapCharts.data.community + "&amp;dataset=" + snapCharts.data.dataset + "&amp;scenario=" + snapCharts.data.scenario + "&amp;variability=" + snapCharts.data.variability);
+                    $('#link_field').val("<?php echo Config::$url ?>/charts.php?community=" + snapCharts.data.communityId + "&dataset=" + snapCharts.data.dataset + "&scenario=" + snapCharts.data.scenario + "&variability=" + snapCharts.data.variability);
                     $('#link_box').fadeIn();
                     $('#link_field').focus().select();
                 });
@@ -264,7 +252,7 @@ $page->pageHeader();
                 </script>
             </div>
             <div style="top: 20px; position: absolute; width: 950px;" id="display">
-                <img alt="Sample Chart" style="margin: auto; width: 920px; opacity: 0.4; margin-left: 15px;" src="/images/def_chart.png" />
+                <img alt="Sample Chart" id="placeholderImage" style="margin: auto; width: 920px; opacity: 0.4; margin-left: 15px;" src="/images/def_chart.png" />
                 <div style="position: absolute; top: 20px; width: 930px; height: 420px; margin-left: 20px;" id="chart_div"></div>
             </div>
         </div>
@@ -315,6 +303,16 @@ $(function() {
             chart.renderer.image(snapConfig.url + '/images/snap_acronym_rgb.png', 0, 0, 150, 45).add();
         });
     });
+
+    snapCharts.data.communityId = $.url().param('community') || null;
+    snapCharts.data.dataset = $.url().param('dataset') || 1; // default temp
+    snapCharts.data.scenario = $.url().param('scenario') || 'a1b'; // default mid-scenario
+    snapCharts.data.variability = $.url().param('variability') || 0; // default no variability
+
+    if( null != snapCharts.data.communityId ) {
+        snapCharts.fetchData();
+    }
+
 });
 
 </script>

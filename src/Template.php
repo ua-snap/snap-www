@@ -31,6 +31,7 @@ are used to determine the region to be replaced with a single script inclusion.
 
 If you add a file here, you must add it to the makefile for packaging.  See the README in the js/ directory.
 -->
+<script src="js/underscore-min.js" type="text/javascript" ></script>
 <script src="js/jquery-1.6.4.min.js" type="text/javascript" ></script>
 <script src="js/jquery.blockUI.js" type="text/javascript" ></script>
 <script src="js/jquery.hoverIntent.minified.js" type="text/javascript"></script>

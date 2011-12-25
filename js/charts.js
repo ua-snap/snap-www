@@ -12,10 +12,13 @@ var snapCharts = {
 	data: {
 		communityId: null,
 		communityName: null,
+		region: null, // Alaska, Manitoba, etc
+		country: null, // USA or CAN
 		scenario: 'a1b',
 		variability: 0,
 		dataset: 1, // default temperature
-		series: null,
+		series: null, // actual data, keys are time spans
+		standardDeviations: null, // keys are time spans
 		yAxisTitle: null,
 		title: null,
 		subtitle: null
@@ -54,7 +57,8 @@ var snapCharts = {
 			function(data) {
 				snapCharts.data = data;
 				snapCharts.drawChart();
-				$('#location').html(": " + snapCharts.data.communityName);
+				$('#placeholderImage').remove();
+				$('#location').html(": " + snapCharts.data.communityName + ', ' + snapCharts.data.communityRegion);
 				$('#comm_block').hide();
 				$('#export_options').show();
 				$('#link_field').val(snapConfig.url + "/charts.php?community=" + snapCharts.data.communityId + "&amp;dataset=" + snapCharts.data.dataset + "&amp;scenario=" + snapCharts.data.scenario + "&amp;variability=" + snapCharts.data.variability);
@@ -66,9 +70,7 @@ var snapCharts = {
 	drawChart: function() {
 		
 		if(1 === snapCharts.data.dataset) {
-			Highcharts.setOptions(
-				{ colors: ['#00b2ee', '#308014', '#999999', '#ffff00', '#999999', '#ff7f00', '#999999', '#cc1100', '#999999'] }
-			);
+			Highcharts.setOptions({ colors: ['#00b2ee', '#308014', '#999999', '#ffff00', '#999999', '#ff7f00', '#999999', '#cc1100', '#999999'] });
 		} else {
 			Highcharts.setOptions({ colors: ['#97ffff', '#00ffff', '#999999', '#00b2ee', '#999999', '#007ca7', '#999999', '#0045b3', '#999999'] });
 		}
@@ -143,7 +145,7 @@ var snapCharts = {
 			yAxis: {
 				min: snapCharts.data.minimum,
 				max: snapCharts.data.maximum,
-				// only for temp
+				// only for temp -- need to remove for precip
 				plotBands: [
 					{	
 						value: 32, 
@@ -158,7 +160,9 @@ var snapCharts = {
 						} 
 					}
 				],				
-				title: snapCharts.data.yAxisTitle,
+				title: {
+					text: snapCharts.data.yAxisTitle
+				},
 				labels: {
 					enabled: true
 				}
@@ -186,17 +190,41 @@ var snapCharts = {
 					data: snapCharts.data.series['2011-2020']
 				},
 				{
+					name: '2011-2020 Standard Deviations',
+					visible: false,
+					showInLegend: false,
+					data: snapCharts.data.standardDeviations['2011-2020']
+				},
+				{
 					name: '2041-2050',
 					data: snapCharts.data.series['2031-2040']
 				},
+				{
+					name: '2041-2050 Standard Deviations',
+					visible: false,
+					showInLegend: false,
+					data: snapCharts.data.standardDeviations['2041-2050']
+				},				
 				{
 					name: '2061-2070',
 					data: snapCharts.data.series['2061-2070']
 				},
 				{
+					name: '2061-2070 Standard Deviations',
+					visible: false,
+					showInLegend: false,
+					data: snapCharts.data.standardDeviations['2061-2070']
+				},				
+				{
 					name: '2091-2100',
 					data: snapCharts.data.series['2091-2100']
-				}
+				},
+				{
+					name: '2091-2100 Standard Deviations',
+					visible: false,
+					showInLegend: false,
+					data: snapCharts.data.standardDeviations['2091-2100']
+				}				
 			]
 		},  function(chart) {
 

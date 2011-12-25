@@ -102,7 +102,7 @@ class ChartsFetcher {
 		$res = $sth->fetch();
 
 		$title = (1 === $dataset) ? 'Historical and Projected Average Monthly Temperature for ' : 'Historical and Projected Average Monthly Precipitation for ';
-		$title .= $res['community'].', '.$res['region'].' '.$res['country'];
+		$title .= $res['community'].', '.$res['region'];
 
 		$json = array(
 
@@ -141,6 +141,21 @@ class ChartsFetcher {
 				(float) $row['oct'],
 				(float) $row['nov'],
 				(float) $row['dec']
+			);
+
+			$json['standardDeviations'][$row['daterange']] = array(
+				(float) $row['janSd'],
+				(float) $row['febSd'],
+				(float) $row['marSd'],
+				(float) $row['aprSd'],
+				(float) $row['maySd'],
+				(float) $row['junSd'],
+				(float) $row['julSd'],
+				(float) $row['augSd'],
+				(float) $row['sepSd'],
+				(float) $row['octSd'],
+				(float) $row['novSd'],
+				(float) $row['decSd']
 			);
 		}
 
