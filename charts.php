@@ -18,7 +18,7 @@ $page->pageHeader();
     <div style="margin: auto;">
         <div style="height: 150px; margin: auto; margin-bottom: 20px; width: 950px;">
             <div style="width: 300px; float: left; position: relative;">
-                <img id="community_list" src="images/placeholder-map-extent.png" style="display: block; position: absolute; top: -25px; z-index: -10" />
+                <img id="community_list" src="images/akcanada_extent.png" style="display: block; position: absolute; top: -25px; z-index: -10" />
                 <div>
                     <div class="ui-widget" style="padding: 0 5px; position: relative; top: 120px; z-index: 10000">
                         <label for="comm_select">Enter your community&rsquo;s name:</label>
@@ -32,7 +32,7 @@ $page->pageHeader();
                 if (!isset($_GET['community'])){
                 ?>
                 <div id="comm_block" style="position: absolute; width: 426px; height: 160px; background-color: #ffffff; text-align: center;">
-                    <div style="text-align: center; font-size: 18px; width: 250px; margin: auto; margin-top: 50px; color: #996600;">Select a Community in order to open a chart and access options</div>
+                    <div style="text-align: center; font-size: 18px; width: 250px; margin: auto; margin-top: 50px; color: #996600;">Select a Community to open a chart and access options</div>
                 </div>
                 <?php } ?>
                 <div style="color: #666666; margin: auto; font-size: 14px; text-align: center; margin-top: 0px;">

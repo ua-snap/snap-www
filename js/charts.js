@@ -41,7 +41,7 @@ var snapCharts = {
 			$(this).block( {'message':'<img src="images/ajax-loader.gif" alt="" />&nbsp;Loading&hellip;'} );
 		}).ajaxStop( function() {
 			$(this).unblock();
-		});	
+		});
 	},
 
 	fetchData : function() {
