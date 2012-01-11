@@ -55,11 +55,11 @@ class ChartsFetcher {
 		$dbh = SwDb::getInstance();
 
 		// rename columns to match jQueryUI autocompleter plugin data source
-		$sth = $dbh->prepare('SELECT `id`, `community` FROM communities');
+		$sth = $dbh->prepare('SELECT `id`, CONCAT(`community`, ", ", `region`) AS `community` FROM communities ORDER BY `community` ASC');
 		$sth->setFetchMode(PDO::FETCH_ASSOC);
 		$sth->execute();
 
-		// loop to cast carefully to utf8
+		// loop to cast to UTF8 - there are some oddball characters in the data, this prevents goof-ups.
 		$arr = array();
 		while( $row = $sth->fetch() ) {
 			$arr[] = array( 

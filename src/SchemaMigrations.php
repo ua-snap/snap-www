@@ -31,24 +31,6 @@ sql
                     'version' => 2,
                     'up' => <<<sql
 
-CREATE TABLE `tileset_descriptions` (
-  `name` varchar(255) DEFAULT NULL,
-  `description` varchar(4096) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
-CREATE TABLE `tileset` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `variable` varchar(50) DEFAULT NULL,
-  `dateinterval` varchar(20) DEFAULT NULL,
-  `daterange` varchar(20) DEFAULT NULL,
-  `scenario` varchar(10) DEFAULT NULL,
-  `model` varchar(20) DEFAULT NULL,
-  `resolution` varchar(10) DEFAULT NULL,
-  `tilepath` varchar(255) DEFAULT NULL,
-  `legend` varchar(4096) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
-
 CREATE TABLE `resources` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) DEFAULT NULL,
@@ -149,18 +131,6 @@ CREATE TABLE `people` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
-CREATE TABLE `community_charts` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `community` varchar(255) DEFAULT NULL,
-  `month` varchar(10) DEFAULT NULL,
-  `daterange` varchar(50) DEFAULT NULL,
-  `value` float DEFAULT NULL,
-  `stddev` float DEFAULT NULL,
-  `type` int(5) DEFAULT NULL,
-  `scenario` varchar(25) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=381025 DEFAULT CHARSET=latin1;
-
 CREATE TABLE `collaborators` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -189,7 +159,6 @@ sql
                     'down' => <<<sql
 DROP TABLE `attachments`;
 DROP TABLE `collaborators`;
-DROP TABLE `community_charts`;
 DROP TABLE `people`;
 DROP TABLE `project_collaborators`;
 DROP TABLE `project_personnel`;
@@ -201,8 +170,6 @@ DROP TABLE `resources`;
 DROP TABLE `resource_collaborators`;
 DROP TABLE `resource_personnel`;
 DROP TABLE `resource_tags`;
-DROP TABLE `tileset`;
-DROP TABLE `tileset_descriptions`;
 sql
                   )
         ),

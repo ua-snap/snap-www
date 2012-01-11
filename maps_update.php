@@ -5,6 +5,8 @@
 require 'template.php';
 
 $pageX = new webPage('', '', '');
+
+
 $pageX->connectToDatabase();
 if ($_GET['requesttype'] === 'build') {
     $activeVariable = 'Mean Annual Precipitation';
@@ -212,8 +214,7 @@ if ($_GET['requesttype'] === 'build') {
     </div>
 
 <script type="text/javascript">
-    // On hover of the menu items, display the corresponding help text
-    //alert(globalVariable + " : " + globalInterval + " : " + globalRange + " : " + globalScenario + " : " + globalModel + " : " + globalResolution);
+
     $(".menuContentsLeft > div").hover( 
         function() {
             var tmp = $(this).children("span").html();
@@ -253,6 +254,7 @@ elseif ($_GET['requesttype'] == "newmap"){
     $query = "SELECT tilepath FROM tileset WHERE variable='$variable' AND dateinterval='$interval' AND daterange='$range' AND scenario='$scenario' AND model='$model' AND resolution='$resolution'";
     $result = mysql_query($query);
     $row = mysql_fetch_array($result);
-    echo $row['tilepath'];
+    //echo $row['tilepath'];
+echo "http://tiles.proto.gina.alaska.edu/snap/tas_decadal_mean_annual_mean_c_5modelAvg_sresa1b_2010_2019.google/tile/";
 }
 ?>

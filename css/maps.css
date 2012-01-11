@@ -122,36 +122,131 @@
 	vertical-align: middle;
 }
 #legend_wrapper {
+	display: none;
 	font-size: 12px;
 	position: absolute;
 	top: 10px;
 	left: 20px;
-}
-#legend_background {
-	border: 3px solid #222222;
+	border: 2px solid #888;
 	border-radius: 6px;
 	position: absolute;
-	height: 100%;
-	width: 100%;
-	background-color: #ffffff;
-	opacity: 0.7;
+	background-color: rgba(255, 255, 255, .8);
+	padding: 1em;
 }
-#legend {
-	position: relative;
-	margin: 10px;
+
+#legend_wrapper h4 {
+	text-align: center;
+	padding: 1ex;
+	margin: 0 0 1ex 0;
 }
-#legend div > div:first-child {
-	margin-bottom: 5px;
-	border: 1px solid black;
-	width: 30px;
-	height: 15px;
-	vertical-align: top;
+
+#legend_wrapper td {
+	min-width: 2em;
 }
-#legend div > div:last-child {
-	color: #000000;
-	line-height: 15px;
-	vertical-align: top;
-	margin-left: 5px;
-	/*text-shadow: -1px 0 black, 0 1px black,
-      1px 0 black, 0 -1px black;*/
+
+#legend_wrapper td + td {
+	padding-left: 1ex;
+}
+
+#map_header {
+	height: auto;
+}
+
+#map_header .container {
+	margin-top: 0px; margin-bottom: 0px;
+}
+
+#map_logo {
+	float: left;
+}
+
+#map_logo img {
+	margin-top: 20px; margin-bottom: 20px; vertical-align: middle;
+}
+
+#modal_menu {
+	float: left;
+}
+
+#snap_name {
+	color: #505a5c; margin-left: 30px; font-size: 20px; margin-top: 40px;
+}
+
+#menu_items {
+	color: #505a5c; margin-left: 50px; font-size: 14px; margin-top: 10px;
+}
+
+#currently_viewing {
+	color: #444444; font-size: 12px;
+}
+
+#mapMenu {
+	margin-top: 5px;
+}
+
+#menu_variable {
+	font-size: 18px;
+}
+
+#menu_interval {
+	font-size: 18px;
+}
+
+#menu_interval .menuTitle {
+	font-size: 18px;
+}
+
+#menu_range {
+	font-size: 18px;
+}
+
+#menu_range .menuTitle {
+	font-size: 18px;
+}
+
+#small_menu_items {
+	margin-top: 15px; font-size: 10px;
+}
+
+#menu_scenario .menuTitle {
+	font-size: 10px;
+}
+
+#menu_model .menuTitle {
+	font-size: 10px;
+}
+
+#menu_resolution .menuTitle {
+	font-size: 10px;
+}
+
+#menu_map_bar {
+	clear: both;
+}
+
+#textLinks {
+	float: left; margin-left: 20px; font-size: 20px;
+}
+#shareBlock {
+	float: right; margin-left: 20px; font-size: 20px; height: 38px; border-left: 4px solid #ffffff; background-color: #97A93A;
+}
+
+#shareBlock .addthis_button {
+	color: #fff;
+}
+
+#exportBlock {
+	float: right; margin-left: 20px; font-size: 14px;
+}
+
+#exportBlock span {
+	margin-right: 15px;
+}
+
+#map_footer #helpBlock {
+	float: left; margin-left: 20px; color: #333333;
+}
+
+#map_footer .logoBlock {
+	float: right; margin-right: 20px; color: #333333;
 }
