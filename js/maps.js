@@ -1,50 +1,454 @@
-/** Thinking re: implementing new tile backend here.
-
-We need to enumerate the different fragments that are used to compose the URL to the tiled data.
-We need to list the required content (i.e. descriptions etc) to build/modify the menus.
-
-
-*/
-
 /*jshint laxbreak:true */
 
 // Global mapping variables
 var map;
 
-/*
-var marker1;
-var marker2;
-var rectangle;
-var polygon;
-var polyline;
-var marker_list = [];
-var poly_listener;
-var fullscreen = false;
-
-// Global individual map data
-var globalVariable = "";
-var window.snap.state.interval = "";
-var window.snap.state.range = "";
-var window.snap.state.scenario = "";
-var window.snap.state.model = "";
-var window.snap.state.resolution = "";
-var newmap;
-var gmnames;
-//Show the sub menu for a selected variable
-*/
-
-
-
 window.snap = {};
 
+// This will be immediately populated by the fragment of code in maps.php that
+// checks for the hashtag values, and sets defaults.
 snap.state = {
 	interval: null,
 	range: null,
 	scenario: null,
 	model: null,
 	resolution: null,
-	variable: null
+	variable: null,
+	zoom: 3,
+	latitude: null,
+	longitude: null
 };
+
+///////////////
+snap.submenus = {
+	'intervals' : {
+		'defaultText' : 'default text placeholder',
+		items: {
+			'decadalAverages' : {
+				'name' : '10 Year Averages',
+				'description' : 'Data is averaged over a 10 year interval'
+			},
+			'spring' : {
+				'name' : '10 Year Averages&mdash;Spring',
+				'description' : 'Data from March, April, and May are averaged over a 10 year interval'
+			},
+			'summer' : {
+				'name' : '10 Year Averages&mdash;Summer',
+				'description' : 'Data from June, July, and August are averaged over a 10 year interval'
+			},
+			'fall' : {
+				'name' : '10 Year Averages&mdash;Fall',
+				'description' : 'Data from September, October, and November are averaged over a 10 year interval'
+			},
+			'winter' : {
+				'name' : '10 Year Averages&mdash;Winter',
+				'description' : 'Data from December, January, and February are averaged over a 10 year interval'
+			}
+		}
+	},
+	'nonseasonalIntervals' : {
+		'defaultText' : 'default text placeholder',
+		items: {
+			'decadalAverages' : {
+				'name' : '10 Year Averages',
+				'description' : 'Data is averaged over a 10 year interval'
+			}
+		}
+	},
+	'ranges' :  {
+		'defaultText' : 'default text placeholder',
+		items: {
+			'2010-2019' : {
+				'name' : '2010&ndash;2019',
+				'description' : '2010&ndash;2019'
+			},
+			'2020-2029' : {
+				'name' : '2020&ndash;2029',
+				'description' : '2020&ndash;2029'
+			},
+			'2030-2039' : {
+				'name' : '2030&ndash;2039',
+				'description' : '2030&ndash;2039'
+			},
+			'2040-2049' : {
+				'name' : '2040&ndash;2049',
+				'description' : '2040&ndash;2049'
+			},
+			'2050-2059' : {
+				'name' : '2050&ndash;2059',
+				'description' : '2050&ndash;2059'
+			},
+			'2060-2069' : {
+				'name' : '2060&ndash;2069',
+				'description' : '2060&ndash;2069'
+			},
+			'2070-2079' : {
+				'name' : '2070&ndash;2079',
+				'description' : '2070&ndash;2079'
+			},
+			'2080-2089' : {
+				'name' : '2080&ndash;2089',
+				'description' : '2080&ndash;2089'
+			},
+			'2090-2099' : {
+				'name' : '2090&ndash;2099',
+				'description' : '2090&ndash;2099'
+			}
+		}
+	},
+	'scenarios' :  {
+		'defaultText' : 'default text placeholder',
+		items: {
+			'A2' : {
+				'name' : 'rapid increases in emissions (<span>A2</span>}',
+				'description' : 'The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The A2 scenario describes a very heterogeneous world with high population growth, slow economic development and slow technological change.'
+			},
+			'A1B' : {
+				'name' : 'mid-range emissions (<span>A1B</span>}',
+				'description' : 'The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The Scenario A1B assumes a world of very rapid economic growth, a global population that peaks in mid-century, rapid introduction of new and more efficient technologies, and a balance between fossil fuels and other energy sources.'
+			},
+			'B1' : {
+				'name' : 'leveling and declining emissions (<span>B1</span>}',
+				'description' : 'The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The B1 scenario describes a convergent world, with the same global population as A1B, but with more rapid changes in economic structures toward a service and information economy.'
+			}
+		}
+	}
+};
+
+// el = a JQuery object
+snap.renderers = {
+	'standard' : function(el, category, source) {
+
+		var wrapper = $('<div/>');
+
+		var title = $(
+			_.template(
+				'<h4 class="menuTitle menuOption" data-variable="variable"><%= title %></h4>'
+				//+'</div>'
+				+ '<div class="menuSpacer"></div>'
+				, {
+					title:source.items[window.snap.state[category]].name
+				}
+			)
+		)
+		.data('category', category)
+		.click(
+			function(e) {
+				$('.menuOptions').hide();
+				$('.menuSpacer').removeClass('menuSpacerToggle');
+				$('#' + $(this).data('category') + '_content').toggle();
+				$(this).parent().find('.menuSpacer').toggleClass('menuSpacerToggle');
+				e.stopPropagation();
+			}
+		).hover(
+			function(e) {
+				$(this).parent().find('.menuSpacer').css('opacity', 1.0);
+			},
+			function(e) {
+				$(this).parent().find('.menuSpacer').css('opacity', 0.5);
+			}
+		);
+
+		var content = $('<div/>', {
+			'class' : 'menuOptions',
+			'id' : category + '_content',
+			'style' : 'display: none;'
+		})
+		.click(function(e){
+			e.stopPropagation();
+		})
+		.append( 
+			$('<div/>', {
+				'class' : 'descriptions',
+				'id' : category + '_descriptions'
+			})
+			.data('category', category)
+			.text(source.defaultText)
+			.append($('<p/>'))
+		)
+		.hover(
+			function(e) {
+				var category = $(e.currentTarget).data('category');
+				$('#' + category + '_content').show().stop('menus',true);
+			},
+			function(e) {
+				var category = $(e.currentTarget).data('category');
+				$('#' + category + '_content').show().delay(3000,'menus').hide(500);
+			}
+		);
+
+		var optionsList = $('<ul/>');
+
+		_.each(source.items, function(e, i, l) {
+			optionsList.append($('<li/>')
+			.data('category', category)
+			.data('option', i)
+			.html(e.name).hover(
+
+				function(e) {
+					var category = $(e.currentTarget).data('category');
+					var option = $(e.currentTarget).data('option');
+					$('#' + category + '_descriptions').find('p').html(source.items[option].description);
+				},
+				function(e) {
+					var category = $(e.currentTarget).data('category');
+					$('#' + category + '_descriptions').find('p').html(source.defaultText);
+				}
+			));
+		}, this);
+
+		el.append(wrapper.append(title).append(content.append(optionsList)));
+		
+	}
+};
+
+// Define menu structure
+snap.menus = {
+	'variable' : {
+		defaultText: 'defaultText',
+		items: {
+			'temperature' : {
+				'name' : 'Average Annual Temperature',
+				'description' : 'The average annual precipitation for the given range',
+				'submenus' : {
+					// 'key' => 'value', where key is the same as the key in the window.snap.state object.
+					'interval' : window.snap.submenus.intervals,
+					'range' : window.snap.submenus.ranges,
+					'scenario' : window.snap.submenus.scenarios
+				}
+			},
+			'precipitation' : {
+				'name' : 'Average Annual Precipitation',
+				'description' : 'This is the average annual temperature calculated for the given range',
+				'submenus' : {
+					'interval' : window.snap.submenus.intervals,
+					'range' : window.snap.submenus.ranges,
+					'scenario' : window.snap.submenus.scenarios
+				}
+			},
+			'dayOfFreeze' : {
+				'name' : 'Day of Freeze',
+				'description' : 'placeholder',
+				'submenus' : {
+					'interval' : window.snap.submenus.nonseasonalIntervals,
+					'range' : window.snap.submenus.ranges,
+					'scenario' : window.snap.submenus.scenarios
+				}
+			},
+			'dayOfThaw' : {
+				'name' : 'Day of Thaw',
+				'description' : 'placeholder',
+				'submenus' : {
+					'intervals' : window.snap.submenus.nonseasonalIntervals,
+					'ranges' : window.snap.submenus.ranges,
+					'scenarios' : window.snap.submenus.scenarios
+				}
+			},
+			'lengthOfGrowingSeason' : {
+				'name' : 'Length of Growing Season',
+				'description' : 'placeholder',
+				'submenus' : {
+					'intervals' : window.snap.submenus.nonseasonalIntervals,
+					'ranges' : window.snap.submenus.ranges,
+					'scenarios' : window.snap.submenus.scenarios
+				}
+			}
+		}
+	}
+};
+
+
+$(document).ready(function() {
+
+	// Close any open menus when click outside of them
+	$('body').click(function(e) {
+		$('.menuOptions').hide();
+		$('.menuSpacer').removeClass('menuSpacerToggle');
+	});
+	
+});
+
+function buildMenus() {
+	// build the variables menu, always
+	window.snap.renderers.standard($('#mapMenu'), 'variable', window.snap.menus.variable);
+
+	// get the active variable and render its submenus
+	_.each(window.snap.menus.variable.items[window.snap.state.variable].submenus, function(e, i, l) {
+		window.snap.renderers.standard($('#mapMenu'), i, e);
+	});
+}
+
+
+
+
+
+function showVariable(item){
+	$(".menuContentsLeft div").show();
+	$(".menuContents").parent().not("#" + item.id).children(".menuContents").hide();
+	$(".menuSpacer").parent().not("#" + item.id).children(".menuSpacer").removeClass("menuSpacerToggle");
+	$("#" + item.id + " .menuContents").toggle();
+	$("#" + item.id + " > .menuSpacer").toggleClass("menuSpacerToggle");
+}
+
+//Update address to reflect new hash
+function writeHash(){
+	window.location.hash = window.snap.state.variable
+	+ "/" + window.snap.state.interval
+	+ "/" + window.snap.state.range
+	+ "/" + window.snap.state.scenario
+	+ "/" + window.snap.state.model
+	+ "/" + window.snap.state.resolution
+	+ "/" + map.getZoom()
+	+ "/" + (map.getCenter()).lat()
+	+ "/" + (map.getCenter()).lng();
+}
+
+//Highlight the menu to show changes from new options
+function updateMenu(){
+	$('.menuOption').children('div:first-child')  //Done to workaround chrome issue
+	.animate( { backgroundColor: '#a7c95a' }, 300)
+	.animate( { backgroundColor: '#a7c95a' }, 600)
+	.animate( { backgroundColor: 'white' }, 900);
+	$('.menuOption').children('div:first-child').css( "backgroundColor", "white"); //Done for Chrome workaround
+}
+
+// Assumes that the state has been initialized/set prior to calling this function.
+function updateMenuTitles() {
+	buildMenus();
+	/*
+	$('.menuTitle[data-variable="variable"]').html(window.snap.menuTitles.variables[window.snap.state.variable]);
+	$('.menuTitle[data-variable="interval"]').html(window.snap.menuTitles.intervals[window.snap.state.interval]);
+	$('.menuTitle[data-variable="range"]').html(window.snap.menuTitles.ranges[window.snap.state.range]);
+	$('.menuTitle[data-variable="scenario"]').html(window.snap.menuTitles.scenarios[window.snap.state.scenario]);
+	*/
+}
+
+//Draw the Legend
+function drawLegend() {
+
+	try {
+
+// yuck, but, this maintains the 'keys' between the static data.
+		var legendKey = window.snap.mapUrls[window.snap.state.variable].prefix + '_'
+			+ window.snap.mapUrls[window.snap.state.variable][window.snap.state.interval];
+		
+		if( _.isUndefined(legendKey) ) {
+			throw 'Data set not defined when trying to draw legend.';
+		}
+		var legend = window.snap.mapLegends[legendKey];
+
+		var el = $('#legend_wrapper').empty().append(_.template('<h4><%= title %></h4>', legend));
+		var table = $('<table/>');
+		_.each(legend.colors, function(e, i) {
+			$('<tr/>')
+				.append(_.template(
+					'<td style="background-color: <%= color %>">&nbsp;</td>'
+					+ '<td><%= range %></td>'
+					, { color: e, range: i }
+				))
+				.appendTo(table);
+		});
+		el.append(table).show();
+
+	} catch(e) {
+
+		$('#legend_wrapper').hide();
+
+	}
+
+}
+
+//Adds a new map layer overlay, based on current user settings
+function addMap(mapvariable, mapvalue) {
+
+
+	var tilepath =
+		window.snap.mapUrls.baseUrl
+		+ window.snap.mapUrls[window.snap.state.variable].prefix
+		+ '_'
+		+ window.snap.mapUrls[window.snap.state.variable][window.snap.state.interval]
+		+ window.snap.mapUrls[window.snap.state.variable].postfix
+		+ '_'
+		+ window.snap.mapUrls.scenarios[window.snap.state.scenario]
+		+ '_'
+		+ window.snap.state.range.replace('-','_')
+		+ window.snap.mapUrls.urlSuffix;
+	
+	newmap = new google.maps.ImageMapType({
+		getTileUrl: function(tile, zoom) {
+			return tilepath + tile.x + "/" + tile.y + "/" + zoom + ".png";
+		},
+		tileSize: new google.maps.Size(256, 256),
+		opacity: 0.7
+	});
+
+	map.overlayMapTypes.push(null); // create empty overlay entry
+	map.overlayMapTypes.setAt("0", newmap);
+	gnames = new google.maps.ImageMapType({
+		getTileUrl: function(a, z) {
+			var tiles = 1 << z, X = (a.x % tiles);
+			if(X < 0) { X += tiles; }
+			return "http://mt0.google.com/vt/v=apt.116&hl=en-US&x=" +
+			X + "&y=" + a.y + "&z=" + z + "&s=G&lyrs=h";
+		},
+		tileSize: new google.maps.Size(256, 256),
+		isPng: false,
+		maxZoom: 20,
+		name: "lyrs=h",
+		alt: "Hybrid labels"
+	});
+
+	map.overlayMapTypes.push(null); // create empty overlay entry
+	map.overlayMapTypes.setAt("1",gnames );
+
+	drawLegend();
+
+	writeHash(); //Needed as otherwise it doesn't trigger from the idle event as moving/zooming does
+
+}
+
+/*
+* Google Map initialization function
+* Called on the initial page load.
+* Sets up default map space, values, etc.
+*/
+function init(zl, la, ln) {
+
+	map = new google.maps.Map(document.getElementById('map_canvas'), {
+
+		zoom: window.snap.state.zoom,
+		minZoom: 2,
+		maxZoom: 8,
+		'center': new google.maps.LatLng(window.snap.state.latitude, window.snap.state.longitude),
+		disableDefaultUI: true,
+		navigationControl: true,
+		navigationControlOptions: {
+			position: google.maps.ControlPosition.RIGHT_TOP
+		},
+		scaleControl: true,
+		mapTypeControl: true,
+		mapTypeId: google.maps.MapTypeId.TERRAIN
+	});
+
+	resize();
+}
+
+// called when the page is resized
+var resize = function() {
+	var h = $("body").height() - $("#map_header").height() - 50;
+	console.log(h);
+	if (h > 0) {
+		$("#map_canvas").height(h);
+	}
+	var w = $("body").width();
+	if (w > 0) {
+		$("#map_header").width(w - 10);
+		$("#map_canvas").width(w - 20);
+		$("#map_footer").width(w - 10);
+	}
+}
+
+
 
 snap.mapUrls = {
 	//Mean Annual Precipitation/10 year averages/2010-2019/A1B/GCM 5/2km
@@ -327,158 +731,3 @@ snap.mapLegends = {
 	}}
 };
 
-function showVariable(item){
-	$(".menuContentsLeft div").show();
-	$(".menuContents").parent().not("#" + item.id).children(".menuContents").hide();
-	$(".menuSpacer").parent().not("#" + item.id).children(".menuSpacer").removeClass("menuSpacerToggle");
-	$("#" + item.id + " .menuContents").toggle();
-	$("#" + item.id + " > .menuSpacer").toggleClass("menuSpacerToggle");
-}
-
-//Update address to reflect new hash
-function writeHash(){
-	window.location.hash = window.snap.state.variable
-	+ "/" + window.snap.state.interval
-	+ "/" + window.snap.state.range
-	+ "/" + window.snap.state.scenario
-	+ "/" + window.snap.state.model
-	+ "/" + window.snap.state.resolution
-	+ "/" + map.getZoom()
-	+ "/" + (map.getCenter()).lat()
-	+ "/" + (map.getCenter()).lng();
-}
-
-//Highlight the menu to show changes from new options
-function updateMenu(){
-	$('.menuOption').children('div:first-child')  //Done to workaround chrome issue
-	.animate( { backgroundColor: '#a7c95a' }, 300)
-	.animate( { backgroundColor: '#a7c95a' }, 600)
-	.animate( { backgroundColor: 'white' }, 900);
-	$('.menuOption').children('div:first-child').css( "backgroundColor", "white"); //Done for Chrome workaround
-}
-
-//Draw the Legend
-function drawLegend() {
-
-	try {
-
-// yuck, but, this maintains the 'keys' between the static data.
-		var legendKey = window.snap.mapUrls[window.snap.state.variable].prefix + '_'
-			+ window.snap.mapUrls[window.snap.state.variable][window.snap.state.interval];
-		
-		if( _.isUndefined(legendKey) ) {
-			throw 'Data set not defined when trying to draw legend.';
-		}
-		var legend = window.snap.mapLegends[legendKey];
-
-		var el = $('#legend_wrapper').empty().append(_.template('<h4><%= title %></h4>', legend));
-		var table = $('<table/>');
-		_.each(legend.colors, function(e, i) {
-			$('<tr/>')
-				.append(_.template(
-					'<td style="background-color: <%= color %>">&nbsp;</td>'
-					+ '<td><%= range %></td>'
-					, { color: e, range: i }
-				))
-				.appendTo(table);
-		});
-		el.append(table).show();
-
-	} catch(e) {
-
-		$('#legend_wrapper').hide();
-
-	}
-
-}
-
-//Adds a new map layer overlay, based on current user settings
-function addMap(mapvariable, mapvalue) {
-
-
-	var tilepath =
-		window.snap.mapUrls.baseUrl
-		+ window.snap.mapUrls[window.snap.state.variable].prefix
-		+ '_'
-		+ window.snap.mapUrls[window.snap.state.variable][window.snap.state.interval]
-		+ window.snap.mapUrls[window.snap.state.variable].postfix
-		+ '_'
-		+ window.snap.mapUrls.scenarios[window.snap.state.scenario]
-		+ '_'
-		+ window.snap.state.range.replace('-','_')
-		+ window.snap.mapUrls.urlSuffix;
-
-	console.log(tilepath);
-	
-	newmap = new google.maps.ImageMapType({
-		getTileUrl: function(tile, zoom) {
-			return tilepath + tile.x + "/" + tile.y + "/" + zoom + ".png";
-		},
-		tileSize: new google.maps.Size(256, 256),
-		opacity: 0.7
-	});
-
-	map.overlayMapTypes.push(null); // create empty overlay entry
-	map.overlayMapTypes.setAt("0", newmap);
-	gnames = new google.maps.ImageMapType({
-		getTileUrl: function(a, z) {
-			var tiles = 1 << z, X = (a.x % tiles);
-			if(X < 0) { X += tiles; }
-			return "http://mt0.google.com/vt/v=apt.116&hl=en-US&x=" +
-			X + "&y=" + a.y + "&z=" + z + "&s=G&lyrs=h";
-		},
-		tileSize: new google.maps.Size(256, 256),
-		isPng: false,
-		maxZoom: 20,
-		name: "lyrs=h",
-		alt: "Hybrid labels"
-	});
-
-	map.overlayMapTypes.push(null); // create empty overlay entry
-	map.overlayMapTypes.setAt("1",gnames );
-
-	drawLegend();
-
-	writeHash(); //Needed as otherwise it doesn't trigger from the idle event as moving/zooming does
-
-}
-
-/*
-* Google Map initialization function
-* Called on the initial page load.
-* Sets up default map space, values, etc.
-*/
-function init(zl, la, ln) {
-
-	map = new google.maps.Map(document.getElementById('map_canvas'), {
-
-		zoom: 3,
-		minZoom: 2,
-		maxZoom: 8,
-		'center': new google.maps.LatLng(window.snap.state.latitude, window.snap.state.longitude),
-		disableDefaultUI: true,
-		navigationControl: true,
-		navigationControlOptions: {
-			position: google.maps.ControlPosition.RIGHT_TOP
-		},
-		scaleControl: true,
-		mapTypeControl: true,
-		mapTypeId: google.maps.MapTypeId.TERRAIN
-	});
-
-	resize();
-}
-
-// called when the page is resized
-var resize = function() {
-	var h = $("body").height() - $("#map_header").height() - 50;
-	if (h > 0) {
-		$("#map_canvas").height(h);
-	}
-	var w = $("body").width();
-	if (w > 0) {
-		$("#map_header").width(w - 10);
-		$("#map_canvas").width(w - 20);
-		$("#map_footer").width(w - 10);
-	}
-}

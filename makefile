@@ -23,7 +23,7 @@ javascript :
 --compilation_level WHITESPACE_ONLY \
 # ** vendor (3rd party) javascript belongs here
 --js=./js/underscore-min.js \
---js=./js/jquery-1.6.4.min.js \
+--js=./js/jquery-1.7.1.min.js \
 --js=./js/jquery-ui-1.8.16.custom.min.js \
 --js=./js/jquery.blockUI.js \
 --js=./js/jquery.hoverIntent.minified.js \

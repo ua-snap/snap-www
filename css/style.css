@@ -1,10 +1,18 @@
+@import url(http://fonts.googleapis.com/css?family=Miniver);
+@import url(http://fonts.googleapis.com/css?family=Nosifer);
+
 html {
 	height: 100%;
 }
 
 body {
-	/*font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;*/
-	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;	
+	/*font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+	font-family: 'Miniver', cursive;
+	*/
+	font-family: 'Nosifer', cursive; 
+
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
+
 	font-size: 14px;
 	border: 0px;
 	margin: 0px;

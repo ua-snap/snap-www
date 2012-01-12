@@ -11,17 +11,14 @@
 	color: #7a737c;
 }
 .menuOption {
-	display: inline-block;
-	margin-right: 30px;
-	cursor: pointer; cursor: hand;
-}
-.menuOption:hover {
 
 }
 .menuOption:hover > .menuSpacer {
 	opacity: 1.0;
 }
 .menuSpacer {
+	margin: 0;
+	width: 100%;
 	height: 10px;
 	border-top: 1px solid #707A7C;
 	opacity: 0.5;
@@ -32,45 +29,9 @@
 .menuSpacerToggle {
 	background-color: #707A7C;
 	background-image: none;
-	opacity: 1.0;
+	opacity: 1.0 !important;
 	z-index: 25;
 	height: 10px;
-}
-.menuContents {
-	display: none;
-	height: 250px;
-	width: 600px;
-	background-color: #ffffff;
-	border: solid 1px #666666;
-	position: absolute;
-	z-index: 20;
-	margin-left: -40px;
-	box-shadow: 0px 0px 2px #707A7C;
-	font-size: 16px;
-}
-.menuContents div div {
-	padding: 2px;
-
-	font-size: 13px;
-}
-.menuContents div div:hover {
-	background-color: #eeeeee;
-}
-.menuContentsLeft {
-        color: #0066cc;
-	float: left; 
-	padding: 10px; 
-	padding-right: 0px; 
-	height: 230px; 
-	width: 260px;
-}
-.menuContentsRight {
-	width: 310px; 
-	float: right; 
-	height: 230px; 
-	z-index: 40; 
-	background-color: #eeeeee; 
-	padding: 10px;
 }
 #location {
 	font-weight: bold;
@@ -90,8 +51,6 @@
 	min-height: 350px;
 	margin: auto;
 	z-index: 0;
-	-moz-box-shadow: 2px 2px 2px #888;
-	-webkit-box-shadow: 2px 2px 2px #888;
 	box-shadow: 0px 0px 4px #888;
 }
 #map_header {
@@ -164,7 +123,7 @@
 	margin-top: 20px; margin-bottom: 20px; vertical-align: middle;
 }
 
-#modal_menu {
+#model_menu {
 	float: left;
 }
 
@@ -172,14 +131,70 @@
 	color: #505a5c; margin-left: 30px; font-size: 20px; margin-top: 40px;
 }
 
-#menu_items {
-	color: #505a5c; margin-left: 50px; font-size: 14px; margin-top: 10px;
-}
 
 #currently_viewing {
-	color: #444444; font-size: 12px;
+	color: #444; font-size: 12px;
 }
 
+#menu_items {
+	color: #505a5c;
+	margin-left: 50px;
+	font-size: 14px;
+	margin-top: 10px;
+}
+
+#mapMenu h4 {
+	margin: 1ex 0 0;
+	padding: 0 0 .25ex 0;
+	font-size: 18px;
+	font-weight: normal;
+	margin-right: 30px;
+	cursor: pointer; cursor: hand;
+}
+
+.menuOptions {
+
+	position: absolute;
+	background: white;
+	z-index: 500;
+	border: 1px solid #666;
+	margin: 0 0 0 -40px;
+	padding: 0;
+	width: 600px;
+	display: none;
+	height: 250px;
+	box-shadow: 0px 0px 2px #707A7C;
+	
+}
+
+.menuOptions .descriptions {
+	position: absolute;
+	right: 0;
+	width: 300px;
+	background: #eee;
+	height: 100%;
+	padding: 0;
+}
+
+/* PICKUP */
+.descriptions p {
+}
+
+.menuOptions ul {
+	padding: 1ex;
+	margin: 0;
+	list-style-type: none;
+}
+
+.menuOptions li {
+	padding: .5ex;	
+}
+
+.menuOptions li:hover {
+	background-color: #eee;
+}
+
+/*
 #mapMenu {
 	margin-top: 5px;
 }
@@ -219,8 +234,8 @@
 #menu_resolution .menuTitle {
 	font-size: 10px;
 }
-
-#menu_map_bar {
+*/
+#map_menu_bar {
 	clear: both;
 }
 
@@ -235,11 +250,17 @@
 	color: #fff;
 }
 
+#shareBlock img {
+	margin-left: 20px; margin-right: 20px;
+}
+
 #exportBlock {
 	float: right; margin-left: 20px; font-size: 14px;
 }
 
-#exportBlock span {
+#exportBlock span a {
+	font-weight: bold;
+	text-shadow: 0 2px 3px #000;
 	margin-right: 15px;
 }
 
