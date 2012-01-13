@@ -51,7 +51,7 @@ $(document).ready(function() {
 
     // Close any open menus when click outside of them
     $('body').click(function(e) {
-        $('.menuOption').removeClass('active');
+        $('.menuOption').parent().removeClass('active');
         $('.menuOptions').hide();
         $('.menuSpacer').removeClass('menuSpacerToggle');
     });

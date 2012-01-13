@@ -186,12 +186,6 @@ snap.submenus = {
 	}
 };
 
-// utility function to convert em > pixels
-function ex(input) {
-    var exSize = parseFloat($("body").css("font-size"));
-    return (exSize * input);
-}
-
 // el = a JQuery object
 snap.renderers = {
 	'standard' : function(el, category, source) {
@@ -221,12 +215,12 @@ snap.renderers = {
 				$('.menuSpacer').removeClass('menuSpacerToggle');
 				var el = $(this);
 
-				if( false === ( el.hasClass('active') ) ) {
-					el.addClass('active');
+				if( false === ( el.parent().hasClass('active') ) ) {
+					el.parent().addClass('active');
 					el.parent().find('.menuSpacer').addClass('menuSpacerToggle');
 					var content = $('#' + el.data('category') + '_content').show();
 				} else {
-					el.removeClass('active');
+					el.parent().removeClass('active');
 				}
 			}
 		).hover(
@@ -285,12 +279,12 @@ snap.renderers = {
 						$('#' + category + '_descriptions').find('p').html(source.items[option].description);
 						
 						var textHeight = $('#' + category + '_descriptions').find('p').height();
-						var wrapperHeight = $('.menuOptions').height();
+						var wrapperHeight = $('.active .menuOptions').height();
 
 						//TODO this is currently broken again, probably DOM change.
 
 						if( wrapperHeight < textHeight ) {
-							$('.menuOptions').height(textHeight + ex(1) ); // increase height + 1ex padding
+							$('.active .menuOptions').height(textHeight + 16 ); // increase height + 8px padding
 						}
 
 					},
@@ -744,7 +738,7 @@ snap.mapLegends = {
 	'-3.9 to -1.7' : '#FFE3A6',
 	'-6.1 to -4.0' : '#FFFFBF',
 	'-8.4 to -6.2' : '#E3E8BE',
-	'-10.6 to -8.5' : '#CA79BE',
+	'-10.6 to -8.5' : '#CAD4BE',
 	'-12.9 to -10.7' : '#AEBDBC',
 	'-15.1 to -13.0' : '#95ACBD',
 	'-17.4 to -15.2' : '#7B98BA',
@@ -921,7 +915,7 @@ snap.mapLegends = {
 	'-10.9 to -8.6' : '#FFE3A6',
 	'-13.3 to -11.0' : '#FFFFBF',
 	'-15.8 to -13.4' : '#E3E8BE',
-	'-18.2 to -15.9' : '#CA79BE',
+	'-18.2 to -15.9' : '#CAD4BE',
 	'-20.6 to -18.3' : '#AEBDBC',
 	'-23.0 to -20.7' : '#95ACBD',
 	'-25.4 to -23.1' : '#7B98BA',
@@ -938,7 +932,7 @@ snap.mapLegends = {
 	'9.3 to 10.5' : '#FFE3A6',
 	'7.9 to 9.2' : '#FFFFBF',
 	'6.4 to 7.8' : '#E3E8BE',
-	'4.8 to 6.3' : '#CA79BE',
+	'4.8 to 6.3' : '#CAD4BE',
 	'2.7 to 4.7' : '#AEBDBC',
 	'0.2 to 2.6' : '#95ACBD',
 	'-3.0 to 0.1' : '#7B98BA',
@@ -955,7 +949,7 @@ snap.mapLegends = {
 	'-5.4 to -3.2' : '#FFE3A6',
 	'-7.8 to -5.5' : '#FFFFBF',
 	'-10.2 to -7.9' : '#E3E8BE',
-	'-12.6 to -10.3' : '#CA79BE',
+	'-12.6 to -10.3' : '#CAD4BE',
 	'-15.0 to -12.7' : '#AEBDBC',
 	'-17.4 to -15.1' : '#95ACBD',
 	'-19.7 to -17.5' : '#7B98BA',

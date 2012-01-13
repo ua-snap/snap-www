@@ -155,17 +155,17 @@
 }
 
 .descriptions p {
-	padding: 1ex;
+	padding: 8px;
 }
 
 .menuOptions ul {
-	padding: 1ex;
+	padding: 5px;
 	margin: 0;
 	list-style-type: none;
 }
 
 .menuOptions li {
-	padding: .5ex;
+	padding: 3px;
 	color: #06c;
 	cursor: pointer;
 }
