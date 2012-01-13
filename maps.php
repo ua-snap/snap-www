@@ -6,31 +6,24 @@ $page->openPage();
 
 <div id="map_header">
 
-    <div class="container">
-        <div id="map_logo">
-            <img alt="Map Tool Logo" src="images/logo_snap_maps_stats.png" />
-        </div>
-    </div>
+    <img id="map_logo" alt="Map Tool Logo" src="images/logo_snap_maps_stats.png" />
 
     <div id="model_menu">
-        <div id="menu_items">
-    		<div id="currently_viewing">currently viewing</div>
-    			<div id="mapMenu">
-    				   
-                 </div>
-    		</div>
-    	</div>
+		<p>currently viewing</p>
+			<div id="mapMenu">
+				<!-- populated by javascript -->
+             </div>
+		</div>
     </div>
 
     <div id="map_menu_bar" class="map_bar">
-    	<div id="textLinks"><a href="">Main Menu</a></div>
+    	<div id="textLinks"></div>
     	<div id="shareBlock" style=""><a class="addthis_button"><img alt="Share" src="/images/share.png" /></a></div>
     	<div id="exportBlock">
     		<span><a href="" onclick="window.print(); return false;">Print</a></span>
     		<span><a href="" >Link</a></span>
     	</div>
     </div>
-
 </div>
 
 <div id="map_wrapper">
@@ -56,18 +49,21 @@ $page->openPage();
 
 $(document).ready(function() { 
 
-    var currenthash = window.location.hash.substring(1).split("/");
-    window.snap.state.variable = currenthash[0] || 'temperature';
-    window.snap.state.interval = currenthash[1] || 'decadalAverages';
-    window.snap.state.range = currenthash[2] || '2010-2019';
-    window.snap.state.scenario = currenthash[3] || 'A1B';
-    window.snap.state.model = currenthash[4] || 'GCM'; // not used yet, only one model
-    window.snap.state.resolution = currenthash[5] || '2Km'; // not used yet, only one resolution
-    var zoom = window.snap.state.zoom = parseInt(currenthash[6], 10) || 3;
-    var latitude = window.snap.state.latitude = parseFloat(currenthash[7], 10) || 65;
-    var longitude = window.snap.state.longitude = parseFloat(currenthash[8], 10) || -145;
+    // Close any open menus when click outside of them
+    $('body').click(function(e) {
+        $('.menuOption').removeClass('active');
+        $('.menuOptions').hide();
+        $('.menuSpacer').removeClass('menuSpacerToggle');
+    });
 
-    updateMenuTitles();
+    var currenthash = window.location.hash.substring(1).split("/");
+    window.snap.state.variable = currenthash[0] || window.snap.state.defaults.variable;
+    window.snap.state.interval = currenthash[1] || window.snap.state.defaults.interval;
+    window.snap.state.range = currenthash[2] || window.snap.state.defaults.range;
+    window.snap.state.scenario = currenthash[3] || window.snap.state.defaults.scenario;
+    var zoom = window.snap.state.zoom = parseInt(currenthash[4], 10) || window.snap.state.defaults.zoom;
+    var latitude = window.snap.state.latitude = parseFloat(currenthash[5], 10) || window.snap.state.defaults.latitude;
+    var longitude = window.snap.state.longitude = parseFloat(currenthash[6], 10) || window.snap.state.defaults.longitude;
 
     google.maps.event.addDomListener(window, 'load', function(){
         init(zoom, latitude, longitude);
@@ -81,28 +77,9 @@ $(document).ready(function() {
 
     // the resize function is defined in the maps.js file.
     $(window).resize(resize);
-
+    
 });
 
 </script>
 </body>
 </html>
-
-<?php
-
-function getSplitMenuHtml($items, $variable) {
-    
-    $left = '';
-    $right = '';
-    foreach($items as $id => $menuItems ) {
-        $left .= '<div data-variable="'.$variable.'" data-value="'.$id.'"><span>'.$menuItems['name'].'</span></div>';
-        $right .= '<div data-value="'.$id.'" style="display: none;">'.$menuItems['description'].'</div>';
-    }
-    return <<<html
-<div class="menuContentsLeft">$left</div>
-<div class="menuContentsRight">$right</div>
-html;
-
-}
-
-?>

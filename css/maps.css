@@ -10,22 +10,18 @@
 #mapMenu a:hover {
 	color: #7a737c;
 }
-.menuOption {
 
-}
 .menuOption:hover > .menuSpacer {
 	opacity: 1.0;
 }
 .menuSpacer {
 	margin: 0;
-	width: 100%;
 	height: 10px;
 	border-top: 1px solid #707A7C;
 	opacity: 0.5;
-	background-image: url("/images/map-field-triangle.png");
-	background-repeat: no-repeat;
-	background-position: center top;
+	background: transparent url("/images/map-field-triangle.png") center top no-repeat;
 }
+
 .menuSpacerToggle {
 	background-color: #707A7C;
 	background-image: none;
@@ -33,53 +29,48 @@
 	z-index: 25;
 	height: 10px;
 }
-#location {
-	font-weight: bold;
-	text-align: right;
-	position: relative;
-	top: -100px;
-	visibility: hidden;
-}	
+
 #map_wrapper {
-	position: relative;
-	width: 100%;
-	/*height: 600px;*/
-	/* border: 1px #6a7173 solid;*/
-	margin: auto;
-}	
+	position: relative; /* to position legend */
+	padding: 0 10px;
+}
+
 #map_canvas {
 	min-height: 350px;
 	margin: auto;
 	z-index: 0;
 	box-shadow: 0px 0px 4px #888;
 }
+
 #map_header {
-	margin: auto;
+	margin: 15px auto 5px;
+	padding: 0 5px;
+	min-height: 80px;
 }
+
 #map_footer {
 	margin: auto;
+	padding: 0 5px 10px;
 }
+
 .map_bar {
-	-moz-border-radius: 3px;
 	border-radius: 3px;
-	height: 38px; 
-	width: 100%; 
+	height: 38px;
 	background-color: #707a7c;
-	-moz-box-shadow: 2px 2px 2px #888;
-	-webkit-box-shadow: 2px 2px 2px #888;
 	box-shadow: 2px 2px 2px #888;
 	z-index: 100;
 	line-height: 38px;
 }
 .map_bar a {
-	color: #dddddd;
+	color: #ddd;
 }
 .map_bar a:hover {
-	color: #ffffff;
+	color: #fff;
 }
 .map_bar img {
 	vertical-align: middle;
 }
+
 #legend_wrapper {
 	display: none;
 	font-size: 12px;
@@ -107,40 +98,24 @@
 	padding-left: 1ex;
 }
 
-#map_header {
-	height: auto;
-}
-
-#map_header .container {
-	margin-top: 0px; margin-bottom: 0px;
-}
-
 #map_logo {
 	float: left;
-}
-
-#map_logo img {
-	margin-top: 20px; margin-bottom: 20px; vertical-align: middle;
+	display: inline-block;
+	padding: 0 0 0 7px;
 }
 
 #model_menu {
-	float: left;
+	margin: 15px 0 0 175px;
+	padding: 10px 0;
 }
 
 #snap_name {
 	color: #505a5c; margin-left: 30px; font-size: 20px; margin-top: 40px;
 }
 
-
-#currently_viewing {
+#model_menu > p {
 	color: #444; font-size: 12px;
-}
-
-#menu_items {
-	color: #505a5c;
-	margin-left: 50px;
-	font-size: 14px;
-	margin-top: 10px;
+	margin: 0;
 }
 
 #mapMenu h4 {
@@ -148,8 +123,12 @@
 	padding: 0 0 .25ex 0;
 	font-size: 18px;
 	font-weight: normal;
-	margin-right: 30px;
-	cursor: pointer; cursor: hand;
+	cursor: pointer;
+}
+
+#mapMenu .wrapper {
+	display: inline-block;
+	margin-right: 1em;
 }
 
 .menuOptions {
@@ -162,7 +141,6 @@
 	padding: 0;
 	width: 600px;
 	display: none;
-	height: 250px;
 	box-shadow: 0px 0px 2px #707A7C;
 	
 }
@@ -176,8 +154,8 @@
 	padding: 0;
 }
 
-/* PICKUP */
 .descriptions p {
+	padding: 1ex;
 }
 
 .menuOptions ul {
@@ -187,56 +165,18 @@
 }
 
 .menuOptions li {
-	padding: .5ex;	
+	padding: .5ex;
+	color: #06c;
+	cursor: pointer;
 }
 
 .menuOptions li:hover {
 	background-color: #eee;
 }
 
-/*
-#mapMenu {
-	margin-top: 5px;
-}
-
-#menu_variable {
-	font-size: 18px;
-}
-
-#menu_interval {
-	font-size: 18px;
-}
-
-#menu_interval .menuTitle {
-	font-size: 18px;
-}
-
-#menu_range {
-	font-size: 18px;
-}
-
-#menu_range .menuTitle {
-	font-size: 18px;
-}
-
-#small_menu_items {
-	margin-top: 15px; font-size: 10px;
-}
-
-#menu_scenario .menuTitle {
-	font-size: 10px;
-}
-
-#menu_model .menuTitle {
-	font-size: 10px;
-}
-
-#menu_resolution .menuTitle {
-	font-size: 10px;
-}
-*/
 #map_menu_bar {
 	clear: both;
+	margin: 0 5px;
 }
 
 #textLinks {
@@ -270,4 +210,8 @@
 
 #map_footer .logoBlock {
 	float: right; margin-right: 20px; color: #333333;
+}
+
+#historical_content p {
+	margin: 1ex;
 }

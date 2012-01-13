@@ -5,57 +5,112 @@ var map;
 
 window.snap = {};
 
-// This will be immediately populated by the fragment of code in maps.php that
-// checks for the hashtag values, and sets defaults.
+_.mixin({
+	'isFalsy' : function(v) {
+		return _.isUndefined(v) || _.isNull(v) || _.isEmpty(v) || _.isNaN(v);
+	}
+});
+
+// This will be immediately populated by the fragment of code in maps.php that fires after onReady and
+// checks for the hashtag values, and sets defaults.  Possible values are enumerated in the
+// menus.
 snap.state = {
 	interval: null,
 	range: null,
 	scenario: null,
-	model: null,
-	resolution: null,
 	variable: null,
+
+	// for google map:
 	zoom: 3,
 	latitude: null,
-	longitude: null
+	longitude: null,
+
+	defaults: {
+		interval: 'decadalAverages',
+		range: '2010-2019',
+		variable: 'temperature',
+		scenario: 'A1B',
+		zoom: 3,
+		latitude: 65,
+		longitude: -145
+	}
 };
 
-///////////////
 snap.submenus = {
 	'intervals' : {
+		'prefix' : 'as',
 		'defaultText' : 'default text placeholder',
-		items: {
+		'items': {
 			'decadalAverages' : {
-				'name' : '10 Year Averages',
+				'name' : '10 year average',
 				'description' : 'Data is averaged over a 10 year interval'
 			},
 			'spring' : {
-				'name' : '10 Year Averages&mdash;Spring',
+				'name' : 'spring averages',
 				'description' : 'Data from March, April, and May are averaged over a 10 year interval'
 			},
 			'summer' : {
-				'name' : '10 Year Averages&mdash;Summer',
+				'name' : 'summer averages',
 				'description' : 'Data from June, July, and August are averaged over a 10 year interval'
 			},
 			'fall' : {
-				'name' : '10 Year Averages&mdash;Fall',
+				'name' : 'fall averages',
 				'description' : 'Data from September, October, and November are averaged over a 10 year interval'
 			},
 			'winter' : {
-				'name' : '10 Year Averages&mdash;Winter',
+				'name' : 'winter averages',
+				'description' : 'Data from December, January, and February are averaged over a 10 year interval'
+			}
+		}
+	},
+	'observedIntervals' : {
+		'prefix' : 'as',
+		'defaultText' : 'default text placeholder',
+		'items': {
+			'decadalAverages' : {
+				'name' : '30 year average',
+				'description' : 'Data is averaged over a 30 year interval'
+			},
+			'spring' : {
+				'name' : 'spring averages',
+				'description' : 'Data from March, April, and May are averaged over a 10 year interval'
+			},
+			'summer' : {
+				'name' : 'summer averages',
+				'description' : 'Data from June, July, and August are averaged over a 10 year interval'
+			},
+			'fall' : {
+				'name' : 'fall averages',
+				'description' : 'Data from September, October, and November are averaged over a 10 year interval'
+			},
+			'winter' : {
+				'name' : 'winter averages',
 				'description' : 'Data from December, January, and February are averaged over a 10 year interval'
 			}
 		}
 	},
 	'nonseasonalIntervals' : {
+		'prefix' : 'as',
 		'defaultText' : 'default text placeholder',
 		items: {
 			'decadalAverages' : {
-				'name' : '10 Year Averages',
+				'name' : '10 year average',
 				'description' : 'Data is averaged over a 10 year interval'
 			}
 		}
 	},
+	'nonseasonalObservedIntervals' : {
+		'prefix' : 'as',
+		'defaultText' : 'default text placeholder',
+		items: {
+			'decadalAverages' : {
+				'name' : '30 year average',
+				'description' : 'Data is averaged over 30 years'
+			}
+		}
+	},
 	'ranges' :  {
+		'prefix' : 'from',
 		'defaultText' : 'default text placeholder',
 		items: {
 			'2010-2019' : {
@@ -96,49 +151,83 @@ snap.submenus = {
 			}
 		}
 	},
+	'historicalRange' : {
+		'prefix' : '',
+		'renderer' : {
+			// needs to return prefix: and title:
+			getTitleJson : function() {
+				return {
+					prefix:'',
+					title:'1960&ndash;1990'
+				};
+			},
+			getContent : function() {
+				return '<p>Blurb about the PRISM data, its scope, perhaps a <a>link somewhere about it?</a></p>';
+			}
+		}
+	},
 	'scenarios' :  {
+		'prefix' : 'assuming',
 		'defaultText' : 'default text placeholder',
 		items: {
 			'A2' : {
-				'name' : 'rapid increases in emissions (<span>A2</span>}',
+				'name' : 'rapid increases in emissions (<span>A2</span>)',
 				'description' : 'The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The A2 scenario describes a very heterogeneous world with high population growth, slow economic development and slow technological change.'
 			},
 			'A1B' : {
-				'name' : 'mid-range emissions (<span>A1B</span>}',
+				'name' : 'mid-range emissions (<span>A1B</span>)',
 				'description' : 'The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The Scenario A1B assumes a world of very rapid economic growth, a global population that peaks in mid-century, rapid introduction of new and more efficient technologies, and a balance between fossil fuels and other energy sources.'
 			},
 			'B1' : {
-				'name' : 'leveling and declining emissions (<span>B1</span>}',
+				'name' : 'leveling and declining emissions (<span>B1</span>)',
 				'description' : 'The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The B1 scenario describes a convergent world, with the same global population as A1B, but with more rapid changes in economic structures toward a service and information economy.'
 			}
 		}
 	}
 };
 
+// utility function to convert em > pixels
+function ex(input) {
+    var exSize = parseFloat($("body").css("font-size"));
+    return (exSize * input);
+}
+
 // el = a JQuery object
 snap.renderers = {
 	'standard' : function(el, category, source) {
 
-		var wrapper = $('<div/>');
+		var wrapper = $('<div/>', {
+			'class' : 'wrapper'
+		});
+
+		var titleJson = ( _.isObject(source.renderer) ) ? source.renderer.getTitleJson() : {
+			prefix: source.prefix,
+			title: source.items[window.snap.state[category]].name
+		};
 
 		var title = $(
 			_.template(
-				'<h4 class="menuTitle menuOption" data-variable="variable"><%= title %></h4>'
-				//+'</div>'
+				'<h4 class="menuOption" data-variable="variable"><%= prefix %> <%= title %></h4>'
 				+ '<div class="menuSpacer"></div>'
-				, {
-					title:source.items[window.snap.state[category]].name
-				}
+				, titleJson
 			)
 		)
 		.data('category', category)
 		.click(
 			function(e) {
+
+				e.stopPropagation();
 				$('.menuOptions').hide();
 				$('.menuSpacer').removeClass('menuSpacerToggle');
-				$('#' + $(this).data('category') + '_content').toggle();
-				$(this).parent().find('.menuSpacer').toggleClass('menuSpacerToggle');
-				e.stopPropagation();
+				var el = $(this);
+
+				if( false === ( el.hasClass('active') ) ) {
+					el.addClass('active');
+					el.parent().find('.menuSpacer').addClass('menuSpacerToggle');
+					var content = $('#' + el.data('category') + '_content').show();
+				} else {
+					el.removeClass('active');
+				}
 			}
 		).hover(
 			function(e) {
@@ -153,51 +242,69 @@ snap.renderers = {
 			'class' : 'menuOptions',
 			'id' : category + '_content',
 			'style' : 'display: none;'
-		})
-		.click(function(e){
-			e.stopPropagation();
-		})
-		.append( 
-			$('<div/>', {
-				'class' : 'descriptions',
-				'id' : category + '_descriptions'
-			})
-			.data('category', category)
-			.text(source.defaultText)
-			.append($('<p/>'))
-		)
-		.hover(
-			function(e) {
-				var category = $(e.currentTarget).data('category');
-				$('#' + category + '_content').show().stop('menus',true);
-			},
-			function(e) {
-				var category = $(e.currentTarget).data('category');
-				$('#' + category + '_content').show().delay(3000,'menus').hide(500);
-			}
-		);
+		});
 
-		var optionsList = $('<ul/>');
+		if( _.isObject(source.renderer) ) {
+			content.append(source.renderer.getContent());
+		} else {
+			content.append(
+				$('<div/>', {
+					'class' : 'descriptions',
+					'id' : category + '_descriptions'
+				})
+				.data('category', category)
+				.append(
+					$('<p/>')
+					.html(source.defaultText)
+				)
+			);
 
-		_.each(source.items, function(e, i, l) {
-			optionsList.append($('<li/>')
-			.data('category', category)
-			.data('option', i)
-			.html(e.name).hover(
+			var optionsList = $('<ul/>')
+			.click(function(e){
+				e.stopPropagation();
+			});
 
-				function(e) {
-					var category = $(e.currentTarget).data('category');
-					var option = $(e.currentTarget).data('option');
-					$('#' + category + '_descriptions').find('p').html(source.items[option].description);
-				},
-				function(e) {
-					var category = $(e.currentTarget).data('category');
-					$('#' + category + '_descriptions').find('p').html(source.defaultText);
-				}
-			));
-		}, this);
+			_.each(source.items, function(e, i, l) {
+				optionsList.append($('<li/>')
+				.click(function(e) {
+					// swap out the map on click
+					$('.menuOptions').hide();
+					$('.menuSpacer').removeClass('menuSpacerToggle');
+					window.snap.state[$(this).data('category')] = $(this).data('option');
+					addMap();
+				})
+				.data('category', category)
+				.data('option', i)
+				.html(e.name)
+				.hover(
 
-		el.append(wrapper.append(title).append(content.append(optionsList)));
+					function(e) {
+						$('.menuOptions :visible').parent().height(  );
+						var category = $(e.currentTarget).data('category');
+						var option = $(e.currentTarget).data('option');
+						$('#' + category + '_descriptions').find('p').html(source.items[option].description);
+						
+						var textHeight = $('#' + category + '_descriptions').find('p').height();
+						var wrapperHeight = $('.menuOptions').height();
+
+						//TODO this is currently broken again, probably DOM change.
+
+						if( wrapperHeight < textHeight ) {
+							$('.menuOptions').height(textHeight + ex(1) ); // increase height + 1ex padding
+						}
+
+					},
+					function(e) {
+						var category = $(e.currentTarget).data('category');
+						$('#' + category + '_descriptions').find('p').html(source.defaultText);
+					}
+
+				));
+			}, this);
+			content.append(optionsList);
+		}
+
+		el.append(wrapper.append(title).append(content));
 		
 	}
 };
@@ -205,10 +312,11 @@ snap.renderers = {
 // Define menu structure
 snap.menus = {
 	'variable' : {
+		prefix: '',
 		defaultText: 'defaultText',
 		items: {
 			'temperature' : {
-				'name' : 'Average Annual Temperature',
+				'name' : 'Projected Average Annual Temperature',
 				'description' : 'The average annual precipitation for the given range',
 				'submenus' : {
 					// 'key' => 'value', where key is the same as the key in the window.snap.state object.
@@ -218,7 +326,7 @@ snap.menus = {
 				}
 			},
 			'precipitation' : {
-				'name' : 'Average Annual Precipitation',
+				'name' : 'Projected Average Annual Precipitation',
 				'description' : 'This is the average annual temperature calculated for the given range',
 				'submenus' : {
 					'interval' : window.snap.submenus.intervals,
@@ -227,7 +335,7 @@ snap.menus = {
 				}
 			},
 			'dayOfFreeze' : {
-				'name' : 'Day of Freeze',
+				'name' : 'Projected Day of Freeze',
 				'description' : 'placeholder',
 				'submenus' : {
 					'interval' : window.snap.submenus.nonseasonalIntervals,
@@ -236,39 +344,71 @@ snap.menus = {
 				}
 			},
 			'dayOfThaw' : {
-				'name' : 'Day of Thaw',
+				'name' : 'Projected Day of Thaw',
 				'description' : 'placeholder',
 				'submenus' : {
-					'intervals' : window.snap.submenus.nonseasonalIntervals,
-					'ranges' : window.snap.submenus.ranges,
-					'scenarios' : window.snap.submenus.scenarios
+					'interval' : window.snap.submenus.nonseasonalIntervals,
+					'range' : window.snap.submenus.ranges,
+					'scenario' : window.snap.submenus.scenarios
 				}
 			},
 			'lengthOfGrowingSeason' : {
-				'name' : 'Length of Growing Season',
+				'name' : 'Projected Length of Growing Season',
 				'description' : 'placeholder',
 				'submenus' : {
-					'intervals' : window.snap.submenus.nonseasonalIntervals,
-					'ranges' : window.snap.submenus.ranges,
-					'scenarios' : window.snap.submenus.scenarios
+					'interval' : window.snap.submenus.nonseasonalIntervals,
+					'range' : window.snap.submenus.ranges,
+					'scenario' : window.snap.submenus.scenarios
+				}
+			},
+			'observedTemperature' : {
+				'name' : 'Observed Average Annual Temperature',
+				'description' : 'The average annual precipitation for the given range',
+				'submenus' : {
+					'interval' : window.snap.submenus.observedIntervals,
+					'historical' : window.snap.submenus.historicalRange
+				}
+			},
+			'observedPrecipitation' : {
+				'name' : 'Observed Average Annual Precipitation',
+				'description' : 'This is the average annual temperature calculated for the given range',
+				'submenus' : {
+					'interval' : window.snap.submenus.observedIntervals,
+					'historical' : window.snap.submenus.historicalRange
+				}
+			},
+			'observedDayOfFreeze' : {
+				'name' : 'Observed Day of Freeze',
+				'description' : 'placeholder',
+				'submenus' : {
+					'interval' : window.snap.submenus.nonseasonalObservedIntervals,
+					'historical' : window.snap.submenus.historicalRange
+				}
+			},
+			'observedDayOfThaw' : {
+				'name' : 'Observed Day of Thaw',
+				'description' : 'placeholder',
+				'submenus' : {
+					'interval' : window.snap.submenus.nonseasonalObservedIntervals,
+					'historical' : window.snap.submenus.historicalRange
+				}
+			},
+			'observedLengthOfGrowingSeason' : {
+				'name' : 'Observed Length of Growing Season',
+				'description' : 'placeholder',
+				'submenus' : {
+					'interval' : window.snap.submenus.nonseasonalObservedIntervals,
+					'historical' : window.snap.submenus.historicalRange
 				}
 			}
 		}
 	}
 };
 
-
-$(document).ready(function() {
-
-	// Close any open menus when click outside of them
-	$('body').click(function(e) {
-		$('.menuOptions').hide();
-		$('.menuSpacer').removeClass('menuSpacerToggle');
-	});
-	
-});
-
 function buildMenus() {
+
+	$('#mapMenu').empty();
+
 	// build the variables menu, always
 	window.snap.renderers.standard($('#mapMenu'), 'variable', window.snap.menus.variable);
 
@@ -278,31 +418,18 @@ function buildMenus() {
 	});
 }
 
-
-
-
-
-function showVariable(item){
-	$(".menuContentsLeft div").show();
-	$(".menuContents").parent().not("#" + item.id).children(".menuContents").hide();
-	$(".menuSpacer").parent().not("#" + item.id).children(".menuSpacer").removeClass("menuSpacerToggle");
-	$("#" + item.id + " .menuContents").toggle();
-	$("#" + item.id + " > .menuSpacer").toggleClass("menuSpacerToggle");
-}
-
 //Update address to reflect new hash
 function writeHash(){
 	window.location.hash = window.snap.state.variable
 	+ "/" + window.snap.state.interval
 	+ "/" + window.snap.state.range
 	+ "/" + window.snap.state.scenario
-	+ "/" + window.snap.state.model
-	+ "/" + window.snap.state.resolution
 	+ "/" + map.getZoom()
 	+ "/" + (map.getCenter()).lat()
 	+ "/" + (map.getCenter()).lng();
 }
 
+/*
 //Highlight the menu to show changes from new options
 function updateMenu(){
 	$('.menuOption').children('div:first-child')  //Done to workaround chrome issue
@@ -311,27 +438,19 @@ function updateMenu(){
 	.animate( { backgroundColor: 'white' }, 900);
 	$('.menuOption').children('div:first-child').css( "backgroundColor", "white"); //Done for Chrome workaround
 }
+*/
 
-// Assumes that the state has been initialized/set prior to calling this function.
-function updateMenuTitles() {
-	buildMenus();
-	/*
-	$('.menuTitle[data-variable="variable"]').html(window.snap.menuTitles.variables[window.snap.state.variable]);
-	$('.menuTitle[data-variable="interval"]').html(window.snap.menuTitles.intervals[window.snap.state.interval]);
-	$('.menuTitle[data-variable="range"]').html(window.snap.menuTitles.ranges[window.snap.state.range]);
-	$('.menuTitle[data-variable="scenario"]').html(window.snap.menuTitles.scenarios[window.snap.state.scenario]);
-	*/
-}
-
-//Draw the Legend
 function drawLegend() {
 
 	try {
 
 // yuck, but, this maintains the 'keys' between the static data.
-		var legendKey = window.snap.mapUrls[window.snap.state.variable].prefix + '_'
+		var legendKey = window.snap.mapUrls[window.snap.state.variable].prefix;
+		if( false === _.isUndefined(window.snap.mapUrls[window.snap.state.variable][window.snap.state.interval]) ) {
+			legendKey += '_'
 			+ window.snap.mapUrls[window.snap.state.variable][window.snap.state.interval];
-		
+		}
+
 		if( _.isUndefined(legendKey) ) {
 			throw 'Data set not defined when trying to draw legend.';
 		}
@@ -355,26 +474,109 @@ function drawLegend() {
 		$('#legend_wrapper').hide();
 
 	}
+}
 
+// Some combinations of map variables aren't valid.  Fix them here if necessary.
+function validateState() {
+
+	switch( window.snap.state.variable ) {
+		// these three data sets don't allow range, scenario, or interval choices
+		case 'observedDayOfThaw': // fallthru
+		case 'observedDayOfFreeze': // fallthru
+		case 'observedLengthOfGrowingSeason': // fallthru
+			window.snap.state.scenario = '';
+			window.snap.state.range = '';
+			window.snap.state.interval = 'decadalAverages';
+			writeHash();
+			break;
+
+		// these data sets don't allow range, or scenario choices
+		case 'observedPrecipitation': // fallthru
+		case 'observedTemperature': // fallthru
+			if(_.isFalsy(window.snap.state.interval)) {
+				window.snap.state.interval = window.snap.state.defaults.interval;
+			}
+			window.snap.state.scenario = '';
+			window.snap.state.range = '';
+			writeHash();
+			break;
+
+		// these variables only allow one range, decadalVerages
+		case 'dayOfFreeze': //fallthru
+		case 'dayOfThaw': //fallthru
+		case 'lengthOfGrowingSeason': //fallthru
+
+			if(_.isFalsy(window.snap.state.scenario)) {
+				window.snap.state.scenario = window.snap.state.defaults.scenario;
+			}
+			if(_.isFalsy(window.snap.state.range)) {
+				window.snap.state.range = window.snap.state.defaults.range;
+			}
+
+			window.snap.state.interval = 'decadalAverages';
+			writeHash();
+			break;
+
+		case 'temperature'://fallthru
+		case 'precipitation':
+			if(_.isFalsy(window.snap.state.interval)) {
+				window.snap.state.interval = window.snap.state.defaults.interval;
+			}
+
+			if(_.isFalsy(window.snap.state.scenario)) {
+				window.snap.state.scenario = window.snap.state.defaults.scenario;
+			}
+			if(_.isFalsy(window.snap.state.range)) {
+				window.snap.state.range = window.snap.state.defaults.range;
+			}
+			break;
+
+		default:
+			break;
+	}
 }
 
 //Adds a new map layer overlay, based on current user settings
-function addMap(mapvariable, mapvalue) {
+function addMap() {
 
+	validateState();
 
-	var tilepath =
-		window.snap.mapUrls.baseUrl
-		+ window.snap.mapUrls[window.snap.state.variable].prefix
-		+ '_'
-		+ window.snap.mapUrls[window.snap.state.variable][window.snap.state.interval]
-		+ window.snap.mapUrls[window.snap.state.variable].postfix
-		+ '_'
-		+ window.snap.mapUrls.scenarios[window.snap.state.scenario]
-		+ '_'
-		+ window.snap.state.range.replace('-','_')
-		+ window.snap.mapUrls.urlSuffix;
+	var tilepath;
+	switch(window.snap.state.variable) {
+		// these data sets have a different pattern for constructing the URLs.
+		// better fix: template it.
+		case 'observedDayOfThaw': // fallthru
+		case 'observedDayOfFreeze': // fallthru
+		case 'observedLengthOfGrowingSeason': // fallthru
+			tilepath = window.snap.mapUrls.baseUrl
+				+ window.snap.mapUrls[window.snap.state.variable].prefix
+				+ window.snap.mapUrls.urlSuffix;
+			break;
+						
+		case 'observedPrecipitation': // fallthru
+		case 'observedTemperature': // fallthru
+			tilepath = window.snap.mapUrls.baseUrl
+				+ window.snap.mapUrls[window.snap.state.variable].prefix
+				+ '_'
+				+ window.snap.mapUrls[window.snap.state.variable][window.snap.state.interval]
+				+ window.snap.mapUrls.urlSuffix;
+			break;
+		
+		default:
+			tilepath = window.snap.mapUrls.baseUrl
+				+ window.snap.mapUrls[window.snap.state.variable].prefix
+				+ '_'
+				+ window.snap.mapUrls[window.snap.state.variable][window.snap.state.interval]
+				+ window.snap.mapUrls[window.snap.state.variable].postfix
+				+ '_'
+				+ window.snap.mapUrls.scenarios[window.snap.state.scenario]
+				+ '_'
+				+ window.snap.state.range.replace('-','_')
+				+ window.snap.mapUrls.urlSuffix;
+			break;
+	}
 	
-	newmap = new google.maps.ImageMapType({
+	window.snap.map = new google.maps.ImageMapType({
 		getTileUrl: function(tile, zoom) {
 			return tilepath + tile.x + "/" + tile.y + "/" + zoom + ".png";
 		},
@@ -383,7 +585,9 @@ function addMap(mapvariable, mapvalue) {
 	});
 
 	map.overlayMapTypes.push(null); // create empty overlay entry
-	map.overlayMapTypes.setAt("0", newmap);
+	map.overlayMapTypes.setAt("0", window.snap.map);
+
+
 	gnames = new google.maps.ImageMapType({
 		getTileUrl: function(a, z) {
 			var tiles = 1 << z, X = (a.x % tiles);
@@ -402,8 +606,8 @@ function addMap(mapvariable, mapvalue) {
 	map.overlayMapTypes.setAt("1",gnames );
 
 	drawLegend();
-
-	writeHash(); //Needed as otherwise it doesn't trigger from the idle event as moving/zooming does
+	writeHash(); // Needed as otherwise it doesn't trigger from the idle event as moving/zooming does
+	buildMenus();
 
 }
 
@@ -433,26 +637,26 @@ function init(zl, la, ln) {
 	resize();
 }
 
-// called when the page is resized
+// called when the page is resized to resize the map to make it as large as possible
 var resize = function() {
-	var h = $("body").height() - $("#map_header").height() - 50;
-	console.log(h);
-	if (h > 0) {
-		$("#map_canvas").height(h);
-	}
-	var w = $("body").width();
-	if (w > 0) {
-		$("#map_header").width(w - 10);
-		$("#map_canvas").width(w - 20);
-		$("#map_footer").width(w - 10);
-	}
-}
 
+	var bodyHeight = $('body').height();
+	var headerHeight = $('#map_header').height();
+	var mapBarHeight = $('#map_menu_bar').height();
+	var footerHeight = $('#map_footer').height();
 
+	// +21px to get a bit of extra room below the footer.
+	// Because many items are floating, the DOM doesn't quite give us what we expect
+	// for the true wrapped height of the header.  todo/fix
+	var availableHeight = bodyHeight - (headerHeight + footerHeight + mapBarHeight + 30);
+	if (availableHeight > 0) {
+		$("#map_canvas").height(availableHeight);
+	}
+
+};
 
 snap.mapUrls = {
-	//Mean Annual Precipitation/10 year averages/2010-2019/A1B/GCM 5/2km
-	'baseUrl' : 'http://tiles.proto.gina.alaska.edu/snap/',
+	'baseUrl' : 'http://tiles.gina.alaska.edu/snap/',
 	'urlSuffix' : '.google/tile/',
 
 	'precipitation' : {
@@ -491,6 +695,35 @@ snap.mapUrls = {
 		'prefix' : 'logs',
 		'decadalAverages' : '5modelAvg',
 		'postfix':''
+	},
+
+	'observedTemperature' : {
+		'prefix' : 'tas',
+		'decadalAverages' : 'annual_mean_c_akcan_prism_1961_1990',
+		'winter' : '30year_DJF_mean_c_akcan_prism_1961_1990',
+		'summer' : '30year_JJA_mean_c_akcan_prism_1961_1990',
+		'spring' : '30year_MAM_mean_c_akcan_prism_1961_1990',
+		'fall' : '30year_SON_mean_c_akcan_prism_1961_1990'
+	},
+
+	'observedPrecipitation' : {
+		'prefix' : 'pr',
+		'decadalAverages' : '30year_mean_annual_total_mm_akcan_prism_1961_1990',
+		'winter' : '30year_mean_DJF_total_mm_akcan_prism_1961_1990',
+		'summer' : '30year_mean_JJA_total_mm_akcan_prism_1961_1990',
+		'spring' : '30year_mean_MAM_total_mm_akcan_prism_1961_1990',
+		'fall' : '30year_mean_SON_total_mm_akcan_prism_1961_1990'
+	},
+	'observedDayOfFreeze' : {
+		'prefix' : 'dof_akcan_prism_1961_1990'
+	},
+
+	'observedDayOfThaw' : {
+		'prefix' : 'dot_akcan_prism_1961_1990'
+	},
+
+	'observedLengthOfGrowingSeason' : {
+		'prefix' : 'logs_akcan_prism_1961_1990'
 	},
 
 	'scenarios': {
@@ -661,7 +894,7 @@ snap.mapLegends = {
 	'0 to 36' : '#9C551F'
 }},
 
-'tas_decadal_mean_annual_mean' :  { 'title':'Total Precipitation (mm)', 'colors' : {
+'tas_decadal_mean_annual_mean' :  { 'title':'Temperature (&deg;C)', 'colors' : {
 	'9.2 to 15.6' : '#D62F27',
 	'7.0 to 9.1' : '#E05138',
 	'4.7 to 6.9' : '#EB6E4B',
@@ -671,7 +904,7 @@ snap.mapLegends = {
 	'-4.4 to -2.2' : '#FFE3A6',
 	'-6.7 to -4.5' : '#FFFFBF',
 	'-8.9 to -6.8' : '#E3E8BE',
-	'-11.2 to -9.0' : '#CA79BE',
+	'-11.2 to -9.0' : '#CAD4BE',
 	'-13.5 to -11.3' : '#AEBDBC',
 	'-15.7 to -13.6' : '#95ACBD',
 	'-18.0 to -15.8' : '#7B98BA',
@@ -731,3 +964,17 @@ snap.mapLegends = {
 	}}
 };
 
+// Add duplicate references so that observed data uses the same legends
+snap.mapLegends['tas_annual_mean_c_akcan_prism_1961_1990'] = snap.mapLegends['tas_decadal_mean_annual_mean'];
+snap.mapLegends['tas_30year_MAM_mean_c_akcan_prism_1961_1990'] = snap.mapLegends['tas_decadal_mean_MAM_mean'];
+snap.mapLegends['tas_30year_JJA_mean_c_akcan_prism_1961_1990'] = snap.mapLegends['tas_decadal_mean_JJA_mean'];
+snap.mapLegends['tas_30year_SON_mean_c_akcan_prism_1961_1990'] = snap.mapLegends['tas_decadal_mean_SON_mean'];
+snap.mapLegends['tas_30year_DJF_mean_c_akcan_prism_1961_1990'] = snap.mapLegends['tas_decadal_mean_DJF_mean'];
+snap.mapLegends['pr_30year_mean_annual_total_mm_akcan_prism_1961_1990'] = snap.mapLegends['pr_decadal_mean_annual_total'];
+snap.mapLegends['pr_30year_mean_MAM_total_mm_akcan_prism_1961_1990'] = snap.mapLegends['pr_decadal_mean_MAM_total'];
+snap.mapLegends['pr_30year_mean_JJA_total_mm_akcan_prism_1961_1990'] = snap.mapLegends['pr_decadal_mean_JJA_total'];
+snap.mapLegends['pr_30year_mean_SON_total_mm_akcan_prism_1961_1990'] = snap.mapLegends['pr_decadal_mean_SON_total'];
+snap.mapLegends['pr_30year_mean_DJF_total_mm_akcan_prism_1961_1990'] = snap.mapLegends['pr_decadal_mean_DJF_total'];
+snap.mapLegends['dof_akcan_prism_1961_1990'] = snap.mapLegends['dof_5modelAvg'];
+snap.mapLegends['dot_akcan_prism_1961_1990'] = snap.mapLegends['dot_5modelAvg'];
+snap.mapLegends['logs_akcan_prism_1961_1990'] = snap.mapLegends['logs_5modelAvg'];
