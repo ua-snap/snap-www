@@ -166,6 +166,20 @@ snap.submenus = {
 			}
 		}
 	},
+	'historicalInterval' : {
+		'prefix' : '',
+		'renderer' : {
+			getTitleJson : function() {
+				return {
+					prefix: 'as',
+					title: '30 year average'
+				};
+			},
+			getContent : function() {
+				return '<p>Blurb about the range of time and/or ...etc</p>';
+			}
+		}
+	},
 	'scenarios' :  {
 		'prefix' : 'assuming',
 		'defaultText' : 'default text placeholder',
@@ -375,7 +389,7 @@ snap.menus = {
 				'name' : 'Observed Day of Freeze',
 				'description' : 'placeholder',
 				'submenus' : {
-					'interval' : window.snap.submenus.nonseasonalObservedIntervals,
+					'historicalInterval' : window.snap.submenus.historicalInterval,
 					'historical' : window.snap.submenus.historicalRange
 				}
 			},
@@ -383,7 +397,7 @@ snap.menus = {
 				'name' : 'Observed Day of Thaw',
 				'description' : 'placeholder',
 				'submenus' : {
-					'interval' : window.snap.submenus.nonseasonalObservedIntervals,
+					'historicalInterval' : window.snap.submenus.historicalInterval,
 					'historical' : window.snap.submenus.historicalRange
 				}
 			},
@@ -391,7 +405,7 @@ snap.menus = {
 				'name' : 'Observed Length of Growing Season',
 				'description' : 'placeholder',
 				'submenus' : {
-					'interval' : window.snap.submenus.nonseasonalObservedIntervals,
+					'historicalInterval' : window.snap.submenus.historicalInterval,
 					'historical' : window.snap.submenus.historicalRange
 				}
 			}

@@ -212,6 +212,6 @@
 	float: right; margin-right: 20px; color: #333333;
 }
 
-#historical_content p {
+#historicalInterval_content p, #historical_content p {
 	margin: 1ex;
 }
