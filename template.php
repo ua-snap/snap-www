@@ -68,7 +68,7 @@ class webPage {
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8" /> 
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
         <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.16.custom.css" rel="Stylesheet" />  
-
+        <link type="text/css" href="css/maps-print.css" rel="stylesheet" media="print" />
     <?php 
 
         if (isset($this->stylesheet)){ 

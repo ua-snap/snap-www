@@ -630,7 +630,6 @@ function init(zl, la, ln) {
 
 		zoom: window.snap.state.zoom,
 		minZoom: 2,
-		maxZoom: 8,
 		'center': new google.maps.LatLng(window.snap.state.latitude, window.snap.state.longitude),
 		disableDefaultUI: true,
 		navigationControl: true,
