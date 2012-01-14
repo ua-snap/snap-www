@@ -36,7 +36,6 @@ $page->openPage();
 
 <div id="map_footer">
     <div class="map_bar">
-        <span id="helpBlock"><a href="">Help</a> | <a href="">About this tool</a></span>
         <span class="logoBlock"><a href="http://www.uaf.edu"><img alt="UAF Logo" style="height: 28px;" src="images/UAFLogo_A_white.png" /></a></span>
         <span class="logoBlock"><a href="<?php echo Config::$url ?>"><img alt="SNAP Logo" src="images/snap_acronym_white.png" /></a></span>
     </div>

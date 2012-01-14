@@ -29,21 +29,17 @@ a img {
 	border: 0px;
 }
 a {
-        color: #97a93a;
-        color: #336699;
+
         color: #0066cc;
         text-decoration: none;
-	cursor: hand;
 	cursor: pointer;
 }
 a:link {
-        color: #97a93a;
-        color: #336699;
+
         color: #0066cc;
         text-decoration: none;
 }
 a:visited {
-        color: #97a93a;
         color: #0066cc;
         text-decoration: none;
 }
@@ -240,22 +236,12 @@ a:hover {
 #twitter_update_list {
 	list-style: none;
 }
-#twitter_update_list a:link {
-	color: #ffffff;
-}
-#twitter_update_list a:visited {
-	color: #ffffff;
-}
-#twitter_update_list a:hover {
-	color: #cccccc;
-}
 
 .submenu {
 	width: 975px; 
 	margin: auto;
 	padding-left: 20px;
 	line-height: 35px;
-	/*font-family: "privathreepro", sans-serif;*/
 	font-size: 16px;
 }
 .submenu span {
@@ -281,11 +267,8 @@ a:hover {
 	margin-top: 20px;
 	width: 950px;
 }
-#main_content {
-	/*overflow: hidden;*/
-}
+
 .menu {
-	/*font-family: "privathreepro", sans-serif;*/
 	list-style: none outside none;
 	width: 975px;
 	padding-left: 25px;
@@ -410,7 +393,6 @@ h3 {
 	margin-top: 15px;
 	margin-bottom: 15px;
 	cursor: pointer;
-	cursor: hand;
 }
 .heading:hover {
 	color: #cccccc;

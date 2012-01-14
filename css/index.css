@@ -23,12 +23,6 @@
 	padding: 3px;
 	height: 20px;
 	margin: 10px;
-	/*
-	-webkit-transform: translate(0px) rotate(-1deg);
-    	-webkit-transform-origin: 60% 100%;
-	-moz-transform: translate(0px) rotate(-1deg);
-    	-moz-transform-origin: 60% 100%;
-	*/
 }
 #news_nav li {  list-style: numbered; border: 1px solid #ffffff; float: left; margin: 50px; width: 12px; height: 12px; cursor: pointer; cursor: hand;} 
 #news_nav a { color: #bbbbbb; margin-left: 5px; font-size: 15px; }
@@ -73,12 +67,6 @@
 	top: 200px;
 	left: 10px;
 	width: 150px;
-	/*
-	-webkit-transform: translate(0px) rotate(-0.8deg);
-    	-webkit-transform-origin: 60% 100%;
-	-moz-transform: translate(0px) rotate(-0.8deg);
-    	-moz-transform-origin: 60% 100%;
-	*/
 }
 .news_link a:link {
 	color: #ffffff;
@@ -102,12 +90,6 @@
 	padding-top: 20px;
 	z-index: 5;
 	color: #ffffff;
-	/*
-	-webkit-transform: translate(0px) rotate(-0.8deg);
-    	-webkit-transform-origin: 60% 100%;
-	-moz-transform: translate(0px) rotate(-0.8deg);
-    	-moz-transform-origin: 60% 100%;
-	*/
 }
 .news_content a {
 	color: #999999;
@@ -126,22 +108,9 @@
 	border: 1px solid #999999;
 	padding: 3px;
 	height: 300px;
-	/*
-	-webkit-transform: translate(0px) rotate(0.4deg);
-    	-webkit-transform-origin: 60% 100%;
-	-moz-transform: translate(0px) rotate(0.4deg);
-    	-moz-transform-origin: 60% 100%;
-	*/
-}
-#news_sticky {
-	/*
-	-webkit-transform: translate(0px) rotate(-0.8deg);
-    	-webkit-transform-origin: 60% 100%;
-	-moz-transform: translate(0px) rotate(-0.8deg);
-    	-moz-transform-origin: 60% 100%;
-	*/
 
 }
+
 #news_container {
 	width: 100%; 
 	margin-left: 12px; 
