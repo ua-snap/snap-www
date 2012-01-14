@@ -348,6 +348,10 @@ CREATE TABLE `charts_data` (
  PRIMARY KEY (`communityId`,`type`,`scenario`,`daterange`,`unit`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+LOAD DATA INFILE '/tmp/community_charts_new_ingest.csv'
+INTO TABLE `community_charts_new_ingest`
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+IGNORE 1 LINES; SHOW WARNINGS;
 sql
 ,
                   'fixtures' => '',
