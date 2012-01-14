@@ -50,6 +50,7 @@ mkdir -p ${RPM_BUILD_ROOT}/etc/cron.weekly/
 mkdir -p ${RPM_BUILD_ROOT}/usr/lib64/snapwww/src
 mkdir -p ${RPM_BUILD_ROOT}/usr/bin/snapwww/src
 mkdir -p ${RPM_BUILD_ROOT}/etc/php.d/
+mkdir -p ${RPM_BUILD_ROOT}/tmp
 
 touch ${RPM_BUILD_ROOT}/var/log/%{hostname}-error_log
 touch ${RPM_BUILD_ROOT}/var/log/%{hostname}-access_log
