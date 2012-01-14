@@ -11,17 +11,18 @@
 #
 .PHONY: javascript
 javascript :
+# add our custom SNAP javascript here for algorithmic minification
 	java -jar build/vendor/closure-compiler/compiler.jar \
 --warning_level QUIET \
 --compilation_level SIMPLE_OPTIMIZATIONS \
-# ** custom SNAP javascript belongs here
 --js=./js/maps.js \
 --js=./js/charts.js \
 --js_output_file=./js/snap.min.js
+
+# vendor javascript goes here
 	java -jar build/vendor/closure-compiler/compiler.jar \
 --warning_level QUIET \
 --compilation_level WHITESPACE_ONLY \
-# ** vendor (3rd party) javascript belongs here
 --js=./js/underscore-min.js \
 --js=./js/jquery-1.7.1.min.js \
 --js=./js/jquery-ui-1.8.16.custom.min.js \
