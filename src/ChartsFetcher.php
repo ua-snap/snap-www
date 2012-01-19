@@ -17,24 +17,6 @@ class ChartsFetcher {
 		$this->dbh = SwDb::getInstance();
 	}
 
-	public function rowByType($type) {
-		$sth = $this->dbh->prepare( 'SELECT max(value),min(value) FROM community_charts WHERE community LIKE ? AND `type`=?' );
-		$sth->execute( array( $this->community, $type ));
-		return $sth->fetch();		
-	}
-
-	public function byTemperature() {
-		
-		return $this->rowByType(1);
-
-	}
-
-	public function byPrecipitation() {
-
-		return $this->rowByType(2);
-		
-	}
-
 	public function fetch() {
 
 		$sth = $this->dbh->prepare("SELECT * FROM communities, charts_data WHERE `communities`.`id` = ? AND `charts_data`.`type`=? AND `charts_data`.`scenario`=? AND `charts_data`.`daterange`=? AND `communities`.`id` = `charts_data`.`communityId` LIMIT 1");

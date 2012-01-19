@@ -1,5 +1,8 @@
 <?php
 include("template.php");
+
+require_once 'src/Contacts.php';
+
 $page = new webPage("SNAP: People", "people.css", "about");
 $page->openPage();
 $page->pageHeader();
@@ -71,49 +74,88 @@ $staff_array = array(
                             echo "</div>";
                         }
                     ?>
-                    <div style="width: 800px; margin: auto; margin-top: 50px; "><a name="contact"></a>
-                        <div style="font-size: 24px;">Contact Us!</div>
-                        <div style="font-size: 16px; color: #222222;">
-                        <form method="post" action="contact.php">
-                            <div style="position: relative; margin-top: 20px; height: 20px;">
-                                <div style="position: absolute;">Topic</div>
-                                <div style="position: absolute; left: 200px">
-                                    <select style="width: 300px;" name="topic">
-                                        <option value="Becoming a SNAP collaborator">Becoming a SNAP collaborator</option>
-                                        <option value="Technical data questions">Technical data questions</option>
-                                        <option value="Our website (report issues, questions about usage)">Our website (report issues, questions about usage)</option>
-                                        <option value="ALFRESCO fire simulation model">ALFRESCO fire simulation model</option>
-                                        <option value="SNAP hiring or management">SNAP hiring or management</option>
-                                        <option value="General inquiry">General inquiry</option>
-                                    </select>
+            <div id="contactFormWrapper"><a name="contact"></a>
+                <h2>Contact Us!</h2>
+                <form id="contactUsForm">
+                    <div >
+                        <label>Topic</label>
+                            <?php echo Contacts::getEmailContacts(); ?>
+                    </div>
+                    <div >
+                        <label>Your name</label>
+                        <input class="required"  id="contact_name" name="name" />
+                    </div>
+                    <div >
+                        <label>Your email address</label>
+                        <input class="required email"  id="contact_email" name="email" />
+                    </div>
+                    <div >
+                        <label>Subject line</label>
+                        <input class="required"  id="contact_subject" name="subject" />
+                    </div>
+                    <div >
+                        <label>Message</label>
+                        <div id="messageWrapper">
+                        <!-- empty div so the required message shows up properly -->
+                            <div style="display:none;"></div><textarea class="required" id="contact_message" rows="6" cols="20" name="message"></textarea>
+        					<div>
+                                <div id="buttonWrapper"><button id="sendEmailButton">Send Email</button>
+                                    <span id="sendingEmail" style="display: inline-block;"></span>
                                 </div>
                             </div>
-                            <div style="position: relative; margin-top: 20px; height: 20px;">
-                                <div style="position: absolute;">Your name</div>
-                                <div style="position: absolute; left: 200px"><input style="width: 300px;" name="name" /></div>
-                            </div>
-                            <div style="position: relative; margin-top: 20px; height: 20px;">
-                                <div style="position: absolute;">Your email address</div>
-                                <div style="position: absolute; left: 200px"><input style="width: 300px;" name="email" /></div>
-                            </div>
-                            <div style="position: relative; margin-top: 20px; height: 20px;">
-                                <div style="position: absolute;">Subject line</div>
-                                <div style="position: absolute; left: 200px"><input style="width: 500px;" name="subject" /></div>
-                            </div>
-                            <div style="position: relative; margin-top: 20px; height: 300px;">
-                                <div style="position: absolute;">Message</div>
-                                <div style="position: absolute; left: 200px;"><textarea style="width: 500px; height: 300px;" name="message" rows="0" cols="0" ></textarea></div>
-                            </div>
-                            <div style="position: relative; margin-top: 20px; height: 20px;">
-                                <div style="position: absolute;">Submit</div>
-                                <div style="position: absolute; left: 200px;"><input type="submit" name="submit" value="Send Email" /></div>
-                            </div>
-                            </form>
                         </div>
                     </div>
-                </div>
+                    <script type="text/javascript">
 
-<!-- CONTACT SECTION -->
+(function( $ ) {
+    $.fn.serializeJSON=function() {
+        var json = {};
+        jQuery.map($(this).serializeArray(), function(n, i){
+            json[n['name']] = n['value'];
+        });
+        return json;
+    };
+})( jQuery );
+
+$('#contactUsForm').validate({
+    errorPlacement: function(error, element) {
+        element.prev().before(error);
+    }
+});
+
+$('#sendEmailButton').button().click(function(e) {
+    if( true === $('#contactUsForm').valid() ) {
+        $(this).button('option', 'disabled', true);
+        $('#sendingEmail')
+            .empty()
+            .append($('<img/>', { 
+                src: 'images/ajax-loader-gray.gif', 
+                alt: 'Loading...'
+            }))
+            .append('Sending email&hellip;')
+            .show();
+        
+        $.ajax({
+            type: 'post',
+            url: '<?php echo Config::$url; ?>/contact.php',
+            data: $('#contactFormWrapper :input').serializeJSON(),
+            success: function(data, textStatus, jqXHR) {
+                $('#sendEmailButton').button('option', 'disabled', false).removeClass('ui-state-active');
+                $('#sendingEmail').empty().text('Thank you!  Your message has been sent.').delay(10000).hide('fast');
+            },
+            error: function(data, textStatus, jqXHR) {
+                $('#sendingEmail').empty().text('Sorry, something went wrong.  Please call us at (907) 474-2405');
+            }
+        });
+    } else {
+        return false;
+    }
+});
+
+                    </script>
+                </form>
+                </div>
+            </div>
         </div>
     </div>
 <?php

@@ -1,18 +1,56 @@
 <?php
-// When deploying to production, copy/rename this file to Config.php
-class Config {
 
-    static public $database = array(
-        'host' => 'localhost',
-        'port' => '3306',
-        'user' => 'snapwww',
-        'pass' => 'password',
-        'database' => 'snapwww'
-    );
-    static public $testing = array(
-	    'skipDatabase' => true,
+// use these in unit tests, as required
+class FixturesConfig {
+
+	static public $database = array(
+		'host' => 'localhost',
+		'port' => '3306',
+		'user' => 'snapwww',
+		'pass' => 'password',
+		'database' => 'snapwww'
 	);
-    static public $url = "http://dev.snap.uaf.edu";
+
+	static public $testing = array(
+		'skipDatabase' => true,
+	);
+
+	static public $url = "http://dev.snap.uaf.edu";
+
+	// These will be sent to the constructor a PEAR::Mail object.
+	static public $email = array(
+		'host' => 'smtp.uaf.edu',
+	);
+
+	static public $contacts = array(
+		'collaboration' => array(
+			'email' => 'nlfresco@alaska.edu',
+			'description' => 'Becoming a SNAP collaborator',
+		),
+		'web' => array(
+			'email' => 'becrevensten@alaska.edu',
+			'description' => 'Our website (report issues, questions about usage)',
+		),
+		'alfresco' => array(
+			'email' => 'nlfresco@alaska.edu',
+			'description' => 'ALFRESCO fire simulation model',
+		),
+
+		'data' => array(
+			'email' => 'tom.kurkowski@alaska.edu',
+			'description' => 'Technical data questions',
+		),
+
+		'general' => array(
+			'email' => 'nlfresco@alaska.edu',
+			'description' => 'General inquiry',
+		),
+
+		'hiring' => array(
+			'email' => 'tom.kurkowski@alaska.edu',
+			'description' => 'SNAP hiring or management',
+		)	
+	);
 
 }
 ?>

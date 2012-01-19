@@ -55,6 +55,14 @@ $(document).ready(function() {
         $('.menuSpacer').removeClass('menuSpacerToggle');
     });
 
+    // detect hashchanges and reload the mapp
+    $(window).hashchange(function() {
+        
+        // PICKUP
+        buildMenus();
+        addMap();
+    });
+
     var currenthash = window.location.hash.substring(1).split("/");
     window.snap.state.variable = currenthash[0] || window.snap.state.defaults.variable;
     window.snap.state.interval = currenthash[1] || window.snap.state.defaults.interval;

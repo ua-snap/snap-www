@@ -524,3 +524,83 @@ td {
 	/* add padding to account for vertical scrollbar */
 	padding-right: 20px;
 }
+
+#contactFormWrapper div {
+	margin: 1em 0 1em -1ex;
+}
+
+#messageWrapper {
+	margin: 0 1em 1em 0 !important;
+	display: inline-block;
+}
+
+#contactFormErrors {
+	
+}
+
+#contactFormWrapper h2 {
+	margin: 40px 0 1ex;
+	color: #242d2f;
+	font-size: 34px;
+}
+
+#contactFormWrapper label {
+	text-align: left;
+	display: inline-block;
+	line-height: 1.8;
+	vertical-align: top;
+	width: 10em;
+	margin-right: 1ex;
+	clear: both;
+}
+
+#contactFormWrapper input, #contactFormWrapper select {
+	display: inline-block;
+	font-size: 14px;
+	width: 20em;
+}
+
+#contactFormWrapper #contact_subject {
+	width: 40em;
+}
+
+#contactFormWrapper textarea {
+	width: 40em;
+	font-size: 14px;
+	min-height: 15em;
+}
+
+#sendEmailButton {
+	display: block;
+}
+
+#sendingEmail {
+	display: inline-block;
+	line-height: 3;
+	padding: 0 0 0 1em;
+}
+
+#sendingEmail img {
+	display: inline-block;
+	padding: 0 1ex 0 0;
+}
+
+#buttonWrapper {
+	margin: 0 0 0 1ex !important;
+}
+
+#buttonWrapper button {
+	float: left;
+}
+
+#contactUsForm label.error {
+	display: block;
+	width: auto !important;
+	color: red;
+	margin: 1ex 0 0 11em;
+	padding: 0;
+}
+
+#contactUsForm #messageWrapper label.error {
+	margin: 1ex 0 0 0 !important;
+}

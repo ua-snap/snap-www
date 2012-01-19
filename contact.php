@@ -1,37 +1,50 @@
 <?php
-include("template.php");
-$page = new webPage("SNAP: Contact Us", "", "about");
-$page->openPage();
-$page->pageHeader();
 
-$staff_array = array(
+require_once 'src/Config.php';
+require_once 'Mail.php'; // PEAR Mail
+
+try {
+        
+    if( !isset($_POST['what'])) {
+        $_POST['what'] = 'collaboration'; // define fallback
+    }
+
+    $m = Mail::factory('smtp', array(
+        'host' => Config::$email['host']
+    ));
+
+    $body = <<<text
+
+From: {$_POST['name']}
+Email provided: {$_POST['email']}
+
+Message:
+{$_POST['message']}
+
+text;
+
+    $m->send(
+        Config::$contacts[$_POST['what']]['email'],
         array(
-            
+            'Subject' => 'SNAP Web contact form re: '.Config::$contacts[$_POST['what']]['description'],
+            'Reply-To' => $_POST['email'],
+            'From' => 'contact-form@www.snap.uaf.edu',
+            'To' => Config::$contacts[$_POST['what']]['email']
         ),
-        array(
-
-        )
+        $body
     );
-?>
 
-        <div id="main_body">
-            <div id="main_content">
-                <?php
-                    //mail ( string $to , string $subject , string $message [, string $additional_headers [, string $additional_parameters ]] )
-                    $to = "apbennett@alaska.edu";
-                    $subject = "Website Contact: ".$_POST['subject'];
-                    $message = "TOPIC: ".$_POST['topic'];
-                    $message .= "\r\nSENT BY: ".$_POST['name']." (".$_POST['email'].")";
-                    $message .= "\r\n\r\n".$_POST['message'];
-                    $headers = "From: ".$_POST['email'];
-                    $sent = mail ( $to, $subject, $message, $headers);
-                    if ($sent){
-                        echo "<div style=\"font-size: 18px; text-align: center;\">Your message has been sent.  You should hear back from us shortly.</div>";
-                        echo "<div style=\"margin-top: 50px; font-size: 18px; text-align: center;\">If you'd like to send another request, or contact someone else, you can go <a href=\"/people.php#contact\">here</a>.</div>";
-                    }   
-                ?>
-            </div>
-        </div>
+?>
+{ "success" : "true" }
 <?php
-$page->closePage();
+
+} catch (Exception $e) {
+    
+    // inform the client
+    header('HTTP/1.1 500 Internal Server Error', true, 500);
+
+    // Get the exception into a logfile somewhere and bail.
+    die(e);
+}
+
 ?>

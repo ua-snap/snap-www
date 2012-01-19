@@ -202,6 +202,45 @@ snap.submenus = {
 
 // el = a JQuery object
 snap.renderers = {
+	// for e and i definitions, see the _.each() loop that provides data.
+	// optionsList is a jQuery ul object.
+	'renderListItem' : function(e, i, source, category, optionsList) {
+
+		optionsList.append($('<li/>')
+		.click(function(e) {
+			// swap out the map on click
+			$('.menuOptions').hide();
+			$('.menuSpacer').removeClass('menuSpacerToggle');
+			window.snap.state[$(this).data('category')] = $(this).data('option');
+			addMap();
+		})
+		.data('category', category)
+		.data('option', i)
+		.html(e.name)
+		.hover(
+
+			function(e) {
+				$('.menuOptions :visible').parent().height(  );
+				var category = $(e.currentTarget).data('category');
+				var option = $(e.currentTarget).data('option');
+				$('#' + category + '_descriptions').find('p').html(source.items[option].description);
+				
+				var textHeight = $('#' + category + '_descriptions').find('p').height();
+				var wrapperHeight = $('.active .menuOptions').height();
+
+				if( wrapperHeight < textHeight ) {
+					$('.active .menuOptions').height(textHeight + 16 ); // increase height + 8px padding
+				}
+
+			},
+			function(e) {
+				var category = $(e.currentTarget).data('category');
+				$('#' + category + '_descriptions').find('p').html(source.defaultText);
+			}
+
+		));
+	},
+	//todo: make this into a single object, refactor to smaller methods
 	'standard' : function(el, category, source) {
 
 		var wrapper = $('<div/>', {
@@ -267,48 +306,12 @@ snap.renderers = {
 				)
 			);
 
-			var optionsList = $('<ul/>')
-			.click(function(e){
-				e.stopPropagation();
-			});
+			var optionsList = $('<ul/>');
 
 			_.each(source.items, function(e, i, l) {
-				optionsList.append($('<li/>')
-				.click(function(e) {
-					// swap out the map on click
-					$('.menuOptions').hide();
-					$('.menuSpacer').removeClass('menuSpacerToggle');
-					window.snap.state[$(this).data('category')] = $(this).data('option');
-					addMap();
-				})
-				.data('category', category)
-				.data('option', i)
-				.html(e.name)
-				.hover(
-
-					function(e) {
-						$('.menuOptions :visible').parent().height(  );
-						var category = $(e.currentTarget).data('category');
-						var option = $(e.currentTarget).data('option');
-						$('#' + category + '_descriptions').find('p').html(source.items[option].description);
-						
-						var textHeight = $('#' + category + '_descriptions').find('p').height();
-						var wrapperHeight = $('.active .menuOptions').height();
-
-						//TODO this is currently broken again, probably DOM change.
-
-						if( wrapperHeight < textHeight ) {
-							$('.active .menuOptions').height(textHeight + 16 ); // increase height + 8px padding
-						}
-
-					},
-					function(e) {
-						var category = $(e.currentTarget).data('category');
-						$('#' + category + '_descriptions').find('p').html(source.defaultText);
-					}
-
-				));
+				window.snap.renderers.renderListItem(e, i, source, category, optionsList);
 			}, this);
+
 			content.append(optionsList);
 		}
 

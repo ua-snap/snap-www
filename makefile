@@ -30,6 +30,8 @@ javascript :
 --js=./js/jquery.hoverIntent.minified.js \
 --js=./js/jquery.cycle.all.js \
 --js=./js/jquery.url.js \
+--js=./js/jquery.ba-hashchange.min.js \
+--js=./js/jquery.validate.min.js \
 --js=./js/plugins.js \
 --js=./js/highcharts.js \
 --js=./js/exporting.js \

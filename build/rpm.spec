@@ -19,6 +19,7 @@ Requires:   mysql, mysql-devel, php-mysql
 Requires:	php-pdo
 Requires:   httpd
 Requires:   php-pecl-json
+Requires:   php-pear-Mail
 
 %define inst_dir /var/www/snap
 %define hostname snap

@@ -11,7 +11,7 @@ class Template {
     $url = Config::$url;
 
 		return<<<js
-<script type="text/javascript" comment="Google Analytics">
+<script type="text/javascript" data-comment="Google Analytics">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-3978613-3']);
       _gaq.push(['_trackPageview']);
@@ -41,6 +41,8 @@ If you add a file here, you must add it to the makefile for packaging.  See the 
 <script src="js/highcharts.js" type="text/javascript"></script>
 <script src="js/exporting.js" type="text/javascript"></script>
 <script src="js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+<script src="js/jquery.ba-hashchange.min.js" type="text/javascript"></script>
+<script src="js/jquery.validate.min.js" type="text/javascript"></script>
 
 <script src="js/charts.js" type="text/javascript"></script>
 <script src="js/maps.js" type="text/javascript"></script>
