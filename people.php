@@ -76,6 +76,11 @@ $staff_array = array(
                     ?>
             <div id="contactFormWrapper"><a name="contact"></a>
                 <h2>Contact Us!</h2>
+                <p>
+                    Scenarios Network for Alaska &amp; Arctic Planning<br/>
+                    3352 College Road, Fairbanks AK 99709<br/>
+                    nlfresco@alaska.edu | tel 907.474.2405 | fax 907.474.7151
+                </p>
                 <form id="contactUsForm">
                     <div >
                         <label>Topic</label>

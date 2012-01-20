@@ -525,8 +525,18 @@ td {
 	padding-right: 20px;
 }
 
+#contactFormWrapper p {
+	padding: 1ex 0 1em;
+	line-height: 1.5;
+}
+
+#contactFormWrapper {
+	margin: 0;
+	padding: 0;
+}
+
 #contactFormWrapper div {
-	margin: 1em 0 1em -1ex;
+	margin: 1em 0 1em;
 }
 
 #messageWrapper {
@@ -534,12 +544,8 @@ td {
 	display: inline-block;
 }
 
-#contactFormErrors {
-	
-}
-
 #contactFormWrapper h2 {
-	margin: 40px 0 1ex;
+	margin: 40px 0 1ex 0;
 	color: #242d2f;
 	font-size: 34px;
 }
@@ -571,6 +577,8 @@ td {
 }
 
 #sendEmailButton {
+	padding: 0;
+	margin: 0 0 0 -1ex;
 	display: block;
 }
 
@@ -603,4 +611,8 @@ td {
 
 #contactUsForm #messageWrapper label.error {
 	margin: 1ex 0 0 0 !important;
+}
+
+#pageFooterInfo p {
+	margin: 1ex 0;
 }

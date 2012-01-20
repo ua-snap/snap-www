@@ -148,13 +148,21 @@ class webPage {
                 </div>
             </div>
             <div style="text-align: left; margin-left: 50px;"><img src="/images/bottom_bubble.png" alt="Bubble Graphic" /></div>
-            <div style="margin-bottom: 20px; ">
+            <div id="pageFooterInfo" style="margin-bottom: 40px; min-height: 60px">
                 <div style="float: left; margin-right: 40px;">
                     <div><a href="/"><img src="/images/snap_acronym_rgb.png" height="53px" alt="SNAP Acronym Logo" /></a></div>
                     <div class="contactbar" style="text-align: right;"><a href="/people.php#contact">contact</a> | <span title="Not implemented yet">sitemap</span> | <span title="Not implemented yet">search</span></div>
                 </div>
-                <div style ="float: left; width: 450px; text-align: left; margin-top: 13px;"><?php echo 'V'.SNAPWEB_VERSION; ?> Copyright &copy; 2011 <a href="/" style="color: #222222; text-decoration: underline;">Scenarios Network for Alaska &amp; Arctic Planning</a>, a research institute of the <a href="http://www.uaf.edu" style="color: #222222; text-decoration: underline;">University of Alaska Fairbanks</a>.  UAF is an affirmative action/equal opportunity employer and educational institution.</div>
-                <div><a href="http://www.uaf.edu"><img src="/images/UAFLogo_A_black_horiz.png" height="55px" style="margin-top: 13px;" alt="UAF Logo" /></a></div>
+                
+                <div style ="float: left; width: 470px; text-align: left; margin-top: 13px;"><?php echo 'V'.SNAPWEB_VERSION; ?> Copyright &copy; 2011 <a href="/" style="color: #222222; text-decoration: underline;">Scenarios Network for Alaska &amp; Arctic Planning</a>, a research institute of the <a href="http://www.uaf.edu" style="color: #222222; text-decoration: underline;">University of Alaska Fairbanks</a>.  UAF is an affirmative action/equal opportunity employer and educational institution.
+
+                <p>
+                    Scenarios Network for Alaska &amp; Arctic Planning<br/>
+                    3352 College Road, Fairbanks AK 99709<br/>
+                    nlfresco@alaska.edu | tel 907.474.2405 | fax 907.474.7151
+                </p>
+                </div>
+                <div style="float: right;"><a href="http://www.uaf.edu"><img src="/images/UAFLogo_A_black_horiz.png" height="55px" style="margin: 13px 0 0 0; padding: 0" alt="UAF Logo" /></a></div>
             </div>
             <div style="height: 50px;"></div>
         </div>
