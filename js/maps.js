@@ -27,7 +27,7 @@ snap.state = {
 
 	defaults: {
 		interval: 'decadalAverages',
-		range: '2010-2019',
+		range: '2050-2059',
 		variable: 'temperature',
 		scenario: 'A1B',
 		zoom: 3,
@@ -39,115 +39,125 @@ snap.state = {
 snap.submenus = {
 	'intervals' : {
 		'prefix' : 'as',
-		'defaultText' : 'default text placeholder',
+		'defaultText' : 'Please choose a period.',
 		'items': {
 			'decadalAverages' : {
-				'name' : '10 year average',
-				'description' : 'Data is averaged over a 10 year interval'
+				'name' : '10&ndash;year averages',
+				'description' : 'Decadal averages, for example, the mean value across 2010&ndash;2019.'
 			},
 			'spring' : {
 				'name' : 'spring averages',
-				'description' : 'Data from March, April, and May are averaged over a 10 year interval'
+				'description' : 'Averages across March, April, and May'
 			},
 			'summer' : {
 				'name' : 'summer averages',
-				'description' : 'Data from June, July, and August are averaged over a 10 year interval'
+				'description' : 'Averages across June, July, and August'
 			},
 			'fall' : {
 				'name' : 'fall averages',
-				'description' : 'Data from September, October, and November are averaged over a 10 year interval'
+				'description' : 'Averages across September, October, and November'
 			},
 			'winter' : {
 				'name' : 'winter averages',
-				'description' : 'Data from December, January, and February are averaged over a 10 year interval'
+				'description' : 'Averages across December, January, and February'
 			}
 		}
 	},
 	'observedIntervals' : {
 		'prefix' : 'as',
-		'defaultText' : 'default text placeholder',
+		'defaultText' : 'Please choose a period.',
 		'items': {
 			'decadalAverages' : {
-				'name' : '30 year average',
-				'description' : 'Data is averaged over a 30 year interval'
+				'name' : '30&ndash;year averages',
+				'description' : 'Decadal averages across 1960&ndash;1990'
 			},
 			'spring' : {
 				'name' : 'spring averages',
-				'description' : 'Data from March, April, and May are averaged over a 10 year interval'
+				'description' : 'Averages across March, April, and May'
 			},
 			'summer' : {
 				'name' : 'summer averages',
-				'description' : 'Data from June, July, and August are averaged over a 10 year interval'
+				'description' : 'Averages across June, July, and August'
 			},
 			'fall' : {
 				'name' : 'fall averages',
-				'description' : 'Data from September, October, and November are averaged over a 10 year interval'
+				'description' : 'Averages across September, October, and November'
 			},
 			'winter' : {
 				'name' : 'winter averages',
-				'description' : 'Data from December, January, and February are averaged over a 10 year interval'
+				'description' : 'Averages across December, January, and February'
 			}
 		}
 	},
 	'nonseasonalIntervals' : {
 		'prefix' : 'as',
-		'defaultText' : 'default text placeholder',
-		items: {
-			'decadalAverages' : {
-				'name' : '10 year average',
-				'description' : 'Data is averaged over a 10 year interval'
+		'renderer' : {
+			// needs to return prefix: and title:
+			getTitleJson : function() {
+				return {
+					prefix:'',
+					title:'as 10&ndash;year averages'
+				};
+			},
+			getContent : function() {
+				return '<p style="margin: 1ex">Decadal averages across 1960&ndash;1990</p>';
 			}
 		}
 	},
 	'nonseasonalObservedIntervals' : {
 		'prefix' : 'as',
-		'defaultText' : 'default text placeholder',
-		items: {
-			'decadalAverages' : {
-				'name' : '30 year average',
-				'description' : 'Data is averaged over 30 years'
+		'renderer' : {
+			// needs to return prefix: and title:
+			getTitleJson : function() {
+				return {
+					prefix:'',
+					title:'as 30&ndash;year averages'
+				};
+			},
+			getContent : function() {
+				return '<p style="margin: 1ex">Decadal averages, for example, the mean value across 2010-2019.</p>';
 			}
 		}
 	},
 	'ranges' :  {
 		'prefix' : 'from',
-		'defaultText' : 'default text placeholder',
+		'defaultText' : 'Please choose a decade.',
 		items: {
 			'2010-2019' : {
 				'name' : '2010&ndash;2019',
-				'description' : '2010&ndash;2019'
+				'description' : 'Mean value across 2010&ndash;2019'
 			},
 			'2020-2029' : {
 				'name' : '2020&ndash;2029',
-				'description' : '2020&ndash;2029'
+				'description' : 'Mean value across 2020&ndash;2029'
 			},
 			'2030-2039' : {
 				'name' : '2030&ndash;2039',
-				'description' : '2030&ndash;2039'
+				'description' : 'Mean value across 2030&ndash;2039'
 			},
 			'2040-2049' : {
 				'name' : '2040&ndash;2049',
-				'description' : '2040&ndash;2049'
+				'description' : 'Mean value across 2040&ndash;2049'
 			},
 			'2050-2059' : {
 				'name' : '2050&ndash;2059',
-				'description' : '2050&ndash;2059'
+				'description' : 'Mean value across 2050&ndash;2059'
 			},
 			'2060-2069' : {
 				'name' : '2060&ndash;2069',
-				'description' : '2060&ndash;2069'
+				'description' : 'Mean value across 2060&ndash;2069'
 			},
 			'2070-2079' : {
 				'name' : '2070&ndash;2079',
-				'description' : '2070&ndash;2079'
+				'description' : 'Mean value across 2070&ndash;2079'
 			},
 			'2080-2089' : {
 				'name' : '2080&ndash;2089',
-				'description' : '2080&ndash;2089'
+				'description' : 'Mean value across 2080&ndash;2089'
 			},
 			'2090-2099' : {
 				'name' : '2090&ndash;2099',
-				'description' : '2090&ndash;2099'
+				'description' : 'Mean value across 2090&ndash;2099'
 			}
 		}
 	},
@@ -162,7 +172,7 @@ snap.submenus = {
 				};
 			},
 			getContent : function() {
-				return '<p>Blurb about the PRISM data, its scope, perhaps a <a>link somewhere about it?</a></p>';
+				return '<p>Data averaged over 1960&ndash;1990.</p>';
 			}
 		}
 	},
@@ -176,25 +186,25 @@ snap.submenus = {
 				};
 			},
 			getContent : function() {
-				return '<p>Blurb about the range of time and/or ...etc</p>';
+				return '<p></p>';
 			}
 		}
 	},
 	'scenarios' :  {
 		'prefix' : 'assuming',
-		'defaultText' : 'default text placeholder',
+		'defaultText' : 'Please choose a scenario.',
 		items: {
 			'A2' : {
-				'name' : 'rapid increases in emissions (<span>A2</span>)',
-				'description' : 'The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The A2 scenario describes a very heterogeneous world with high population growth, slow economic development and slow technological change.'
+				'name' : 'Rapid increases in emissions (<span>A2</span>)',
+				'description' : 'The A2 scenario describes a heterogeneous world with high population growth, slow economic development and slow technological change.'
 			},
 			'A1B' : {
-				'name' : 'mid-range emissions (<span>A1B</span>)',
-				'description' : 'The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The Scenario A1B assumes a world of very rapid economic growth, a global population that peaks in mid-century, rapid introduction of new and more efficient technologies, and a balance between fossil fuels and other energy sources.'
+				'name' : 'Mid&ndash;range emissions (<span>A1B</span>)',
+				'description' : 'The A1B scenario assumes a world of rapid economic growth, a global population that peaks mid-century, rapid introduction of new and more efficient technologies, and a balance between fossil fuels and other energy sources.'
 			},
 			'B1' : {
-				'name' : 'leveling and declining emissions (<span>B1</span>)',
-				'description' : 'The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The B1 scenario describes a convergent world, with the same global population as A1B, but with more rapid changes in economic structures toward a service and information economy.'
+				'name' : 'Leveling or declining emissions (<span>B1</span>)',
+				'description' : 'The B1 scenario describes a convergent world, with the same global population as A1B, but with more rapid changes in economic frameworks toward a service and information economy.'
 			}
 		}
 	}
@@ -259,7 +269,9 @@ snap.renderers = {
 				, titleJson
 			)
 		)
+		// assign the necessary hooks to the parent element
 		.data('category', category)
+		// show the menu
 		.click(
 			function(e) {
 
@@ -272,6 +284,12 @@ snap.renderers = {
 					el.parent().addClass('active');
 					el.parent().find('.menuSpacer').addClass('menuSpacerToggle');
 					var content = $('#' + el.data('category') + '_content').show();
+
+					// If the menu juts out the right side of the browser window, move it.
+					if(content.outerWidth() + content.offset().left > $(window).width() ) {
+						content.css('right', '1em');
+					}
+
 				} else {
 					el.parent().removeClass('active');
 				}
@@ -324,11 +342,11 @@ snap.renderers = {
 snap.menus = {
 	'variable' : {
 		prefix: '',
-		defaultText: 'defaultText',
+		defaultText: 'Please choose a variable.',
 		items: {
 			'temperature' : {
-				'name' : 'Projected Average Annual Temperature',
-				'description' : 'The average annual precipitation for the given range',
+				'name' : 'Projected GCM Average Temperature',
+				'description' : 'This is average annual temperature for the given date range.  This is calculated by averaging over each year and then averaging over the given date range. More detailed explanations are discussed in the <metadata>.',
 				'submenus' : {
 					// 'key' => 'value', where key is the same as the key in the window.snap.state object.
 					'interval' : window.snap.submenus.intervals,
@@ -337,8 +355,8 @@ snap.menus = {
 				}
 			},
 			'precipitation' : {
-				'name' : 'Projected Average Annual Precipitation',
-				'description' : 'This is the average annual temperature calculated for the given range',
+				'name' : 'Projected GCM Total Precipitation',
+				'description' : 'This is average total annual precipitation (rain and snow water equivalent) for the given range. This is calculated by finding the sum of precipitation for each year, and then averaging over the given date range. More detailed explanations are discussed in the <metadata>.',
 				'submenus' : {
 					'interval' : window.snap.submenus.intervals,
 					'range' : window.snap.submenus.ranges,
@@ -346,8 +364,8 @@ snap.menus = {
 				}
 			},
 			'dayOfFreeze' : {
-				'name' : 'Projected Day of Freeze',
-				'description' : 'placeholder',
+				'name' : 'Projected GCM Day of Freeze',
+				'description' : 'Estimated day where consecutive monthly midpoint temperatures transition from positive to negative, indicating the day of freeze. More detailed explanations are discussed in the <metadata>.',
 				'submenus' : {
 					'interval' : window.snap.submenus.nonseasonalIntervals,
 					'range' : window.snap.submenus.ranges,
@@ -355,8 +373,8 @@ snap.menus = {
 				}
 			},
 			'dayOfThaw' : {
-				'name' : 'Projected Day of Thaw',
-				'description' : 'placeholder',
+				'name' : 'Projected GCM Day of Thaw',
+				'description' : 'Estimated day where consecutive monthly midpoint temperatures transition from negative to positive, indicating the day of thaw. More detailed explanations are discussed in the <metadata>.',
 				'submenus' : {
 					'interval' : window.snap.submenus.nonseasonalIntervals,
 					'range' : window.snap.submenus.ranges,
@@ -364,8 +382,8 @@ snap.menus = {
 				}
 			},
 			'lengthOfGrowingSeason' : {
-				'name' : 'Projected Length of Growing Season',
-				'description' : 'placeholder',
+				'name' : 'Projected GCM Length of Growing Season',
+				'description' : 'Estimated number of days between day of thaw and day of freeze. More detailed explanations are discussed in the <metadata>.',
 				'submenus' : {
 					'interval' : window.snap.submenus.nonseasonalIntervals,
 					'range' : window.snap.submenus.ranges,
@@ -373,42 +391,42 @@ snap.menus = {
 				}
 			},
 			'observedTemperature' : {
-				'name' : 'Observed Average Annual Temperature',
-				'description' : 'The average annual precipitation for the given range',
+				'name' : 'Historical PRISM Average Temperature',
+				'description' : 'This is average annual temperature for the given date range.  This is calculated by averaging over each year and then averaging over the given date range.  The label &ldquo;average temperature&rdquo; is really midrange temperature of the maximum and minimum temperatures recorded by weather stations.  Midrange has historically been considered an acceptable surrogate for average temperature, as most weather stations do not record average temperatures.',
 				'submenus' : {
 					'interval' : window.snap.submenus.observedIntervals,
 					'historical' : window.snap.submenus.historicalRange
 				}
 			},
 			'observedPrecipitation' : {
-				'name' : 'Observed Average Annual Precipitation',
-				'description' : 'This is the average annual temperature calculated for the given range',
+				'name' : 'Historical PRISM Total Precipitation',
+				'description' : 'This is average total annual precipitation (rain and snow water equivalent) for the given range. This is calculated by finding the sum of precipitation for each year, and then averaging over the given date range.',
 				'submenus' : {
 					'interval' : window.snap.submenus.observedIntervals,
 					'historical' : window.snap.submenus.historicalRange
 				}
 			},
 			'observedDayOfFreeze' : {
-				'name' : 'Observed Day of Freeze',
-				'description' : 'placeholder',
+				'name' : 'Historical PRISM Day of Freeze',
+				'description' : 'Estimated day where consecutive monthly midpoint temperatures transition from positive to negative, indicating the day of freeze. More detailed explanations are discussed in the <metadata>.',
 				'submenus' : {
-					'historicalInterval' : window.snap.submenus.historicalInterval,
+					'historicalInterval' : window.snap.submenus.nonseasonalObservedIntervals,
 					'historical' : window.snap.submenus.historicalRange
 				}
 			},
 			'observedDayOfThaw' : {
-				'name' : 'Observed Day of Thaw',
-				'description' : 'placeholder',
+				'name' : 'Historical PRISM Day of Thaw',
+				'description' : 'Estimated day where consecutive monthly midpoint temperatures transition from negative to positive, indicating the day of thaw. More detailed explanations are discussed in the <metadata>.',
 				'submenus' : {
-					'historicalInterval' : window.snap.submenus.historicalInterval,
+					'historicalInterval' : window.snap.submenus.nonseasonalObservedIntervals,
 					'historical' : window.snap.submenus.historicalRange
 				}
 			},
 			'observedLengthOfGrowingSeason' : {
-				'name' : 'Observed Length of Growing Season',
-				'description' : 'placeholder',
+				'name' : 'Historical PRISM Length of Growing Season',
+				'description' : 'Estimated number of days between day of thaw and day of freeze. More detailed explanations are discussed in the <metadata>.',
 				'submenus' : {
-					'historicalInterval' : window.snap.submenus.historicalInterval,
+					'historicalInterval' : window.snap.submenus.nonseasonalObservedIntervals,
 					'historical' : window.snap.submenus.historicalRange
 				}
 			}
@@ -424,8 +442,8 @@ function buildMenus() {
 	window.snap.renderers.standard($('#mapMenu'), 'variable', window.snap.menus.variable);
 
 	// get the active variable and render its submenus
-	_.each(window.snap.menus.variable.items[window.snap.state.variable].submenus, function(e, i, l) {
-		window.snap.renderers.standard($('#mapMenu'), i, e);
+	_.each(window.snap.menus.variable.items[window.snap.state.variable].submenus, function(e, source, l) {
+		window.snap.renderers.standard($('#mapMenu'), source, e);
 	});
 }
 
@@ -761,22 +779,22 @@ snap.mapLegends = {
 	'-19.6 to -17.5' : '#6187B8',
 	'-22.0 to -19.7' : '#4575B5'}
 },
-'dof_5modelAvg' :  { 'title':'Day Number', 'colors' : {
-	'0 to 0' : '#E1E1E1',
-	'1 to 275' : '#F0E5CE',
-	'276 to 280' : '#E0CBA2',
-	'281 to 286' : '#D1B479',
-	'287 to 291' : '#D1B471',
-	'292 to 295' : '#E0CF89',
-	'296 to 298' : '#F0E8A3',
-	'299 to 302' : '#FFFFBF',
-	'303 to 305' : '#D3F0B9',
-	'306 to 308' : '#AAE3B5',
-	'309 to 311' : '#7DD4AE',
-	'312 to 315' : '#61C2A0',
-	'316 to 322' : '#57AD8E',
-	'323 to 364' : '#4E9C7E',
-	'365 to 365' : '#458A6F'}
+'dof_5modelAvg' :  { 'title':'Date Ranges', 'colors' : {
+	'Never Thaws' : '#E1E1E1',
+	'Jan 1&ndash;Oct 2' : '#F0E5CE',
+	'Oct 3&ndash;Oct 7' : '#E0CBA2',
+	'Oct 8&ndash;Oct 13' : '#D1B479',
+	'Oct 14&ndash;Oct 18' : '#D1B471',
+	'Oct 19&ndash;Oct 22' : '#E0CF89',
+	'Oct 23&ndash;Oct 25' : '#F0E8A3',
+	'Oct 26&ndash;Oct 29' : '#FFFFBF',
+	'Oct 30&ndash;Nov 1' : '#D3F0B9',
+	'Nov 2&ndash;Nov 4' : '#AAE3B5',
+	'Nov 5&ndash;Nov 7' : '#7DD4AE',
+	'Nov 8&ndash;Nov 11' : '#61C2A0',
+	'Nov 12&ndash;Nov 18' : '#57AD8E',
+	'Nov 19&ndash;Dec 30' : '#4E9C7E',
+	'Never Freezes' : '#458A6F'}
 },
 
 'dot_5modelAvg' : { 'title':'Day Number', 'colors' :  {
