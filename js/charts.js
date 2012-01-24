@@ -1,11 +1,15 @@
 
 // Prepare some functionality when page has loaded
 $( function() {
+
 	snapCharts.initialize();
+	$(window).bind( 'hashchange', function(e) {
+		snapCharts.fetchData();
+	});
 });
 
 // Encapsulate the AJAX functionality
-var snapCharts = {
+window.snapCharts = {
 
 	chart: null, // is defined when the chart is drawn
 
@@ -27,6 +31,17 @@ var snapCharts = {
 	// Intended to be called on page ready() event
 	initialize : function() {
 
+		var params = $.bbq.getState(true); // perform type coercion
+
+		window.snapCharts.data.communityId = params.communityId || null;
+		window.snapCharts.data.communityId = params.scenario || null;
+		window.snapCharts.data.communityId = params.variability || null;
+		window.snapCharts.data.communityId = params.dataset || null;
+
+		window.snapCharts.fetchData();
+
+/* bypass the loading()... to see how it works
+
 		// Flush default CSS to restyle jQuery blockUI content
 		$.blockUI.defaults.css = {};
 		$.blockUI.defaults.overlayCSS = {
@@ -42,33 +57,60 @@ var snapCharts = {
 		}).ajaxStop( function() {
 			$(this).unblock();
 		});
+
+		*/
+	},
+
+	changeParams : function() {
+		$.bbq.pushState({
+			community : snapCharts.data.communityId,
+			dataset: snapCharts.data.dataset,
+			scenario : snapCharts.data.scenario,
+			variability: snapCharts.data.variability
+		});
 	},
 
 	fetchData : function() {
 
-		$.get(
-			"charts_fetch_data.php", 
-			{ 
-				community : snapCharts.data.communityId,
-				dataset: snapCharts.data.dataset,
-				scenario : snapCharts.data.scenario,
-				variability: snapCharts.data.variability
-			},
-			function(data) {
-				snapCharts.data = data;
-				snapCharts.drawChart();
-				$('#placeholderImage').remove();
-				$('#location').html(": " + snapCharts.data.communityName + ', ' + snapCharts.data.communityRegion);
-				$('#comm_block').hide();
-				$('#export_options').show();
-				$('#link_field').val(snapConfig.url + "/charts.php?community=" + snapCharts.data.communityId + "&amp;dataset=" + snapCharts.data.dataset + "&amp;scenario=" + snapCharts.data.scenario + "&amp;variability=" + snapCharts.data.variability);
-			},
-			'json'
-		);
+		//PICKUP.  this is _working_ but it's not working _well_ because it's not working :p
+		// Only fetch the data if there are meaningful parameters to sent.  Otherwise, ignore.
+		if(
+			_.isNumber(snapCharts.data.communityId) &&
+			_.isNumber(snapCharts.data.dataset) &&
+			_.isString(snapCharts.data.scenario)
+		) {
+
+			$.get(
+				"charts_fetch_data.php",
+				{
+					community : snapCharts.data.communityId,
+					dataset: snapCharts.data.dataset,
+					scenario : snapCharts.data.scenario,
+					variability: snapCharts.data.variability
+				},
+
+				function(data) {
+					snapCharts.data = data;
+					snapCharts.drawChart();
+					$('#placeholderImage').remove();
+					$('#location').html(": " + snapCharts.data.communityName + ', ' + snapCharts.data.communityRegion);
+					$('#comm_block').hide();
+					$('#export_options').show();
+					$('#link_field').val(snapConfig.url + "/charts.php?community=" + snapCharts.data.communityId + "&amp;dataset=" + snapCharts.data.dataset + "&amp;scenario=" + snapCharts.data.scenario + "&amp;variability=" + snapCharts.data.variability);
+				},
+				'json'
+			);
+
+		}
 	},
 
 	drawChart: function() {
 		
+		if( _.isUndefined(snapCharts.data.series)) {
+			alert('Sorry, an error occurred, and the chart could not be loaded.');
+			window.location.assign(snapConfig.url);
+		}
+
 		if(1 === snapCharts.data.dataset) {
 			Highcharts.setOptions({ colors: ['#00b2ee', '#308014', '#999999', '#ffff00', '#999999', '#ff7f00', '#999999', '#cc1100', '#999999'] });
 		} else {
@@ -98,9 +140,9 @@ var snapCharts = {
 			credits: {
 				enabled: true,
 				href: '',
-				position: { 
-					y: -35, 
-					x: 10, 
+				position: {
+					y: -35,
+					x: 10,
 					align: 'center'
 				},
 				style: {
@@ -147,19 +189,19 @@ var snapCharts = {
 				max: snapCharts.data.maximum,
 				// only for temp -- need to remove for precip
 				plotBands: [
-					{	
-						value: 32, 
-						color: '#000000', 
+					{
+						value: 32,
+						color: '#000000',
 						width: 1.5,
 						label: {
-							text: '32°', 
-							align: 'right', 
+							text: '32°',
+							align: 'right',
 							style: {
-								fontSize: '10px' 
-							} 
-						} 
+								fontSize: '10px'
+							}
+						}
 					}
-				],				
+				],
 				title: {
 					text: snapCharts.data.yAxisTitle
 				},
@@ -204,7 +246,7 @@ var snapCharts = {
 					visible: false,
 					showInLegend: false,
 					data: snapCharts.data.standardDeviations['2041-2050']
-				},				
+				},
 				{
 					name: '2061-2070',
 					data: snapCharts.data.series['2061-2070']
@@ -214,7 +256,7 @@ var snapCharts = {
 					visible: false,
 					showInLegend: false,
 					data: snapCharts.data.standardDeviations['2061-2070']
-				},				
+				},
 				{
 					name: '2091-2100',
 					data: snapCharts.data.series['2091-2100']
@@ -224,7 +266,7 @@ var snapCharts = {
 					visible: false,
 					showInLegend: false,
 					data: snapCharts.data.standardDeviations['2091-2100']
-				}				
+				}
 			]
 		},  function(chart) {
 
@@ -251,7 +293,7 @@ var snapCharts = {
 							}
 						).add();
 
-						var linex1 = chart.renderer.path( 
+						var linex1 = chart.renderer.path(
 							[ 'M', x, y1, 'L', x-2, y1, x+2, y1 ]
 						).attr(
 							{

@@ -2,7 +2,7 @@
 # package, not as part of ordinary development.
 #
 # The minification of the javascript happens in two phases:
-# (1) do deep minification of in-house javascript
+# (1) do deep(er) minification of in-house javascript
 # (2) bundle up both in-house and vendor javascript into a single file,
 # ./js/min.js
 #
@@ -32,6 +32,7 @@ javascript :
 --js=./js/jquery.url.js \
 --js=./js/jquery.ba-hashchange.min.js \
 --js=./js/jquery.validate.min.js \
+--js=./js/jquery.ba-bbq.min.js \
 --js=./js/plugins.js \
 --js=./js/highcharts.js \
 --js=./js/exporting.js \

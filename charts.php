@@ -6,7 +6,6 @@ include("template.php");
 $page = new webPage("SNAP: Community Charts", "charts.css", "data");
 $page->openPage();
 $page->pageHeader();
-//$page->connectToDatabase();
 
 ?>
 <div id="main_body">
@@ -16,11 +15,11 @@ $page->pageHeader();
     </div>
 
     <div style="margin: auto;">
-        <div style="height: 150px; margin: auto; margin-bottom: 20px; width: 950px;">
-            <div style="width: 300px; float: left; position: relative;">
+        <div style="height: 150px; margin: auto; padding-bottom: 5px; margin-bottom: 20px; width: 950px;">
+            <div style="width: 300px; float: left; position: relative; left: -5px">
                 <img id="community_list" src="images/akcanada_extent.png" style="display: block; position: absolute; top: -25px; z-index: -10" />
                 <div>
-                    <div class="ui-widget" style="padding: 0 5px; position: relative; top: 120px; z-index: 10000">
+                    <div class="ui-widget" style="padding: 0 5px 10ex; margin-bottom: 10px; position: relative; top: 120px; z-index: 10000">
                         <label for="comm_select">Enter your community&rsquo;s name:</label>
                         <input id="comm_select" type="text" style="width: 95%" placeholder="Enter your community name here" />
                     </div>
@@ -55,7 +54,7 @@ $page->pageHeader();
                     <script type="text/javascript">
                         $('#temp').click( function() { 
                             snapCharts.data.dataset = 1;
-                            snapCharts.fetchData();
+                            snapCharts.changeParams();
                             $('#temp').html("Temperature");
                             $('#temp').addClass("selected_option");
                             $('#precip').html("<a>Precipitation</a>");
@@ -63,7 +62,7 @@ $page->pageHeader();
                         });
                         $('#precip').click( function() { 
                             snapCharts.data.dataset = 2;
-                            snapCharts.fetchData();
+                            snapCharts.changeParams();
                             $('#temp').html("<a>Temperature</a>");
                             $('#temp').removeClass("selected_option");
                             $('#precip').html("Precipitation");
@@ -119,7 +118,7 @@ $page->pageHeader();
                         $('#scen_high').hoverIntent({ over: showScenario, timeout: 500, out: hideScenario });
                         $('#scen_low').click( function() { 
                             snapCharts.data.scenario='b1';
-                            snapCharts.fetchData();
+                            snapCharts.changeParams();
                             $('#scen_low').html("Low");
                             $('#scen_low').addClass("selected_option");
                             $('#scen_med').html("<a>Medium</a>");
@@ -129,7 +128,7 @@ $page->pageHeader();
                         });
                         $('#scen_med').click( function() { 
                             snapCharts.data.scenario='a1b';
-                            snapCharts.fetchData();                            
+                            snapCharts.changeParams();                            
                             $('#scen_low').html("<a>Low</a>");
                             $('#scen_low').removeClass("selected_option");
                             $('#scen_med').html("Medium");
@@ -139,7 +138,7 @@ $page->pageHeader();
                         });
                         $('#scen_high').click( function() { 
                             snapCharts.data.scenario='a2';
-                            snapCharts.fetchData(); 
+                            snapCharts.changeParams(); 
                             $('#scen_low').html("<a>Low</a>");
                             $('#scen_low').removeClass("selected_option");
                             $('#scen_med').html("<a>Medium</a>");
@@ -181,7 +180,7 @@ $page->pageHeader();
                         $('#model_vari_on').hoverIntent({ over: showScenario, timeout: 500, out: hideScenario });
                         $('#model_vari_on').click( function() { 
                             snapCharts.data.variability = 1;
-                            snapCharts.fetchData();
+                            snapCharts.changeParams();
                             $('#model_vari_on').html("On");
                             $('#model_vari_on').addClass("selected_option");
                             $('#model_vari_off').html("<a>Off</a>");
@@ -189,7 +188,7 @@ $page->pageHeader();
                         });
                         $('#model_vari_off').click( function() { 
                             snapCharts.data.variability = 0;
-                            snapCharts.fetchData();                            
+                            snapCharts.changeParams();                            
                             $('#model_vari_on').html("<a>On</a>");
                             $('#model_vari_on').removeClass("selected_option");
                             $('#model_vari_off').html("Off");
@@ -241,9 +240,9 @@ $page->pageHeader();
 
                 
             </div>
-
+            <div class="ui-helper-clearfix"></div>
         </div>
-        <div style="position: relative; margin: auto; border: 1px solid #999999; width: 950px; height: 460px;">
+        <div style="position: relative; margin: 15px auto; clear: both; auto; border: 1px solid #999999; width: 950px; height: 460px;">
             <div id="link_box" style="background-color: #f5f5f5; display: none; position: absolute; z-index: 20; right: 0px; width: 300px; height: 50px; border: 1px solid #787878;">
                 <div style="position: absolute; width: 15px; height: 15px; right: 2px; top: 2px; background-color: #ffffff; text-align: center;"><a id="link_close">X</a></div>
                 <div style="margin: 13px;">Link: <input id="link_field" type="text" style="width: 220px;" value="" /></div>
@@ -291,7 +290,7 @@ $(function() {
         event.preventDefault();
         $('#comm_select').val(ui.item.label);
         snapCharts.data.communityId = ui.item.value;
-        snapCharts.fetchData();
+        snapCharts.changeParams();
     });
 
     $('#export_button').click(function() { 
@@ -305,15 +304,15 @@ $(function() {
             chart.renderer.image(snapConfig.url + '/images/snap_acronym_rgb.png', 0, 0, 150, 45).add();
         });
     });
-
+/*
     snapCharts.data.communityId = $.url().param('community') || null;
     snapCharts.data.dataset = $.url().param('dataset') || 1; // default temp
     snapCharts.data.scenario = $.url().param('scenario') || 'a1b'; // default mid-scenario
     snapCharts.data.variability = $.url().param('variability') || 0; // default no variability
-
+*/
 //todo fix this?
     if( null != snapCharts.data.communityId ) {
-        snapCharts.fetchData();
+        snapCharts.changeParams();
     }
 
 });
