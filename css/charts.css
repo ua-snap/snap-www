@@ -1,5 +1,13 @@
+h1 {
+	font-size: 34px; 
+	font-weight: normal;
+	color: #242d2f; 
+	margin: 0 0 40px;
+	padding: 0;
+}
+
 .selected_option {
-	border-bottom: 2px solid black;
+	border-bottom: 2px solid #333;
 }
 
 div.blockMsg { 

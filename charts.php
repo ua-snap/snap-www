@@ -10,9 +10,7 @@ $page->pageHeader();
 ?>
 <div id="main_body">
 
-    <div id="main_content">
-        <div class="subHeader">Community Charts<span id="location"></span></div>
-    </div>
+    <h1>Community Charts<span id="location"></span></h1>
 
     <div style="margin: auto;">
         <div style="height: 150px; margin: auto; padding-bottom: 5px; margin-bottom: 20px; width: 950px;">
@@ -21,7 +19,7 @@ $page->pageHeader();
                 <div>
                     <div class="ui-widget" style="padding: 0 5px 10ex; margin-bottom: 10px; position: relative; top: 120px; z-index: 10000">
                         <label for="comm_select">Enter your community&rsquo;s name:</label>
-                        <input id="comm_select" type="text" style="width: 95%" placeholder="Enter your community name here" />
+                        <input id="comm_select" type="text" style="border: 1px solid #aaa; width: 95%" placeholder="Enter your community name here" />
                     </div>
                 </div>
                 

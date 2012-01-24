@@ -75,7 +75,7 @@ window.snapCharts = {
 		//PICKUP.  this is _working_ but it's not working _well_ because it's not working :p
 		// Only fetch the data if there are meaningful parameters to sent.  Otherwise, ignore.
 		if(
-			_.isNumber(snapCharts.data.communityId) &&
+			false === _.isNull(snapCharts.data.communityId) &&
 			_.isNumber(snapCharts.data.dataset) &&
 			_.isString(snapCharts.data.scenario)
 		) {
@@ -101,6 +101,9 @@ window.snapCharts = {
 				'json'
 			);
 
+		} else {
+			console.log('I did not think I should fetch the data.');
+			console.log(snapCharts.data);
 		}
 	},
 
