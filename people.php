@@ -88,15 +88,15 @@ $staff_array = array(
                     </div>
                     <div >
                         <label>Your name</label>
-                        <input class="required"  id="contact_name" name="name" />
+                        <input class="required" type="text" id="contact_name" name="name" />
                     </div>
                     <div >
                         <label>Your email address</label>
-                        <input class="required email"  id="contact_email" name="email" />
+                        <input class="required email" type="text" id="contact_email" name="email" />
                     </div>
                     <div >
                         <label>Subject line</label>
-                        <input class="required"  id="contact_subject" name="subject" />
+                        <input class="required" type="text" id="contact_subject" name="subject" />
                     </div>
                     <div >
                         <label>Message</label>
@@ -146,6 +146,7 @@ $('#sendEmailButton').button().click(function(e) {
             data: $('#contactFormWrapper :input').serializeJSON(),
             success: function(data, textStatus, jqXHR) {
                 $('#sendEmailButton').button('option', 'disabled', false).removeClass('ui-state-active');
+                $('#contactUsForm div :input').val('');
                 $('#sendingEmail').empty().text('Thank you!  Your message has been sent.').delay(10000).hide('fast');
             },
             error: function(data, textStatus, jqXHR) {

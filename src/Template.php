@@ -60,8 +60,11 @@ If you add a file here, you must add it to the makefile for packaging.  See the 
 </script>
 
 <script type="text/javascript">
-var snapConfig = {
+
+// Interpolate server-side configs as appropriate
+window.snapConfig = {
   url: '$url'
+
 }
 </script>
 

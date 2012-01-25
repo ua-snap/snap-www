@@ -18,8 +18,9 @@ $page->pageHeader();
                 <img id="community_list" src="images/akcanada_extent.png" style="display: block; position: absolute; top: -25px; z-index: -10" />
                 <div>
                     <div class="ui-widget" style="padding: 0 5px 10ex; margin-bottom: 10px; position: relative; top: 120px; z-index: 10000">
+                        <input type="hidden" id="comm_select_id" value="" name="comm_select_id" />
                         <label for="comm_select">Enter your community&rsquo;s name:</label>
-                        <input id="comm_select" type="text" style="border: 1px solid #aaa; width: 95%" placeholder="Enter your community name here" />
+                        <input id="comm_select" name="community_selector" type="text" style="border: 1px solid #aaa; width: 95%" value="" placeholder="Enter your community name here" />
                     </div>
                 </div>
                 
@@ -206,34 +207,13 @@ $page->pageHeader();
             </div>
             <script type="text/javascript">
                 $('#export_link').click( function() {
-                    $('#link_field').val("<?php echo Config::$url ?>/charts.php?community=" + snapCharts.data.communityId + "&dataset=" + snapCharts.data.dataset + "&scenario=" + snapCharts.data.scenario + "&variability=" + snapCharts.data.variability);
+                    $('#link_field').val(window.location.href);
                     $('#link_box').fadeIn();
                     $('#link_field').focus().select();
                 });
-                var filenameDataset = "";
-                var filenameVariability = "";
-                $('#export_image_png').click( function(){
-                    /// PICKUP
-                    if(globalDataset == 2){ filenameDataset = "Precip"; } else if (globalDataset == 1){ filenameDataset = "Temp"; }
-                    chart.exportChart({
-                        filename: globalCommunity + '_' + globalScenario + '_' + filenameDataset + filenameVariability
-                    });
-                });
-                $('#export_image_svg').click( function(){
-                    if(globalDataset == 2){ filenameDataset = "Precip"; } else if (globalDataset == 1){ filenameDataset = "Temp"; }
-                    chart.exportChart({
-                        type: 'image/svg+xml',
-                        filename: globalCommunity + '_' + globalScenario + '_' + filenameDataset + filenameVariability
-                    });
-                });
-
-                $('#export_pdf').click( function(){
-                    if(globalDataset == 2){ filenameDataset = "Precip"; } else if (globalDataset == 1){ filenameDataset = "Temp"; }
-                    chart.exportChart({
-                        type: 'application/pdf',
-                        filename: globalCommunity + '_' + globalScenario + '_' + filenameDataset + filenameVariability
-                    });
-                });
+                $('#export_image_png').click( function() { window.snapCharts.exportChart('image/png'); } );
+                $('#export_image_svg').click( function() { window.snapCharts.exportChart('image/svg+xml'); });
+                $('#export_image_pdf').click( function() { window.snapCharts.exportChart('application/pdf'); });
             </script>
 
                 
@@ -269,49 +249,52 @@ $page->pageHeader();
 <script type="text/javascript">
 $(function() {
     
-    window.snap.communities = <?php echo ChartsFetcher::fetchCommunitiesAsJson(); ?>;
+    window.snapCharts.communities = <?php echo ChartsFetcher::fetchCommunitiesAsJson(); ?>;
 
     $('#comm_select').focus().autocomplete(
         {
-            source: window.snap.communities
+            source: window.snapCharts.communities
         }
     ).bind('autocompletechange', function(event, ui) {
-        if( null != ui.item ) {
+        if( false === _.isUndefined(ui.item) ) {
             $('#comm_select').val(ui.item.label);
+            $('#comm_select_id').val(ui.item.value);
+            window.snapCharts.data.community = ui.item.value;
         }
     }).bind('autocompletefocus', function(event, ui) {
-        if( null != ui.item) {
+        if( false == _.isUndefined(ui.item) ) {
             event.preventDefault();
             $('#comm_select').val(ui.item.label);
+            $('#comm_select_id').val(ui.item.value);
+            window.snapCharts.data.community = ui.item.value;
         }
     }).bind('autocompleteselect', function(event, ui) {
         event.preventDefault();
         $('#comm_select').val(ui.item.label);
-        snapCharts.data.communityId = ui.item.value;
-        snapCharts.changeParams();
+        $('#comm_select_id').val(ui.item.value);
+        window.snapCharts.data.community = ui.item.value;
+        window.snapCharts.changeParams();
+    }).keypress(function(e) {
+        // if the enter key is pressed, try and search if there's a valid community id.
+        if( 13 === e.which ) {
+            if( false === _.isNull( window.snapCharts.data.community )) {
+                window.snapCharts.data.community = $('#comm_select_id').val();
+                snapCharts.changeParams();
+            }
+        }
     });
 
     $('#export_button').click(function() { 
-        chart.exportChart(null, { 
+        window.snapCharts.chart.exportChart(null, { 
             chart: {
                 backgroundColor: '#eeffff' 
             }
         }, 
         function (chart){
-            chart.renderer.image(snapConfig.url + '/images/snap_acronym_rgb.png', 0, 0, 150, 45).add();
-            chart.renderer.image(snapConfig.url + '/images/snap_acronym_rgb.png', 0, 0, 150, 45).add();
+            window.snapCharts.chart.renderer.image(snapConfig.url + '/images/snap_acronym_rgb.png', 0, 0, 150, 45).add();
+            window.snapCharts.chart.renderer.image(snapConfig.url + '/images/snap_acronym_rgb.png', 0, 0, 150, 45).add();
         });
     });
-/*
-    snapCharts.data.communityId = $.url().param('community') || null;
-    snapCharts.data.dataset = $.url().param('dataset') || 1; // default temp
-    snapCharts.data.scenario = $.url().param('scenario') || 'a1b'; // default mid-scenario
-    snapCharts.data.variability = $.url().param('variability') || 0; // default no variability
-*/
-//todo fix this?
-    if( null != snapCharts.data.communityId ) {
-        snapCharts.changeParams();
-    }
 
 });
 
