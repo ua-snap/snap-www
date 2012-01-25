@@ -57,7 +57,7 @@ class webPage {
          ?>
 
         </div>
-    <?php 
+    <?php
     }
     public function openPage(){ ?>
 
@@ -68,7 +68,6 @@ class webPage {
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8" /> 
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
         <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.16.custom.css" rel="Stylesheet" />  
-        <link type="text/css" href="css/maps-print.css" rel="stylesheet" media="print" />
     <?php 
 
         if (isset($this->stylesheet)){ 
@@ -78,7 +77,10 @@ class webPage {
         // Dump Javascript from src/Template.php wrapper class.
         echo $this->template->getHeadJavascript();
 
+        // include the maps-print.css after the maps.css so it has stronger precedence
         ?>
+        <link type="text/css" href="css/maps-print.css" rel="stylesheet" media="print" />
+
         <link rel="shortcut icon" href="/images/snap.ico" />
     
     </head>

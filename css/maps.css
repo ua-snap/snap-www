@@ -148,7 +148,7 @@
 .menuOptions .descriptions {
 	position: absolute;
 	right: 0;
-	width: 300px;
+	width: 275px;
 	background: #eee;
 	height: 100%;
 	padding: 0;
@@ -160,14 +160,25 @@
 
 .menuOptions ul {
 	padding: 5px;
+	width: 315px;
 	margin: 0;
 	list-style-type: none;
+	z-index: 1000;
 }
 
 .menuOptions li {
 	padding: 3px;
 	color: #06c;
 	cursor: pointer;
+}
+
+.menuOptions li.active {
+	background-color: #fbffd0;
+}
+
+.menuOptions li hr {
+	border: 1px solid #ccc;
+	color: #ccc;
 }
 
 .menuOptions li:hover {
@@ -214,4 +225,16 @@
 
 #historicalInterval_content p, #historical_content p {
 	margin: 1ex;
+}
+
+#printHeader {
+	display: none;
+}
+
+#printFooter {
+	display: none;
+}
+
+#printMapTitle {
+	display: none;
 }

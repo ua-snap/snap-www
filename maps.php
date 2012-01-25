@@ -41,6 +41,15 @@ $page->openPage();
     </div>
 </div>
 
+<div id="printFooter">
+    <address>
+        <strong>Scenarios Network for Alaska and Arctic Planning</strong><br/>
+        snap.uaf.edu<br/>
+        3352 College Road, Fairbanks AK 99709<br/>
+        nlfresco@alaska.edu | tel 907.474.2405 | fax 907.474.7151<br/>
+    </address>
+    <img src="images/snap_acronym_screen_color_lg.gif" alt="logo" />
+</div>
 
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 

@@ -50,17 +50,17 @@
 }
 
 #map_logo {
-	float: left;
-	display: inline-block;
-	padding: 0 0 0 7px;
+	display: none;
 }
 
 #model_menu {
-	margin: 15px 0 0 175px;
-	padding: 10px 0;
+	display: block;
+	margin: 0;
+	padding: 0;
+	text-align: center;
 }
 
-#model_menu > p {
+#model_menu p {
 	display: none;
 }
 
@@ -86,4 +86,21 @@
 
 #map_footer #helpBlock {
 	display: none;
+}
+
+#printFooter {
+	display: block;
+	font-size: 10pt;
+}
+
+#printFooter img {
+	float: right;
+	width: 2in;
+}
+
+address {
+	width: 4in;
+	float: left;
+	line-height: 1.5;
+	font-style: normal;
 }

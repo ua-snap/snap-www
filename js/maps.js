@@ -120,6 +120,7 @@ snap.submenus = {
 		}
 	},
 	'ranges' :  {
+		'commaAfter' : true,
 		'prefix' : 'from',
 		'defaultText' : 'Please choose a decade.',
 		items: {
@@ -191,6 +192,7 @@ snap.submenus = {
 		}
 	},
 	'scenarios' :  {
+		'commaAfter' : true,
 		'prefix' : 'assuming',
 		'defaultText' : 'Please choose a scenario.',
 		items: {
@@ -207,16 +209,163 @@ snap.submenus = {
 				'description' : 'The B1 scenario describes a convergent world, with the same global population as A1B, but with more rapid changes in economic frameworks toward a service and information economy.'
 			}
 		}
+	},
+	'resolution' : {
+		'commaAfter' : true,		
+		'prefix' : '',
+		'renderer' : {
+			getTitleJson : function() {
+				return {
+					prefix: 'downsampled to',
+					title: '2km'
+				};
+			},
+			getContent : function() {
+				return '<p>Blurb about the resolution goes here...</p>';
+			}
+		}
+	},
+	'model' : {
+		'commaAfter' : true,
+
+		// This will insert a <br/> before this submenu is rendered to force it to a new line.
+		'breakBefore' : true,
+		'prefix' : '',
+		'renderer' : {
+			getTitleJson : function() {
+				return {
+					prefix: 'modeled with',
+					title: 'the GCM'
+				};
+			},
+			getContent : function() {
+				return '<p>Blurb about the GCM goes here...</p>';
+			}
+		}
+	}
+};
+
+
+// Define menu structure
+snap.menus = {
+	'variable' : {
+		prefix: '',
+		defaultText: 'Please choose a variable.',
+		items: {
+			'observedTemperature' : {
+				'name' : 'Historical PRISM Average Temperature',
+				'description' : 'This is average annual temperature for the given date range.  This is calculated by averaging over each year and then averaging over the given date range.  The label &ldquo;average temperature&rdquo; is really midrange temperature of the maximum and minimum temperatures recorded by weather stations.  Midrange has historically been considered an acceptable surrogate for average temperature, as most weather stations do not record average temperatures.',
+				'submenus' : {
+					'interval' : window.snap.submenus.observedIntervals,
+					'historical' : window.snap.submenus.historicalRange,
+					'resolution' : window.snap.submenus.resolution
+				}
+			},
+			'observedPrecipitation' : {
+				'name' : 'Historical PRISM Total Precipitation',
+				'description' : 'This is average total annual precipitation (rain and snow water equivalent) for the given range. This is calculated by finding the sum of precipitation for each year, and then averaging over the given date range.',
+				'submenus' : {
+					'interval' : window.snap.submenus.observedIntervals,
+					'historical' : window.snap.submenus.historicalRange,
+					'resolution' : window.snap.submenus.resolution
+				}
+			},
+			'observedDayOfFreeze' : {
+				'name' : 'Historical PRISM Day of Freeze',
+				'description' : 'Estimated day where consecutive monthly midpoint temperatures transition from positive to negative, indicating the day of freeze. More detailed explanations are discussed in the <metadata>.',
+				'submenus' : {
+					'historicalInterval' : window.snap.submenus.nonseasonalObservedIntervals,
+					'historical' : window.snap.submenus.historicalRange,
+					'resolution' : window.snap.submenus.resolution
+				}
+			},
+			'observedDayOfThaw' : {
+				'name' : 'Historical PRISM Day of Thaw',
+				'description' : 'Estimated day where consecutive monthly midpoint temperatures transition from negative to positive, indicating the day of thaw. More detailed explanations are discussed in the <metadata>.',
+				'submenus' : {
+					'historicalInterval' : window.snap.submenus.nonseasonalObservedIntervals,
+					'historical' : window.snap.submenus.historicalRange,
+					'resolution' : window.snap.submenus.resolution
+				}
+			},
+			'observedLengthOfGrowingSeason' : {
+				'name' : 'Historical PRISM Length of Growing Season',
+				'description' : 'Estimated number of days between day of thaw and day of freeze. More detailed explanations are discussed in the <metadata>.',
+				'submenus' : {
+					'historicalInterval' : window.snap.submenus.nonseasonalObservedIntervals,
+					'historical' : window.snap.submenus.historicalRange,
+					'resolution' : window.snap.submenus.resolution
+				},
+				'breakAfter' : true
+			},
+			'temperature' : {
+				'name' : 'Projected GCM Average Temperature',
+				'description' : 'This is average annual temperature for the given date range.  This is calculated by averaging over each year and then averaging over the given date range. More detailed explanations are discussed in the <metadata>.',
+				'submenus' : {
+					// 'key' => 'value', where key is the same as the key in the window.snap.state object.
+					'interval' : window.snap.submenus.intervals,
+					'range' : window.snap.submenus.ranges,
+					'scenario' : window.snap.submenus.scenarios,
+					'model' : window.snap.submenus.model,
+					'resolution' : window.snap.submenus.resolution
+				}
+			},
+			'precipitation' : {
+				'name' : 'Projected GCM Total Precipitation',
+				'description' : 'This is average total annual precipitation (rain and snow water equivalent) for the given range. This is calculated by finding the sum of precipitation for each year, and then averaging over the given date range. More detailed explanations are discussed in the <metadata>.',
+				'submenus' : {
+					'interval' : window.snap.submenus.intervals,
+					'range' : window.snap.submenus.ranges,
+					'scenario' : window.snap.submenus.scenarios,
+					'model' : window.snap.submenus.model,
+					'resolution' : window.snap.submenus.resolution				}
+			},
+			'dayOfFreeze' : {
+				'name' : 'Projected GCM Day of Freeze',
+				'description' : 'Estimated day where consecutive monthly midpoint temperatures transition from positive to negative, indicating the day of freeze. More detailed explanations are discussed in the <metadata>.',
+				'submenus' : {
+					'interval' : window.snap.submenus.nonseasonalIntervals,
+					'range' : window.snap.submenus.ranges,
+					'scenario' : window.snap.submenus.scenarios,
+					'model' : window.snap.submenus.model,
+					'resolution' : window.snap.submenus.resolution				}
+			},
+			'dayOfThaw' : {
+				'name' : 'Projected GCM Day of Thaw',
+				'description' : 'Estimated day where consecutive monthly midpoint temperatures transition from negative to positive, indicating the day of thaw. More detailed explanations are discussed in the <metadata>.',
+				'submenus' : {
+					'interval' : window.snap.submenus.nonseasonalIntervals,
+					'range' : window.snap.submenus.ranges,
+					'scenario' : window.snap.submenus.scenarios,
+					'model' : window.snap.submenus.model,
+					'resolution' : window.snap.submenus.resolution
+				}
+			},
+			'lengthOfGrowingSeason' : {
+				'name' : 'Projected GCM Length of Growing Season',
+				'description' : 'Estimated number of days between day of thaw and day of freeze. More detailed explanations are discussed in the <metadata>.',
+				'submenus' : {
+					'interval' : window.snap.submenus.nonseasonalIntervals,
+					'range' : window.snap.submenus.ranges,
+					'scenario' : window.snap.submenus.scenarios,
+					'model' : window.snap.submenus.model,
+					'resolution' : window.snap.submenus.resolution
+				}
+			}
+		}
 	}
 };
 
 // el = a JQuery object
 snap.renderers = {
+
 	// for e and i definitions, see the _.each() loop that provides data.
 	// optionsList is a jQuery ul object.
 	'renderListItem' : function(e, i, source, category, optionsList) {
 
-		optionsList.append($('<li/>')
+		optionsList.append($('<li/>', {
+			'class' : ( i === window.snap.state[category] ) ? 'active' : ''
+		})
 		.click(function(e) {
 			// swap out the map on click
 			$('.menuOptions').hide();
@@ -235,6 +384,8 @@ snap.renderers = {
 				var option = $(e.currentTarget).data('option');
 				$('#' + category + '_descriptions').find('p').html(source.items[option].description);
 				
+				// Correct the height if the rendered content is not the right size.
+				// todo: do this with CSS, no javascript
 				var textHeight = $('#' + category + '_descriptions').find('p').height();
 				var wrapperHeight = $('.active .menuOptions').height();
 
@@ -249,9 +400,18 @@ snap.renderers = {
 			}
 
 		));
+		
+		if( true === e.breakAfter ) {
+			optionsList.append('<hr/>');
+		}
 	},
 	//todo: make this into a single object, refactor to smaller methods
+	// This method is responsible for taking a menu object and painting it.  If defined,
+	// the renderer methods are called on the object to handle varying cases.
 	'standard' : function(el, category, source) {
+
+		// Will be used to aggregate a title for the map suitable for printing.
+		var titleString = '';
 
 		var wrapper = $('<div/>', {
 			'class' : 'wrapper'
@@ -335,104 +495,11 @@ snap.renderers = {
 
 		el.append(wrapper.append(title).append(content));
 		
+		// To enable the text string describing the map to be built
+		return titleJson;
 	}
 };
 
-// Define menu structure
-snap.menus = {
-	'variable' : {
-		prefix: '',
-		defaultText: 'Please choose a variable.',
-		items: {
-			'temperature' : {
-				'name' : 'Projected GCM Average Temperature',
-				'description' : 'This is average annual temperature for the given date range.  This is calculated by averaging over each year and then averaging over the given date range. More detailed explanations are discussed in the <metadata>.',
-				'submenus' : {
-					// 'key' => 'value', where key is the same as the key in the window.snap.state object.
-					'interval' : window.snap.submenus.intervals,
-					'range' : window.snap.submenus.ranges,
-					'scenario' : window.snap.submenus.scenarios
-				}
-			},
-			'precipitation' : {
-				'name' : 'Projected GCM Total Precipitation',
-				'description' : 'This is average total annual precipitation (rain and snow water equivalent) for the given range. This is calculated by finding the sum of precipitation for each year, and then averaging over the given date range. More detailed explanations are discussed in the <metadata>.',
-				'submenus' : {
-					'interval' : window.snap.submenus.intervals,
-					'range' : window.snap.submenus.ranges,
-					'scenario' : window.snap.submenus.scenarios
-				}
-			},
-			'dayOfFreeze' : {
-				'name' : 'Projected GCM Day of Freeze',
-				'description' : 'Estimated day where consecutive monthly midpoint temperatures transition from positive to negative, indicating the day of freeze. More detailed explanations are discussed in the <metadata>.',
-				'submenus' : {
-					'interval' : window.snap.submenus.nonseasonalIntervals,
-					'range' : window.snap.submenus.ranges,
-					'scenario' : window.snap.submenus.scenarios
-				}
-			},
-			'dayOfThaw' : {
-				'name' : 'Projected GCM Day of Thaw',
-				'description' : 'Estimated day where consecutive monthly midpoint temperatures transition from negative to positive, indicating the day of thaw. More detailed explanations are discussed in the <metadata>.',
-				'submenus' : {
-					'interval' : window.snap.submenus.nonseasonalIntervals,
-					'range' : window.snap.submenus.ranges,
-					'scenario' : window.snap.submenus.scenarios
-				}
-			},
-			'lengthOfGrowingSeason' : {
-				'name' : 'Projected GCM Length of Growing Season',
-				'description' : 'Estimated number of days between day of thaw and day of freeze. More detailed explanations are discussed in the <metadata>.',
-				'submenus' : {
-					'interval' : window.snap.submenus.nonseasonalIntervals,
-					'range' : window.snap.submenus.ranges,
-					'scenario' : window.snap.submenus.scenarios
-				}
-			},
-			'observedTemperature' : {
-				'name' : 'Historical PRISM Average Temperature',
-				'description' : 'This is average annual temperature for the given date range.  This is calculated by averaging over each year and then averaging over the given date range.  The label &ldquo;average temperature&rdquo; is really midrange temperature of the maximum and minimum temperatures recorded by weather stations.  Midrange has historically been considered an acceptable surrogate for average temperature, as most weather stations do not record average temperatures.',
-				'submenus' : {
-					'interval' : window.snap.submenus.observedIntervals,
-					'historical' : window.snap.submenus.historicalRange
-				}
-			},
-			'observedPrecipitation' : {
-				'name' : 'Historical PRISM Total Precipitation',
-				'description' : 'This is average total annual precipitation (rain and snow water equivalent) for the given range. This is calculated by finding the sum of precipitation for each year, and then averaging over the given date range.',
-				'submenus' : {
-					'interval' : window.snap.submenus.observedIntervals,
-					'historical' : window.snap.submenus.historicalRange
-				}
-			},
-			'observedDayOfFreeze' : {
-				'name' : 'Historical PRISM Day of Freeze',
-				'description' : 'Estimated day where consecutive monthly midpoint temperatures transition from positive to negative, indicating the day of freeze. More detailed explanations are discussed in the <metadata>.',
-				'submenus' : {
-					'historicalInterval' : window.snap.submenus.nonseasonalObservedIntervals,
-					'historical' : window.snap.submenus.historicalRange
-				}
-			},
-			'observedDayOfThaw' : {
-				'name' : 'Historical PRISM Day of Thaw',
-				'description' : 'Estimated day where consecutive monthly midpoint temperatures transition from negative to positive, indicating the day of thaw. More detailed explanations are discussed in the <metadata>.',
-				'submenus' : {
-					'historicalInterval' : window.snap.submenus.nonseasonalObservedIntervals,
-					'historical' : window.snap.submenus.historicalRange
-				}
-			},
-			'observedLengthOfGrowingSeason' : {
-				'name' : 'Historical PRISM Length of Growing Season',
-				'description' : 'Estimated number of days between day of thaw and day of freeze. More detailed explanations are discussed in the <metadata>.',
-				'submenus' : {
-					'historicalInterval' : window.snap.submenus.nonseasonalObservedIntervals,
-					'historical' : window.snap.submenus.historicalRange
-				}
-			}
-		}
-	}
-};
 
 function buildMenus() {
 
@@ -443,6 +510,9 @@ function buildMenus() {
 
 	// get the active variable and render its submenus
 	_.each(window.snap.menus.variable.items[window.snap.state.variable].submenus, function(e, source, l) {
+		if( true === e.breakBefore ) {
+			$('#mapMenu').append('<br/>');
+		}
 		window.snap.renderers.standard($('#mapMenu'), source, e);
 	});
 }
@@ -616,7 +686,6 @@ function addMap() {
 	map.overlayMapTypes.push(null); // create empty overlay entry
 	map.overlayMapTypes.setAt("0", window.snap.map);
 
-
 	gnames = new google.maps.ImageMapType({
 		getTileUrl: function(a, z) {
 			var tiles = 1 << z, X = (a.x % tiles);
@@ -780,21 +849,21 @@ snap.mapLegends = {
 	'-22.0 to -19.7' : '#4575B5'}
 },
 'dof_5modelAvg' :  { 'title':'Date Ranges', 'colors' : {
-	'Never Thaws' : '#E1E1E1',
-	'Jan 1&ndash;Oct 2' : '#F0E5CE',
-	'Oct 3&ndash;Oct 7' : '#E0CBA2',
-	'Oct 8&ndash;Oct 13' : '#D1B479',
-	'Oct 14&ndash;Oct 18' : '#D1B471',
-	'Oct 19&ndash;Oct 22' : '#E0CF89',
-	'Oct 23&ndash;Oct 25' : '#F0E8A3',
-	'Oct 26&ndash;Oct 29' : '#FFFFBF',
-	'Oct 30&ndash;Nov 1' : '#D3F0B9',
-	'Nov 2&ndash;Nov 4' : '#AAE3B5',
-	'Nov 5&ndash;Nov 7' : '#7DD4AE',
-	'Nov 8&ndash;Nov 11' : '#61C2A0',
-	'Nov 12&ndash;Nov 18' : '#57AD8E',
-	'Nov 19&ndash;Dec 30' : '#4E9C7E',
-	'Never Freezes' : '#458A6F'}
+	'Rarely Thaws' : '#E1E1E1',
+	'Jan 1 &ndash; Oct 2' : '#F0E5CE',
+	'Oct 3 &ndash; Oct 7' : '#E0CBA2',
+	'Oct 8 &ndash; Oct 13' : '#D1B479',
+	'Oct 14 &ndash; Oct 18' : '#D1B471',
+	'Oct 19 &ndash; Oct 22' : '#E0CF89',
+	'Oct 23 &ndash; Oct 25' : '#F0E8A3',
+	'Oct 26 &ndash; Oct 29' : '#FFFFBF',
+	'Oct 30 &ndash; Nov 1' : '#D3F0B9',
+	'Nov 2 &ndash; Nov 4' : '#AAE3B5',
+	'Nov 5 &ndash; Nov 7' : '#7DD4AE',
+	'Nov 8 &ndash; Nov 11' : '#61C2A0',
+	'Nov 12 &ndash; Nov 18' : '#57AD8E',
+	'Nov 19 &ndash; Dec 30' : '#4E9C7E',
+	'Rarely Freezes' : '#458A6F'}
 },
 
 'dot_5modelAvg' : { 'title':'Day Number', 'colors' :  {
@@ -815,7 +884,7 @@ snap.mapLegends = {
 	'365 to 365' : '#E1E1E1'}
 },
 
-'logs_5modelAvg' :  { 'title':'Day Number', 'colors' : {
+'logs_5modelAvg' :  { 'title':'# of Days &gt; 0&deg;C', 'colors' : {
 	'0 to 24' : '#E1E1E1',
 	'25 to 49' : '#F0E5CE',
 	'50 to 73' : '#E0CBA2',
