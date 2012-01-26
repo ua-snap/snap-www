@@ -526,6 +526,8 @@ function writeHash(){
 	+ "/" + map.getZoom()
 	+ "/" + (map.getCenter()).lat()
 	+ "/" + (map.getCenter()).lng();
+
+	$('#link_field').val(window.location.href);
 }
 
 /*

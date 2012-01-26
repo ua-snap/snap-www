@@ -20,13 +20,21 @@ $page->openPage();
     	<div id="textLinks"></div>
     	<div id="shareBlock" style=""><a class="addthis_button"><img alt="Share" src="/images/share.png" /></a></div>
     	<div id="exportBlock">
-    		<span><a href="" onclick="window.print(); return false;">Print</a></span>
-    		<span><a href="" >Link</a></span>
+    		<span><a href="#" onclick="window.print(); return false;">Print</a></span>
+    		<span><a href="#" id="export_link">Link</a></span>
+
     	</div>
     </div>
 </div>
 
 <div id="map_wrapper">
+    <div id="link_box" style="background-color: #f5f5f5; display: none; position: absolute; z-index: 20; right: 0px; width: 300px; height: 50px; border: 1px solid #787878;">
+                <div style="position: absolute; width: 15px; height: 15px; right: 2px; top: 2px; background-color: #ffffff; text-align: center;"><a id="link_close">X</a></div>
+                <div style="margin: 13px;">Link: <input id="link_field" type="text" style="width: 220px;" value="" /></div>
+                <script type="text/javascript">
+                    $('#link_close').click( function() { $('#link_box').fadeOut(); });
+                </script>
+            </div>
     <div id="map_canvas"></div>
     <div id="legend_wrapper">
         <div id="legend_background"></div>
@@ -93,6 +101,12 @@ $(document).ready(function() {
 
     // the resize function is defined in the maps.js file.
     $(window).resize(resize);
+
+    $('#export_link').click( function() {
+        $('#link_field').val(window.location.href);
+        $('#link_box').fadeIn();
+        $('#link_field').focus().select();
+    });
     
 });
 
