@@ -54,6 +54,7 @@
 }
 
 .map_bar {
+	padding-left: 1ex;
 	border-radius: 3px;
 	height: 38px;
 	background-color: #707a7c;
@@ -220,6 +221,8 @@
 }
 
 #map_footer .logoBlock {
+	position: relative;
+	top: -1px;
 	float: right; margin-right: 20px; color: #333333;
 }
 

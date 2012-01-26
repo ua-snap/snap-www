@@ -850,7 +850,7 @@ snap.mapLegends = {
 	'-19.6 to -17.5' : '#6187B8',
 	'-22.0 to -19.7' : '#4575B5'}
 },
-'dof_5modelAvg' :  { 'title':'Date Ranges', 'colors' : {
+'dof_5modelAvg' :  { 'title':'Date Range', 'colors' : {
 	'Rarely Thaws' : '#E1E1E1',
 	'Jan 1 &ndash; Oct 2' : '#F0E5CE',
 	'Oct 3 &ndash; Oct 7' : '#E0CBA2',
@@ -868,22 +868,22 @@ snap.mapLegends = {
 	'Rarely Freezes' : '#458A6F'}
 },
 
-'dot_5modelAvg' : { 'title':'Day Number', 'colors' :  {
-	'0 to 0' : '#458A6F',
-	'1 to 79' : '#4E9C7E',
-	'80 to 86' : '#57AD8E',
-	'87 to 89' : '#61C2A0',
-	'90 to 92' : '#7DD4AE',
-	'93 to 96' : '#AAE3B5',
-	'97 to 102' : '#D3F0B9',
-	'103 to 106' : '#FFFFBF',
-	'107 to 109' : '#F0E8A3',
-	'110 to 113' : '#E0CF89',
-	'114 to 117' : '#D1B471',
-	'118 to 122' : '#D1B479',
-	'123 to 129' : '#E0CBA2',
-	'130 to 364' : '#F0E5CE',
-	'365 to 365' : '#E1E1E1'}
+'dot_5modelAvg' : { 'title':'Date Range', 'colors' :  {
+	'Rarely Freezes' : '#458A6F',
+	'Jan 1 &ndash; Mar 20' : '#4E9C7E',
+	'Mar 21 &ndash; Mar 27' : '#57AD8E',
+	'Mar 28 &ndash; Mar 30' : '#61C2A0',
+	'Mar 31 &ndash; Apr 2' : '#7DD4AE',
+	'Apr 3 &ndash; Apr 6' : '#AAE3B5',
+	'Apr 7 &ndash; Apr 12' : '#D3F0B9',
+	'Apr 13 &ndash; Apr 16' : '#FFFFBF',
+	'Apr 17 &ndash; Apr 19' : '#F0E8A3',
+	'Apr 20 &ndash; Apr 23' : '#E0CF89',
+	'Apr 24 &ndash; Apr 27' : '#D1B471',
+	'Apr 28 &ndash; May 2' : '#D1B479',
+	'Apr 3 &ndash; May 9' : '#E0CBA2',
+	'May 10 &ndash; Dec 30' : '#F0E5CE',
+	'Rarely Thaws' : '#E1E1E1'}
 },
 
 'logs_5modelAvg' :  { 'title':'# of Days &gt; 0&deg;C', 'colors' : {
@@ -939,6 +939,7 @@ snap.mapLegends = {
 	'41 to 50' : '#AB6A32',
 	'14 to 40' : '#9C551F'}
 },
+
 'pr_decadal_mean_JJA_total': { 'title':'Total Precipitation (mm)', 'colors' : {
 	'565 to 3269' : '#248391',
 	'399 to 564' : '#489499',
