@@ -228,7 +228,7 @@ $page->pageHeader();
                     $('#link_close').click( function() { $('#link_box').fadeOut(); });
                 </script>
             </div>
-            <div style="top: 20px; position: absolute; width: 950px;" id="display">
+            <div style="top: 20px; position: absolute; width: 950px; display: block; height: 420px" id="display">
                 <img alt="Sample Chart" id="placeholderImage" style="margin: auto; width: 920px; opacity: 0.4; margin-left: 15px;" src="/images/def_chart.png" />
                 <div style="position: absolute; top: 20px; width: 930px; height: 420px; margin-left: 20px;" id="chart_div"></div>
             </div>
@@ -247,63 +247,8 @@ $page->pageHeader();
 </div>
 
 <script type="text/javascript">
-$(function() {
-    
-    window.snapCharts.communities = <?php echo ChartsFetcher::fetchCommunitiesAsJson(); ?>;
 
-    $('#comm_select').focus().autocomplete(
-        {
-            source: function(req, responseFn) {
-                var re = $.ui.autocomplete.escapeRegex(req.term);
-                var matcher = new RegExp( "^" + re, "i" );
-                var a = $.grep( window.snapCharts.communities, function(item,index){
-                    return matcher.test(item.label);
-                });
-                responseFn( a );
-            }
-        }
-    ).bind('autocompletechange', function(event, ui) {
-        if( false === _.isUndefined(ui.item) ) {
-            $('#comm_select').val(ui.item.label);
-            $('#comm_select_id').val(ui.item.value);
-            window.snapCharts.data.community = ui.item.value;
-        }
-    }).bind('autocompletefocus', function(event, ui) {
-        if( false == _.isUndefined(ui.item) ) {
-            event.preventDefault();
-            $('#comm_select').val(ui.item.label);
-            $('#comm_select_id').val(ui.item.value);
-            window.snapCharts.data.community = ui.item.value;
-        }
-    }).bind('autocompleteselect', function(event, ui) {
-        event.preventDefault();
-        $('#comm_select').val(ui.item.label);
-        $('#comm_select_id').val(ui.item.value);
-        window.snapCharts.data.community = ui.item.value;
-        window.snapCharts.changeParams();
-    }).keypress(function(e) {
-        // if the enter key is pressed, try and search if there's a valid community id.
-        if( 13 === e.which ) {
-            if( false === _.isNull( window.snapCharts.data.community )) {
-                window.snapCharts.data.community = $('#comm_select_id').val();
-                snapCharts.changeParams();
-            }
-        }
-    });
-
-    $('#export_button').click(function() { 
-        window.snapCharts.chart.exportChart(null, { 
-            chart: {
-                backgroundColor: '#eeffff' 
-            }
-        }, 
-        function (chart){
-            window.snapCharts.chart.renderer.image(snapConfig.url + '/images/snap_acronym_rgb.png', 0, 0, 150, 45).add();
-            window.snapCharts.chart.renderer.image(snapConfig.url + '/images/snap_acronym_rgb.png', 0, 0, 150, 45).add();
-        });
-    });
-
-});
+window.snapCharts.communities = <?php echo ChartsFetcher::fetchCommunitiesAsJson(); ?>;
 
 </script>
 

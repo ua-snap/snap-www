@@ -1,14 +1,21 @@
 /*jshint: laxbreak:true */
 
+// todo: move this (and other common reuse) up into a mixins file
+// Mix in ability to toggle disabled form fields with jQuery
+(function($) {
+    $.fn.toggleDisabled = function(){
+        return this.each(function(){
+            this.disabled = !this.disabled;
+        });
+    };
+})(jQuery);
+
 // Prepare some functionality when page has loaded
 $( function() {
-
-	snapCharts.initialize();
-
-	$(window).bind( 'hashchange', function(e) {
-		snapCharts.refreshState();
-		snapCharts.fetchData();
-	});
+	
+	window.snapCharts.initialize();
+	window.snapCharts.refreshState();
+	window.snapCharts.fetchData();
 
 });
 
@@ -35,8 +42,62 @@ window.snapCharts = {
 	// Intended to be called on page ready() event
 	initialize : function() {
 
-		window.snapCharts.refreshState();
-		window.snapCharts.fetchData();
+		$('#comm_select').focus().autocomplete(
+			{
+				source: function(req, responseFn) {
+					var re = $.ui.autocomplete.escapeRegex(req.term);
+					var matcher = new RegExp( "^" + re, "i" );
+					var a = $.grep( window.snapCharts.communities, function(item,index){
+						return matcher.test(item.label);
+					});
+					responseFn( a );
+				}
+			}
+		).bind('autocompletechange', function(event, ui) {
+			if( false === _.isUndefined(ui.item) ) {
+				$('#comm_select').val(ui.item.label);
+				$('#comm_select_id').val(ui.item.value);
+				window.snapCharts.data.community = ui.item.value;
+			}
+		}).bind('autocompletefocus', function(event, ui) {
+			if( false === _.isUndefined(ui.item) ) {
+				event.preventDefault();
+				$('#comm_select').val(ui.item.label);
+				$('#comm_select_id').val(ui.item.value);
+				window.snapCharts.data.community = ui.item.value;
+			}
+		}).bind('autocompleteselect', function(event, ui) {
+			event.preventDefault();
+			$('#comm_select').val(ui.item.label);
+			$('#comm_select_id').val(ui.item.value);
+			window.snapCharts.data.community = ui.item.value;
+			window.snapCharts.changeParams();
+		}).keypress(function(e) {
+			// if the enter key is pressed, try and search if there's a valid community id.
+			if( 13 === e.which ) {
+				if( false === _.isNull( window.snapCharts.data.community )) {
+					window.snapCharts.data.community = $('#comm_select_id').val();
+					snapCharts.changeParams();
+				}
+			}
+		});
+
+		$('#export_button').click(function() {
+			window.snapCharts.chart.exportChart(null, {
+				chart: {
+					backgroundColor: '#eeffff'
+				}
+			},
+			function (chart){
+				window.snapCharts.chart.renderer.image(snapConfig.url + '/images/snap_acronym_rgb.png', 0, 0, 150, 45).add();
+				window.snapCharts.chart.renderer.image(snapConfig.url + '/images/snap_acronym_rgb.png', 0, 0, 150, 45).add();
+			});
+		});
+
+		$(window).bind( 'hashchange', function(e) {
+			snapCharts.refreshState();
+			snapCharts.fetchData();
+		});
 
 		// Flush default CSS to restyle jQuery blockUI content
 		$.blockUI.defaults.css = {};
@@ -48,10 +109,13 @@ window.snapCharts = {
 		};
 
 		// Display a "Loading..." spinner when an AJAX call is in progress over a chart
+		// And, disable the autocompleter so we don't end up with multiple async requests
 		$('#display').ajaxStart(function() {
+			$('#comm_select').toggleDisabled();
 			$(this).block( {'message':'<img src="images/ajax-loader.gif" alt="" />&nbsp;Loading&hellip;'} );
 		}).ajaxStop( function() {
 			$(this).unblock();
+			$('#comm_select').toggleDisabled();
 		});
 
 	},
