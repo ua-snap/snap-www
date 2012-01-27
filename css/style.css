@@ -336,12 +336,16 @@ h3 {
 	border-top: 1px solid #ccc;
 }
 
+.methods thead tr {
+	background-color: white !important;
+}
+
 .methods thead {
 	margin-bottom: 1em;
 }
 
-.methods tr:nth-child(even) {
-	background-color: #f1fcff;
+.methods tr:nth-child(odd) {
+	background-color: #f8feff;
 }
 
 .methods th {
@@ -351,6 +355,10 @@ h3 {
 
 .methods td {
 	padding: 1ex 1em 1ex 1ex;
+}
+
+.methods td code {
+	color: black !important;
 }
 
 .methods th.last, .methods td.last {
@@ -465,12 +473,7 @@ legend {
 table {
 	border-collapse:collapse;
 }
-table {
 
-}
-th {
-
-}
 td {
 	vertical-align: top;
 }
