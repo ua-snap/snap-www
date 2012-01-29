@@ -86,7 +86,7 @@ Since several models had substantially smaller systematic errors than the other 
 <p><a href="#top">Back to top</a></p>
 
 <h3><a id="delta_method">Delta Method Downscaling Procedure</a></h3>
-
+<img src="images/SNAP_delta_method_graphic.png" alt="" style="display: inline-block; margin: 1ex 1em 1em 1ex; float: left;" />
 <p>SNAP currently employs a model bias correction in tandem with a statistical downscaling approach called the &ldquo;delta method&rdquo;.  This method has proven robust and popular, most likely because it is straightforward and relatively easy to understand.  At its root, the delta method involves nothing more complex than subtraction and division, which helps in interpreting and explaining downscaling results.  Due to its low computational demand, the delta method allows for rapid and efficient downscaling of multiple GCMs and emission scenarios over hundreds of years.  For a thorough review of other downscaling methods, please see <a href="TBD">Katherine Hayhoe&rsquo;s dissertation</a>.  Additional references to the delta method can be found <a href="tbd">here and here</a>.
 </p>
 <p>
@@ -96,34 +96,57 @@ While we currently employ the delta method for our base datasets, we are explori
 Note that the following description refers to downscaling GCM data with PRISM data as the baseline climate, though SNAP applies the same methodology to other datasets.  Where PRISM data are not available, we downscale GCM and historical data to other baseline climate datasets such as <a href="http://www.cru.uea.ac.uk/" target="_blank">CRU</a> data products.
 </p>
 <h4>Data Standardization</h4>
-Once all GCM and PRISM data are successfully downloaded from the data sources listed above, the data must be converted to a standard format.  Some of this preparation is specific to our processing environment within the <R statistical software package>.  We first input all of the GCM data, then rotate the grid and set latitude and longitude values to the standard WGS84 (Greenwich-centered) geographic coordinate system.  This sets North as the top of the grid and converts original lat/long values from 0→360 to -180→180.
+<p>
+Once all GCM and PRISM data are successfully downloaded from the data sources listed above, the data must be converted to a standard format.  Some of this preparation is specific to our processing environment within the <a href="http://www.r-project.org/" target="_blank">R statistical software package</a>.  We first input all of the GCM data, then rotate the grid and set latitude and longitude values to the standard WGS84 (Greenwich-centered) geographic coordinate system.  This sets North as the top of the grid and converts original lat/long values from 0&rarr;360 to &minus;180&rarr;180.
+</p>
+<p>
+All GCM units are converted to standard SI units.  For example, temperature is converted from degrees Kelvin to degrees Celsius (i.e. &deg;Kelvin &minus; 272.15)  and precipitation values are converted from kilograms/meters&sup2;/second to millimeters/month (i.e. kg/m&sup2;/s &times; 86400 &times; #days in given month).  Also, because many GCMs use non-square grid cells, all GCM processing uses point data rather than raster data.
+</p>
 
-All GCM units are converted to standard SI units.  For example, temperature is converted from degrees Kelvin to degrees Celsius (i.e. oKelvin - 272.15)  and precipitation values are converted from kilograms/meters2/second to millimeters/month (i.e. kg/m2/s x 86400 x #days in given month).  Also, because many GCMs use non-square grid cells, all GCM processing uses point data rather than raster data.
+<h4>GCM Climatologies Calculation</h4>
+<p>
+In order to determine projected changes in climate and the amount of model bias inherent in that change, we need to first determine a reference state of the climate according to the GCMs.  The first step is to utilize twentieth-century (20c3m) scenario GCM data values to calculate climatologies for the same temporal range used in the high resolution data we are downscaling to (e.g. 1961&ndash;1990 PRISM, 1971&ndash;2000 PRISM).  These climatologies are simply GCM mean monthly values across a reference period (usually 30 years) from the 20c3m scenario outputs.  The values represent modeled data and contain an expected model bias which is adjusted, as described below.  This calculation is completed for a worldwide extent at the coarse GCM spatial resolution, which ranges from 1.875 to 3.75 degrees.
+</p>
 
-GCM Climatologies Calculation 
-In order to determine projected changes in climate and the amount of model bias inherent in that change, we need to first determine a reference state of the climate according to the GCMs.  The first step is to utilize twentieth-century (20c3m) scenario GCM data values to calculate climatologies for the same temporal range used in the high resolution data we are downscaling to (e.g. 1961-1990 PRISM, 1971-2000 PRISM).  These climatologies are simply GCM mean monthly values across a reference period (usually 30 years) from the 20c3m scenario outputs.  The values represent modeled data and contain an expected model bias which is adjusted, as described below.  This calculation is completed for a worldwide extent at the coarse GCM spatial resolution, which ranges from 1.875 to 3.75 degrees.
-
-Anomaly Calculation
+<h4>Anomaly Calculation</h4>
+<p>
 Next, we calculate monthly absolute (for temperature) or proportional (for precipitation) anomalies by taking the future monthly value (e.g. May 2050 A1B scenario) and subtracting the 20c3m climatology for temperature or divide by the 20c3m climatology for precipitation.  This calculation is completed for a worldwide extent at the coarse GCM spatial resolution.
-
+</p>
+<p>
 When proportional anomalies for precipitation are calculated using division, and the specific year (numerator) is outside the range of years used to create the climatology (denominator), the possibility of dividing future scenario values by zero or near-zero climatology values is introduced.  This cannot be prevented, particularly in grid cells over arid regions, but in the rare instances that it does occur, the denominator must be adjusted. To achieve this, the top 0.5% of anomaly values are truncated to the 99.5 percentile value for each anomaly grid.
+</p>
+<p>
 This results in:
-no change for the bottom 99.5% of values,
-little change for the top 0.5% in grids where the top 0.5% of values are not extreme, and
-substantial change only when actually needed, i.e. in cases where a grid contains one or more cells with unreasonably large values resulting from dividing by near-zero.
-No attempt is made to omit precipitation anomaly values of a certain magnitude, rather a quantile, based on data distribution, is used to truncate the most extreme values.  The 99.5% cutoff was chosen after careful consideration of the ability of various quantiles to capture extreme outliers. This adjustment allows the truncation value to be different for each grid because it is based on the distribution of values across a given grid.
+</p>
+<ol>
+<li><strong>no change</strong> for the bottom 99.5% of values,</li>
+<li><strong>little change</strong> for the top 0.5% in grids where the top 0.5% of values are not extreme, and</li>
+<li><strong>substantial change</strong> only when actually needed, i.e. in cases where a grid contains one or more cells with unreasonably large values resulting from dividing by near-zero.</li>
+</ol>
+<p>
+No attempt is made to omit precipitation anomaly values of a certain magnitude, rather a <a href="http://en.wikipedia.org/wiki/Quantile" target="_blank">quantile</a>, based on data distribution, is used to truncate the most extreme values.  The 99.5% cutoff was chosen after careful consideration of the ability of various quantiles to capture extreme outliers. This adjustment allows the truncation value to be different for each grid because it is based on the distribution of values across a given grid.
+</p>
 
-Downscaling and Bias Removal
-Temperature and precipitation anomalies are then interpolated with a first-order bilinear spline technique across an extent larger than our high-resolution climatology dataset.  A larger extent is used to account for the climatic variability outside of the bounds of our final downscaled extent.  References for choosing the spline technique can be found <here> and <here>.
+<h4>
+Downscaling and Bias Removal</h4>
+<p>
+Temperature and precipitation anomalies are then interpolated with a first-order bilinear spline technique across an extent larger than our high-resolution climatology dataset.  A larger extent is used to account for the climatic variability outside of the bounds of our final downscaled extent.  References for choosing the spline technique can be found <a href="TBD">here and here</a>.
+</p>
 
+<p>
 At this point, our GCM anomaly datasets are at the same spatial resolution as our high resolution climatology dataset.  The interpolated anomalies are then added to (for temperature) or multiplied by (for precipitation) the high-resolution climatology data (e.g. PRISM).  This step effectively downscales the data and removes model biases by using observed data values as baseline climate.  The final products are high resolution (2km or 800m for PRISM) data.
+</p>
 
-Validation
-While the baseline climate data used in our downscaling procedure (e.g. PRISM and CRU data) have been peer reviewed and accepted by the climate community, we feel it is necessary to vet our own products to increase our confidence in them.  While it is impossible to validate future data, it is possible to directly compare twentieth century scenario (20c3m) GCM data to actual weather station data.  A report of this process is available <here>.  Additionally, all of our projected future monthly output data are plotted and inspected by a committee of climate experts.  Plots of these can be found under each dataset on the <Data> page.
+<h4>Validation</h4>
+<p>
+While the baseline climate data used in our downscaling procedure (e.g. PRISM and CRU data) have been peer reviewed and accepted by the climate community, we feel it is necessary to vet our own products to increase our confidence in them.  While it is impossible to validate future data, it is possible to directly compare twentieth century scenario (20c3m) GCM data to actual weather station data.  A report of this process is available <a href="<?php echo Config::$url ?>/resource_page.php?resourceid=6" target="_blank">here</a>.  Additionally, all of our projected future monthly output data are plotted and inspected by a committee of climate experts.  Plots of these can be found under each dataset on the <a href="/gisdata.php">Data</a> page.
+</p>
 
-Scripts
-While programming and data processing are highly iterative processes that are always evolving with improved data and efficiency, the core scripts used to produce our datasets are made available to the climate data community.  Below we provide our core scripts and explanations.  These scripts run within the <R statistical software package> along with all required packages mentioned in the scripts.  Our scripts were run in parallel on powerful, off-the-shelf commodity server hardware.
-
+<h4>Scripts</h4>
+<p>
+While programming and data processing are highly iterative processes that are always evolving with improved data and efficiency, the core scripts used to produce our datasets are made available to the climate data community.  Below we provide our core scripts and explanations.  These scripts run within the <a href="http://www.r-project.org/" target="_blank">R statistical software package</a> along with all required packages mentioned in the scripts.  Our scripts were run in parallel on powerful, off-the-shelf commodity server hardware.
+</p>
+<p><a href="#top">Back to top</a></p>
 
         </div>
     </div>

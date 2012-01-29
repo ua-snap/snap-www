@@ -95,6 +95,8 @@ js;
         array('link','/methods.php', 'Overview'),
         array('link','/downscaling.php', 'Downscaling'),
         array('link','/modeling.php', 'Modeling'),
+        array('link','/planning.php', 'Planning'),
+        array('link','/uncertainty.php', 'Uncertainty'),
       )
     );
     if( true !== array_key_exists( $menu_value, $menu_options )) {

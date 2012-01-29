@@ -20,6 +20,9 @@ snap.state = {
 	scenario: null,
 	variable: null,
 
+	// We'll use this as a way to check if we need to add a new map layer.
+	history: null,
+
 	// for google map:
 	zoom: 3,
 	latitude: null,
@@ -69,7 +72,7 @@ snap.submenus = {
 		'items': {
 			'decadalAverages' : {
 				'name' : '30&ndash;year averages',
-				'description' : 'Decadal averages across 1960&ndash;1990'
+				'description' : 'Decadal averages across 1961&ndash;1990'
 			},
 			'spring' : {
 				'name' : 'spring averages',
@@ -100,7 +103,7 @@ snap.submenus = {
 				};
 			},
 			getContent : function() {
-				return '<p style="margin: 1ex">Decadal averages across 1960&ndash;1990</p>';
+				return '<p style="margin: 1ex">Decadal averages across 1961&ndash;1990</p>';
 			}
 		}
 	},
@@ -169,11 +172,11 @@ snap.submenus = {
 			getTitleJson : function() {
 				return {
 					prefix:'',
-					title:'1960&ndash;1990'
+					title:'1961&ndash;1990'
 				};
 			},
 			getContent : function() {
-				return '<p>Data averaged over 1960&ndash;1990.</p>';
+				return '<p>Data averaged over 1961&ndash;1990.</p>';
 			}
 		}
 	},
@@ -211,7 +214,7 @@ snap.submenus = {
 		}
 	},
 	'resolution' : {
-		'commaAfter' : true,		
+		'commaAfter' : true,
 		'prefix' : '',
 		'renderer' : {
 			getTitleJson : function() {
@@ -221,7 +224,7 @@ snap.submenus = {
 				};
 			},
 			getContent : function() {
-				return '<p>Blurb about the resolution goes here...</p>';
+				return '<p style="margin: 1ex;">Data has been downscaled to 2&times;2 km spatial resolution. <a href="downscaling.php">More info&hellip;</a></p>';
 			}
 		}
 	},
@@ -239,7 +242,7 @@ snap.submenus = {
 				};
 			},
 			getContent : function() {
-				return '<p>Blurb about the GCM goes here...</p>';
+				return '<p style="margin: 1ex;">Data is an average of 5 GCM&rsquo;s. <a href="modeling.php">More info&hellip;</a></p>';
 			}
 		}
 	}
@@ -254,7 +257,7 @@ snap.menus = {
 		items: {
 			'observedTemperature' : {
 				'name' : 'Historical PRISM Average Temperature',
-				'description' : 'This is average annual temperature for the given date range.  This is calculated by averaging over each year and then averaging over the given date range.  The label &ldquo;average temperature&rdquo; is really midrange temperature of the maximum and minimum temperatures recorded by weather stations.  Midrange has historically been considered an acceptable surrogate for average temperature, as most weather stations do not record average temperatures.',
+				'description' : 'This is average annual temperature for the given date range calculated by averaging over each year and then over the given date range. &ldquo;Average Temperature&rdquo; is actually the midrange temperature of maximum and minimum temperatures recorded by weather stations. Midrange is considered an acceptable surrogate for average temperature, as most weather stations do not record average temperatures.',
 				'submenus' : {
 					'interval' : window.snap.submenus.observedIntervals,
 					'historical' : window.snap.submenus.historicalRange,
@@ -517,29 +520,30 @@ function buildMenus() {
 	});
 }
 
-//Update address to reflect new hash
-function writeHash(){
-	window.location.hash = window.snap.state.variable
+// Update address to reflect new hash
+// todo: replace with jqueryBBQ / History.js / Backbone
+function writeHash() {
+
+	var params = window.snap.state.variable
 	+ "/" + window.snap.state.interval
 	+ "/" + window.snap.state.range
-	+ "/" + window.snap.state.scenario
+	+ "/" + window.snap.state.scenario;
+
+	window.location.hash = params
 	+ "/" + map.getZoom()
 	+ "/" + (map.getCenter()).lat()
 	+ "/" + (map.getCenter()).lng();
 
 	$('#link_field').val(window.location.href);
-}
 
-/*
-//Highlight the menu to show changes from new options
-function updateMenu(){
-	$('.menuOption').children('div:first-child')  //Done to workaround chrome issue
-	.animate( { backgroundColor: '#a7c95a' }, 300)
-	.animate( { backgroundColor: '#a7c95a' }, 600)
-	.animate( { backgroundColor: 'white' }, 900);
-	$('.menuOption').children('div:first-child').css( "backgroundColor", "white"); //Done for Chrome workaround
+	if(_.isNull(window.snap.state.history)) {
+		window.snap.state.history = [];
+	}
+
+	// add a token to see if the critical things are different.
+	window.snap.state.history.push(params);
+
 }
-*/
 
 function drawLegend() {
 
@@ -637,7 +641,30 @@ function validateState() {
 	}
 }
 
-//Adds a new map layer overlay, based on current user settings
+// If the user has only panned/zoomed around, no need to reload the map.
+// Otherwise, it means a parameter has changed which implies reloading a new layer.
+// This is called when the hashChange event fires.
+// returns true/false.
+function addMapIfNecessary() {
+	var h = window.snap.state.history;
+	
+	if ( _.isNull( h )) {
+		return true;
+	}
+
+	var h1 = h.pop();
+	var h2 = h.pop();
+
+	if(h1 === h2) {
+		return false;
+	}
+
+	h.push(h1);
+	return true;
+
+}
+
+// Adds a new map layer overlay, based on current user settings
 function addMap() {
 
 	validateState();
@@ -706,7 +733,6 @@ function addMap() {
 	map.overlayMapTypes.setAt("1",gnames );
 
 	drawLegend();
-	writeHash(); // Needed as otherwise it doesn't trigger from the idle event as moving/zooming does
 	buildMenus();
 
 }
@@ -851,7 +877,7 @@ snap.mapLegends = {
 	'-22.0 to -19.7' : '#4575B5'}
 },
 'dof_5modelAvg' :  { 'title':'Date Range', 'colors' : {
-	'Rarely Thaws' : '#E1E1E1',
+	'Primarily Frozen' : '#E1E1E1',
 	'Jan 1 &ndash; Oct 2' : '#F0E5CE',
 	'Oct 3 &ndash; Oct 7' : '#E0CBA2',
 	'Oct 8 &ndash; Oct 13' : '#D1B479',
@@ -883,7 +909,7 @@ snap.mapLegends = {
 	'Apr 28 &ndash; May 2' : '#D1B479',
 	'Apr 3 &ndash; May 9' : '#E0CBA2',
 	'May 10 &ndash; Dec 30' : '#F0E5CE',
-	'Rarely Thaws' : '#E1E1E1'}
+	'Primarily Frozen' : '#E1E1E1'}
 },
 
 'logs_5modelAvg' :  { 'title':'# of Days &gt; 0&deg;C', 'colors' : {

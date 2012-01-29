@@ -73,12 +73,12 @@ $(document).ready(function() {
         $('.menuSpacer').removeClass('menuSpacerToggle');
     });
 
-    // detect hashchanges and reload the mapp
+    // detect hashchanges and reload the map
     $(window).hashchange(function() {
-        
-        // PICKUP
         buildMenus();
-        addMap();
+        if( true === addMapIfNecessary() ) {
+            addMap();
+        }
     });
 
     var currenthash = window.location.hash.substring(1).split("/");
@@ -95,7 +95,7 @@ $(document).ready(function() {
         google.maps.event.addListenerOnce(map, 'idle', function(){
             addMap();
             google.maps.event.addListener(map, 'idle', function(){
-                writeHash();
+                validateState();
             });
         });
     });

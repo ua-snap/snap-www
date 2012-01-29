@@ -319,12 +319,16 @@ h3 {
 }
 .methods h3 {
 	color: #242d2f;
-	margin: 1ex 0;
+	margin: 1em 0 1ex;
 	font-size: 25px;
 }
 .methods h4 {
 	margin: 1ex 0 0 0;
 	color: #242d2f;
+}
+.methods h5 {
+	font-size: 14px;
+	margin: 1ex 0 0;
 }
 
 .methods table {
@@ -370,6 +374,14 @@ h3 {
 }
 .methods code {
 	color: #aaa; font-size: 10pt;
+}
+
+.methods ul.resources {
+	list-style-type: none;
+}
+
+.methods li {
+	margin: .5ex 0;
 }
 
 #data_overview code {
