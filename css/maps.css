@@ -85,6 +85,10 @@
 	padding: 1em;
 }
 
+#legend_wrapper table {
+	border-collapse: collapse;
+}
+
 #legend_wrapper h4 {
 	text-align: center;
 	padding: 1ex;
@@ -93,6 +97,7 @@
 
 #legend_wrapper td {
 	min-width: 2em;
+	vertical-align: middle;
 }
 
 #legend_wrapper td + td {

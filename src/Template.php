@@ -92,7 +92,6 @@ js;
         array('label', 'Learn about all of SNAP&rsquo;s projects below.  The list can be narrowed by selecting from the options below.')
       ),
       'methods' => array(
-        array('link','/methods.php', 'Overview'),
         array('link','/downscaling.php', 'Downscaling'),
         array('link','/modeling.php', 'Modeling'),
         array('link','/planning.php', 'Planning'),
