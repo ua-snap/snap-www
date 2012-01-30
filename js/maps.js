@@ -905,7 +905,7 @@ snap.mapLegends = {
 	'Apr 13 &ndash; Apr 16' : 'FFFFBF',
 	'Apr 17 &ndash; Apr 19' : 'F0E8A3',
 	'Apr 20 &ndash; Apr 23' : 'E0CF89',
-	'Apr 24 &ndash; May 2' : 'D1B479', // two categories in this bucket
+	'Apr 24 &ndash; May 2' : 'D1B479', // two categories in this bucket (RM544)
 	'Apr 3 &ndash; May 9' : 'E0CBA2',
 	'May 10 &ndash; Dec 30' : 'F0E5CE',
 	'Primarily Frozen' : 'E1E1E1'}
@@ -915,8 +915,7 @@ snap.mapLegends = {
 	'0 to 24' : 'E1E1E1',
 	'25 to 49' : 'F0E5CE',
 	'50 to 73' : 'E0CBA2',
-	'74 to 97' : 'D1B479',
-	'98 to 122' : 'D1B471',
+	'74 to 122' : 'D1B479', // merge two groups in this bucket (RM544)
 	'123 to 146' : 'E0CF89',
 	'147 to 170' : 'F0E8A3',
 	'171 to 195' : 'FFFFBF',
