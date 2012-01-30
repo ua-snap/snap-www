@@ -631,3 +631,23 @@ td {
 #pageFooterInfo p {
 	margin: 1ex 0;
 }
+
+.journal {
+	font-style: italic;
+}
+
+.page {
+	font-weight: bold;
+}
+
+.references {
+	list-style-type: none;
+}
+
+.references li {
+	margin-bottom: 1ex;
+}
+
+.text p {
+	line-height: 1.3 !important;
+}

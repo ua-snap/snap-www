@@ -200,15 +200,15 @@ snap.submenus = {
 		'defaultText' : 'Please choose a scenario.',
 		items: {
 			'A2' : {
-				'name' : 'Rapid increases in emissions (<span>A2</span>)',
+				'name' : 'rapid increases in emissions (<span>A2</span>)',
 				'description' : 'The A2 scenario describes a heterogeneous world with high population growth, slow economic development and slow technological change.'
 			},
 			'A1B' : {
-				'name' : 'Mid&ndash;range emissions (<span>A1B</span>)',
+				'name' : 'mid&ndash;range emissions (<span>A1B</span>)',
 				'description' : 'The A1B scenario assumes a world of rapid economic growth, a global population that peaks mid-century, rapid introduction of new and more efficient technologies, and a balance between fossil fuels and other energy sources.'
 			},
 			'B1' : {
-				'name' : 'Leveling or declining emissions (<span>B1</span>)',
+				'name' : 'leveling or declining emissions (<span>B1</span>)',
 				'description' : 'The B1 scenario describes a convergent world, with the same global population as A1B, but with more rapid changes in economic frameworks toward a service and information economy.'
 			}
 		}

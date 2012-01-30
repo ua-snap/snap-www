@@ -1,5 +1,8 @@
 <?php
 
+// This script is responsible for listening for AJAX requests to send contact email,
+// and will provide a response indicating success of the email.
+
 require_once 'src/Config.php';
 require_once 'Mail.php'; // PEAR Mail
 
