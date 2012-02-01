@@ -1,6 +1,6 @@
 <?php
 require_once 'template.php';
-$page = new webPage("SNAP: Methods", "", "methods");
+$page = new webPage("SNAP: Methods", "", "methods", 'Planning');
 $page->openPage();
 $page->pageHeader();
 ?>

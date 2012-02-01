@@ -1,6 +1,6 @@
 <?php
 include("template.php");
-$page = new webPage("SNAP: F.A.Q.", "faq.css", "about");
+$page = new webPage("SNAP: F.A.Q.", "faq.css", "about", 'F.A.Q.');
 $page->openPage();
 $page->pageHeader();
 ?>
@@ -111,7 +111,7 @@ Source: <a href="http://www.wucaonline.org/html/actions_publications.html" targe
 </p>
 <p><a href="#top">Back to top</a></p>
 
-<h3><a href="faq_4">What is an emission scenario?</a></h3>
+<h3><a id="faq_4">What is an emission scenario?</a></h3>
 <p>
 Climate change projections depend on the assumptions we make about the release of greenhouse gases from human activities and land uses changes.  In 2000, the Intergovernmental Panel on Climate Change (IPCC) used data from the Earth Institute at Colombia University to prepare the Special Report on Emissions Scenarios, which outlined a range of possible emission futures.  In order to represent a range of possibilities, SNAP uses model outputs based on three of these: B1, A1B, A2.  
 </p>

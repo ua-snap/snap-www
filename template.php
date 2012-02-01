@@ -7,18 +7,20 @@ class webPage {
     private $pageTitle;
     private $stylesheet;
     private $menu;
+    private $submenu;
 
-    public function __construct($t, $s, $m = null){
+    public function __construct($t, $s, $m = null, $sm = null){
         $this->pageTitle = $t;
         $this->stylesheet = $s;
         $this->menu = $m;
+        $this->submenu = $sm;
         $this->template = new Template();
     }
 
     public function connectToDatabase(){ //TODO:move to configuration
 
          if( !mysql_connect(Config::$database['host'], Config::$database['user'], Config::$database['pass'])) {
-            mysql_error();  
+           // mysql_error();  
             die("Unable to Connect to Database");   //TODO: make logging happen?
         } 
 
@@ -29,7 +31,7 @@ class webPage {
         <?php
             $menu_items = array(
                 array("About","/about.php"),
-                array("Maps &amp; Data","/data.php"),
+                array("Maps &amp; Data","/datamaps.php"),
                 array("Methods","/methods.php"),
                 array("Projects","/projects.php"),
                 array("Resources","/resources.php"),
@@ -89,8 +91,7 @@ class webPage {
         <?php
     }
     public function pageHeader() { ?>    
-        <div id="betabar">Thanks for visiting the <strong>beta version</strong> of the new SNAP web page!</div>
-
+ 
         <div id="header">
             <a name="top"/>
             <a href="/"><span id="header_left"><img src="/images/snap_acronym_rgb.png" height="90px" alt="SNAP Acronym Logo" /></span></a>
@@ -118,7 +119,7 @@ class webPage {
             <div class="horiz_bar_left">
         <?php
         if ($this->menu){
-            $this->drawSubMenu($this->menu);
+            $this->drawSubMenu($this->menu, $this->submenu);
         } else {
             echo "<div id=\"tagline\">Exploring our future in a changing Arctic</div>";
         }
@@ -181,9 +182,9 @@ class webPage {
         <?php
     }
 
-    public function drawSubMenu($menu_value){
+    public function drawSubMenu($menu_value, $submenu){
         // Dump content from src/Template.php wrapper script
-        echo $this->template->getSubMenu($menu_value);
+        echo $this->template->getSubMenu($menu_value, $submenu);
     }
 }
 ?>

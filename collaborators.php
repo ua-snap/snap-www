@@ -3,7 +3,7 @@
 require_once 'src/Collaborators.php';
 
 include("template.php");
-$page = new webPage("SNAP: Collaborators", "", "about");
+$page = new webPage("SNAP: Collaborators", "", "about", 'Collaborators');
 $page->openPage();
 $page->pageHeader();
 ?>

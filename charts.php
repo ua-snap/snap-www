@@ -3,7 +3,7 @@
 require_once 'src/ChartsFetcher.php';
 
 include("template.php");
-$page = new webPage("SNAP: Community Charts", "charts.css", "data");
+$page = new webPage("SNAP: Community Charts", "charts.css", "data", 'Community Charts');
 $page->openPage();
 $page->pageHeader();
 

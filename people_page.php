@@ -1,6 +1,6 @@
 <?php
 include("template.php");
-$page = new webPage("SNAP: People", "", "about");
+$page = new webPage("SNAP: People", "", "about", 'People');
 $page->openPage();
 $page->pageHeader();
 $page->connectToDatabase();

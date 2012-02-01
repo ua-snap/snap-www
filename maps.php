@@ -5,8 +5,9 @@ $page->openPage();
 ?>
 
 <div id="map_header">
-
-    <img id="map_logo" alt="Map Tool Logo" src="images/logo_snap_maps_stats.png" />
+    <a href="<?php echo Config::$url ?>">
+        <img id="map_logo" alt="Map Tool Logo" src="images/snap_acronym_rgb.gif" />
+    </a>
 
     <div id="model_menu">
 		<p>currently viewing</p>
@@ -49,7 +50,6 @@ $page->openPage();
             <a id="metadataLink" target="_blank" href="#">View Metadata</a>
         </span>
         <span class="logoBlock"><a href="http://www.uaf.edu"><img alt="UAF Logo" style="height: 28px;" src="images/UAFLogo_A_white.png" /></a></span>
-        <span class="logoBlock"><a href="<?php echo Config::$url ?>"><img alt="SNAP Logo" src="images/snap_acronym_white.png" /></a></span>
     </div>
 </div>
 

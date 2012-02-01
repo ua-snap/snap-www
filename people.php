@@ -3,7 +3,7 @@ include("template.php");
 
 require_once 'src/Contacts.php';
 
-$page = new webPage("SNAP: People", "people.css", "about");
+$page = new webPage("SNAP: People", "people.css", "about", 'People');
 $page->openPage();
 $page->pageHeader();
 $page->connectToDatabase();

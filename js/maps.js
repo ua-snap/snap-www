@@ -263,10 +263,7 @@ snap.menus = {
 					'historical' : window.snap.submenus.historicalRange,
 					'resolution' : window.snap.submenus.resolution
 				},
-				'metadataId' : {
-					'decadal' : 48,
-					'seasonal' : 50
-				}
+				'metadataId' : false
 			},
 			'observedPrecipitation' : {
 				'name' : 'Historical PRISM Total Precipitation',
@@ -276,10 +273,7 @@ snap.menus = {
 					'historical' : window.snap.submenus.historicalRange,
 					'resolution' : window.snap.submenus.resolution
 				},
-				'metadataId' : {
-					'decadal' : 58,
-					'seasonal' : 60
-				}
+				'metadataId' : false
 			},
 			'observedDayOfFreeze' : {
 				'name' : 'Historical PRISM Day of Freeze',
@@ -289,7 +283,7 @@ snap.menus = {
 					'historical' : window.snap.submenus.historicalRange,
 					'resolution' : window.snap.submenus.resolution
 				},
-				'metadataId' : 52
+				'metadataId' : false
 			},
 			'observedDayOfThaw' : {
 				'name' : 'Historical PRISM Day of Thaw',
@@ -299,7 +293,7 @@ snap.menus = {
 					'historical' : window.snap.submenus.historicalRange,
 					'resolution' : window.snap.submenus.resolution
 				},
-				'metadataId' : 52
+				'metadataId' : false
 			},
 			'observedLengthOfGrowingSeason' : {
 				'name' : 'Historical PRISM Length of Growing Season',
@@ -310,7 +304,7 @@ snap.menus = {
 					'resolution' : window.snap.submenus.resolution
 				},
 				'breakAfter' : true,
-				'metadataId' : 54
+				'metadataId' : false
 			},
 			'temperature' : {
 				'name' : 'Projected GCM Average Temperature',
@@ -577,14 +571,17 @@ function writeHash() {
 		} else {
 			metadataId = window.snap.menus.variable.items[window.snap.state.variable].metadataId['seasonal'];
 		}
-	} else {
+	} else if( false !== window.snap.menus.variable.items[window.snap.state.variable].metadataId ) {
 		metadataId = window.snap.menus.variable.items[window.snap.state.variable].metadataId;
-	}
-
-	if(false === metadataId ) {
-		console.log('could not figure out metadataId to use');
 	} else {
-		$('#metadataLink').attr('href', 'http://athena.snap.uaf.edu:8080/geonetwork/srv/en/metadata.show.embedded?id=' + metadataId);
+		// This case should explicitly hide the metadata link -- for Historical data sets
+		metadataId = false;
+	}
+	console.log(metadataId);
+	if(false === metadataId ) {
+		$('#metadataLink').hide();
+	} else {
+		$('#metadataLink').show().attr('href', 'http://athena.snap.uaf.edu:8080/geonetwork/srv/en/metadata.show.embedded?id=' + metadataId);
 	}
 }
 

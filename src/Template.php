@@ -75,7 +75,7 @@ window.snapConfig = {
 js;
 	}
 	
-  public function getSubmenu($menu_value) {
+  public function getSubmenu($menu_value, $activeSubmenu) {
     
     $menu_options = array(
       'about' => array(
@@ -85,15 +85,15 @@ js;
         array('link', '/faq.php', 'F.A.Q.')
       ),
       'data' => array(
-        array('link', '/maps.php" target="_blank','Map Tool'), // note the quotes so that it works inline below
+        array('link', '/maps.php" target="_blank','Map Tool'), // note the embedded double-quote so that it works inline below
         array('link', '/charts.php','Community Charts'),
-        array('link', '/gisdata.php','Data')
+        array('link', '/data.php','Data')
       ),
       'resources' => array(
-        array('label', 'Learn about all of SNAP&rsquo;s resources below.  The list can be narrowed by selecting from the options below.')
+        array('label', 'Learn about all of SNAP&rsquo;s resources below.')
       ),
       'projects' => array(
-        array('label', 'Learn about all of SNAP&rsquo;s projects below.  The list can be narrowed by selecting from the options below.')
+        array('label', 'Learn about all of SNAP&rsquo;s projects below.')
       ),
       'methods' => array(
         array('link','/downscaling.php', 'Downscaling'),
@@ -107,12 +107,16 @@ js;
     }
 
     $html = '<div class="submenu">';
+    $class = '';
     foreach( $menu_options[$menu_value] as $submenuItem ) {
+
+      $class = ( $submenuItem[2] === $activeSubmenu ) ? 'class="active"' : '';
+
       switch($submenuItem[0]) {
-        case 'ref': $html .= '<span target="'.$submenuItem[2].'"><a href="#">'.$submenuItem[1].'</a></span>'; break;
-        case 'label': $html .= '<span style="font-size: 13.5px; color: #ffffff;">'.$submenuItem[1]."</span>"; break;
+        case 'ref': $html .= '<span '.$class.' target="'.$submenuItem[2].'"><a href="#">'.$submenuItem[1].'</a></span>'; break;
+        case 'label': $html .= '<span '.$class.' style="font-size: 13.5px; color: #ffffff;">'.$submenuItem[1]."</span>"; break;
         case 'link': // fallthrough
-        default: $html .= '<span><a href="'.$submenuItem[1].'">'.$submenuItem[2].'</a></span>'; break;
+        default: $html .= '<span '.$class.' ><a href="'.$submenuItem[1].'">'.$submenuItem[2].'</a></span>'; break;
       }
     }
     $html .= '</div>';
