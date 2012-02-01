@@ -7,7 +7,6 @@ class webPage {
     private $pageTitle;
     private $stylesheet;
     private $menu;
-    public $SITE = "http://www.snap.uaf.edu"; //TODO: move to configuration
 
     public function __construct($t, $s, $m = null){
         $this->pageTitle = $t;
@@ -40,15 +39,16 @@ class webPage {
                 $x = preg_replace("/(\w+).*/", "$1", $menu_items[$i][1]);
                 echo "<div style=\"display: inline-block; float: left; height: 45px; position: relative; margin-right: 20px; margin-left: 20px;\">";
                     echo "<div style=\"height: 25px;\"><a ";
+
                     //If selected, menu option changes color
-                    if (("/".basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || "/".$this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
+                    if (("/".basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || "/".$this->menu == $x)){
                         echo "style=\"color: black;\"";
                     }
+
                     //If selected, arrow is displayed for current selection 
                     echo " href=\"".$menu_items[$i][1]."\" >".$menu_items[$i][0]."</a></div><div style=\"text-align: center; height: 22px; ";
-                    if (("/".basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || "/".$this->menu == $x)){ // && $menu_items[$i][1] == "about.php"){
+                    if (("/".basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || "/".$this->menu == $x)){ 
                         echo "background-image: url('/images/current_arrow.png'); background-position: center bottom; background-repeat: no-repeat;";
-                        //echo "<img alt=\"Current Selection\" src=\"/images/current_arrow.png\" style=\"vertical-align: bottom;\" />";
                     }
                     echo "\" ></div>";
                 echo "</div>";
@@ -67,7 +67,7 @@ class webPage {
         <title><?php echo $this->pageTitle; ?></title>
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8" /> 
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
-        <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.16.custom.css" rel="Stylesheet" />  
+        <link type="text/css" href="css/custom-theme/jquery-ui-1.8.17.custom.css" rel="Stylesheet" />  
     <?php 
 
         if (isset($this->stylesheet)){ 
@@ -128,7 +128,7 @@ class webPage {
                 <a class="addthis_button"><img src="/images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/></a>
             </div>
         </div>
-        <div style="color: #999999; width: 975px; margin: auto; text-align: right; padding-top: 10px;" class="contactbar"><a href="/people.php#contact">contact</a> | <span title="Not implemented yet">sitemap</span> | <span title="Not Implemented Yet">search</span></div>
+        <div style="color: #999999; width: 975px; margin: auto; text-align: right; padding-top: 10px;" class="contactbar"><a href="/people.php#contact">contact</a> | <span>search</span></div>
         <?php
     }
     public function pageFooter(){ ?>
@@ -153,7 +153,7 @@ class webPage {
             <div id="pageFooterInfo" style="margin-bottom: 40px; min-height: 60px">
                 <div style="float: left; margin-right: 40px;">
                     <div><a href="/"><img src="/images/snap_acronym_rgb.png" height="53px" alt="SNAP Acronym Logo" /></a></div>
-                    <div class="contactbar" style="text-align: right;"><a href="/people.php#contact">contact</a> | <span title="Not implemented yet">sitemap</span> | <span title="Not implemented yet">search</span></div>
+                    <div class="contactbar" style="text-align: right;"><a href="/people.php#contact">contact</a> | <span>search</span></div>
                 </div>
                 
                 <div style ="float: left; width: 470px; text-align: left; margin-top: 13px;"><?php echo 'V'.SNAPWEB_VERSION; ?> Copyright &copy; 2011 <a href="/" style="color: #222222; text-decoration: underline;">Scenarios Network for Alaska &amp; Arctic Planning</a>, a research institute of the <a href="http://www.uaf.edu" style="color: #222222; text-decoration: underline;">University of Alaska Fairbanks</a>.  UAF is an affirmative action/equal opportunity employer and educational institution.

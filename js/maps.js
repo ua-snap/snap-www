@@ -262,6 +262,10 @@ snap.menus = {
 					'interval' : window.snap.submenus.observedIntervals,
 					'historical' : window.snap.submenus.historicalRange,
 					'resolution' : window.snap.submenus.resolution
+				},
+				'metadataId' : {
+					'decadal' : 48,
+					'seasonal' : 50
 				}
 			},
 			'observedPrecipitation' : {
@@ -271,6 +275,10 @@ snap.menus = {
 					'interval' : window.snap.submenus.observedIntervals,
 					'historical' : window.snap.submenus.historicalRange,
 					'resolution' : window.snap.submenus.resolution
+				},
+				'metadataId' : {
+					'decadal' : 58,
+					'seasonal' : 60
 				}
 			},
 			'observedDayOfFreeze' : {
@@ -280,7 +288,8 @@ snap.menus = {
 					'historicalInterval' : window.snap.submenus.nonseasonalObservedIntervals,
 					'historical' : window.snap.submenus.historicalRange,
 					'resolution' : window.snap.submenus.resolution
-				}
+				},
+				'metadataId' : 52
 			},
 			'observedDayOfThaw' : {
 				'name' : 'Historical PRISM Day of Thaw',
@@ -289,7 +298,8 @@ snap.menus = {
 					'historicalInterval' : window.snap.submenus.nonseasonalObservedIntervals,
 					'historical' : window.snap.submenus.historicalRange,
 					'resolution' : window.snap.submenus.resolution
-				}
+				},
+				'metadataId' : 52
 			},
 			'observedLengthOfGrowingSeason' : {
 				'name' : 'Historical PRISM Length of Growing Season',
@@ -299,7 +309,8 @@ snap.menus = {
 					'historical' : window.snap.submenus.historicalRange,
 					'resolution' : window.snap.submenus.resolution
 				},
-				'breakAfter' : true
+				'breakAfter' : true,
+				'metadataId' : 54
 			},
 			'temperature' : {
 				'name' : 'Projected GCM Average Temperature',
@@ -311,6 +322,10 @@ snap.menus = {
 					'scenario' : window.snap.submenus.scenarios,
 					'model' : window.snap.submenus.model,
 					'resolution' : window.snap.submenus.resolution
+				},
+				'metadataId' : {
+					'decadal' : 20,
+					'seasonal' : 24
 				}
 			},
 			'precipitation' : {
@@ -321,7 +336,12 @@ snap.menus = {
 					'range' : window.snap.submenus.ranges,
 					'scenario' : window.snap.submenus.scenarios,
 					'model' : window.snap.submenus.model,
-					'resolution' : window.snap.submenus.resolution				}
+					'resolution' : window.snap.submenus.resolution
+				},
+				'metadataId' : {
+					'decadal' : 21,
+					'seasonal' : 25
+				}
 			},
 			'dayOfFreeze' : {
 				'name' : 'Projected GCM Day of Freeze',
@@ -331,7 +351,9 @@ snap.menus = {
 					'range' : window.snap.submenus.ranges,
 					'scenario' : window.snap.submenus.scenarios,
 					'model' : window.snap.submenus.model,
-					'resolution' : window.snap.submenus.resolution				}
+					'resolution' : window.snap.submenus.resolution
+				},
+				'metadataId' : 19
 			},
 			'dayOfThaw' : {
 				'name' : 'Projected GCM Day of Thaw',
@@ -342,7 +364,8 @@ snap.menus = {
 					'scenario' : window.snap.submenus.scenarios,
 					'model' : window.snap.submenus.model,
 					'resolution' : window.snap.submenus.resolution
-				}
+				},
+				'metadataId' : 19
 			},
 			'lengthOfGrowingSeason' : {
 				'name' : 'Projected GCM Length of Growing Season',
@@ -353,11 +376,13 @@ snap.menus = {
 					'scenario' : window.snap.submenus.scenarios,
 					'model' : window.snap.submenus.model,
 					'resolution' : window.snap.submenus.resolution
-				}
+				},
+				'metadataId' : 26
 			}
 		}
 	}
 };
+
 
 // el = a JQuery object
 snap.renderers = {
@@ -522,6 +547,7 @@ function buildMenus() {
 
 // Update address to reflect new hash
 // todo: replace with jqueryBBQ / History.js / Backbone
+// this is really an "update state" function.
 function writeHash() {
 
 	var params = window.snap.state.variable
@@ -543,6 +569,23 @@ function writeHash() {
 	// add a token to see if the critical things are different.
 	window.snap.state.history.push(params);
 
+	// update the link to the metadata, if needed
+	var metadataId = false;
+	if( true === _.isObject(window.snap.menus.variable.items[window.snap.state.variable].metadataId )) {
+		if( 'decadalAverages' === window.snap.state.interval ) {
+			metadataId = window.snap.menus.variable.items[window.snap.state.variable].metadataId['decadal'];
+		} else {
+			metadataId = window.snap.menus.variable.items[window.snap.state.variable].metadataId['seasonal'];
+		}
+	} else {
+		metadataId = window.snap.menus.variable.items[window.snap.state.variable].metadataId;
+	}
+
+	if(false === metadataId ) {
+		console.log('could not figure out metadataId to use');
+	} else {
+		$('#metadataLink').attr('href', 'http://athena.snap.uaf.edu:8080/geonetwork/srv/en/metadata.show.embedded?id=' + metadataId);
+	}
 }
 
 function drawLegend() {
@@ -709,7 +752,7 @@ function addMap() {
 			return tilepath + tile.x + "/" + tile.y + "/" + zoom + ".png";
 		},
 		tileSize: new google.maps.Size(256, 256),
-		opacity: 0.7
+		opacity: 0.75
 	});
 
 	map.overlayMapTypes.push(null); // create empty overlay entry

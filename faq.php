@@ -14,7 +14,8 @@ $page->pageHeader();
 <ol>
 <li><a href="#faq_1">How should I cite SNAP products?</a></li>
 <li><a href="#faq_2">What is a GCM?</a></li>
-<li><a href="#faq_3">What is an emission scenario?</a></li>
+<li><a href="#faq_3">What is a good non-technical description of modeling and downscaling?</a></li>
+<li><a href="#faq_4">What is an emission scenario?</a></li>
 </ol>
 <h3><a id="faq_1">How should I cite SNAP products?</a></h3>
 <p>Cite SNAP this way:</p>
@@ -78,7 +79,7 @@ Hay, L. E. (2000). A comparison of delta change and downscaled GCM scenarios for
 PRISM Climate Group, Oregon State University, <a href="http://prism.oregonstate.edu" target="_blank">http://prism.oregonstate.edu</a>, accessed 4 Sept 2011
 </li>
 <li>
-Climatic Research Unit (CRU), University of East Anglia, a href="http://www.cru.uea.ac.uk/"> target="_blank">http://www.cru.uea.ac.uk/</a>, accessed 4 Sept 2011
+Climatic Research Unit (CRU), University of East Anglia, <a href="http://www.cru.uea.ac.uk/"> target="_blank">http://www.cru.uea.ac.uk/</a>, accessed 4 Sept 2011
 </li>
 </ul>
 <p><a href="#top">Back to top</a></p>
@@ -155,10 +156,10 @@ A world of independently operating, self-reliant nations.
 <h5>More information</h5>
 <ul class="references">
 <li>
-<Scenarios on IPCC>  http://www.ipcc.ch/pdf/special-reports/spm/sres-en.pdf
+<a href="http://www.ipcc.ch/pdf/special-reports/spm/sres-en.pdf" target="_blank">Scenarios on IPCC</a>
 </li>
 <li>
-<Scenarios on Wikipedia>  http://en.wikipedia.org/wiki/Special_Report_on_Emissions_Scenarios
+<a href="http://en.wikipedia.org/wiki/Special_Report_on_Emissions_Scenarios" target="_blank">Scenarios on Wikipedia</a>
 </li>
 </ul>
 <p><a href="#top">Back to top</a></p>

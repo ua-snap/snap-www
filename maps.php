@@ -44,7 +44,10 @@ $page->openPage();
 
 <div id="map_footer">
     <div class="map_bar">
-        <a href="gisdata.php">About this data&hellip;</a>
+        <span class="buttons">
+            <a href="gisdata.php">Download Data</a>
+            <a id="metadataLink" target="_blank" href="#">View Metadata</a>
+        </span>
         <span class="logoBlock"><a href="http://www.uaf.edu"><img alt="UAF Logo" style="height: 28px;" src="images/UAFLogo_A_white.png" /></a></span>
         <span class="logoBlock"><a href="<?php echo Config::$url ?>"><img alt="SNAP Logo" src="images/snap_acronym_white.png" /></a></span>
     </div>
@@ -94,6 +97,7 @@ $(document).ready(function() {
         init(zoom, latitude, longitude);
         google.maps.event.addListenerOnce(map, 'idle', function(){
             addMap();
+            resize();            
             google.maps.event.addListener(map, 'idle', function(){
                 validateState();
             });

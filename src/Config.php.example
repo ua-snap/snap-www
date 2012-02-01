@@ -22,6 +22,10 @@ class FixturesConfig {
 		'host' => 'smtp.uaf.edu',
 	);
 
+	// This URL should point to the service endpoint, and it's expected that the script using this
+	// URL will postpend a numeric ID to invoke the required metadata.
+	static public $geonetworkMetadataUrlBase = 'http://athena.snap.uaf.edu:8080/geonetwork/srv/en/metadata.show.embedded?id=';
+
 	static public $contacts = array(
 		'collaboration' => array(
 			'email' => 'nlfresco@alaska.edu',

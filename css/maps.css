@@ -72,6 +72,14 @@
 	vertical-align: middle;
 }
 
+.map_bar .buttons a {
+	color: white;
+	display: inline-block;
+	padding-left: 1em;
+	text-shadow: 0 2px 3px #000;
+
+}
+
 #legend_wrapper {
 	display: none;
 	font-size: 12px;

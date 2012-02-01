@@ -5,6 +5,9 @@ require_once 'src/Config.php';
 
 class Template {
 	
+  // This does two important things:
+  // (1) lists the required javascript files in a structure that allows us to bundle/minify them
+  // (2) prints a Javascript object containing configuration that we're interpolating from PHP.
 	public function getHeadJavascript()
 	{
 
@@ -40,7 +43,7 @@ If you add a file here, you must add it to the makefile for packaging.  See the 
 <script src="js/plugins.js" type="text/javascript"></script>
 <script src="js/highcharts.js" type="text/javascript"></script>
 <script src="js/exporting.js" type="text/javascript"></script>
-<script src="js/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui-1.8.17.custom.min.js" type="text/javascript"></script>
 <script src="js/jquery.ba-hashchange.min.js" type="text/javascript"></script>
 <script src="js/jquery.validate.min.js" type="text/javascript"></script>
 <script src="js/jquery.ba-bbq.min.js" type="text/javascript"></script>
@@ -63,8 +66,9 @@ If you add a file here, you must add it to the makefile for packaging.  See the 
 
 // Interpolate server-side configs as appropriate
 window.snapConfig = {
-  url: '$url'
-
+  url: '$url',
+  geonetworkMetadataUrl: 'http://athena.snap.uaf.edu:8080/geonetwork/srv/en/metadata.show.embedded?id=',
+  dataPath: '/data/'
 }
 </script>
 
