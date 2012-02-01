@@ -75,7 +75,7 @@ window.snapConfig = {
 js;
 	}
 	
-  public function getSubmenu($menu_value, $activeSubmenu) {
+  public function getSubmenu($menu_value, $activeSubmenu = null) {
     
     $menu_options = array(
       'about' => array(
@@ -109,12 +109,11 @@ js;
     $html = '<div class="submenu">';
     $class = '';
     foreach( $menu_options[$menu_value] as $submenuItem ) {
-
-      $class = ( $submenuItem[2] === $activeSubmenu ) ? 'class="active"' : '';
+      $class = ( isset($submenuItem[2]) && ($submenuItem[2] === $activeSubmenu) ) ? 'class="active" ' : '';
 
       switch($submenuItem[0]) {
         case 'ref': $html .= '<span '.$class.' target="'.$submenuItem[2].'"><a href="#">'.$submenuItem[1].'</a></span>'; break;
-        case 'label': $html .= '<span '.$class.' style="font-size: 13.5px; color: #ffffff;">'.$submenuItem[1]."</span>"; break;
+        case 'label': $html .= '<span '.$class.'style="font-size: 13.5px; color: #ffffff;">'.$submenuItem[1]."</span>"; break;
         case 'link': // fallthrough
         default: $html .= '<span '.$class.' ><a href="'.$submenuItem[1].'">'.$submenuItem[2].'</a></span>'; break;
       }

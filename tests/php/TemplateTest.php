@@ -35,7 +35,7 @@ class TemplateTest extends PHPUnit_Framework_TestCase
     public function testStaticSubmenu() {
         $t = new Template();
         $html = $t->getSubMenu('projects'); // suppose the 'projects' menu is chosen
-        $this->assertSame('<div class="submenu"><span style="font-size: 13.5px; color: #ffffff;">Learn about all of SNAP&rsquo;s projects below.  The list can be narrowed by selecting from the options below.</span></div>', $html, 'ensure Projects submenu displays a static string, no submenu items');
+        $this->assertSame('<div class="submenu"><span style="font-size: 13.5px; color: #ffffff;">Learn about all of SNAP&rsquo;s projects below.</span></div>', $html, 'ensure Projects submenu displays a static string, no submenu items');
     }
 /*
 TODO: restore these two tests.  The second, below, I need to add a custom exception class.

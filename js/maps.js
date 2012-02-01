@@ -543,7 +543,7 @@ function buildMenus() {
 // todo: replace with jqueryBBQ / History.js / Backbone
 // this is really an "update state" function.
 function writeHash() {
-
+	console.log('================= writing hashtags + updating metadata');
 	var params = window.snap.state.variable
 	+ "/" + window.snap.state.interval
 	+ "/" + window.snap.state.range
@@ -577,7 +577,7 @@ function writeHash() {
 		// This case should explicitly hide the metadata link -- for Historical data sets
 		metadataId = false;
 	}
-	console.log(metadataId);
+	console.log('metadataID: '+metadataId);
 	if(false === metadataId ) {
 		$('#metadataLink').hide();
 	} else {
@@ -799,11 +799,13 @@ function init(zl, la, ln) {
 		mapTypeId: google.maps.MapTypeId.TERRAIN
 	});
 
-	resize();
+//	resize();
 }
 
 // called when the page is resized to resize the map to make it as large as possible
 var resize = function() {
+
+console.log('---------------------- resizing');
 
 	var bodyHeight = $('body').height();
 	var headerHeight = $('#map_header').height();
@@ -813,6 +815,10 @@ var resize = function() {
 	// +21px to get a bit of extra room below the footer.
 	// Because many items are floating, the DOM doesn't quite give us what we expect
 	// for the true wrapped height of the header.  todo/fix
+	console.log('body:' + bodyHeight);
+	console.log('map-header:' + headerHeight);
+	console.log('map-menu-bar:' + mapBarHeight);
+	console.log('map-footer:' + footerHeight);
 	var availableHeight = bodyHeight - (headerHeight + footerHeight + mapBarHeight + 30);
 	if (availableHeight > 0) {
 		$("#map_canvas").height(availableHeight);

@@ -203,7 +203,7 @@ $page->pageHeader();
             Export as: <a id="export_link">Link</a>, 
                 <a id="export_image_png">PNG</a>, 
                 <a id="export_image_svg">SVG</a>, 
-                <a id="export_pdf">PDF</a>
+                <a id="export_image_pdf">PDF</a>
             </div>
             <script type="text/javascript">
                 $('#export_link').click( function() {

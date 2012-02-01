@@ -80,7 +80,7 @@ $(document).ready(function() {
     $(window).hashchange(function() {
         buildMenus();
         if( true === addMapIfNecessary() ) {
-            addMap();
+           addMap();
         }
     });
 
