@@ -809,8 +809,6 @@ function init(zl, la, ln) {
 // called when the page is resized to resize the map to make it as large as possible
 var resize = function() {
 
-console.log('---------------------- resizing');
-
 	var bodyHeight = $('body').height();
 	var headerHeight = $('#map_header').height();
 	var mapBarHeight = $('#map_menu_bar').height();
@@ -819,10 +817,7 @@ console.log('---------------------- resizing');
 	// +21px to get a bit of extra room below the footer.
 	// Because many items are floating, the DOM doesn't quite give us what we expect
 	// for the true wrapped height of the header.  todo/fix
-	console.log('body:' + bodyHeight);
-	console.log('map-header:' + headerHeight);
-	console.log('map-menu-bar:' + mapBarHeight);
-	console.log('map-footer:' + footerHeight);
+
 	var availableHeight = bodyHeight - (headerHeight + footerHeight + mapBarHeight + 30);
 	if (availableHeight > 0) {
 		$("#map_canvas").height(availableHeight);

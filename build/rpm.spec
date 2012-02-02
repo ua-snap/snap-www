@@ -64,7 +64,7 @@ cp -a css/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/
 cp -a css/custom-theme/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/custom-theme/
 cp -a css/custom-theme/images/*.png ${RPM_BUILD_ROOT}/%{inst_dir}/css/custom-theme/images/
 cp -R images/* ${RPM_BUILD_ROOT}/%{inst_dir}/images/
-cp -aR exporting-server ${RPM_BUILD_ROOT}/%{inst_dir}/exporting-server/
+cp -a exporting-server ${RPM_BUILD_ROOT}/%{inst_dir}/exporting-server/
 cp -a build/snap.conf ${RPM_BUILD_ROOT}/etc/httpd/conf.d/
 cp -a build/snapweb_database_maintenance.php ${RPM_BUILD_ROOT}/etc/cron.weekly/
 cp -a build/snap.ini ${RPM_BUILD_ROOT}/etc/php.d/
