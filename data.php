@@ -71,11 +71,11 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 <tr>
 <th scope="col">
 <h5>Metadata</h5>
-<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>34">Projected Monthly Average Temperature 771 m metadata</a>
+<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>34">Projected Monthly Average Temperature 771 m</a>
 </th>
 <th scope="col">
 <h5>Metadata</h5>
-<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>35">Projected Monthly Total Precipitation 771 m metadata</a>
+<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>35">Projected Monthly Total Precipitation 771 m</a>
 </th>
 </tr>
 </thead>
@@ -83,8 +83,7 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 <tr>
 <td>
 <h5>Data</h5>
-<pre>
-<a>tas_AK_771m_5modelAvg_sresb1.zip</a>
+<pre><a>tas_AK_771m_5modelAvg_sresb1.zip</a>
 <a>tas_AK_771m_5modelAvg_sresa1b.zip</a>
 <a>tas_AK_771m_5modelAvg_sresa2.zip</a>
 
@@ -111,8 +110,7 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 </td>
 <td>
 <h5>Data</h5>
-<pre>
-pr_AK_771m_5modelAvg_sresb1.zip
+<pre>pr_AK_771m_5modelAvg_sresb1.zip
 pr_AK_771m_5modelAvg_sresa1b.zip
 pr_AK_771m_5modelAvg_sresa2.zip
 
@@ -164,9 +162,9 @@ Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature produ
 
 <h5>Metadata by product</h5>
 <ul>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>39">Projected Decadal Averages of Monthly Mean Temperatures 771m AR4 metadata</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>41">Projected Decadal Averages of Annual Mean Temperatures 771m AR4 metadata</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>42">Projected Decadal Averages of Seasonal Mean Temperatures 771m AR4 metadata</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>39">Projected Decadal Averages of Monthly Mean Temperatures 771m AR4</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>41">Projected Decadal Averages of Annual Mean Temperatures 771m AR4</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>42">Projected Decadal Averages of Seasonal Mean Temperatures 771m AR4</a></li>
 </ul>
 <h5>All products by model and scenario</h5>
 <div class="productDownloads">tas_decadal_summaries_AK_771m_5modelAvg_sresb1.zip
@@ -326,7 +324,9 @@ pr_decadal_summaries_AK_771m_ukmo_hadcm3_sresa2.zip
 </div>
 
 </div>
-
+</div>
+<br/>
+<div class="dataAccordion">
 <h3><a href="#">Projected Monthly Temperature and Precipitation - 2 km AR4</a></h3>
 <div>
 
@@ -624,7 +624,7 @@ pr_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa2.zip
 <div>
 
 <p>
-Historical (1901&dnash;2009) monthly average temperature and total precipitation from CRU TS 3.1 climate data, downscaled to 771 m via the delta method.
+Historical (1901&ndash;2009) monthly average temperature and total precipitation from CRU TS 3.1 climate data, downscaled to 771 m via the delta method.
 </p>
 
 <table>
@@ -672,7 +672,7 @@ pr_AK_771m_CRU_TS31_historical.zip
 
 
 <p>
-Historical (1910&amp;2009) derived temperature products from CRU TS 3.1 climate data, downscaled to 2 km via the delta method.
+Historical (1910&ndash;2009) derived temperature products from CRU TS 3.1 climate data, downscaled to 2 km via the delta method.
 </p>
 
 <table>
@@ -764,7 +764,9 @@ Historical (1910-2009) derived precipitation products from CRU TS 3.1 climate da
 
 
 </div>
-
+</div>
+<br/>
+<div class="dataAccordion">
 <h3><a href="#">Historical Monthly Temperature and Precipitation - 2 km</a></h3>
 <div>
 

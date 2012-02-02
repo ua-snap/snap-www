@@ -646,11 +646,14 @@ td {
 .dataAccordionWrapper table th[scope="row"] {
 	text-align: left;
 	padding-right: 1em;
+	font-weight: normal;
 }
 
 .dataAccordionWrapper table th[scope="col"] {
 	padding-right: 1em;
 	text-align: left;
+	font-weight: normal;
+
 }
 
 .dataAccordionWrapper table th[scope="col"] a {
@@ -663,6 +666,7 @@ td {
 
 .dataAccordionWrapper .ui-accordion-header a {
 	font-size: 18px;
+	font-weight: bold;
 }
 
 .productDownloads {
@@ -671,8 +675,14 @@ td {
 
 .dataAccordionWrapper h5 {
 	margin: 1ex inherit .5ex;
+	font-size: 14px;
+	font-weight: normal;
 }
 
 .dataAccordionWrapper table + table {
 	margin-top: 1em;
+}
+
+.dataAccordionWrapper pre {
+	margin: 0;
 }

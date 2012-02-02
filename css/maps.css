@@ -199,6 +199,10 @@
 	background-color: #eee;
 }
 
+.menuOptions p a {
+	color: #0066cc !important;
+}
+
 #map_menu_bar {
 	clear: both;
 	margin: 0 5px;

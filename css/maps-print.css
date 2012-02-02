@@ -21,6 +21,11 @@
 	display: none;
 }
 
+
+#legend_wrapper table {
+	border-collapse: collapse;
+}
+
 #legend_wrapper {
 	display: none;
 	font-size: 8pt;
