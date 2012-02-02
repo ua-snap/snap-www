@@ -15,7 +15,7 @@
 
 // Options
 
-define ('BATIK_PATH', '/var/www/html/exporting-server/batik/batik-rasterizer.jar');
+define ('BATIK_PATH', '/var/www/snap/exporting-server/batik/batik-rasterizer.jar');
 
 
 
@@ -36,6 +36,8 @@ $filename = (string) $_POST['filename'];
 // prepare variables
 
 if (!$filename) $filename = 'chart';
+
+$filename = 'chart';
 
 if (get_magic_quotes_gpc()) {
 
@@ -99,11 +101,12 @@ if ($typeString) {
 
 		$width = (int)$_POST['width'];
 
-		if ($width) $width = "-w $width";
+		if ($width) $width = "-size 1200x";
 
 	}
 
- echo "java -jar ". BATIK_PATH ." $typeString -d $outfile $width temp/$tempName.svg";
+ //echo "java -jar ". BATIK_PATH ." $typeString -d $outfile $width temp/$tempName.svg";
+ //echo "convert $width -quality 90 temp/$tempName.svg $outfile";
 
 
 	// generate the temporary file
@@ -120,7 +123,9 @@ if ($typeString) {
 
 	// do the conversion
 
-	$output = shell_exec("java -jar ". BATIK_PATH ." $typeString -d $outfile $width temp/$tempName.svg");
+	//$output = shell_exec("java -jar ". BATIK_PATH ." $typeString -d $outfile $width temp/$tempName.svg");
+	$output = shell_exec("convert $width -quality 90 temp/$tempName.svg $outfile");
+
 	
 
 	// catch error
@@ -139,7 +144,7 @@ if ($typeString) {
 
 	else {
 
-		header("Content-Disposition: attachment; filename=$filename.$ext");
+		header("Content-Disposition: attachment; filename=SNAP-Community-Chart.$ext");
 
 		header("Content-Type: $type");
 
@@ -161,7 +166,7 @@ if ($typeString) {
 
 } else if ($ext == 'svg') {
 
-	header("Content-Disposition: attachment; filename=$filename.$ext");
+	header("Content-Disposition: attachment; filename=SNAP-Community-Chart.$ext");
 
 	header("Content-Type: $type");
 

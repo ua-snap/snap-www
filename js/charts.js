@@ -228,7 +228,6 @@ window.snapCharts = {
 				defaultSeriesType: 'column',
 				margin: [100,30,70,50]
 			},
-			
 			tooltip: {
 				formatter: function() {
 					if( 1 === snapCharts.data.dataset ) {
@@ -324,6 +323,7 @@ window.snapCharts = {
 					}
 				}
 			},
+			
 			series: [
 				{
 					name: 'Historical',

@@ -85,7 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %config /etc/php.d/snap.ini
 %{inst_dir}/exporting-server
 %attr(644,root,root) /etc/httpd/conf.d/snap.conf
-%attr(744,apache,apache) %{inst_dir}/exporting-server/temp
+%attr(774,apache,apache) %{inst_dir}/exporting-server/temp
 %ghost %attr(644,apache,apache) /var/log/%{hostname}-error_log
 %ghost %attr(644,apache,apache) /var/log/%{hostname}-access_log
 %ghost %attr(644,jenkins,jenkins) /var/log/%{hostname}-update_log
