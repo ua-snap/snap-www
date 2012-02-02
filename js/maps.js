@@ -393,6 +393,7 @@ snap.renderers = {
 			$('.menuOptions').hide();
 			$('.menuSpacer').removeClass('menuSpacerToggle');
 			window.snap.state[$(this).data('category')] = $(this).data('option');
+			validateState();
 			addMap();
 		})
 		.data('category', category)
@@ -522,7 +523,6 @@ snap.renderers = {
 	}
 };
 
-
 function buildMenus() {
 
 	$('#mapMenu').empty();
@@ -537,13 +537,15 @@ function buildMenus() {
 		}
 		window.snap.renderers.standard($('#mapMenu'), source, e);
 	});
+
+	resize();
 }
 
 // Update address to reflect new hash
 // todo: replace with jqueryBBQ / History.js / Backbone
 // this is really an "update state" function.
 function writeHash() {
-	console.log('================= writing hashtags + updating metadata');
+
 	var params = window.snap.state.variable
 	+ "/" + window.snap.state.interval
 	+ "/" + window.snap.state.range
@@ -577,7 +579,7 @@ function writeHash() {
 		// This case should explicitly hide the metadata link -- for Historical data sets
 		metadataId = false;
 	}
-	console.log('metadataID: '+metadataId);
+
 	if(false === metadataId ) {
 		$('#metadataLink').hide();
 	} else {
@@ -674,6 +676,7 @@ function validateState() {
 			if(_.isFalsy(window.snap.state.range)) {
 				window.snap.state.range = window.snap.state.defaults.range;
 			}
+			writeHash();
 			break;
 
 		default:
@@ -686,6 +689,9 @@ function validateState() {
 // This is called when the hashChange event fires.
 // returns true/false.
 function addMapIfNecessary() {
+
+	validateState();
+
 	var h = window.snap.state.history;
 	
 	if ( _.isNull( h )) {
@@ -706,8 +712,6 @@ function addMapIfNecessary() {
 
 // Adds a new map layer overlay, based on current user settings
 function addMap() {
-
-	validateState();
 
 	var tilepath;
 	switch(window.snap.state.variable) {

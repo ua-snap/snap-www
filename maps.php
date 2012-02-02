@@ -96,7 +96,9 @@ $(document).ready(function() {
     google.maps.event.addDomListener(window, 'load', function(){
         init(zoom, latitude, longitude);
         google.maps.event.addListenerOnce(map, 'idle', function(){
-            addMap();
+            if( true === addMapIfNecessary() ) {
+                addMap();
+            }
             resize();            
             google.maps.event.addListener(map, 'idle', function(){
                 validateState();

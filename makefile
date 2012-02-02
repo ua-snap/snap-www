@@ -38,7 +38,7 @@ javascript :
 --js=./js/exporting.js \
 --js=./js/snap.min.js \
 --js_output_file=./js/min.js
-	sed -ni '1h;1!H;$${;g;s:<!-- package-javascript.*end-package -->:<script type="text/javascript" src="js/min.js"/>:p;}' src/Template.php
+	sed -ni '1h;1!H;$${;g;s:<!-- package-javascript.*end-package -->:<script type="text/javascript" src="js/min.js"></script>:p;}' src/Template.php
 
 .PHONY: version
 version :

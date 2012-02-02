@@ -20,6 +20,7 @@ Requires:	php-pdo
 Requires:   httpd
 Requires:   php-pecl-json
 Requires:   php-pear-Mail
+Requires:   ImageMagick
 
 %define inst_dir /var/www/snap
 %define hostname snap
