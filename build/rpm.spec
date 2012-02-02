@@ -64,7 +64,7 @@ cp -a css/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/
 cp -a css/custom-theme/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/custom-theme/
 cp -a css/custom-theme/images/*.png ${RPM_BUILD_ROOT}/%{inst_dir}/css/custom-theme/images/
 cp -R images/* ${RPM_BUILD_ROOT}/%{inst_dir}/images/
-cp -a exporting-server ${RPM_BUILD_ROOT}/%{inst_dir}/exporting-server/
+cp -a exporting-server/index.php ${RPM_BUILD_ROOT}/%{inst_dir}/exporting-server/
 cp -a build/snap.conf ${RPM_BUILD_ROOT}/etc/httpd/conf.d/
 cp -a build/snapweb_database_maintenance.php ${RPM_BUILD_ROOT}/etc/cron.weekly/
 cp -a build/snap.ini ${RPM_BUILD_ROOT}/etc/php.d/
@@ -83,7 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(744,apache,apache) /usr/lib64/snapwww/src/
 %ghost /usr/lib64/snapwww/src/Config.php
 %config /etc/php.d/snap.ini
-%{inst_dir}/exporting-server
+%{inst_dir}/exporting-server/index.php
 %attr(644,root,root) /etc/httpd/conf.d/snap.conf
 %attr(774,apache,apache) %{inst_dir}/exporting-server/temp
 %ghost %attr(644,apache,apache) /var/log/%{hostname}-error_log
