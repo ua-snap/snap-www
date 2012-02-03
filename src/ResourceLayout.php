@@ -82,26 +82,13 @@ class ResourceLayout {
 
     public function getQueryString() {
 
-        $where = array();
-        $whereQuery = '';
-        $order = '';
+        // Was dynamic to allow sorting/etc, is now static.
 
-        // TODO: prevent sql injection
-        foreach( array('tags' => 'pt.tag', 'collab'=>'pc.collaboratorid', 'type'=>'pubs.type' ) as $key => $column) {
-            if( !empty($this->reqs[$key])) {
-                array_push( $where, $this->formRestriction( $column, $key ));
-            }
-        }
+        return <<<sql
 
-        if (!empty($where) ) {
-            $whereQuery = ' WHERE '.join( ' AND ', $where);
-        }
+SELECT title, type, pubs.id, summary FROM resources pubs LEFT JOIN resource_tags AS pt ON pubs.id=pt.resourceid LEFT JOIN resource_collaborators AS pc ON pubs.id=pc.resourceid  GROUP BY pubs.id ORDER BY pubs.type ASC, pubs.title ASC
 
-        if ( !empty($this->reqs['sort']) && "oldest" == $this->reqs['sort'] ) {
-            $order = " DESC";
-        }
-
-        return "SELECT title,type,pubs.id,summary FROM resources pubs LEFT JOIN resource_tags AS pt ON pubs.id=pt.resourceid LEFT JOIN resource_collaborators AS pc ON pubs.id=pc.resourceid $whereQuery GROUP BY pubs.id ORDER BY pubs.createdate $order";
+sql;
         
     }
 

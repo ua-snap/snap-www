@@ -54,7 +54,7 @@ Uncertainty is inevitably greater for precipitation than for temperature, since 
 </ul>
 <h3>Projected data</h3>
 <p>
-Projected data are also subject to uncertainty related to the accuracy of the Global Circulation Models upon which they are based; historical data are not subject to this source of uncertainty.
+Projected data are also subject to uncertainty related to the accuracy of the Global Climate Models upon which they are based; historical data are not subject to this source of uncertainty.
 </p>
 
 <h4>Inputs to GCMs</h4>
@@ -64,7 +64,7 @@ Projected data are also subject to uncertainty related to the accuracy of the Gl
 </ul>
 <h4>GCM algorithms</h4>
 <ul>
-<li>Although SNAP uses the best Global Circulation Models, produced by international teams of scientists and relied upon by the IPCC, oceanic and atmospheric circulation are extremely hard to predict and model
+<li>Although SNAP uses the best Global Climate Models, produced by international teams of scientists and relied upon by the IPCC, oceanic and atmospheric circulation are extremely hard to predict and model
 </li>
 <li>
 Interactions modeled in GCMs  include thresholds (tipping points) such as ocean currents shifting or shutting down

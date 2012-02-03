@@ -6,6 +6,8 @@ $page->pageHeader();
 $page->connectToDatabase();
 $tag_array;
 $tag_array = split(",", $_GET['tags']);
+
+/*
 function getProjectList(){
     $result = mysql_query("SELECT title,createdate,summary,id FROM projects ORDER BY createdate DESC");
     while ($row = mysql_fetch_row($result)){
@@ -27,6 +29,8 @@ function getProjectList(){
         echo "</div>";
     }
 }
+
+*/
 function getProjectListSpecial($t){
     global $tag_array;
     $projtag = "";
@@ -54,7 +58,7 @@ function getProjectListSpecial($t){
     while ($row = mysql_fetch_row($result)){
         if ($row[5] == $countsize || $countsize == 1){
             echo "<div style=\"width: 440px; height: 120px; overflow: hidden; display: inline-block; margin: 10px; margin-bottom: 30px; position: relative;\">";
-                echo "<div style=\"width: 174px; height: 110px; position: absolute; \"><img alt=\"".$row[4]."\" src=\"".$row[4]."\" style=\"border: 1px solid #6a7173; padding: 3px; width: 174px; height: 110px; \" /></div>";
+                echo "<div style=\"width: 174px; height: 110px; position: absolute; \"><a href=\"project_page.php?projectid=".$row[3]."\"><img alt=\"".$row[4]."\" src=\"".$row[4]."\" style=\"border: 1px solid #6a7173; padding: 3px; width: 174px; height: 110px; \" /></a></div>";
                 echo "<div style=\"position: absolute; left: 190px; width: 250px;\">";
                     echo "<div style=\"font-size: 13px; color: #111111; margin-bottom: 5px;\"><a href=\"project_page.php?projectid=".$row[3]."\">".$row[0]."</a></div>";
                     
