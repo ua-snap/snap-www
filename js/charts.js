@@ -15,6 +15,7 @@ $( function() {
 	
 	window.snapCharts.initialize();
 	window.snapCharts.refreshState();
+	window.snapCharts.refreshMenus();	
 	window.snapCharts.fetchData();
 
 });
@@ -156,8 +157,69 @@ window.snapCharts = {
 		window.snapCharts.data.community = params.community || null;
 		window.snapCharts.data.scenario = params.scenario || 'a1b'; // default scenario a1b
 		window.snapCharts.data.variability = params.variability || 0; // default no variability
-		window.snapCharts.data.dataset = params.dataset || 1; // default precip
+		window.snapCharts.data.dataset = params.dataset || 1; // default temp
 
+	},
+
+	// Use the global window.snapCharts.data object to update the correct settings for menus
+	refreshMenus: function() {
+	
+		var data = window.snapCharts.data;
+
+		// todo: remove this code duplication
+		if( 2 === data.dataset) {
+            $('#temp').html("<a>Temperature</a>");
+            $('#temp').removeClass("selected_option");
+            $('#precip').html("Precipitation");
+            $('#precip').addClass("selected_option");
+		} else {
+			// Temperature -- default if the input is malformed
+			$('#temp').html("Temperature");
+			$('#temp').addClass("selected_option");
+			$('#precip').html("<a>Precipitation</a>");
+			$('#precip').removeClass("selected_option");
+		}
+
+		if( 1 === data.variability ) {
+            $('#model_vari_on').html("On");
+            $('#model_vari_on').addClass("selected_option");
+            $('#model_vari_off').html("<a>Off</a>");
+            $('#model_vari_off').removeClass("selected_option");
+		} else {
+			// No variability -- default if the input is somehow malformed
+			$('#model_vari_on').html("<a>On</a>");
+			$('#model_vari_on').removeClass("selected_option");
+			$('#model_vari_off').html("Off");
+			$('#model_vari_off').addClass("selected_option");
+		}
+
+		switch( data.scenario ) {
+			case 'b1':
+				$('#scen_low').html("Low");
+				$('#scen_low').addClass("selected_option");
+				$('#scen_med').html("<a>Medium</a>");
+				$('#scen_med').removeClass("selected_option");
+				$('#scen_high').html("<a>High</a>");
+				$('#scen_high').removeClass("selected_option");
+				break;
+			default: // fallthru
+			case 'a1b':
+				$('#scen_low').html("<a>Low</a>");
+				$('#scen_low').removeClass("selected_option");
+				$('#scen_med').html("Medium");
+				$('#scen_med').addClass("selected_option");
+				$('#scen_high').html("<a>High</a>");
+				$('#scen_high').removeClass("selected_option");
+				break;
+			case 'a2':
+				$('#scen_low').html("<a>Low</a>");
+				$('#scen_low').removeClass("selected_option");
+				$('#scen_med').html("<a>Medium</a>");
+				$('#scen_med').removeClass("selected_option");
+				$('#scen_high').html("High");
+				$('#scen_high').addClass("selected_option");
+				break;
+        }
 	},
 
 	changeParams : function() {
@@ -233,7 +295,7 @@ window.snapCharts = {
 					if( 1 === snapCharts.data.dataset ) {
 						return '<span style="color: #999999;">' + this.x + ' </span><br/><span>' + this.y + ' °F (' + ((5/9) * (this.y - 32)).toFixed(1) + ' °C)</span>';
 					} else {
-						return '<span style="color: #999999;">' + this.x + ' </span><br/><span>' + this.y + ' in. (' + (this.y * 25.4).toFixed(1) + ' mm.)</span>';
+						return '<span style="color: #999999;">' + this.x + ' </span><br/><span>' + this.y + ' in (' + (this.y * 25.4).toFixed(1) + ' mm)</span>';
 					}
 				}
 			},
@@ -247,8 +309,9 @@ window.snapCharts = {
 					align: 'center'
 				},
 				style: {
-					width: '800px',
-					height: '50px'
+					'fontSize' : '9px',
+					'width': '800px',
+					'padding': '9px auto 18px'
 				},
 				text: 'This graph shows average values from projections from five global models used by the Intergovernmental Panel on Climate Change.  Due to variability among models and among years in a natural climate system, such graphs are useful for examining trends over time, rather than for precisely predicting monthly or yearly values.  For more information on the SNAP program, including derivation, reliability, and variability among these projections, please visit www.snap.uaf.edu.'
 			},

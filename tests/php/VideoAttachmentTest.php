@@ -22,14 +22,14 @@ class VideoAttachmentTest extends PHPUnit_Framework_TestCase
         if( Config::$testing['skipDatabase'] ) {
             $this->markTestSkipped("No database connection, skipping...");
         }        
-        $this->assertEquals('<iframe src="http://player.vimeo.com/video/4515275?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe><p><a class="title" target="_blank" href="http://player.vimeo.com/video/4515275">A thousand shades of white</a> from <a class="user" target="_blank" href="http://vimeo.com/icescapestv">icescapes</a> on <a class="source" target="_blank" href="http://vimeo.com">Vimeo</a>.</p>', $this->video->getEmbeddedVideo(), "Video resource can return a string of HTML to render an embedded video.");
+        $this->assertEquals('<iframe src="http://player.vimeo.com/video/4515275?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe><p><a class="title"  href="http://player.vimeo.com/video/4515275">A thousand shades of white</a> from <a class="user"  href="http://vimeo.com/icescapestv">icescapes</a> on <a class="source"  href="http://vimeo.com">Vimeo</a>.</p>', $this->video->getEmbeddedVideo(), "Video resource can return a string of HTML to render an embedded video.");
     }
 
     public function testRenderLinkedVideo() {
         if( Config::$testing['skipDatabase'] ) {
             $this->markTestSkipped("No database connection, skipping...");
         }
-        $this->assertEquals('<p><a class="link" target="_blank" href="http://www.youtube.com/watch?v=u5DiHp76gjs&feature=results_main&playnext=1&list=PLBBDD34F33BAF19CD">Alaskan Native thoughts on climate change</a></p>', $this->video->getLinkedVideo(), "Video resource should produce a string of HTML to render a link to a video on another site");
+        $this->assertEquals('<p><a class="link"  href="http://www.youtube.com/watch?v=u5DiHp76gjs&feature=results_main&playnext=1&list=PLBBDD34F33BAF19CD">Alaskan Native thoughts on climate change</a></p>', $this->video->getLinkedVideo(), "Video resource should produce a string of HTML to render a link to a video on another site");
     }
 
     public function testRenderFileLink() {

@@ -22,14 +22,10 @@ function getPublicationListSpecial() {
 
 }
 ?>
-        <div id="main_body">
-            <div id="main_content">
-                <div class="subHeader">Resources</div>
-                    
-
-
-                    <div style="margin-top: 40px;"><?php getPublicationListSpecial(); ?></div>
-
+    <div id="main_body">
+        <div id="main_content">
+            <div class="subHeader">Resources</div>
+            <div style="margin-top: 40px;"><?php getPublicationListSpecial(); ?></div>
         </div>
     </div>
 <?php

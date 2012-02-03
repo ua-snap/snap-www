@@ -37,19 +37,8 @@ $page->pageHeader();
                     Data Set
                 </div>
                 <div id="dataset" style="margin: auto; font-size: 18px; text-align: center; margin-bottom: 15px;">
-                    <?php if ($_GET['dataset'] == '1' || !isset($_GET['dataset'])){
-                         echo "<span class=\"selected_option\" id=\"temp\">Temperature</span>";
-                          } else {
-                         echo "<span id=\"temp\"><a>Temperature</a></span>";
-                          }
-                    ?>
-                     | 
-                    <?php if ($_GET['dataset'] == '2'){
-                         echo "<span class=\"selected_option\" id=\"precip\">Precipitation</span>";
-                          } else {
-                         echo "<span id=\"precip\"><a>Precipitation</a></span>";
-                          }
-                    ?>
+                    <span id="temp"><a>Temperature</a></span>&nbsp;|
+                    <span id="precip"><a>Precipitation</a></span>
                     <script type="text/javascript">
                         $('#temp').click( function() { 
                             snapCharts.data.dataset = 1;
@@ -71,12 +60,8 @@ $page->pageHeader();
                 </div>
                 <div style="color: #666666; margin: auto; font-size: 14px; text-align: center; margin-top: 0px;">Emissions Scenario</div>
                 <div style="margin: auto; font-size: 18px; text-align: center; margin-bottom: 15px;">
-                    <?php if ($_GET['scenario'] == 'b1'){
-                         echo "<span class=\"selected_option\"  id=\"scen_low\">Low</span>";
-                          } else {
-                         echo "<span id=\"scen_low\"><a>Low</a></span>";
-                          }
-                    ?>
+
+                    <span id="scen_low"><a>Low</a></span>
                     <div id="scen_low_hover" class="variableHover">
                         <div>
                             <h4>Emissions leveling and declining (B1)</h4>
@@ -84,12 +69,7 @@ $page->pageHeader();
                         </div>
                     </div>
                      | 
-                    <?php if ($_GET['scenario'] == 'a1b' || !isset($_GET['scenario'])){
-                         echo "<span class=\"selected_option\" id=\"scen_med\">Medium</span>";
-                          } else {
-                         echo "<span id=\"scen_med\"><a>Medium</a></span>";
-                          }
-                    ?>
+                    <span id="scen_med"><a>Medium</a></span>
                     <div id="scen_med_hover" class="variableHover">
                         <div>
                             <h4>Mid-range emissions (A1B)</h4>
@@ -97,12 +77,7 @@ $page->pageHeader();
                         </div>
                     </div>
                      | 
-                    <?php if ($_GET['scenario'] == 'a2'){
-                         echo "<span class=\"selected_option\" id=\"scen_high\">High</span>";
-                          } else {
-                         echo "<span id=\"scen_high\"><a>High</a></span>";
-                          }
-                    ?>
+                    <span id="scen_high"><a>High</a></span>
                     <div id="scen_high_hover" class="variableHover">
                         <div>
                             <h4>Rapid increases in emissions (A2)</h4>
@@ -149,25 +124,15 @@ $page->pageHeader();
                 </div>
                 <div style="color: #666666; margin: auto; font-size: 14px; text-align: center; margin-top: 0px;">Model Variability</div>
                 <div style="margin: auto; font-size: 18px; text-align: center; margin-bottom: 5px;">
-                    <?php if ($_GET['variability'] == '0' || !isset($_GET['variability'])){
-                         echo "<span class=\"selected_option\" id=\"model_vari_off\">Off</span>";
-                          } else {
-                         echo "<span id=\"model_vari_off\"><a>Off</a></span>";
-                          }
-                    ?>
+                <span id="model_vari_off"><a>Off</a></span>
                     <div id="vari_hover" style="z-index: 100; display: none; position: absolute; margin-left: 50px; background-color: #f8f8f8; border: 1px solid #999999;">
                         <div style="width: 350px; left: 50px; font-size: 12px; padding: 10px;">
                             <div style="padding: 3px; border-bottom: 1px solid #0066cc; font-size: 14px; ">Model Variability</div>
                             <div style="text-align: left; margin-top: 5px;">Model variability refers to the standard deviation (SD), which provides a measure of dispersion around the mean. The vertical bars represent the SD across the five models. Their lengths represent one SD above and below this value. A small SD indicates the models are in relative agreement, whereas a large SD suggests choice of model is relatively important. Drawing inferences from overlapping or non-overlapping bars is discouraged. The only comparison to make is of their relative size, as it pertains to changes in the degree of agreement among the models.</div>
                         </div>
                     </div>
-                     | 
-                    <?php if ($_GET['variability'] == '1'){
-                         echo "<span class=\"selected_option\" id=\"model_vari_on\">On</span>";
-                          } else {
-                         echo "<span id=\"model_vari_on\"><a>On</a></span>";
-                          }
-                    ?>
+                     |
+                     <span id="model_vari_on"><a>On</a></span>
                     <div id="vari_hover" class="variableHover">
                         <div>
                             <h4>Model Variability</h4>
@@ -233,15 +198,27 @@ $page->pageHeader();
                 <div style="position: absolute; top: 20px; width: 930px; height: 420px; margin-left: 20px;" id="chart_div"></div>
             </div>
         </div>
-        <div>
-            <div style="font-size: 18px; margin-bottom: 10px; margin-top: 10px;">Interpreting the Community Charts</div>
-            <p>These community charts can be examined for certain key changes and threshold values. Higher mean monthly temperatures in the spring and fall may be of particular interest. This could signify a longer growing season, a loss of ice and/or frozen ground needed for travel or food storage, or a shift in precipitation from snow to rain, which impacts water storage capacity and surface water availability. Warmer, drier spring weather may also be an indicator for increased fire risk. In many locations, winter temperatures are projected to increase dramatically. Warmer winters may allow for the growth of species that are less cold-hardy (including both desirable crops and invasive species), or it may decrease snowpack and increase the frequency of rain-on-snow events that impact wildlife. Higher temperatures across all seasons will likely impact permafrost and land-fast ice.</p>
+        <div class="methods text">
+            <h3>Community Charts</h3>
 
-            <div style="font-size: 18px; margin-bottom: 10px; margin-top: 10px;">How the Community Charts Were Derived</div>
+<h4>Interpreting the Community Charts</h4>
+<p>
+SNAP community charts can be examined for certain key changes and threshold values. Higher mean monthly temperatures in the spring and fall may be of particular interest. This could signify a longer growing season, a loss of ice and/or frozen ground needed for travel or food storage, or a shift in precipitation from snow to rain, which impacts water storage capacity and surface water availability. Warmer, drier spring weather may also be an indicator for increased fire risk. In many locations, winter temperatures are projected to increase dramatically. Warmer winters may allow for the growth of species that are less cold-hardy (including both desirable crops and invasive species), or it may decrease snowpack and increase the frequency of rain-on-snow events that impact wildlife. Higher temperatures across all seasons will likely impact permafrost and land-fast ice.
+</p>
 
-            <p>SNAP’s community charts show mean values of downscaled outputs averaged from five Global Circulation <a href="/downscaling.php#model_selection">Models</a> (GCMs). Results are also averaged across decades. This averaging lessens the influence of normal year-to-year climate variability on projection values, and tends to make overall projection trends clearer. It is important to note that uncertainty is associated with each of these graphed values. Uncertainty stems from the modeling of atmospheric and oceanic movements used to create GCMs, from the PRISM <a href="downscaling.php">downscaling</a> process, and from the assumptions made regarding greenhouse gas levels for each emissions scenario. Variability between the five GCMs is in the range of 0&ndash;47&deg;F for temperature and 0&ndash;0.7 inches for precipitation. In general, a higher percentage of uncertainty is associated with precipitation values than with temperature values. It should also be noted that although our models project increases in precipitation, water availability may decrease in some areas due to longer growing seasons and warmer weather.</p>
-            <p>Information for each community is based on the closest 2 km by 2 km grid square from SNAP's statewide datasets. For further information on SNAP projections, please explore our <a href="methods.php">Methods</a> section.</p>
-
+<h4>How the Community Charts Were Derived</h4>
+<p>
+Information for each community is based on the closest 2 km by 2 km pixel from SNAP's datasets. The charts show mean values of downscaled outputs averaged from five Global Climate Models (GCMs). Results are also averaged across decades. This averaging lessens the influence of normal year-to-year climate variability on projected values, and tends to make overall projection trends clearer. It is important to note that <a href="/uncertainty.php">uncertainty</a> is associated with each of these graphed values. Uncertainty stems from the modeling of atmospheric and oceanic movements used to create GCMs, from the PRISM <a href="/downscaling.php">downscaling</a> process, and from the assumptions made regarding greenhouse gas levels for each emissions scenario.
+</p>
+<p>
+Standard deviation of precipitation between the five models, averaged over space, time, and the three scenarios, ranges from about 5.8 mm to 13.8 mm with a mean of 9.8 mm.  For temperature, this measure ranges from 0.5 degrees C to 2.1 degrees C with a mean of 1.1 degrees C.  This assessment of variability on a scale that encompasses space, time, and scenarios is relatively small, particularly due to the averaging across space. By comparison, it is important to note that standard deviation across the five models for a particular spatial pixel may be as large as 500+ mm or 5+ degrees C.
+</p>
+<p>
+In general, a higher percentage of uncertainty is associated with precipitation values than with temperature values. It should also be noted that although our models project increases in precipitation, water availability may decrease in some areas due to longer growing seasons and warmer weather.
+</p>
+<p>
+For further information on SNAP projections, please explore our <a href="/methods.php">Methods</a> section.
+</p>
         </div>
     </div>
 </div>

@@ -62,7 +62,7 @@ $page->pageHeader();
                 <div style="width: 310px; margin-right: 30px;  float: left; margin-top: 60px;">
                     <div style="font-size: 18px; color: #555555; font-weight: bold; margin-bottom: 5px;">SNAP</div>
                     <div style="font-size: 14px;">
-                        <p>We develop plausible <a style="font-size: 18px;" href="">scenarios</a> of future conditions through a diverse and varied <a style="font-size: 18px;" href="">network</a> of people and organizations,  which allow better <a style="font-size: 18px;" href="">planning</a> for the uncertain future of Alaska and the Arctic.</p>
+                        <p>We develop plausible <a style="font-size: 18px;" href="http://phobos.snap.uaf.edu/faq.php#faq_4">scenarios</a> of future conditions through a diverse and varied <a style="font-size: 18px;" href="/collaborators.php">network</a> of people and organizations,  which allow better <a style="font-size: 18px;" href="/planning.php">planning</a> for the uncertain future of Alaska and the Arctic.</p>
                     </div>
                 </div>
                 <div style="width: 600px; float: left; margin-top: 60px; font-size: 12px;">

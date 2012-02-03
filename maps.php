@@ -47,7 +47,7 @@ $page->openPage();
     <div class="map_bar">
         <span class="buttons">
             <a href="datamaps.php">Download Data</a>
-            <a id="metadataLink" target="_blank" href="#">View Metadata</a>
+            <a id="metadataLink"  href="#">View Metadata</a>
         </span>
         <span class="logoBlock"><a href="http://www.uaf.edu"><img alt="UAF Logo" style="height: 28px;" src="images/UAFLogo_A_white.png" /></a></span>
     </div>

@@ -313,12 +313,12 @@ h3 {
 	font-size: 25px;
 }
 .methods h4 {
-	margin: 1ex 0 0 0;
+	margin: 2em 0 1ex;
 	color: #242d2f;
 }
 .methods h5 {
 	font-size: 14px;
-	margin: 1ex 0 0;
+	margin: 1ex 0 .5ex;
 }
 
 .methods table {
@@ -685,4 +685,10 @@ td {
 
 .dataAccordionWrapper pre {
 	margin: 0;
+}
+
+ul.index {
+	padding: 0;
+	margin: 1em 0;
+	list-style-type: none;
 }

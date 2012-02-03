@@ -62,16 +62,16 @@ class ChartsFetcher {
 		$yAxisTitle = (1 === $dataset) ? 'Temperature °F' : 'Total precipitation in inches';
 		switch ($scenario) {
 			case 'a2':
-				$subtitle = "5 Model Average, High-range emissions (A2)";
+				$subtitle = "5-Model Average, High-range emissions (A2)";
 				break;
 			
 			case 'b1':
-				$subtitle = "5 Model Average, Low-range emissions (B1)";
+				$subtitle = "5-Model Average, Low-range emissions (B1)";
 				break;
 
 			case 'a1b': //fallthru
 			default:
-				$subtitle = "5 Model Average, Mid-range emissions (A1B)";
+				$subtitle = "5-Model Average, Mid-range emissions (A1B)";
 				break;
 		}
 
@@ -197,12 +197,12 @@ plotBands: function() {
 function() {
 					switch( snapCharts.data.dataset ) {
 
-						case 'B1' : return '5 Model Average, Low-range emissions (B1)';
-						case 'A1B' : return '5 Model Average, Mid-range emissions (A1B)';
+						case 'B1' : return '5-Model Average, Low-range emissions (B1)';
+						case 'A1B' : return '5-Model Average, Mid-range emissions (A1B)';
 
 						case 'B1' : return '';
 						case 'A1B' : return '';
-						case 'A2' : return '5 Model Average, High-range emissions (A2)';
+						case 'A2' : return '5-Model Average, High-range emissions (A2)';
 					}
 				}
 function() {

@@ -17,7 +17,7 @@ Our principal products are downscaled historical and projected monthly climate d
 Please visit our <a href="/methods.php">Methods</a> section for a description of our downscaling procedure.  
 </p>
 <p>
-To visualize a selection of datasets, please visit the <a href="maps.php" target="_blank">map tool</a>.
+To visualize a selection of datasets, please visit the <a href="maps.php" >map tool</a>.
 </p>
 <p>
 For a full list of our available data, please see below.
@@ -57,7 +57,7 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 <div class="dataAccordion">
 <h3><a href="#">Projected Monthly Temperature and Precipitation - 771 m AR4</a></h3>
 <div>
-<p>Projected (2001-2100: B1, A1B, and A2 scenarios) monthly average temperature and total precipitation from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771 m via the delta method.  A 5 Model Average is also included.</p>
+<p>Projected (2001-2100: B1, A1B, and A2 scenarios) monthly average temperature and total precipitation from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771 m via the delta method.  A 5-Model Average is also included.</p>
 <table>
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
@@ -147,7 +147,7 @@ pr_AK_771m_ukmo_hadcm3_sresa2.zip
 
 
 <p>
-Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771 m via the delta method.  A 5 Model Average is also included.</p>
+Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771 m via the delta method.  A 5-Model Average is also included.</p>
 <table>
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
@@ -276,7 +276,7 @@ logs_AK_771m_ukmo_hadcm3_sresa2.zip
 <div>
 
 <p>
-Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771 m via the delta method.  A 5 Model Average is also included.
+Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771 m via the delta method.  A 5-Model Average is also included.
 </p>
 
 <table>
@@ -332,7 +332,7 @@ pr_decadal_summaries_AK_771m_ukmo_hadcm3_sresa2.zip
 
 
 <p>
-Projected (2001&ndash;2100: B1, A1B, and A2 scenarios) monthly temperature and precipitation from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 2 km via the delta method.  A 5 Model Average is also included.
+Projected (2001&ndash;2100: B1, A1B, and A2 scenarios) monthly temperature and precipitation from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 2 km via the delta method.  A 5-Model Average is also included.
 </p>
 
 <table>
@@ -424,7 +424,7 @@ pr_AK_CAN_2km_ukmo_hadcm3_sresa2.zip
 <div>
 
 <p>
-Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771 m via the delta method.  A 5 Model Average is also included.
+Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771 m via the delta method.  A 5-Model Average is also included.
 </p>
 
 <table>
@@ -561,7 +561,7 @@ logs_AK_CAN_2km_ukmo_hadcm3_sresa2.zip
 <div>
 
 <p>
-Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771 m via the delta method.  A 5 Model Average is also included.
+Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771 m via the delta method.  A 5-Model Average is also included.
 </p>
 
 <table>

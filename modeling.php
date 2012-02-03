@@ -29,7 +29,7 @@ An understanding of the processes that control wildland fuel accumulation, inclu
 <ul class="resources">
 <li>R Statistics Package</li>
 <li>TextPad</li>
-<li><a href="http://www.sublimetext.com/2" target="_blank">Sublime Text 2</a></li>
+<li><a href="http://www.sublimetext.com/2" >Sublime Text 2</a></li>
 </ul>
 <h5>Model Input Datasets</h5>
 <ul class="resources">

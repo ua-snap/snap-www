@@ -182,7 +182,7 @@ class VideoResource extends Resource {
     public function getEmbeddedVideo()
     {
         return <<<html
-<iframe src="{$this->embeddedUrl}?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe><p><a class="title" target="_blank" href="{$this->embeddedUrl}">{$this->embeddedTitle}</a> from <a class="user" target="_blank" href="{$this->embeddedUserUrl}">{$this->embeddedUser}</a> on <a class="source" target="_blank" href="http://vimeo.com">Vimeo</a>.</p>
+<iframe src="{$this->embeddedUrl}?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe><p><a class="title"  href="{$this->embeddedUrl}">{$this->embeddedTitle}</a> from <a class="user"  href="{$this->embeddedUserUrl}">{$this->embeddedUser}</a> on <a class="source"  href="http://vimeo.com">Vimeo</a>.</p>
 html
 ;
     }
@@ -190,7 +190,7 @@ html
     public function getLinkedVideo()
     {
         return <<<html
-<p><a class="link" target="_blank" href="{$this->linkedUrl}">{$this->linkedTitle}</a></p>
+<p><a class="link"  href="{$this->linkedUrl}">{$this->linkedTitle}</a></p>
 html
 ;
     }

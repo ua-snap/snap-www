@@ -219,8 +219,8 @@ snap.submenus = {
 		'renderer' : {
 			getTitleJson : function() {
 				return {
-					prefix: 'downsampled to',
-					title: '2km'
+					prefix: 'at',
+					title: '2km resolution'
 				};
 			},
 			getContent : function() {
@@ -237,12 +237,12 @@ snap.submenus = {
 		'renderer' : {
 			getTitleJson : function() {
 				return {
-					prefix: 'modeled with',
-					title: 'the GCM'
+					prefix: 'from the',
+					title: '5-model average'
 				};
 			},
 			getContent : function() {
-				return '<p style="margin: 1ex;">Data is an average of 5 GCM&rsquo;s. <a href="modeling.php">More info&hellip;</a></p>';
+				return '<p style="margin: 1ex;">Data is an average of 5 GCM&rsquo;s. <a href="/downscaling.php#model_selection">More info&hellip;</a></p>';
 			}
 		}
 	}
@@ -277,7 +277,7 @@ snap.menus = {
 			},
 			'observedDayOfFreeze' : {
 				'name' : 'Historical PRISM Day of Freeze',
-				'description' : 'Estimated day where consecutive monthly midpoint temperatures transition from positive to negative, indicating the day of freeze. More detailed explanations are discussed in the <metadata>.',
+				'description' : 'Estimated day where consecutive monthly midpoint temperatures transition from positive to negative, indicating the day of freeze.',
 				'submenus' : {
 					'historicalInterval' : window.snap.submenus.nonseasonalObservedIntervals,
 					'historical' : window.snap.submenus.historicalRange,
@@ -287,7 +287,7 @@ snap.menus = {
 			},
 			'observedDayOfThaw' : {
 				'name' : 'Historical PRISM Day of Thaw',
-				'description' : 'Estimated day where consecutive monthly midpoint temperatures transition from negative to positive, indicating the day of thaw. More detailed explanations are discussed in the <metadata>.',
+				'description' : 'Estimated day where consecutive monthly midpoint temperatures transition from negative to positive, indicating the day of thaw.',
 				'submenus' : {
 					'historicalInterval' : window.snap.submenus.nonseasonalObservedIntervals,
 					'historical' : window.snap.submenus.historicalRange,
@@ -297,7 +297,7 @@ snap.menus = {
 			},
 			'observedLengthOfGrowingSeason' : {
 				'name' : 'Historical PRISM Length of Growing Season',
-				'description' : 'Estimated number of days between day of thaw and day of freeze. More detailed explanations are discussed in the <metadata>.',
+				'description' : 'Estimated number of days between day of thaw and day of freeze.',
 				'submenus' : {
 					'historicalInterval' : window.snap.submenus.nonseasonalObservedIntervals,
 					'historical' : window.snap.submenus.historicalRange,
@@ -308,7 +308,7 @@ snap.menus = {
 			},
 			'temperature' : {
 				'name' : 'Projected GCM Average Temperature',
-				'description' : 'This is average annual temperature for the given date range.  This is calculated by averaging over each year and then averaging over the given date range. More detailed explanations are discussed in the <metadata>.',
+				'description' : 'This is average annual temperature for the given date range.  This is calculated by averaging over each year and then averaging over the given date range.',
 				'submenus' : {
 					// 'key' => 'value', where key is the same as the key in the window.snap.state object.
 					'interval' : window.snap.submenus.intervals,
@@ -324,7 +324,7 @@ snap.menus = {
 			},
 			'precipitation' : {
 				'name' : 'Projected GCM Total Precipitation',
-				'description' : 'This is average total annual precipitation (rain and snow water equivalent) for the given range. This is calculated by finding the sum of precipitation for each year, and then averaging over the given date range. More detailed explanations are discussed in the <metadata>.',
+				'description' : 'This is average total annual precipitation (rain and snow water equivalent) for the given range. This is calculated by finding the sum of precipitation for each year, and then averaging over the given date range.',
 				'submenus' : {
 					'interval' : window.snap.submenus.intervals,
 					'range' : window.snap.submenus.ranges,
@@ -339,7 +339,7 @@ snap.menus = {
 			},
 			'dayOfFreeze' : {
 				'name' : 'Projected GCM Day of Freeze',
-				'description' : 'Estimated day where consecutive monthly midpoint temperatures transition from positive to negative, indicating the day of freeze. More detailed explanations are discussed in the <metadata>.',
+				'description' : 'Estimated day where consecutive monthly midpoint temperatures transition from positive to negative, indicating the day of freeze.',
 				'submenus' : {
 					'interval' : window.snap.submenus.nonseasonalIntervals,
 					'range' : window.snap.submenus.ranges,
@@ -351,7 +351,7 @@ snap.menus = {
 			},
 			'dayOfThaw' : {
 				'name' : 'Projected GCM Day of Thaw',
-				'description' : 'Estimated day where consecutive monthly midpoint temperatures transition from negative to positive, indicating the day of thaw. More detailed explanations are discussed in the <metadata>.',
+				'description' : 'Estimated day where consecutive monthly midpoint temperatures transition from negative to positive, indicating the day of thaw.',
 				'submenus' : {
 					'interval' : window.snap.submenus.nonseasonalIntervals,
 					'range' : window.snap.submenus.ranges,
@@ -363,7 +363,7 @@ snap.menus = {
 			},
 			'lengthOfGrowingSeason' : {
 				'name' : 'Projected GCM Length of Growing Season',
-				'description' : 'Estimated number of days between day of thaw and day of freeze. More detailed explanations are discussed in the <metadata>.',
+				'description' : 'Estimated number of days between day of thaw and day of freeze.',
 				'submenus' : {
 					'interval' : window.snap.submenus.nonseasonalIntervals,
 					'range' : window.snap.submenus.ranges,

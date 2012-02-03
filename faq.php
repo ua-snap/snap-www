@@ -70,16 +70,16 @@ Estimated Julian days of freeze and thaw were calculated by assuming a linear ch
 Walsh, John E.; Chapman, William L.; Romanovsky, Vladimi; Christensen, Jens H.; Stendel, Martin (2008). Global Climate Model Performance over Alaska and Greenland. <span class="journal">Journal of Climate</span> <span class="page">21</span> (23): 6156–74
 </li>
 <li>
-Hayhoe, K. A. (2010). A standardized framework for evaluating the skill of regional climate downscaling  techniques.  Ph.D. thesis, University of Illinois, 153 pp., available at <a href="https://www.ideals.illinois.edu/handle/2142/16044" target="_blank">https://www.ideals.illinois.edu/handle/2142/16044</a>
+Hayhoe, K. A. (2010). A standardized framework for evaluating the skill of regional climate downscaling  techniques.  Ph.D. thesis, University of Illinois, 153 pp., available at <a href="https://www.ideals.illinois.edu/handle/2142/16044" >https://www.ideals.illinois.edu/handle/2142/16044</a>
 </li>
 <li>
 Hay, L. E. (2000). A comparison of delta change and downscaled GCM scenarios for three mountainous basins in the United States. Journal of the American Water Resources Association, 36(2) 387-397.
 </li>
 <li>
-PRISM Climate Group, Oregon State University, <a href="http://prism.oregonstate.edu" target="_blank">http://prism.oregonstate.edu</a>, accessed 4 Sept 2011
+PRISM Climate Group, Oregon State University, <a href="http://prism.oregonstate.edu" >http://prism.oregonstate.edu</a>, accessed 4 Sept 2011
 </li>
 <li>
-Climatic Research Unit (CRU), University of East Anglia, <a href="http://www.cru.uea.ac.uk/"> target="_blank">http://www.cru.uea.ac.uk/</a>, accessed 4 Sept 2011
+Climatic Research Unit (CRU), University of East Anglia, <a href="http://www.cru.uea.ac.uk/"> >http://www.cru.uea.ac.uk/</a>, accessed 4 Sept 2011
 </li>
 </ul>
 <p><a href="#top">Back to top</a></p>
@@ -93,11 +93,11 @@ SNAP uses coupled atmosphere-ocean GCMs for climate modeling, which are the most
 </p>
 <ul>
 <li><a href="/downscaling.php#data_sources">SNAP&rsquo;s use of GCMs</a></li>
-<li><a href="http://www.ipcc-data.org/ddc_gcm_guide.html" target="_blank">GCMs on IPCC</a></li>
-<li><a href="http://en.wikipedia.org/wiki/Global_climate_model" target="_blank">GCMs on Wikipedia</a></li>
+<li><a href="http://www.ipcc-data.org/ddc_gcm_guide.html" >GCMs on IPCC</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Global_climate_model" >GCMs on Wikipedia</a></li>
 </ul>
 <div style="text-align: center"><img src="images/AtmosphericModelSchematic.png" title="http://celebrating200years.noaa.gov/breakthroughs/climate_model/modeling_schematic.html
-" /><p><a href="http://celebrating200years.noaa.gov/breakthroughs/climate_model/modeling_schematic.html" target="_blank">NOAA 200th Celebration</a> diagram showing a climate model, accessed 30 January 2012</p>
+" /><p><a href="http://celebrating200years.noaa.gov/breakthroughs/climate_model/modeling_schematic.html" >NOAA 200th Celebration</a> diagram showing a climate model, accessed 30 January 2012</p>
 </div>
 <p><a href="#top">Back to top</a></p>
 
@@ -107,7 +107,7 @@ SNAP uses coupled atmosphere-ocean GCMs for climate modeling, which are the most
 This white paper explains how climate models work, describes how some WUCA members have used climate models and downscaling to assess impacts on their systems and develop adaptation options, and makes seven initial recommendations for how climate modeling and downscaling techniques can be improved so that these tools and techniques can be more useful for the water sector.
 </p>
 <p><a href="http://www.wucaonline.org/assets/pdf/pubs_whitepaper_120909.pdf" class="pdf">Options for Improving Climate Modeling to Assist Water Utility Planning for Climate Change</a><br/>
-Source: <a href="http://www.wucaonline.org/html/actions_publications.html" target="_blank">Water Utility Climate Alliance</a>
+Source: <a href="http://www.wucaonline.org/html/actions_publications.html" >Water Utility Climate Alliance</a>
 </p>
 <p><a href="#top">Back to top</a></p>
 
@@ -156,10 +156,10 @@ A world of independently operating, self-reliant nations.
 <h5>More information</h5>
 <ul class="references">
 <li>
-<a href="http://www.ipcc.ch/pdf/special-reports/spm/sres-en.pdf" target="_blank">Scenarios on IPCC</a>
+<a href="http://www.ipcc.ch/pdf/special-reports/spm/sres-en.pdf" >Scenarios on IPCC</a>
 </li>
 <li>
-<a href="http://en.wikipedia.org/wiki/Special_Report_on_Emissions_Scenarios" target="_blank">Scenarios on Wikipedia</a>
+<a href="http://en.wikipedia.org/wiki/Special_Report_on_Emissions_Scenarios" >Scenarios on Wikipedia</a>
 </li>
 </ul>
 <p><a href="#top">Back to top</a></p>
