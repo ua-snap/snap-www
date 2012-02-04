@@ -158,6 +158,14 @@ $('#sendEmailButton').button().click(function(e) {
     }
 });
 
+//hide missing
+$(function() {
+   $('img').error(function() {
+       $(this).hide();
+   } 
+});
+
+
                     </script>
                 </form>
                 </div>

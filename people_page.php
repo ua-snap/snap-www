@@ -38,14 +38,9 @@ $page->connectToDatabase();
                         <div style="line-height: 20px;"><?php echo $summary_string; ?></div>
                     </div>
                 </div>
-                <!--
-                <div style="width: 850px; margin: auto; clear: both; padding-top: 100px;">
-                    <div style="font-size: 20px; text-align: center; padding-bottom: 20px; border-bottom: 1px solid #6a7173;">Publications</div>
-                -->
+
                 </div>
             </div>
-<?php
-?>
         </div>
     </div>
 <?php

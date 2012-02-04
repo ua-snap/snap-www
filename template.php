@@ -136,7 +136,7 @@ class webPage {
                 <a class="addthis_button"><img src="/images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/></a>
             </div>
         </div>
-        <div style="color: #999999; width: 975px; margin: auto; text-align: right; padding-top: 10px;" class="contactbar"><a href="/people.php#contact">contact</a> | <span>search</span></div>
+        <div style="color: #999999; width: 975px; margin: auto; text-align: right; padding-top: 10px;" class="contactbar"><a href="/people.php#contact">contact</a></div>
         <?php
     }
     public function pageFooter(){ ?>
@@ -161,7 +161,7 @@ class webPage {
             <div id="pageFooterInfo" style="margin-bottom: 40px; min-height: 60px">
                 <div style="float: left; margin-right: 40px;">
                     <div><a href="/"><img src="/images/snap_acronym_rgb.png" height="53px" alt="SNAP Acronym Logo" /></a></div>
-                    <div class="contactbar" style="text-align: right;"><a href="/people.php#contact">contact</a> | <span>search</span></div>
+                    <div class="contactbar" style="text-align: right;"><a href="/people.php#contact">contact</a></div>
                 </div>
                 
                 <div style ="float: left; width: 470px; text-align: left; margin-top: 13px;"><?php echo 'V'.SNAPWEB_VERSION; ?> Copyright &copy; 2011 <a href="/" style="color: #222222; text-decoration: underline;">Scenarios Network for Alaska &amp; Arctic Planning</a>, a research institute of the <a href="http://www.uaf.edu" style="color: #222222; text-decoration: underline;">University of Alaska Fairbanks</a>.  UAF is an affirmative action/equal opportunity employer and educational institution.

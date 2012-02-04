@@ -234,6 +234,10 @@ a:hover {
 	list-style: none;
 }
 
+#twitter_update_list li span a {
+	color: #acf !important;
+}
+
 .submenu {
 	width: 975px; 
 	margin: auto;
