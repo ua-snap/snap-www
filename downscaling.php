@@ -130,7 +130,7 @@ At this point, our GCM anomaly datasets are at the same spatial resolution as ou
 
 <h4>Validation</h4>
 <p>
-While the baseline climate data used in our downscaling procedure (e.g. PRISM and CRU data) have been peer reviewed and accepted by the climate community, we feel it is necessary to vet our own products to increase our confidence in them.  While it is impossible to validate future data, it is possible to directly compare twentieth century scenario (20c3m) GCM data to actual weather station data.  A report of this process is available <a href="<?php echo Config::$url ?>/resource_page.php?resourceid=6" >here</a>.  Additionally, all of our projected future monthly output data are plotted and inspected by a committee of climate experts.  Plots of these can be found under each dataset on the <a href="/gisdata.php">Data</a> page.
+While the baseline climate data used in our downscaling procedure (e.g. PRISM and CRU data) have been peer reviewed and accepted by the climate community, we feel it is necessary to vet our own products to increase our confidence in them.  While it is impossible to validate future data, it is possible to directly compare twentieth century scenario (20c3m) GCM data to actual weather station data.  A report of this process is available <a href="<?php echo Config::$url ?>/resource_page.php?resourceid=6" >here</a>.  Additionally, all of our projected future monthly output data are plotted and inspected by a committee of climate experts.  Plots of these can be found under each dataset on the <a href="/datamaps.php">Data</a> page.
 </p>
 
 <h4>Scripts</h4>

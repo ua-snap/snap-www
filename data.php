@@ -432,7 +432,7 @@ Projected (2001&ndash;2100: B1, A1B, and A2 scenarios) monthly temperature and p
 Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771 m via the delta method.  A 5-Model Average is also included.
 </p>
 
-<table>
+<table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;2000 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>2 km</td></tr>
@@ -440,6 +440,7 @@ Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature produ
 <tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
 </tbody>
 </table>
+<img src="images/akcanada_extent.png" alt="" />
 
 <h4>Decadal Summaries by month, year, or season</h4>
 
@@ -457,30 +458,31 @@ Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature produ
 </ul>
 
 <h5>All products by model and scenario</h5>
-<div class="productDownloads">tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresb1.zip
-tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresa1b.zip
-tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresa2.zip
+<pre class="productDownloads">
+<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresb1.zip">tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresb1.zip</a> (375 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresa1b.zip">tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresa1b.zip</a> (375 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresa2.zip">tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresa2.zip</a> (376 MB)
 
-tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresb1.zip
-tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresa1b.zip
-tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresa2.zip
+<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresb1.zip">tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresb1.zip</a> (333 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresa1b.zip">tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresa1b.zip</a> (333 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresa2.zip">tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresa2.zip</a> (333 MB)
 
-tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresb1.zip
-tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresa1b.zip
-tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresa2.zip
+<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresb1.zip">tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresb1.zip</a> (332 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresa1b.zip">tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresa1b.zip</a> (332 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresa2.zip">tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresa2.zip</a> (332 MB)
 
-tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresb1.zip
-tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresa1b.zip
-tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresa2.zip
+<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresb1.zip">tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresb1.zip</a> (332 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresa1b.zip">tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresa1b.zip</a> (334 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresa2.zip">tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresa2.zip</a> (336 MB)
 
-tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresb1.zip
-tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresa1b.zip
-tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresa2.zip
+<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresb1.zip">tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresb1.zip</a> (332 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresa1b.zip">tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresa1b.zip</a> (333 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresa2.zip">tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresa2.zip</a> (332 MB)
 
-tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresb1.zip
-tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa1b.zip
-tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa2.zip
-</div>
+<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresb1.zip">tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresb1.zip</a> (334 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa1b.zip">tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa1b.zip</a> (336 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa2.zip">tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa2.zip</a> (336 MB)
+</pre>
 
 <h4>Day of Freeze, Thaw, Length of Growing Season</h4>
 <p>
@@ -504,57 +506,57 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 <td>
 <h5>Data</h5>
 <pre>
-dof_dot_AK_CAN_2km_5modelAvg_sresb1.zip
-dof_dot_AK_CAN_2km_5modelAvg_sresa1b.zip
-dof_dot_AK_CAN_2km_5modelAvg_sresa2.zip
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_5modelAvg_sresb1.zip">dof_dot_AK_CAN_2km_5modelAvg_sresb1.zip</a> (27 MB)
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_5modelAvg_sresa1b.zip">dof_dot_AK_CAN_2km_5modelAvg_sresa1b.zip</a> (27 MB)
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_5modelAvg_sresa2.zip">dof_dot_AK_CAN_2km_5modelAvg_sresa2.zip</a> (27 MB)
 
-dof_dot_AK_CAN_2km_cccma_cgcm3_1_sresb1.zip
-dof_dot_AK_CAN_2km_cccma_cgcm3_1_sresa1b.zip
-dof_dot_AK_CAN_2km_cccma_cgcm3_1_sresa2.zip
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_cccma_cgcm3_1_sresb1.zip">dof_dot_AK_CAN_2km_cccma_cgcm3_1_sresb1.zip</a> (27 MB)
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_cccma_cgcm3_1_sresa1b.zip">dof_dot_AK_CAN_2km_cccma_cgcm3_1_sresa1b.zip</a> (27 MB)
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_cccma_cgcm3_1_sresa2.zip">dof_dot_AK_CAN_2km_cccma_cgcm3_1_sresa2.zip</a> (27 MB)
 
-dof_dot_AK_CAN_2km_gfdl_cm2_1_sresb1.zip
-dof_dot_AK_CAN_2km_gfdl_cm2_1_sresa1b.zip
-dof_dot_AK_CAN_2km_gfdl_cm2_1_sresa2.zip
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_gfdl_cm2_1_sresb1.zip">dof_dot_AK_CAN_2km_gfdl_cm2_1_sresb1.zip</a> (27 MB)
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_gfdl_cm2_1_sresa1b.zip">dof_dot_AK_CAN_2km_gfdl_cm2_1_sresa1b.zip</a> (27 MB)
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_gfdl_cm2_1_sresa2.zip">dof_dot_AK_CAN_2km_gfdl_cm2_1_sresa2.zip</a> (27 MB)
 
-dof_dot_AK_CAN_2km_miroc3_2_medres_sresb1.zip
-dof_dot_AK_CAN_2km_miroc3_2_medres_sresa1b.zip
-dof_dot_AK_CAN_2km_miroc3_2_medres_sresa2.zip
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_miroc3_2_medres_sresb1.zip">dof_dot_AK_CAN_2km_miroc3_2_medres_sresb1.zip</a> (27 MB)
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_miroc3_2_medres_sresa1b.zip">dof_dot_AK_CAN_2km_miroc3_2_medres_sresa1b.zip</a> (27 MB)
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_miroc3_2_medres_sresa2.zip">dof_dot_AK_CAN_2km_miroc3_2_medres_sresa2.zip</a> (27 MB)
 
-dof_dot_AK_CAN_2km_mpi_echam5_sresb1.zip
-dof_dot_AK_CAN_2km_mpi_echam5_sresa1b.zip
-dof_dot_AK_CAN_2km_mpi_echam5_sresa2.zip
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_mpi_echam5_sresb1.zip">dof_dot_AK_CAN_2km_mpi_echam5_sresb1.zip</a> (27 MB)
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_mpi_echam5_sresa1b.zip">dof_dot_AK_CAN_2km_mpi_echam5_sresa1b.zip</a> (27 MB)
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_mpi_echam5_sresa2.zip">dof_dot_AK_CAN_2km_mpi_echam5_sresa2.zip</a> (27 MB)
 
-dof_dot_AK_CAN_2km_ukmo_hadcm3_sresb1.zip
-dof_dot_AK_CAN_2km_ukmo_hadcm3_sresa1b.zip
-dof_dot_AK_CAN_2km_ukmo_hadcm3_sresa2.zip
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_ukmo_hadcm3_sresb1.zip">dof_dot_AK_CAN_2km_ukmo_hadcm3_sresb1.zip</a> (27 MB)
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_ukmo_hadcm3_sresa1b.zip">dof_dot_AK_CAN_2km_ukmo_hadcm3_sresa1b.zip</a> (27 MB)
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_ukmo_hadcm3_sresa2.zip">dof_dot_AK_CAN_2km_ukmo_hadcm3_sresa2.zip</a> (47 MB)
 </pre>
 </td>
 <td>
 <h5>Data</h5>
 <pre>
-logs_AK_CAN_2km_5modelAvg_sresb1.zip
-logs_AK_CAN_2km_5modelAvg_sresa1b.zip
-logs_AK_CAN_2km_5modelAvg_sresa2.zip
+<a href="/files/data/derived/logs_AK_CAN_2km_5modelAvg_sresb1.zip">logs_AK_CAN_2km_5modelAvg_sresb1.zip</a> (17 MB)
+<a href="/files/data/derived/logs_AK_CAN_2km_5modelAvg_sresa1b.zip">logs_AK_CAN_2km_5modelAvg_sresa1b.zip</a> (17 MB)
+<a href="/files/data/derived/logs_AK_CAN_2km_5modelAvg_sresa2.zip">logs_AK_CAN_2km_5modelAvg_sresa2.zip</a> (17 MB)
 
-logs_AK_CAN_2km_cccma_cgcm3_1_sresb1.zip
-logs_AK_CAN_2km_cccma_cgcm3_1_sresa1b.zip
-logs_AK_CAN_2km_cccma_cgcm3_1_sresa2.zip
+<a href="/files/data/derived/logs_AK_CAN_2km_cccma_cgcm3_1_sresb1.zip">logs_AK_CAN_2km_cccma_cgcm3_1_sresb1.zip</a> (17 MB)
+<a href="/files/data/derived/logs_AK_CAN_2km_cccma_cgcm3_1_sresa1b.zip">logs_AK_CAN_2km_cccma_cgcm3_1_sresa1b.zip</a> (17 MB)
+<a href="/files/data/derived/logs_AK_CAN_2km_cccma_cgcm3_1_sresa2.zip">logs_AK_CAN_2km_cccma_cgcm3_1_sresa2.zip</a> (17 MB)
 
-logs_AK_CAN_2km_gfdl_cm2_1_sresb1.zip
-logs_AK_CAN_2km_gfdl_cm2_1_sresa1b.zip
-logs_AK_CAN_2km_gfdl_cm2_1_sresa2.zip
+<a href="/files/data/derived/logs_AK_CAN_2km_gfdl_cm2_1_sresb1.zip">logs_AK_CAN_2km_gfdl_cm2_1_sresb1.zip</a> (17 MB)
+<a href="/files/data/derived/logs_AK_CAN_2km_gfdl_cm2_1_sresa1b.zip">logs_AK_CAN_2km_gfdl_cm2_1_sresa1b.zip</a> (17 MB)
+<a href="/files/data/derived/logs_AK_CAN_2km_gfdl_cm2_1_sresa2.zip">logs_AK_CAN_2km_gfdl_cm2_1_sresa2.zip</a> (17 MB)
 
-logs_AK_CAN_2km_miroc3_2_medres_sresb1.zip
-logs_AK_CAN_2km_miroc3_2_medres_sresa1b.zip
-logs_AK_CAN_2km_miroc3_2_medres_sresa2.zip
+<a href="/files/data/derived/logs_AK_CAN_2km_miroc3_2_medres_sresb1.zip">logs_AK_CAN_2km_miroc3_2_medres_sresb1.zip</a> (17 MB)
+<a href="/files/data/derived/logs_AK_CAN_2km_miroc3_2_medres_sresa1b.zip">logs_AK_CAN_2km_miroc3_2_medres_sresa1b.zip</a> (17 MB)
+<a href="/files/data/derived/logs_AK_CAN_2km_miroc3_2_medres_sresa2.zip">logs_AK_CAN_2km_miroc3_2_medres_sresa2.zip</a> (17 MB)
 
-logs_AK_CAN_2km_mpi_echam5_sresb1.zip
-logs_AK_CAN_2km_mpi_echam5_sresa1b.zip
-logs_AK_CAN_2km_mpi_echam5_sresa2.zip
+<a href="/files/data/derived/logs_AK_CAN_2km_mpi_echam5_sresb1.zip">logs_AK_CAN_2km_mpi_echam5_sresb1.zip</a> (17 MB)
+<a href="/files/data/derived/logs_AK_CAN_2km_mpi_echam5_sresa1b.zip">logs_AK_CAN_2km_mpi_echam5_sresa1b.zip</a> (17 MB)
+<a href="/files/data/derived/logs_AK_CAN_2km_mpi_echam5_sresa2.zip">logs_AK_CAN_2km_mpi_echam5_sresa2.zip</a> (17 MB)
 
-logs_AK_CAN_2km_ukmo_hadcm3_sresb1.zip
-logs_AK_CAN_2km_ukmo_hadcm3_sresa1b.zip
-logs_AK_CAN_2km_ukmo_hadcm3_sresa2.zip
+<a href="/files/data/derived/logs_AK_CAN_2km_ukmo_hadcm3_sresb1.zip">logs_AK_CAN_2km_ukmo_hadcm3_sresb1.zip</a> (17 MB)
+<a href="/files/data/derived/logs_AK_CAN_2km_ukmo_hadcm3_sresa1b.zip">logs_AK_CAN_2km_ukmo_hadcm3_sresa1b.zip</a> (17 MB)
+<a href="/files/data/derived/logs_AK_CAN_2km_ukmo_hadcm3_sresa2.zip">logs_AK_CAN_2km_ukmo_hadcm3_sresa2.zip</a> (17 MB)
 </pre>
 </td>
 </tr>
@@ -569,7 +571,7 @@ logs_AK_CAN_2km_ukmo_hadcm3_sresa2.zip
 Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771 m via the delta method.  A 5-Model Average is also included.
 </p>
 
-<table>
+<table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;2000 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>771 m</td></tr>
@@ -577,6 +579,7 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 <tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
 </tbody>
 </table>
+<img src="images/akcanada_extent.png" alt="" />
 
 <h4>Decadal Summaries by month, year, and season</h4>
 
@@ -588,30 +591,31 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 </ul>
 
 <h5>All products by model and scenario</h5>
-<div class="productDownloads">pr_decadal_summaries_AK_CAN_2km_5modelAvg_sresb1.zip
-pr_decadal_summaries_AK_CAN_2km_5modelAvg_sresa1b.zip
-pr_decadal_summaries_AK_CAN_2km_5modelAvg_sresa2.zip
+<pre class="productDownloads">
+<a href="/files/data/derived/pr_decadal_summaries_AK_CAN_2km_5modelAvg_sresb1.zip">pr_decadal_summaries_AK_CAN_2km_5modelAvg_sresb1.zip</a> (351 MB)
+<a href="/files/data/derived/pr_decadal_summaries_AK_CAN_2km_5modelAvg_sresa1b.zip">pr_decadal_summaries_AK_CAN_2km_5modelAvg_sresa1b.zip</a> (353 MB)
+<a href="/files/data/derived/pr_decadal_summaries_AK_CAN_2km_5modelAvg_sresa2.zip">pr_decadal_summaries_AK_CAN_2km_5modelAvg_sresa2.zip</a> (353 MB)
 
-pr_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresb1.zip
-pr_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresa1b.zip
-pr_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresa2.zip
+<a href="/files/data/derived/pr_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresb1.zip">pr_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresb1.zip</a> (318 MB)
+<a href="/files/data/derived/pr_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresa1b.zip">pr_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresa1b.zip</a> (320 MB)
+<a href="/files/data/derived/pr_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresa2.zip">pr_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresa2.zip</a> (321 MB)
 
-pr_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresb1.zip
-pr_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresa1b.zip
-pr_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresa2.zip
+<a href="/files/data/derived/pr_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresb1.zip">pr_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresb1.zip</a> (319 MB)
+<a href="/files/data/derived/pr_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresa1b.zip">pr_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresa1b.zip</a> (321 MB)
+<a href="/files/data/derived/pr_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresa2.zip">pr_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresa2.zip</a> (320 MB)
 
-pr_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresb1.zip
-pr_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresa1b.zip
-pr_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresa2.zip
+<a href="/files/data/derived/pr_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresb1.zip">pr_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresb1.zip</a> (317 MB)
+<a href="/files/data/derived/pr_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresa1b.zip">pr_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresa1b.zip</a> (319 MB)
+<a href="/files/data/derived/pr_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresa2.zip">pr_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresa2.zip</a> (319 MB)
 
-pr_decadal_summaries_AK_CAN_2km_mpi_echam5_sresb1.zip
-pr_decadal_summaries_AK_CAN_2km_mpi_echam5_sresa1b.zip
-pr_decadal_summaries_AK_CAN_2km_mpi_echam5_sresa2.zip
+<a href="/files/data/derived/pr_decadal_summaries_AK_CAN_2km_mpi_echam5_sresb1.zip">pr_decadal_summaries_AK_CAN_2km_mpi_echam5_sresb1.zip</a> (318 MB)
+<a href="/files/data/derived/pr_decadal_summaries_AK_CAN_2km_mpi_echam5_sresa1b.zip">pr_decadal_summaries_AK_CAN_2km_mpi_echam5_sresa1b.zip</a> (320 MB)
+<a href="/files/data/derived/pr_decadal_summaries_AK_CAN_2km_mpi_echam5_sresa2.zip">pr_decadal_summaries_AK_CAN_2km_mpi_echam5_sresa2.zip</a> (320 MB)
 
-pr_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresb1.zip
-pr_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa1b.zip
-pr_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa2.zip
-</div>
+<a href="/files/data/derived/pr_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresb1.zip">pr_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresb1.zip</a> (318 MB)
+<a href="/files/data/derived/pr_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa1b.zip">pr_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa1b.zip</a> (320 MB)
+<a href="/files/data/derived/pr_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa2.zip">pr_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa2.zip</a> (320 MB)
+</pre>
 
 </div>
 </div>
@@ -632,7 +636,7 @@ pr_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa2.zip
 Historical (1901&ndash;2009) monthly average temperature and total precipitation from CRU TS 3.1 climate data, downscaled to 771 m via the delta method.
 </p>
 
-<table>
+<table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>771 m</td></tr>
@@ -640,6 +644,7 @@ Historical (1901&ndash;2009) monthly average temperature and total precipitation
 <tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
 </tbody>
 </table>
+<img src="images/ak_extent.jpg" alt="" />
 
 <h4>Downloads</h4>
 
@@ -654,17 +659,13 @@ Historical (1901&ndash;2009) monthly average temperature and total precipitation
 <tr>
 <td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>44">Historical Monthly Average Temperature 771 m CRUTS3.1</a></td>
 <td>
-<a>
-tas_AK_771m_CRU_TS31_historical.zip
-</a>
+<a href="/files/data/monthly/tas_AK_771m_CRU_TS31_historical.zip">tas_AK_771m_CRU_TS31_historical.zip</a> (5.5 GB)
 </td>
 </tr>
 <tr>
 <td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>45">Historical Monthly Total Precipitation 771 m CRUTS3.1</a></td>
 <td>
-<a>
-pr_AK_771m_CRU_TS31_historical.zip
-</a>
+<a href="/files/data/monthly/pr_AK_771m_CRU_TS31_historical.zip">pr_AK_771m_CRU_TS31_historical.zip</a> (4.5 GB)
 </td>
 </tr>
 </tbody>
@@ -680,7 +681,7 @@ pr_AK_771m_CRU_TS31_historical.zip
 Historical (1910&ndash;2009) derived temperature products from CRU TS 3.1 climate data, downscaled to 2 km via the delta method.
 </p>
 
-<table>
+<table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>771 m</td></tr>
@@ -688,6 +689,7 @@ Historical (1910&ndash;2009) derived temperature products from CRU TS 3.1 climat
 <tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
 </tbody>
 </table>
+<img src="images/ak_extent.jpg" alt="" />
 
 <h4>Decadal summaries by month, year, and season</h4>
 
@@ -699,7 +701,9 @@ Historical (1910&ndash;2009) derived temperature products from CRU TS 3.1 climat
 </ul>
 
 <h5>All products</h5>
-<div class="productDownloads">tas_decadal_summaries_AK_771m_CRU_TS31_historical.zip</div>
+<pre class="productDownloads">
+<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_CRU_TS31_historical.zip">tas_decadal_summaries_AK_771m_CRU_TS31_historical.zip</a> (707 MB)
+</pre>
 
 <h4>Day of freeze, thaw, length of growing season</h4>
 <p>
@@ -718,16 +722,14 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 <tr>
 <td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>53">Historical Day of Freeze or Thaw 771m CRUTS3.1</a></td>
 <td>
-<a>
-dof_dot_AK_771m_CRU_TS31_historical.zip
-</a>
+<a href="/files/data/derived/dof_dot_AK_771m_CRU_TS31_historical.zip">dof_dot_AK_771m_CRU_TS31_historical.zip</a> (58 MB)
 </td>
 </tr>
 <tr>
 <td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>55">Historical Length of Growing Season 771m CRUTS3.1</a></td>
 <td>
 <a>
-logs_AK_771m_CRU_TS31_historical.zip
+<a href="/files/data/derived/logs_AK_771m_CRU_TS31_historical.zip">logs_AK_771m_CRU_TS31_historical.zip</a> (35 MB)
 </a>
 </td>
 </tr>
@@ -745,7 +747,7 @@ logs_AK_771m_CRU_TS31_historical.zip
 Historical (1910-2009) derived precipitation products from CRU TS 3.1 climate data, downscaled to 2 km via the delta method.
 </p>
 
-<table>
+<table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>771 m</td></tr>
@@ -753,6 +755,7 @@ Historical (1910-2009) derived precipitation products from CRU TS 3.1 climate da
 <tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
 </tbody>
 </table>
+<img src="images/ak_extent.jpg" alt="" />
 
 
 <h4>Decadal summaries by month, year, and season</h4>
@@ -765,7 +768,9 @@ Historical (1910-2009) derived precipitation products from CRU TS 3.1 climate da
 </ul>
 
 <h5>All products</h5>
-<div class="productDownloads">pr_decadal_summaries_AK_771m_CRU_TS31_historical.zip</div>
+<pre class="productDownloads">
+<a href="/files/data/derived/pr_decadal_summaries_AK_771m_CRU_TS31_historical.zip">pr_decadal_summaries_AK_771m_CRU_TS31_historical.zip</a> (655 MB)
+</pre>
 
 
 </div>
@@ -779,7 +784,7 @@ Historical (1910-2009) derived precipitation products from CRU TS 3.1 climate da
 Historical (1901-2009) monthly average temperature and total precipitation from CRU TS 3.1 climate data, downscaled to 2 km via the delta method.
 </p>
 
-<table>
+<table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;2000 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>2 km</td></tr>
@@ -787,6 +792,7 @@ Historical (1901-2009) monthly average temperature and total precipitation from 
 <tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
 </tbody>
 </table>
+<img src="images/akcanada_extent.png" alt="" />
 
 <table class="downloadsTable">
 <thead>
@@ -799,16 +805,14 @@ Historical (1901-2009) monthly average temperature and total precipitation from 
 <tr>
 <td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>28">Historical Monthly Average Temperature 2km CRUTS3.1</a></td>
 <td>
-<a>
-tas_AK_CAN_2km_CRU_TS31_historical.zip
-</a>
+<a href="/files/data/monthly/tas_AK_CAN_2km_CRU_TS31_historical.zip">tas_AK_CAN_2km_CRU_TS31_historical.zip</a> (2.9 GB)
 </td>
 </tr>
 <tr>
 <td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>31">Historical Monthly Total Precipitation 2km CRUTS3.1</a></td>
 <td>
 <a>
-pr_AK_CAN_2km_CRU_TS31_historical.zip
+<a href="/files/data/monthly/pr_AK_CAN_2km_CRU_TS31_historical.zip">pr_AK_CAN_2km_CRU_TS31_historical.zip</a> (2.5 GB)
 </a>
 </td>
 </tr>
@@ -827,7 +831,7 @@ pr_AK_CAN_2km_CRU_TS31_historical.zip
 Historical (1910-2009) derived temperature products from CRU TS 3.1 climate data, downscaled to 2 km via the delta method.
 </p>
 
-<table>
+<table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;2000 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>2 km</td></tr>
@@ -835,6 +839,7 @@ Historical (1910-2009) derived temperature products from CRU TS 3.1 climate data
 <tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
 </tbody>
 </table>
+<img src="images/akcanada_extent.png" alt="" />
 
 <h4>Decadal summaries by month, year, and season</h4>
 <h5>Metadata by product</h5>
@@ -848,7 +853,9 @@ Historical (1910-2009) derived temperature products from CRU TS 3.1 climate data
 </ul>
 
 <h5>All products</h5>
-<div class="productDownloads">tas_decadal_summaries_AK_CAN_2km_CRU_TS31_historical.zip</div>
+<pre class="productDownloads">
+<a href="/files/data/derived/tas_decadal_summaries_AK_CAN_2km_CRU_TS31_historical.zip">tas_decadal_summaries_AK_CAN_2km_CRU_TS31_historical.zip</a> (368 MB)
+</pre>
 
 <h4>Day of freeze, thaw, length of growing season</h4>
 <p>
@@ -867,22 +874,17 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 <tr>
 <td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>52">Historical Day of Freeze or Thaw 2km CRUTS3.1</a></td>
 <td>
-<a>dof_dot_AK_CAN_2km_CRU_TS31_historical.zip</a>
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_CRU_TS31_historical.zip">dof_dot_AK_CAN_2km_CRU_TS31_historical.zip</a> (30 MB)
 </td>
 </tr>
 <tr>
 <td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>54">Historical Length of Growing Season 2km CRUTS3.1</a></td>
 <td>
-<a>logs_AK_CAN_2km_CRU_TS31_historical.zip
-</a>
+<a href="/files/data/derived/logs_AK_CAN_2km_CRU_TS31_historical.zip">logs_AK_CAN_2km_CRU_TS31_historical.zip</a> (19 MB)
 </td>
 </tr>
 </tbody>
 </table>
-
-
-
-
 
 </div>
 
@@ -893,7 +895,7 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.1 climate data, downscaled to 2 km via the delta method.
 </p>
 
-<table>
+<table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;2000 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>2 km</td></tr>
@@ -901,6 +903,7 @@ Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.1 clima
 <tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
 </tbody>
 </table>
+<img src="images/akcanada_extent.png" alt="" />
 
 
 <h4>Decadal summaries by month, year, and season</h4>
@@ -915,7 +918,9 @@ Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.1 clima
 </ul>
 
 <h5>All products</h5>
-<div class="productDownloads">pr_decadal_summaries_AK_CAN_2km_CRU_TS31_historical.zip</div>
+<pre class="productDownloads">
+<a href="/files/data/derived/pr_decadal_summaries_AK_CAN_2km_CRU_TS31_historical.zip">pr_decadal_summaries_AK_CAN_2km_CRU_TS31_historical.zip</a> (345 MB)
+</div>
 </div>
 </div>
 </div>

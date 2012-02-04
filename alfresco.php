@@ -4,12 +4,6 @@ $page = new webPage("SNAP: ALFRESCO", "", "data");
 $page->openPage();
 $page->pageHeader();
 
-function getFileSize($f){
-    $sizes = array(" Bytes", " KB", " MB", " GB", " TB", " PB", " EB", " ZB", " YB");
-    $file_size = filesize($f);
-    $file_size = round($file_size/pow(1024, ($i = floor(log($file_size, 1024)))), $i > 1 ? 1 : 0) . $sizes[$i]; 
-    return $file_size;
-}
                 
 ?>
         <div id="main_body">

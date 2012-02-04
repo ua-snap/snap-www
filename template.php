@@ -3,6 +3,14 @@
 require_once 'src/Config.php';
 require_once 'src/Template.php';
 
+// Reused occasionally throughout the site.
+function getFileSize($f){
+    $sizes = array(" Bytes", " KB", " MB", " GB", " TB", " PB", " EB", " ZB", " YB");
+    $file_size = filesize($f);
+    $file_size = round($file_size/pow(1024, ($i = floor(log($file_size, 1024)))), $i > 1 ? 1 : 0) . $sizes[$i]; 
+    return $file_size;
+}
+
 class webPage {
     private $pageTitle;
     private $stylesheet;
