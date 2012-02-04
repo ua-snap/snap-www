@@ -82,12 +82,11 @@ class webPage {
         // include the maps-print.css after the maps.css so it has stronger precedence
         ?>
         <link type="text/css" href="css/maps-print.css" rel="stylesheet" media="print" />
-
         <link rel="shortcut icon" href="/images/snap.ico" />
     
     </head>
     <body>
-
+<div id="betabar"><strong>Wecome to the &beta;eta launch of the SNAP web site.</strong> We&rsquo;ll launch on <strong>Monday, February 6, 2012</strong> and there may be bugs/broken links until then.</div>
         <?php
     }
     public function pageHeader() { ?>    

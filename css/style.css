@@ -1,5 +1,17 @@
-@import url(http://fonts.googleapis.com/css?family=Miniver);
-@import url(http://fonts.googleapis.com/css?family=Nosifer);
+
+#betabar {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 18px;
+	background-color: #f2ff7d;
+	opacity: 1;
+	z-index: 10000;
+	color: black;
+	text-align: center;
+	padding: 1ex;
+	border-top: 1px solid #888;
+}
 
 html {
 	height: 100%;
@@ -639,17 +651,21 @@ td {
 	line-height: 1.3 !important;
 }
 
-.dataAccordionWrapper img {
+.dataAccordion img {
 	display: inline-block;
 	height: 75px;
 }
 
-.dataAccordionWrapper h4 {
+.dataAccordion h4 {
 	margin-bottom: .5ex;
 }
 
-.dataAccordionWrapper table.overview {
+.dataAccordion table.overview {
 	display: inline-block;
+}
+
+.dataAccordion table.overview {
+	
 }
 
 .dataAccordionWrapper table th[scope="row"] {
