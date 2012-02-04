@@ -55,10 +55,10 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 </div>
 <div class="dataAccordionWrapper">
 <div class="dataAccordion">
-<h3><a href="#">Projected Monthly Temperature and Precipitation - 771 m AR4</a></h3>
+<h3><a href="#proj_monthly_temp_precip771">Projected Monthly Temperature and Precipitation - 771 m AR4</a></h3>
 <div>
 <p>Projected (2001-2100: B1, A1B, and A2 scenarios) monthly average temperature and total precipitation from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771 m via the delta method.  A 5-Model Average is also included.</p>
-<table>
+<table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>771 m</td></tr>
@@ -66,6 +66,8 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 <tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
 </tbody>
 </table>
+<img src="images/ak_extent.jpg" alt="" />
+
 <table class="downloadsTable">
 <thead>
 <tr>
@@ -83,56 +85,57 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 <tr>
 <td>
 <h5>Data</h5>
-<pre><a>tas_AK_771m_5modelAvg_sresb1.zip</a>
-<a>tas_AK_771m_5modelAvg_sresa1b.zip</a>
-<a>tas_AK_771m_5modelAvg_sresa2.zip</a>
+<pre><a href="/files/data/monthly/tas_AK_771m_5modelAvg_sresb1.zip">tas_AK_771m_5modelAvg_sresb1.zip</a> (5.0 GB)
+<a href="/files/data/monthly/tas_AK_771m_5modelAvg_sresa1b.zip">tas_AK_771m_5modelAvg_sresa1b.zip</a> (5.0 GB)
+<a href="/files/data/monthly/tas_AK_771m_5modelAvg_sresa2.zip">tas_AK_771m_5modelAvg_sresa2.zip</a> (5.0 GB)
 
-<a>tas_AK_771m_cccma_cgcm3_1_sresb1.zip	</a>
-<a>tas_AK_771m_cccma_cgcm3_1_sresa1b.zip</a>
-<a>tas_AK_771m_cccma_cgcm3_1_sresa2.zip	</a>
+<a href="/files/data/monthly/tas_AK_771m_cccma_cgcm3_1_sresb1.zip">tas_AK_771m_cccma_cgcm3_1_sresb1.zip</a> (5.0 GB)
+<a href="/files/data/monthly/tas_AK_771m_cccma_cgcm3_1_sresa1b.zip">tas_AK_771m_cccma_cgcm3_1_sresa1b.zip</a> (5.0 GB)
+<a href="/files/data/monthly/tas_AK_771m_cccma_cgcm3_1_sresa2.zip">tas_AK_771m_cccma_cgcm3_1_sresa2.zip</a> (5.0 GB)
 
-<a>tas_AK_771m_gfdl_cm2_1_sresb1.zip</a>
-<a>tas_AK_771m_gfdl_cm2_1_sresa1b.zip</a>
-<a>tas_AK_771m_gfdl_cm2_1_sresa2.zip</a>
+<a href="/files/data/monthly/tas_AK_771m_gfdl_cm2_1_sresb1.zip">tas_AK_771m_gfdl_cm2_1_sresb1.zip</a> (5.0 GB)
+<a href="/files/data/monthly/tas_AK_771m_gfdl_cm2_1_sresa1b.zip">tas_AK_771m_gfdl_cm2_1_sresa1b.zip</a> (5.0 GB)
+<a href="/files/data/monthly/tas_AK_771m_gfdl_cm2_1_sresa2.zip">tas_AK_771m_gfdl_cm2_1_sresa2.zip</a> (5.0 GB)
 
-<a>tas_AK_771m_miroc3_2_medres_sresb1.zip</a>
-<a>tas_AK_771m_miroc3_2_medres_sresa1b.zip</a>
-<a>tas_AK_771m_miroc3_2_medres_sresa2.zip</a>
+<a href="/files/data/monthly/tas_AK_771m_miroc3_2_medres_sresb1.zip">tas_AK_771m_miroc3_2_medres_sresb1.zip</a> (5.0 GB)
+<a href="/files/data/monthly/tas_AK_771m_miroc3_2_medres_sresa1b.zip">tas_AK_771m_miroc3_2_medres_sresa1b.zip</a> (5.0 GB)
+<a href="/files/data/monthly/tas_AK_771m_miroc3_2_medres_sresa2.zip">tas_AK_771m_miroc3_2_medres_sresa2.zip</a> (5.0 GB)
 
-<a>tas_AK_771m_mpi_echam5_sresb1.zip</a>
-<a>tas_AK_771m_mpi_echam5_sresa1b.zip</a>
-<a>tas_AK_771m_mpi_echam5_sresa2.zip</a>
+<a href="/files/data/monthly/tas_AK_771m_mpi_echam5_sresb1.zip">tas_AK_771m_mpi_echam5_sresb1.zip</a> (5.1 GB)
+<a href="/files/data/monthly/tas_AK_771m_mpi_echam5_sresa1b.zip">tas_AK_771m_mpi_echam5_sresa1b.zip</a> (5.1 GB)
+<a href="/files/data/monthly/tas_AK_771m_mpi_echam5_sresa2.zip">tas_AK_771m_mpi_echam5_sresa2.zip</a> (5.1 GB)
 
-<a>tas_AK_771m_ukmo_hadcm3_sresb1.zip</a>
-<a>tas_AK_771m_ukmo_hadcm3_sresa1b.zip</a>
-<a>tas_AK_771m_ukmo_hadcm3_sresa2.zip</a>
+<a href="/files/data/monthly/tas_AK_771m_ukmo_hadcm3_sresb1.zip">tas_AK_771m_ukmo_hadcm3_sresb1.zip</a> (5.1 GB)
+<a href="/files/data/monthly/tas_AK_771m_ukmo_hadcm3_sresa1b.zip">tas_AK_771m_ukmo_hadcm3_sresa1b.zip</a> (5.1 GB )
+<a href="/files/data/monthly/tas_AK_771m_ukmo_hadcm3_sresa2.zip">tas_AK_771m_ukmo_hadcm3_sresa2.zip</a> (5.0 GB)
 </pre>
 </td>
 <td>
 <h5>Data</h5>
-<pre>pr_AK_771m_5modelAvg_sresb1.zip
-pr_AK_771m_5modelAvg_sresa1b.zip
-pr_AK_771m_5modelAvg_sresa2.zip
+<pre>
+<a href="/files/data/monthly/pr_AK_771m_5modelAvg_sresb1.zip">pr_AK_771m_5modelAvg_sresb1.zip</a> (4.3 GB)
+<a href="/files/data/monthly/pr_AK_771m_5modelAvg_sresa1b.zip">pr_AK_771m_5modelAvg_sresa1b.zip</a> (4.4 GB)
+<a href="/files/data/monthly/pr_AK_771m_5modelAvg_sresa2.zip">pr_AK_771m_5modelAvg_sresa2.zip</a> (4.3 GB)
 
-pr_AK_771m_cccma_cgcm3_1_sresb1.zip
-pr_AK_771m_cccma_cgcm3_1_sresa1b.zip
-pr_AK_771m_cccma_cgcm3_1_sresa2.zip
+<a href="/files/data/monthly/pr_AK_771m_cccma_cgcm3_1_sresb1.zip">pr_AK_771m_cccma_cgcm3_1_sresb1.zip</a> (4.3 GB)
+<a href="/files/data/monthly/pr_AK_771m_cccma_cgcm3_1_sresa1b.zip">pr_AK_771m_cccma_cgcm3_1_sresa1b.zip</a> (4.4 GB)
+<a href="/files/data/monthly/pr_AK_771m_cccma_cgcm3_1_sresa2.zip">pr_AK_771m_cccma_cgcm3_1_sresa2.zip</a> (4.4 GB)
 
-pr_AK_771m_gfdl_cm2_1_sresb1.zip
-pr_AK_771m_gfdl_cm2_1_sresa1b.zip
-pr_AK_771m_gfdl_cm2_1_sresa2.zip
+<a href="/files/data/monthly/pr_AK_771m_gfdl_cm2_1_sresb1.zip">pr_AK_771m_gfdl_cm2_1_sresb1.zip</a> (4.4 GB)
+<a href="/files/data/monthly/pr_AK_771m_gfdl_cm2_1_sresa1b.zip">pr_AK_771m_gfdl_cm2_1_sresa1b.zip</a> (4.4 GB)
+<a href="/files/data/monthly/pr_AK_771m_gfdl_cm2_1_sresa2.zip">pr_AK_771m_gfdl_cm2_1_sresa2.zip</a> (4.4 GB)
 
-pr_AK_771m_miroc3_2_medres_sresb1.zip
-pr_AK_771m_miroc3_2_medres_sresa1b.zip
-pr_AK_771m_miroc3_2_medres_sresa2.zip
+<a href="/files/data/monthly/pr_AK_771m_miroc3_2_medres_sresb1.zip">pr_AK_771m_miroc3_2_medres_sresb1.zip</a> (4.3 GB)
+<a href="/files/data/monthly/pr_AK_771m_miroc3_2_medres_sresa1b.zip">pr_AK_771m_miroc3_2_medres_sresa1b.zip</a> (4.3 GB)
+<a href="/files/data/monthly/pr_AK_771m_miroc3_2_medres_sresa2.zip">pr_AK_771m_miroc3_2_medres_sresa2.zip</a> (4.3 GB)
 
-pr_AK_771m_mpi_echam5_sresb1.zip
-pr_AK_771m_mpi_echam5_sresa1b.zip
-pr_AK_771m_mpi_echam5_sresa2.zip
+<a href="/files/data/monthly/pr_AK_771m_mpi_echam5_sresb1.zip">pr_AK_771m_mpi_echam5_sresb1.zip</a> (4.3 GB)
+<a href="/files/data/monthly/pr_AK_771m_mpi_echam5_sresa1b.zip">pr_AK_771m_mpi_echam5_sresa1b.zip</a> (4.4 GB)
+<a href="/files/data/monthly/pr_AK_771m_mpi_echam5_sresa2.zip">pr_AK_771m_mpi_echam5_sresa2.zip</a> (4.3 GB)
 
-pr_AK_771m_ukmo_hadcm3_sresb1.zip
-pr_AK_771m_ukmo_hadcm3_sresa1b.zip
-pr_AK_771m_ukmo_hadcm3_sresa2.zip
+<a href="/files/data/monthly/pr_AK_771m_ukmo_hadcm3_sresb1.zip">pr_AK_771m_ukmo_hadcm3_sresb1.zip</a> (4.3 GB)
+<a href="/files/data/monthly/pr_AK_771m_ukmo_hadcm3_sresa1b.zip">pr_AK_771m_ukmo_hadcm3_sresa1b.zip</a> (4.4 GB)
+<a href="/files/data/monthly/pr_AK_771m_ukmo_hadcm3_sresa2.zip">pr_AK_771m_ukmo_hadcm3_sresa2.zip</a> (4.3 GB)
 </pre>
 </td>
 </tr>
@@ -148,7 +151,7 @@ pr_AK_771m_ukmo_hadcm3_sresa2.zip
 
 <p>
 Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771 m via the delta method.  A 5-Model Average is also included.</p>
-<table>
+<table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>771 m</td></tr>
@@ -156,6 +159,7 @@ Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature produ
 <tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
 </tbody>
 </table>
+<img src="images/ak_extent.jpg" alt="" />
 
 
 <h4>Decadal Summaries by Month, Year, or Season</h4>
@@ -167,30 +171,30 @@ Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature produ
 <li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>42">Projected Decadal Averages of Seasonal Mean Temperatures 771m AR4</a></li>
 </ul>
 <h5>All products by model and scenario</h5>
-<div class="productDownloads">tas_decadal_summaries_AK_771m_5modelAvg_sresb1.zip
-tas_decadal_summaries_AK_771m_5modelAvg_sresa1b.zip
-tas_decadal_summaries_AK_771m_5modelAvg_sresa2.zip
+<pre class="productDownloads"><a href="/files/data/monthly/tas_decadal_summaries_AK_771m_5modelAvg_sresb1.zip">tas_decadal_summaries_AK_771m_5modelAvg_sresb1.zip</a> (638 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_5modelAvg_sresa1b.zip">tas_decadal_summaries_AK_771m_5modelAvg_sresa1b.zip</a> (637 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_5modelAvg_sresa2.zip">tas_decadal_summaries_AK_771m_5modelAvg_sresa2.zip</a> (637 MB)
 
-tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresb1.zip
-tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresa1b.zip
-tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresa2.zip
+<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresb1.zip">tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresb1.zip</a> (639 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresa1b.zip">tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresa1b.zip</a> (639 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresa2.zip">tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresa2.zip</a> (638 MB)
 
-tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresb1.zip
-tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresa1b.zip
-tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresa2.zip
+<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresb1.zip">tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresb1.zip</a> (637 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresa1b.zip">tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresa1b.zip</a> (637 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresa2.zip">tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresa2.zip</a> (637 MB)
 
-tas_decadal_summaries_AK_771m_miroc3_2_medres_sresb1.zip
-tas_decadal_summaries_AK_771m_miroc3_2_medres_sresa1b.zip
-tas_decadal_summaries_AK_771m_miroc3_2_medres_sresa2.zip
+<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_miroc3_2_medres_sresb1.zip">tas_decadal_summaries_AK_771m_miroc3_2_medres_sresb1.zip</a> (641 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_miroc3_2_medres_sresa1b.zip">tas_decadal_summaries_AK_771m_miroc3_2_medres_sresa1b.zip</a> (640 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_miroc3_2_medres_sresa2.zip">tas_decadal_summaries_AK_771m_miroc3_2_medres_sresa2.zip</a> (640 MB)
 
-tas_decadal_summaries_AK_771m_mpi_echam5_sresb1.zip
-tas_decadal_summaries_AK_771m_mpi_echam5_sresa1b.zip
-tas_decadal_summaries_AK_771m_mpi_echam5_sresa2.zip
+<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_mpi_echam5_sresb1.zip">tas_decadal_summaries_AK_771m_mpi_echam5_sresb1.zip</a> (639 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_mpi_echam5_sresa1b.zip">tas_decadal_summaries_AK_771m_mpi_echam5_sresa1b.zip</a> (640 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_mpi_echam5_sresa2.zip">tas_decadal_summaries_AK_771m_mpi_echam5_sresa2.zip</a> (640 MB)
 
-tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresb1.zip
-tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresa1b.zip
-tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresa2.zip
-</div>
+<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresb1.zip">tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresb1.zip</a> (642 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresa1b.zip">tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresa1b.zip</a> (642 MB)
+<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresa2.zip">tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresa2.zip</a> (642 MB)
+</pre>
 
 <h4>Day of Freeze, Thaw, Length of Growing Season</h4>
 <p>
@@ -213,57 +217,57 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 <td>
 <h5>Data</h5>
 <pre>
-dof_dot_AK_771m_5modelAvg_sresb1.zip
-dof_dot_AK_771m_5modelAvg_sresa1b.zip
-dof_dot_AK_771m_5modelAvg_sresa2.zip
+<a href="/files/data/derived/dof_dot_AK_771m_5modelAvg_sresb1.zip">dof_dot_AK_771m_5modelAvg_sresb1.zip</a> (51 MB)
+<a href="/files/data/derived/dof_dot_AK_771m_5modelAvg_sresa1b.zip">dof_dot_AK_771m_5modelAvg_sresa1b.zip</a> (51 MB)
+<a href="/files/data/derived/dof_dot_AK_771m_5modelAvg_sresa2.zip">dof_dot_AK_771m_5modelAvg_sresa2.zip</a> (52 MB)
 
-dof_dot_AK_771m_cccma_cgcm3_1_sresb1.zip
-dof_dot_AK_771m_cccma_cgcm3_1_sresa1b.zip
-dof_dot_AK_771m_cccma_cgcm3_1_sresa2.zip
+<a href="/files/data/derived/dof_dot_AK_771m_cccma_cgcm3_1_sresb1.zip">dof_dot_AK_771m_cccma_cgcm3_1_sresb1.zip</a> (52 MB)
+<a href="/files/data/derived/dof_dot_AK_771m_cccma_cgcm3_1_sresa1b.zip">dof_dot_AK_771m_cccma_cgcm3_1_sresa1b.zip</a> (52 MB)
+<a href="/files/data/derived/dof_dot_AK_771m_cccma_cgcm3_1_sresa2.zip">dof_dot_AK_771m_cccma_cgcm3_1_sresa2.zip</a> (52 MB)
 
-dof_dot_AK_771m_gfdl_cm2_1_sresb1.zip
-dof_dot_AK_771m_gfdl_cm2_1_sresa1b.zip
-dof_dot_AK_771m_gfdl_cm2_1_sresa2.zip
+<a href="/files/data/derived/dof_dot_AK_771m_gfdl_cm2_1_sresb1.zip">dof_dot_AK_771m_gfdl_cm2_1_sresb1.zip</a> (52 MB)
+<a href="/files/data/derived/dof_dot_AK_771m_gfdl_cm2_1_sresa1b.zip">dof_dot_AK_771m_gfdl_cm2_1_sresa1b.zip</a> (51 MB)
+<a href="/files/data/derived/dof_dot_AK_771m_gfdl_cm2_1_sresa2.zip">dof_dot_AK_771m_gfdl_cm2_1_sresa2.zip</a> (52 MB)
 
-dof_dot_AK_771m_miroc3_2_medres_sresb1.zip
-dof_dot_AK_771m_miroc3_2_medres_sresa1b.zip
-dof_dot_AK_771m_miroc3_2_medres_sresa2.zip
+<a href="/files/data/derived/dof_dot_AK_771m_miroc3_2_medres_sresb1.zip">dof_dot_AK_771m_miroc3_2_medres_sresb1.zip</a> (51 MB)
+<a href="/files/data/derived/dof_dot_AK_771m_miroc3_2_medres_sresa1b.zip">dof_dot_AK_771m_miroc3_2_medres_sresa1b.zip</a> (51 MB)
+<a href="/files/data/derived/dof_dot_AK_771m_miroc3_2_medres_sresa2.zip">dof_dot_AK_771m_miroc3_2_medres_sresa2.zip</a> (51 MB)
 
-dof_dot_AK_771m_mpi_echam5_sresb1.zip
-dof_dot_AK_771m_mpi_echam5_sresa1b.zip
-dof_dot_AK_771m_mpi_echam5_sresa2.zip
+<a href="/files/data/derived/dof_dot_AK_771m_mpi_echam5_sresb1.zip">dof_dot_AK_771m_mpi_echam5_sresb1.zip</a> (51 MB)
+<a href="/files/data/derived/dof_dot_AK_771m_mpi_echam5_sresa1b.zip">dof_dot_AK_771m_mpi_echam5_sresa1b.zip</a> (51 MB)
+<a href="/files/data/derived/dof_dot_AK_771m_mpi_echam5_sresa2.zip">dof_dot_AK_771m_mpi_echam5_sresa2.zip</a> (52 MB)
 
-dof_dot_AK_771m_ukmo_hadcm3_sresb1.zip
-dof_dot_AK_771m_ukmo_hadcm3_sresa1b.zip
-dof_dot_AK_771m_ukmo_hadcm3_sresa2.zip
+<a href="/files/data/derived/dof_dot_AK_771m_ukmo_hadcm3_sresb1.zip">dof_dot_AK_771m_ukmo_hadcm3_sresb1.zip</a> (52 MB)
+<a href="/files/data/derived/dof_dot_AK_771m_ukmo_hadcm3_sresa1b.zip">dof_dot_AK_771m_ukmo_hadcm3_sresa1b.zip</a> (51 MB)
+<a href="/files/data/derived/dof_dot_AK_771m_ukmo_hadcm3_sresa2.zip">dof_dot_AK_771m_ukmo_hadcm3_sresa2.zip</a> (52 MB)
 </pre>
 </td>
 <td>
 <h5>Data</h5>
 <pre>
-logs_AK_771m_5modelAvg_sresb1.zip
-logs_AK_771m_5modelAvg_sresa1b.zip
-logs_AK_771m_5modelAvg_sresa2.zip
+<a href="/files/data/derived/logs_AK_771m_5modelAvg_sresb1.zip">logs_AK_771m_5modelAvg_sresb1.zip</a> (31 MB)
+<a href="/files/data/derived/logs_AK_771m_5modelAvg_sresa1b.zip">logs_AK_771m_5modelAvg_sresa1b.zip</a> (31 MB)
+<a href="/files/data/derived/logs_AK_771m_5modelAvg_sresa2.zip">logs_AK_771m_5modelAvg_sresa2.zip</a> (31 MB)
 
-logs_AK_771m_cccma_cgcm3_1_sresb1.zip
-logs_AK_771m_cccma_cgcm3_1_sresa1b.zip
-logs_AK_771m_cccma_cgcm3_1_sresa2.zip
+<a href="/files/data/derived/logs_AK_771m_cccma_cgcm3_1_sresb1.zip">logs_AK_771m_cccma_cgcm3_1_sresb1.zip</a> (31 MB)
+<a href="/files/data/derived/logs_AK_771m_cccma_cgcm3_1_sresa1b.zip">logs_AK_771m_cccma_cgcm3_1_sresa1b.zip</a> (31 MB)
+<a href="/files/data/derived/logs_AK_771m_cccma_cgcm3_1_sresa2.zip">logs_AK_771m_cccma_cgcm3_1_sresa2.zip</a> (32 MB)
 
-logs_AK_771m_gfdl_cm2_1_sresb1.zip
-logs_AK_771m_gfdl_cm2_1_sresa1b.zip
-logs_AK_771m_gfdl_cm2_1_sresa2.zip
+<a href="/files/data/derived/logs_AK_771m_gfdl_cm2_1_sresb1.zip">logs_AK_771m_gfdl_cm2_1_sresb1.zip</a> (31 MB)
+<a href="/files/data/derived/logs_AK_771m_gfdl_cm2_1_sresa1b.zip">logs_AK_771m_gfdl_cm2_1_sresa1b.zip</a> (31 MB)
+<a href="/files/data/derived/logs_AK_771m_gfdl_cm2_1_sresa2.zip">logs_AK_771m_gfdl_cm2_1_sresa2.zip</a> (31 MB)
 
-logs_AK_771m_miroc3_2_medres_sresb1.zip
-logs_AK_771m_miroc3_2_medres_sresa1b.zip
-logs_AK_771m_miroc3_2_medres_sresa2.zip
+<a href="/files/data/derived/logs_AK_771m_miroc3_2_medres_sresb1.zip">logs_AK_771m_miroc3_2_medres_sresb1.zip</a> (31 MB)
+<a href="/files/data/derived/logs_AK_771m_miroc3_2_medres_sresa1b.zip">logs_AK_771m_miroc3_2_medres_sresa1b.zip</a> (30 MB)
+<a href="/files/data/derived/logs_AK_771m_miroc3_2_medres_sresa2.zip">logs_AK_771m_miroc3_2_medres_sresa2.zip</a> (31 MB)
 
-logs_AK_771m_mpi_echam5_sresb1.zip
-logs_AK_771m_mpi_echam5_sresa1b.zip
-logs_AK_771m_mpi_echam5_sresa2.zip
+<a href="/files/data/derived/logs_AK_771m_mpi_echam5_sresb1.zip">logs_AK_771m_mpi_echam5_sresb1.zip</a> (31 MB)
+<a href="/files/data/derived/logs_AK_771m_mpi_echam5_sresa1b.zip">logs_AK_771m_mpi_echam5_sresa1b.zip</a> (30 MB)
+<a href="/files/data/derived/logs_AK_771m_mpi_echam5_sresa2.zip">logs_AK_771m_mpi_echam5_sresa2.zip</a> (31 MB)
 
-logs_AK_771m_ukmo_hadcm3_sresb1.zip
-logs_AK_771m_ukmo_hadcm3_sresa1b.zip
-logs_AK_771m_ukmo_hadcm3_sresa2.zip
+<a href="/files/data/derived/logs_AK_771m_ukmo_hadcm3_sresb1.zip">logs_AK_771m_ukmo_hadcm3_sresb1.zip</a> (32 MB)
+<a href="/files/data/derived/logs_AK_771m_ukmo_hadcm3_sresa1b.zip">logs_AK_771m_ukmo_hadcm3_sresa1b.zip</a> (31 MB)
+<a href="/files/data/derived/logs_AK_771m_ukmo_hadcm3_sresa2.zip">logs_AK_771m_ukmo_hadcm3_sresa2.zip</a> (32 MB)
 </pre>
 </td>
 </tr>
@@ -279,7 +283,7 @@ logs_AK_771m_ukmo_hadcm3_sresa2.zip
 Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771 m via the delta method.  A 5-Model Average is also included.
 </p>
 
-<table>
+<table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>771 m</td></tr>
@@ -287,6 +291,7 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 <tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
 </tbody>
 </table>
+<img src="images/ak_extent.jpg" alt="" />
 
 <h4>Decadal Summaries by month, year, or season</h4>
 
@@ -298,29 +303,30 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 </ul>
 
 <h5>All products by model and scenario</h5>
-<div class="productDownloads">pr_decadal_summaries_AK_771m_5modelAvg_sresb1.zip
-pr_decadal_summaries_AK_771m_5modelAvg_sresa1b.zip
-pr_decadal_summaries_AK_771m_5modelAvg_sresa2.zip
+<pre class="productDownloads">
+<a href="/files/data/monthly/pr_decadal_summaries_AK_771m_5modelAvg_sresb1.zip">pr_decadal_summaries_AK_771m_5modelAvg_sresb1.zip</a> (612 MB)
+<a href="/files/data/monthly/pr_decadal_summaries_AK_771m_5modelAvg_sresa1b.zip">pr_decadal_summaries_AK_771m_5modelAvg_sresa1b.zip</a> (619 MB)
+<a href="/files/data/monthly/pr_decadal_summaries_AK_771m_5modelAvg_sresa2.zip">pr_decadal_summaries_AK_771m_5modelAvg_sresa2.zip</a> (619 MB)
 
-pr_decadal_summaries_AK_771m_cccma_cgcm3_1_sresb1.zip
-pr_decadal_summaries_AK_771m_cccma_cgcm3_1_sresa1b.zip
-pr_decadal_summaries_AK_771m_cccma_cgcm3_1_sresa2.zip
+<a href="/files/data/monthly/pr_decadal_summaries_AK_771m_cccma_cgcm3_1_sresb1.zip">pr_decadal_summaries_AK_771m_cccma_cgcm3_1_sresb1.zip</a> (612 MB)
+<a href="/files/data/monthly/pr_decadal_summaries_AK_771m_cccma_cgcm3_1_sresa1b.zip">pr_decadal_summaries_AK_771m_cccma_cgcm3_1_sresa1b.zip</a> (618 MB)
+<a href="/files/data/monthly/pr_decadal_summaries_AK_771m_cccma_cgcm3_1_sresa2.zip">pr_decadal_summaries_AK_771m_cccma_cgcm3_1_sresa2.zip</a> (621 MB)
 
-pr_decadal_summaries_AK_771m_gfdl_cm2_1_sresb1.zip
-pr_decadal_summaries_AK_771m_gfdl_cm2_1_sresa1b.zip
-pr_decadal_summaries_AK_771m_gfdl_cm2_1_sresa2.zip
+<a href="/files/data/monthly/pr_decadal_summaries_AK_771m_gfdl_cm2_1_sresb1.zip">pr_decadal_summaries_AK_771m_gfdl_cm2_1_sresb1.zip</a> (618 MB)
+<a href="/files/data/monthly/pr_decadal_summaries_AK_771m_gfdl_cm2_1_sresa1b.zip">pr_decadal_summaries_AK_771m_gfdl_cm2_1_sresa1b.zip</a> (626 MB)
+<a href="/files/data/monthly/pr_decadal_summaries_AK_771m_gfdl_cm2_1_sresa2.zip">pr_decadal_summaries_AK_771m_gfdl_cm2_1_sresa2.zip</a> (623 MB)
 
-pr_decadal_summaries_AK_771m_miroc3_2_medres_sresb1.zip
-pr_decadal_summaries_AK_771m_miroc3_2_medres_sresa1b.zip
-pr_decadal_summaries_AK_771m_miroc3_2_medres_sresa2.zip
+<a href="/files/data/monthly/pr_decadal_summaries_AK_771m_miroc3_2_medres_sresb1.zip">pr_decadal_summaries_AK_771m_miroc3_2_medres_sresb1.zip</a> (613 MB)
+<a href="/files/data/monthly/pr_decadal_summaries_AK_771m_miroc3_2_medres_sresa1b.zip">pr_decadal_summaries_AK_771m_miroc3_2_medres_sresa1b.zip</a> (618 MB)
+<a href="/files/data/monthly/pr_decadal_summaries_AK_771m_miroc3_2_medres_sresa2.zip">pr_decadal_summaries_AK_771m_miroc3_2_medres_sresa2.zip</a> (618 MB)
 
-pr_decadal_summaries_AK_771m_mpi_echam5_sresb1.zip
-pr_decadal_summaries_AK_771m_mpi_echam5_sresa1b.zip
-pr_decadal_summaries_AK_771m_mpi_echam5_sresa2.zip
+<a href="/files/data/monthly/pr_decadal_summaries_AK_771m_mpi_echam5_sresb1.zip">pr_decadal_summaries_AK_771m_mpi_echam5_sresb1.zip</a> (609 MB)
+<a href="/files/data/monthly/pr_decadal_summaries_AK_771m_mpi_echam5_sresa1b.zip">pr_decadal_summaries_AK_771m_mpi_echam5_sresa1b.zip</a> (617 MB)
+<a href="/files/data/monthly/pr_decadal_summaries_AK_771m_mpi_echam5_sresa2.zip">pr_decadal_summaries_AK_771m_mpi_echam5_sresa2.zip</a> (614 MB)
 
-pr_decadal_summaries_AK_771m_ukmo_hadcm3_sresb1.zip
-pr_decadal_summaries_AK_771m_ukmo_hadcm3_sresa1b.zip
-pr_decadal_summaries_AK_771m_ukmo_hadcm3_sresa2.zip
+<a href="/files/data/monthly/pr_decadal_summaries_AK_771m_ukmo_hadcm3_sresb1.zip">pr_decadal_summaries_AK_771m_ukmo_hadcm3_sresb1.zip</a> (610 MB)
+<a href="/files/data/monthly/pr_decadal_summaries_AK_771m_ukmo_hadcm3_sresa1b.zip">pr_decadal_summaries_AK_771m_ukmo_hadcm3_sresa1b.zip</a> (621 MB)
+<a href="/files/data/monthly/pr_decadal_summaries_AK_771m_ukmo_hadcm3_sresa2.zip">pr_decadal_summaries_AK_771m_ukmo_hadcm3_sresa2.zip</a> (620 MB)
 </div>
 
 </div>

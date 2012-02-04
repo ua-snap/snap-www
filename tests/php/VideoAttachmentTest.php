@@ -46,41 +46,6 @@ class VideoAttachmentTest extends PHPUnit_Framework_TestCase
         }
         
         $r = Resource::factory(Fixtures::$resources[15]);
-        $this->assertTag(
-            array(
-                'tag'=>'a',
-                'attributes' => array(
-                    'class' => 'title',
-                    'target' => '_blank'
-                )
-            ),
-            $r->getEmbeddedVideo(),
-            'Links from videos should open in a new window'
-        );
-
-        $this->assertTag(
-            array(
-                'tag'=>'a',
-                'attributes' => array(
-                    'class' => 'user',
-                    'target' => '_blank'
-                )
-            ),
-            $r->getEmbeddedVideo(),
-            'Links from videos should open in a new window'
-        );
-
-        $this->assertTag(
-            array(
-                'tag'=>'a',
-                'attributes' => array(
-                    'class' => 'link',
-                    'target' => '_blank'
-                )
-            ),
-            $r->getLinkedVideo(),
-            'Links from videos should open in a new window'
-        );
 
         $this->assertEquals( Fixtures::$resourceSummaries[15], $r->toSummaryHtml(), "User can see summary block of information about a resource, including a Hover functionality that shows more detail");        
 

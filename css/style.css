@@ -639,8 +639,17 @@ td {
 	line-height: 1.3 !important;
 }
 
+.dataAccordionWrapper img {
+	display: inline-block;
+	height: 75px;
+}
+
 .dataAccordionWrapper h4 {
 	margin-bottom: .5ex;
+}
+
+.dataAccordionWrapper table.overview {
+	display: inline-block;
 }
 
 .dataAccordionWrapper table th[scope="row"] {
@@ -660,6 +669,20 @@ td {
 	color: #0066cc !important;
 }
 
+.dataAccordionWrapper table a, .dataAccordionWrapper li a, .dataAccordionWrapper pre a {
+	color: #06c !important;
+}
+
+.dataAccordionWrapper ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.dataAccordionWrapper ul + h5 {
+	margin-top: 2em;
+}
+
 .dataAccordionWrapper td {
 	padding-right: 1em;
 }
@@ -673,14 +696,18 @@ td {
 	white-space: pre;
 }
 
+.downloadsTable pre a {
+	color: #06c !important;
+}
+
 .dataAccordionWrapper h5 {
 	margin: 1ex inherit .5ex;
 	font-size: 14px;
 	font-weight: normal;
 }
 
-.dataAccordionWrapper table + table {
-	margin-top: 1em;
+.dataAccordionWrapper img + table {
+	margin-top: 2em;
 }
 
 .dataAccordionWrapper pre {

@@ -88,36 +88,12 @@ class ResourcesTest extends PHPUnit_Framework_TestCase
     {
         $r = new ResourceLayout();
         $r->setRequests( array( 'tags'=>'', 'collab'=>'', 'type'=>'', 'sort'=>'') );
-        $this->assertEquals('SELECT title,type,pubs.id,summary FROM resources pubs LEFT JOIN resource_tags AS pt ON pubs.id=pt.resourceid LEFT JOIN resource_collaborators AS pc ON pubs.id=pc.resourceid  GROUP BY pubs.id ORDER BY pubs.createdate ', $r->getQueryString(), 'Query string should get all resources, sorted from newest to oldest, if there are no specified criteria.');
-    }
+        $this->assertEquals(<<<sql
 
-    public function testOrderQueryString()
-    {
-        $r = new ResourceLayout();
-        $r->setRequests( array( 'tags'=>'', 'collab'=>'', 'type'=>'', 'sort'=>'oldest') );
-        $this->assertEquals('SELECT title,type,pubs.id,summary FROM resources pubs LEFT JOIN resource_tags AS pt ON pubs.id=pt.resourceid LEFT JOIN resource_collaborators AS pc ON pubs.id=pc.resourceid  GROUP BY pubs.id ORDER BY pubs.createdate  DESC', $r->getQueryString(), 'Query string should sort oldest first if GET request "sort"="oldest" is present.');
-    }
+SELECT title, type, pubs.id, summary FROM resources pubs LEFT JOIN resource_tags AS pt ON pubs.id=pt.resourceid LEFT JOIN resource_collaborators AS pc ON pubs.id=pc.resourceid  GROUP BY pubs.id ORDER BY pubs.type ASC, pubs.title ASC
 
-    public function testSubjectQueryString()
-    {
-        // tags == subject, for this test's purposes
-        $r = new ResourceLayout();
-        $r->setRequests( array( 'tags'=>'climate', 'collab'=>'', 'type'=>'', 'sort'=>'') );
-        $this->assertEquals("SELECT title,type,pubs.id,summary FROM resources pubs LEFT JOIN resource_tags AS pt ON pubs.id=pt.resourceid LEFT JOIN resource_collaborators AS pc ON pubs.id=pc.resourceid  WHERE pt.tag = 'climate' GROUP BY pubs.id ORDER BY pubs.createdate ",  $r->getQueryString(), "Searching by a single tag (=subject)");
-    }
-
-    public function testCollabTestQueryString()
-    {
-        $r = new ResourceLayout();
-        $r->setRequests( array( 'tags'=>'', 'collab'=>'5', 'type'=>'2', 'sort'=>'') );
-        $this->assertEquals("SELECT title,type,pubs.id,summary FROM resources pubs LEFT JOIN resource_tags AS pt ON pubs.id=pt.resourceid LEFT JOIN resource_collaborators AS pc ON pubs.id=pc.resourceid  WHERE pc.collaboratorid = '5' AND pubs.type = '2' GROUP BY pubs.id ORDER BY pubs.createdate ",  $r->getQueryString(), "Query should dynamically create AND clause if needed to search multiple criteria");
-    }    
-
-    public function testFullQueryString()
-    {
-        $r = new ResourceLayout();
-        $r->setRequests( array( 'tags'=>'climate', 'collab'=>'5', 'type'=>'1', 'sort'=>'oldest') );
-        $this->assertEquals("SELECT title,type,pubs.id,summary FROM resources pubs LEFT JOIN resource_tags AS pt ON pubs.id=pt.resourceid LEFT JOIN resource_collaborators AS pc ON pubs.id=pc.resourceid  WHERE pt.tag = 'climate' AND pc.collaboratorid = '5' AND pubs.type = '1' GROUP BY pubs.id ORDER BY pubs.createdate  DESC",  $r->getQueryString(), "");
+sql
+, $r->getQueryString(), 'Query string should get all resources, sorted from newest to oldest, if there are no specified criteria.');
     }
 
     public function testFetchById()
