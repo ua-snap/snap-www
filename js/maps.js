@@ -823,6 +823,8 @@ var resize = function() {
 		$("#map_canvas").height(availableHeight);
 	}
 
+	google.maps.event.trigger(map, 'resize');
+
 };
 
 snap.mapUrls = {

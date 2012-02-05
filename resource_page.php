@@ -19,16 +19,16 @@ $resource = Resource::fetchById($_GET['resourceid']);
                 <?php
                     $query = "SELECT * FROM resources WHERE id='$resourceid' LIMIT 1";
                     $result = mysql_query($query);
-                    $project = mysql_fetch_array($result);
+                    $resource = mysql_fetch_array($result);
                 ?>
                 
                 <div class="back_button" style="margin-top: 20px; margin-bottom: 30px; width: 215px;"><span><img style="vertical-align: top; display: inline-block;" src="/images/back_arrow.png" /></span><span style="float: right; padding-right: 8px;">View Other Resources<span><a href="resources.php" style="position: absolute; width: 100%; height: 100%; left: 0px; top: 0px;"></a></div>
 
                 <div id="resourceWrapper" style="width: 950px; margin: auto;">
                     <div style="float: left; width: 520px;">
-                        <div style="color: #71797b; margin-left: 20px; font-size: 14px; margin-bottom: 5px;"><?php echo $resTypes[$project['type'] - 1]; ?></div>
-                        <div style="font-size: 26px; color: #242d2f; margin-left: 20px; margin-bottom: 10px;"><?php echo $project['title']; ?></div>
-                        <div style="font-size: 14px; line-height: 20px; color: #242d2f; margin-left: 20px; margin-bottom: 10px;"><?php echo nl2br($project['summary']); ?></div>
+                        <div style="color: #71797b; margin-left: 20px; font-size: 14px; margin-bottom: 5px;"><?php echo $resTypes[$resource['type'] - 1]; ?></div>
+                        <div style="font-size: 26px; color: #242d2f; margin-left: 20px; margin-bottom: 10px;"><?php echo $resource['title']; ?></div>
+                        <div style="font-size: 14px; line-height: 20px; color: #242d2f; margin-left: 20px; margin-bottom: 10px;"><?php echo nl2br($resource['summary']); ?></div>
 
                         <?php
 
@@ -111,7 +111,7 @@ $resource = Resource::fetchById($_GET['resourceid']);
                         </div>
                         <div>
                             <?php
-                                $query = "SELECT people.id, title, first, last, email, phone FROM people JOIN project_personnel ON people.id = project_personnel.peopleid WHERE project_personnel.projectid = '".$project['id']."' AND contact=true";
+                                $query = "SELECT people.id, title, first, last, email, phone FROM people JOIN project_personnel ON people.id = resource_personnel.peopleid WHERE resource_personnel.resourceid = '".$resource['id']."' AND contact=true";
                                 $result = mysql_query($query) or die (mysql_error());
                                 if (mysql_num_rows($result) > 0){
                                     echo "<div style=\"font-weight: bold; color: #6a7173; margin-top: 30px;\">Contacts</div>";

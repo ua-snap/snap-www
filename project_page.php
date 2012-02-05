@@ -2,7 +2,7 @@
 require_once 'template.php';
 require_once 'src/ProjectResourceLink.php';
 
-$page = new webPage("SNAP: Project", "projects.css", "projects");
+$page = new webPage("SNAP: Project", '', "projects");
 $page->openPage();
 $page->pageHeader();
 $page->connectToDatabase();

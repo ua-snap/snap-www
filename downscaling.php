@@ -78,7 +78,7 @@ Since several models had substantially smaller systematic errors than the other 
 
 <h3><a id="delta_method">Delta Method Downscaling Procedure</a></h3>
 <img src="images/SNAP_delta_method_graphic.png" alt="" style="display: inline-block; margin: 1ex 1em 1em 1ex; float: left;" />
-<p>SNAP currently employs a model bias correction in tandem with a statistical downscaling approach called the &ldquo;delta method&rdquo;.  This method has proven robust and popular, most likely because it is straightforward and relatively easy to understand.  At its root, the delta method involves nothing more complex than subtraction and division, which helps in interpreting and explaining downscaling results.  Due to its low computational demand, the delta method allows for rapid and efficient downscaling of multiple GCMs and emission scenarios over hundreds of years.  For a thorough review of other downscaling methods, please see <a href="TBD">Katherine Hayhoe&rsquo;s dissertation</a>.  Additional references to the delta method can be found <a href="tbd">here and here</a>.
+<p>SNAP currently employs a model bias correction in tandem with a statistical downscaling approach called the &ldquo;delta method&rdquo;.  This method has proven robust and popular, most likely because it is straightforward and relatively easy to understand.  At its root, the delta method involves nothing more complex than subtraction and division, which helps in interpreting and explaining downscaling results.  Due to its low computational demand, the delta method allows for rapid and efficient downscaling of multiple GCMs and emission scenarios over hundreds of years.  For a thorough review of other downscaling methods, please see <a href="/resource_page.php?resourceid=15">Katherine Hayhoe&rsquo;s dissertation</a>.  Additional references to the delta method can be found <a href="/resource_page.php?resourceid=16">here</a> and <a href="/resource_page.php?resourceid=17">here</a>.
 </p>
 <p>
 While we currently employ the delta method for our base datasets, we are exploring other techniques for downscaling a wider variety of climatic variables of interest to stakeholders.
@@ -121,7 +121,7 @@ No attempt is made to omit precipitation anomaly values of a certain magnitude, 
 <h4>
 Downscaling and Bias Removal</h4>
 <p>
-Temperature and precipitation anomalies are then interpolated with a first-order bilinear spline technique across an extent larger than our high-resolution climatology dataset.  A larger extent is used to account for the climatic variability outside of the bounds of our final downscaled extent.  References for choosing the spline technique can be found <a href="TBD">here and here</a>.
+Temperature and precipitation anomalies are then interpolated with a first-order bilinear spline technique across an extent larger than our high-resolution climatology dataset.  A larger extent is used to account for the climatic variability outside of the bounds of our final downscaled extent.  References for choosing the spline technique can be found <a href="/resource_page.php?resourceid=20">here</a> and <a href="/resource_page.php?resourceid=20">here</a>.
 </p>
 
 <p>

@@ -1,36 +1,12 @@
 <?php
-include("template.php");
-$page = new webPage("SNAP: Projects", "projects.css", "projects");
+require_once 'template.php';
+$page = new webPage('SNAP: Projects', '', 'projects');
 $page->openPage();
 $page->pageHeader();
 $page->connectToDatabase();
-$tag_array;
+
 $tag_array = split(",", $_GET['tags']);
 
-/*
-function getProjectList(){
-    $result = mysql_query("SELECT title,createdate,summary,id FROM projects ORDER BY createdate DESC");
-    while ($row = mysql_fetch_row($result)){
-        echo "<div style=\"margin-top: 20px; width: 600px;\">";
-            echo "<div style=\"font-size: 20px; \"><a href=\"project_page.php?projectid=".$row[3]."\">".$row[0]."</a></div>";
-            echo "<div style=\"position: relative; height: 15px; margin-bottom: 5px;\">";
-                echo "<div style=\" position: absolute; font-size: 12px; color: #444444;\">Created: ".$row[1]."</div>";
-                echo "<div style=\"position: absolute; margin-left: 150px; font-size: 12px;\"> Topics: ";
-                $tag_result = mysql_query("SELECT tag FROM project_tags WHERE projectid='".$row[3]."'");
-                $tag_row = mysql_fetch_array($tag_result);
-                    echo "<a href=\"\">".$tag_row[0]."</a>";
-                while ($tag_row = mysql_fetch_array($tag_result)){
-                    echo ", <a href=\"\">".$tag_row[0]."</a>";
-                }
-                echo "</div>";
-            echo "</div>";
-            echo "<div>".preg_replace("/\n/", "<br/>", $row[2])."</div>";
-    
-        echo "</div>";
-    }
-}
-
-*/
 function getProjectListSpecial($t){
     global $tag_array;
     $projtag = "";

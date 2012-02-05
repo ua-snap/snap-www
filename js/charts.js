@@ -15,7 +15,7 @@ $( function() {
 	
 	window.snapCharts.initialize();
 	window.snapCharts.refreshState();
-	window.snapCharts.refreshMenus();	
+	window.snapCharts.refreshMenus();
 	window.snapCharts.fetchData();
 
 });
@@ -389,45 +389,45 @@ window.snapCharts = {
 			
 			series: [
 				{
-					name: 'Historical',
+					name: '1961-1990',
 					data: snapCharts.data.series.Historical
 				},
 				{
-					name: '2011-2020',
+					name: '2010-2019',
 					data: snapCharts.data.series['2011-2020']
 				},
 				{
-					name: '2011-2020 Standard Deviations',
+					name: '2010-2019 Standard Deviations',
 					visible: false,
 					showInLegend: false,
 					data: snapCharts.data.standardDeviations['2011-2020']
 				},
 				{
-					name: '2041-2050',
+					name: '2040-2049',
 					data: snapCharts.data.series['2031-2040']
 				},
 				{
-					name: '2041-2050 Standard Deviations',
+					name: '2040-2049 Standard Deviations',
 					visible: false,
 					showInLegend: false,
 					data: snapCharts.data.standardDeviations['2041-2050']
 				},
 				{
-					name: '2061-2070',
+					name: '2060-2069',
 					data: snapCharts.data.series['2061-2070']
 				},
 				{
-					name: '2061-2070 Standard Deviations',
+					name: '2060-2069 Standard Deviations',
 					visible: false,
 					showInLegend: false,
 					data: snapCharts.data.standardDeviations['2061-2070']
 				},
 				{
-					name: '2091-2100',
+					name: '2090-2099',
 					data: snapCharts.data.series['2091-2100']
 				},
 				{
-					name: '2091-2100 Standard Deviations',
+					name: '2090-2099 Standard Deviations',
 					visible: false,
 					showInLegend: false,
 					data: snapCharts.data.standardDeviations['2091-2100']

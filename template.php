@@ -81,7 +81,7 @@ class webPage {
         <link type="text/css" href="css/custom-theme/jquery-ui-1.8.17.custom.css" rel="Stylesheet" />  
     <?php 
 
-        if (isset($this->stylesheet)){ 
+        if (isset($this->stylesheet) && !empty($this->stylesheet)) { 
             echo "<link rel=\"stylesheet\" href=\"/css/$this->stylesheet\" type=\"text/css\" />"; 
         }
 

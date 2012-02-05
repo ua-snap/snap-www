@@ -17,7 +17,7 @@ Our principal products are downscaled historical and projected monthly climate d
 Please visit our <a href="/methods.php">Methods</a> section for a description of our downscaling procedure.  
 </p>
 <p>
-To visualize a selection of datasets, please visit the <a href="maps.php" >map tool</a>.
+To visualize a selection of datasets, please visit the <a href="maps.php" target="_blank" >map tool</a>.
 </p>
 <p>
 For a full list of our available data, please see below.
@@ -55,13 +55,13 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 </div>
 <div class="dataAccordionWrapper">
 <div class="dataAccordion">
-<h3><a href="#proj_monthly_temp_precip771">Projected Monthly Temperature and Precipitation - 771 m AR4</a></h3>
+<h3><a href="#proj_monthly_temp_precip771">Projected Monthly Temperature and Precipitation - 771m AR4</a></h3>
 <div>
-<p>Projected (2001-2100: B1, A1B, and A2 scenarios) monthly average temperature and total precipitation from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771 m via the delta method.  A 5-Model Average is also included.</p>
+<p>Projected (2001-2100: B1, A1B, and A2 scenarios) monthly average temperature and total precipitation from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771m via the delta method.  A 5-Model Average is also included.</p>
 <table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
-<tr><th scope="row">Spatial Resolution</th><td>771 m</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>771m</td></tr>
 <tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
 </tbody>
@@ -73,11 +73,11 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 <tr>
 <th scope="col">
 <h5>Metadata</h5>
-<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>34">Projected Monthly Average Temperature 771 m</a>
+<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>34">Projected Monthly Average Temperature 771m AR4</a>
 </th>
 <th scope="col">
 <h5>Metadata</h5>
-<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>35">Projected Monthly Total Precipitation 771 m</a>
+<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>35">Projected Monthly Total Precipitation 771m AR4</a>
 </th>
 </tr>
 </thead>
@@ -145,16 +145,16 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 </div>
 
 
-<h3><a href="#">Projected Derived Temperature Products - 771 m AR4</a></h3>
+<h3><a href="#">Projected Derived Temperature Products - 771m AR4</a></h3>
 <div>
 
 
 <p>
-Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771 m via the delta method.  A 5-Model Average is also included.</p>
+Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771m via the delta method.  A 5-Model Average is also included.</p>
 <table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
-<tr><th scope="row">Spatial Resolution</th><td>771 m</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>771m</td></tr>
 <tr><th scope="row">Temporal Resolution</th><td>Decadal</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
 </tbody>
@@ -171,29 +171,29 @@ Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature produ
 <li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>42">Projected Decadal Averages of Seasonal Mean Temperatures 771m AR4</a></li>
 </ul>
 <h5>All products by model and scenario</h5>
-<pre class="productDownloads"><a href="/files/data/monthly/tas_decadal_summaries_AK_771m_5modelAvg_sresb1.zip">tas_decadal_summaries_AK_771m_5modelAvg_sresb1.zip</a> (638 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_5modelAvg_sresa1b.zip">tas_decadal_summaries_AK_771m_5modelAvg_sresa1b.zip</a> (637 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_5modelAvg_sresa2.zip">tas_decadal_summaries_AK_771m_5modelAvg_sresa2.zip</a> (637 MB)
+<pre class="productDownloads"><a href="/files/data/derived/tas_decadal_summaries_AK_771m_5modelAvg_sresb1.zip">tas_decadal_summaries_AK_771m_5modelAvg_sresb1.zip</a> (638 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_771m_5modelAvg_sresa1b.zip">tas_decadal_summaries_AK_771m_5modelAvg_sresa1b.zip</a> (637 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_771m_5modelAvg_sresa2.zip">tas_decadal_summaries_AK_771m_5modelAvg_sresa2.zip</a> (637 MB)
 
-<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresb1.zip">tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresb1.zip</a> (639 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresa1b.zip">tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresa1b.zip</a> (639 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresa2.zip">tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresa2.zip</a> (638 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresb1.zip">tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresb1.zip</a> (639 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresa1b.zip">tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresa1b.zip</a> (639 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresa2.zip">tas_decadal_summaries_AK_771m_cccma_cgcm3_1_sresa2.zip</a> (638 MB)
 
-<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresb1.zip">tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresb1.zip</a> (637 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresa1b.zip">tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresa1b.zip</a> (637 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresa2.zip">tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresa2.zip</a> (637 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresb1.zip">tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresb1.zip</a> (637 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresa1b.zip">tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresa1b.zip</a> (637 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresa2.zip">tas_decadal_summaries_AK_771m_gfdl_cm2_1_sresa2.zip</a> (637 MB)
 
-<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_miroc3_2_medres_sresb1.zip">tas_decadal_summaries_AK_771m_miroc3_2_medres_sresb1.zip</a> (641 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_miroc3_2_medres_sresa1b.zip">tas_decadal_summaries_AK_771m_miroc3_2_medres_sresa1b.zip</a> (640 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_miroc3_2_medres_sresa2.zip">tas_decadal_summaries_AK_771m_miroc3_2_medres_sresa2.zip</a> (640 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_771m_miroc3_2_medres_sresb1.zip">tas_decadal_summaries_AK_771m_miroc3_2_medres_sresb1.zip</a> (641 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_771m_miroc3_2_medres_sresa1b.zip">tas_decadal_summaries_AK_771m_miroc3_2_medres_sresa1b.zip</a> (640 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_771m_miroc3_2_medres_sresa2.zip">tas_decadal_summaries_AK_771m_miroc3_2_medres_sresa2.zip</a> (640 MB)
 
-<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_mpi_echam5_sresb1.zip">tas_decadal_summaries_AK_771m_mpi_echam5_sresb1.zip</a> (639 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_mpi_echam5_sresa1b.zip">tas_decadal_summaries_AK_771m_mpi_echam5_sresa1b.zip</a> (640 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_mpi_echam5_sresa2.zip">tas_decadal_summaries_AK_771m_mpi_echam5_sresa2.zip</a> (640 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_771m_mpi_echam5_sresb1.zip">tas_decadal_summaries_AK_771m_mpi_echam5_sresb1.zip</a> (639 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_771m_mpi_echam5_sresa1b.zip">tas_decadal_summaries_AK_771m_mpi_echam5_sresa1b.zip</a> (640 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_771m_mpi_echam5_sresa2.zip">tas_decadal_summaries_AK_771m_mpi_echam5_sresa2.zip</a> (640 MB)
 
-<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresb1.zip">tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresb1.zip</a> (642 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresa1b.zip">tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresa1b.zip</a> (642 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresa2.zip">tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresa2.zip</a> (642 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresb1.zip">tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresb1.zip</a> (642 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresa1b.zip">tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresa1b.zip</a> (642 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresa2.zip">tas_decadal_summaries_AK_771m_ukmo_hadcm3_sresa2.zip</a> (642 MB)
 </pre>
 
 <h4>Day of Freeze, Thaw, Length of Growing Season</h4>
@@ -206,10 +206,10 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 <tr>
 <th scope="col">
 <h5>Metadata</h5>
-<p><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>38">Projected Day of Freeze and Thaw 771 AR4 metadata</a></p></th>
+<p><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>38">Projected Day of Freeze or Thaw 771 AR4 </a></p></th>
 <th scope="col">
 <h5>Metadata</h5>
-<p><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>37">Projected Length of Growing Season 771 AR4 metadata</a></p></th>
+<p><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>37">Projected Length of Growing Season 771 AR4</a></p></th>
 </tr>
 </thead>
 <tbody>
@@ -276,17 +276,17 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 
 </div>
 
-<h3><a href="#">Projected Derived Precipitation Products - 771 m AR4</a></h3>
+<h3><a href="#">Projected Derived Precipitation Products - 771m AR4</a></h3>
 <div>
 
 <p>
-Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771 m via the delta method.  A 5-Model Average is also included.
+Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771m via the delta method.  A 5-Model Average is also included.
 </p>
 
 <table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
-<tr><th scope="row">Spatial Resolution</th><td>771 m</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>771m</td></tr>
 <tr><th scope="row">Temporal Resolution</th><td>Decadal</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
 </tbody>
@@ -297,9 +297,9 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 
 <h5>Metadata by product</h5>
 <ul>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>62">Projected Decadal Averages of derived Total Precipitation 771m AR4 metadata</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>43">Projected Decadal Averages of Annual Total Precipitation 771m AR4 metadata</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>36">Projected Decadal Averages of Seasonal Total Precipitation 771m AR4 metadata</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>62">Projected Decadal Averages of Monthly Total Precipitation 771m AR4</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>43">Projected Decadal Averages of Annual Total Precipitation 771m AR4</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>36">Projected Decadal Averages of Seasonal Total Precipitation 771m AR4</a></li>
 </ul>
 
 <h5>All products by model and scenario</h5>
@@ -353,11 +353,11 @@ Projected (2001&ndash;2100: B1, A1B, and A2 scenarios) monthly temperature and p
 <thead>
 <tr>
 <th scope="col">
-<h5>Metadata</h5><span href="<?php echo Config::$geonetworkMetadataUrlBase; ?>29">Projected Monthly Average Temperature 2 km AR4 metadata</span>
+<h5>Metadata</h5><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>29">Projected Monthly Average Temperature 2 km AR4</a>
 </th>
 <th scope="col">
 <h5>Metadata</h5>
-<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>32">Projected Monthly Total Precipitation 2 km AR4 metadata</a>
+<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>32">Projected Monthly Total Precipitation 2 km AR4</a>
 </th>
 </tr>
 </thead>
@@ -429,7 +429,7 @@ Projected (2001&ndash;2100: B1, A1B, and A2 scenarios) monthly temperature and p
 <div>
 
 <p>
-Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771 m via the delta method.  A 5-Model Average is also included.
+Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771m via the delta method.  A 5-Model Average is also included.
 </p>
 
 <table class="overview">
@@ -447,41 +447,41 @@ Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature produ
 <h5>Metadata by product</h5>
 <ul>
 <li>
-<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>22">Projected Decadal Averages of Monthly Mean Temperatures 2km AR4 metadata</a>
+<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>22">Projected Decadal Averages of Monthly Mean Temperatures 2km AR4</a>
 </li>
 <li>
-<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>20">Projected Decadal Averages of Annual Mean Temperatures 2km AR4 metadata</a>
+<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>20">Projected Decadal Averages of Annual Mean Temperatures 2km AR4</a>
 </li>
 <li>
-<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>24">Projected Decadal Averages of Seasonal Mean Temperatures 2km AR4 metadata</a>
+<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>24">Projected Decadal Averages of Seasonal Mean Temperatures 2km AR4</a>
 </li>
 </ul>
 
 <h5>All products by model and scenario</h5>
 <pre class="productDownloads">
-<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresb1.zip">tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresb1.zip</a> (375 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresa1b.zip">tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresa1b.zip</a> (375 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresa2.zip">tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresa2.zip</a> (376 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresb1.zip">tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresb1.zip</a> (375 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresa1b.zip">tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresa1b.zip</a> (375 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresa2.zip">tas_decadal_summaries_AK_CAN_2km_5modelAvg_sresa2.zip</a> (376 MB)
 
-<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresb1.zip">tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresb1.zip</a> (333 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresa1b.zip">tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresa1b.zip</a> (333 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresa2.zip">tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresa2.zip</a> (333 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresb1.zip">tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresb1.zip</a> (333 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresa1b.zip">tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresa1b.zip</a> (333 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresa2.zip">tas_decadal_summaries_AK_CAN_2km_cccma_cgcm3_1_sresa2.zip</a> (333 MB)
 
-<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresb1.zip">tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresb1.zip</a> (332 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresa1b.zip">tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresa1b.zip</a> (332 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresa2.zip">tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresa2.zip</a> (332 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresb1.zip">tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresb1.zip</a> (332 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresa1b.zip">tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresa1b.zip</a> (332 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresa2.zip">tas_decadal_summaries_AK_CAN_2km_gfdl_cm2_1_sresa2.zip</a> (332 MB)
 
-<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresb1.zip">tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresb1.zip</a> (332 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresa1b.zip">tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresa1b.zip</a> (334 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresa2.zip">tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresa2.zip</a> (336 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresb1.zip">tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresb1.zip</a> (332 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresa1b.zip">tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresa1b.zip</a> (334 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresa2.zip">tas_decadal_summaries_AK_CAN_2km_miroc3_2_medres_sresa2.zip</a> (336 MB)
 
-<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresb1.zip">tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresb1.zip</a> (332 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresa1b.zip">tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresa1b.zip</a> (333 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresa2.zip">tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresa2.zip</a> (332 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresb1.zip">tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresb1.zip</a> (332 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresa1b.zip">tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresa1b.zip</a> (333 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresa2.zip">tas_decadal_summaries_AK_CAN_2km_mpi_echam5_sresa2.zip</a> (332 MB)
 
-<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresb1.zip">tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresb1.zip</a> (334 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa1b.zip">tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa1b.zip</a> (336 MB)
-<a href="/files/data/monthly/tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa2.zip">tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa2.zip</a> (336 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresb1.zip">tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresb1.zip</a> (334 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa1b.zip">tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa1b.zip</a> (336 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa2.zip">tas_decadal_summaries_AK_CAN_2km_ukmo_hadcm3_sresa2.zip</a> (336 MB)
 </pre>
 
 <h4>Day of Freeze, Thaw, Length of Growing Season</h4>
@@ -494,11 +494,11 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 <tr>
 <th scope="col">
 <h5>Metadata</h5>
-<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>19">Projected Day of Freeze/Thaw 2km AR4 metadata</a>
+<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>19">Projected Day of Freeze or Thaw 2km AR4</a>
 </th>
 <th scope="col">
 <h5>Metadata</h5>
-<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>26">Projected Length of Growing Season 2km AR4 metadata </a></th>
+<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>26">Projected Length of Growing Season 2km AR4</a></th>
 </tr>
 </thead>
 <tbody>
@@ -568,13 +568,13 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 <div>
 
 <p>
-Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771 m via the delta method.  A 5-Model Average is also included.
+Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771m via the delta method.  A 5-Model Average is also included.
 </p>
 
 <table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;2000 PRISM</td></tr>
-<tr><th scope="row">Spatial Resolution</th><td>771 m</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>771m</td></tr>
 <tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
 </tbody>
@@ -585,9 +585,9 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 
 <h5>Metadata by product</h5>
 <ul>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>23">Projected Decadal Averages of Monthly Total Precipitation 2km AR4 metadata</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>21">Projected Decadal Averages of Annual Total Precipitation 2km AR4 metadata</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>25">Projected Decadal Averages of Seasonal Total Precipitation 2km AR4 metadata</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>23">Projected Decadal Averages of Monthly Total Precipitation 2km AR4</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>21">Projected Decadal Averages of Annual Total Precipitation 2km AR4</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>25">Projected Decadal Averages of Seasonal Total Precipitation 2km AR4</a></li>
 </ul>
 
 <h5>All products by model and scenario</h5>
@@ -629,17 +629,17 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 <div class="dataAccordion">
 
 
-<h3><a href="#">Historical Monthly Temperature and Precipitation - 771 m</a></h3>
+<h3><a href="#">Historical Monthly Temperature and Precipitation - 771m</a></h3>
 <div>
 
 <p>
-Historical (1901&ndash;2009) monthly average temperature and total precipitation from CRU TS 3.1 climate data, downscaled to 771 m via the delta method.
+Historical (1901&ndash;2009) monthly average temperature and total precipitation from CRU TS 3.1 climate data, downscaled to 771m via the delta method.
 </p>
 
 <table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
-<tr><th scope="row">Spatial Resolution</th><td>771 m</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>771m</td></tr>
 <tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
 </tbody>
@@ -657,13 +657,13 @@ Historical (1901&ndash;2009) monthly average temperature and total precipitation
 </thead>
 <body>
 <tr>
-<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>44">Historical Monthly Average Temperature 771 m CRUTS3.1</a></td>
+<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>44">Historical Monthly Average Temperature 771m CRUTS3.1</a></td>
 <td>
 <a href="/files/data/monthly/tas_AK_771m_CRU_TS31_historical.zip">tas_AK_771m_CRU_TS31_historical.zip</a> (5.5 GB)
 </td>
 </tr>
 <tr>
-<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>45">Historical Monthly Total Precipitation 771 m CRUTS3.1</a></td>
+<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>45">Historical Monthly Total Precipitation 771m CRUTS3.1</a></td>
 <td>
 <a href="/files/data/monthly/pr_AK_771m_CRU_TS31_historical.zip">pr_AK_771m_CRU_TS31_historical.zip</a> (4.5 GB)
 </td>
@@ -673,7 +673,7 @@ Historical (1901&ndash;2009) monthly average temperature and total precipitation
 </div>
 
 
-<h3><a href="#">Historical Derived Temperature Products - 771 m</a></h3>
+<h3><a href="#">Historical Derived Temperature Products - 771m</a></h3>
 <div>
 
 
@@ -684,7 +684,7 @@ Historical (1910&ndash;2009) derived temperature products from CRU TS 3.1 climat
 <table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
-<tr><th scope="row">Spatial Resolution</th><td>771 m</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>771m</td></tr>
 <tr><th scope="row">Temporal Resolution</th><td>Decadal</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
 </tbody>
@@ -695,14 +695,14 @@ Historical (1910&ndash;2009) derived temperature products from CRU TS 3.1 climat
 
 <h5>Metadata by product</h5>
 <ul>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>47">Projected Monthly Average Temperature 771 m metadata</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>49">Projected Monthly Average Temperature 771 m metadata</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>51">Projected Monthly Average Temperature 771 m metadata</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>47">Historical Decadal Averages of Monthly Mean Temperatures 771m CRUTS3.1</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>49">Historical Decadal Averages of Annual Mean Temperatures 771m CRUTS3.1</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>51">Historical Decadal Averages of Seasonal Mean Temperatures 771m CRUTS3.1</a></li>
 </ul>
 
 <h5>All products</h5>
 <pre class="productDownloads">
-<a href="/files/data/monthly/tas_decadal_summaries_AK_771m_CRU_TS31_historical.zip">tas_decadal_summaries_AK_771m_CRU_TS31_historical.zip</a> (707 MB)
+<a href="/files/data/derived/tas_decadal_summaries_AK_771m_CRU_TS31_historical.zip">tas_decadal_summaries_AK_771m_CRU_TS31_historical.zip</a> (707 MB)
 </pre>
 
 <h4>Day of freeze, thaw, length of growing season</h4>
@@ -739,7 +739,7 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 
 </div>
 
-<h3><a href="#">Historical Derived Precipitation Products - 771 m</a></h3>
+<h3><a href="#">Historical Derived Precipitation Products - 771m</a></h3>
 <div>
 
 
@@ -750,7 +750,7 @@ Historical (1910-2009) derived precipitation products from CRU TS 3.1 climate da
 <table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
-<tr><th scope="row">Spatial Resolution</th><td>771 m</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>771m</td></tr>
 <tr><th scope="row">Temporal Resolution</th><td>Decadal</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
 </tbody>
