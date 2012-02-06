@@ -10,7 +10,7 @@ $page->connectToDatabase();
 $resTypes = array ( "Paper", "Report", "Presentation", "Video");
 $resourceid = $_GET['resourceid'];
 
-$resource = Resource::fetchById($_GET['resourceid']);
+$resourceObject = Resource::fetchById($_GET['resourceid']);
 
 ?>
 
@@ -32,14 +32,14 @@ $resource = Resource::fetchById($_GET['resourceid']);
 
                         <?php
 
-                            echo $resource->render(); // only applies to video type, is no-op for other things 
+                            echo $resourceObject->render(); // only applies to video type, is no-op for other things 
                             
                             $att_query = "SELECT * FROM attachments WHERE resourceid='$resourceid' ORDER BY sortorder, category, name ASC, id";
                             $att_result = mysql_query($att_query);
                             echo "<div style=\"color: #242d2f; margin-left: 20px; font-size: 22px; \">Downloads</div>";
                             echo "<div style=\"margin-left: 20px; margin-top: 10px;\">";
 
-                            echo $resource->renderDownloads();
+                            echo $resourceObject->renderDownloads();
 
                             $sizes = array(" Bytes", " KB", " MB", " GB", " TB", " PB", " EB", " ZB", " YB");
                             $category;
@@ -73,7 +73,7 @@ $resource = Resource::fetchById($_GET['resourceid']);
                                 // Render links to projects, if any
                                 $links = new ProjectResourceLink();
                                 echo $links->getHtmlByResource($_GET['resourceid']);
-
+/*
                                 $query = "SELECT collaborators.id,collaborators.name,collaborators.image FROM collaborators JOIN resource_collaborators ON collaborators.id=resource_collaborators.collaboratorid WHERE resource_collaborators.resourceid='".$_GET['resourceid']."' ";
 
 
@@ -106,11 +106,13 @@ $resource = Resource::fetchById($_GET['resourceid']);
                                     }
                                     echo "</div>";
                                 }
-                             
+                            */ 
                             ?>
+
                         </div>
                         <div>
                             <?php
+                            /*
                                 $query = "SELECT people.id, title, first, last, email, phone FROM people JOIN project_personnel ON people.id = resource_personnel.peopleid WHERE resource_personnel.resourceid = '".$resource['id']."' AND contact=true";
                                 $result = mysql_query($query) or die (mysql_error());
                                 if (mysql_num_rows($result) > 0){
@@ -128,6 +130,7 @@ $resource = Resource::fetchById($_GET['resourceid']);
                                     }
                                     echo "</div>";
                                 }
+                                */
                             ?>
                         </div>
                     </div>
