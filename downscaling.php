@@ -121,7 +121,7 @@ No attempt is made to omit precipitation anomaly values of a certain magnitude, 
 <h4>
 Downscaling and Bias Removal</h4>
 <p>
-Temperature and precipitation anomalies are then interpolated with a first-order bilinear spline technique across an extent larger than our high-resolution climatology dataset.  A larger extent is used to account for the climatic variability outside of the bounds of our final downscaled extent.  References for choosing the spline technique can be found <a href="/resource_page.php?resourceid=20">here</a> and <a href="/resource_page.php?resourceid=20">here</a>.
+Temperature and precipitation anomalies are then interpolated with a first-order bilinear spline technique across an extent larger than our high-resolution climatology dataset.  A larger extent is used to account for the climatic variability outside of the bounds of our final downscaled extent.  References for choosing the spline technique can be found <a href="/resource_page.php?resourceid=20">here</a> and <a href="/resource_page.php?resourceid=21">here</a>.
 </p>
 
 <p>

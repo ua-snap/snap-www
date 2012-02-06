@@ -657,13 +657,13 @@ Historical (1901&ndash;2009) monthly average temperature and total precipitation
 </thead>
 <body>
 <tr>
-<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>44">Historical Monthly Average Temperature 771m CRUTS3.1</a></td>
+<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>45">Historical Monthly Average Temperature 771m CRUTS3.1</a></td>
 <td>
 <a href="/files/data/monthly/tas_AK_771m_CRU_TS31_historical.zip">tas_AK_771m_CRU_TS31_historical.zip</a> (5.5 GB)
 </td>
 </tr>
 <tr>
-<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>45">Historical Monthly Total Precipitation 771m CRUTS3.1</a></td>
+<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>44">Historical Monthly Total Precipitation 771m CRUTS3.1</a></td>
 <td>
 <a href="/files/data/monthly/pr_AK_771m_CRU_TS31_historical.zip">pr_AK_771m_CRU_TS31_historical.zip</a> (4.5 GB)
 </td>

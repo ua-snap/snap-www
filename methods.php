@@ -19,7 +19,7 @@ $page->pageHeader();
 
  <p>For additional details on SNAP Methods, please explore our <a href="/downscaling.php">Downscaling</a>, <a href="/modeling.php">Modeling</a>, <a href="/planning.php">Planning</a>, and <a href="/uncertainty.php">Uncertainty</a> sections.</p>
                
-               <img style="display: block; margin: 2em 0 1em;" src="images/HOME_downscaling.png" alt="" />
+               <img style="display: block; margin: 2em auto 1em;" src="images/downscaling_figure_web.png" alt="" />
          </div>
     </div>
 <?php

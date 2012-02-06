@@ -95,7 +95,6 @@ class webPage {
     
     </head>
     <body>
-<div id="betabar"><strong>Wecome to the &beta;eta launch of the SNAP web site.</strong> We&rsquo;ll launch on <strong>Monday, February 6, 2012</strong> and there may be bugs/broken links until then.</div>
         <?php
     }
     public function pageHeader() { ?>    

@@ -1,17 +1,4 @@
 
-#betabar {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	height: 18px;
-	background-color: #f2ff7d;
-	opacity: 1;
-	z-index: 10000;
-	color: black;
-	text-align: center;
-	padding: 1ex;
-	border-top: 1px solid #888;
-}
 
 html {
 	height: 100%;
