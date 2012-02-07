@@ -11,6 +11,19 @@ $page->pageHeader();
 <div id="main_body">
 <div id="main_content" class="releases methods text">
 <h2>Release notes</h2>
+<h3>1.0.2</h3>
+<h4>Release February 6, 2012 at 5:10pm AKST</h4>
+<h5>New functionality/content</h5>
+<ul>
+<li>Changed slides on home page, made clicking the images take you to the link (#621, 671, 676)</li>
+<li>Added more folks: Mark Olson, Stephanie McAfee (#622)</li>
+</ul>
+<h5>Resolved issues</h5>
+<ul>
+<li>Changed &ldquo;Download&rdquo; link on Maps tool to point to actual data page instead of overview (#669)</li>
+<li>Text for decadal historical vs. projected DOF, DOT, LOGS explanation was swapped (#667)</li>
+</ul>
+
 
 <h3>1.0.0</h3>
 <h4>Released February 5, 2012 at 7:40pm AKST</h4>
