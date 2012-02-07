@@ -12,41 +12,39 @@ $page->pageHeader();
 
 
                     <div style="position: absolute; display: none;">
-                        <div class="news_image"><img alt="SNAP Maps Tool: Climate Visualizations" src="images/maps.jpg" style="width: 600px;" /></div>
-                        <div class="news_content"><div class="news_title">Climate Visualizations</div>SNAP is striving to implement useful climate data visualizations that make sense. The new map tool, with it&rsquo;s iteractive titles, forms the basis for future data and mapping enhancements.</div>
+                        <div class="news_image"><a href="/maps.php" target="_blank"><img alt="SNAP Maps Tool: Climate Visualizations" src="images/maps.jpg" style="width: 600px;" /></a></div>
+                        <div class="news_content"><div class="news_title">Climate Visualizations</div>SNAP is striving to implement useful climate data visualizations that make sense. The new map tool, with its iteractive titles, forms the basis for future data and mapping enhancements.</div>
                         <div class="news_link"><a target="_blank" href="/maps.php">open the map &gt;&gt;</a></div>
                     </div>
 
                     <div style="position: absolute; display: none;">
-                        <div class="news_image"><img alt="Your Community: Community Climate Projection Charts" src="images/community_chart_example.jpg" style="width: 600px; height: 300px;" /></div>
+                        <div class="news_image"><a href="/charts.php"><img alt="Your Community: Community Climate Projection Charts" src="images/community_chart_example.jpg" style="width: 600px; height: 300px;" /></a></div>
                         <div class="news_content"><div class="news_title">Your Community</div>Change affects people and communities. Our Community Charts tool allows you to look at how temperature and precipitation regimes will be altered over the next 100 years, across Alaska and Western Canada.</div>
                         <div class="news_link"><a href="/charts.php">explore charts &gt;&gt;</a></div>
                     </div>
 
-
                     <div style="position: absolute">
-                        <div class="news_image"><img alt="SNAP Collaborators" src="images/collabs_border.jpg" style="width: 600px; height: 300px;" /></div>
+                        <div class="news_image"><a href="/collaborators.php"><img alt="SNAP Collaborators" src="images/collabs_border.jpg" style="width: 600px; height: 300px;" /></a></div>
                         <div class="news_content"><div class="news_title">SNAP Collaborations</div>Collaborating with others is a large reason SNAP is able to succeed and produce some of the most useful projections of future conditions across the Arctic.</div>
                         <div class="news_link"><a href="/collaborators.php">read more &gt;&gt;</a></div>
                     </div>
                     
                     <div style="position: absolute">
-                        <div class="news_image"><img alt="National Parks Inventory and Monitoring" src="images/index_images/np_inv.jpg" style="width: 600px; height: 300px;" /></div>
-                        <div class="news_content"><div class="news_title">National Parks Inventory and Monitoring</div>A new report released by the University of Alaska Fairbanks offers international policymakers guidance for navigating the political and practical ramifications of shipping in the Arctic.</div>
-                        <div class="news_link"><!--<1--<a href="">read more &gt;&gt;</a>--></div>
-                        <div class="news_caption">Photo Courtesy of Bruce C. Johnson Jr.</div>
+                        <div class="news_image"><a href="/resource_page.php?resourceid=22"><img alt="Climate Change in Forested Ecosystems" src="images/Climate_Change_in_Forested_Ecosystems.jpg" style="width: 600px; height: 300px;" /></a></div>
+                        <div class="news_content"><div class="news_title">Climate Change in Forested Ecosystems</div>A new report summarizes evidence and implications of recent and projected climate change in Alaska's forest ecosystems.</div>
+                        <div class="news_link"><a href="/resource_page.php?resourceid=22">read more &gt;&gt;</a></div>
                     </div>
 
                     <div style="position: absolute; display: none;">
-                        <div class="news_image"><img alt="Landscape Connectivity" src="images/index_images/connectivity.jpg" style="width: 600px; height: 300px;" /></div>
+                        <div class="news_image"><a href=""><img alt="Landscape Connectivity" src="images/index_images/connectivity.jpg" style="width: 600px; height: 300px;" /></a></div>
                         <div class="news_content"><div class="news_title">Landscape Connectivity</div>Utilizing climate projection data from SNAP, the Connecting Alaska Landscapes into the Future Project used selected species to identify areas of Alaska that may become important in maintaining landscape-level connectivity given a changing climate.</div>
                         <div class="news_link"><!--<1--<a href="">read more &gt;&gt;</a>--></div>
                         <div class="news_caption">Photo Courtesy of Chuck Young, U.S. Fish &amp; Wildlife Service</div>
                     </div>
                     <div style="position: absolute; display: none;">
-                        <div class="news_image"><img alt="Downscaled Climate Projections" src="images/downscaling_figure_web.png" style="width: 600px; height: 300px;" /></div>
+                        <div class="news_image"><a href="/downscaling.php"><img alt="Downscaled Climate Projections" src="images/downscaling_figure_web.png" style="width: 600px; height: 300px;" /></a></div>
                         <div class="news_content"><div class="news_title">Downscaled Climate Projections</div>SNAP takes coarse resolution global climate model (GCM) data and downscales it to higher resolution.  This makes it more useful for agencies and decision makers to plan for climate change.</div>
-                        <div class="news_link"><!--<1--<a href="">read more &gt;&gt;</a>--></div>
+                        <div class="news_link"><a href="/downscaling.php">read more &gt;&gt;</a></div>
                     </div>
                 </div>
                 <div id="news_nav"></div>

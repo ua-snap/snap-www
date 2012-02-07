@@ -103,7 +103,7 @@ snap.submenus = {
 				};
 			},
 			getContent : function() {
-				return '<p style="margin: 1ex">Decadal averages across 1961&ndash;1990</p>';
+				return '<p style="margin: 1ex">Decadal averages, for example, the mean value across 2010-2019.</p>';
 			}
 		}
 	},
@@ -118,7 +118,7 @@ snap.submenus = {
 				};
 			},
 			getContent : function() {
-				return '<p style="margin: 1ex">Decadal averages, for example, the mean value across 2010-2019.</p>';
+				return '<p style="margin: 1ex">Decadal averages across 1961&ndash;1990.</p>';
 			}
 		}
 	},

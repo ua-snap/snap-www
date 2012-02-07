@@ -726,3 +726,15 @@ ul.index {
 	margin: 1em 0;
 	list-style-type: none;
 }
+
+.releases h3 {
+	color: #444;
+	margin: 1em 0 .5ex;
+}
+
+.releases h4 {
+	color: #888;
+	margin: 1ex 0 .5ex;
+	font-size: larger;
+}
+

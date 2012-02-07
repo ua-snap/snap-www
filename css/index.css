@@ -77,11 +77,9 @@
 	color: #ffffff;
 }
 .news_content a {
-	color: #999999;
 	color: #bbbbbb;
 }
 .news_content a:hover {
-	color: #cccccc;
 	color: #999999;
 
 }
@@ -93,7 +91,10 @@
 	border: 1px solid #999999;
 	padding: 3px;
 	height: 300px;
+}
 
+.news_image:hover {
+	cursor: pointer;	
 }
 
 #news_container {
@@ -109,3 +110,4 @@
 	width: 100%; 
 	height: 300px;
 }
+
