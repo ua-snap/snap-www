@@ -126,7 +126,7 @@ $('#contactUsForm').validate({
     errorPlacement: function(error, element) {
         element.prev().before(error);
     }
-});
+})
 
 $('#sendEmailButton').button().click(function(e) {
     if( true === $('#contactUsForm').valid() ) {

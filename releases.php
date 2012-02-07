@@ -10,9 +10,17 @@ $page->pageHeader();
 
 <div id="main_body">
 <div id="main_content" class="releases methods text">
-<h2>Release notes</h2>
+<h2>SNAP web site release notes</h2>
+
+<h3>1.0.3</h3>
+<h4>Released February 7, 2012 at 10:55am AKST</h4>
+<h5>Resolved issues</h5>
+<ul>
+<li>Fixed issue which prevented the Contact form from sending emails correctly (#682)</li>
+</ul>
+
 <h3>1.0.2</h3>
-<h4>Release February 6, 2012 at 5:10pm AKST</h4>
+<h4>Released February 6, 2012 at 5:10pm AKST</h4>
 <h5>New functionality/content</h5>
 <ul>
 <li>Changed slides on home page, made clicking the images take you to the link (#621, 671, 676)</li>
