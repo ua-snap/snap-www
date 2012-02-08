@@ -38,7 +38,7 @@ $page->pageHeader();
                     <div style="position: absolute; display: none;">
                         <div class="news_image"><a href=""><img alt="Landscape Connectivity" src="images/index_images/connectivity.jpg" style="width: 600px; height: 300px;" /></a></div>
                         <div class="news_content"><div class="news_title">Landscape Connectivity</div>Utilizing climate projection data from SNAP, the Connecting Alaska Landscapes into the Future Project used selected species to identify areas of Alaska that may become important in maintaining landscape-level connectivity given a changing climate.</div>
-                        <div class="news_link"><!--<1--<a href="">read more &gt;&gt;</a>--></div>
+                        <div class="news_link"><a href="/project_page.php?projectid=4">read more &gt;&gt;</a></div>
                         <div class="news_caption">Photo Courtesy of Chuck Young, U.S. Fish &amp; Wildlife Service</div>
                     </div>
                     <div style="position: absolute; display: none;">

@@ -12,6 +12,21 @@ $page->pageHeader();
 <div id="main_content" class="releases methods text">
 <h2>SNAP web site release notes</h2>
 
+<h3>1.0.4</h3>
+<h4>Released February 7, 2012 at 4:55pm AKST</h4>
+<h5>New functionality/content</h5>
+<ul>
+<li>Added SNAP downscaling scripts to Methods&rarr;Downscaling section (#666)</li>
+<li>Added logos to Methods&rarr;Downscaling page (#627)</li>
+</ul>
+<h5>Resolved issues</h5>
+<ul>
+<li>Corrected target of link for &lsquo;Landscape Connectivity&rsquo; slide on home page (#683)</li>
+<li>Corrected location of Apache logs (#685)</li>
+<li>Made configuration token for Google Analytics API (#684)</li>
+<li>Changed Apache restart to &lsquo;graceful&rsquo; to allow more seamless version upgrades (#686)</li>
+</ul>
+
 <h3>1.0.3</h3>
 <h4>Released February 7, 2012 at 10:55am AKST</h4>
 <h5>Resolved issues</h5>

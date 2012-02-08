@@ -6,7 +6,7 @@ $page->pageHeader();
 ?>
 
     <div id="main_body">
-        <div id="main_content" class="methods">
+        <div id="main_content" class="methods downscaling">
 <h2>Downscaling</h2>
 <ul class="index">
 <li><a href="#data_sources">Data Sources</a></li>
@@ -17,6 +17,7 @@ $page->pageHeader();
 <p>Downscaling takes known information at large scales to make predictions at local scales.  As such, the output products are essentially value-added products of existing datasets.  It is therefore essential to give an overview of our data sources.</p>
 
 <h4>Projected Global Climate Model data</h4>
+<img src="images/ipcc2.jpg" alt="" style="width: 150px" />
 <p><a href="/faq.php#faq_2">Global Climate Models</a> (GCM) are developed by various research organizations around the world.  At various times, the United Nations <a href="http://www.ipcc.ch/" >Intergovernmental Panel on Climate Change</a> (IPCC) calls upon these organizations to submit their latest modeling results in order to summarize and determine the current scientific consensus on global climate change.  There have been <a href="http://www.ipcc.ch/publications_and_data/publications_and_data_reports.shtml#1" >4 assessment reports</a> from the IPCC: in 1990, 1995, 2001 and 2007.  In support of the more recent reports, the <a href="http://www-pcmdi.llnl.gov/projects/cmip/index.php" >Coupled Model Intercomparison Project</a> (CMIP) was initiated.  Currently we only have utilized the <a href="http://pcmdi-cmip.llnl.gov/cmip3_overview.html?submenuheader=1" >CMIP3</a> model outputs from the <a href="http://www.ipcc.ch/publications_and_data/publications_ipcc_fourth_assessment_report_synthesis_report.htm" >IPCC’s fourth assessment report</a> (AR4).  Future outputs will utilize the <a href="http://pcmdi-cmip.llnl.gov/cmip5/index.html?submenuheader=0" >CMIP5</a> model outputs from the upcoming <a href="http://www.ipcc.ch/activities/activities.shtml" >IPCC fifth assessment report</a> (AR5) expected in 2014.  GCM outputs are only one aspect of these reports, but they form the basis for many interpretations of future climate.</p>
  
 <p>
@@ -25,11 +26,13 @@ SNAP obtains GCM outputs from the Lawrence Livermore National Laboratory Program
 
 <h4>Historical CRU data</h4>
 <p>
+<img src="/images/crulogo_110x90.gif" alt="" class="right"/>
 The <a href="http://www.cru.uea.ac.uk/" >Climate Research Unit</a> (CRU) at the University of East Anglia in England is one of the leading research organizations for the study of natural and anthropogenic climate change.  CRU hosts a large number of global climate datasets, which are managed by a variety of people and projects. CRU global climate data are based on 3000 monthly temperature stations over land as well as additional sea surface temperature (SST) measurements over water. SNAP obtains CRU data directly from their website or from the <a href="http://badc.nerc.ac.uk/home/">British Atmospheric Data Centre</a>.  We utilize CRU 5&deg; &times; 5&deg; <a href="http://www.cru.uea.ac.uk/cru/data/temperature/" >temperature</a> and <a href="http://www.cru.uea.ac.uk/cru/data/precip/" >precipitation</a> data and <a href="http://www.cru.uea.ac.uk/cru/data/hrg/" >TS 3.0/3.1 high resolution gridded data</a>.
 </p>
 
 <h4>Historical PRISM climatological data</h4>
 <p>
+<img src="images/prism_group.jpg" alt="" />
 <a href="http://prism.oregonstate.edu/" >PRISM</a> (Parameter-elevation Regressions on Independent Slopes Model) data are the highest quality spatial climate data currently available.  PRISM data are developed with a model that accounts for land features such as slope, elevation and coastlines, as well as expert knowledge of local climate experts.  SNAP utilizes temperature and precipitation from the 30 year (1961&ndash;1990) monthly climatology data at 2 km spatial resolution covering Alaska and regions of Canada, and ~800 meter spatial resolution from 1971&ndash;2000 covering only Alaska.  We have also utilized other PRISM datasets such as the Pacific Islands for specific projects.
 </p>
 <p>
@@ -44,6 +47,7 @@ Each GCM has different strengths and weaknesses, and some can be expected to per
 <p>
 Dr. John Walsh, a SNAP collaborator, and his team evaluated the performance of a set of fifteen global climate models used in the Coupled Model Intercomparison Project (<a href="/resource_page.php?resourceid=2">Walsh et al 2008</a>).  They calculated the degree to which each model’s output concurred with actual climate data for the years 1958&ndash;2000 for each of three climatic variables (surface air temperature, precipitation, and sea level pressure) for three overlapping regions (Alaska, Greenland, 60&ndash;90&deg;N latitude, and 20&ndash;90&deg;N latitude.)
 </p>
+<img src="/images/ecmwf_logo_web.gif" alt="" />
 <p>
 The core statistic of the validation was a root-mean-square error (RMSE) evaluation of the differences between mean model output for each grid point and calendar month, and data from the European Centre for Medium-Range Weather Forecasts (ECMWF) Re-Analysis, <a href="http://www.ecmwf.int/products/data/archive/descriptions/e4/index.html" >ERA-40</a>. The ERA-40 directly assimilates observed air temperature and sea level pressure observations into a product spanning 1958&ndash;2000. Precipitation is computed by the model used in the data assimilation. The ERA-40 is one of the most consistent and accurate gridded representations of these variables available.
 </p>
@@ -77,7 +81,7 @@ Since several models had substantially smaller systematic errors than the other 
 <p><a href="#top">Back to top</a></p>
 
 <h3><a id="delta_method">Delta Method Downscaling Procedure</a></h3>
-<img src="images/SNAP_delta_method_graphic.png" alt="" style="display: inline-block; margin: 1ex 1em 1em 1ex; float: left;" />
+<img src="images/SNAP_delta_method_graphic.png" alt="" />
 <p>SNAP currently employs a model bias correction in tandem with a statistical downscaling approach called the &ldquo;delta method&rdquo;.  This method has proven robust and popular, most likely because it is straightforward and relatively easy to understand.  At its root, the delta method involves nothing more complex than subtraction and division, which helps in interpreting and explaining downscaling results.  Due to its low computational demand, the delta method allows for rapid and efficient downscaling of multiple GCMs and emission scenarios over hundreds of years.  For a thorough review of other downscaling methods, please see <a href="/resource_page.php?resourceid=15">Katherine Hayhoe&rsquo;s dissertation</a>.  Additional references to the delta method can be found <a href="/resource_page.php?resourceid=16">here</a> and <a href="/resource_page.php?resourceid=17">here</a>.
 </p>
 <p>
@@ -135,8 +139,9 @@ While the baseline climate data used in our downscaling procedure (e.g. PRISM an
 
 <h4>Scripts</h4>
 <p>
-While programming and data processing are highly iterative processes that are always evolving with improved data and efficiency, the core scripts used to produce our datasets are made available to the climate data community.  Below we provide our core scripts and explanations.  These scripts run within the <a href="http://www.r-project.org/" >R statistical software package</a> along with all required packages mentioned in the scripts.  Our scripts were run in parallel on powerful, off-the-shelf commodity server hardware.
+We believe that just as scientific publications are peer reviewed, that scientific code should be held to a similar level of scrutiny. While programming and data processing are highly iterative processes (and sometimes messy) which are always evolving with improved data, methods, and efficiency, the core scripts used to produce our downscaled climate datasets are made available here. These scripts are designed for the <a href="http://www.r-project.org/">R statistical software package</a>. Our scripts were run in parallel on powerful, off-the-shelf commodity server hardware. We are providing these for others to inspect in order to encourage mutually beneficial discussion, but we cannot offer support or assistance in running these in your specific environment. If you would like to contact SNAP concerning becoming a collaborator, <a href="http://www.snap.uaf.edu/people.php#contact">please do!</a>
 </p>
+<p>Download <a href="/attachments/">SNAP downscaling scripts</a> (ZIP, 14.3 kB)</p>
 <p><a href="#top">Back to top</a></p>
 
         </div>

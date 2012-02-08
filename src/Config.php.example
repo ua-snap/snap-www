@@ -15,7 +15,10 @@ class FixturesConfig {
 		'skipDatabase' => true,
 	);
 
-	static public $url = "http://dev.snap.uaf.edu";
+	static public $url = 'http://dev.snap.uaf.edu';
+
+	// Code associated with the web site -- www.snap.uaf.edu is UA-3978613-1
+	static public $googleAnalyticsToken = 'UA-3978613-3';
 
 	// These will be sent to the constructor a PEAR::Mail object.
 	static public $email = array(

@@ -12,11 +12,12 @@ class Template {
 	{
 
     $url = Config::$url;
+    $googleAnalyticsToken = Config::$googleAnalyticsToken;
 
 		return<<<js
 <script type="text/javascript" data-comment="Google Analytics">
       var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-3978613-3']);
+      _gaq.push(['_setAccount', '$googleAnalyticsToken']);
       _gaq.push(['_trackPageview']);
 
       (function() {

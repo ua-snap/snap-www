@@ -95,5 +95,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /usr/bin/snapwww/migrate.php up >> /var/log/%{hostname}-update_log 2>&1
-rm /tmp/community_charts_new_ingest.csv
-service httpd restart
+service httpd graceful

@@ -738,3 +738,11 @@ ul.index {
 	font-size: larger;
 }
 
+.downscaling img {
+	display: inline-block; margin: 1ex 1em 1em 0; float: left;
+}
+
+.downscaling img.right {
+	margin: 1ex 0 1em 1em; float: right;
+}
+
