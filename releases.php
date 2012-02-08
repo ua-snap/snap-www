@@ -21,6 +21,7 @@ $page->pageHeader();
 </ul>
 <h5>Resolved issues</h5>
 <ul>
+<li>Fixed phone number for Nancy Fresco on People Page (#689)</li>
 <li>Corrected target of link for &lsquo;Landscape Connectivity&rsquo; slide on home page (#683)</li>
 <li>Corrected location of Apache logs (#685)</li>
 <li>Made configuration token for Google Analytics API (#684)</li>

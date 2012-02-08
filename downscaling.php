@@ -141,7 +141,7 @@ While the baseline climate data used in our downscaling procedure (e.g. PRISM an
 <p>
 We believe that just as scientific publications are peer reviewed, that scientific code should be held to a similar level of scrutiny. While programming and data processing are highly iterative processes (and sometimes messy) which are always evolving with improved data, methods, and efficiency, the core scripts used to produce our downscaled climate datasets are made available here. These scripts are designed for the <a href="http://www.r-project.org/">R statistical software package</a>. Our scripts were run in parallel on powerful, off-the-shelf commodity server hardware. We are providing these for others to inspect in order to encourage mutually beneficial discussion, but we cannot offer support or assistance in running these in your specific environment. If you would like to contact SNAP concerning becoming a collaborator, <a href="http://www.snap.uaf.edu/people.php#contact">please do!</a>
 </p>
-<p>Download <a href="/attachments/">SNAP downscaling scripts</a> (ZIP, 14.3 kB)</p>
+<p>Download <a href="/attachments/SNAP_downscaling_scripts.zip">SNAP downscaling scripts</a> (ZIP, 14.3 kB)</p>
 <p><a href="#top">Back to top</a></p>
 
         </div>
