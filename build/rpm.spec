@@ -23,10 +23,10 @@ Requires:   php-pear-Mail
 Requires:   ImageMagick
 
 %define inst_dir /var/www/snap
-%define hostname snap
+%define hostname www.snap.uaf.edu
 
 %description
-This package contains the web site for the Scenarios Network for Alaska and Arctic Planning
+This package contains the web site for the Scenarios Network for Alaska and Arctic Planning.
 
 %prep
 %setup -c
@@ -37,7 +37,6 @@ make version
 
 %install
 rm -rf ${RPM_BUILD_ROOT}
-echo build root: ${RPM_BUILD_ROOT}
 
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/css/custom-theme/images
