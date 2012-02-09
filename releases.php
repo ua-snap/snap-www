@@ -13,7 +13,7 @@ $page->pageHeader();
 <h2>SNAP web site release notes</h2>
 
 <h3>1.0.4</h3>
-<h4>Released February 7, 2012 at 4:55pm AKST</h4>
+<h4>Released February 8, 2012 at 6:55pm AKST</h4>
 <h5>New functionality/content</h5>
 <ul>
 <li>Added SNAP downscaling scripts to Methods&rarr;Downscaling section (#666)</li>
