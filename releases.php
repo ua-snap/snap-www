@@ -2,7 +2,7 @@
 
 require 'template.php';
 
-$page = new webPage('SNAP: Resources', '', '');
+$page = new webPage('SNAP: Release Notes', '', '');
 $page->openPage();
 $page->pageHeader();
 
@@ -11,6 +11,26 @@ $page->pageHeader();
 <div id="main_body">
 <div id="main_content" class="releases methods text">
 <h2>SNAP web site release notes</h2>
+
+<h3>1.0.5</h3>
+<h4>Released tbd</h4>
+<h5>New functionality/content</h5>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+<h5>Resolved issues</h5>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
 
 <h3>1.0.4</h3>
 <h4>Released February 8, 2012 at 6:55pm AKST</h4>
