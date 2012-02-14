@@ -1,14 +1,53 @@
-.staff_photo {
-	width: 100px;
-	height: 100px;
-	border: 1px solid #6a7173;
-	float: left;
-	margin: 20px;
-	background-color: #6a7a73;
-	cursor: pointer;
-	cursor: hand;
+.people h2 {
+	color: black;
+	font-size: 34px;
+	margin-bottom: 1ex;
+	clear: both;
 }
-.staff_photo:hover {
-	background-color: #97a93a;
-	background-position: 0 100px;
+
+.people h3 {
+	clear: both;
+	font-size: 18px;
+	color: black;
+	margin: 2em 0 1em;
+}
+
+.person {
+	display: inline-block;
+	padding: 3px;
+	border: 1px solid #eee;
+	margin: 2em;
+	text-align: center;
+	vertical-align: top;
+}
+
+p.name {
+	margin: 1ex auto;
+	font-size: 18px;
+}
+
+p.title {
+	margin: 1ex auto;
+	font-size: 14px;
+	color: #888;
+}
+
+.people a {
+	color: black;
+}
+
+.people a:hover * {
+	background-color: #fbffd0;
+}
+
+.person img {
+	width: 100%;
+}
+
+.leaders .person {
+	width: 25%;
+}
+
+.staff .person {
+	width: 17%;
 }
