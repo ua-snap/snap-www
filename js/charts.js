@@ -18,6 +18,29 @@ $( function() {
 	window.snapCharts.refreshMenus();
 	window.snapCharts.fetchData();
 
+	// Initialize the button for the export modal
+	$('#export_options').button({
+		icons: {
+			primary: 'ui-icon-gear'
+		}
+	}).click(
+		function(e) {
+			$('#exportDialog').show().dialog({
+				draggable: false,
+				modal: true,
+				title: 'Export chart for '+window.snapCharts.data.communityName + ', '+window.snapCharts.data.communityRegion,
+				resizable: false,
+				width: '700px',
+				zindex: 50000,
+				buttons: {
+					'Close': function(e) {
+						$(this).dialog('close');
+					}
+				}
+			}).find('button').button();
+		}
+	);
+
 });
 
 // Encapsulate the AJAX functionality

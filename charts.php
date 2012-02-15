@@ -12,12 +12,12 @@ $page->pageHeader();
 
     <h1>Community Charts<span id="location"></span></h1>
 
-    <div style="margin: auto;">
+    <div>
         <div style="height: 150px; margin: auto; padding-bottom: 5px; margin-bottom: 20px; width: 950px;">
             <div style="width: 300px; float: left; position: relative; left: -5px">
                 <img id="community_list" src="images/akcanada_extent.png" style="display: block; position: absolute; top: -25px; z-index: -10" />
                 <div>
-                    <div class="ui-widget" style="padding: 0 5px 10ex; margin-bottom: 10px; position: relative; top: 120px; z-index: 10000">
+                    <div class="ui-widget" style="padding: 0 5px 10ex; margin-bottom: 10px; position: relative; top: 120px; z-index: 1001">
                         <input type="hidden" id="comm_select_id" value="" name="comm_select_id" />
                         <label for="comm_select">Enter your community&rsquo;s name:</label>
                         <input id="comm_select" name="community_selector" type="text" style="border: 1px solid #aaa; width: 95%" value="" placeholder="Enter your community name here" />
@@ -25,7 +25,7 @@ $page->pageHeader();
                 </div>
                 
             </div>
-            <div style="width: 426px; margin-left: 10px; height: 140px; float: left;  border: 1px solid #ffffff;">
+            <div style="width: 426px; margin-left: 10px; float: left;">
                 <?php
                 if (!isset($_GET['community'])){
                 ?>
@@ -33,7 +33,7 @@ $page->pageHeader();
                     <div style="text-align: center; font-size: 18px; width: 250px; margin: auto; margin-top: 50px; color: #996600;">Select a Community to open a chart and access options</div>
                 </div>
                 <?php } ?>
-                <div style="color: #666666; margin: auto; font-size: 14px; text-align: center; margin-top: 0px;">
+                <div style="color: #666; margin: auto; font-size: 14px; text-align: center; margin-top: 0px;">
                     Data Set
                 </div>
                 <div id="dataset" style="margin: auto; font-size: 18px; text-align: center; margin-bottom: 15px;">
@@ -58,7 +58,7 @@ $page->pageHeader();
                         });
                     </script>
                 </div>
-                <div style="color: #666666; margin: auto; font-size: 14px; text-align: center; margin-top: 0px;">Emissions Scenario</div>
+                <div style="color: #666; margin: auto; font-size: 14px; text-align: center; margin-top: 0px;">Emissions Scenario</div>
                 <div style="margin: auto; font-size: 18px; text-align: center; margin-bottom: 15px;">
 
                     <span id="scen_low"><a>Low</a></span>
@@ -122,7 +122,7 @@ $page->pageHeader();
                         });
                     </script>
                 </div>
-                <div style="color: #666666; margin: auto; font-size: 14px; text-align: center; margin-top: 0px;">Model Variability</div>
+                <div style="color: #666; margin: auto; font-size: 14px; text-align: center; margin-top: 0px;">Model Variability</div>
                 <div style="margin: auto; font-size: 18px; text-align: center; margin-bottom: 5px;">
                 <span id="model_vari_off"><a>Off</a></span>
                     <div id="vari_hover" style="z-index: 100; display: none; position: absolute; margin-left: 50px; background-color: #f8f8f8; border: 1px solid #999999;">
@@ -161,38 +161,17 @@ $page->pageHeader();
                     </script>
                 </div>
             </div>
-            <div style="width: 188px; margin-left: 10px; height: 120px; float: left; ">
+            <div style="width: 201px; margin: 0 0 0 10px; float: left; ">
                 <div style="text-align: right">In cooperation with:</div>
-                <div style="text-align: right;"><a href="<?php echo Config::$url ?>/collaborators.php#org_17"><img alt="Cooperative Extension Services" style="height: 135px; vertical-align: top;" src="images/collaborators/ces.jpg" /></a></div>
-            <div id="export_options" style="margin-top: 0px; z-index: 10; display: none; text-align: right; font-size: 12px;">
-            Export as: <a id="export_link">Link</a>, 
-                <a id="export_image_png">PNG</a>, 
-                <a id="export_image_svg">SVG</a>, 
-                <a id="export_image_pdf">PDF</a>
-            </div>
-            <script type="text/javascript">
-                $('#export_link').click( function() {
-                    $('#link_field').val(window.location.href);
-                    $('#link_box').fadeIn();
-                    $('#link_field').focus().select();
-                });
-                $('#export_image_png').click( function() { window.snapCharts.exportChart('image/png'); } );
-                $('#export_image_svg').click( function() { window.snapCharts.exportChart('image/svg+xml'); });
-                $('#export_image_pdf').click( function() { window.snapCharts.exportChart('application/pdf'); });
-            </script>
-
-                
+                <div style="text-align: right;">
+                    <a href="<?php echo Config::$url ?>/collaborators.php#org_17"><img alt="Cooperative Extension Services" style="height: 135px; vertical-align: top;" src="images/collaborators/ces.jpg" /></a>
+                <button id="export_options">Export</button>
+            
+                </div>
             </div>
             <div class="ui-helper-clearfix"></div>
         </div>
         <div style="position: relative; margin: 15px auto; clear: both; auto; border: 1px solid #999999; width: 950px; height: 460px;">
-            <div id="link_box" style="background-color: #f5f5f5; display: none; position: absolute; z-index: 20; right: 0px; width: 300px; height: 50px; border: 1px solid #787878;">
-                <div style="position: absolute; width: 15px; height: 15px; right: 2px; top: 2px; background-color: #ffffff; text-align: center;"><a id="link_close">X</a></div>
-                <div style="margin: 13px;">Link: <input id="link_field" type="text" style="width: 220px;" value="" /></div>
-                <script type="text/javascript">
-                    $('#link_close').click( function() { $('#link_box').fadeOut(); });
-                </script>
-            </div>
             <div style="top: 20px; position: absolute; width: 950px; display: block; height: 420px" id="display">
                 <img alt="Sample Chart" id="placeholderImage" style="margin: auto; width: 920px; opacity: 0.4; margin-left: 15px;" src="/images/def_chart.png" />
                 <div style="position: absolute; top: 20px; width: 930px; height: 420px; margin-left: 20px;" id="chart_div"></div>
@@ -221,6 +200,35 @@ For further information on SNAP projections, please explore our <a href="/method
 </p>
         </div>
     </div>
+</div>
+
+<div id="exportDialog" style="display: none;">
+
+<fieldset>
+<legend>Link</legend>
+<p>Copy/paste the link below to share this chart with others.</p>
+<input readonly="readonly" id="export_link" value="linky linky" />
+</fieldset>
+
+<fieldset>
+<legend>High&ndash;resolution image for print</legend>
+<p>This provides a 600&ndash;dpi <code>png</code> image sized to be 10 inches wide.  This image is suitable for using in standard printed reports, and can be resized inside of office applications to fit different page layouts.</p>
+<button>Download high-resolution PNG</button>
+</fieldset>
+
+<fieldset>
+<legend>Low&ndash;resolution image for web</legend>
+<p>This provides a 72&ndash;dpi <code>png</code> image sized to be 800&times;600 pixels in size.  This image is suitable for embedding in web pages or for small thumbnails in printed media.</p>
+<button>Download low-resolution PNG</button>
+</fieldset>
+
+<fieldset>
+<legend>Vector format for posters</legend>
+<p>This provides a resolution&ndash;independent vector <code>SVG</code> file.  This is suitable for being manipulated in programs such as Adobe Illustrator to create large, poster&ndash;sized graphics.</p>
+<button>Download SVG</button>
+
+</fieldset>
+
 </div>
 
 <script type="text/javascript">

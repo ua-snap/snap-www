@@ -55,3 +55,27 @@ div.blockMsg img {
 	text-align: left;
 	margin-top: 5px;
 }
+
+#export_options {
+	margin: 0;
+	position: relative;
+	bottom: 3px;
+	left: 5px;
+}
+
+/* hack inside jqueryui theme */
+#ui-dialog-title-exportDialog {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;	
+}
+
+#exportDialog fieldset {
+
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Verdana, Tahoma, sans-serif;
+	border: none;
+	margin: 1ex 0 1.5em 0;
+	padding: 1ex 0;
+}
+
+#exportDialog legend {
+	padding: 0; margin: 0;
+}

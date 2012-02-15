@@ -86,6 +86,7 @@ class PresentationResource extends Resource {
 }
 
 class VideoResource extends Resource {
+    
     public $imgAltText="Video";
     public $imgSrc = "images/pub_video.png";
 
