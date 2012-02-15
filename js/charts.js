@@ -13,15 +13,10 @@
 // Prepare some functionality when page has loaded
 $( function() {
 	
-	window.snapCharts.initialize();
-	window.snapCharts.refreshState();
-	window.snapCharts.refreshMenus();
-	window.snapCharts.fetchData();
-
 	// Initialize the button for the export modal
 	$('#export_options').button({
 		icons: {
-			primary: 'ui-icon-gear'
+			primary: 'ui-icon-print'
 		}
 	}).click(
 		function(e) {
@@ -30,6 +25,8 @@ $( function() {
 				modal: true,
 				title: 'Export chart for '+window.snapCharts.data.communityName + ', '+window.snapCharts.data.communityRegion,
 				resizable: false,
+				show: 'fade',
+				hide: 'fade',
 				width: '700px',
 				zindex: 50000,
 				buttons: {
@@ -37,9 +34,20 @@ $( function() {
 						$(this).dialog('close');
 					}
 				}
-			}).find('button').button();
+			});
+
+			$('#export_link').select();
+			$('#export_hires_png').button().click( function(e) { window.snapCharts.exportChart('png/hires'); } );
+			$('#export_lowres_png').button().click( function(e) { window.snapCharts.exportChart('png/lowres'); } );
+			$('#export_svg').button().click( function(e) { window.snapCharts.exportChart('svg'); } );
+
 		}
-	);
+	).hide();
+
+	window.snapCharts.initialize();
+	window.snapCharts.refreshState();
+	window.snapCharts.refreshMenus();
+	window.snapCharts.fetchData();
 
 });
 
@@ -49,7 +57,7 @@ window.snapCharts = {
 	chart: null, // is defined when the chart is drawn
 
 	data: {
-		community: null,
+		community: null, // id#
 		communityName: null,
 		region: null, // Alaska, Manitoba, etc
 		country: null, // USA or CAN
@@ -281,7 +289,7 @@ window.snapCharts = {
 					$('#location').html(": " + snapCharts.data.communityName + ', ' + snapCharts.data.communityRegion);
 					$('#comm_block').hide();
 					$('#export_options').show();
-					$('#link_field').val(window.location.href);
+					$('#export_link').val(window.location.href);
 				},
 				'json'
 			);
@@ -308,7 +316,7 @@ window.snapCharts = {
 			
 			chart: {
 				height: 400,
-				border: '#ffffff',
+				border: 'none',
 				renderTo: 'chart_div',
 				defaultSeriesType: 'column',
 				margin: [100,30,70,50]
@@ -316,9 +324,9 @@ window.snapCharts = {
 			tooltip: {
 				formatter: function() {
 					if( 1 === snapCharts.data.dataset ) {
-						return '<span style="color: #999999;">' + this.x + ' </span><br/><span>' + this.y + ' °F (' + ((5/9) * (this.y - 32)).toFixed(1) + ' °C)</span>';
+						return '<span style="color: #999;">' + this.x + ' </span><br/><span>' + this.y + ' °F (' + ((5/9) * (this.y - 32)).toFixed(1) + ' °C)</span>';
 					} else {
-						return '<span style="color: #999999;">' + this.x + ' </span><br/><span>' + this.y + ' in (' + (this.y * 25.4).toFixed(1) + ' mm)</span>';
+						return '<span style="color: #999;">' + this.x + ' </span><br/><span>' + this.y + ' in (' + (this.y * 25.4).toFixed(1) + ' mm)</span>';
 					}
 				}
 			},
@@ -328,13 +336,13 @@ window.snapCharts = {
 				href: '',
 				position: {
 					y: -35,
-					x: 10,
+					x: 0,
 					align: 'center'
 				},
 				style: {
 					'fontSize' : '9px',
-					'width': '800px',
-					'padding': '9px auto 18px'
+					'width': '750px',
+					'padding': '10px'
 				},
 				text: 'This graph shows average values from projections from five global models used by the Intergovernmental Panel on Climate Change.  Due to variability among models and among years in a natural climate system, such graphs are useful for examining trends over time, rather than for precisely predicting monthly or yearly values.  For more information on the SNAP program, including derivation, reliability, and variability among these projections, please visit www.snap.uaf.edu.'
 			},
@@ -359,7 +367,7 @@ window.snapCharts = {
 			
 			title: {
 				y: 10,
-				text: snapCharts.data.title
+				text: snapCharts.data.title + '<br/><span style="font-size: 48px;">YAAAY</span>'
 			},
 
 			subtitle: {
@@ -378,7 +386,7 @@ window.snapCharts = {
 				plotBands: [
 					{
 						value: 32,
-						color: '#000000',
+						color: '#000',
 						width: 1.5,
 						label: {
 							text: '32°',
@@ -399,7 +407,7 @@ window.snapCharts = {
 
 			exporting: {
 				enabled: true,
-				url: './exporting-server/',
+				url: './charts_export.php',
 				buttons: {
 					exportButton: {
 						enabled: false
@@ -457,62 +465,66 @@ window.snapCharts = {
 				}
 			]
 		},  function(chart) {
-
-			if( 1 === snapCharts.data.variability ) {
-
-				var extremes = chart.yAxis[0].getExtremes();
-				var multiplier = chart.plotHeight / (extremes.max - extremes.min);
-				
-				for( i = 1; i < chart.series.length; i += 2 ) {
-					for (j = 0; j < chart.series[i].data.length; j++) {
-
-						var x = chart.series[i].data[j].plotX + 32 + i * 5.75;
-						var y = chart.series[i].data[j].plotY+100;
-						var y1 = chart.series[i].data[j].plotY+100 - chart.series[i+1].data[j].y * multiplier;
-						var y2 = chart.series[i].data[j].plotY+100 + chart.series[i+1].data[j].y * multiplier;
-						
-						var liney1 = chart.renderer.path(
-							['M', x, y, 'L', x, y, x, y1]
-						).attr(
-							{
-								strokeWidth: 1,
-								zIndex: 5,
-								stroke: 'Black'
-							}
-						).add();
-
-						var linex1 = chart.renderer.path(
-							[ 'M', x, y1, 'L', x-2, y1, x+2, y1 ]
-						).attr(
-							{
-							strokeWidth: 1,
-							zIndex: 5,
-							stroke: 'Black'
-							}
-						).add();
-
-						var liney2 = chart.renderer.path(
-							[ 'M', x, y, 'L', x, y, x, y2 ]
-						).attr(
-							{
-								strokeWidth: 1,
-								zIndex: 5,
-								stroke: 'Black'
-							}
-						).add();
-				
-						var linex2 = chart.renderer.path(
-							[ 'M', x, y2, 'L', x-2, y2, x+2, y2]
-						).attr(
-							{
-								strokeWidth: 1,
-								zIndex: 5,
-								stroke: 'Black'
-							}
-						).add();
-					}
-				}
-            }
+			window.snapCharts.customChartsRenderer(chart);
         });
 	}
 };
+
+window.snapCharts.customChartsRenderer = function(chart) {
+
+	if( 1 === snapCharts.data.variability ) {
+
+		var extremes = chart.yAxis[0].getExtremes();
+		var multiplier = chart.plotHeight / (extremes.max - extremes.min);
+		
+		for( i = 1; i < chart.series.length; i += 2 ) {
+			for (j = 0; j < chart.series[i].data.length; j++) {
+
+				var x = chart.series[i].data[j].plotX + 32 + i * 5.75;
+				var y = chart.series[i].data[j].plotY+100;
+				var y1 = chart.series[i].data[j].plotY+100 - chart.series[i+1].data[j].y * multiplier;
+				var y2 = chart.series[i].data[j].plotY+100 + chart.series[i+1].data[j].y * multiplier;
+				
+				var liney1 = chart.renderer.path(
+					['M', x, y, 'L', x, y, x, y1]
+				).attr(
+					{
+						strokeWidth: 1,
+						zIndex: 5,
+						stroke: 'Black'
+					}
+				).add();
+
+				var linex1 = chart.renderer.path(
+					[ 'M', x, y1, 'L', x-2, y1, x+2, y1 ]
+				).attr(
+					{
+					strokeWidth: 1,
+					zIndex: 5,
+					stroke: 'Black'
+					}
+				).add();
+
+				var liney2 = chart.renderer.path(
+					[ 'M', x, y, 'L', x, y, x, y2 ]
+				).attr(
+					{
+						strokeWidth: 1,
+						zIndex: 5,
+						stroke: 'Black'
+					}
+				).add();
+		
+				var linex2 = chart.renderer.path(
+					[ 'M', x, y2, 'L', x-2, y2, x+2, y2]
+				).attr(
+					{
+						strokeWidth: 1,
+						zIndex: 5,
+						stroke: 'Black'
+					}
+				).add();
+			}
+		}
+	}
+}

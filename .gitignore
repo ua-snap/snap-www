@@ -2,3 +2,4 @@ build/coverage
 build/logs
 build/test-results
 src/Config.php
+charts/

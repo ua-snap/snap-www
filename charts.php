@@ -206,26 +206,23 @@ For further information on SNAP projections, please explore our <a href="/method
 
 <fieldset>
 <legend>Link</legend>
-<p>Copy/paste the link below to share this chart with others.</p>
-<input readonly="readonly" id="export_link" value="linky linky" />
+<input style="width: 100%" readonly="readonly" id="export_link" value="linky linky" />
 </fieldset>
 
 <fieldset>
 <legend>High&ndash;resolution image for print</legend>
-<p>This provides a 600&ndash;dpi <code>png</code> image sized to be 10 inches wide.  This image is suitable for using in standard printed reports, and can be resized inside of office applications to fit different page layouts.</p>
-<button>Download high-resolution PNG</button>
+<button id="export_hires_png">Download high-resolution PNG (600 dpi, 10" wide)</button>
 </fieldset>
 
 <fieldset>
 <legend>Low&ndash;resolution image for web</legend>
-<p>This provides a 72&ndash;dpi <code>png</code> image sized to be 800&times;600 pixels in size.  This image is suitable for embedding in web pages or for small thumbnails in printed media.</p>
-<button>Download low-resolution PNG</button>
+<button id="export_lowres_png">Download low-resolution PNG (800&times;350px)</button>
 </fieldset>
 
 <fieldset>
-<legend>Vector format for posters</legend>
-<p>This provides a resolution&ndash;independent vector <code>SVG</code> file.  This is suitable for being manipulated in programs such as Adobe Illustrator to create large, poster&ndash;sized graphics.</p>
-<button>Download SVG</button>
+<legend>Vector format for posters (SVG)</legend>
+<p>Programs such as Adobe Illustrator, GIMP, and ImageMagick are needed to work with this file format.</p>
+<button id="export_svg">Download SVG (resolution&ndash;independent)</button>
 
 </fieldset>
 

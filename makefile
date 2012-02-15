@@ -35,7 +35,7 @@ javascript :
 --js=./js/jquery.ba-bbq.min.js \
 --js=./js/plugins.js \
 --js=./js/highcharts.js \
---js=./js/exporting.js \
+--js=./js/exporting.src.js \
 --js=./js/snap.min.js \
 --js_output_file=./js/min.js
 	sed -ni '1h;1!H;$${;g;s:<!-- package-javascript.*end-package -->:<script type="text/javascript" src="js/min.js"></script>:p;}' src/Template.php

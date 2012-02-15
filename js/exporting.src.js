@@ -92,7 +92,7 @@ defaultOptions.navigation = {
 		symbolY: 10.5,
 		verticalAlign: 'top',
 		width: 24,
-		y: 10		
+		y: 10
 	}
 };
 
@@ -170,11 +170,11 @@ defaultOptions.exporting = {
 
 extend(Chart.prototype, {
 	/**
-	 * Return an SVG representation of the chart
-	 * 
-	 * @param additionalOptions {Object} Additional chart options for the generated SVG representation
-	 */	
-	 getSVG: function(additionalOptions) {
+	* Return an SVG representation of the chart
+	*
+	* @param additionalOptions {Object} Additional chart options for the generated SVG representation
+	*/
+	getSVG: function(additionalOptions) {
 		var chart = this,
 			chartCopy,
 			sandbox,
@@ -211,15 +211,10 @@ extend(Chart.prototype, {
 		});
 		options.exporting.enabled = false; // hide buttons in print
 
-		if (!options.exporting.enableImages) {
-			options.chart.plotBackgroundImage = null; // the converter doesn't handle images
-		}
-		options.chart.plotBackgroundImage = 'http://dev.snap.uaf.edu/images/snap_chart_bg.png';
-		
 		// prepare for replicating the chart
 		options.series = [];
 		each(chart.series, function(serie) {
-			seriesOptions = serie.options;			
+			seriesOptions = serie.options;
 			
 			seriesOptions.animation = false; // turn off animation
 			seriesOptions.showCheckbox = false;
@@ -227,7 +222,7 @@ extend(Chart.prototype, {
 			
 			if (!options.exporting.enableImages) {
 				// remove image markers
-				if (seriesOptions && seriesOptions.marker && /^url\(/.test(seriesOptions.marker.symbol)) { 
+				if (seriesOptions && seriesOptions.marker && /^url\(/.test(seriesOptions.marker.symbol)) {
 					seriesOptions.marker.symbol = 'circle';
 				}
 			}
@@ -253,17 +248,24 @@ extend(Chart.prototype, {
 				if (!options.exporting.enableImages) {
 					// remove image markers
 					pointMarker = point.config && point.config.marker;
-					if (pointMarker && /^url\(/.test(pointMarker.symbol)) { 
+					if (pointMarker && /^url\(/.test(pointMarker.symbol)) {
 						delete pointMarker.symbol;
 					}
 				}
-			});	
+			});
 			
 			options.series.push(seriesOptions);
 		});
+
+		// Make room for compositing the SNAP logo with ImageMagick
+		options.credits.position.x = 150;
+		options.credits.position.align = 'left';
 		
+		// TODO: inject the extra rendering code here!
 		// generate the chart copy
-		chartCopy = new Highcharts.Chart(options);		
+		chartCopy = new Highcharts.Chart(options, function(chart) {
+			window.snapCharts.customChartsRenderer(chart);
+        });
 		
 		// reflect axis extremes in the export
 		each(['xAxis', 'yAxis'], function(axisType) {
@@ -289,7 +291,7 @@ extend(Chart.prototype, {
 		
 		// sanitize
 		svg = svg
-			.replace(/zIndex="[^"]+"/g, '') 
+			.replace(/zIndex="[^"]+"/g, '')
 			.replace(/isShadow="[^"]+"/g, '')
 			.replace(/symbolName="[^"]+"/g, '')
 			.replace(/jQuery[0-9]+="[^"]+"/g, '')
@@ -301,10 +303,10 @@ extend(Chart.prototype, {
 			/* This fails in IE < 8
 			.replace(/([0-9]+)\.([0-9]+)/g, function(s1, s2, s3) { // round off to save weight
 				return s2 +'.'+ s3[0];
-			})*/ 
+			})*/
 			
 			// IE specific
-			.replace(/id=([^" >]+)/g, 'id="$1"') 
+			.replace(/id=([^" >]+)/g, 'id="$1"')
 			.replace(/class=([^" ]+)/g, 'class="$1"')
 			.replace(/ transform /g, ' ')
 			.replace(/:(path|rect)/g, '$1')
@@ -329,10 +331,10 @@ extend(Chart.prototype, {
 	},
 	
 	/**
-	 * Submit the SVG representation of the chart to the server
-	 * @param {Object} options Exporting options. Possible members are url, type and width.
-	 * @param {Object} chartOptions Additional chart options for the SVG representation of the chart
-	 */
+	* Submit the SVG representation of the chart to the server
+	* @param {Object} options Exporting options. Possible members are url, type and width.
+	* @param {Object} chartOptions Additional chart options for the SVG representation of the chart
+	*/
 	exportChart: function(options, chartOptions) {
 		var form,
 			chart = this,
@@ -350,15 +352,17 @@ extend(Chart.prototype, {
 		}, doc.body);
 		
 		// add the values
-		each(['filename', 'type', 'width', 'svg'], function(name) {
+		each(['type', 'svg', 'communityId', 'dataset', 'scenario', 'variability'], function(name) {
 			createElement('input', {
 				type: HIDDEN,
 				name: name,
-				value: { 
-					filename: options.filename || 'chart', 
-					type: options.type, 
-					width: options.width, 
-					svg: svg 
+				value: {
+					type: options.type,
+					svg: svg,
+					communityId: window.snapCharts.data.communityId,
+					dataset: window.snapCharts.data.dataset,
+					scenario: window.snapCharts.data.scenario,
+					variability: window.snapCharts.data.variability
 				}[name]
 			}, null, form);
 		});

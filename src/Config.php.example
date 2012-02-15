@@ -14,7 +14,20 @@ class FixturesConfig {
 	static public $testing = array(
 		'skipDatabase' => true,
 	);
+	
+	/**
+	* Points at an Apache-writable directory -- absolute filesystem path
+	*/
+	static public $cache = '/tmp';
 
+	/**
+	* Points at an Apache-readable directory that is public-facing -- absolute path
+	*/
+	static public $charts = '/var/www/html/charts';
+
+	/**
+	* Refers to self-base-URL.  TODO: replace with PHP's inbuilt $_SERVER...var.  :) duh Bruce
+	*/
 	static public $url = 'http://dev.snap.uaf.edu';
 
 	// Code associated with the web site -- www.snap.uaf.edu is UA-3978613-1

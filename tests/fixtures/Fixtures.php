@@ -2,6 +2,12 @@
 
 class Fixtures
 {
+    static public $chartExport = array(
+        'communityId' => 1426,
+        'type' => 'png/high',
+        'svg' => '<svg></svg>'
+    );
+
     static public $project = array(
         'id' => 1,
         'title' => 'ProjectTitle',
