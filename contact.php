@@ -6,6 +6,15 @@
 require_once 'src/Config.php';
 require_once 'Mail.php'; // PEAR Mail
 
+if( !isset($_POST['what']) 
+    || !isset($_POST['email'])
+    || !isset($_POST['name'])
+    || !isset($_POST['message'])
+) {
+    header('HTTP/1.0 400 Bad Request', true, 400);
+    exit();
+}
+
 try {
         
     if( !isset($_POST['what'])) {
@@ -47,7 +56,7 @@ text;
     header('HTTP/1.1 500 Internal Server Error', true, 500);
 
     // Get the exception into a logfile somewhere and bail.
-    die(e);
+    die($e);
 }
 
 ?>
