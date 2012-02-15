@@ -34,8 +34,9 @@ a.resource {
 }
 
 .resources li {
-    margin: 1ex 0 1.5ex; 
+    margin: 1.5ex 0 2ex; 
     padding: 0;
+    line-height: 1.4;
 }
 
 .resources h3 {
