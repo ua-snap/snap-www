@@ -77,7 +77,7 @@ js;
 	}
 	
   public function getSubmenu($menu_value, $activeSubmenu = null) {
-    
+
     $menu_options = array(
       'about' => array(
         array('link', '/people.php', 'People'),

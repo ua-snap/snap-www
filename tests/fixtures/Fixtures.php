@@ -2,6 +2,15 @@
 
 class Fixtures
 {
+    static public $project = array(
+        'id' => 1,
+        'title' => 'ProjectTitle',
+        'summary' => 'ProjectSummary',
+        'image' => 'project.png',
+        'image_source' => 'ImageSource',
+        'description' => 'project description'
+    );
+
     static public $resources = array(
         1 => array(
             "id" => 1,

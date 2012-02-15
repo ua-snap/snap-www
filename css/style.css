@@ -746,3 +746,38 @@ ul.index {
 	margin: 1ex 0 1em 1em; float: right;
 }
 
+.projects h2 {
+	    color: black;
+    font-size: 34px;
+    margin-bottom: 1ex;
+    clear: both; 
+}
+
+a.project {
+	display: inline-block;
+	width: 30em;
+	vertical-align: top;
+	color: #038;
+	margin: 0 2em 2em 0;
+	padding: 1ex;
+}
+
+a.project:hover {
+	background-color: #fbffd0;
+}
+
+a.project img {
+	display: block;
+	margin: .5ex 1em 1em 0;
+	float: left;
+	width: 12em;
+}
+
+a.project h4 {
+	margin: 0 0 1ex;
+}
+
+a.project p {
+	color: black;
+	margin-left: 13em;
+}
