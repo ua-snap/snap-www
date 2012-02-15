@@ -18,7 +18,7 @@ class Project {
 
 	public function getSummaryHtml() {
 
-		$title = ( false === empty($this->props['image_source'])) ? 'title="'.$this->props['image_source'].'"' : '';
+		$title = ( false === empty($this->props['image_source'])) ? 'title="Photo credit: '.$this->props['image_source'].'"' : '';
 
 		return <<<html
 <a href="/project_page.php?projectid={$this->props['id']}" class="project">
