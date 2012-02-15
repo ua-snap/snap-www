@@ -8,27 +8,10 @@ require_once('src/SwDb.php');
 */
 class Resource {
 
+    public $props;
+
     public function __construct($props) {
         $this->props = $props;
-    }
-
-    public function getTagList() {
-        $tags = '';
-        try {
-            $dbh = SwDb::getInstance();
-            $sth = $dbh->prepare("SELECT GROUP_CONCAT( DISTINCT tag ORDER BY tag SEPARATOR ', ') AS tags FROM resource_tags WHERE resourceid= :resourceId");
-            $sth->execute( array( 'resourceId' => $this->props['id']) );
-            $tags = $sth->fetch();
-        } catch (Exception $e) {
-            throw new Exception($e); // bubble
-        }
-        if(!empty($tags[0])) { 
-            $tags = '<div style="color: #666;">Tags: '.$tags[0].'</div>';
-        } else {
-            $tags = '';
-        }
-        return $tags;
-
     }
 
     public function render()
@@ -41,57 +24,16 @@ class Resource {
         return; // no-op unless overridden in child classes    
     }
 
+    public function getType() {
+        return $this->props['type'];
+    }
+
     public function toSummaryHtml() {
 
-        $tags = $this->getTagList();
-
         return <<<html
-<div id="pub_box_{$this->props['id']}" class="resource">
-    <div id="pub_hover_{$this->props['id']}" class="hover_box">
-        <div style="position: relative; ">
-            <div style="position: absolute; ">
-                <img alt="{$this->imgAltText}" src="{$this->imgSrc}" style="margin-left: 5px;" />
-            </div>
-            <div style="position: relative; left: 59px; width: 380px;">
-                <div style="font-size: 15px; color: #111111; margin-top: 5px; margin-bottom: 5px;" >
-                    <a href="resource_page.php?resourceid={$this->props['id']}">{$this->props['title']}</a>
-                </div>
-                <div style="position: relative; width: 420px; margin-bottom: 10px;"><!-- no-op lint --></div>$tags
-            </div>
-        </div>
-    <div style="margin-top: 10px;width: 420px; padding: 10px;">{$this->props['summary']}</div>
-    <div style="position: relative; left: 385px; bottom: 5px; margin-top: 10px;">
-        <a id="pub_close_{$this->props['id']}" style="cursor: pointer; cursor: hand;">close &#8855;</a>
-    </div>
-</div>
-<div style="width: 50px; padding: 6px; position: absolute; z-index: 1;">
-    <img alt="{$this->imgAltText}" src="{$this->imgSrc}" style="" />
-</div>
-<div style="position: absolute; padding-top: 6px; left: 60px; width: 380px;">
-    <div style="font-size: 15px; color: #111111; margin-bottom: 5px;" >
-        <a href="resource_page.php?resourceid={$this->props['id']}">{$this->props['title']}</a>
-    </div>
-</div>
-<script type="text/javascript">
-var config = { 
-    over: function()
-        {
-            $('#pub_hover_{$this->props['id']}').fadeIn(300);
-        },
-    interval: 100,
-    out: function() 
-        { 
-            $('#pub_hover_{$this->props['id']}').hide(0); 
-        } 
-};
-$('#pub_box_{$this->props['id']}').hoverIntent(config);
-$('#pub_close_{$this->props['id']}').click( function()
-    { 
-        $('#pub_hover_{$this->props['id']}').hide(0);
-    }
-);
-</script>
-</div>
+<a class="resource" href="resource_page.php?resourceid={$this->props['id']}">
+    <span>{$this->props['title']}</span>
+</a>
 html;
 
     }

@@ -5,65 +5,54 @@ require_once('src/Resource.php');
 
 class ResourceLayout {
 
-    public function setRequests($reqs)
-    {
-        $this->reqs = array();
-        if(!empty($reqs['tags'])) { $this->reqs['tags'] = $reqs['tags']; }
-        if(!empty($reqs['collab'])) { $this->reqs['collab'] = $reqs['collab']; }
-        if(!empty($reqs['sort'])) { $this->reqs['sort'] = $reqs['sort']; }
-        if(!empty($reqs['type'])) { $this->reqs['type'] = $reqs['type']; }
+    static public $categories = array(
+        1 => 'Fact Sheets',
+        2 => 'Reports',
+        3 => 'Presentations',
+        4 => 'Videos'
+    );
 
-    }
+    static public $imageMap = array(
+        1 => 'pub_paper.png',
+        2 => 'pub_report.png',
+        3 => 'pub_presentation.png',
+        4 => 'pub_video.png',
+    );
 
-    public function getResultsCount()
-    {
-        if( empty($this->resultsCount) ) {
-            return '<div id="noResults">There are no results for the criteria you selected.</div>';  
-        } else {
-            return '<span>Displaying '.count($this->results).' result'.((count($this->results) > 1) ? 's': '').'</span>';
-        }
-    }
-
-    public function getFilterReset()
-    {
-        if (!empty($this->reqs['tags']) || !empty($this->reqs['type']) || !empty($this->reqs['collab'])){    
-            return '<span> | <a href="resources.php">Show All</a></span>';
-        }
-    }
-
-    public function getSortCriteria() {
-
-        $persist = array();
-        foreach( array('tags','collab','type') as $key ) {
-            if( !empty($this->reqs[$key]) ) {
-                array_push($persist, $key.'='.$this->reqs[$key]);
-            }
-        }
-        if(!empty($persist)) {
-            $persist = implode('&amp;', $persist);
-        } else {
-            $persist = '';
-        }
-
-        return ( !empty($this->reqs['sort']) && 'oldest' == $this->reqs['sort'] ) ? '<span id="sortWidget"> Sort by <a href="resources.php?'.$persist.'">Newest First</a> | Oldest First</span>' : '<span id="sortWidget"> Sort by Newest First | <a href="resources.php?'.$persist.'&amp;sort=oldest">Oldest First</a></span>';
-
-    }
-
-    public function getResourceSummaryHtml() {
-
-        return $this->getResourcesHtml();
-
-    }
-
-    public function getResourcesHtml() {
+    // If $categories is provided, it should be an array of types => titles.  If not provided, it falls back
+    // to the array defined in class.
+    public function getResourcesHtml($categories = null) {
         
-        $html = '';
-        foreach( $this->results as $aResource )
-        {
-            $r = Resource::factory($aResource); 
-            $html .= $r->toSummaryHtml();
+        $html = '<div class="resources">';
+        if( is_array($categories)) { 
+            $rc = $categories;
+        } else {
+            $categories = ResourceLayout::$categories;
+            $rc = ResourceLayout::$categories;
         }
-        return $html;
+        
+        // Init the resource cluster arrays
+        foreach($rc as $type => $value) {
+            $rc[$type] = array();
+        }
+
+        // Cluster the resources by type
+        foreach( $this->results as $props )
+        {
+            $rc[$props['type']][] = $props;
+        }
+
+        foreach( $categories as $type => $title )
+        {
+            $imgSrc = ResourceLayout::$imageMap[$type];
+            $html .= "<h3><img src='images/$imgSrc' alt=''/>$title</h3><ul>";
+            foreach($rc[$type] as $props) {
+                $aResource = Resource::factory($props);
+                $html .= '<li>'.$aResource->toSummaryHtml().'</li>';
+            }
+            $html .= '</ul>';
+        }
+        return $html . '</div>';
 
     }
 
@@ -90,10 +79,6 @@ SELECT title, type, pubs.id, summary FROM resources pubs LEFT JOIN resource_tags
 
 sql;
         
-    }
-
-    protected function formRestriction($field, $req) {
-        return $field . " = '".$this->reqs[$req]."'";
     }
 
 }

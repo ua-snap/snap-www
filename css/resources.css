@@ -1,34 +1,57 @@
-.hover_box {
-    left: 0px; 
-    top: 0px; 
-    position: absolute; 
-    z-index: 100; 
-    display: none; 
-    background-color: #d8d8d8; 
-    border: 1px solid #97a93a; 
-    width: 450px; 
-    -moz-box-shadow: 3px 3px 3px #cccccc;
-    -webkit-box-shadow: 3px 3px 3px #cccccc;
-    box-shadow: 3px 3px 3px #cccccc;
-}
-
-#resourceSummaries .resource {
-    width: 440px;
-    height: 50px;
+a.resource {
     display: inline-block;
-    margin: 10px;
-    margin-bottom: 10px;
+    width: 30em;
+}
+
+.resources a {
+    color: #038;
+}
+
+.resources a:hover {
+    color: black;
+}
+
+.resources h2 {
+    color: black;
+    font-size: 34px;
+    margin-bottom: 1ex;
+    clear: both;    
+}
+
+#resourcesLeft, #resourcesRight {
+    width: 48%; margin: 0;
+}
+#resourcesLeft {
+    float: left;
+}
+#resourcesRight {
+    float: right;
+}
+
+.resources ul {
+    padding: 0 1ex 1ex 41px;
+    list-style: none;
+}
+
+.resources li {
+    margin: 1ex 0 1.5ex; 
+    padding: 0;
+}
+
+.resources h3 {
+    margin: 1em 0 .5ex;
     position: relative;
+    color: black;
+    font-size: 24px;
+    vertical-align: middle;
+    padding-bottom: 3px;
 }
 
-#resourceSummaries #sortWidget {
-    margin-left: 50px;
-}
-
-#noResults {
-    font-size: 16px;
-}
-
-#resourceWrapper .video {
-    margin-left: 20px;
+.resources h3 img {
+    position: relative;
+    top: 4px;
+    height: 24px;
+    width: 32px;
+    padding: 3px 8px 0 0;
+    display: inline-block;
 }

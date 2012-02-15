@@ -6,28 +6,20 @@ require_once('src/ResourceLayout.php');
 $page = new webPage("SNAP: Resources", "resources.css", "resources");
 $page->openPage();
 $page->pageHeader();
-$page->connectToDatabase();
 
-$resTypes = array ( "Paper", "Report", "Presentation", "Video");
+$resourceLayout = new ResourceLayout();
+$resourceLayout->fetchResources();
 
-function getPublicationListSpecial() {
-
-    $resourceLayout = new ResourceLayout();
-    $resourceLayout->setRequests( $_GET );
-    $resourceLayout->fetchResources();
-
-    echo '<div id="resourceSummaries">';
-    echo $resourceLayout->getResourceSummaryHtml();
-    echo "</div>";
-
-}
 ?>
+
     <div id="main_body">
-        <div id="main_content">
-            <div class="subHeader">Resources</div>
-            <div style="margin-top: 40px;"><?php getPublicationListSpecial(); ?></div>
+        <div id="main_content" class="resources">
+            <h2>Resources</h2>
+            <div id="resourcesLeft"><?php echo $resourceLayout->getResourcesHtml(array(3=>'Presentations',2=>'Reports')); ?></div>
+            <div id="resourcesRight"><?php echo $resourceLayout->getResourcesHtml(array(4 => 'Videos', 1=>'Papers')); ?></div>
         </div>
     </div>
+
 <?php
 $page->closePage();
 ?>
