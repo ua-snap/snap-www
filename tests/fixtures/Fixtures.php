@@ -11,6 +11,36 @@ class Fixtures
         'description' => 'project description'
     );
 
+    static public $videoResource = array(
+        'id' => 23,
+        'title' => 'Jeremy Mathis. Ocean Acidification: What It Means to Alaska',
+        'createdate' => '2010-03-23',
+        'summary' => 'Jeremy Mathis, Professor, School of Fisheries and Ocean Sciences, University of Alaska Fairbanks↵↵Since the Industrial Revolution approximately 1/3 of all human CO2 emissions have been absorbed by the ocean. While this process has mitigated global temperature increases it has had a profound effect on the chemistry of the surface ocean, making the water more acidic. This phenomenon is exacerbated in the cold, highly productive waters in the continental shelf seas surrounding Alaska. Recent observations have shown that the bottom waters over the shelves of the Chukchi and Bering Seas, as well has the Gulf of Alaska become undersaturated with respect to aragonite in late summer and fall. These undersaturated waters could be corrosive to shell building organisms such as clams, oysters, and crabs. Here, the controls and seasonal distribution of ocean acidification around Alaska will be discussed in the context of the import commercial fisheries.↵↵Presentation/Slides are available here: <a href="http://ine.uaf.edu/accap/documents/2010_03_OceanAcidification_Mathis.pdf">http://ine.uaf.edu/accap/documents/2010_03_OceanAcidification_Mathis.pdf</a>',
+        'updatedate' => NULL,
+        'type' => 4,
+        'accap' => 1,
+        'fsc' => 1,
+        'snap' => 1
+    );
+
+    static public $vimeoVideoProps = array(
+        'id' => 15,
+        'source_type' => 'vimeo',
+        'embedded_url' => 'http://vimeo.com/31989085',
+        'embedded_title' => 'Jeremy Mathis. Ocean Acidification: What It Means to Alaska',
+        'embedded_user_url' => 'http://vimeo.com/snapandaccap',
+        'embedded_user' => 'snapandaccap',
+    );
+
+    static public $youtubeVideoProps = array(
+        'id' => 15,
+        'source_type' => 'youtube',
+        'embedded_url' => 'h0JREVf8iDc',
+        'embedded_title' => 'Fire In Alaska',
+        'embedded_user_url' => '',
+        'embedded_user' => '',
+    );
+
     static public $resources = array(
         1 => array(
             "id" => 1,

@@ -19,6 +19,10 @@ class Resource {
         return; // no-op unless overridden in child classes    
     }
 
+    public function renderDownloadsTitle() {
+        return '<h3>Downloads</h3>';
+    }
+
     public function renderDownloads()
     {
         return; // no-op unless overridden in child classes    
@@ -88,7 +92,15 @@ class VideoResource extends Resource {
     public function __construct($props)
     {
         parent::__construct($props);
-        $this->populateVideoProperties();
+    }
+
+    public function setVideoProperties($props) {
+        
+        $this->embeddedUrl = $props['embedded_url'];
+        $this->embeddedTitle = $props['embedded_title'];
+        $this->embeddedUserUrl = $props['embedded_user_url'];
+        $this->embeddedUser = $props['embedded_user'];
+        $this->source_type = $props['source_type'];
     }
 
     protected function populateVideoProperties()
@@ -102,48 +114,42 @@ class VideoResource extends Resource {
             throw new Exception($e); // bubble
         }
 
-        $this->embeddedUrl = $props['embedded_url'];
-        $this->embeddedTitle = $props['embedded_title'];
-        $this->embeddedUserUrl = $props['embedded_user_url'];
-        $this->embeddedUser = $props['embedded_user'];
-        $this->linkedUrl = $props['linked_url'];
-        $this->linkedTitle = $props['linked_title'];
-        $this->fileVideoHref = $props['file_video_href'];
-        $this->fileVideoTitle = $props['file_video_title'];
-        $this->fileVideoType = $props['file_video_type'];
-        $this->fileVideoSize = ( $size = @filesize($this->fileVideoHref)) ? $size : $props['file_video_size'];
+        $this->setVideoProperties($props);
 
     }
 
     // Renders the embedded & linked videos
     public function render()
     {
-        return '<div class="video">'.$this->getEmbeddedVideo().$this->getLinkedVideo().'</div>';
+        $this->populateVideoProperties();
+        return '<div class="video">'.$this->getEmbeddedVideo().'</div>';
     }
 
     public function getEmbeddedVideo()
     {
-        return <<<html
-<iframe src="{$this->embeddedUrl}?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe><p><a class="title"  href="{$this->embeddedUrl}">{$this->embeddedTitle}</a> from <a class="user"  href="{$this->embeddedUserUrl}">{$this->embeddedUser}</a> on <a class="source"  href="http://vimeo.com">Vimeo</a>.</p>
+        if( 'vimeo' === $this->source_type ) {
+
+return <<<html
+<iframe src="{$this->embeddedUrl}?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe><p><a class="title" href="{$this->embeddedUrl}">{$this->embeddedTitle}</a> from <a class="user"  href="{$this->embeddedUserUrl}">{$this->embeddedUser}</a> on <a class="source"  href="http://vimeo.com">Vimeo</a>.</p>
 html
 ;
+        } else if( 'youtube' === $this->source_type ) {
+            
+return <<<html
+<object style="height: 390px; width: 640px"><param name="movie" value="http://www.youtube.com/v/{$this->embeddedUrl}?version=3&feature=player_detailpage"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><embed src="http://www.youtube.com/v/{$this->embeddedUrl}?version=3&feature=player_detailpage" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="640" height="360"></object>
+html
+;
+
+        }
+
+        // default to a graceful no-op -- though, this shouldn't be reached, ever.
+
     }
 
-    public function getLinkedVideo()
-    {
-        return <<<html
-<p><a class="link"  href="{$this->linkedUrl}">{$this->linkedTitle}</a></p>
-html
-;
+    public function renderDownloadsTitle() {
+        return ''; // no downloads for embedded videos
     }
 
-    public function renderDownloads()
-    {        
-        return <<<html
-<p class="attachment"><img src="images/filetypes/video.png" alt=""/> <a class="download" href="{$this->fileVideoHref}" />{$this->fileVideoTitle}</a> (<span>{$this->fileVideoType}</span>, <span>{$this->fileVideoSize}</span>)</p>
-html
-;
-    }
 }
 
 ?>

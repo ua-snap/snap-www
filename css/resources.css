@@ -56,3 +56,11 @@ a.resource {
     padding: 3px 8px 0 0;
     display: inline-block;
 }
+
+div.video {
+    margin: 2em 3em;
+}
+
+div.video iframe {
+    margin: 1ex 0;
+}

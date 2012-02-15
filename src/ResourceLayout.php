@@ -75,7 +75,7 @@ class ResourceLayout {
 
         return <<<sql
 
-SELECT title, type, pubs.id, summary FROM resources pubs LEFT JOIN resource_tags AS pt ON pubs.id=pt.resourceid LEFT JOIN resource_collaborators AS pc ON pubs.id=pc.resourceid  GROUP BY pubs.id ORDER BY pubs.type ASC, pubs.title ASC
+SELECT title, type, id, summary FROM resources ORDER BY `type` ASC, `title` ASC
 
 sql;
         

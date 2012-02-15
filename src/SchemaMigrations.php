@@ -358,6 +358,30 @@ sql
                   'down' => 'drop table `communities`; drop table `charts_data`;'
                 )
               ),
+
+              9 => new Migration(
+                array(
+                  'version' => 9,
+                  'up' => <<<sql
+DROP TABLE `tileset`;
+DROP TABLE `tileset_descriptions`;
+DROP TABLE `resource_collaborators`;
+DROP TABLE `resource_tags`;
+DROP TABLE `project_tags`;
+DROP TABLE `project_photos`;
+ALTER TABLE `video_resource` DROP COLUMN `linked_url`;
+ALTER TABLE `video_resource` DROP COLUMN `linked_title`;
+ALTER TABLE `video_resource` DROP COLUMN `file_video_href`;
+ALTER TABLE `video_resource` DROP COLUMN `file_video_title`;
+ALTER TABLE `video_resource` DROP COLUMN `file_video_type`;
+ALTER TABLE `video_resource` DROP COLUMN `file_video_size`;
+sql
+,
+                  'fixtures' => '',
+                  'down' => '' // this SHOULD have a down but I don't think it matters in practice.
+
+                )
+              ),
         );
     }
 }

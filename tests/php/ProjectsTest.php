@@ -12,12 +12,11 @@ class ProjectsTest extends PHPUnit_Framework_TestCase
 
         $p = new Project(Fixtures::$project);
         $html = $p->getSummaryHtml();
-        var_dump($html);
-
+        
         $this->assertTag(array('tag'=>'a','attributes'=>array('href' => '/project_page.php?projectid=1', 'class'=>'project')), $html, 'verify project wrapper link');
 
         $this->assertTag(array('tag'=>'h4','content'=>'ProjectTitle'), $html, 'verify title header + content');
-        $this->assertTag(array('tag'=>'img', 'attributes'=>array('src'=>'project.png', 'title'=>'ImageSource')), $html, 'verify image and attribution title');
+        $this->assertTag(array('tag'=>'img', 'attributes'=>array('src'=>'project.png', 'title'=>'Photo credit: ImageSource')), $html, 'verify image and attribution title');
         $this->assertTag(array('tag'=>'p', 'content'=>'ProjectSummary'), $html, 'verify summary blurb');
   
     }
