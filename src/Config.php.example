@@ -26,6 +26,11 @@ class FixturesConfig {
 	static public $charts = '/var/www/html/charts';
 
 	/**
+	* Points at an Apache-readable directory that is public-facing
+	*/
+	static public $images = '/var/www/html/images/';
+
+	/**
 	* Refers to self-base-URL.  TODO: replace with PHP's inbuilt $_SERVER...var.  :) duh Bruce
 	*/
 	static public $url = 'http://dev.snap.uaf.edu';

@@ -2,6 +2,7 @@
 
 require_once 'src/Exceptions.php';
 require_once 'src/SwDb.php';
+require_once 'src/Config.php';
 
 /**
 * Given POST requests, generates a chart in the desired format in the
@@ -16,11 +17,15 @@ class ChartsExporter {
 
 		'png/lowres' => array(
 			'mime' => 'image/png',
+			// source SVG, temp PNG => composite lowres gif + temp PNG => output
+			// %s %s %s %s %s => Config::$temp/[[md5sum]].svg Config::$temp/[[filename.png.src]] Config::$images Config::$temp[[filename.png]] Config::$charts/filename.png
 			'command' => 'convert %s -quality 90 -resize 800 %s; composite %s -gravity NorthWest -region +5+5 %s'
 		),
 		'png/hires' => array(
 			'mime' => 'image/png',
-			'command' => 'convert -density 600 %s %s'
+			// source SVG, temp PNG => composite hires gif + temp PNG => output
+			// %s %s %s %s %s => Config::$temp/[[md5sum]].svg Config::$temp/[[filename.png.src]] Config::$images Config::$temp[[filename.png]] Config::$charts/filename.png
+			'command' => 'convert -density 600 %s %s; composite %s/snap_acronym_hires.gif -gravity Northwest -geometry +50+2955 %s %s'
 	  	),
 	  	'svg' => array(
 		  	'mime' => 'image/svg+xml',
@@ -28,8 +33,6 @@ class ChartsExporter {
 		)
 	
 	);
-
-// PICKUP: need to add variable + scenario + variability to filename.
 
 	public $communityId;
 	public $dataset;
@@ -121,6 +124,7 @@ class ChartsExporter {
 		// Write the SVG to temporary output
 		$tempSvg = Config::$temp . '/' . md5($this->svg) . '.svg';
 		$chart = Config::$charts . '/' . $filename;
+		$chartTemp = Config::$temp . '/' . $filename;
 
 		try {
 
@@ -130,8 +134,7 @@ class ChartsExporter {
 				file_put_contents($tempSvg, $this->svg);
 			}
 			
-			$command = sprintf($this->featureMap[$this->type]['command'], $tempSvg, $chart);
-
+			$command = sprintf($this->featureMap[$this->type]['command'], $tempSvg, $chartTemp, Config::$images, $chartTemp, $chart);
 			$result = exec( $command );
 
 			@unlink($tempSvg);

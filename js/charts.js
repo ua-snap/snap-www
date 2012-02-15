@@ -367,7 +367,7 @@ window.snapCharts = {
 			
 			title: {
 				y: 10,
-				text: snapCharts.data.title + '<br/><span style="font-size: 48px;">YAAAY</span>'
+				text: snapCharts.data.title
 			},
 
 			subtitle: {

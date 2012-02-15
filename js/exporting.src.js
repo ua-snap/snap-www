@@ -5,6 +5,8 @@
  * (c) 2010 Torstein Hønsi
  * 
  * License: www.highcharts.com/license
+ *
+ * Some modifications made by Bruce Crevensten @ SNAP / UAF
  */
 
 // JSLint options:
@@ -26,7 +28,7 @@ var HC = Highcharts,
 	mathMax = math.max,
 	doc = document,
 	win = window,
-	hasTouch = 'ontouchstart' in doc.documentElement,	
+	hasTouch = 'ontouchstart' in doc.documentElement,
 	M = 'M',
 	L = 'L',
 	DIV = 'div',
