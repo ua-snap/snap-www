@@ -114,18 +114,6 @@ window.snapCharts = {
 			}
 		});
 
-		$('#export_button').click(function() {
-			window.snapCharts.chart.exportChart(null, {
-				chart: {
-					backgroundColor: '#eeffff'
-				}
-			},
-			function (chart){
-				window.snapCharts.chart.renderer.image(snapConfig.url + '/images/snap_acronym_rgb.png', 0, 0, 150, 45).add();
-				window.snapCharts.chart.renderer.image(snapConfig.url + '/images/snap_acronym_rgb.png', 0, 0, 150, 45).add();
-			});
-		});
-
 		$(window).bind( 'hashchange', function(e) {
 			snapCharts.refreshState();
 			snapCharts.fetchData();
@@ -150,29 +138,15 @@ window.snapCharts = {
 			$('#comm_select').toggleDisabled();
 		});
 
+		$('#variable_selections .buttonset').buttonset();
+
 	},
 
 	// Prepare the chart for export.  The `type` parameter is expected to be a mime-type.
 	exportChart: function(type) {
 
 		window.snapCharts.refreshState();
-		
-		var filenameDataset;
-
-		if(window.snapCharts.data.dataset === 2) {
-			filenameDataset = "Precip";
-		} else if (window.snapCharts.data.dataset === 1) {
-			filenameDataset = "Temp";
-		} else {
-			throw 'tried to export an invalid dataset type (' + window.snapCharts.data.dataset + ')';
-		}
-
 		window.snapCharts.chart.exportChart({
-			filename: escape(window.snapCharts.communities[window.snapCharts.data.community].label.replace(' ','_'))
-				+ '_'
-				+ window.snapCharts.data.scenario
-				+ '_'
-				+ filenameDataset,
 			type: type
 		});
 
@@ -189,6 +163,11 @@ window.snapCharts = {
 		window.snapCharts.data.scenario = params.scenario || 'a1b'; // default scenario a1b
 		window.snapCharts.data.variability = params.variability || 0; // default no variability
 		window.snapCharts.data.dataset = params.dataset || 1; // default temp
+
+		if( null === window.snapCharts.data.community) {
+			// Flash for the user
+			$('#comm_select_wrapper').effect('highlight', {}, 3000);
+		}
 
 	},
 
@@ -287,6 +266,7 @@ window.snapCharts = {
 					snapCharts.drawChart();
 					$('#placeholderImage').remove();
 					$('#location').html(": " + snapCharts.data.communityName + ', ' + snapCharts.data.communityRegion);
+					$('#comm_select').val(snapCharts.data.communityName + ', ' + snapCharts.data.communityRegion);
 					$('#comm_block').hide();
 					$('#export_options').show();
 					$('#export_link').val(window.location.href);
@@ -321,6 +301,7 @@ window.snapCharts = {
 				defaultSeriesType: 'column',
 				margin: [100,30,70,50]
 			},
+
 			tooltip: {
 				formatter: function() {
 					if( 1 === snapCharts.data.dataset ) {
@@ -344,7 +325,7 @@ window.snapCharts = {
 					'width': '750px',
 					'padding': '10px'
 				},
-				text: 'This graph shows average values from projections from five global models used by the Intergovernmental Panel on Climate Change.  Due to variability among models and among years in a natural climate system, such graphs are useful for examining trends over time, rather than for precisely predicting monthly or yearly values.  For more information on the SNAP program, including derivation, reliability, and variability among these projections, please visit www.snap.uaf.edu.'
+				text: 'Due to variability among climate models and among years in a natural climate system, these graphs are useful for examining trends over time, rather than for precisely predicting monthly or yearly values. For more information on derivation, reliability, and variability among these projections, please visit www.snap.uaf.edu.'
 			},
 			
 			legend: {

@@ -59,7 +59,7 @@ class ChartsFetcher {
 		$dataset = (int) $dataset;
 		$variability = (int) $variability;
 
-		$yAxisTitle = (1 === $dataset) ? 'Temperature °F' : 'Total precipitation in inches';
+		$yAxisTitle = (1 === $dataset) ? 'Temperature °F' : 'Total Precipitation (in)';
 		switch ($scenario) {
 			case 'a2':
 				$subtitle = "5-Model Average, High-range emissions (A2)";

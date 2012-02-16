@@ -76,7 +76,9 @@ class webPage {
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title><?php echo $this->pageTitle; ?></title>
-        <meta http-equiv="Content-type" content="text/html;charset=UTF-8" /> 
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+        <meta http-equiv=“X-UA-Compatible” content=“IE=8” />
+
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
         <link type="text/css" href="css/custom-theme/jquery-ui-1.8.17.custom.css" rel="Stylesheet" />  
     <?php 

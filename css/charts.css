@@ -1,66 +1,9 @@
-h1 {
-	font-size: 34px; 
-	font-weight: normal;
-	color: #242d2f; 
-	margin: 0 0 40px;
-	padding: 0;
-}
-
-.selected_option {
-	border-bottom: 2px solid #333;
-}
-
-div.blockMsg { 
-	width: 8em;
-	padding: 1em;
-	font-weight: bold;
-	background-color: white;
-	color: #888;
-	text-align: center;
-	border-radius: 5px;
-	box-shadow: 5px 5px 5px #333;
-}
-
-div.blockMsg img {
-	display: inline-block;
-	position: relative;
-	top: .5ex;
-}
-
-.variableHover {
-	z-index: 1100;
-	display: none;
-	position: absolute;
-	margin-left: 50px;
-	background-color: #f8f8f8;
-	border: 1px solid #999999;
-}
-
-.variableHover > div {
-	width: 350px;
-	left: 50px;
-	font-size: 12px;
-	padding: 10px;
-}
-
-.variableHover > div > h4 {
-	margin: 0;
-	font-weight: normal;
-	padding: 3px;
-	border-bottom: 1px solid #0066cc;
-	font-size: 14px;
-}
-
-.variableHover > div > p {
-	text-align: left;
-	margin-top: 5px;
-}
-
 #export_options {
 	margin: 0;
 	position: relative;
-	bottom: 3px;
-	left: 5px;
+	top: 1.25em;
+	right: 0;
+	z-index: 4000;
 }
 
 /* hack inside jqueryui theme */
@@ -76,6 +19,39 @@ div.blockMsg img {
 	padding: 1ex 0;
 }
 
+#exportDialog fieldset button {
+	margin: 0;
+}
+
 #exportDialog legend {
 	padding: 0; margin: 0;
+}
+
+#menu_chart_wrapper {
+	position: relative;
+	width: 100%;
+}
+
+#comm_select {
+	background-color: white;
+}
+
+#comm_select:focus {
+	background-color: #fbffd0;
+}
+
+#menu_chart_wrapper p {
+	margin: 0; padding: 0;
+}
+
+#menu_chart_wrapper div > p {
+	margin: 1ex 0 0;
+}
+
+h1 {
+	font-size: 34px; 
+	font-weight: normal;
+	color: #242d2f; 
+	margin: 0 0 10px;
+	padding: 0;
 }

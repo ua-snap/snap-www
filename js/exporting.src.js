@@ -175,8 +175,9 @@ extend(Chart.prototype, {
 	* Return an SVG representation of the chart
 	*
 	* @param additionalOptions {Object} Additional chart options for the generated SVG representation
+	* @param type {string} type of export -- svg, png/hires, png/lowres.
 	*/
-	getSVG: function(additionalOptions) {
+	getSVG: function(additionalOptions, type) {
 		var chart = this,
 			chartCopy,
 			sandbox,
@@ -259,9 +260,12 @@ extend(Chart.prototype, {
 			options.series.push(seriesOptions);
 		});
 
-		// Make room for compositing the SNAP logo with ImageMagick
-		options.credits.position.x = 150;
-		options.credits.position.align = 'left';
+		// Make room for compositing the SNAP logo with ImageMagick,
+		// only if it's not SVG (which ImageMagick doesn't handle properly)
+		if( 'svg' !== type ) {
+			options.credits.position.x = 150;
+			options.credits.position.align = 'left';
+		}
 		
 		// TODO: inject the extra rendering code here!
 		// generate the chart copy
@@ -338,9 +342,11 @@ extend(Chart.prototype, {
 	* @param {Object} chartOptions Additional chart options for the SVG representation of the chart
 	*/
 	exportChart: function(options, chartOptions) {
+
 		var form,
 			chart = this,
-			svg = chart.getSVG(chartOptions);
+			// options.type must be defined in the call to exportChart.
+			svg = chart.getSVG(chartOptions, options.type);
 			
 		// merge the options
 		options = merge(chart.options.exporting, options);

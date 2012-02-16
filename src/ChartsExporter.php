@@ -19,17 +19,20 @@ class ChartsExporter {
 			'mime' => 'image/png',
 			// source SVG, temp PNG => composite lowres gif + temp PNG => output
 			// %s %s %s %s %s => Config::$temp/[[md5sum]].svg Config::$temp/[[filename.png.src]] Config::$images Config::$temp[[filename.png]] Config::$charts/filename.png
-			'command' => 'convert %s -quality 90 -resize 800 %s; composite %s -gravity NorthWest -region +5+5 %s'
+			'command' => 'convert %s -quality 90 -resize 800 %s; composite %s/charts_overlay_snap_acronym_lowres.gif -gravity NorthWest -geometry +9+299 %s %s',
+			'extension' => '_lowres.png'
 		),
 		'png/hires' => array(
 			'mime' => 'image/png',
 			// source SVG, temp PNG => composite hires gif + temp PNG => output
 			// %s %s %s %s %s => Config::$temp/[[md5sum]].svg Config::$temp/[[filename.png.src]] Config::$images Config::$temp[[filename.png]] Config::$charts/filename.png
-			'command' => 'convert -density 600 %s %s; composite %s/snap_acronym_hires.gif -gravity Northwest -geometry +50+2955 %s %s'
+			'command' => 'convert -density 600 %s %s; composite %s/charts_overlay_snap_acronym_hires.gif -gravity Northwest -geometry +50+2895 %s %s',
+			'extension' => '_hires.png'
 	  	),
 	  	'svg' => array(
 		  	'mime' => 'image/svg+xml',
-		  	'command' => 'cp %s %s' // just move the SVG file and rename it as appropriate
+		  	'command' => 'cp %s %s', // just move the SVG file and rename it as appropriate
+		  	'extension' => '.svg'
 		)
 	
 	);
@@ -60,7 +63,7 @@ class ChartsExporter {
 		}
 
 		$this->communityId = $params['communityId'];
-		$this->dataset = $params['dataset'] == 1 ? 'temp' : 'precip';
+		$this->dataset = $params['dataset'] == 1 ? 'temperature' : 'precipitation';
 		$this->scenario = $params['scenario'];
 		$this->variability = $params['variability'] == 1 ? '_var' : '';
 		$this->type = $params['type'];
@@ -81,50 +84,31 @@ class ChartsExporter {
 	/**
 	* Do a DB lookup to fetch the correct community name.
 	*/
-	public function getFilename() {
+	public function getFilenameBase() {
 		
 		if(empty($this->community)) { $this->getCommunity(); }
 
 		// TODO: may need to enrich this to protect from special characters
 		$base = 'SNAP_Chart_'.$this->community['community'].'_'.$this->community['region'].'_'.$this->dataset.'_'.$this->scenario.$this->variability;
 
-		switch( $this->type ) {
-
-			case 'svg':
-				$base .= '.svg';
-				break;
-
-			case 'png/hires':
-				$base .= '_hires.png';
-				break;
-
-			case 'png/lowres':
-				$base .= '_lowres.png';
-				break;
-
-			default: throw new Exception('filename type not derivable');
-		}
-
 		return preg_replace('/\s+/', '_', $base);
 	}
 
 	public function export() {
 		
-		$filename = $this->getFilename();
-
 		// Is the file already in the cache?
-		if( false === $this->fileExistsInCache($filename)) {
-			$this->writeFileToCache($filename);
+		if( false === $this->fileExistsInCache()) {
+			$this->writeFileToCache();
 		}
 
 	}
 
-	public function writeFileToCache($filename) {
+	public function writeFileToCache() {
 
 		// Write the SVG to temporary output
 		$tempSvg = Config::$temp . '/' . md5($this->svg) . '.svg';
-		$chart = Config::$charts . '/' . $filename;
-		$chartTemp = Config::$temp . '/' . $filename;
+		$chart = Config::$charts . '/' . $this->getFilename();
+		$chartTemp = Config::$temp . '/' . $this->getFilenameBase() . '-tmp-' . $this->featureMap[$this->type]['extension'];
 
 		try {
 
@@ -134,10 +118,24 @@ class ChartsExporter {
 				file_put_contents($tempSvg, $this->svg);
 			}
 			
-			$command = sprintf($this->featureMap[$this->type]['command'], $tempSvg, $chartTemp, Config::$images, $chartTemp, $chart);
+			switch($this->type) {
+				case 'png/hires': // fallthru
+				case 'png/lowres':
+					$command = sprintf($this->featureMap[$this->type]['command'], $tempSvg, $chartTemp, Config::$images, $chartTemp, $chart);
+					break;
+				
+				case 'svg':
+					$command = sprintf($this->featureMap[$this->type]['command'], $tempSvg, $chart);
+					break;
+
+				default:
+					throw new Exception('cannot determine type of image processing command to run');
+			}
+
 			$result = exec( $command );
 
 			@unlink($tempSvg);
+			@unlink($chartTemp);
 			return $result;
 			
 		} catch (Exception $e) {
@@ -156,8 +154,14 @@ class ChartsExporter {
 		}
 	}
 
-	public function fileExistsInCache($filename) {
-		return @file_exists( Config::$charts . '/' . $filename);
+	public function getFilename() {
+
+		return $this->getFilenameBase() . $this->featureMap[$this->type]['extension'];
+
+	}
+
+	public function fileExistsInCache() {
+		return @file_exists( Config::$charts . '/' . $this->getFilename() );
 	}
 
 }
