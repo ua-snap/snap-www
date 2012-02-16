@@ -55,3 +55,29 @@ h1 {
 	margin: 0 0 10px;
 	padding: 0;
 }
+
+#variable_selections .buttonset {
+	display: inline-block;
+}
+
+#variable_selections .helpbuttons {
+	display: inline-block;
+}
+
+.about_dialog h4 {
+	font-size: 14px;
+	margin: 1ex 0;
+}
+
+.about_dialog p + h4 {
+	margin-top: 1em;
+}
+
+.about_dialog p {
+	line-height: 1.4;
+	margin: 1ex 0 1em;
+}
+
+.about_dialog a {
+	color: #038;
+}

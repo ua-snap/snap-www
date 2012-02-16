@@ -26,30 +26,34 @@ $page->pageHeader();
                         </div>
                     </div>
 
-                <p>Data Set</p>    
-                <div id="variable_buttons" class="buttonset">
-                    <input type="radio" id="variable_temperature" name="variable_temp_precip" checked="checked"/><label for="variable_temperature">Temperature</label>
-                    <input type="radio" id="variable_precipitation" name="variable_temp_precip" /><label for="variable_precipitation">Precipitation</label>
+                    <p>Data Set</p>    
+                    <div id="variable_buttons" class="buttonset">
+                        <input type="radio" id="variable_temperature" name="dataset" value="1" checked="checked"/><label for="variable_temperature">Temperature</label>
+                        <input type="radio" id="variable_precipitation" name="dataset" value="2" /><label for="variable_precipitation">Precipitation</label>
+                    </div>
+                    <p>Emissions Scenario</p>
+                    <div id="scenario_buttons" class="buttonset">
+                        <input type="radio" id="scenario_b1" name="scenario" value="b1"/><label for="scenario_b1">Low (B1)</label>
+                        <input type="radio" id="scenario_a1b" name="scenario" value="a1b" checked="checked"/><label for="scenario_a1b">Medium (A1B)</label>
+                        <input type="radio" id="scenario_a2" name="scenario" value="a2" /><label for="scenario_a2">High (A2)</label>
+                    </div>
+                    <div class="helpbuttons">
+                        <button id="dataset_help">About scenarios&hellip;</button>
+                    </div>
+                    <p>Model Variability</p>
+                    <div id="variability_buttons" class="buttonset">
+                        <input type="radio" id="variability_off" name="variability" value="0" checked="checked"/><label for="variability_off">Off</label>
+                        <input type="radio" id="variability_on" name="variability" value="1"/><label for="variability_on">On</label>
+                    </div>
+                    <div class="helpbuttons">
+                        <button id="variability_help">About scenarios&hellip;</button>
+                    </div>                    
                 </div>
-
-                <p>Emissions Scenario</p>
-                <div id="scenario_buttons" class="buttonset">
-                    <input type="radio" id="scenario_b1" name="scenario" value="b1"/><label for="scenario_b1">Low (B1)</label>
-                    <input type="radio" id="scenario_a1b" name="scenario" value="a1b" checked="checked"/><label for="scenario_a1b">Medium (A1B)</label>
-                    <input type="radio" id="scenario_a2" name="scenario" value="a2" /><label for="scenario_a2">High (A2)</label>
-                </div>
-
-                <p>Model Variability</p>
-                <div id="variability_buttons" class="buttonset">
-                    <input type="radio" id="variability_off" name="variability" value="0" checked="checked"/><label for="variability_off">Off</label>
-                    <input type="radio" id="variability_on" name="variability" value="1"/><label for="variability_on">On</label>
-                </div>
-
             </div>
         </div>
         <div style="float:left;">
         <img id="community_list" src="images/akcanada_extent.gif" style="width: 400px; display: block; margin: 20px 0 0 3em;" />
-        <p style="font-size: 8px; color: #888; text-align: center; margin: 1ex 0; padding: 0;">This map shows the extent for which we have data.</p>
+        <p style="font-size: 8px; color: #888; text-align: center; margin: 1ex 0; padding: 0;">SNAP has created charts for communities in the area shown above.</p>
         </div>
             <div style="float: right;">
                 <div style="text-align: right; margin-top: 20px">In cooperation with:<br/>
@@ -89,27 +93,52 @@ For further information on SNAP projections, please explore our <a href="/method
 
 <div id="exportDialog" style="display: none;">
 
-<fieldset>
-<legend>Link</legend>
-<input style="width: 100%" readonly="readonly" id="export_link" value="linky linky" />
-</fieldset>
+    <fieldset>
+    <legend>Link</legend>
+    <input style="width: 100%" readonly="readonly" id="export_link" value="linky linky" />
+    </fieldset>
 
-<fieldset>
-<legend>High&ndash;resolution image for print</legend>
-<button id="export_hires_png">Download high-resolution PNG (600 dpi, 10" wide)</button>
-</fieldset>
+    <fieldset>
+    <legend>High&ndash;resolution image for print</legend>
+    <button id="export_hires_png">Download high-resolution PNG (600 dpi, 10" wide)</button>
+    </fieldset>
 
-<fieldset>
-<legend>Low&ndash;resolution image for web</legend>
-<button id="export_lowres_png">Download low-resolution PNG (800&times;350px)</button>
-</fieldset>
+    <fieldset>
+    <legend>Low&ndash;resolution image for web</legend>
+    <button id="export_lowres_png">Download low-resolution PNG (800&times;350px)</button>
+    </fieldset>
 
-<fieldset>
-<legend>Vector format for posters (SVG)</legend>
-<p>Programs such as Adobe Illustrator, GIMP, and ImageMagick are needed to work with this file format.</p>
-<button id="export_svg">Download SVG (resolution&ndash;independent)</button>
+    <fieldset>
+    <legend>Vector format for posters (SVG)</legend>
+    <p>Programs such as Adobe Illustrator, GIMP, and ImageMagick are needed to work with this file format.</p>
+    <button id="export_svg">Download SVG (resolution&ndash;independent)</button>
 
-</fieldset>
+    </fieldset>
+
+</div>
+
+<div id="processingExportDialog" class="about_dialog" style="display: none;">
+<h4><img src="images/ajax-loader-gray.gif"/> Processing image for export&hellip;</h4>
+<p>Your download should begin shortly.  High&ndash;resolution PNG images can take up to a minute to process on the server before the download begins.  If you experience problems, please <a href="people.php#contact">let us know</a>.</p>
+</div>
+
+<div id="about_scenarios" class="about_dialog" style="display: none;">
+ 
+    <h4>Emissions leveling and declining (B1)</h4>
+    <p>The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The B1 scenario describes a convergent world, with the same global population as A1B, but with more rapid changes in economic structures toward a service and information economy.</p>
+
+    <h4>Mid-range emissions (A1B)</h4>
+    <p>The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The Scenario A1B assumes a world of very rapid economic growth, a global population that peaks in mid-century, rapid introduction of new and more efficient technologies, and a balance between fossil fuels and other energy sources.</p>
+
+    <h4>Rapid increases in emissions (A2)</h4>
+    <p>The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The A2 scenario describes a very heterogeneous world with high population growth, slow economic development and slow technological change.</p>
+
+</div>
+
+<div id="about_variability" class="about_dialog" style="display: none;">
+
+<h4>Model Variability</h4>
+<p>Model variability refers to the standard deviation (SD), which provides a measure of dispersion around the mean. The vertical bars represent the SD across the five models. Their lengths represent one SD above and below this value. A small SD indicates the models are in relative agreement, whereas a large SD suggests choice of model is relatively important. Drawing inferences from overlapping or non-overlapping bars is discouraged. The only comparison to make is of their relative size, as it pertains to changes in the degree of agreement among the models.</p>
 
 </div>
 

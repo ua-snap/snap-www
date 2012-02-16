@@ -88,10 +88,12 @@ class ChartsExporter {
 		
 		if(empty($this->community)) { $this->getCommunity(); }
 
-		// TODO: may need to enrich this to protect from special characters
+		// TODO: may need to enrich this further to protect from special characters
 		$base = 'SNAP_Chart_'.$this->community['community'].'_'.$this->community['region'].'_'.$this->dataset.'_'.$this->scenario.$this->variability;
 
-		return preg_replace('/\s+/', '_', $base);
+		$base = preg_replace('/\s+/', '_', $base); // remove spaces
+		$base = str_replace("'",'', $base); // remove quotes
+		return $base;
 	}
 
 	public function export() {
@@ -155,13 +157,19 @@ class ChartsExporter {
 	}
 
 	public function getFilename() {
-
 		return $this->getFilenameBase() . $this->featureMap[$this->type]['extension'];
-
 	}
 
 	public function fileExistsInCache() {
-		return @file_exists( Config::$charts . '/' . $this->getFilename() );
+		return @file_exists( $this->getPathToFile() );
+	}
+
+	public function getPathToFile() {
+		return Config::$charts . '/' . $this->getFilename();
+	}
+
+	public function getMimeType() {
+		return $this->featureMap[$this->type]['mime'];
 	}
 
 }

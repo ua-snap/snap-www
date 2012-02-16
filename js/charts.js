@@ -13,6 +13,57 @@
 // Prepare some functionality when page has loaded
 $( function() {
 	
+	$('#variable_selections input[type="radio"]').change( function(e) {
+		window.snapCharts.data[ $(e.currentTarget).attr('name') ] = $(e.currentTarget).val();
+		window.snapCharts.changeParams();
+	});
+
+	$('#dataset_help').button({
+		text: false,
+		icons: {
+			primary: 'ui-icon-help'
+		}
+	}).click(function(e) {
+		$('#about_scenarios').show().dialog({
+			draggable: false,
+			modal: true,
+			title: 'About scenarios',
+			resizable: false,
+			show: 'fade',
+			hide: 'fade',
+			width: '700px',
+			zindex: 50000,
+			buttons: {
+				'Close': function(e) {
+					$(this).dialog('close');
+				}
+			}
+		});
+	});
+
+	$('#variability_help').button({
+		text: false,
+		icons: {
+			primary: 'ui-icon-help'
+		}
+	}).click(function(e) {
+		$('#about_variability').show().dialog({
+			draggable: false,
+			modal: true,
+			title: 'About variability',
+			resizable: false,
+			show: 'fade',
+			hide: 'fade',
+			width: '700px',
+			zindex: 50000,
+			buttons: {
+				'Close': function(e) {
+					$(this).dialog('close');
+				}
+			}
+		});
+	});
+
 	// Initialize the button for the export modal
 	$('#export_options').button({
 		icons: {
@@ -37,16 +88,37 @@ $( function() {
 			});
 
 			$('#export_link').select();
-			$('#export_hires_png').button().click( function(e) { window.snapCharts.exportChart('png/hires'); } );
-			$('#export_lowres_png').button().click( function(e) { window.snapCharts.exportChart('png/lowres'); } );
-			$('#export_svg').button().click( function(e) { window.snapCharts.exportChart('svg'); } );
+			$('#export_hires_png').button().click( function(e) {
+				$('#exportDialog').dialog('close');
+				$('#processingExportDialog').show().dialog({
+					draggable: false,
+					modal: true,
+					title: 'Processing image export&hellip;',
+					resizable: false,
+					show: 'fade',
+					hide: 'fade',
+					width: '700px',
+					zindex: 50000,
+					buttons: {
+						'OK': function(e) {
+							$(this).dialog('close');
+						}
+					}
+				});
+				window.snapCharts.exportChart('png/hires');
+			});
+			$('#export_lowres_png').button().click( function(e) {
+				window.snapCharts.exportChart('png/lowres');
+			});
+			$('#export_svg').button().click( function(e) {
+				window.snapCharts.exportChart('svg');
+			});
 
 		}
 	).hide();
 
 	window.snapCharts.initialize();
 	window.snapCharts.refreshState();
-	window.snapCharts.refreshMenus();
 	window.snapCharts.fetchData();
 
 });
@@ -61,9 +133,9 @@ window.snapCharts = {
 		communityName: null,
 		region: null, // Alaska, Manitoba, etc
 		country: null, // USA or CAN
-		scenario: 'a1b',
-		variability: 0,
-		dataset: 1, // default temperature
+		scenario: 'a1b', // string, 'a1b','b1','a2'
+		variability: 0, // default 0=off, 1=on
+		dataset: 1, // default temperature =1, precip=2
 		series: null, // actual data, keys are time spans
 		standardDeviations: null, // keys are time spans
 		yAxisTitle: null,
@@ -164,74 +236,18 @@ window.snapCharts = {
 		window.snapCharts.data.variability = params.variability || 0; // default no variability
 		window.snapCharts.data.dataset = params.dataset || 1; // default temp
 
+		$('#variable_buttons input[value="' + window.snapCharts.data.dataset + '"]').prop('checked', 'checked').button('refresh');
+		$('#scenario_buttons input[value="' + window.snapCharts.data.scenario + '"]').prop('checked', 'checked').button('refresh');
+		$('#variability_buttons input[value="' + window.snapCharts.data.variability + '"]').prop('checked', 'checked').button('refresh');
+
+		// Flash for the user if no community is selected
 		if( null === window.snapCharts.data.community) {
-			// Flash for the user
 			$('#comm_select_wrapper').effect('highlight', {}, 3000);
 		}
 
 	},
 
-	// Use the global window.snapCharts.data object to update the correct settings for menus
-	refreshMenus: function() {
-	
-		var data = window.snapCharts.data;
-
-		// todo: remove this code duplication
-		if( 2 === data.dataset) {
-            $('#temp').html("<a>Temperature</a>");
-            $('#temp').removeClass("selected_option");
-            $('#precip').html("Precipitation");
-            $('#precip').addClass("selected_option");
-		} else {
-			// Temperature -- default if the input is malformed
-			$('#temp').html("Temperature");
-			$('#temp').addClass("selected_option");
-			$('#precip').html("<a>Precipitation</a>");
-			$('#precip').removeClass("selected_option");
-		}
-
-		if( 1 === data.variability ) {
-            $('#model_vari_on').html("On");
-            $('#model_vari_on').addClass("selected_option");
-            $('#model_vari_off').html("<a>Off</a>");
-            $('#model_vari_off').removeClass("selected_option");
-		} else {
-			// No variability -- default if the input is somehow malformed
-			$('#model_vari_on').html("<a>On</a>");
-			$('#model_vari_on').removeClass("selected_option");
-			$('#model_vari_off').html("Off");
-			$('#model_vari_off').addClass("selected_option");
-		}
-
-		switch( data.scenario ) {
-			case 'b1':
-				$('#scen_low').html("Low");
-				$('#scen_low').addClass("selected_option");
-				$('#scen_med').html("<a>Medium</a>");
-				$('#scen_med').removeClass("selected_option");
-				$('#scen_high').html("<a>High</a>");
-				$('#scen_high').removeClass("selected_option");
-				break;
-			default: // fallthru
-			case 'a1b':
-				$('#scen_low').html("<a>Low</a>");
-				$('#scen_low').removeClass("selected_option");
-				$('#scen_med').html("Medium");
-				$('#scen_med').addClass("selected_option");
-				$('#scen_high').html("<a>High</a>");
-				$('#scen_high').removeClass("selected_option");
-				break;
-			case 'a2':
-				$('#scen_low').html("<a>Low</a>");
-				$('#scen_low').removeClass("selected_option");
-				$('#scen_med').html("<a>Medium</a>");
-				$('#scen_med').removeClass("selected_option");
-				$('#scen_high').html("High");
-				$('#scen_high').addClass("selected_option");
-				break;
-        }
-	},
-
+	// Should be called when values change that need to update the hashtag.
 	changeParams : function() {
 		$.bbq.pushState({
 			community : snapCharts.data.community,
@@ -245,7 +261,7 @@ window.snapCharts = {
 
 		window.snapCharts.refreshState();
 
-		// Only fetch the data if there are meaningful parameters to sent.  Otherwise, ignore.
+		// Only fetch the data if there are meaningful parameters to send.  Otherwise, ignore.
 		if(
 			false === _.isNull(snapCharts.data.community) &&
 			_.isNumber(snapCharts.data.dataset) &&
