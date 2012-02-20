@@ -708,7 +708,8 @@ td {
 }
 
 .dataAccordionWrapper h5 {
-	margin: 1ex inherit .5ex;
+	margin-top: 1ex;
+	margin-bottom: .5ex;
 	font-size: 14px;
 	font-weight: normal;
 }
