@@ -240,9 +240,22 @@ window.snapCharts = {
 		$('#scenario_buttons input[value="' + window.snapCharts.data.scenario + '"]').prop('checked', 'checked').button('refresh');
 		$('#variability_buttons input[value="' + window.snapCharts.data.variability + '"]').prop('checked', 'checked').button('refresh');
 
-		// Flash for the user if no community is selected
+		// Flash for the user if no community is selected, and lock out the
+		// controls for changing parameters.
 		if( null === window.snapCharts.data.community) {
 			$('#comm_select_wrapper').effect('highlight', {}, 3000);
+			$('#variable_buttons').buttonset('disable');
+			$('#scenario_buttons').buttonset('disable');
+			$('#variability_buttons').buttonset('disable');
+			$('#dataset_help').button('disable');
+			$('#variability_help').button('disable');
+		} else {
+			// Ensure the controls are enabled if there is a community
+			$('#variable_buttons').buttonset('enable');
+			$('#scenario_buttons').buttonset('enable');
+			$('#variability_buttons').buttonset('enable');
+			$('#dataset_help').button('enable');
+			$('#variability_help').button('enable');			
 		}
 
 	},
