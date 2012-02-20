@@ -8,7 +8,7 @@ IMAGES=/var/www/html/images/*
 for f in $IMAGES
 do
 	basename=`basename $f`
-	grep -qs $basename js/* *.php *.html css/*
+	grep -qs $basename js/* *.php *.html css/* src/*.php
  	if [ $? -ne 0 ]
  	then
  		echo "$f is not in use, DELETE $f"
