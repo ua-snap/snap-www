@@ -128,23 +128,29 @@ class VideoResource extends Resource {
 
     public function getEmbeddedVideo()
     {
-        if( 'vimeo' === $this->source_type ) {
+        switch( $this->source_type ) {
+            case 'isuma': 
+
+return <<<html
+<object width="640" height="379"><param name="movie" value="http://www.isuma.tv/sites/default/player.swf"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><param name="flashvars" value="config={$this->embeddedUrl}"></param><embed src="http://www.isuma.tv/sites/default/player.swf" allowscriptaccess="always" allowfullscreen="true" width="640" height="379" flashvars="config={$this->embeddedUrl}"></embed></object>
+html
+;
+            break;
+            case 'vimeo':
 
 return <<<html
 <iframe src="{$this->embeddedUrl}?title=0&amp;byline=0&amp;portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe><p><a class="title" href="{$this->embeddedUrl}">{$this->embeddedTitle}</a> from <a class="user"  href="{$this->embeddedUserUrl}">{$this->embeddedUser}</a> on <a class="source"  href="http://vimeo.com">Vimeo</a>.</p>
 html
 ;
-        } else if( 'youtube' === $this->source_type ) {
+            break;
+            case 'youtube':
             
 return <<<html
 <object style="height: 390px; width: 640px"><param name="movie" value="http://www.youtube.com/v/{$this->embeddedUrl}?version=3&feature=player_detailpage"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><embed src="http://www.youtube.com/v/{$this->embeddedUrl}?version=3&feature=player_detailpage" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="640" height="360"></object>
 html
 ;
-
+            break;
         }
-
-        // default to a graceful no-op -- though, this shouldn't be reached, ever.
-
     }
 
     public function renderDownloadsTitle() {

@@ -375,6 +375,7 @@ ALTER TABLE `video_resource` DROP COLUMN `file_video_href`;
 ALTER TABLE `video_resource` DROP COLUMN `file_video_title`;
 ALTER TABLE `video_resource` DROP COLUMN `file_video_type`;
 ALTER TABLE `video_resource` DROP COLUMN `file_video_size`;
+ALTER TABLE `video_resource` ADD `source_type` enum('vimeo','youtube','isuma') DEFAULT NULL;
 sql
 ,
                   'fixtures' => '',
