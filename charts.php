@@ -123,15 +123,15 @@ For further information on SNAP projections, please explore our <a href="/method
 </div>
 
 <div id="about_scenarios" class="about_dialog" style="display: none;">
- 
+ <p>The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions.</p>
     <h4>Emissions leveling and declining (B1)</h4>
-    <p>The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The B1 scenario describes a convergent world, with the same global population as A1B, but with more rapid changes in economic structures toward a service and information economy.</p>
+    <p>The B1 scenario describes a convergent world, with the same global population as A1B, but with more rapid changes in economic structures toward a service and information economy.</p>
 
     <h4>Mid-range emissions (A1B)</h4>
-    <p>The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The Scenario A1B assumes a world of very rapid economic growth, a global population that peaks in mid-century, rapid introduction of new and more efficient technologies, and a balance between fossil fuels and other energy sources.</p>
+    <p>The A1B scenario assumes a world of very rapid economic growth, a global population that peaks in mid&ndash;century, rapid introduction of new and more efficient technologies, and a balance between fossil fuels and other energy sources.</p>
 
     <h4>Rapid increases in emissions (A2)</h4>
-    <p>The Intergovernmental Panel on Climate Change created a range of scenarios to explore alternative development pathways, covering a wide range of demographic, economic and technological driving forces and resulting greenhouse gas emissions. The A2 scenario describes a very heterogeneous world with high population growth, slow economic development and slow technological change.</p>
+    <p>The A2 scenario describes a very heterogeneous world with high population growth, slow economic development and slow technological change.</p>
 
 </div>
 
