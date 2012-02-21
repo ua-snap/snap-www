@@ -44,7 +44,6 @@ mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/images
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/js
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/charts
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/logos
-mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/exporting-server/temp
 mkdir -p ${RPM_BUILD_ROOT}/var/log/httpd/
 mkdir -p ${RPM_BUILD_ROOT}/etc/httpd/conf.d
 mkdir -p ${RPM_BUILD_ROOT}/home/jenkins/
@@ -86,7 +85,6 @@ rm -rf $RPM_BUILD_ROOT
 %ghost /usr/lib64/snapwww/src/Config.php
 %ghost /usr/lib64/snapwww/src/Config.php.example
 %config(noreplace) /etc/php.d/snap.ini
-%{inst_dir}/exporting-server/index.php
 %attr(644,root,root) %config(noreplace) /etc/httpd/conf.d/snap.conf
 %attr(774,apache,apache) %{inst_dir}/charts
 %ghost %attr(644,apache,apache) /var/log/httpd/%{hostname}-error_log
