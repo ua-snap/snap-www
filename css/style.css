@@ -782,3 +782,27 @@ a.project p {
 	color: black;
 	margin-left: 13em;
 }
+
+.logos .listwrapper {
+	display: inline-block;
+}
+
+.logos h3 {
+	font-size: 18px;
+}
+
+.logos h4 {
+	margin: 1em 0 1ex;
+}
+
+.listwrapper ul {
+	list-style-type: none;
+	margin: 1ex 0;
+	padding: 0;
+	width: 30em;
+}
+
+.listwrapper li {
+	margin: 1ex 0;
+	padding: 0;
+}
