@@ -42,6 +42,8 @@ mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/css/custom-theme/images
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/images
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/js
+mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/charts
+mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/logos
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/exporting-server/temp
 mkdir -p ${RPM_BUILD_ROOT}/var/log/httpd/
 mkdir -p ${RPM_BUILD_ROOT}/etc/httpd/conf.d
@@ -64,9 +66,8 @@ cp -a css/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/
 cp -a css/custom-theme/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/custom-theme/
 cp -a css/custom-theme/images/*.png ${RPM_BUILD_ROOT}/%{inst_dir}/css/custom-theme/images/
 cp -R images/* ${RPM_BUILD_ROOT}/%{inst_dir}/images/
-cp -a exporting-server/index.php ${RPM_BUILD_ROOT}/%{inst_dir}/exporting-server/
+cp -R logos/* ${RPM_BUILD_ROOT}/%{inst_dir}/logos/
 cp -a build/snap.conf ${RPM_BUILD_ROOT}/etc/httpd/conf.d/
-cp -a build/snapweb_database_maintenance.php ${RPM_BUILD_ROOT}/etc/cron.weekly/
 cp -a build/snap.ini ${RPM_BUILD_ROOT}/etc/php.d/
 cp -a scripts/migrate.php ${RPM_BUILD_ROOT}/usr/bin/snapwww/
 cp -a build/community_charts_new_ingest.csv ${RPM_BUILD_ROOT}/tmp/
@@ -78,18 +79,19 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,apache,apache,755)
 %{inst_dir}/*.php
 %{inst_dir}/css
+%{inst_dir}/logos
 %{inst_dir}/images
 %{inst_dir}/js
 %attr(744,apache,apache) /usr/lib64/snapwww/src/
 %ghost /usr/lib64/snapwww/src/Config.php
-%config /etc/php.d/snap.ini
+%ghost /usr/lib64/snapwww/src/Config.php.example
+%config(noreplace) /etc/php.d/snap.ini
 %{inst_dir}/exporting-server/index.php
-%attr(644,root,root) /etc/httpd/conf.d/snap.conf
-%attr(774,apache,apache) %{inst_dir}/exporting-server/temp
+%attr(644,root,root) %config(noreplace) /etc/httpd/conf.d/snap.conf
+%attr(774,apache,apache) %{inst_dir}/charts
 %ghost %attr(644,apache,apache) /var/log/httpd/%{hostname}-error_log
 %ghost %attr(644,apache,apache) /var/log/httpd/%{hostname}-access_log
 %ghost %attr(644,jenkins,jenkins) /var/log/httpd/%{hostname}-update_log
-%attr(700,root,root) /etc/cron.weekly/snapweb_database_maintenance.php
 %attr(700,root,root) /usr/bin/snapwww/migrate.php
 %attr(700,mysql,mysql) /tmp/community_charts_new_ingest.csv
 
