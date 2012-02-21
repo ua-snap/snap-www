@@ -12,7 +12,7 @@ $page->pageHeader();
 <h3>Usage guidelines</h3>
 <p>There are a wide array of file formats, sizes and colors available for SNAP staff, collaborators, and professional vendors. It is absolutely critical that the correct file format is specified for each application.</p>
 <ul>
-<li><a href src="logos/SNAP_Logo_Standards_Guide.pdf">SNAP Logo Standards Guide</a> (PDF, 1.2MB)</li>
+<li><a href="logos/SNAP_Logo_Standards_Guide.pdf">SNAP Logo Standards Guide</a> (PDF, 1.2MB)</li>
 </ul>
 <h3>Presentations, office use, and standard presentations</h3>
 <p>For presentations, office use, and standard software applications, select the logos in either the JPEG or PDF formats below. For simplicity, there are only four options: full color, black and white, one-color, and reversed.</p>
@@ -69,10 +69,10 @@ $page->pageHeader();
 <div class="listwrapper">
 <h4>Full name</h4>
 <ul>
-<li><a href="logos/GIF/Acronym/snap_bw_lg.gif">Black and white&mdash;468 &times; 180 pixels</a> (GIF, 5KB)</li>
-<li><a href="logos/GIF/Acronym/snap_bw_sm.gif">Black and white&mdash;234 &times; 90 pixels</a> (GIF, 2KB)</li>
-<li><a href="logos/GIF/Acronym/snap_screen_color_lg.gif">Full color&mdash;468 &times; 180 pixels</a> (GIF, 5KB)</li>
-<li><a href="logos/GIF/Acronym/snap_screen_color_sm.gif">Full color&mdash;234 &times; 90 pixels</a> (GIF, 3KB)</li>
+<li><a href="logos/GIF/FullName/snap_bw_lg.gif">Black and white&mdash;468 &times; 180 pixels</a> (GIF, 5KB)</li>
+<li><a href="logos/GIF/FullName/snap_bw_sm.gif">Black and white&mdash;234 &times; 90 pixels</a> (GIF, 2KB)</li>
+<li><a href="logos/GIF/FullName/snap_screen_color_lg.gif">Full color&mdash;468 &times; 180 pixels</a> (GIF, 5KB)</li>
+<li><a href="logos/GIF/FullName/snap_screen_color_sm.gif">Full color&mdash;234 &times; 90 pixels</a> (GIF, 3KB)</li>
 </ul>
 </div>
 
@@ -84,7 +84,7 @@ $page->pageHeader();
 <li><a href="logos/EPS/Acronym/snap_acronym_1color.eps">Monochromatic</a> (EPS, 361KB)</li>
 <li><a href="logos/EPS/Acronym/snap_acronym_2color.eps">Two color</a> (EPS, 361KB)</li>
 <li><a href="logos/EPS/Acronym/snap_acronym_bw.eps">Black and white</a> (EPS, 365KB)</li>
-<li><a href="logos/EPS/Acronym/snap_acronym_cymk.eps">CYMK</a> (EPS, 364KB)</li>
+<li><a href="logos/EPS/Acronym/snap_acronym_cmyk.eps">CMYK</a> (EPS, 364KB)</li>
 <li><a href="logos/EPS/Acronym/snap_acronym_rev.eps">Reversed (white on black)</a> (EPS, 353KB)</li>
 <li><a href="logos/EPS/Acronym/snap_acronym_rgb.eps">RGB</a> (EPS, 359KB)</li>
 </ul>
@@ -95,7 +95,7 @@ $page->pageHeader();
 <li><a href="logos/EPS/FullName/snap_1color.eps">Monochromatic</a> (EPS, 361KB)</li>
 <li><a href="logos/EPS/FullName/snap_2color.eps">Two color</a> (EPS, 361KB)</li>
 <li><a href="logos/EPS/FullName/snap_bw.eps">Black and white</a> (EPS, 365KB)</li>
-<li><a href="logos/EPS/FullName/snap_cymk.eps">CYMK</a> (EPS, 364KB)</li>
+<li><a href="logos/EPS/FullName/snap_cmyk.eps">CMYK</a> (EPS, 364KB)</li>
 <li><a href="logos/EPS/FullName/snap_rev.eps">Reversed (white on black)</a> (EPS, 353KB)</li>
 <li><a href="logos/EPS/FullName/snap_rgb.eps">RGB</a> (EPS, 359KB)</li>
 </ul>

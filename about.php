@@ -1,6 +1,6 @@
 <?php 
-include("template.php");
-$page = new webPage("SNAP: About", "about.css", "about");
+include 'template.php';
+$page = new webPage('SNAP: About', '', 'about');
 $page->openPage();
 $page->pageHeader();
 ?>
