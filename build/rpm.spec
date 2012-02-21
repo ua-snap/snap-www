@@ -82,8 +82,8 @@ rm -rf $RPM_BUILD_ROOT
 %{inst_dir}/images
 %{inst_dir}/js
 %attr(744,apache,apache) /usr/lib64/snapwww/src/
-%ghost /usr/lib64/snapwww/src/Config.php
-%ghost /usr/lib64/snapwww/src/Config.php.example
+%config(noreplace) /usr/lib64/snapwww/src/Config.php
+%config(noreplace) /usr/lib64/snapwww/src/Config.php.example
 %config(noreplace) /etc/php.d/snap.ini
 %attr(644,root,root) %config(noreplace) /etc/httpd/conf.d/snap.conf
 %attr(774,apache,apache) %{inst_dir}/charts
