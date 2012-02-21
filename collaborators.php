@@ -13,9 +13,9 @@ $page->pageHeader();
                 <div>
                     <img src="images/collaborators01.jpg" style="float: left; margin-right: 15px; height: 240px; margin-bottom: 5px; padding: 3px; border: 1px solid #999999;" />
                     <p>Collaborations with the Bureau of Land Management, National Park Service, U.S. Fish and Wildlife Service, U.S. Geological Survey, Alaska Department of Fish and Game, multiple non-profit organizations, and many others have yielded scenario projections of shifting ecosystems that will aid in planning future resource, land, and wildlife management.  A variety of SNAP services and approaches make information accessible to a wide spectrum of stakeholders with varying levels of technical expertise.</p>
-                    <p>SNAP and ACCAP continue to build a powerful collaborative network of key scientific, social and economic institutions from around the world, applying the combined expertise towards a better understanding of the future dynamics of the Arctic. <a href="people.php#contact">Contact</a> us if you are interested in joining the SNAP network.</p>
+                    <p>SNAP continues to build a powerful collaborative network of key scientific, social and economic institutions from around the world, applying the combined expertise towards a better understanding of the future dynamics of the Arctic. <a href="people.php#contact">Contact</a> us if you are interested in joining the SNAP network.</p>
+                    <img src="images/collaborators/ACCAPLogo.gif" />
                 </div>
-
                 <div style="clear: both; margin-top: 40px;">    
                 <?php
 

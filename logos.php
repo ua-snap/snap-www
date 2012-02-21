@@ -8,13 +8,17 @@ $page->pageHeader();
 <div id="main_body">
     <div id="main_content" class="methods text logos">
         <h2>Logos</h2>
-<p>This page contains links to logos you can download to use in various media.  <strong>Please read the <a href="logos/SNAP_Logo_Standards_Guide.pdf">SNAP Logo Standards Guide</a> for usage guidelines.</strong>  For permission to use our logo or other questions, please feel free to <a href="/people.php#contact">contact us</a>.</p>
+<p>This page contains links to logos you can download to use in various media.  <strong>Please read the <a href="logos/SNAP_Logo_Standards_Guide.pdf">SNAP Logo Standards Guide</a> for usage guidelines.</strong>  For permission to use our logo or other questions, please feel free to <a href="/people.php#contact">contact us</a>.  Clicking one of the two logos below will load a medium-resolution JPEG file that should be suitable for most common presentation and office application uses.</p>
+<div class="embedded">
+<a href="/logos/JPEG/Acronym/snap_acronym_fullcolor.jpg"><img src="/logos/GIF/Acronym/snap_acronym_screen_color_sm.gif" alt="SNAP logo (acronym) for presentations, office use, and standard software applications."/></a>
+<a href="/logos/JPEG/FullName/snap_fullcolor.jpg"><img src="/logos/GIF/FullName/snap_screen_color_sm.gif" alt="SNAP logo (acronym) for presentations, office use, and standard software applications."/></a>
+</div>
 <h3>Usage guidelines</h3>
 <p>There are a wide array of file formats, sizes and colors available for SNAP staff, collaborators, and professional vendors. It is absolutely critical that the correct file format is specified for each application.</p>
 <ul>
 <li><a href="logos/SNAP_Logo_Standards_Guide.pdf">SNAP Logo Standards Guide</a> (PDF, 1.2MB)</li>
 </ul>
-<h3>Presentations, office use, and standard presentations</h3>
+<h3>Presentations, office use, and standard software applications</h3>
 <p>For presentations, office use, and standard software applications, select the logos in either the JPEG or PDF formats below. For simplicity, there are only four options: full color, black and white, one-color, and reversed.</p>
 <div class="listwrapper">
 <h4>JPEG</h4>

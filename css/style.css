@@ -789,10 +789,15 @@ a.project p {
 
 .logos h3 {
 	font-size: 18px;
+	margin: 2em 0 1ex;
 }
 
 .logos h4 {
-	margin: 1em 0 1ex;
+	margin: 1ex 0 .5ex;
+}
+
+.logos h5 {
+	margin: .5ex 0 .5ex;
 }
 
 .listwrapper ul {
@@ -805,4 +810,9 @@ a.project p {
 .listwrapper li {
 	margin: 1ex 0;
 	padding: 0;
+}
+
+.logos .embedded {
+	text-align: center;
+	vertical-align: center;
 }

@@ -58,6 +58,7 @@ touch ${RPM_BUILD_ROOT}/var/log/httpd/%{hostname}-update_log
 
 cp -a *.php ${RPM_BUILD_ROOT}/%{inst_dir}/
 cp -a src/*.php ${RPM_BUILD_ROOT}/usr/lib64/snapwww/src
+cp -a src/Config.php.example ${RPM_BUILD_ROOT}/usr/lib64/snapwww/src
 cp -a js/* ${RPM_BUILD_ROOT}/%{inst_dir}/js/
 cp -a css/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/
 cp -a css/custom-theme/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/custom-theme/
