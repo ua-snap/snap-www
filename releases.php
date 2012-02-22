@@ -13,7 +13,7 @@ $page->pageHeader();
 <h2>SNAP web site release notes</h2>
 
 <h3>1.0.5</h3>
-<h4>Released February 21, 2012 at 8:15pm AKST</h4>
+<h4>Released February 21, 2012 at 8:30pm AKST</h4>
 <p>Issues marked <code>gh#1234</code> refer to issues tracked in the Github issue tracker instead of Redmine.</p>
 <h5>New functionality/content</h5>
 <ul>
@@ -26,6 +26,7 @@ $page->pageHeader();
 </ul>
 </li>
 <li>Added About&rarr;Logos page to link to SNAP logos in a variety of formats (#281)</li>
+<li>Added ability to embed streaming video in a Resource (#471)</li>
 <li>Implemented consistently-colored controls on Charts, Data pages (#647)</li>
 <li>Modified layout of Projects page to allow dynamic-height descriptions of projects (#692)</li>
 <li>Added hover text attribution to properly give user credit for photos on project pages (#693)</li>
@@ -33,7 +34,7 @@ $page->pageHeader();
 </ul>
 <h5>Resolved issues</h5>
 <ul>
-<li>Corrected title of this page to be &ldquo;Release Notes&rsquo;</li>
+<li>Corrected title of this page to be &ldquo;Release Notes&rdquo; (#695)</li>
 <li>Fixed issue that allowed Google and other search indexing programs to trigger a Contact Us email (#698)</li>
 <li>Improved layout and formatting to ensure images were consistently aligned on the People page (#651)</li>
 </ul>
