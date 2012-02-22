@@ -58,6 +58,7 @@ touch ${RPM_BUILD_ROOT}/var/log/httpd/%{hostname}-error_log
 touch ${RPM_BUILD_ROOT}/var/log/httpd/%{hostname}-access_log
 touch ${RPM_BUILD_ROOT}/var/log/httpd/%{hostname}-update_log
 
+cp -a favicon.ico ${RPM_BUILD_ROOT}/%{inst_dir}/
 cp -a *.php ${RPM_BUILD_ROOT}/%{inst_dir}/
 cp -a src/*.php ${RPM_BUILD_ROOT}/usr/lib64/snapwww/src
 cp -a src/Config.php.example ${RPM_BUILD_ROOT}/usr/lib64/snapwww/src
@@ -77,6 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,apache,apache,755)
+%{inst_dir}/favicon.ico
 %{inst_dir}/*.php
 %{inst_dir}/css
 %{inst_dir}/logos
