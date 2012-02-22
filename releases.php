@@ -13,7 +13,7 @@ $page->pageHeader();
 <h2>SNAP web site release notes</h2>
 
 <h3>1.0.5</h3>
-<h4>Released February 21, 2012 at 7:30pm AKST</h4>
+<h4>Released February 21, 2012 at 8:15pm AKST</h4>
 <p>Issues marked <code>gh#1234</code> refer to issues tracked in the Github issue tracker instead of Redmine.</p>
 <h5>New functionality/content</h5>
 <ul>
