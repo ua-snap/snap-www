@@ -1,7 +1,7 @@
 <?php
 
 // use these in unit tests, as required
-class FixturesConfig {
+class Config {
 
 	static public $database = array(
 		'host' => 'localhost',
