@@ -18,7 +18,7 @@ class Config {
 	/**
 	* Points at an Apache-writable directory -- absolute filesystem path
 	*/
-	static public $cache = '/tmp';
+	static public $temp = '/tmp';
 
 	/**
 	* Points at an Apache-readable directory that is public-facing -- absolute path
