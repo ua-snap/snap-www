@@ -200,16 +200,6 @@ window.snapCharts = {
 			opacity: 0.2
 		};
 
-		// Display a "Loading..." spinner when an AJAX call is in progress over a chart
-		// And, disable the autocompleter so we don't end up with multiple async requests
-		$('#display').ajaxStart(function() {
-			$('#comm_select').toggleDisabled();
-			$(this).block( {'message':'<img src="images/ajax-loader.gif" alt="" />&nbsp;Loading&hellip;'} );
-		}).ajaxStop( function() {
-			$(this).unblock();
-			$('#comm_select').toggleDisabled();
-		});
-
 		$('#variable_selections .buttonset').buttonset();
 
 	},
@@ -255,7 +245,7 @@ window.snapCharts = {
 			$('#scenario_buttons').buttonset('enable');
 			$('#variability_buttons').buttonset('enable');
 			$('#dataset_help').button('enable');
-			$('#variability_help').button('enable');			
+			$('#variability_help').button('enable');
 		}
 
 	},

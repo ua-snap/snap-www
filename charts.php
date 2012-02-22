@@ -65,7 +65,6 @@ $page->pageHeader();
 
         <div style="border-top: 1px solid #eee; position: relative; margin-top: 1em; padding-top: 1em">
             <button id="export_options" style="display: none; position: absolute; top: 0right: 0;">Export</button>
-                <!--<img alt="Sample Chart" id="placeholderImage" style="margin: auto; width: 920px; opacity: 0.4; margin-left: 15px;" src="/images/def_chart.png" />-->
                 <div id="chart_div"></div>
         </div>
         <div class="methods text">

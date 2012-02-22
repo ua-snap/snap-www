@@ -32,11 +32,11 @@
 	width: 100%;
 }
 
-#comm_select {
+#comm_select, #comm_select_wrapper {
 	background-color: white;
 }
 
-#comm_select:focus {
+#comm_select:focus, #comm_select_wrapper:focus {
 	background-color: #fbffd0;
 }
 

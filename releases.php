@@ -13,23 +13,41 @@ $page->pageHeader();
 <h2>SNAP web site release notes</h2>
 
 <h3>1.0.5</h3>
-<h4>Released tbd</h4>
+<h4>Released February 21, 2012 at 7:30pm AKST</h4>
+<p>Issues marked <code>gh#1234</code> refer to issues tracked in the Github issue tracker instead of Redmine.</p>
 <h5>New functionality/content</h5>
 <ul>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+<li>Charts tool changes
+<ul>
+<li>Added Export pop-up with high-res PNG, low-res PNG and vector (SVG) export options (#624)</li>
+<li>Reorganized page to put community choice first, moved explanation text into modal popups (#647)</li>
+<li>Removed sample chart from page to prevent users from interpreting that chart as a real chart (#647, #651)</li>
+<li>Exported charts have the SNAP logo overlaid on the lower-left, with more concise description text (#701, #624)</li>
+</ul>
+</li>
+<li>Added About&rarr;Logos page to link to SNAP logos in a variety of formats (#281)</li>
+<li>Implemented consistently-colored controls on Charts, Data pages (#647)</li>
+<li>Modified layout of Projects page to allow dynamic-height descriptions of projects (#692)</li>
+<li>Added hover text attribution to properly give user credit for photos on project pages (#693)</li>
+<li>Updated layout of Resources page to be a two-column layout, removed hover text (#635)</li>
 </ul>
 <h5>Resolved issues</h5>
 <ul>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
-<li></li>
+<li>Corrected title of this page to be &ldquo;Release Notes&rsquo;</li>
+<li>Fixed issue that allowed Google and other search indexing programs to trigger a Contact Us email (#698)</li>
+<li>Improved layout and formatting to ensure images were consistently aligned on the People page (#651)</li>
+</ul>
+<h5>Server, network, and administrative maintenance</h5>
+<ul>
+<li>Moved source code hosting to <a href="http://www.github.com">Github</a> to facilitate access and collaboration (#678)</li>
+<li>Removed unused images from main <code>/images</code> directory (#671)</li>
+<li>Implemented a new testing server integrated with Github and Jenkins (#680)</li>
+<li>Updated Apache configurations to properly use <code>NameVirtualHosts</code> to host both the SNAP web site as well as be a passthrough junction for ACCAP and other sites (#680)</li>
+<li>Removed unused code, database tables and columns as necessary (#706)</li>
+</ul>
+<h5>Known issues</h5>
+<ul>
+<li>Loading&hellip; overlay on Charts was removed, it didn't have time to display on fast (DSL or faster) connections; this may need to be restored if connectivity issues cause perceived slowness. (gh#10)</li>
 </ul>
 
 <h3>1.0.4</h3>
