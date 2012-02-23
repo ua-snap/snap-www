@@ -1,3 +1,4 @@
+# include required libraries
 library(raster)
 library(sp)
 library(maptools)
