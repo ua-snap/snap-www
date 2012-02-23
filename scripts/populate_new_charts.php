@@ -21,49 +21,58 @@ CREATE TABLE `community_charts_new_ingest` (
   `type` int(11) DEFAULT NULL,
   `daterange` varchar(255) DEFAULT NULL,
   `scenario` varchar(10) DEFAULT NULL,
-  `Jan` decimal(10,2) DEFAULT NULL,
-  `JanSD` decimal(10,2) DEFAULT NULL,
-  `Jan-90` decimal(10,2) DEFAULT NULL,
-  `Feb` decimal(10,2) DEFAULT NULL,
-  `FebSD` decimal(10,2) DEFAULT NULL,
-  `Feb-90` decimal(10,2) DEFAULT NULL,
-  `Mar` decimal(10,2) DEFAULT NULL,
-  `MarSD` decimal(10,2) DEFAULT NULL,
-  `Mar-90` decimal(10,2) DEFAULT NULL,
-  `Apr` decimal(10,2) DEFAULT NULL,
-  `AprSD` decimal(10,2) DEFAULT NULL,
-  `Apr-90` decimal(10,2) DEFAULT NULL,
-  `May` decimal(10,2) DEFAULT NULL,
-  `MaySD` decimal(10,2) DEFAULT NULL,
-  `May-90` decimal(10,2) DEFAULT NULL,
-  `Jun` decimal(10,2) DEFAULT NULL,
-  `JunSD` decimal(10,2) DEFAULT NULL,
-  `Jun-90` decimal(10,2) DEFAULT NULL,
-  `Jul` decimal(10,2) DEFAULT NULL,
-  `JulSD` decimal(10,2) DEFAULT NULL,
-  `Jul-90` decimal(10,2) DEFAULT NULL,
-  `Aug` decimal(10,2) DEFAULT NULL,
-  `AugSD` decimal(10,2) DEFAULT NULL,
-  `Aug-90` decimal(10,2) DEFAULT NULL,
-  `Sep` decimal(10,2) DEFAULT NULL,
-  `SepSD` decimal(10,2) DEFAULT NULL,
-  `Sep-90` decimal(10,2) DEFAULT NULL,
-  `Oct` decimal(10,2) DEFAULT NULL,
-  `OctSD` decimal(10,2) DEFAULT NULL,
-  `Oct-90` decimal(10,2) DEFAULT NULL,
-  `Nov` decimal(10,2) DEFAULT NULL,
-  `NovSD` decimal(10,2) DEFAULT NULL,
-  `Nov-90` decimal(10,2) DEFAULT NULL,
-  `Dec` decimal(10,2) DEFAULT NULL,
-  `DecSD` decimal(10,2) DEFAULT NULL,
-  `Dec-90` decimal(10,2) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `Jan` decimal(12,4) DEFAULT NULL,
+  `JanSD` decimal(12,4) DEFAULT NULL,
+  `Jan-90` decimal(12,4) DEFAULT NULL,
+  `Feb` decimal(12,4) DEFAULT NULL,
+  `FebSD` decimal(12,4) DEFAULT NULL,
+  `Feb-90` decimal(12,4) DEFAULT NULL,
+  `Mar` decimal(12,4) DEFAULT NULL,
+  `MarSD` decimal(12,4) DEFAULT NULL,
+  `Mar-90` decimal(12,4) DEFAULT NULL,
+  `Apr` decimal(12,4) DEFAULT NULL,
+  `AprSD` decimal(12,4) DEFAULT NULL,
+  `Apr-90` decimal(12,4) DEFAULT NULL,
+  `May` decimal(12,4) DEFAULT NULL,
+  `MaySD` decimal(12,4) DEFAULT NULL,
+  `May-90` decimal(12,4) DEFAULT NULL,
+  `Jun` decimal(12,4) DEFAULT NULL,
+  `JunSD` decimal(12,4) DEFAULT NULL,
+  `Jun-90` decimal(12,4) DEFAULT NULL,
+  `Jul` decimal(12,4) DEFAULT NULL,
+  `JulSD` decimal(12,4) DEFAULT NULL,
+  `Jul-90` decimal(12,4) DEFAULT NULL,
+  `Aug` decimal(12,4) DEFAULT NULL,
+  `AugSD` decimal(12,4) DEFAULT NULL,
+  `Aug-90` decimal(12,4) DEFAULT NULL,
+  `Sep` decimal(12,4) DEFAULT NULL,
+  `SepSD` decimal(12,4) DEFAULT NULL,
+  `Sep-90` decimal(12,4) DEFAULT NULL,
+  `Oct` decimal(12,4) DEFAULT NULL,
+  `OctSD` decimal(12,4) DEFAULT NULL,
+  `Oct-90` decimal(12,4) DEFAULT NULL,
+  `Nov` decimal(12,4) DEFAULT NULL,
+  `NovSD` decimal(12,4) DEFAULT NULL,
+  `Nov-90` decimal(12,4) DEFAULT NULL,
+  `Dec` decimal(12,4) DEFAULT NULL,
+  `DecSD` decimal(12,4) DEFAULT NULL,
+  `Dec-90` decimal(12,4) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 'Valid Data' means data in the format M. Lindgren provided me, where a single row looks like this:
 
 411,Alaska,Pile Bay Village,0,USA,-153.8819,59.7789,6609.056314,1087571.255,tas,2020_2029,sresb1,19.2,2.7,16.5,21.2,3.4,17.9,24.4,3.1,22.2,33.8,0.9,31.6,44.8,1.8,43.2,53.1,0.9,51.9,56.5,0.7,55.4,56.3,1.3,54.8,49.5,0.5,47.6,36,1.1,34.1,27,2.2,24,18.3,2.3,15.8
 
 This script will build the two tables used to store the relational data for the Community Charts tool.
+
+To load the new data, run this after copying the csv into /var/lib/mysql/snapwww/filename
+
+TRUNCATE TABLE `community_charts_new_ingest`;
+
+LOAD DATA INFILE '/var/lib/mysql/snapwww/filename
+INTO TABLE `community_charts_new_ingest`
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+IGNORE 1 LINES;
 
 Some notes on the input data:
 - 'type' field means: 1 === Temperature, 2 === Precipitation
