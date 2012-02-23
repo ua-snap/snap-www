@@ -46,7 +46,7 @@ $page->pageHeader();
                         <input type="radio" id="variability_on" name="variability" value="1"/><label for="variability_on">On</label>
                     </div>
                     <div class="helpbuttons">
-                        <button id="variability_help">About scenarios&hellip;</button>
+                        <button id="variability_help">About variability&hellip;</button>
                     </div>                    
                 </div>
             </div>

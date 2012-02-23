@@ -145,8 +145,12 @@ class ChartsFetcher {
 
 SELECT MIN(minimum) minimum, MAX(maximum) maximum FROM 
 	(
-	SELECT LEAST(`Jan`, `Feb`, `Mar`, `Apr`, `Jun`, `Jul`, `Aug`, `Sep`, `Oct`, `Nov`, `Dec`) minimum,
-	GREATEST(`Jan`, `Feb`, `Mar`, `Apr`, `Jun`, `Jul`, `Aug`, `Sep`, `Oct`, `Nov`, `Dec`) maximum
+	SELECT LEAST(`Jan`, `Feb`, `Mar`, `Apr`, `Jun`, `Jul`, `Aug`, `Sep`, `Oct`, `Nov`, `Dec`) -
+		GREATEST(`JanSd`, `FebSd`, `MarSd`, `AprSd`, `JunSd`, `JulSd`, `AugSd`, `SepSd`, `OctSd`, `NovSd`, `DecSd`)
+	minimum,
+	GREATEST(`Jan`, `Feb`, `Mar`, `Apr`, `Jun`, `Jul`, `Aug`, `Sep`, `Oct`, `Nov`, `Dec`) +
+		GREATEST(`JanSd`, `FebSd`, `MarSd`, `AprSd`, `JunSd`, `JulSd`, `AugSd`, `SepSd`, `OctSd`, `NovSd`, `DecSd`)	
+	maximum
 	FROM charts_data
 	WHERE `communityId` = :community AND `scenario` = :scenario AND `type` = :dataset
 	) AS `values`
@@ -166,54 +170,6 @@ sql
 
 		return json_encode($json);
 
-		/*
-		function() {
-					if( 1 === snapCharts.data.dataset ) {
-						return 'Temperature &deg;F';
-					} else {
-						return 'Total precipitation in inches';
-					}
-				};
-
-plotBands: function() {
-					if( 1 === snapCharts.data.dataset ) {
-						return [
-							{	
-								value: 32, 
-								color: '#000000', 
-								width: 1.5, 
-								label: { 
-									text: '32&deg;', 
-									align: 'right', 
-									style: { 
-										fontSize: '10px' 
-									} 
-								} 
-							}
-						];
-					}
-				},
-
-function() {
-					switch( snapCharts.data.dataset ) {
-
-						case 'B1' : return '5-Model Average, Low-range emissions (B1)';
-						case 'A1B' : return '5-Model Average, Mid-range emissions (A1B)';
-
-						case 'B1' : return '';
-						case 'A1B' : return '';
-						case 'A2' : return '5-Model Average, High-range emissions (A2)';
-					}
-				}
-function() {
-					if( 1 === snapCharts.data.dataset ) {
-						return 'Historical and Projected Average Monthly Temperature for ' + snapCharts.data.communityName;
-					} else {
-						return 'Historical and Projected Average Monthly Precipitation for ' + snapCharts.data.communityName;
-					}
-				}
-
-*/
 	}
 
 }
