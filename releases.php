@@ -11,7 +11,13 @@ $page->pageHeader();
 <div id="main_body">
 <div id="main_content" class="releases methods text">
 <h2>SNAP web site release notes</h2>
-
+<h3>1.0.6</h3>
+<h4>Released tbd at tbd AKST</h4>
+<h5>Resolved issues</h5>
+<ul>
+<li>Corrected calculation of height of y&dnash;axis to prevent variability bars from overlapping legend, underflowing chart (gh#12)</li>
+<li>Fixed hover text on help button for variability to read 'About variability&hellip;' (gh#13)</li>
+</ul>
 <h3>1.0.5</h3>
 <h4>Released February 21, 2012 at 8:30pm AKST</h4>
 <p>Issues marked <code>gh#1234</code> refer to issues tracked in the Github issue tracker instead of Redmine.</p>
