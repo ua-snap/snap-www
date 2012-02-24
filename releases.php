@@ -15,7 +15,7 @@ $page->pageHeader();
 <h4>Released tbd at tbd AKST</h4>
 <h5>Resolved issues</h5>
 <ul>
-<li>Corrected calculation of height of y&dnash;axis to prevent variability bars from overlapping legend, underflowing chart (gh#12)</li>
+<li>Corrected calculation of height of y&dnash;axis to prevent variability bars from overlapping legend, underflowing chart (gh#12, #14)</li>
 <li>Fixed hover text on help button for variability to read 'About variability&hellip;' (gh#13)</li>
 </ul>
 <h3>1.0.5</h3>
