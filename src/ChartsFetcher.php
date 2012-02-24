@@ -145,12 +145,8 @@ class ChartsFetcher {
 
 SELECT MIN(minimum) minimum, MAX(maximum) maximum FROM 
 	(
-	SELECT LEAST(`Jan`, `Feb`, `Mar`, `Apr`, `Jun`, `Jul`, `Aug`, `Sep`, `Oct`, `Nov`, `Dec`) -
-		GREATEST(`JanSd`, `FebSd`, `MarSd`, `AprSd`, `JunSd`, `JulSd`, `AugSd`, `SepSd`, `OctSd`, `NovSd`, `DecSd`)
-	minimum,
-	GREATEST(`Jan`, `Feb`, `Mar`, `Apr`, `Jun`, `Jul`, `Aug`, `Sep`, `Oct`, `Nov`, `Dec`) +
-		GREATEST(`JanSd`, `FebSd`, `MarSd`, `AprSd`, `JunSd`, `JulSd`, `AugSd`, `SepSd`, `OctSd`, `NovSd`, `DecSd`)	
-	maximum
+	SELECT LEAST(`Jan` - `JanSd`, `Feb` - `FebSd`, `Mar` - `MarSd`, `Apr` - `AprSd`, `Jun` - `JunSd`, `Jul` - `JulSd`, `Aug` - `AugSd`, `Sep` - `SepSd`, `Oct` - `OctSd`, `Nov` - `NovSd`, `Dec` - `DecSd`) minimum,
+	GREATEST(`Jan` + `JanSd`, `Feb` + `FebSd`, `Mar` + `MarSd`, `Apr` + `AprSd`, `Jun` + `JunSd`, `Jul` + `JulSd`, `Aug` + `AugSd`, `Sep` + `SepSd`, `Oct` + `OctSd`, `Nov` + `NovSd`, `Dec` + `DecSd`)  maximum
 	FROM charts_data
 	WHERE `communityId` = :community AND `scenario` = :scenario AND `type` = :dataset
 	) AS `values`
