@@ -40,20 +40,20 @@ $page->pageHeader();
                     <div class="helpbuttons">
                         <button id="dataset_help">About scenarios&hellip;</button>
                     </div>
-                    <p>Model Variability</p>
+                    <p>Inter&ndash;Model Variability</p>
                     <div id="variability_buttons" class="buttonset">
                         <input type="radio" id="variability_off" name="variability" value="0" checked="checked"/><label for="variability_off">Off</label>
                         <input type="radio" id="variability_on" name="variability" value="1"/><label for="variability_on">On</label>
                     </div>
                     <div class="helpbuttons">
-                        <button id="variability_help">About variability&hellip;</button>
+                        <button id="variability_help">About inter&ndash;model variability&hellip;</button>
                     </div>                    
                 </div>
             </div>
         </div>
         <div style="float:left;">
         <img id="community_list" src="images/akcanada_extent.gif" style="width: 400px; display: block; margin: 20px 0 0 3em;" />
-        <p style="font-size: 8px; color: #888; text-align: center; margin: 1ex 0; padding: 0;">SNAP has created charts for communities in the area shown above.</p>
+        <p style="font-size: 10px; color: #888; text-align: center; margin: 1ex 0; padding: 0;">SNAP has created charts for communities in the area shown above.</p>
         </div>
             <div style="float: right;">
                 <div style="text-align: right; margin-top: 20px">In cooperation with:<br/>
@@ -136,7 +136,7 @@ For further information on SNAP projections, please explore our <a href="/method
 
 <div id="about_variability" class="about_dialog" style="display: none;">
 
-<h4>Model Variability</h4>
+<h4>Inter&ndash;Model Variability</h4>
 <p>Model variability refers to the standard deviation (SD), which provides a measure of dispersion around the mean. The vertical bars represent the SD across the five models. Their lengths represent one SD above and below this value. A small SD indicates the models are in relative agreement, whereas a large SD suggests choice of model is relatively important. Drawing inferences from overlapping or non-overlapping bars is discouraged. The only comparison to make is of their relative size, as it pertains to changes in the degree of agreement among the models.</p>
 
 </div>

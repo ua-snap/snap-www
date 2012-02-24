@@ -62,16 +62,16 @@ class ChartsFetcher {
 		$yAxisTitle = (1 === $dataset) ? 'Temperature °F' : 'Total Precipitation (in)';
 		switch ($scenario) {
 			case 'a2':
-				$subtitle = "5-Model Average, High-range emissions (A2)";
+				$subtitle = "Historical  PRISM and 5-Model Projected Average, High-Range Emissions (A2)";
 				break;
 			
 			case 'b1':
-				$subtitle = "5-Model Average, Low-range emissions (B1)";
+				$subtitle = "Historical PRISM and 5-Model Projected Average, Low-Range Emissions (B1)";
 				break;
 
 			case 'a1b': //fallthru
 			default:
-				$subtitle = "5-Model Average, Mid-range emissions (A1B)";
+				$subtitle = "Historical PRISM and 5-Model Projected Average, Mid-Range Emissions (A1B)";
 				break;
 		}
 
@@ -83,7 +83,7 @@ class ChartsFetcher {
 		$sth->execute();
 		$res = $sth->fetch();
 
-		$title = (1 === $dataset) ? 'Historical and Projected Average Monthly Temperature for ' : 'Historical and Projected Average Monthly Precipitation for ';
+		$title = (1 === $dataset) ? 'Average Monthly Temperature for ' : 'Average Monthly Precipitation for ';
 		$title .= $res['community'].', '.$res['region'];
 
 		$json = array(
@@ -148,7 +148,7 @@ SELECT MIN(minimum) minimum, MAX(maximum) maximum FROM
 	SELECT LEAST(`Jan` - `JanSd`, `Feb` - `FebSd`, `Mar` - `MarSd`, `Apr` - `AprSd`, `Jun` - `JunSd`, `Jul` - `JulSd`, `Aug` - `AugSd`, `Sep` - `SepSd`, `Oct` - `OctSd`, `Nov` - `NovSd`, `Dec` - `DecSd`) minimum,
 	GREATEST(`Jan` + `JanSd`, `Feb` + `FebSd`, `Mar` + `MarSd`, `Apr` + `AprSd`, `Jun` + `JunSd`, `Jul` + `JulSd`, `Aug` + `AugSd`, `Sep` + `SepSd`, `Oct` + `OctSd`, `Nov` + `NovSd`, `Dec` + `DecSd`)  maximum
 	FROM charts_data
-	WHERE `communityId` = :community AND `scenario` = :scenario AND `type` = :dataset
+	WHERE `communityId` = :community AND `type` = :dataset
 	) AS `values`
 
 sql
@@ -156,7 +156,6 @@ sql
 
 		$sth->bindParam(':community', $community, PDO::PARAM_INT);
 		$sth->bindParam(':dataset', $dataset, PDO::PARAM_INT);
-		$sth->bindParam(':scenario', $scenario, PDO::PARAM_STR);
 		$sth->setFetchMode(PDO::FETCH_ASSOC);
 		$sth->execute();
 		$row = $sth->fetch();
