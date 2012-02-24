@@ -12,11 +12,14 @@ $page->pageHeader();
 <div id="main_content" class="releases methods text">
 <h2>SNAP web site release notes</h2>
 <h3>1.0.6</h3>
-<h4>Released tbd at tbd AKST</h4>
+<h4>Released February 24, 2012 at 12:00pm AKST</h4>
 <h5>Resolved issues</h5>
 <ul>
-<li>Corrected calculation of height of y&dnash;axis to prevent variability bars from overlapping legend, underflowing chart (gh#12, #14)</li>
+<li>Corrected calculation of height of y&ndash;axis to prevent variability bars from overlapping legend, underflowing chart (gh#12, gh#14)</li>
 <li>Fixed hover text on help button for variability to read 'About variability&hellip;' (gh#13)</li>
+<li>Calculates y&ndash;axis on charts across all scenarios (A2, A1B, B1) so the axis is constant between scenarios, facilitating comparisons (gh#17)</li>
+<li>Changed text on Charts Tool legends and made historical PRISM data bar gray to better describe the graph&rsquo;s data (gh#16)</li>
+<li>Prevented any non&ndash;minified javascript from being deployed (gh#15)</li>
 </ul>
 <h3>1.0.5</h3>
 <h4>Released February 21, 2012 at 8:30pm AKST</h4>
