@@ -2,10 +2,10 @@
 
 <project name="SNAP-Web" default="build">
  <target name="build"
-   depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdoc,phpunit,phpcb,jslint,jasmine"/>
+   depends="prepare,lint,phploc,pdepend,phpmd-ci,phpcs-ci,phpcpd,phpdoc,phpunit,phpcb,jslint"/>
 
  <target name="build-parallel"
-   depends="prepare,lint,tools-parallel,phpunit,phpcb,jslint,jasmine"/>
+   depends="prepare,lint,tools-parallel,phpunit,phpcb,jslint"/>
 
  <target name="tools-parallel"
          description="Run tools in parallel">

@@ -2,6 +2,11 @@
 <ruleset name="SNAP">
     <description>SNAP PHP coding standard</description>
 
+    <exclude-pattern>*/tests/*</exclude-pattern>
+    <exclude-pattern>*/forms/*</exclude-pattern>
+    <exclude-pattern>*/build/*</exclude-pattern>
+    <exclude-pattern>*/js/*min*</exclude-pattern>
+
     <rule ref="Generic.CodeAnalysis.ForLoopShouldBeWhileLoop"/>
     <rule ref="Generic.CodeAnalysis.ForLoopWithTestFunctionCall"/>
     <rule ref="Generic.CodeAnalysis.JumbledIncrementer"/>
@@ -35,7 +40,6 @@
     <rule ref="Generic.PHP.NoSilencedErrors"/>
     <rule ref="Generic.PHP.UpperCaseConstant"/>
 
-    <rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
     <rule ref="Generic.WhiteSpace.ScopeIndent"/>
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace"/>
     <rule ref="Squiz" />
