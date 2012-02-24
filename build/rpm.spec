@@ -62,7 +62,7 @@ cp -a favicon.ico ${RPM_BUILD_ROOT}/%{inst_dir}/
 cp -a *.php ${RPM_BUILD_ROOT}/%{inst_dir}/
 cp -a src/*.php ${RPM_BUILD_ROOT}/usr/lib64/snapwww/src
 cp -a src/Config.php.example ${RPM_BUILD_ROOT}/usr/lib64/snapwww/src
-cp -a js/* ${RPM_BUILD_ROOT}/%{inst_dir}/js/
+cp -a js/snap.min.js ${RPM_BUILD_ROOT}/%{inst_dir}/js/
 cp -a css/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/
 cp -a css/custom-theme/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/custom-theme/
 cp -a css/custom-theme/images/*.png ${RPM_BUILD_ROOT}/%{inst_dir}/css/custom-theme/images/
