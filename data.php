@@ -436,7 +436,7 @@ Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature produ
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;2000 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>2 km</td></tr>
-<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Decadal</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
 </tbody>
 </table>
@@ -575,7 +575,7 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;2000 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>771m</td></tr>
-<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Decadal</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
 </tbody>
 </table>
