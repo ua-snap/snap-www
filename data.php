@@ -341,7 +341,7 @@ Projected (2001&ndash;2100: B1, A1B, and A2 scenarios) monthly temperature and p
 
 <table class="overview">
 <tbody>
-<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;2000 PRISM</td></tr>
+<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>2 km</td></tr>
 <tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
@@ -434,7 +434,7 @@ Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature produ
 
 <table class="overview">
 <tbody>
-<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;2000 PRISM</td></tr>
+<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>2 km</td></tr>
 <tr><th scope="row">Temporal Resolution</th><td>Decadal</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
@@ -573,7 +573,7 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 
 <table class="overview">
 <tbody>
-<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;2000 PRISM</td></tr>
+<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>771m</td></tr>
 <tr><th scope="row">Temporal Resolution</th><td>Decadal</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
@@ -786,7 +786,7 @@ Historical (1901-2009) monthly average temperature and total precipitation from 
 
 <table class="overview">
 <tbody>
-<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;2000 PRISM</td></tr>
+<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>2 km</td></tr>
 <tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
@@ -833,7 +833,7 @@ Historical (1910-2009) derived temperature products from CRU TS 3.1 climate data
 
 <table class="overview">
 <tbody>
-<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;2000 PRISM</td></tr>
+<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>2 km</td></tr>
 <tr><th scope="row">Temporal Resolution</th><td>Decadal</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
@@ -897,7 +897,7 @@ Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.1 clima
 
 <table class="overview">
 <tbody>
-<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;2000 PRISM</td></tr>
+<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>2 km</td></tr>
 <tr><th scope="row">Temporal Resolution</th><td>Decadal</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
