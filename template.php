@@ -40,7 +40,7 @@ class webPage {
         <?php
             $menu_items = array(
                 array("About","/about.php"),
-                array("Maps &amp; Data","/datamaps.php"),
+                array("Tools and Data","/datamaps.php"),
                 array("Methods","/methods.php"),
                 array("Projects","/projects.php"),
                 array("Resources","/resources.php"),
