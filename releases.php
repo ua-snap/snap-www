@@ -12,6 +12,22 @@ $page->pageHeader();
 <div id="main_content" class="releases methods text">
 <h2>SNAP web site release notes</h2>
 
+<h3>1.0.8</h3>
+<h4>Released TBD</h4>
+<p>All issue numbers now refer to Github issues.</p>
+
+<h5>New functionality/content</h5>
+
+<ul>
+	<li></li>
+</ul>
+
+<h5>Resolved issues</h5>
+<ul>
+	<li>Updated footer copyright date to 2012 (#44)</li>
+	<li>Modified text styling on header/footer of map tool to conform to styling elsewhere on the site (#41)</li>
+</ul>
+
 <h3>1.0.7</h3>
 <h4>Released March 12, 2012 at 8:00pm AKDT</h4>
 <h5>New functionality/content</h5>

@@ -73,11 +73,14 @@
 }
 
 .map_bar .buttons a {
-	color: white;
+	color: #ddd;
 	display: inline-block;
 	padding-left: 1em;
-	text-shadow: 0 2px 3px #000;
+	text-shadow: 1px 1px #333;
+}
 
+.map_bar .buttons a:hover {
+	color: white;
 }
 
 #legend_wrapper {
@@ -228,9 +231,13 @@
 }
 
 #exportBlock span a {
-	font-weight: bold;
-	text-shadow: 0 2px 3px #000;
+	color: #ddd;
+	text-shadow: 1px 1px #333;
 	margin-right: 15px;
+}
+
+#exportBlock span a:hover {
+	color: white;
 }
 
 #map_footer #helpBlock {
