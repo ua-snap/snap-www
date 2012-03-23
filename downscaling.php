@@ -81,7 +81,7 @@ Since several models had substantially smaller systematic errors than the other 
 <p><a href="#top">Back to top</a></p>
 
 <h3><a id="delta_method">Delta Method Downscaling Procedure</a></h3>
-<img src="images/SNAP_delta_method_graphic.png" alt="" />
+<img src="images/SNAP_delta_method_graphic.png" alt="" style="width: 250px;" />
 <p>SNAP currently employs a model bias correction in tandem with a statistical downscaling approach called the &ldquo;delta method&rdquo;.  This method has proven robust and popular, most likely because it is straightforward and relatively easy to understand.  At its root, the delta method involves nothing more complex than subtraction and division, which helps in interpreting and explaining downscaling results.  Due to its low computational demand, the delta method allows for rapid and efficient downscaling of multiple GCMs and emission scenarios over hundreds of years.  For a thorough review of other downscaling methods, please see <a href="/resource_page.php?resourceid=15">Katherine Hayhoe&rsquo;s dissertation</a>.  Additional references to the delta method can be found <a href="/resource_page.php?resourceid=16">here</a> and <a href="/resource_page.php?resourceid=17">here</a>.
 </p>
 <p>
