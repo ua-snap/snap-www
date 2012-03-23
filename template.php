@@ -79,6 +79,14 @@ class webPage {
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
         <meta http-equiv=“X-UA-Compatible” content=“IE=8” />
 
+        <meta name="author" content="Tom Kurkowski (takurkowski@alaska.edu)" />
+        <meta name="author" content="Nancy Fresco (nlfresco@alaska.edu)" />
+        <meta name="author" content="Alec Bennett (apbennett@alaska.edu)" />
+        <meta name="author" content="Lena Krutikov (lkrutikov@alaska.edu)" />
+        <meta name="author" content="Tracy Rogers (tsrogers@alaska.edu)" />
+        <meta name="author" content="Bruce Crevensten (becrevensten@alaska.edu)" />
+        <meta name="author" content="Tim Glaser" />
+
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
         <link type="text/css" href="css/custom-theme/jquery-ui-1.8.17.custom.css" rel="Stylesheet" />  
     <?php 
@@ -148,6 +156,7 @@ class webPage {
                 <span style="font-weight: bold; margin-left: 20px;">Follow us</span>
                 <span style="margin-left: 40px;"><a href="http://www.facebook.com/pages/SNAP-and-ACCAP/112992248723524?v=wall">facebook</a></span>
                 <span style="margin-left: 40px;"><a href="http://twitter.com/#!/SNAPandACCAP">twitter</a></span>
+                <span style="margin-left: 40px;"><a href="http://www.flickr.com/photos/snapandaccap/">flickr</a></span>
             </div>
             <div id="footbar">
                 <div class="horiz_bar_left" style="color: #eeeeee; relative; font-size: 10px;">

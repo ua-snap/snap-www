@@ -19,7 +19,9 @@ $page->pageHeader();
 <h5>New functionality/content</h5>
 
 <ul>
-	<li></li>
+	<li>Added link to SNAP and ACCAP Flickr account (#40)</li>
+	<li>Added caption to model overview table on downscaling page (#39)</li>
+	<li>Added web site author information to page <code>meta</code> tags (#35)</li>
 </ul>
 
 <h5>Resolved issues</h5>
