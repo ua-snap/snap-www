@@ -11,6 +11,16 @@ $page->pageHeader();
 <div id="main_body">
 <div id="main_content" class="releases methods text">
 <h2>SNAP web site release notes</h2>
+
+<h3>1.0.7</h3>
+<h4>Released March 12, 2012 at 8:00pm AKDT</h4>
+<h5>New functionality/content</h5>
+<ul>
+<li>Updates on data, charts pages to text to improve clarity (gh#30, 24, 23, 21, 18)</li>
+<li>Videos added to Resources section (#430, #696)</li>
+<li>Updated collaborators&rsquo; logos, text blurbs (gh#26, #710)</li>
+</ul>
+
 <h3>1.0.6</h3>
 <h4>Released February 24, 2012 at 12:00pm AKST</h4>
 <h5>Resolved issues</h5>
