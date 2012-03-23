@@ -78,6 +78,8 @@ Since several models had substantially smaller systematic errors than the other 
 <tr><td>Center for Climate System Research</td><td>Model for Interdisciplinary Research on Climate (medium resolution)</td><td class="last"><code>miroc3_2_medres</code></td></tr>
 </tbody>
 </table>
+<p style="font-size: 10px; color: #888; text-align: center; margin: 1ex 2em 2em; padding: 0;">We acknowledge the World Climate Research Programme&rsquo;s Working Group on Coupled Modeling, which is responsible for CMIP, and we thank all the climate modeling groups for producing and making available their model output. For CMIP the U.S. Department of Energy's Program for Climate Model Diagnosis and Intercomparison provides coordinating support and leads development of software infrastructure in partnership with the Global Organization for Earth System Science Portals.</p>
+
 <p><a href="#top">Back to top</a></p>
 
 <h3><a id="delta_method">Delta Method Downscaling Procedure</a></h3>
