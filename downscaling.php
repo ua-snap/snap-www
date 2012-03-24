@@ -17,7 +17,7 @@ $page->pageHeader();
 <p>Downscaling takes known information at large scales to make predictions at local scales.  As such, the output products are essentially value-added products of existing datasets.  It is therefore essential to give an overview of our data sources.</p>
 
 <h4>Projected Global Climate Model data</h4>
-<img src="images/ipcc2.jpg" alt="" style="width: 150px" />
+<img src="images/ipcc2.jpg" alt="" style="width: 150px" class="right" />
 <p><a href="/faq.php#faq_2">Global Climate Models</a> (GCM) are developed by various research organizations around the world.  At various times, the United Nations <a href="http://www.ipcc.ch/" >Intergovernmental Panel on Climate Change</a> (IPCC) calls upon these organizations to submit their latest modeling results in order to summarize and determine the current scientific consensus on global climate change.  There have been <a href="http://www.ipcc.ch/publications_and_data/publications_and_data_reports.shtml#1" >4 assessment reports</a> from the IPCC: in 1990, 1995, 2001 and 2007.  In support of the more recent reports, the <a href="http://www-pcmdi.llnl.gov/projects/cmip/index.php" >Coupled Model Intercomparison Project</a> (CMIP) was initiated.  Currently we only have utilized the <a href="http://pcmdi-cmip.llnl.gov/cmip3_overview.html?submenuheader=1" >CMIP3</a> model outputs from the <a href="http://www.ipcc.ch/publications_and_data/publications_ipcc_fourth_assessment_report_synthesis_report.htm" >IPCC’s fourth assessment report</a> (AR4).  Future outputs will utilize the <a href="http://pcmdi-cmip.llnl.gov/cmip5/index.html?submenuheader=0" >CMIP5</a> model outputs from the upcoming <a href="http://www.ipcc.ch/activities/activities.shtml" >IPCC fifth assessment report</a> (AR5) expected in 2014.  GCM outputs are only one aspect of these reports, but they form the basis for many interpretations of future climate.</p>
  
 <p>
@@ -32,7 +32,7 @@ The <a href="http://www.cru.uea.ac.uk/" >Climate Research Unit</a> (CRU) at the 
 
 <h4>Historical PRISM climatological data</h4>
 <p>
-<img src="images/prism_group.jpg" alt="" />
+<img src="images/prism_group.jpg" alt="" style="width: 150px" class="right" />
 <a href="http://prism.oregonstate.edu/" >PRISM</a> (Parameter-elevation Regressions on Independent Slopes Model) data are the highest quality spatial climate data currently available.  PRISM data are developed with a model that accounts for land features such as slope, elevation and coastlines, as well as expert knowledge of local climate experts.  SNAP utilizes temperature and precipitation from the 30 year (1961&ndash;1990) monthly climatology data at 2 km spatial resolution covering Alaska and regions of Canada, and ~800 meter spatial resolution from 1971&ndash;2000 covering only Alaska.  We have also utilized other PRISM datasets such as the Pacific Islands for specific projects.
 </p>
 <p>
@@ -47,7 +47,7 @@ Each GCM has different strengths and weaknesses, and some can be expected to per
 <p>
 Dr. John Walsh, a SNAP collaborator, and his team evaluated the performance of a set of fifteen global climate models used in the Coupled Model Intercomparison Project (<a href="/resource_page.php?resourceid=2">Walsh et al 2008</a>).  They calculated the degree to which each model’s output concurred with actual climate data for the years 1958&ndash;2000 for each of three climatic variables (surface air temperature, precipitation, and sea level pressure) for three overlapping regions (Alaska, Greenland, 60&ndash;90&deg;N latitude, and 20&ndash;90&deg;N latitude.)
 </p>
-<img src="/images/ecmwf_logo_web.gif" alt="" />
+<img src="/images/ecmwf_logo_web.gif" alt="" class="right"/>
 <p>
 The core statistic of the validation was a root-mean-square error (RMSE) evaluation of the differences between mean model output for each grid point and calendar month, and data from the European Centre for Medium-Range Weather Forecasts (ECMWF) Re-Analysis, <a href="http://www.ecmwf.int/products/data/archive/descriptions/e4/index.html" >ERA-40</a>. The ERA-40 directly assimilates observed air temperature and sea level pressure observations into a product spanning 1958&ndash;2000. Precipitation is computed by the model used in the data assimilation. The ERA-40 is one of the most consistent and accurate gridded representations of these variables available.
 </p>
