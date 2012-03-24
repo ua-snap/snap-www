@@ -94,7 +94,7 @@ $page->pageHeader();
 </ul>
 </div>
 <div class="listwrapper">
-<h4>Acronym</h4>
+<h4>Full Name</h4>
 <ul>
 <li><a href="logos/EPS/FullName/snap_1color.eps">Monochromatic</a> (EPS, 361KB)</li>
 <li><a href="logos/EPS/FullName/snap_2color.eps">Two color</a> (EPS, 361KB)</li>
