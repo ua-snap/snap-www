@@ -583,7 +583,20 @@ function writeHash() {
 	if(false === metadataId ) {
 		$('#metadataLink').hide();
 	} else {
-		$('#metadataLink').show().attr('href', 'http://athena.snap.uaf.edu:8080/geonetwork/srv/en/metadata.show.embedded?id=' + metadataId);
+		$('#metadataLink')
+			.show()
+			.click( function(e) {
+				$('#metadataModal')
+					.html('<iframe height="600px" width="100%" src="http://athena.snap.uaf.edu:8080/geonetwork/srv/en/metadata.show.embedded?id='+metadataId+'"></iframe>')
+					.dialog({
+						draggable: false,
+						resizable: false,
+						title: 'Metadata',
+						minWidth: 800,
+						minHeight: 600,
+						modal: true
+					});
+			});
 	}
 }
 

@@ -23,6 +23,7 @@ $page->pageHeader();
 	<li>Added caption to model overview table on downscaling page (#39)</li>
 	<li>Added web site author information to page <code>meta</code> tags (#35)</li>
 	<li>Changed title of &lsrquo;Maps &amp; Data&rsquo; menu to &lsquo;Tools and Data&rsquo; (#29)</li>
+	<li>Added/updated bios for Tracy, Jane</li>
 </ul>
 
 <h5>Resolved issues</h5>
