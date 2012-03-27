@@ -147,6 +147,7 @@ class webPage {
 <div class="social">
 <!-- AddThis Button BEGIN -->
 <div class="addthis_toolbox addthis_default_style sharewrapper" style="display: none;" >
+<a class="addthis_button_email"><img src="images/email.png"/></a>    
 <a class="addthis_button_facebook"><img src="images/facebook.png"/></a>
 <a class="addthis_button_twitter"><img src="images/twitter-2.png"/></a>
 <a class="addthis_button_google_plusone" g:plusone:size="standard" g:plusone:annotation="none"></a>
@@ -184,6 +185,7 @@ class webPage {
 <div class="social">
 <!-- AddThis Button BEGIN -->
 <div class="addthis_toolbox addthis_default_style sharewrapper" style="display: none;" >
+<a class="addthis_button_email"><img src="images/email.png"/></a>
 <a class="addthis_button_facebook"><img src="images/facebook.png"/></a>
 <a class="addthis_button_twitter"><img src="images/twitter-2.png"/></a>
 <a class="addthis_button_google_plusone" g:plusone:size="standard" g:plusone:annotation="none"></a>
