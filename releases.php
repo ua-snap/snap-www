@@ -19,17 +19,19 @@ $page->pageHeader();
 <h5>New functionality/content</h5>
 
 <ul>
+	<li>Added ability to send user to direct link to section of the Data page.  For example, <a href="http://www.snap.uaf.edu/data.php#dataset=historical_derived_temperature_771m">here&rsquo;s a link directly to historical derived temperature products (771 m)</a>. (#45)</li>
 	<li>Added link to SNAP and ACCAP Flickr account (#40)</li>
 	<li>Added caption to model overview table on downscaling page (#39)</li>
 	<li>Added web site author information to page <code>meta</code> tags (#35)</li>
 	<li>Changed title of &lsquo;Maps &amp; Data&rsquo; menu to &lsquo;Tools and Data&rsquo; (#29)</li>
-	<li>Added/updated bios for Tracy, Jane</li>
+	<li>TBD Added/updated bios for Tracy, Jane (#20)</li>
 </ul>
 
 <h5>Resolved issues</h5>
 <ul>
 	<li>Updated footer copyright date to 2012 (#44)</li>
 	<li>Modified text styling on header/footer of map tool to conform to styling elsewhere on the site (#41)</li>
+	<li>Fixed header text on logos page to read Full Name for the 2nd column of print&ndash;specific logos (EPS files) (#43)</li>
 </ul>
 
 <h3>1.0.7</h3>

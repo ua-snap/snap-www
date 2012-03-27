@@ -54,16 +54,6 @@ If you add a file here, you must add it to the makefile for packaging.  See the 
 <script src="js/maps.js" type="text/javascript"></script>
 <!-- end-package -->
 
-<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#username=snapweb"></script>
-<script type="text/javascript" comment="AddThis Configuration">
-    var addthis_config =
-    {
-       ui_508_compliant: true,
-       ui_hover_direction: 1,
-       services_compact: 'facebook,twitter,google_plusone,print,email'
-    }
-</script>
-
 <script type="text/javascript">
 
 // Interpolate server-side configs as appropriate

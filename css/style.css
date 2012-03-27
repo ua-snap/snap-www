@@ -816,3 +816,11 @@ a.project p {
 	text-align: center;
 	vertical-align: center;
 }
+
+
+.social .sharewrapper {
+	border-radius: 0 4px 4px 0;
+	background-color:  #848d8f;
+	text-align: center;
+	padding: 9px 5px 8px 22px;
+}

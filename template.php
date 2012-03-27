@@ -142,8 +142,23 @@ class webPage {
         }
         ?>
             </div>
-            <div class="horiz_bar_right">   
-                <a class="addthis_button"><img src="/images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/></a>
+            <div class="horiz_bar_right">
+
+<div class="social">
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style sharewrapper" style="display: none;" >
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_google_plusone"></a>
+</div>
+<!-- AddThis Button END -->
+
+<a class="sharebutton">
+    <img src="/images/share.png" style="margin: auto; padding-top: 4px; display: block;" alt="Share"/>
+</a>
+
+</div>
+
             </div>
         </div>
         <div style="color: #999999; width: 975px; margin: auto; text-align: right; padding-top: 10px;" class="contactbar"><a href="/people.php#contact">contact</a></div>
@@ -165,7 +180,21 @@ class webPage {
                     </div>
                 </div>
                 <div class="horiz_bar_right">
-                    <a class="addthis_button"><img src="/images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/></a>
+
+<div class="social">
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style sharewrapper" style="display: none;" >
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_google_plusone"></a>
+</div>
+<!-- AddThis Button END -->
+
+<a class="sharebutton">
+    <img src="/images/share.png" style="margin: auto; padding-top: 4px; display: block;" alt="Share"/>
+</a>
+</div>
+
                 </div>
             </div>
             <div style="text-align: left; margin-left: 50px;"><img src="/images/bottom_bubble.png" alt="Bubble Graphic" /></div>
@@ -196,6 +225,25 @@ class webPage {
             </body>
             <script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
             <script type="text/javascript" src="https://api.twitter.com/1/statuses/user_timeline.json?include_rts=true&amp;screen_name=SNAPandACCAP&amp;count=1&amp;callback=twitterCallback2"></script>
+            <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4eb8496858e19dd4"></script>
+
+
+<script type="text/javascript">
+
+$('.social').hover(
+    function(e) {
+        $('.sharebutton').hide();
+        $('.addthis_toolbox').fadeIn(200);
+    },
+
+    function(e) {
+        $('.addthis_toolbox').hide();
+        $('.sharebutton').fadeIn(200);
+    }
+);
+
+</script>
+
         </html>
         <?php
     }
