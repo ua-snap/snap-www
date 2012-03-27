@@ -234,12 +234,12 @@ class webPage {
 
 $('.social').hover(
     function(e) {
-        $('.sharebutton').hide();
+        $('.sharebutton').fadeOut(200);
         $('.addthis_toolbox').fadeIn(200);
     },
 
     function(e) {
-        $('.addthis_toolbox').hide();
+        $('.addthis_toolbox').fadeOut(200);
         $('.sharebutton').fadeIn(200);
     }
 );
