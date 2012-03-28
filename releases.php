@@ -13,18 +13,20 @@ $page->pageHeader();
 <h2>SNAP web site release notes</h2>
 
 <h3>1.0.8</h3>
-<h4>Released TBD</h4>
+<h4>Released March 27, 2012 at 11:15pm AKDT</h4>
 <p>All issue numbers now refer to Github issues.</p>
 
 <h5>New functionality/content</h5>
 
 <ul>
+	<li>Restyled share button on page toolbar to better match site theme and simplify use. (#37)</li>
 	<li>Added ability to send user to direct link to section of the Data page.  For example, <a href="http://www.snap.uaf.edu/data.php#dataset=historical_derived_temperature_771m">here&rsquo;s a link directly to historical derived temperature products (771 m)</a>. (#45)</li>
+	<li>Clicking the &lsquo;Metadata&rsquo; link in the maps tool now opens metadata in a modal window. (#<8)</li>
 	<li>Added link to SNAP and ACCAP Flickr account (#40)</li>
-	<li>Added caption to model overview table on downscaling page (#39)</li>
+	<li>Added caption to model overview table, reduced size of inline graphics on downscaling page (#42, 39)</li>
 	<li>Added web site author information to page <code>meta</code> tags (#35)</li>
 	<li>Changed title of &lsquo;Maps &amp; Data&rsquo; menu to &lsquo;Tools and Data&rsquo; (#29)</li>
-	<li>TBD Added/updated bios for Tracy, Jane (#20)</li>
+	<li>Added/updated bios for Tracy, Jane (#20)</li>
 </ul>
 
 <h5>Resolved issues</h5>
