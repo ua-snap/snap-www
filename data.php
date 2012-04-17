@@ -29,6 +29,13 @@ All of our downloadable data is provided in <a href="http://trac.osgeo.org/geoti
 <p>
 Our data is currently served through zip files.  Once uncompressed, each file represents one time step (month, decade, season, etc) across the full spatial extent for that product.  Currently, spatial extents are Alaska-wide or Alaska-Western Canada (YT, BC, AB, SK, MB).
 </p>
+<div class="ui-widget" style="font-size: 14px">
+<div class="ui-state-highlight ui-corner-all" style="margin: 20px 0; padding: 0 .7em;"> 
+<p style="margin: 10px 0">
+<span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+<strong>Notice:</strong> We are aware that users running 32&ndash;bit Windows machines (usually running XP) are experiencing issues downloading and uncompressing files larger than 4GB.  This is a limit imposed by some file systems on those machines.  Please bear with us as we provide a solution to accessing the data.  If you experience other issues, please <a style="color: #06c" href="/people.php?topic=web#contact">contact us</a>. Thank you for your patience.
+</div>
+</div>
 <p>
 While it&rsquo;s hard to have a completely static file naming scheme, we make every attempt to keep some consistency across our various datasets.  This naming scheme outlined below is our general guide, although it does vary depending upon each dataset.  Please refer to the full metadata for details on specific datasets.
 </p>
@@ -526,7 +533,7 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 
 <a href="/files/data/derived/dof_dot_AK_CAN_2km_ukmo_hadcm3_sresb1.zip">dof_dot_AK_CAN_2km_ukmo_hadcm3_sresb1.zip</a> (27 MB)
 <a href="/files/data/derived/dof_dot_AK_CAN_2km_ukmo_hadcm3_sresa1b.zip">dof_dot_AK_CAN_2km_ukmo_hadcm3_sresa1b.zip</a> (27 MB)
-<a href="/files/data/derived/dof_dot_AK_CAN_2km_ukmo_hadcm3_sresa2.zip">dof_dot_AK_CAN_2km_ukmo_hadcm3_sresa2.zip</a> (47 MB)
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_ukmo_hadcm3_sresa2.zip">dof_dot_AK_CAN_2km_ukmo_hadcm3_sresa2.zip</a> (27 MB)
 </pre>
 </td>
 <td>
