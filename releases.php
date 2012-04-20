@@ -11,7 +11,9 @@ $page->pageHeader();
 <div id="main_body">
 <div id="main_content" class="releases methods text">
 <h2>SNAP web site release notes</h2>
-
+<h3>1.0.9</h3>
+<h4>Released April 19, 2012 at 5:30pm AKDT</h4>
+<p>This minor update to the web site added a blurb on the Data page alerting users who run a 32-bit filesystem may have difficulties downloading or unzipping our data files, and corrected the size of one data file listed on the data page. (#58)</p>
 <h3>1.0.8</h3>
 <h4>Released March 27, 2012 at 11:15pm AKDT</h4>
 <p>All issue numbers now refer to Github issues.</p>
