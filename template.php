@@ -203,7 +203,11 @@ class webPage {
             <div id="pageFooterInfo" style="margin-bottom: 40px; min-height: 60px">
                 <div style="float: left; margin-right: 40px;">
                     <div><a href="/"><img src="/images/snap_acronym_rgb.png" height="53px" alt="SNAP Acronym Logo" /></a></div>
-                    <div class="contactbar" style="text-align: right;"><a href="/people.php#contact">contact</a></div>
+                    <div class="contactbar" style="text-align: right;">
+                        <a href="/people.php#contact">contact</a>
+                        &nbsp;|&nbsp;
+                        <a href="/terms.php">terms of use</a>
+                    </div>
                 </div>
                 
                 <div style ="float: left; width: 470px; text-align: left; margin-top: 13px;"><a id="snapWebVersion" href="/releases.php"><?php echo 'V'.SNAPWEB_VERSION; ?></a> Copyright &copy; 2012 <a href="/" style="color: #222222; text-decoration: underline;">Scenarios Network for Alaska &amp; Arctic Planning</a>, a research institute of the <a href="http://www.uaf.edu" style="color: #222222; text-decoration: underline;">University of Alaska Fairbanks</a>.  UAF is an affirmative action/equal opportunity employer and educational institution.

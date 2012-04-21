@@ -9,23 +9,29 @@ $page->pageHeader();
             <div class="methods text">
 
 <h2>Data</h2>
+
 <p>
 Our principal products are downscaled historical and projected monthly climate data, primarily temperature and precipitation across Alaska and large regions of Western Canada.  Projected data are produced for three <a href="/faq.php#faq_4">scenarios</a> (B1, A1B, A2).  Additionally, SNAP produces derived data from the above base datasets through various modeling efforts.  Derived data products include potential evapotranspiration, vegetation, fire, permafrost, day of freeze, day of thaw, and the subsequent length of growing season, as well as decadal, seasonal, and annual averages.
 </p>
-<p>
 
+<p>
 Please visit our <a href="/methods.php">Methods</a> section for a description of our downscaling procedure.  
 </p>
+
 <p>
 To visualize a selection of datasets, please visit the <a href="maps.php" target="_blank" >map tool</a>.
 </p>
+
 <p>
 For a full list of our available data, please see below.
 </p>
+
 <hr/>
+
 <p>
 All of our downloadable data is provided in <a href="http://trac.osgeo.org/geotiff/">GeoTIFF</a> format, georeferenced to the North American Datum of 1983 and projected in Alaska Albers Equal Area Conic in units of meters (NAD83 Alaska Albers).  Geotiffs can be read by many open source and commercial GIS and data manipulation programs including ArcGIS, QGIS, R (raster package recommended), GDAL, GRASS, and many others.
 </p>
+
 <p>
 Our data is currently served through zip files.  Once uncompressed, each file represents one time step (month, decade, season, etc) across the full spatial extent for that product.  Currently, spatial extents are Alaska-wide or Alaska-Western Canada (YT, BC, AB, SK, MB).
 </p>
@@ -41,9 +47,6 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 </p>
 <p><code>[variable]_[metric]_[units]_[format]_[assessmentReport]_[group]_[model]_[scenario]_[timeFrame].[fileFormat]</code></p>
 
-
-
-
 <table id="key">
 <thead>
 <tr>
@@ -57,6 +60,14 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 <tr><th scope="row">logs</th><td>length of growing season</td></tr>
 </tbody>
 </table>
+
+<div class="ui-widget" style="font-size: 14px">
+<div class="ui-state-highlight ui-corner-all" style="margin: 20px 0; padding: 0 .7em;"> 
+<p style="margin: 10px 0">
+All information produced by the Scenarios Network for Alaska and Arctic Planning is licensed under a <a style="color: #06c" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Attribution text provided <a style="color: #06c" href="/faq.php#faq_1">here</a>.
+</p>
+</div>
+</div>
 
 <h3>Projected Data</h3>
 </div>
