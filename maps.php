@@ -10,32 +10,53 @@ $page->openPage();
     </a>
 
     <div id="model_menu">
-		<p>currently viewing</p>
-			<div id="mapMenu">
-				<!-- populated by javascript -->
-             </div>
-		</div>
+      <p>currently viewing</p>
+      <div id="mapMenu">
+        <!-- populated by javascript -->
     </div>
+</div>
+</div>
 
-    <div id="map_menu_bar" class="map_bar">
-    	<div id="textLinks"></div>
-    	<div id="shareBlock" style=""><a class="addthis_button"><img alt="Share" src="/images/share.png" /></a></div>
-    	<div id="exportBlock">
-    		<span><a href="#" onclick="window.print(); return false;">Print</a></span>
-    		<span><a href="#" id="export_link">Link</a></span>
+<div id="map_menu_bar" class="map_bar">
+ <div id="textLinks"></div>
 
-    	</div>
+
+ <div class="horiz_bar_right">
+
+    <div class="social">
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style sharewrapper" style="display: none;" >
+            <a class="addthis_button_email"><img src="images/email.png"/></a>    
+            <a class="addthis_button_facebook"><img src="images/facebook.png"/></a>
+            <a class="addthis_button_twitter"><img src="images/twitter-2.png"/></a>
+            <a class="addthis_button_google_plusone" g:plusone:size="standard" g:plusone:annotation="none">!?</a>
+        </div>
+        <!-- AddThis Button END -->
+
+        <a class="sharebutton">
+            <img src="/images/share.png" style="margin: auto; padding-top: 4px; display: block;" alt="Share"/>
+        </a>
+
     </div>
+</div>
+
+
+<div id="exportBlock">
+  <span><a href="#" onclick="window.print(); return false;">Print</a></span>
+  <span><a href="#" id="export_link">Link</a></span>
+
+</div>
+</div>
 </div>
 
 <div id="map_wrapper">
     <div id="link_box" style="background-color: #f5f5f5; display: none; position: absolute; z-index: 20; right: 0px; width: 300px; height: 50px; border: 1px solid #787878;">
-                <div style="position: absolute; width: 15px; height: 15px; right: 2px; top: 2px; background-color: #ffffff; text-align: center;"><a id="link_close">X</a></div>
-                <div style="margin: 13px;">Link: <input id="link_field" type="text" style="width: 220px;" value="" /></div>
-                <script type="text/javascript">
-                    $('#link_close').click( function() { $('#link_box').fadeOut(); });
-                </script>
-            </div>
+        <div style="position: absolute; width: 15px; height: 15px; right: 2px; top: 2px; background-color: #ffffff; text-align: center;"><a id="link_close">X</a></div>
+        <div style="margin: 13px;">Link: <input id="link_field" type="text" style="width: 220px;" value="" /></div>
+        <script type="text/javascript">
+        $('#link_close').click( function() { $('#link_box').fadeOut(); });
+        </script>
+    </div>
     <div id="map_canvas"></div>
     <div id="legend_wrapper">
         <div id="legend_background"></div>
@@ -118,6 +139,18 @@ $(document).ready(function() {
     });
     
 });
+
+$('.social').hover(
+    function(e) {
+        $('.sharebutton').fadeOut(200);
+        $('.addthis_toolbox').fadeIn(200);
+    },
+
+    function(e) {
+        $('.addthis_toolbox').fadeOut(200);
+        $('.sharebutton').fadeIn(200);
+    }
+);
 
 </script>
 </body>

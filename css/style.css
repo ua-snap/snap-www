@@ -93,35 +93,27 @@ a:hover {
 	background-color: #848d8f; 
 	width: 830px; 
 	height: 35px; 
-	-moz-border-radius-topleft: 3px; 
-	-moz-border-radius-bottomleft: 3px; 
 	border-top-left-radius: 3px; 
 	border-bottom-left-radius: 3px;
-	line-height: 35px;
-	-moz-box-shadow: 2px 2px 2px #cccccc;
-	-webkit-box-shadow: 2px 2px 2px #cccccc;
 	box-shadow: 2px 2px 2px #cccccc;
-
 }
+
 .horiz_bar_right {
 	z-index: 10;
 	float: right; 
-	background-color: #848d8f; 
 	width: 142px; 
 	border-left: 3px white solid;
-	height: 35px; 
-	-moz-border-radius-topright: 3px; 
-	-moz-border-radius-bottomright: 3px; 
-	border-top-right-radius: 3px; 
-	border-bottom-right-radius: 3px;
+	height: 35px;
 	background-color: #97a93a;
-	-moz-box-shadow: 2px 2px 2px #cccccc;
-	-webkit-box-shadow: 2px 2px 2px #cccccc;
+	border-top-right-radius: 3px; 
+	border-bottom-right-radius: 3px;	
 	box-shadow: 2px 2px 2px #cccccc;
 }
+
 .horiz_bar_right:hover {
 	background-color: #97a93a;
 }
+
 .content_box_title {
 	margin: 10px;
 	font-size: 20px;
