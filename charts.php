@@ -40,20 +40,20 @@ $page->pageHeader();
                     <div class="helpbuttons">
                         <button id="dataset_help">About scenarios&hellip;</button>
                     </div>
-                    <p>Model Variability</p>
+                    <p>Inter&ndash;Model Variability</p>
                     <div id="variability_buttons" class="buttonset">
                         <input type="radio" id="variability_off" name="variability" value="0" checked="checked"/><label for="variability_off">Off</label>
                         <input type="radio" id="variability_on" name="variability" value="1"/><label for="variability_on">On</label>
                     </div>
                     <div class="helpbuttons">
-                        <button id="variability_help">About scenarios&hellip;</button>
+                        <button id="variability_help">About inter&ndash;model variability&hellip;</button>
                     </div>                    
                 </div>
             </div>
         </div>
         <div style="float:left;">
         <img id="community_list" src="images/akcanada_extent.gif" style="width: 400px; display: block; margin: 20px 0 0 3em;" />
-        <p style="font-size: 8px; color: #888; text-align: center; margin: 1ex 0; padding: 0;">SNAP has created charts for communities in the area shown above.</p>
+        <p style="font-size: 10px; color: #888; text-align: center; margin: 1ex 0; padding: 0;">SNAP has created charts for communities in the area shown above.</p>
         </div>
             <div style="float: right;">
                 <div style="text-align: right; margin-top: 20px">In cooperation with:<br/>
@@ -75,7 +75,7 @@ SNAP community charts can be examined for certain key changes and threshold valu
 
 <h4>How the Community Charts Were Derived</h4>
 <p>
-Information for each community is based on the closest 2 km by 2 km pixel from SNAP's datasets. The charts show mean values of downscaled outputs averaged from five Global Climate Models (GCMs). Results are also averaged across decades. This averaging lessens the influence of normal year-to-year climate variability on projected values, and tends to make overall projection trends clearer. It is important to note that <a href="/uncertainty.php">uncertainty</a> is associated with each of these graphed values. Uncertainty stems from the modeling of atmospheric and oceanic movements used to create GCMs, from the PRISM <a href="/downscaling.php">downscaling</a> process, and from the assumptions made regarding greenhouse gas levels for each emissions scenario.
+Information for each community is based on the closest 2 km by 2 km pixel from SNAP's datasets. The charts show historical PRISM climatology data and downscaled outputs averaged from five Global Climate Models (GCMs). Results are also averaged across decades. This averaging lessens the influence of normal year-to-year climate variability on projected values, and tends to make overall projection trends clearer. It is important to note that <a href="/uncertainty.php">uncertainty</a> is associated with each of these graphed values. Uncertainty stems from the modeling of atmospheric and oceanic movements used to create GCMs, from the PRISM <a href="/downscaling.php">downscaling</a> process, and from the assumptions made regarding greenhouse gas levels for each emissions scenario.
 </p>
 <p>
 Standard deviation of precipitation between the five models, averaged over space, time, and the three scenarios, ranges from about 5.8 mm to 13.8 mm with a mean of 9.8 mm.  For temperature, this measure ranges from 0.5 degrees C to 2.1 degrees C with a mean of 1.1 degrees C.  This assessment of variability on a scale that encompasses space, time, and scenarios is relatively small, particularly due to the averaging across space. By comparison, it is important to note that standard deviation across the five models for a particular spatial pixel may be as large as 500+ mm or 5+ degrees C.
@@ -136,7 +136,7 @@ For further information on SNAP projections, please explore our <a href="/method
 
 <div id="about_variability" class="about_dialog" style="display: none;">
 
-<h4>Model Variability</h4>
+<h4>Inter&ndash;Model Variability</h4>
 <p>Model variability refers to the standard deviation (SD), which provides a measure of dispersion around the mean. The vertical bars represent the SD across the five models. Their lengths represent one SD above and below this value. A small SD indicates the models are in relative agreement, whereas a large SD suggests choice of model is relatively important. Drawing inferences from overlapping or non-overlapping bars is discouraged. The only comparison to make is of their relative size, as it pertains to changes in the degree of agreement among the models.</p>
 
 </div>

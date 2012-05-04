@@ -33,6 +33,7 @@ javascript :
 --js=./js/jquery.ba-hashchange.min.js \
 --js=./js/jquery.validate.min.js \
 --js=./js/jquery.ba-bbq.min.js \
+--js=./js/jquery.scrollTo-min.js \
 --js=./js/plugins.js \
 --js=./js/highcharts.js \
 --js=./js/exporting.src.js \

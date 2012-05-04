@@ -21,43 +21,43 @@ CREATE TABLE `community_charts_new_ingest` (
   `type` int(11) DEFAULT NULL,
   `daterange` varchar(255) DEFAULT NULL,
   `scenario` varchar(10) DEFAULT NULL,
-  `Jan` decimal(10,2) DEFAULT NULL,
-  `JanSD` decimal(10,2) DEFAULT NULL,
-  `Jan-90` decimal(10,2) DEFAULT NULL,
-  `Feb` decimal(10,2) DEFAULT NULL,
-  `FebSD` decimal(10,2) DEFAULT NULL,
-  `Feb-90` decimal(10,2) DEFAULT NULL,
-  `Mar` decimal(10,2) DEFAULT NULL,
-  `MarSD` decimal(10,2) DEFAULT NULL,
-  `Mar-90` decimal(10,2) DEFAULT NULL,
-  `Apr` decimal(10,2) DEFAULT NULL,
-  `AprSD` decimal(10,2) DEFAULT NULL,
-  `Apr-90` decimal(10,2) DEFAULT NULL,
-  `May` decimal(10,2) DEFAULT NULL,
-  `MaySD` decimal(10,2) DEFAULT NULL,
-  `May-90` decimal(10,2) DEFAULT NULL,
-  `Jun` decimal(10,2) DEFAULT NULL,
-  `JunSD` decimal(10,2) DEFAULT NULL,
-  `Jun-90` decimal(10,2) DEFAULT NULL,
-  `Jul` decimal(10,2) DEFAULT NULL,
-  `JulSD` decimal(10,2) DEFAULT NULL,
-  `Jul-90` decimal(10,2) DEFAULT NULL,
-  `Aug` decimal(10,2) DEFAULT NULL,
-  `AugSD` decimal(10,2) DEFAULT NULL,
-  `Aug-90` decimal(10,2) DEFAULT NULL,
-  `Sep` decimal(10,2) DEFAULT NULL,
-  `SepSD` decimal(10,2) DEFAULT NULL,
-  `Sep-90` decimal(10,2) DEFAULT NULL,
-  `Oct` decimal(10,2) DEFAULT NULL,
-  `OctSD` decimal(10,2) DEFAULT NULL,
-  `Oct-90` decimal(10,2) DEFAULT NULL,
-  `Nov` decimal(10,2) DEFAULT NULL,
-  `NovSD` decimal(10,2) DEFAULT NULL,
-  `Nov-90` decimal(10,2) DEFAULT NULL,
-  `Dec` decimal(10,2) DEFAULT NULL,
-  `DecSD` decimal(10,2) DEFAULT NULL,
-  `Dec-90` decimal(10,2) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `Jan` decimal(12,4) DEFAULT NULL,
+  `JanSD` decimal(12,4) DEFAULT NULL,
+  `Jan-90` decimal(12,4) DEFAULT NULL,
+  `Feb` decimal(12,4) DEFAULT NULL,
+  `FebSD` decimal(12,4) DEFAULT NULL,
+  `Feb-90` decimal(12,4) DEFAULT NULL,
+  `Mar` decimal(12,4) DEFAULT NULL,
+  `MarSD` decimal(12,4) DEFAULT NULL,
+  `Mar-90` decimal(12,4) DEFAULT NULL,
+  `Apr` decimal(12,4) DEFAULT NULL,
+  `AprSD` decimal(12,4) DEFAULT NULL,
+  `Apr-90` decimal(12,4) DEFAULT NULL,
+  `May` decimal(12,4) DEFAULT NULL,
+  `MaySD` decimal(12,4) DEFAULT NULL,
+  `May-90` decimal(12,4) DEFAULT NULL,
+  `Jun` decimal(12,4) DEFAULT NULL,
+  `JunSD` decimal(12,4) DEFAULT NULL,
+  `Jun-90` decimal(12,4) DEFAULT NULL,
+  `Jul` decimal(12,4) DEFAULT NULL,
+  `JulSD` decimal(12,4) DEFAULT NULL,
+  `Jul-90` decimal(12,4) DEFAULT NULL,
+  `Aug` decimal(12,4) DEFAULT NULL,
+  `AugSD` decimal(12,4) DEFAULT NULL,
+  `Aug-90` decimal(12,4) DEFAULT NULL,
+  `Sep` decimal(12,4) DEFAULT NULL,
+  `SepSD` decimal(12,4) DEFAULT NULL,
+  `Sep-90` decimal(12,4) DEFAULT NULL,
+  `Oct` decimal(12,4) DEFAULT NULL,
+  `OctSD` decimal(12,4) DEFAULT NULL,
+  `Oct-90` decimal(12,4) DEFAULT NULL,
+  `Nov` decimal(12,4) DEFAULT NULL,
+  `NovSD` decimal(12,4) DEFAULT NULL,
+  `Nov-90` decimal(12,4) DEFAULT NULL,
+  `Dec` decimal(12,4) DEFAULT NULL,
+  `DecSD` decimal(12,4) DEFAULT NULL,
+  `Dec-90` decimal(12,4) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 'Valid Data' means data in the format M. Lindgren provided me, where a single row looks like this:
 
@@ -65,9 +65,19 @@ CREATE TABLE `community_charts_new_ingest` (
 
 This script will build the two tables used to store the relational data for the Community Charts tool.
 
+To load the new data, run this after copying the csv into /var/lib/mysql/snapwww/filename
+
+TRUNCATE TABLE `community_charts_new_ingest`;
+
+LOAD DATA INFILE '/var/lib/mysql/snapwww/filename
+INTO TABLE `community_charts_new_ingest`
+FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"'
+IGNORE 1 LINES; -- to skip the header, if there is one
+
 Some notes on the input data:
 - 'type' field means: 1 === Temperature, 2 === Precipitation
 - it's OK if population is 0.
+- date field should be YYYY_YYYY (see the definition of the $dateMap below to see expected inputs)
 
 */
 
@@ -77,6 +87,15 @@ $args = getopt('', array(
 
 $communities = array();
 $db = SwDb::getInstance();
+
+// Flush the existing tables
+$truncateSql = 'TRUNCATE TABLE `communities`';
+$sth = $db->prepare($truncateSql);
+$sth->execute();
+
+$truncateSql = 'TRUNCATE TABLE `charts_data`';
+$sth = $db->prepare($truncateSql);
+$sth->execute();
 
 $sourceSql = ( isset($args['communityId']) && is_numeric($args['communityId'] ) ) ? 
 	"SELECT * FROM community_charts_new_ingest WHERE id={$args['communityId']}"
@@ -99,6 +118,19 @@ $dateMap = array(
 	'2090_2099' => '2091-2100',	
 );
 
+// WORKAROUND: munge the incoming type string to a numeral (1 = temp, 2 = precip)
+$typeMap = array(
+	'tas' => 1,
+	'pr' => 2
+);
+
+// WORKAROUND: munge the incoming scenario strings to the choice the UI recognizes
+$scenarioMap = array(
+	'sresa2' => 'a2',
+	'sresa1b' => 'a1b',
+	'sresb1' => 'b1'
+);
+
 while( $row = $sth->fetch() ) {
 	
 	try {
@@ -119,6 +151,7 @@ sql;
 		$com = $db->prepare($updateCommunity);
 		$com->execute((array($row['id'], $row['region'], $row['community'], $row['country'], $row['population'], $row['lat_albers'], $row['lon_albers'] )));
 
+
 		$updateChartsData = <<<sql
 
 	INSERT INTO `charts_data`
@@ -135,10 +168,10 @@ sql;
 
 		$data->execute(array(
 			$row['id'],
-			$row['type'],
-			$row['scenario'],
+			$typeMap[$row['type']],
+			$scenarioMap[$row['scenario']],
 			$dateMap[$row['daterange']],
-			( 1 == $row['type']) ? 'F' : 'in',
+			( 1 == $typeMap[$row['type']]) ? 'F' : 'in',
 			$row['Jan'],
 			$row['JanSD'],
 			$row['Feb'],
@@ -180,10 +213,10 @@ sql
 
 		$history->execute(array(
 			$row['id'],
-			$row['type'],
-			$row['scenario'],
+			$typeMap[$row['type']],
+			$scenarioMap[$row['scenario']],
 			'Historical',
-			( 1 == $row['type']) ? 'F' : 'in',
+			( 1 == $typeMap[$row['type']]) ? 'F' : 'in',
 			$row['Jan-90'],
 			0,
 			$row['Feb-90'],

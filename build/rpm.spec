@@ -62,7 +62,7 @@ cp -a favicon.ico ${RPM_BUILD_ROOT}/%{inst_dir}/
 cp -a *.php ${RPM_BUILD_ROOT}/%{inst_dir}/
 cp -a src/*.php ${RPM_BUILD_ROOT}/usr/lib64/snapwww/src
 cp -a src/Config.php.example ${RPM_BUILD_ROOT}/usr/lib64/snapwww/src
-cp -a js/* ${RPM_BUILD_ROOT}/%{inst_dir}/js/
+cp -a js/min.js ${RPM_BUILD_ROOT}/%{inst_dir}/js/
 cp -a css/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/
 cp -a css/custom-theme/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/custom-theme/
 cp -a css/custom-theme/images/*.png ${RPM_BUILD_ROOT}/%{inst_dir}/css/custom-theme/images/
@@ -71,7 +71,6 @@ cp -R logos/* ${RPM_BUILD_ROOT}/%{inst_dir}/logos/
 cp -a build/snap.conf ${RPM_BUILD_ROOT}/etc/httpd/conf.d/
 cp -a build/snap.ini ${RPM_BUILD_ROOT}/etc/php.d/
 cp -a scripts/migrate.php ${RPM_BUILD_ROOT}/usr/bin/snapwww/
-cp -a build/community_charts_new_ingest.csv ${RPM_BUILD_ROOT}/tmp/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -94,7 +93,6 @@ rm -rf $RPM_BUILD_ROOT
 %ghost %attr(644,apache,apache) /var/log/httpd/%{hostname}-access_log
 %ghost %attr(644,jenkins,jenkins) /var/log/httpd/%{hostname}-update_log
 %attr(700,root,root) /usr/bin/snapwww/migrate.php
-%attr(700,mysql,mysql) /tmp/community_charts_new_ingest.csv
 
 %post
 /usr/bin/snapwww/migrate.php up >> /var/log/httpd/%{hostname}-update_log 2>&1

@@ -62,16 +62,16 @@ class ChartsFetcher {
 		$yAxisTitle = (1 === $dataset) ? 'Temperature °F' : 'Total Precipitation (in)';
 		switch ($scenario) {
 			case 'a2':
-				$subtitle = "5-Model Average, High-range emissions (A2)";
+				$subtitle = "Historical  PRISM and 5-Model Projected Average, High-Range Emissions (A2)";
 				break;
 			
 			case 'b1':
-				$subtitle = "5-Model Average, Low-range emissions (B1)";
+				$subtitle = "Historical PRISM and 5-Model Projected Average, Low-Range Emissions (B1)";
 				break;
 
 			case 'a1b': //fallthru
 			default:
-				$subtitle = "5-Model Average, Mid-range emissions (A1B)";
+				$subtitle = "Historical PRISM and 5-Model Projected Average, Mid-Range Emissions (A1B)";
 				break;
 		}
 
@@ -83,7 +83,7 @@ class ChartsFetcher {
 		$sth->execute();
 		$res = $sth->fetch();
 
-		$title = (1 === $dataset) ? 'Historical and Projected Average Monthly Temperature for ' : 'Historical and Projected Average Monthly Precipitation for ';
+		$title = (1 === $dataset) ? 'Average Monthly Temperature for ' : 'Average Monthly Precipitation for ';
 		$title .= $res['community'].', '.$res['region'];
 
 		$json = array(
@@ -145,10 +145,10 @@ class ChartsFetcher {
 
 SELECT MIN(minimum) minimum, MAX(maximum) maximum FROM 
 	(
-	SELECT LEAST(`Jan`, `Feb`, `Mar`, `Apr`, `Jun`, `Jul`, `Aug`, `Sep`, `Oct`, `Nov`, `Dec`) minimum,
-	GREATEST(`Jan`, `Feb`, `Mar`, `Apr`, `Jun`, `Jul`, `Aug`, `Sep`, `Oct`, `Nov`, `Dec`) maximum
+	SELECT LEAST(`Jan` - `JanSd`, `Feb` - `FebSd`, `Mar` - `MarSd`, `Apr` - `AprSd`, `Jun` - `JunSd`, `Jul` - `JulSd`, `Aug` - `AugSd`, `Sep` - `SepSd`, `Oct` - `OctSd`, `Nov` - `NovSd`, `Dec` - `DecSd`) minimum,
+	GREATEST(`Jan` + `JanSd`, `Feb` + `FebSd`, `Mar` + `MarSd`, `Apr` + `AprSd`, `Jun` + `JunSd`, `Jul` + `JulSd`, `Aug` + `AugSd`, `Sep` + `SepSd`, `Oct` + `OctSd`, `Nov` + `NovSd`, `Dec` + `DecSd`)  maximum
 	FROM charts_data
-	WHERE `communityId` = :community AND `scenario` = :scenario AND `type` = :dataset
+	WHERE `communityId` = :community AND `type` = :dataset
 	) AS `values`
 
 sql
@@ -156,7 +156,6 @@ sql
 
 		$sth->bindParam(':community', $community, PDO::PARAM_INT);
 		$sth->bindParam(':dataset', $dataset, PDO::PARAM_INT);
-		$sth->bindParam(':scenario', $scenario, PDO::PARAM_STR);
 		$sth->setFetchMode(PDO::FETCH_ASSOC);
 		$sth->execute();
 		$row = $sth->fetch();
@@ -166,54 +165,6 @@ sql
 
 		return json_encode($json);
 
-		/*
-		function() {
-					if( 1 === snapCharts.data.dataset ) {
-						return 'Temperature &deg;F';
-					} else {
-						return 'Total precipitation in inches';
-					}
-				};
-
-plotBands: function() {
-					if( 1 === snapCharts.data.dataset ) {
-						return [
-							{	
-								value: 32, 
-								color: '#000000', 
-								width: 1.5, 
-								label: { 
-									text: '32&deg;', 
-									align: 'right', 
-									style: { 
-										fontSize: '10px' 
-									} 
-								} 
-							}
-						];
-					}
-				},
-
-function() {
-					switch( snapCharts.data.dataset ) {
-
-						case 'B1' : return '5-Model Average, Low-range emissions (B1)';
-						case 'A1B' : return '5-Model Average, Mid-range emissions (A1B)';
-
-						case 'B1' : return '';
-						case 'A1B' : return '';
-						case 'A2' : return '5-Model Average, High-range emissions (A2)';
-					}
-				}
-function() {
-					if( 1 === snapCharts.data.dataset ) {
-						return 'Historical and Projected Average Monthly Temperature for ' + snapCharts.data.communityName;
-					} else {
-						return 'Historical and Projected Average Monthly Precipitation for ' + snapCharts.data.communityName;
-					}
-				}
-
-*/
 	}
 
 }

@@ -53,6 +53,8 @@ $page->openPage();
     </div>
 </div>
 
+<div id="metadataModal"></div>
+
 <div id="printFooter">
     <address>
         <strong>Scenarios Network for Alaska and Arctic Planning</strong><br/>

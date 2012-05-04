@@ -9,33 +9,43 @@ $page->pageHeader();
             <div class="methods text">
 
 <h2>Data</h2>
-<p>
-Our principal products are downscaled historical and projected monthly climate data, primarily temperature and precipitation across Alaska and large regions of Western Canada.  Projected data are produced for three <a href="/faq.php#faq_4">scenarios</a> (B1, A1B, A2).  Additionally, SNAP produces derived data from the above base datasets through various <a href="/modeling.php">modeling</a> efforts.  Derived data products include potential evapotranspiration, vegetation, fire, permafrost, day of freeze, day of thaw, and the subsequent length of growing season, as well as decadal, seasonal, and annual averages.
-</p>
-<p>
 
+<p>
+Our principal products are downscaled historical and projected monthly climate data, primarily temperature and precipitation across Alaska and large regions of Western Canada.  Projected data are produced for three <a href="/faq.php#faq_4">scenarios</a> (B1, A1B, A2).  Additionally, SNAP produces derived data from the above base datasets through various modeling efforts.  Derived data products include potential evapotranspiration, vegetation, fire, permafrost, day of freeze, day of thaw, and the subsequent length of growing season, as well as decadal, seasonal, and annual averages.
+</p>
+
+<p>
 Please visit our <a href="/methods.php">Methods</a> section for a description of our downscaling procedure.  
 </p>
+
 <p>
 To visualize a selection of datasets, please visit the <a href="maps.php" target="_blank" >map tool</a>.
 </p>
+
 <p>
 For a full list of our available data, please see below.
 </p>
+
 <hr/>
+
 <p>
 All of our downloadable data is provided in <a href="http://trac.osgeo.org/geotiff/">GeoTIFF</a> format, georeferenced to the North American Datum of 1983 and projected in Alaska Albers Equal Area Conic in units of meters (NAD83 Alaska Albers).  Geotiffs can be read by many open source and commercial GIS and data manipulation programs including ArcGIS, QGIS, R (raster package recommended), GDAL, GRASS, and many others.
 </p>
+
 <p>
 Our data is currently served through zip files.  Once uncompressed, each file represents one time step (month, decade, season, etc) across the full spatial extent for that product.  Currently, spatial extents are Alaska-wide or Alaska-Western Canada (YT, BC, AB, SK, MB).
 </p>
+<div class="ui-widget" style="font-size: 14px">
+<div class="ui-state-highlight ui-corner-all" style="margin: 20px 0; padding: 0 .7em;"> 
+<p style="margin: 10px 0">
+<span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+<strong>Notice:</strong> We are aware that users running 32&ndash;bit Windows machines (usually running XP) are experiencing issues downloading and uncompressing files larger than 4GB.  This is a limit imposed by some file systems on those machines.  Please bear with us as we provide a solution to accessing the data.  If you experience other issues, please <a style="color: #06c" href="/people.php?topic=web#contact">contact us</a>. Thank you for your patience.
+</div>
+</div>
 <p>
 While it&rsquo;s hard to have a completely static file naming scheme, we make every attempt to keep some consistency across our various datasets.  This naming scheme outlined below is our general guide, although it does vary depending upon each dataset.  Please refer to the full metadata for details on specific datasets.
 </p>
 <p><code>[variable]_[metric]_[units]_[format]_[assessmentReport]_[group]_[model]_[scenario]_[timeFrame].[fileFormat]</code></p>
-
-
-
 
 <table id="key">
 <thead>
@@ -51,11 +61,18 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 </tbody>
 </table>
 
+<div class="ui-widget" style="font-size: 14px">
+<div class="ui-state-highlight ui-corner-all" style="margin: 2em 0 0; padding: .7em"> 
+	<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/"><img alt="Creative Commons License" style="border-width:0; float: left; padding: 1px 1em 0 0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png"/></a>
+All information produced by the Scenarios Network for Alaska and Arctic Planning is licensed under a <a style="color: #06c" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>. Attribution text provided <a style="color: #06c" href="/faq.php#faq_1">here</a>.
+</div>
+</div>
+
 <h3>Projected Data</h3>
 </div>
 <div class="dataAccordionWrapper">
 <div class="dataAccordion">
-<h3><a href="#proj_monthly_temp_precip771">Projected Monthly Temperature and Precipitation - 771m AR4</a></h3>
+<h3><a href="#dataset=projected_monthly_temperature_and_precipitation_771m">Projected Monthly Temperature and Precipitation - 771m AR4</a></h3>
 <div>
 <p>Projected (2001-2100: B1, A1B, and A2 scenarios) monthly average temperature and total precipitation from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771m via the delta method.  A 5-Model Average is also included.</p>
 <table class="overview">
@@ -144,10 +161,8 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 </p>
 </div>
 
-
-<h3><a href="#">Projected Derived Temperature Products - 771m AR4</a></h3>
+<h3><a href="#dataset=projected_derived_temperature_771m">Projected Derived Temperature Products - 771m AR4</a></h3>
 <div>
-
 
 <p>
 Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771m via the delta method.  A 5-Model Average is also included.</p>
@@ -276,7 +291,7 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 
 </div>
 
-<h3><a href="#">Projected Derived Precipitation Products - 771m AR4</a></h3>
+<h3><a href="#dataset=projected_derived_precipitation_771m">Projected Derived Precipitation Products - 771m AR4</a></h3>
 <div>
 
 <p>
@@ -332,7 +347,7 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 </div>
 <br/>
 <div class="dataAccordion">
-<h3><a href="#">Projected Monthly Temperature and Precipitation - 2 km AR4</a></h3>
+<h3><a href="#dataset=projected_monthly_temperature_and_precipitation_2km">Projected Monthly Temperature and Precipitation - 2 km AR4</a></h3>
 <div>
 
 <p>
@@ -341,7 +356,7 @@ Projected (2001&ndash;2100: B1, A1B, and A2 scenarios) monthly temperature and p
 
 <table class="overview">
 <tbody>
-<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;2000 PRISM</td></tr>
+<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>2 km</td></tr>
 <tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
@@ -425,7 +440,7 @@ Projected (2001&ndash;2100: B1, A1B, and A2 scenarios) monthly temperature and p
 
 
 </div>
-<h3><a href="#">Projected Derived Temperature Products - 2 km AR4</a></h3>
+<h3><a href="#dataset=projected_derived_temperature_2km">Projected Derived Temperature Products - 2 km AR4</a></h3>
 <div>
 
 <p>
@@ -434,9 +449,9 @@ Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature produ
 
 <table class="overview">
 <tbody>
-<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;2000 PRISM</td></tr>
+<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>2 km</td></tr>
-<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Decadal</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
 </tbody>
 </table>
@@ -528,7 +543,7 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 
 <a href="/files/data/derived/dof_dot_AK_CAN_2km_ukmo_hadcm3_sresb1.zip">dof_dot_AK_CAN_2km_ukmo_hadcm3_sresb1.zip</a> (27 MB)
 <a href="/files/data/derived/dof_dot_AK_CAN_2km_ukmo_hadcm3_sresa1b.zip">dof_dot_AK_CAN_2km_ukmo_hadcm3_sresa1b.zip</a> (27 MB)
-<a href="/files/data/derived/dof_dot_AK_CAN_2km_ukmo_hadcm3_sresa2.zip">dof_dot_AK_CAN_2km_ukmo_hadcm3_sresa2.zip</a> (47 MB)
+<a href="/files/data/derived/dof_dot_AK_CAN_2km_ukmo_hadcm3_sresa2.zip">dof_dot_AK_CAN_2km_ukmo_hadcm3_sresa2.zip</a> (27 MB)
 </pre>
 </td>
 <td>
@@ -564,7 +579,7 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 </table>
 
 </div>
-<h3><a href="#">Projected Derived Precipitation Products - 2 km AR4</a></h3>
+<h3><a href="#dataset=projected_derived_precipitation_2km">Projected Derived Precipitation Products - 2 km AR4</a></h3>
 <div>
 
 <p>
@@ -573,9 +588,9 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 
 <table class="overview">
 <tbody>
-<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;2000 PRISM</td></tr>
+<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>771m</td></tr>
-<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Decadal</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
 </tbody>
 </table>
@@ -629,7 +644,7 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 <div class="dataAccordion">
 
 
-<h3><a href="#">Historical Monthly Temperature and Precipitation - 771m</a></h3>
+<h3><a href="#dataset=historical_monthly_temperature_and_precipitation_771m">Historical Monthly Temperature and Precipitation - 771m</a></h3>
 <div>
 
 <p>
@@ -673,7 +688,7 @@ Historical (1901&ndash;2009) monthly average temperature and total precipitation
 </div>
 
 
-<h3><a href="#">Historical Derived Temperature Products - 771m</a></h3>
+<h3><a href="#dataset=historical_derived_temperature_771m">Historical Derived Temperature Products - 771m</a></h3>
 <div>
 
 
@@ -739,7 +754,7 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 
 </div>
 
-<h3><a href="#">Historical Derived Precipitation Products - 771m</a></h3>
+<h3><a href="#dataset=historical_derived_precipitation_771m">Historical Derived Precipitation Products - 771m</a></h3>
 <div>
 
 
@@ -777,7 +792,7 @@ Historical (1910-2009) derived precipitation products from CRU TS 3.1 climate da
 </div>
 <br/>
 <div class="dataAccordion">
-<h3><a href="#">Historical Monthly Temperature and Precipitation - 2 km</a></h3>
+<h3><a href="#dataset=historical_monthly_temperature_and_precipitation_2km">Historical Monthly Temperature and Precipitation - 2 km</a></h3>
 <div>
 
 <p>
@@ -786,7 +801,7 @@ Historical (1901-2009) monthly average temperature and total precipitation from 
 
 <table class="overview">
 <tbody>
-<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;2000 PRISM</td></tr>
+<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>2 km</td></tr>
 <tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
@@ -823,7 +838,7 @@ Historical (1901-2009) monthly average temperature and total precipitation from 
 
 </div>
 
-<h3><a href="#">Historical Derived Temperature Products - 2 km</a></h3>
+<h3><a href="#dataset=historical_derived_temperature_2km">Historical Derived Temperature Products - 2 km</a></h3>
 <div>
 
 
@@ -833,7 +848,7 @@ Historical (1910-2009) derived temperature products from CRU TS 3.1 climate data
 
 <table class="overview">
 <tbody>
-<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;2000 PRISM</td></tr>
+<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>2 km</td></tr>
 <tr><th scope="row">Temporal Resolution</th><td>Decadal</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
@@ -888,7 +903,7 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 
 </div>
 
-<h3><a href="#">Historical Derived Precipitation Products - 2 km</a></h3>
+<h3><a href="#dataset=historical_derived_precipitation_2km">Historical Derived Precipitation Products - 2 km</a></h3>
 <div>
 
 <p>
@@ -897,7 +912,7 @@ Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.1 clima
 
 <table class="overview">
 <tbody>
-<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;2000 PRISM</td></tr>
+<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990 PRISM</td></tr>
 <tr><th scope="row">Spatial Resolution</th><td>2 km</td></tr>
 <tr><th scope="row">Temporal Resolution</th><td>Decadal</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
@@ -931,11 +946,17 @@ $(function() {
         
     $('.dataAccordion').each( function(index) { 
         $(this).accordion({
+        	navigation: true,
         	autoHeight: false,
         	collapsible: true,
         	active: false
-        });
+        	});
     });
+
+    if( window.location.hash ) {
+    	$.scrollTo($('a[href="'+window.location.hash+'"]'), 300, { offset: -50 });
+    	window.location.hash = ''; // clear this to prevent user from seeing dissonance between url + opened folds
+    }
 
 });
 </script>

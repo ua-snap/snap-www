@@ -40,7 +40,7 @@ class webPage {
         <?php
             $menu_items = array(
                 array("About","/about.php"),
-                array("Maps &amp; Data","/datamaps.php"),
+                array("Tools and Data","/datamaps.php"),
                 array("Methods","/methods.php"),
                 array("Projects","/projects.php"),
                 array("Resources","/resources.php"),
@@ -78,6 +78,14 @@ class webPage {
         <title><?php echo $this->pageTitle; ?></title>
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
         <meta http-equiv=“X-UA-Compatible” content=“IE=8” />
+
+        <meta name="author" content="Tom Kurkowski (takurkowski@alaska.edu)" />
+        <meta name="author" content="Nancy Fresco (nlfresco@alaska.edu)" />
+        <meta name="author" content="Alec Bennett (apbennett@alaska.edu)" />
+        <meta name="author" content="Lena Krutikov (lkrutikov@alaska.edu)" />
+        <meta name="author" content="Tracy Rogers (tsrogers@alaska.edu)" />
+        <meta name="author" content="Bruce Crevensten (becrevensten@alaska.edu)" />
+        <meta name="author" content="Tim Glaser" />
 
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
         <link type="text/css" href="css/custom-theme/jquery-ui-1.8.17.custom.css" rel="Stylesheet" />  
@@ -134,8 +142,24 @@ class webPage {
         }
         ?>
             </div>
-            <div class="horiz_bar_right">   
-                <a class="addthis_button"><img src="/images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/></a>
+            <div class="horiz_bar_right">
+
+<div class="social">
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style sharewrapper" style="display: none;" >
+<a class="addthis_button_email"><img src="images/email.png"/></a>    
+<a class="addthis_button_facebook"><img src="images/facebook.png"/></a>
+<a class="addthis_button_twitter"><img src="images/twitter-2.png"/></a>
+<a class="addthis_button_google_plusone" g:plusone:size="standard" g:plusone:annotation="none"></a>
+</div>
+<!-- AddThis Button END -->
+
+<a class="sharebutton">
+    <img src="/images/share.png" style="margin: auto; padding-top: 4px; display: block;" alt="Share"/>
+</a>
+
+</div>
+
             </div>
         </div>
         <div style="color: #999999; width: 975px; margin: auto; text-align: right; padding-top: 10px;" class="contactbar"><a href="/people.php#contact">contact</a></div>
@@ -148,6 +172,7 @@ class webPage {
                 <span style="font-weight: bold; margin-left: 20px;">Follow us</span>
                 <span style="margin-left: 40px;"><a href="http://www.facebook.com/pages/SNAP-and-ACCAP/112992248723524?v=wall">facebook</a></span>
                 <span style="margin-left: 40px;"><a href="http://twitter.com/#!/SNAPandACCAP">twitter</a></span>
+                <span style="margin-left: 40px;"><a href="http://www.flickr.com/photos/snapandaccap/">flickr</a></span>
             </div>
             <div id="footbar">
                 <div class="horiz_bar_left" style="color: #eeeeee; relative; font-size: 10px;">
@@ -156,17 +181,36 @@ class webPage {
                     </div>
                 </div>
                 <div class="horiz_bar_right">
-                    <a class="addthis_button"><img src="/images/share.png" style="margin: auto; padding-top: 3px; display: block;" alt="Share"/></a>
+
+<div class="social">
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style sharewrapper" style="display: none;" >
+<a class="addthis_button_email"><img src="images/email.png"/></a>
+<a class="addthis_button_facebook"><img src="images/facebook.png"/></a>
+<a class="addthis_button_twitter"><img src="images/twitter-2.png"/></a>
+<a class="addthis_button_google_plusone" g:plusone:size="standard" g:plusone:annotation="none"></a>
+</div>
+<!-- AddThis Button END -->
+
+<a class="sharebutton">
+    <img src="/images/share.png" style="margin: auto; padding-top: 4px; display: block;" alt="Share"/>
+</a>
+</div>
+
                 </div>
             </div>
             <div style="text-align: left; margin-left: 50px;"><img src="/images/bottom_bubble.png" alt="Bubble Graphic" /></div>
             <div id="pageFooterInfo" style="margin-bottom: 40px; min-height: 60px">
                 <div style="float: left; margin-right: 40px;">
                     <div><a href="/"><img src="/images/snap_acronym_rgb.png" height="53px" alt="SNAP Acronym Logo" /></a></div>
-                    <div class="contactbar" style="text-align: right;"><a href="/people.php#contact">contact</a></div>
+                    <div class="contactbar" style="text-align: right;">
+                        <a href="/people.php#contact">contact</a>
+                        &nbsp;|&nbsp;
+                        <a href="/terms.php">terms of use</a>
+                    </div>
                 </div>
                 
-                <div style ="float: left; width: 470px; text-align: left; margin-top: 13px;"><a id="snapWebVersion" href="/releases.php"><?php echo 'V'.SNAPWEB_VERSION; ?></a> Copyright &copy; 2011 <a href="/" style="color: #222222; text-decoration: underline;">Scenarios Network for Alaska &amp; Arctic Planning</a>, a research institute of the <a href="http://www.uaf.edu" style="color: #222222; text-decoration: underline;">University of Alaska Fairbanks</a>.  UAF is an affirmative action/equal opportunity employer and educational institution.
+                <div style ="float: left; width: 470px; text-align: left; margin-top: 13px;"><a id="snapWebVersion" href="/releases.php"><?php echo 'V'.SNAPWEB_VERSION; ?></a> Copyright &copy; 2012 <a href="/" style="color: #222222; text-decoration: underline;">Scenarios Network for Alaska &amp; Arctic Planning</a>, a research institute of the <a href="http://www.uaf.edu" style="color: #222222; text-decoration: underline;">University of Alaska Fairbanks</a>.  UAF is an affirmative action/equal opportunity employer and educational institution.
 
                 <p>
                     Scenarios Network for Alaska &amp; Arctic Planning<br/>
@@ -187,6 +231,25 @@ class webPage {
             </body>
             <script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
             <script type="text/javascript" src="https://api.twitter.com/1/statuses/user_timeline.json?include_rts=true&amp;screen_name=SNAPandACCAP&amp;count=1&amp;callback=twitterCallback2"></script>
+            <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4eb8496858e19dd4"></script>
+
+
+<script type="text/javascript">
+
+$('.social').hover(
+    function(e) {
+        $('.sharebutton').fadeOut(200);
+        $('.addthis_toolbox').fadeIn(200);
+    },
+
+    function(e) {
+        $('.addthis_toolbox').fadeOut(200);
+        $('.sharebutton').fadeIn(200);
+    }
+);
+
+</script>
+
         </html>
         <?php
     }

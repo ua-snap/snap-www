@@ -47,7 +47,7 @@ nlfresco@alaska.edu | tel 907.474.2405 | fax 907.474.7151
 <form id="contactUsForm">
 <div >
     <label>Topic</label>
-        <?php echo Contacts::getEmailContacts(); ?>
+        <?php echo Contacts::getEmailContacts($_GET['topic']); ?>
 </div>
 <div >
     <label>Your name</label>

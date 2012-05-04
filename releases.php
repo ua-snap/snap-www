@@ -11,7 +11,55 @@ $page->pageHeader();
 <div id="main_body">
 <div id="main_content" class="releases methods text">
 <h2>SNAP web site release notes</h2>
+<h3>1.0.10</h3>
+<h4>Released April 25, 2012 at 5:00pm AKDT</h4>
+<p>This minor update added text to our Data page about the license used for SNAP data and information. (#50)</p>
+<h3>1.0.9</h3>
+<h4>Released April 19, 2012 at 5:30pm AKDT</h4>
+<p>This minor update to the web site added a blurb on the Data page alerting users who run a 32-bit filesystem may have difficulties downloading or unzipping our data files, and corrected the size of one data file listed on the data page. (#58)</p>
+<h3>1.0.8</h3>
+<h4>Released March 27, 2012 at 11:15pm AKDT</h4>
+<p>All issue numbers now refer to Github issues.</p>
 
+<h5>New functionality/content</h5>
+
+<ul>
+	<li>Restyled share button on page toolbar to better match site theme and simplify use. (#37)</li>
+	<li>Added ability to send user to direct link to section of the Data page.  For example, <a href="http://www.snap.uaf.edu/data.php#dataset=historical_derived_temperature_771m">here&rsquo;s a link directly to historical derived temperature products (771 m)</a>. (#45)</li>
+	<li>Clicking the &lsquo;Metadata&rsquo; link in the maps tool now opens metadata in a modal window. (#<8)</li>
+	<li>Added link to SNAP and ACCAP Flickr account (#40)</li>
+	<li>Added caption to model overview table, reduced size of inline graphics on downscaling page (#42, 39)</li>
+	<li>Added web site author information to page <code>meta</code> tags (#35)</li>
+	<li>Changed title of &lsquo;Maps &amp; Data&rsquo; menu to &lsquo;Tools and Data&rsquo; (#29)</li>
+	<li>Added/updated bios for Tracy, Jane (#20)</li>
+</ul>
+
+<h5>Resolved issues</h5>
+<ul>
+	<li>Updated footer copyright date to 2012 (#44)</li>
+	<li>Modified text styling on header/footer of map tool to conform to styling elsewhere on the site (#41)</li>
+	<li>Fixed header text on logos page to read Full Name for the 2nd column of print&ndash;specific logos (EPS files) (#43)</li>
+</ul>
+
+<h3>1.0.7</h3>
+<h4>Released March 12, 2012 at 8:00pm AKDT</h4>
+<h5>New functionality/content</h5>
+<ul>
+<li>Updates on data, charts pages to text to improve clarity (gh#30, 24, 23, 21, 18)</li>
+<li>Videos added to Resources section (#430, #696)</li>
+<li>Updated collaborators&rsquo; logos, text blurbs (gh#26, #710)</li>
+</ul>
+
+<h3>1.0.6</h3>
+<h4>Released February 24, 2012 at 12:00pm AKST</h4>
+<h5>Resolved issues</h5>
+<ul>
+<li>Corrected calculation of height of y&ndash;axis to prevent variability bars from overlapping legend, underflowing chart (gh#12, gh#14)</li>
+<li>Fixed hover text on help button for variability to read 'About variability&hellip;' (gh#13)</li>
+<li>Calculates y&ndash;axis on charts across all scenarios (A2, A1B, B1) so the axis is constant between scenarios, facilitating comparisons (gh#17)</li>
+<li>Changed text on Charts Tool legends and made historical PRISM data bar gray to better describe the graph&rsquo;s data (gh#16)</li>
+<li>Prevented any non&ndash;minified javascript from being deployed (gh#15)</li>
+</ul>
 <h3>1.0.5</h3>
 <h4>Released February 21, 2012 at 8:30pm AKST</h4>
 <p>Issues marked <code>gh#1234</code> refer to issues tracked in the Github issue tracker instead of Redmine.</p>

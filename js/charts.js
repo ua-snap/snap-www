@@ -50,7 +50,7 @@ $( function() {
 		$('#about_variability').show().dialog({
 			draggable: false,
 			modal: true,
-			title: 'About variability',
+			title: 'About Inter-Model Variability',
 			resizable: false,
 			show: 'fade',
 			hide: 'fade',
@@ -306,9 +306,9 @@ window.snapCharts = {
 		}
 
 		if(1 === snapCharts.data.dataset) {
-			Highcharts.setOptions({ colors: ['#00b2ee', '#308014', '#999999', '#ffff00', '#999999', '#ff7f00', '#999999', '#cc1100', '#999999'] });
+			Highcharts.setOptions({ colors: ['#999999', '#308014', '#999999', '#ffff00', '#999999', '#ff7f00', '#999999', '#cc1100', '#999999'] });
 		} else {
-			Highcharts.setOptions({ colors: ['#97ffff', '#00ffff', '#999999', '#00b2ee', '#999999', '#007ca7', '#999999', '#0045b3', '#999999'] });
+			Highcharts.setOptions({ colors: ['#999999', '#00ffff', '#999999', '#00b2ee', '#999999', '#007ca7', '#999999', '#0045b3', '#999999'] });
 		}
 
 		snapCharts.chart = new Highcharts.Chart({
