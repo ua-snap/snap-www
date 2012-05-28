@@ -18,70 +18,72 @@ $page->pageHeader();
 <li><a href="#faq_4">What is an emission scenario?</a></li>
 </ol>
 <h3><a id="faq_1">How should I cite SNAP products?</a></h3>
-<p>Cite SNAP this way:</p>
+<p>When the publication medium allows it, please include the SNAP logo and a link back to our home page.  Various versions of our logo can be obtained from our <a href="logos.php">logo page</a>.</p>
+<p>For publications, please cite SNAP this way:</p>
 <blockquote>
 Scenarios Network for Alaska and Arctic Planning (SNAP), University of Alaska, www.snap.uaf.edu, accessed [insert date here]
 </blockquote>
 <p>
-<strong>The following are concise suggested text to incorporate into various scientific publications being produced at SNAP or with SNAP data.</strong>  These are meant as a starting point only, and can easily be modified to suit a particular publication.
-</p>
+The following are concise suggestions to incorporate into various scientific publications being produced at SNAP or with SNAP data. These are meant as a starting point only, and can easily be modified to suit a particular publication.</p>
+<blockquote>
+	<h4>Model Selection</h4>
+	<p>
+	SNAP downscaled data is a value added product derived from global climate model (GCM) output.  By comparing surface temperature, precipitation, and sea level pressure between observation-based ECMWF 40 Year Re-analysis data (ERA-40) and GCM output variables, the five best performing GCM&rsquo;s across Alaska and the Arctic were determined to be: cccma_cgcm31, mpi_echam5, gfdl_cm21, had_cm3, and ccsr_miroc32medres (Walsh et al 2008).  In addition to this, a five model average output was calculated in order to further reduce the error associated with dependence on a single model.
+	</p>
+	<table>
+	<thead>
+	<tr>
+	<th scope="col">Center</th><th scope="col">Model Name and Version</th><th scope="col">Acronym</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr class="first"><td>Canadian Centre for Climate Modelling and Analysis</td><td>General Circulation Model version 3.1 - t47</td><td class="last"><code>cccma_cgcm31</code></td></tr>
 
-<h4>Example citation: Model Selection</h4>
-<p>
-SNAP downscaled data is a value added product derived from global climate model (GCM) output.  By comparing surface temperature, precipitation, and sea level pressure between observation-based ECMWF 40 Year Re-analysis data (ERA-40) and GCM output variables, the five best performing GCM&rsquo;s across Alaska and the Arctic were determined to be: cccma_cgcm31, mpi_echam5, gfdl_cm21, had_cm3, and ccsr_miroc32medres (Walsh et al 2008).  In addition to this, a five model average output was calculated in order to further reduce the error associated with dependence on a single model.
-</p>
-<table>
-<thead>
-<tr>
-<th scope="col">Center</th><th scope="col">Model Name and Version</th><th scope="col">Acronym</th>
-</tr>
-</thead>
-<tbody>
-<tr class="first"><td>Canadian Centre for Climate Modelling and Analysis</td><td>General Circulation Model version 3.1 - t47</td><td class="last"><code>cccma_cgcm31</code></td></tr>
+	<tr><td>Max Planck Institute for Meteorology</td><td>European Centre Hamburg Model 5</td><td class="last"><code>mpi_echam5</code></td></tr>
 
-<tr><td>Max Planck Institute for Meteorology</td><td>European Centre Hamburg Model 5</td><td class="last"><code>mpi_echam5</code></td></tr>
-
-<tr><td>Geophysical Fluid Dynamics Laboratory</td><td>Coupled Climate Model 2.1</td><td class="last"><code>gfdl_cm21</code></td></tr>
+	<tr><td>Geophysical Fluid Dynamics Laboratory</td><td>Coupled Climate Model 2.1</td><td class="last"><code>gfdl_cm21</code></td></tr>
 
 
-<tr><td>UK Met Office - Hadley Centre</td><td>Coupled Model 3.0</td><td class="last"><code>ukmo_hadcm3</code></td></tr>
-<tr><td>Center for Climate System Research</td><td>Model for Interdisciplinary Research on Climate (medium resolution)</td><td class="last"><code>miroc3_2_medres</code></td></tr>
-</tbody>
-</table>
+	<tr><td>UK Met Office - Hadley Centre</td><td>Coupled Model 3.0</td><td class="last"><code>ukmo_hadcm3</code></td></tr>
+	<tr><td>Center for Climate System Research</td><td>Model for Interdisciplinary Research on Climate (medium resolution)</td><td class="last"><code>miroc3_2_medres</code></td></tr>
+	</tbody>
+	</table>
 
-<h4>Example citation: Projected GCM data downscaled to 2km or 771 meter</h4>
-<p>
-GCM output variables of surface temperature and precipitation were downscaled via the delta method (Hayhoe 2010, Hay et al 2000) utilizing Parameter-Elevation Regressions on Independent Slopes Model (PRISM) 1961&ndash;1990 2km resolution or 1971&ndash;2000 771 meters resolution climate normals as baseline climate across three future climate scenarios (B1, A1B, A2).  The delta method was implemented by calculating climate anomalies applied as differences for temperature or quotients for precipitation between monthly future GCM data and calculated GCM climate normals for 1961&ndash;1990 or 1971&ndash;2000 (i.e., the &ldquo;delta&rdquo;) at a monthly time step.  These coarse resolution anomalies were then interpolated to PRISM spatial resolution via a spline technique, and then added to (temperature) or multiplied by (precipitation) the PRISM climate normals.
-</p>
+	<h4>Projected GCM data downscaled to 2km or 771 meter</h4>
+	<p>
+	GCM output variables of surface temperature and precipitation were downscaled via the delta method (Hayhoe 2010, Hay et al 2000) utilizing Parameter-Elevation Regressions on Independent Slopes Model (PRISM) 1961&ndash;1990 2km resolution or 1971&ndash;2000 771 meters resolution climate normals as baseline climate across three future climate scenarios (B1, A1B, A2).  The delta method was implemented by calculating climate anomalies applied as differences for temperature or quotients for precipitation between monthly future GCM data and calculated GCM climate normals for 1961&ndash;1990 or 1971&ndash;2000 (i.e., the &ldquo;delta&rdquo;) at a monthly time step.  These coarse resolution anomalies were then interpolated to PRISM spatial resolution via a spline technique, and then added to (temperature) or multiplied by (precipitation) the PRISM climate normals.
+	</p>
 
-<h4>Example citation: Historical CRU data downscaled to 2km or 771 meter</h4>
-<p>
-Climatic Research Unit TS 3.1 (CRU) output variables of surface temperature and precipitation were downscaled via the delta method (Hayhoe 2010, Hay et al 2000) utilizing Parameter-Elevation Regressions on Independent Slopes Model (PRISM) 1961&ndash;1990 2km resolution or 1971&ndash;2000 771 meters resolution climate normals as baseline climate.  The delta method was implemented by calculating climate anomalies applied as differences for temperature or quotients for precipitation between monthly future GCM data and calculated CRU climate normals for 1961&ndash;1990 or 1971&ndash;2000 (i.e., the &ldquo;delta&rdquo;) at a monthly time step.  These coarse resolution anomalies were then interpolated to PRISM spatial resolution via a spline technique, and then added to (temperature) or multiplied by (precipitation) the PRISM climate normals.
-</p>
+	<h4>Historical CRU data downscaled to 2km or 771 meter</h4>
+	<p>
+	Climatic Research Unit TS 3.1 (CRU) output variables of surface temperature and precipitation were downscaled via the delta method (Hayhoe 2010, Hay et al 2000) utilizing Parameter-Elevation Regressions on Independent Slopes Model (PRISM) 1961&ndash;1990 2km resolution or 1971&ndash;2000 771 meters resolution climate normals as baseline climate.  The delta method was implemented by calculating climate anomalies applied as differences for temperature or quotients for precipitation between monthly future GCM data and calculated CRU climate normals for 1961&ndash;1990 or 1971&ndash;2000 (i.e., the &ldquo;delta&rdquo;) at a monthly time step.  These coarse resolution anomalies were then interpolated to PRISM spatial resolution via a spline technique, and then added to (temperature) or multiplied by (precipitation) the PRISM climate normals.
+	</p>
 
-<h4>Example citation: Projected or Historical Day of Freeze, Day of Thaw, Length of Growing Season</h4>
-<p>
-Estimated Julian days of freeze and thaw were calculated by assuming a linear change in temperature between consecutive months. Mean monthly temperatures were used to represent daily temperature on the 15th day of each month. When consecutive monthly midpoints had opposite sign temperatures, the day of transition (freeze or thaw) was the day between them on which temperature crossed zero degrees C. The length of growing season refers to the number of days between the days of freeze and thaw.
-</p>
+	<h4>Projected or Historical Day of Freeze, Day of Thaw, Length of Growing Season</h4>
+	<p>
+	Estimated Julian days of freeze and thaw were calculated by assuming a linear change in temperature between consecutive months. Mean monthly temperatures were used to represent daily temperature on the 15th day of each month. When consecutive monthly midpoints had opposite sign temperatures, the day of transition (freeze or thaw) was the day between them on which temperature crossed zero degrees C. The length of growing season refers to the number of days between the days of freeze and thaw.
+	</p>
 
-<h5>References</h5>
-<ul class="references">
-<li>
-Walsh, John E.; Chapman, William L.; Romanovsky, Vladimi; Christensen, Jens H.; Stendel, Martin (2008). Global Climate Model Performance over Alaska and Greenland. <span class="journal">Journal of Climate</span> <span class="page">21</span> (23): 6156–74
-</li>
-<li>
-Hayhoe, K. A. (2010). A standardized framework for evaluating the skill of regional climate downscaling  techniques.  Ph.D. thesis, University of Illinois, 153 pp., available at <a href="https://www.ideals.illinois.edu/handle/2142/16044" >https://www.ideals.illinois.edu/handle/2142/16044</a>
-</li>
-<li>
-Hay, L. E. (2000). A comparison of delta change and downscaled GCM scenarios for three mountainous basins in the United States. Journal of the American Water Resources Association, 36(2) 387-397.
-</li>
-<li>
-PRISM Climate Group, Oregon State University, <a href="http://prism.oregonstate.edu" >http://prism.oregonstate.edu</a>, accessed 4 Sept 2011
-</li>
-<li>
-Climatic Research Unit (CRU), University of East Anglia, <a href="http://www.cru.uea.ac.uk/">http://www.cru.uea.ac.uk/</a>, accessed 4 Sept 2011
-</li>
+	<h5>References</h5>
+	<ul class="references">
+	<li>
+	Walsh, John E.; Chapman, William L.; Romanovsky, Vladimi; Christensen, Jens H.; Stendel, Martin (2008). Global Climate Model Performance over Alaska and Greenland. <span class="journal">Journal of Climate</span> <span class="page">21</span> (23): 6156–74
+	</li>
+	<li>
+	Hayhoe, K. A. (2010). A standardized framework for evaluating the skill of regional climate downscaling  techniques.  Ph.D. thesis, University of Illinois, 153 pp., available at <a href="https://www.ideals.illinois.edu/handle/2142/16044" >https://www.ideals.illinois.edu/handle/2142/16044</a>
+	</li>
+	<li>
+	Hay, L. E. (2000). A comparison of delta change and downscaled GCM scenarios for three mountainous basins in the United States. Journal of the American Water Resources Association, 36(2) 387-397.
+	</li>
+	<li>
+	PRISM Climate Group, Oregon State University, <a href="http://prism.oregonstate.edu" >http://prism.oregonstate.edu</a>, accessed 4 Sept 2011
+	</li>
+	<li>
+	Climatic Research Unit (CRU), University of East Anglia, <a href="http://www.cru.uea.ac.uk/">http://www.cru.uea.ac.uk/</a>, accessed 4 Sept 2011
+	</li>
 </ul>
+</blockquote>
+
 <p><a href="#top">Back to top</a></p>
 
 <h3><a id="faq_2">What is a GCM?</a></h3>
