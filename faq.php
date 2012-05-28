@@ -79,7 +79,7 @@ Hay, L. E. (2000). A comparison of delta change and downscaled GCM scenarios for
 PRISM Climate Group, Oregon State University, <a href="http://prism.oregonstate.edu" >http://prism.oregonstate.edu</a>, accessed 4 Sept 2011
 </li>
 <li>
-Climatic Research Unit (CRU), University of East Anglia, <a href="http://www.cru.uea.ac.uk/"> >http://www.cru.uea.ac.uk/</a>, accessed 4 Sept 2011
+Climatic Research Unit (CRU), University of East Anglia, <a href="http://www.cru.uea.ac.uk/">http://www.cru.uea.ac.uk/</a>, accessed 4 Sept 2011
 </li>
 </ul>
 <p><a href="#top">Back to top</a></p>
