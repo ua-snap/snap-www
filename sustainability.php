@@ -1,6 +1,6 @@
 <?php
 include("template.php");
-$page = new webPage("SNAP: Outreach", "", "about", 'Outreach');
+$page = new webPage("SNAP: Sustainability", "", "about", 'Sustainability');
 $page->openPage();
 $page->pageHeader();
 ?>
