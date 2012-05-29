@@ -835,8 +835,8 @@ a.project p {
 	vertical-align: top;
 	text-align: center;
 	display: inline-block;
-	width: 28%;
-	margin: 0 1em;
+	width: 27%;
+	margin: 1em 2% 0;
 	padding: 0 1ex;
 	box-shadow: -2px 4px 10px 1px #eee;
 	min-height: 270px;
