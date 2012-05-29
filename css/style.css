@@ -853,3 +853,12 @@ a.project p {
 	max-height: 85px;
 	margin-bottom: 1em;
 }
+
+.sustainability img {
+	float: left;
+	margin: 0 1em 2em 0;
+}
+
+.sustainability h3 {
+	clear: both;
+}

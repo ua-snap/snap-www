@@ -75,7 +75,8 @@ js;
         array('link', '/collaborators.php', 'Collaborators'),
         array('link', '/outreach.php', 'Outreach'),
         array('link', '/faq.php', 'F.A.Q.'),
-        array('link', '/logos.php', 'Logos')
+        array('link', '/logos.php', 'Logos'),
+        array('link', '/sustainability.php', 'Sustainability')
       ),
       'data' => array(
         array('link', '/maps.php" target="_blank','Map Tool'), // note the embedded double-quote so that it works inline below
