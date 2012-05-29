@@ -66,6 +66,7 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 <h3>Projected Data</h3>
 </div>
 <div class="dataAccordionWrapper">
+
 <div class="dataAccordion">
 <h3><a href="#dataset=projected_monthly_temperature_and_precipitation_771m">Projected Monthly Temperature and Precipitation - 771m AR4</a></h3>
 <div>
@@ -80,46 +81,104 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 </table>
 <img src="images/ak_extent.jpg" alt="" />
 
+<h4>Temperature</h4>
+<p><strong>Metadata: </strong><a style="color: #06c" href="<?php echo Config::$geonetworkMetadataUrlBase; ?>34">Projected Monthly Average Temperature 771m AR4</a></p>
+
+
+
 <table class="downloadsTable">
 <thead>
 <tr>
-<th scope="col">
-<h5>Metadata</h5>
-<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>34">Projected Monthly Average Temperature 771m AR4</a>
-</th>
-<th scope="col">
-<h5>Metadata</h5>
-<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>35">Projected Monthly Total Precipitation 771m AR4</a>
-</th>
+<td>&nbsp;</td>
+<th scope="col" colspan="3">Scenario</th>
+</tr>
+<tr>
+<th scope="col">Model</th>
+<th scope="col">B1</th>
+<th scope="col">A1B</th>
+<th scope="col">A2</th>
 </tr>
 </thead>
 <tbody>
+
 <tr>
+<th scope="row">Five Model Average</th>
+<td><a href="/files/data/monthly/tas_AK_771m_5modelAvg_sresb1_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
+<a href="/files/data/monthly/tas_AK_771m_5modelAvg_sresb1_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
+<td>
+<a href="/files/data/monthly/tas_AK_771m_5modelAvg_sresa1b_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
+<a href="/files/data/monthly/tas_AK_771m_5modelAvg_sresa1b_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
+<td><a href="/files/data/monthly/tas_AK_771m_5modelAvg_sresa2_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
+<a href="/files/data/monthly/tas_AK_771m_5modelAvg_sresa2_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
+</tr>
+
+<tr>
+<th scope="row">General Circulation Model version 3.1 - t47</th>
+<td><a href="/files/data/monthly/tas_AK_771m_cccma_cgcm3_1_sresb1_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
+<a href="/files/data/monthly/tas_AK_771m_cccma_cgcm3_1_sresb1_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
+<td>
+<a href="/files/data/monthly/tas_AK_771m_cccma_cgcm3_1_sresa1b_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
+<a href="/files/data/monthly/tas_AK_771m_cccma_cgcm3_1_sresa1b_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
+<td><a href="/files/data/monthly/tas_AK_771m_cccma_cgcm3_1_sresa2_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
+<a href="/files/data/monthly/tas_AK_771m_cccma_cgcm3_1_sresa2_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
+</tr>
+
+<tr>
+<th scope="row">Coupled Climate Model 2.1</th>
+<td><a href="/files/data/monthly/tas_AK_771m_gfdl_cm2_1_sresb1_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
+<a href="/files/data/monthly/tas_AK_771m_gfdl_cm2_1_sresb1_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
+<td>
+<a href="/files/data/monthly/tas_AK_771m_gfdl_cm2_1_sresa1b_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
+<a href="/files/data/monthly/tas_AK_771m_gfdl_cm2_1_sresa1b_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
+<td><a href="/files/data/monthly/tas_AK_771m_gfdl_cm2_1_sresa2_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
+<a href="/files/data/monthly/tas_AK_771m_gfdl_cm2_1_sresa2_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
+</tr>
+
+
+<tr>
+<th scope="row">Model for Interdisciplinary Research on Climate (medium resolution)</th>
+<td><a href="/files/data/monthly/tas_AK_771m_miroc3_2_medres_sresb1_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
+<a href="/files/data/monthly/tas_AK_771m_miroc3_2_medres_sresb1_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
+<td>
+<a href="/files/data/monthly/tas_AK_771m_miroc3_2_medres_sresa1b_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
+<a href="/files/data/monthly/tas_AK_771m_miroc3_2_medres_sresa1b_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
+<td><a href="/files/data/monthly/tas_AK_771m_miroc3_2_medres_sresa2_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
+<a href="/files/data/monthly/tas_AK_771m_miroc3_2_medres_sresa2_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
+</tr>
+<tr>
+<th scope="row">European Centre Hamburg Model 5</th>
+<td><a href="/files/data/monthly/tas_AK_771m_mpi_echam5_sresb1_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
+<a href="/files/data/monthly/tas_AK_771m_mpi_echam5_sresb1_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
+<td>
+<a href="/files/data/monthly/tas_AK_771m_mpi_echam5_sresa1b_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
+<a href="/files/data/monthly/tas_AK_771m_mpi_echam5_sresa1b_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
+<td><a href="/files/data/monthly/tas_AK_771m_mpi_echam5_sresa2_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
+<a href="/files/data/monthly/tas_AK_771m_mpi_echam5_sresa2_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
+</tr>
+
+<tr>
+<th scope="row">Coupled Model 3.0</th>
+<td><a href="/files/data/monthly/tas_AK_771m_ukmo_hadcm3_sresb1_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
+<a href="/files/data/monthly/tas_AK_771m_ukmo_hadcm3_sresb1_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
+<td>
+<a href="/files/data/monthly/tas_AK_771m_ukmo_hadcm3_sresa1b_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
+<a href="/files/data/monthly/tas_AK_771m_ukmo_hadcm3_sresa1b_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
+<td><a href="/files/data/monthly/tas_AK_771m_ukmo_hadcm3_sresa2_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
+<a href="/files/data/monthly/tas_AK_771m_ukmo_hadcm3_sresa2_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
+</tr>
+
+
+</tbody>
+</table>
+
+
+<!--
 <td>
 <h5>Data</h5>
-<pre><a href="/files/data/monthly/tas_AK_771m_5modelAvg_sresb1.zip">tas_AK_771m_5modelAvg_sresb1.zip</a> (5.0 GB)
-<a href="/files/data/monthly/tas_AK_771m_5modelAvg_sresa1b.zip">tas_AK_771m_5modelAvg_sresa1b.zip</a> (5.0 GB)
-<a href="/files/data/monthly/tas_AK_771m_5modelAvg_sresa2.zip">tas_AK_771m_5modelAvg_sresa2.zip</a> (5.0 GB)
+<pre>
 
-<a href="/files/data/monthly/tas_AK_771m_cccma_cgcm3_1_sresb1.zip">tas_AK_771m_cccma_cgcm3_1_sresb1.zip</a> (5.0 GB)
-<a href="/files/data/monthly/tas_AK_771m_cccma_cgcm3_1_sresa1b.zip">tas_AK_771m_cccma_cgcm3_1_sresa1b.zip</a> (5.0 GB)
-<a href="/files/data/monthly/tas_AK_771m_cccma_cgcm3_1_sresa2.zip">tas_AK_771m_cccma_cgcm3_1_sresa2.zip</a> (5.0 GB)
 
-<a href="/files/data/monthly/tas_AK_771m_gfdl_cm2_1_sresb1.zip">tas_AK_771m_gfdl_cm2_1_sresb1.zip</a> (5.0 GB)
-<a href="/files/data/monthly/tas_AK_771m_gfdl_cm2_1_sresa1b.zip">tas_AK_771m_gfdl_cm2_1_sresa1b.zip</a> (5.0 GB)
-<a href="/files/data/monthly/tas_AK_771m_gfdl_cm2_1_sresa2.zip">tas_AK_771m_gfdl_cm2_1_sresa2.zip</a> (5.0 GB)
 
-<a href="/files/data/monthly/tas_AK_771m_miroc3_2_medres_sresb1.zip">tas_AK_771m_miroc3_2_medres_sresb1.zip</a> (5.0 GB)
-<a href="/files/data/monthly/tas_AK_771m_miroc3_2_medres_sresa1b.zip">tas_AK_771m_miroc3_2_medres_sresa1b.zip</a> (5.0 GB)
-<a href="/files/data/monthly/tas_AK_771m_miroc3_2_medres_sresa2.zip">tas_AK_771m_miroc3_2_medres_sresa2.zip</a> (5.0 GB)
-
-<a href="/files/data/monthly/tas_AK_771m_mpi_echam5_sresb1.zip">tas_AK_771m_mpi_echam5_sresb1.zip</a> (5.1 GB)
-<a href="/files/data/monthly/tas_AK_771m_mpi_echam5_sresa1b.zip">tas_AK_771m_mpi_echam5_sresa1b.zip</a> (5.1 GB)
-<a href="/files/data/monthly/tas_AK_771m_mpi_echam5_sresa2.zip">tas_AK_771m_mpi_echam5_sresa2.zip</a> (5.1 GB)
-
-<a href="/files/data/monthly/tas_AK_771m_ukmo_hadcm3_sresb1.zip">tas_AK_771m_ukmo_hadcm3_sresb1.zip</a> (5.1 GB)
-<a href="/files/data/monthly/tas_AK_771m_ukmo_hadcm3_sresa1b.zip">tas_AK_771m_ukmo_hadcm3_sresa1b.zip</a> (5.1 GB )
-<a href="/files/data/monthly/tas_AK_771m_ukmo_hadcm3_sresa2.zip">tas_AK_771m_ukmo_hadcm3_sresa2.zip</a> (5.0 GB)
 </pre>
 </td>
 <td>
@@ -154,6 +213,8 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 </tbody>
 </table>
 </p>
+
+-->
 </div>
 
 <h3><a href="#dataset=projected_derived_temperature_771m">Projected Derived Temperature Products - 771m AR4</a></h3>

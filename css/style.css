@@ -695,8 +695,42 @@ td {
 	white-space: pre;
 }
 
+.dataAccordionWrapper .downloadsTable th[scope=row] {
+	font-weight: bold;
+}
+
+.dataAccordionWrapper .downloadsTable th[scope=col] {
+	font-weight: bold;
+		text-align: center;
+
+}
+
+.dataAccordionWrapper h4 {
+	font-size: 16px;
+}
+
+.downloadsTable {
+	width: 100%;
+}
+
+.downloadsTable td {
+	padding-bottom: 1ex;
+}
+
 .downloadsTable pre a {
 	color: #06c !important;
+}
+
+.downloadsTable tbody td a {
+	color: #06c !important;
+}
+
+.downloadsTable thead tr {
+	background-color: white !important;
+}
+
+.downloadsTable tr:nth-child(odd) {
+	background-color: #f8feff;
 }
 
 .dataAccordionWrapper h5 {
