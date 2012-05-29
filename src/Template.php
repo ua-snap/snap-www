@@ -79,9 +79,9 @@ js;
         array('link', '/sustainability.php', 'Sustainability')
       ),
       'data' => array(
+        array('link', '/data.php','Download Data'),
         array('link', '/maps.php" target="_blank','Map Tool'), // note the embedded double-quote so that it works inline below
-        array('link', '/charts.php','Community Charts'),
-        array('link', '/data.php','Data')
+        array('link', '/charts.php','Community Charts')
       ),
       'resources' => array(
         array('label', 'Learn about all of SNAP&rsquo;s resources below.')
