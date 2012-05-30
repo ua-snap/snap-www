@@ -45,7 +45,6 @@ mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/images
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/js
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/charts
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/logos
-mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/clippy
 mkdir -p ${RPM_BUILD_ROOT}/var/log/httpd/
 mkdir -p ${RPM_BUILD_ROOT}/etc/httpd/conf.d
 mkdir -p ${RPM_BUILD_ROOT}/home/jenkins/
