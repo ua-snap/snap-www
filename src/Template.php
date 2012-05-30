@@ -52,18 +52,7 @@ If you add a file here, you must add it to the makefile for packaging.  See the 
 
 <script src="js/charts.js" type="text/javascript"></script>
 <script src="js/maps.js" type="text/javascript"></script>
-
-<script src="clippy/build/clippy.min.js"></script>
 <!-- end-package -->
-
-<script type="text/javascript">
-    var agent;
-    clippy.load('Clippy', function(agent) {
-      agent.show();
-      agent.animate();
-      agent.speak('SNAP is cool!');
-    });
-</script>
 
 <script type="text/javascript">
 

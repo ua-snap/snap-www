@@ -1014,7 +1014,6 @@ $(function() {
     	window.location.hash = ''; // clear this to prevent user from seeing dissonance between url + opened folds
     }
 
-
 });
 </script>
 
