@@ -89,6 +89,9 @@ class webPage {
 
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
         <link type="text/css" href="css/custom-theme/jquery-ui-1.8.17.custom.css" rel="Stylesheet" />  
+
+        <link rel="stylesheet" type="text/css" href="/clippy/build/clippy.css" media="all">
+
     <?php 
 
         if (isset($this->stylesheet) && !empty($this->stylesheet)) { 

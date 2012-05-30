@@ -64,6 +64,7 @@ cp -a src/*.php ${RPM_BUILD_ROOT}/usr/lib64/snapwww/src
 cp -a src/Config.php.example ${RPM_BUILD_ROOT}/usr/lib64/snapwww/src
 cp -a js/min.js ${RPM_BUILD_ROOT}/%{inst_dir}/js/
 cp -a css/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/
+cp -R clippy/* ${RPM_BUILD_ROOT}/%{inst_dir}/clippy/
 cp -a css/custom-theme/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/custom-theme/
 cp -a css/custom-theme/images/*.png ${RPM_BUILD_ROOT}/%{inst_dir}/css/custom-theme/images/
 cp -R images/* ${RPM_BUILD_ROOT}/%{inst_dir}/images/
@@ -83,6 +84,7 @@ rm -rf $RPM_BUILD_ROOT
 %{inst_dir}/logos
 %{inst_dir}/images
 %{inst_dir}/js
+%{inst_dir}/clippy
 %attr(744,apache,apache) /usr/lib64/snapwww/src/
 %config(noreplace) /usr/lib64/snapwww/src/Config.php
 %config(noreplace) /usr/lib64/snapwww/src/Config.php.example
