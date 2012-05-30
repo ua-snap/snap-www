@@ -697,6 +697,7 @@ td {
 
 .dataAccordionWrapper .downloadsTable th[scope=row] {
 	font-weight: bold;
+	font-family: monospace;
 }
 
 .dataAccordionWrapper .downloadsTable th[scope=col] {
@@ -706,6 +707,8 @@ td {
 }
 
 .dataAccordionWrapper h4 {
+	border-top: 1px solid #eee;
+	padding-top: 1em;
 	font-size: 16px;
 }
 
@@ -714,6 +717,7 @@ td {
 }
 
 .downloadsTable td {
+	text-align: center;
 	padding-bottom: 1ex;
 }
 
