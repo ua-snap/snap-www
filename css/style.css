@@ -643,6 +643,10 @@ td {
 	margin-bottom: .5ex;
 }
 
+.dataAccordion div p a {
+	color: #06c !important;
+}
+
 .dataAccordion table.overview {
 	display: inline-block;
 }

@@ -75,7 +75,7 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 <img src="images/ak_extent.jpg" alt="" />
 
 <h4>Temperature</h4>
-<p><strong>Metadata: </strong><a style="color: #06c" href="<?php echo Config::$geonetworkMetadataUrlBase; ?>34">Projected Monthly Average Temperature 771m AR4</a></p>
+<p><strong>Metadata: </strong><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>34">Projected Monthly Average Temperature 771m AR4</a></p>
 
 <table class="downloadsTable">
 <thead>
@@ -164,7 +164,7 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 
 
 <h4>Precipitation</h4>
-<p><strong>Metadata: </strong><a style="color: #06c" href="<?php echo Config::$geonetworkMetadataUrlBase; ?>35">Projected Monthly Total Precipitation 771m AR4</a></p>
+<p><strong>Metadata: </strong><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>35">Projected Monthly Total Precipitation 771m AR4</a></p>
 
 <table class="downloadsTable">
 <thead>
@@ -1033,6 +1033,183 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 </table>
 
 </div>
+
+</div>
+
+<br/>
+<div class="dataAccordion">
+
+
+<h3><a href="#dataset=projected_monthly_potential_evapostranspiration_2km">Projected Monthly Potential Evapotranspiration -  2km AR4</a></h3>
+<div>
+	<p>Projected (2001-2099: A1B scenario) monthly total potential evapotranspiration from 5 AR4 GCMs that perform best across Alaska and the Arctic, utilizing 2km downscaled temperature as model inputs.
+</p>
+<p>These potential evapotranspiration (PET) estimates were produced using the Hamon equation, which calculates PET as a function of temperature and day length.  Potential evapotranspiration may also be influenced by cloud cover, humidity, and wind speed.  The Hamon equation can not explicitly account for variability in these aspects of weather and climate, so it may over or underestimate changes in PET if humidity, cloud cover, or wind speeds change substantially.  In addition, the Hamon equation was developed to calculate daily potential evapotranspiration, and so these estimates, based on monthly data, may differ from those calculated from daily data. We can also provide PET estimated by the Priestley-Taylor equation and standard equations for estimating the surface radiation budget from temperature. Priestley-Taylor data come with a much longer list of assumptions, including those that apply to the Hamon equation.  Scripts used to produce both the Harmon and Priestley-Taylor versions are available upon <a href="people.php?topic=data#contact">request</a>.
+</p>
+
+
+<table class="overview">
+	<tbody>
+		<tr>
+			<th scope="row">Baseline Reference Climate</th>
+			<td>1961–1990 PRISM</td>
+		</tr>
+		<tr>
+			<th scope="row">Spatial Resolution</th>
+			<td>2km</td>
+		</tr>
+		<tr>
+			<th scope="row">Temporal Resolution</th>
+			<td>Monthly</td>
+		</tr>
+		<tr>
+			<th scope="row">Spatial Extent</th>
+			<td>Alaska</td>
+		</tr>
+	</tbody>
+</table>
+<img src="images/ak_extent.jpg" alt="" />
+
+<h4>Metadata by product</h4>
+
+<p><strong>Metadata:</strong> <a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>69">Projected Monthly Total Potential Evapotranspiration 2km AR4</a></p>
+<p><strong>Equations used to derive data:</strong> <a href="attachments/Hamon_PET_equations.pdf">Hamon PET equations</a> (PDF, 597KB)</p>
+
+<h4>Data</h4>
+
+<table class="downloadsTable" style="width: auto">
+<thead>
+<tr>
+<td>&nbsp;</td>
+<th scope="col" colspan="3">Scenario</th>
+</tr>
+<tr>
+<th scope="col" style="text-align: left;">Model</th>
+<th scope="col">A1B</th>
+</tr>
+</thead>
+<tbody>
+
+
+<tr>
+<th scope="row">cccma_cgcm31</th>
+<td><a href="files/data/pet/pet_AK_2km_cccma_cgcm3_1_sresa1b.zip">2001&ndash;2099</a> (757 MB)</td>
+</tr>
+
+<tr>
+<th scope="row">gfdl_cm2_1</th>
+<td><a href="files/data/pet/pet_AK_2km_gfdl_cm2_1_sresa1b.zip">2001&ndash;2099</a> (759MB)</td>
+</tr>
+
+<tr>
+<th scope="row">miroc3_2_medres</th>
+<td><a href="files/data/pet/pet_AK_2km_miroc3_2_medres_sresa1b.zip">2001&ndash;2099</a> (770MB)</td>
+</tr>
+
+<tr>
+<th scope="row">mpi_echam5</th>
+<td><a href="files/data/pet/pet_AK_2km_mpi_echam5_sresa1b.zip">2001&ndash;2099</a> (769MB)</td>
+</tr>
+
+<tr>
+<th scope="row">ukmo_hadcm3</th>
+<td><a href="files/data/pet/pet_AK_2km_ukmo_hadcm3_sresa1b.zip">2001&ndash;2099</a> (762MB)</td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
+
+<h3><a href="#dataset=projected_derived_potential_evapostranspiration_2km">Projected Derived Potential Evapotranspiration -  2km AR4</a></h3>
+<div>
+	<p>Projected (2001-2099: A1B scenario) monthly total potential evapotranspiration from 5 AR4 GCMs that perform best across Alaska and the Arctic, utilizing 2km downscaled temperature as model inputs.
+</p>
+<p>These potential evapotranspiration (PET) estimates were produced using the Hamon equation, which calculates PET as a function of temperature and day length.  Potential evapotranspiration may also be influenced by cloud cover, humidity, and wind speed.  The Hamon equation can not explicitly account for variability in these aspects of weather and climate, so it may over or underestimate changes in PET if humidity, cloud cover, or wind speeds change substantially.  In addition, the Hamon equation was developed to calculate daily potential evapotranspiration, and so these estimates, based on monthly data, may differ from those calculated from daily data. We can also provide PET estimated by the Priestley-Taylor equation and standard equations for estimating the surface radiation budget from temperature. Priestley-Taylor data come with a much longer list of assumptions, including those that apply to the Hamon equation.  Scripts used to produce both the Harmon and Priestley-Taylor versions are available upon <a href="people.php?topic=data#contact">request</a>.
+</p>
+
+
+<table class="overview">
+	<tbody>
+		<tr>
+			<th scope="row">Baseline Reference Climate</th>
+			<td>1961–1990 PRISM</td>
+		</tr>
+		<tr>
+			<th scope="row">Spatial Resolution</th>
+			<td>2km</td>
+		</tr>
+		<tr>
+			<th scope="row">Temporal Resolution</th>
+			<td>Decadal</td>
+		</tr>
+		<tr>
+			<th scope="row">Spatial Extent</th>
+			<td>Alaska</td>
+		</tr>
+	</tbody>
+</table>
+<img src="images/ak_extent.jpg" alt="" />
+
+<h4>Decadal Summaries by Month, Year, or Season</h4>
+<h5>Metadata by product</h5>
+
+<ul>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>73">Projected Decadal Averages of Monthly Total Potential Evapotranspiration 2km AR4</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>74">Projected Decadal Averages of Annual Total Potential Evapotranspiration 2km AR4</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>75">Projected Decadal Averages of Seasonal Total Potential Evapotranspiration 2km AR4</a></li>
+</ul>
+
+<p><strong>Equations used to derive data:</strong> <a href="attachments/Hamon_PET_equations.pdf">Hamon PET equations</a> (PDF, 597KB)</p>
+
+<h4>Data</h4>
+
+<table class="downloadsTable" style="width: auto">
+<thead>
+<tr>
+<td>&nbsp;</td>
+<th scope="col" colspan="3">Scenario</th>
+</tr>
+<tr>
+<th scope="col" style="text-align: left;">Model</th>
+<th scope="col">A1B</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<th scope="row">cccma_cgcm31</th>
+<td><a href="files/data/pet/pet_decadal_summaries_2km_cccma_cgcm3_1_sresa1b.zip">2001&ndash;2099</a> (188MB)</td>
+</tr>
+
+<tr>
+<th scope="row">gfdl_cm2_1</th>
+<td><a href="files/data/pet/pet_decadal_summaries_2km_gfdl_cm2_1_sresa1b.zip">2001&ndash;2099</a> (187MB)</td>
+</tr>
+
+<tr>
+<th scope="row">miroc3_2_medres</th>
+<td><a href="files/data/pet/pet_decadal_summaries_2km_miroc3_2_medres_sresa1b.zip">2001&ndash;2099</a> (188MB)</td>
+</tr>
+
+<tr>
+<th scope="row">mpi_echam5</th>
+<td><a href="files/data/pet/pet_decadal_summaries_2km_mpi_echam5_sresa1b.zip">2001&ndash;2099</a> (189MB)</td>
+</tr>
+
+<tr>
+<th scope="row">ukmo_hadcm3</th>
+<td><a href="files/data/pet/pet_decadal_summaries_2km_ukmo_hadcm3_sresa1b.zip">2001&ndash;2099</a> (189MB)</td>
+</tr>
+
+
+
+
+</tbody>
+</table>
+
+</div>
+
 </div>
 </div>
 
@@ -1337,7 +1514,100 @@ Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.1 clima
 <a href="/files/data/derived/pr_decadal_summaries_AK_CAN_2km_CRU_TS31_historical.zip">pr_decadal_summaries_AK_CAN_2km_CRU_TS31_historical.zip</a> (345 MB)
 </div>
 </div>
+
+<br/>
+<div class="dataAccordion">
+
+
+
+
+
+<h3><a href="#dataset=historical_monthly_potential_evapotranspiration_2km">Historical Monthly Potential Evapotranspiration -  2km</a></h3>
+<div>
+<p>Historical (1901-2006) monthly total potential evapotranspiration utilizing CRU TS 3.0 climate data downscaled to 2 km via the delta method.</p>
+
+<p>These potential evapotranspiration (PET) estimates were produced using the Hamon equation, which calculates PET as a function of temperature and day length.  Potential evapotranspiration may also be influenced by cloud cover, humidity, and wind speed.  The Hamon equation can not explicitly account for variability in these aspects of weather and climate, so it may over or underestimate changes in PET if humidity, cloud cover, or wind speeds change substantially.  In addition, the Hamon equation was developed to calculate daily potential evapotranspiration, and so these estimates, based on monthly data, may differ from those calculated from daily data. We can also provide PET estimated by the Priestley-Taylor equation and standard equations for estimating the surface radiation budget from temperature. Priestley-Taylor data come with a much longer list of assumptions, including those that apply to the Hamon equation.  Scripts used to produce both the Harmon and Priestley-Taylor versions are available upon <a href="people.php?topic=data#contact">request</a>.</p>
+
+
+<table class="overview">
+	<tbody>
+		<tr>
+			<th scope="row">Baseline Reference Climate</th>
+			<td>1961–1990 PRISM</td>
+		</tr>
+		<tr>
+			<th scope="row">Spatial Resolution</th>
+			<td>2km</td>
+		</tr>
+		<tr>
+			<th scope="row">Temporal Resolution</th>
+			<td>Monthly</td>
+		</tr>
+		<tr>
+			<th scope="row">Spatial Extent</th>
+			<td>Alaska</td>
+		</tr>
+	</tbody>
+</table>
+<img src="images/ak_extent.jpg" alt="" />
+
+
+<h4>Metadata</h4>
+<p><strong>Metadata:</strong> <a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>67">Historical Monthly Total Potential Evapotranspiration 2km AR4</a></p>
+<p><strong>Equations used to derive data:</strong> <a href="attachments/Hamon_PET_equations.pdf">Hamon PET equations</a> (PDF, 597KB)</p>
+
+<h4>Data</h4>
+<ul><li><a href="files/data/pet/pet_AK_2km_CRU_TS30_historical.zip">1901&ndash;2006</a> (726MB)</li></ul>
+
 </div>
+
+
+<h3><a href="#dataset=historical_derived_potential_evapotranspiration_2km">Historical Derived Potential Evapotranspiration -  2km</a></h3>
+<div>
+
+<p>Historical (1910-1999) monthly total potential evapotranspiration utilizing CRU TS 3.0 climate data downscaled to 2 km via the delta method.</p>
+
+<p>These potential evapotranspiration (PET) estimates were produced using the Hamon equation, which calculates PET as a function of temperature and day length.  Potential evapotranspiration may also be influenced by cloud cover, humidity, and wind speed.  The Hamon equation can not explicitly account for variability in these aspects of weather and climate, so it may over or underestimate changes in PET if humidity, cloud cover, or wind speeds change substantially.  In addition, the Hamon equation was developed to calculate daily potential evapotranspiration, and so these estimates, based on monthly data, may differ from those calculated from daily data. We can also provide PET estimated by the Priestley-Taylor equation and standard equations for estimating the surface radiation budget from temperature. Priestley-Taylor data come with a much longer list of assumptions, including those that apply to the Hamon equation.  Scripts used to produce both the Harmon and Priestley-Taylor versions are available upon <a href="people.php?topic=data#contact">request</a>.</p>
+
+<table class="overview">
+	<tbody>
+		<tr>
+			<th scope="row">Baseline Reference Climate</th>
+			<td>1961–1990 PRISM</td>
+		</tr>
+		<tr>
+			<th scope="row">Spatial Resolution</th>
+			<td>2km</td>
+		</tr>
+		<tr>
+			<th scope="row">Temporal Resolution</th>
+			<td>Decadal</td>
+		</tr>
+		<tr>
+			<th scope="row">Spatial Extent</th>
+			<td>Alaska</td>
+		</tr>
+	</tbody>
+</table>
+<img src="images/ak_extent.jpg" alt="" />
+
+
+<h4>Metadata by product</h4>
+<ul>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>70">Historical Decadal Averages of Monthly Total Potential Evapotranspiration 2km</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>71">Historical Decadal Averages of Annual Total Potential Evapotranspiration 2km</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>72">Historical Decadal Averages of Seasonal Total Potential Evapotranspiration 2km</a></li>
+</ul>
+<p><strong>Equations used to derive data:</strong> <a href="attachments/Hamon_PET_equations.pdf">Hamon PET equations</a> (PDF, 597KB)</p>
+
+<h4>All products by model and scenario</h4>
+<ul><li><a href="files/data/pet/pet_decadal_summaries_AK_2km_CRU_TS30_historical.zip">1910&ndash;1999</a> (181MB)</li></ul>
+
+</div>
+
+
+
+
 </div>
 
 <script>

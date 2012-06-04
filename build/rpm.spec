@@ -45,6 +45,7 @@ mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/images
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/js
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/charts
 mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/logos
+mkdir -p ${RPM_BUILD_ROOT}/%{inst_dir}/attachments
 mkdir -p ${RPM_BUILD_ROOT}/var/log/httpd/
 mkdir -p ${RPM_BUILD_ROOT}/etc/httpd/conf.d
 mkdir -p ${RPM_BUILD_ROOT}/home/jenkins/
@@ -64,6 +65,7 @@ cp -a src/*.php ${RPM_BUILD_ROOT}/usr/lib64/snapwww/src
 cp -a src/Config.php.example ${RPM_BUILD_ROOT}/usr/lib64/snapwww/src
 cp -a js/min.js ${RPM_BUILD_ROOT}/%{inst_dir}/js/
 cp -a css/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/
+cp -aR attachments/* ${RPM_BUILD_ROOT}/%{inst_dir}/attachments/
 cp -a css/custom-theme/*.css ${RPM_BUILD_ROOT}/%{inst_dir}/css/custom-theme/
 cp -a css/custom-theme/images/*.png ${RPM_BUILD_ROOT}/%{inst_dir}/css/custom-theme/images/
 cp -R images/* ${RPM_BUILD_ROOT}/%{inst_dir}/images/
