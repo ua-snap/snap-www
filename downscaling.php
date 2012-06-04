@@ -54,7 +54,7 @@ SNAP obtains GCM outputs from the Lawrence Livermore National Laboratory Program
     The <a href="http://www.cru.uea.ac.uk/">Climate Research Unit</a> (CRU) at the University of East Anglia in England is one of the leading research
     organizations for the study of natural and anthropogenic climate change. CRU hosts a large number of global climate datasets, which are managed by a
     variety of people and projects. CRU global climate data are based on 3000 monthly temperature stations over land as well as additional sea surface
-temperature (SST) measurements over water. SNAP obtains CRU data directly from their website or from the<a href="http://badc.nerc.ac.uk/home/">British Atmospheric Data Centre</a>. We utilize CRU    <a href="http://www.cru.uea.ac.uk/cru/data/hrg/">TS 3.0/3.1 high resolution (0.5&#176; x 0.5&#176;) gridded data</a>.
+temperature (SST) measurements over water. SNAP obtains CRU data directly from their website or from the <a href="http://badc.nerc.ac.uk/home/">British Atmospheric Data Centre</a>. We utilize CRU    <a href="http://www.cru.uea.ac.uk/cru/data/hrg/">TS 3.0/3.1 high resolution (0.5&#176; x 0.5&#176;) gridded data</a>.
 </p>
 <h4>
     Historical PRISM climatological data
@@ -66,11 +66,11 @@ temperature (SST) measurements over water. SNAP obtains CRU data directly from t
     (Parameter-elevation Regressions on Independent Slopes Model) data are some of the the highest resolution spatial climate data currently available across
     large extents. PRISM data are developed with a statistical model that accounts for land features such as slope, elevation and coastlines, as well as
     knowledge of local climate experts. SNAP utilizes temperature and precipitation from the 30- year (1961&#8211;1990) monthly climatology at 2 km spatial
-    resolution covering Alaska and regions of Canada, and ~800 meter spatial resolution from 1971&#8211;2000 covering only Alaska. We have also utilized other
+    resolution covering Alaska and regions of Canada, and 771 meter spatial resolution from 1971&#8211;2000 covering only Alaska. We have also utilized other
     PRISM datasets such as the Pacific Islands for specific projects.
 </p>
 <p>
-PRISM data can be obtained through multiple sources, although the data is produced by the same organization. Some data are obtained via the<a href="http://prism.oregonstate.edu/">PRISM home page</a>, the Alaska 800 meter data is publicly available via the    <a href="https://irma.nps.gov/App/Reference/Welcome">NPS Natural Resource Information Portal</a> (search for PRISM, look for the Wayne Gibson citation),
+PRISM data can be obtained through multiple sources, although the data is produced by the same organization. Some data are obtained via the<a href="http://prism.oregonstate.edu/">PRISM home page</a>, the Alaska 771 meter data is publicly available via the    <a href="https://irma.nps.gov/App/Reference/Welcome">NPS Natural Resource Information Portal</a> (search for PRISM, look for the Wayne Gibson citation),
     and other data can be purchased through the <a href="http://www.climatesource.com/">Climate Source website</a>.
 </p>
 <p>
@@ -234,7 +234,7 @@ choosing the spline technique can be found <a href="http://www.snap.uaf.edu/reso
 <p>
     At this point, our GCM anomaly datasets are at the same spatial resolution as our high resolution climatology dataset. The interpolated anomalies are then
     added to (for temperature) or multiplied by (for precipitation) the high-resolution climatology data (e.g., PRISM). This step effectively downscales the
-    data and removes model biases by using observed data values as baseline climate. The final products are high resolution (2km or 800m for PRISM) data.
+    data and removes model biases by using observed data values as baseline climate. The final products are high resolution (2km or 771m for PRISM) data.
 </p>
 <h4>
     Validation

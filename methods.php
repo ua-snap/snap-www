@@ -15,7 +15,7 @@ peer-reviewed <a href="http://www.snap.uaf.edu/resources.php?type=1">publication
 </p>
 <p>
     <a name="_GoBack"></a>
-SNAP selects the 5 <a href="#faq_2">Global Climate Models</a> (GCM) that <a href="http://www.snap.uaf.edu/resource_page.php?resourceid=2">perform best</a> in Alaska and the Arctic. Outputs from these models are then    <a href="http://www.snap.uaf.edu/downscaling.php">downscaled</a> using <a href="http://prism.oregonstate.edu/">PRISM</a> data&#8212;which
+SNAP selects the 5 <a href="/faq.php#faq_2">Global Climate Models</a> (GCM) that <a href="http://www.snap.uaf.edu/resource_page.php?resourceid=2">perform best</a> in Alaska and the Arctic. Outputs from these models are then    <a href="http://www.snap.uaf.edu/downscaling.php">downscaled</a> using <a href="http://prism.oregonstate.edu/">PRISM</a> data&#8212;which
     accounts for land features such as slope, elevation, and proximity to coastlines&#8212;as baseline climate data. This same downscaling procedure is applied
     to historical <a href="http://www.cru.uea.ac.uk/">Climate Research Unit</a> (CRU) data. The final products are high resolution monthly climate data
     for ~1901-2100 for Alaska and large regions of Canada. Where PRISM data are not available, GCM and historical data are downscaled to other baseline climate
