@@ -85,6 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 %{inst_dir}/logos
 %{inst_dir}/images
 %{inst_dir}/js
+%{inst_dir}/attachments/*
 %attr(744,apache,apache) /usr/lib64/snapwww/src/
 %config(noreplace) /usr/lib64/snapwww/src/Config.php
 %config(noreplace) /usr/lib64/snapwww/src/Config.php.example
