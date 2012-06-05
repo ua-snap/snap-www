@@ -29,7 +29,7 @@ $page->openPage();
             <a class="addthis_button_email"><img src="images/email.png"/></a>    
             <a class="addthis_button_facebook"><img src="images/facebook.png"/></a>
             <a class="addthis_button_twitter"><img src="images/twitter-2.png"/></a>
-            <a class="addthis_button_google_plusone" g:plusone:size="standard" g:plusone:annotation="none">!?</a>
+            <a style="position: relative; top: 4px; left: 2px" class="addthis_button_google_plusone" g:plusone:size="standard" g:plusone:annotation="none"></a>
         </div>
         <!-- AddThis Button END -->
 
@@ -49,7 +49,7 @@ $page->openPage();
 </div>
 </div>
 
-<div id="map_wrapper">
+<div id="map_wrapper" style="z-index: 1000">
     <div id="link_box" style="background-color: #f5f5f5; display: none; position: absolute; z-index: 20; right: 0px; width: 300px; height: 50px; border: 1px solid #787878;">
         <div style="position: absolute; width: 15px; height: 15px; right: 2px; top: 2px; background-color: #ffffff; text-align: center;"><a id="link_close">X</a></div>
         <div style="margin: 13px;">Link: <input id="link_field" type="text" style="width: 220px;" value="" /></div>
@@ -153,5 +153,8 @@ $('.social').hover(
 );
 
 </script>
+
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4eb8496858e19dd4"></script>
+
 </body>
 </html>

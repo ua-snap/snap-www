@@ -11,6 +11,26 @@ $page->pageHeader();
 <div id="main_body">
 <div id="main_content" class="releases methods text">
 <h2>SNAP web site release notes</h2>
+
+<h3>1.0.11</h3>
+<h4>Released June 6, 2012 at 5:00pm AKDT</h4>
+<p>This release adds more links to data, as well as updating graphics and text content on different areas of the site.</p>
+<h5>New functionality/features</h5>
+
+<ul>
+	<li><strong>New data available for download</strong>: CRU TS 3.0, PET data added to <a href="/data.php">data downloads</a> page. (#72)</li>
+	<li>A new <a href="/sustainability.php">SNAP Sustainability</a> page has been added. (#73)</li>
+	<li>Graphics and layout of <a href="/datamaps.php">Tools & Data</a> page has been refreshed. (#76)</li>
+	<li>Text has been updated and corrected on the <a href="/faq.php">FAQ</a>, <a href="/downscaling.php">downscaling</a> and <a href="/uncertainty.php">uncertainty</a> pages. (#60, #64)</li>
+	<li>Updated license text on the data downloads page and <a href="/terms.php">terms of use</a> pages. (#63)</li>
+</ul>
+
+<h5>Resolved issues</h5>
+<ul>
+	<li>Very large (4+ GB) ZIP files on the data downloads page have been split into smaller files to allow for some operating systems (Windows XP 32-bit) to decompress the files. (#66)</li>
+	<li>&lsquo;Share&rsquo; buttons now work correctly on the map tool. (#53)</li>
+</ul>
+
 <h3>1.0.10</h3>
 <h4>Released April 25, 2012 at 5:00pm AKDT</h4>
 <p>This minor update added text to our Data page about the license used for SNAP data and information. (#50)</p>
