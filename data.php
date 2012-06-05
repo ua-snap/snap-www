@@ -100,7 +100,7 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 <a href="/files/data/monthly/tas_AK_771m_5modelAvg_sresa1b_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
 <a href="/files/data/monthly/tas_AK_771m_5modelAvg_sresa1b_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
 <td><a href="/files/data/monthly/tas_AK_771m_5modelAvg_sresa2_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
-<a href="/files/data/monthly/tas_AK_771m_5modelAvg_sresa2_2050_2100.zip">2050&ndash;2100</a> (2.5 GB)</td>
+<a href="/files/data/monthly/tas_AK_771m_5modelAvg_sresa2_2050_2099.zip">2050&ndash;2099</a> (2.5 GB)</td>
 </tr>
 
 <tr>
@@ -155,7 +155,7 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 <a href="/files/data/monthly/tas_AK_771m_ukmo_hadcm3_sresa1b_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
 <a href="/files/data/monthly/tas_AK_771m_ukmo_hadcm3_sresa1b_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
 <td><a href="/files/data/monthly/tas_AK_771m_ukmo_hadcm3_sresa2_2001_2049.zip">2001&ndash;2049</a> (2.5 GB)<br/>
-<a href="/files/data/monthly/tas_AK_771m_ukmo_hadcm3_sresa2_2050_2100.zip">2050&ndash;2100</a> (2.6 GB)</td>
+<a href="/files/data/monthly/tas_AK_771m_ukmo_hadcm3_sresa2_2050_2099.zip">2050&ndash;2099</a> (2.6 GB)</td>
 </tr>
 
 
@@ -189,7 +189,7 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 <a href="/files/data/monthly/pr_AK_771m_5modelAvg_sresa1b_2001_2049.zip">2001&ndash;2049</a> (2.1 GB)<br/>
 <a href="/files/data/monthly/pr_AK_771m_5modelAvg_sresa1b_2050_2100.zip">2050&ndash;2100</a> (2.3 GB)</td>
 <td><a href="/files/data/monthly/pr_AK_771m_5modelAvg_sresa2_2001_2049.zip">2001&ndash;2049</a> (2.1 GB)<br/>
-<a href="/files/data/monthly/pr_AK_771m_5modelAvg_sresa2_2050_2100.zip">2050&ndash;2100</a> (2.2 GB)</td>
+<a href="/files/data/monthly/pr_AK_771m_5modelAvg_sresa2_2050_2099.zip">2050&ndash;2099</a> (2.2 GB)</td>
 </tr>
 
 <tr>
@@ -244,7 +244,7 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 <a href="/files/data/monthly/pr_AK_771m_ukmo_hadcm3_sresa1b_2001_2049.zip">2001&ndash;2049</a> (2.1 GB)<br/>
 <a href="/files/data/monthly/pr_AK_771m_ukmo_hadcm3_sresa1b_2050_2100.zip">2050&ndash;2100</a> (2.3 GB)</td>
 <td><a href="/files/data/monthly/pr_AK_771m_ukmo_hadcm3_sresa2_2001_2049.zip">2001&ndash;2049</a> (2.1 GB)<br/>
-<a href="/files/data/monthly/pr_AK_771m_ukmo_hadcm3_sresa2_2050_2100.zip">2050&ndash;2100</a> (2.3 GB)</td>
+<a href="/files/data/monthly/pr_AK_771m_ukmo_hadcm3_sresa2_2050_2099.zip">2050&ndash;2099</a> (2.3 GB)</td>
 </tr>
 
 
@@ -1179,27 +1179,27 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 
 <tr>
 <th scope="row">cccma_cgcm31</th>
-<td><a href="files/data/pet/pet_decadal_summaries_2km_cccma_cgcm3_1_sresa1b.zip">2001&ndash;2099</a> (188MB)</td>
+<td><a href="files/data/pet/pet_decadal_summaries_AK_2km_cccma_cgcm3_1_sresa1b.zip">2001&ndash;2099</a> (188MB)</td>
 </tr>
 
 <tr>
 <th scope="row">gfdl_cm2_1</th>
-<td><a href="files/data/pet/pet_decadal_summaries_2km_gfdl_cm2_1_sresa1b.zip">2001&ndash;2099</a> (187MB)</td>
+<td><a href="files/data/pet/pet_decadal_summaries_AK_2km_gfdl_cm2_1_sresa1b.zip">2001&ndash;2099</a> (187MB)</td>
 </tr>
 
 <tr>
 <th scope="row">miroc3_2_medres</th>
-<td><a href="files/data/pet/pet_decadal_summaries_2km_miroc3_2_medres_sresa1b.zip">2001&ndash;2099</a> (188MB)</td>
+<td><a href="files/data/pet/pet_decadal_summaries_AK_2km_miroc3_2_medres_sresa1b.zip">2001&ndash;2099</a> (188MB)</td>
 </tr>
 
 <tr>
 <th scope="row">mpi_echam5</th>
-<td><a href="files/data/pet/pet_decadal_summaries_2km_mpi_echam5_sresa1b.zip">2001&ndash;2099</a> (189MB)</td>
+<td><a href="files/data/pet/pet_decadal_summaries_AK_2km_mpi_echam5_sresa1b.zip">2001&ndash;2099</a> (189MB)</td>
 </tr>
 
 <tr>
 <th scope="row">ukmo_hadcm3</th>
-<td><a href="files/data/pet/pet_decadal_summaries_2km_ukmo_hadcm3_sresa1b.zip">2001&ndash;2099</a> (189MB)</td>
+<td><a href="files/data/pet/pet_decadal_summaries_AK_2km_ukmo_hadcm3_sresa1b.zip">2001&ndash;2099</a> (189MB)</td>
 </tr>
 
 
@@ -1251,15 +1251,15 @@ Historical (1901&ndash;2006) monthly average temperature and total precipitation
 <tr>
 <td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>45">Historical Monthly Average Temperature 771m CRUTS3.0/3.1</a></td>
 <td>
-<a href="/files/data/CRUTS3.0/tas_AK_771m_CRU_TS30_historical_1901_1949.zip">1901&mdash;1949</a> (2.5 GB)
-<a href="/files/data/CRUTS3.0/tas_AK_771m_CRU_TS30_historical_1950_2006.zip">1950&mdash;2006</a> (2.9 GB)
+<a href="/files/data/CRUTS3.0/tas_AK_771m_CRU_TS30_historical_1901_1949.zip">1901&ndash;1949</a> (2.5 GB)
+<a href="/files/data/CRUTS3.0/tas_AK_771m_CRU_TS30_historical_1950_2006.zip">1950&ndash;2006</a> (2.9 GB)
 </td>
 </tr>
 <tr>
 <td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>44">Historical Monthly Total Precipitation 771m CRUTS3.0/3.1</a></td>
 <td>
-<a href="/files/data/CRUTS/">1902&ndash;1949</a> (2.1 GB)
-<a href="/files/data/monthly/">1901&ndash;1949</a> (2.5 GB)
+<a href="/files/data/CRUTS3.0/pr_AK_771m_CRU_TS30_historical_1901_1949.zip">1901&ndash;1949</a> (2.1 GB)
+<a href="/files/data/CRUTS3.0/pr_AK_771m_CRU_TS30_historical_1950_2006.zip">1950&ndash;2006</a> (2.4 GB)
 </td>
 </tr>
 </tbody>
@@ -1297,13 +1297,15 @@ Historical (1901&ndash;2009) monthly average temperature and total precipitation
 <tr>
 <td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>45">Historical Monthly Average Temperature 771m CRUTS3.1</a></td>
 <td>
-<a href="/files/data/monthly/tas_AK_771m_CRU_TS31_historical.zip">tas_AK_771m_CRU_TS31_historical.zip</a> (5.5 GB)
+<a href="/files/data/monthly/tas_AK_771m_CRU_TS31_historical_1901_1949.zip">1901&ndash;1949</a> (2.5 GB)
+<a href="/files/data/monthly/tas_AK_771m_CRU_TS31_historical_1950_2009.zip">1950&ndash;2009</a> (3.0 GB)
 </td>
 </tr>
 <tr>
 <td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>44">Historical Monthly Total Precipitation 771m CRUTS3.1</a></td>
 <td>
-<a href="/files/data/monthly/pr_AK_771m_CRU_TS31_historical.zip">pr_AK_771m_CRU_TS31_historical.zip</a> (4.5 GB)
+<a href="/files/data/monthly/pr_AK_771m_CRU_TS31_historical_1901_1949.zip">1901&ndash;1949</a> (2.1 GB)
+<a href="/files/data/monthly/pr_AK_771m_CRU_TS31_historical_1950_2009.zip">1950&ndash;2009</a> (2.5 GB)
 </td>
 </tr>
 </tbody>
@@ -1338,7 +1340,7 @@ Historical (1910&ndash;1999) derived temperature products from CRU TS 3.0 climat
 
 <h5>All products</h5>
 <pre class="productDownloads">
-<a href="/files/data/derived/tas_decadal_summaries_AK_771m_CRU_TS30_historical.zip">tas_decadal_summaries_AK_771m_CRU_TS30_historical.zip</a> (593 MB)
+<a href="/files/data/CRUTS3.0/tas_decadal_summaries_AK_771m_CRU_TS30_historical.zip">tas_decadal_summaries_AK_771m_CRU_TS30_historical.zip</a> (593 MB)
 </pre>
 
 <h4>Day of freeze, thaw, length of growing season</h4>
@@ -1357,13 +1359,13 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 <tr>
 <td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>53">Historical Day of Freeze or Thaw 771m CRUTS3.0</a></td>
 <td>
-<a href="/files/data/derived/dof_dot_AK_771m_CRU_TS30_historical.zip">dof_dot_AK_771m_CRU_TS30_historical.zip</a> (52 MB)
+<a href="/files/data/CRUTS3.0/dof_dot_AK_771m_CRU_TS30_historical.zip">dof_dot_AK_771m_CRU_TS30_historical.zip</a> (52 MB)
 </td>
 </tr>
 <tr>
 <td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>55">Historical Length of Growing Season 771m CRUTS3.0</a></td>
 <td>
-<a href="/files/data/derived/logs_AK_771m_CRU_TS30_historical.zip">logs_AK_771m_CRU_TS30_historical.zip</a> (32 MB)
+<a href="/files/data/CRUTS3.0/logs_AK_771m_CRU_TS30_historical.zip">logs_AK_771m_CRU_TS30_historical.zip</a> (32 MB)
 </td>
 </tr>
 </tbody>
