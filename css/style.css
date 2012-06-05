@@ -897,9 +897,18 @@ a.project p {
 
 .sustainability img {
 	float: left;
-	margin: 0 1em 2em 0;
+	margin: 0 3em 2em 0;
+	max-width: 250px;
 }
 
-.sustainability h3 {
+.sustainability div {
 	clear: both;
+	margin: 3em 0 3em;
+}
+
+.sustainability h4 {
+	margin-top: 0;
+	font-size: 18px;
+	font-weight: bold;
+	color: #666;
 }
