@@ -24,7 +24,7 @@ $page->pageHeader();
 <a href="maps.php" class="toolPanel">
 <h3>Map Tool</h3>
 <img src="images/map-icon-multi2.png"/>
-<p>Visually browse and compare scenarios created from SNAP data using the interactive map tool.</p>
+<p>Visually browse and compare scenarios created from SNAP data using the interactive<br/> map tool.</p>
 </a>
 
 <a href="/charts.php" class="toolPanel">
