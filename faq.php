@@ -21,9 +21,9 @@ $page->pageHeader();
 <p>When the publication medium allows it, please include the SNAP logo and a link back to our home page.  Various versions of our logo can be obtained from our <a href="logos.php">logo page</a>.</p>
 <p>For publications, please cite SNAP this way:</p>
 <blockquote>
-Scenarios Network for Alaska and Arctic Planning (SNAP), University of Alaska, www.snap.uaf.edu, accessed [insert date here]
+Scenarios Network for Alaska and Arctic Planning, University of Alaska. [insert current year]. [insert specific webpage title]. Retrieved [insert date] from [insert URL]
 </blockquote>
-<p>
+<p style="margin-top: 3em">
 The following are concise suggestions to incorporate into various scientific publications being produced at SNAP or with SNAP data. These are meant as a starting point only, and can easily be modified to suit a particular publication.</p>
 <blockquote>
 	<h4>Model Selection</h4>
