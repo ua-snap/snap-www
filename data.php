@@ -1213,6 +1213,7 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 </div>
 </div>
 
+
 <div class="methods text">
 <h3>Historical Data</h3>
 </div>
@@ -1220,8 +1221,53 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 <div class="dataAccordionWrapper">
 <div class="dataAccordion">
 
+<h3><a href="#dataset=historical_monthly_temperature_and_precipitation_771m_CRUTS30">Historical Monthly Temperature and Precipitation - 771m CRU TS 3.0</a></h3>
+<div>
 
-<h3><a href="#dataset=historical_monthly_temperature_and_precipitation_771m">Historical Monthly Temperature and Precipitation - 771m</a></h3>
+<p>
+Historical (1901&ndash;2006) monthly average temperature and total precipitation from CRU TS 3.0 climate data, downscaled to 771m via the delta method.
+</p>
+
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>771m</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
+</tbody>
+</table>
+<img src="images/ak_extent.jpg" alt="" />
+
+<h4>Downloads</h4>
+
+<table class="downloadsTable">
+<thead>
+<tr>
+<th scope="col">Metadata</th>
+<th scope="col">Data</th>
+</tr>
+</thead>
+<body>
+<tr>
+<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>45">Historical Monthly Average Temperature 771m CRUTS3.0/3.1</a></td>
+<td>
+<a href="/files/data/CRUTS3.0/tas_AK_771m_CRU_TS30_historical_1901_1949.zip">1901&mdash;1949</a> (2.5 GB)
+<a href="/files/data/CRUTS3.0/tas_AK_771m_CRU_TS30_historical_1950_2006.zip">1950&mdash;2006</a> (2.9 GB)
+</td>
+</tr>
+<tr>
+<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>44">Historical Monthly Total Precipitation 771m CRUTS3.0/3.1</a></td>
+<td>
+<a href="/files/data/CRUTS/">1902&ndash;1949</a> (2.1 GB)
+<a href="/files/data/monthly/">1901&ndash;1949</a> (2.5 GB)
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<h3><a href="#dataset=historical_monthly_temperature_and_precipitation_771m">Historical Monthly Temperature and Precipitation - 771m CRU TS 3.1</a></h3>
 <div>
 
 <p>
@@ -1264,8 +1310,69 @@ Historical (1901&ndash;2009) monthly average temperature and total precipitation
 </table>
 </div>
 
+<h3><a href="#dataset=historical_derived_temperature_771m_CRUTS30">Historical Derived Temperature Products - 771m CRU TS 3.0</a></h3>
+<div>
 
-<h3><a href="#dataset=historical_derived_temperature_771m">Historical Derived Temperature Products - 771m</a></h3>
+<p>
+Historical (1910&ndash;1999) derived temperature products from CRU TS 3.0 climate data, downscaled to 771m via the delta method.
+</p>
+
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>771m</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Decadal</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
+</tbody>
+</table>
+<img src="images/ak_extent.jpg" alt="" />
+
+<h4>Decadal summaries by month, year, and season</h4>
+
+<h5>Metadata by product</h5>
+<ul>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>47">Historical Decadal Averages of Monthly Mean Temperatures 771m CRUTS3.0/3.1</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>49">Historical Decadal Averages of Annual Mean Temperatures 771m CRUTS3.0/3.1</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>51">Historical Decadal Averages of Seasonal Mean Temperatures 771m CRUTS3.0/3.1</a></li>
+</ul>
+
+<h5>All products</h5>
+<pre class="productDownloads">
+<a href="/files/data/derived/tas_decadal_summaries_AK_771m_CRU_TS30_historical.zip">tas_decadal_summaries_AK_771m_CRU_TS30_historical.zip</a> (593 MB)
+</pre>
+
+<h4>Day of freeze, thaw, length of growing season</h4>
+<p>
+Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a linear change in temperature between consecutive months. Mean monthly temperatures are used to represent daily temperature on the 15th day of each month. When consecutive monthly midpoints have opposite sign temperatures, the day of transition (freeze or thaw) is the day between them on which temperature crosses zero degrees C. The length of growing season (logs) refers to the number of days between the days of freeze and thaw. More detailed explanations are discussed in the metadata.
+</p>
+
+<table class="downloadsTable">
+<thead>
+<tr>
+<th scope="col">Metadata</th>
+<th scope="col">Data</th>
+</tr>
+</thead>
+<body>
+<tr>
+<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>53">Historical Day of Freeze or Thaw 771m CRUTS3.0</a></td>
+<td>
+<a href="/files/data/derived/dof_dot_AK_771m_CRU_TS30_historical.zip">dof_dot_AK_771m_CRU_TS30_historical.zip</a> (52 MB)
+</td>
+</tr>
+<tr>
+<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>55">Historical Length of Growing Season 771m CRUTS3.0</a></td>
+<td>
+<a href="/files/data/derived/logs_AK_771m_CRU_TS30_historical.zip">logs_AK_771m_CRU_TS30_historical.zip</a> (32 MB)
+</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+
+<h3><a href="#dataset=historical_derived_temperature_771m">Historical Derived Temperature Products - 771m CRU TS 3.1</a></h3>
 <div>
 
 
@@ -1331,9 +1438,42 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 
 </div>
 
-<h3><a href="#dataset=historical_derived_precipitation_771m">Historical Derived Precipitation Products - 771m</a></h3>
+<h3><a href="#dataset=historical_derived_precipitation_771m_CRUTS30">Historical Derived Precipitation Products - 771m CRU TS 3.0</a></h3>
 <div>
 
+
+<p>
+Historical (1910&ndash;1999) derived precipitation products from CRUTS 3.0 climate data, downscaled to 771m via the delta method.
+</p>
+
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>771m</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Decadal</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
+</tbody>
+</table>
+<img src="images/ak_extent.jpg" alt="" />
+
+
+<h4>Decadal summaries by month, year, and season</h4>
+
+<h5>Metadata by product</h5>
+<ul>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>57">Historical Decadal Averages of Monthly Total Precipitation 771m CRUTS3.0/3.1</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>59">Historical Decadal Averages of Annual Total Precipitation 771m CRUTS3.0/3.1</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>61">Historical Decadal Averages of Seasonal Total Precipitation 771m CRUTS3.0/3.1</a></li>
+</ul>
+
+<h5>All products</h5>
+<pre class="productDownloads">
+<a href="/files/data/CRUTS3.0/pr_decadal_summaries_AK_771m_CRU_TS30_historical.zip">pr_decadal_summaries_AK_771m_CRU_TS30_historical.zip</a> (593 MB)
+</pre>
+</div>
+
+<h3><a href="#dataset=historical_derived_precipitation_771m">Historical Derived Precipitation Products - 771m CRU TS 3.1</a></h3>
+<div>
 
 <p>
 Historical (1910-2009) derived precipitation products from CRU TS 3.1 climate data, downscaled to 2 km via the delta method.
@@ -1348,7 +1488,6 @@ Historical (1910-2009) derived precipitation products from CRU TS 3.1 climate da
 </tbody>
 </table>
 <img src="images/ak_extent.jpg" alt="" />
-
 
 <h4>Decadal summaries by month, year, and season</h4>
 
@@ -1369,7 +1508,54 @@ Historical (1910-2009) derived precipitation products from CRU TS 3.1 climate da
 </div>
 <br/>
 <div class="dataAccordion">
-<h3><a href="#dataset=historical_monthly_temperature_and_precipitation_2km">Historical Monthly Temperature and Precipitation - 2 km</a></h3>
+
+
+
+<h3><a href="#dataset=historical_monthly_temperature_and_precipitation_2km_CRUTS30">Historical Monthly Temperature and Precipitation - 2 km CRU TS 3.0</a></h3>
+<div>
+
+<p>
+Historical (1901-2009) monthly average temperature and total precipitation from CRU TS 3.0 climate data, downscaled to 2 km via the delta method.
+</p>
+
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990 PRISM</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>2 km</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
+</tbody>
+</table>
+<img src="images/akcanada_extent.png" alt="" />
+
+<table class="downloadsTable">
+<thead>
+<tr>
+<th scope="col">Metadata</th>
+<th scope="col">Data</th>
+</tr>
+</thead>
+<body>
+<tr>
+<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>28">Historical Monthly Average Temperature 2km CRUTS3.0/3.1</a></td>
+<td>
+<a href="/files/data/CRUTS3.0/tas_AK_CAN_2km_CRU_TS30_historical.zip">tas_AK_CAN_2km_CRU_TS30_historical.zip</a> (2.6 GB)
+</td>
+</tr>
+<tr>
+<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>31">Historical Monthly Total Precipitation 2km CRUTS3.0/3.1</a></td>
+<td>
+<a>
+<a href="/files/data/CRUTS3.0/pr_AK_CAN_2km_CRU_TS30_historical.zip">pr_AK_CAN_2km_CRU_TS30_historical.zip</a> (2.2 GB)
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<h3><a href="#dataset=historical_monthly_temperature_and_precipitation_2km">Historical Monthly Temperature and Precipitation - 2 km CRU TS 3.1</a></h3>
 <div>
 
 <p>
@@ -1411,13 +1597,74 @@ Historical (1901-2009) monthly average temperature and total precipitation from 
 </tbody>
 </table>
 
+</div>
 
+<h3><a href="#dataset=historical_derived_temperature_2km_CRUTS30">Historical Derived Temperature Products - 2 km CRU TS 3.0</a></h3>
+<div>
+
+<p>
+Historical (1910-2009) derived temperature products from CRU TS 3.0 climate data, downscaled to 2 km via the delta method.
+</p>
+
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990 PRISM</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>2 km</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Decadal</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
+</tbody>
+</table>
+<img src="images/akcanada_extent.png" alt="" />
+
+<h4>Decadal summaries by month, year, and season</h4>
+<h5>Metadata by product</h5>
+
+<ul>
+
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>46">Historical Decadal Averages of Monthly Mean Temperatures 2km CRUTS3.0/3.1</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>48">Historical Decadal Averages of Annual Mean Temperatures 2km CRUTS3.0/3.1</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>50">Historical Decadal Averages of Seasonal Mean Temperatures 2km CRUTS3.0/3.1</a></li>
+
+</ul>
+
+<h5>All products</h5>
+<pre class="productDownloads">
+<a href="/files/data/CRUTS3.0/tas_decadal_summaries_AK_CAN_2km_CRU_TS30_historical.zip">tas_decadal_summaries_AK_CAN_2km_CRU_TS30_historical.zip</a> (331 MB)
+</pre>
+
+<h4>Day of freeze, thaw, length of growing season</h4>
+<p>
+Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a linear change in temperature between consecutive months. Mean monthly temperatures are used to represent daily temperature on the 15th day of each month. When consecutive monthly midpoints have opposite sign temperatures, the day of transition (freeze or thaw) is the day between them on which temperature crosses zero degrees C. The length of growing season (logs) refers to the number of days between the days of freeze and thaw.  More detailed explanations are discussed in the metadata.
+</p>
+
+<table class="downloadsTable">
+<thead>
+<tr>
+<th scope="col">Metadata</th>
+<th scope="col">Data</th>
+</tr>
+</thead>
+<body>
+<tr>
+<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>52">Historical Day of Freeze or Thaw 2km CRUTS3.0/3.1</a></td>
+<td>
+<a href="/files/data/CRUTS3.0/dof_dot_AK_CAN_2km_CRU_TS30_historical.zip">dof_dot_AK_CAN_2km_CRU_TS30_historical.zip</a> (27 MB)
+</td>
+</tr>
+<tr>
+<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>54">Historical Length of Growing Season 2km CRUTS3.0/3.1</a></td>
+<td>
+<a href="/files/data/CRUTS3.0/logs_AK_CAN_2km_CRU_TS30_historical.zip">logs_AK_CAN_2km_CRU_TS30_historical.zip</a> (17 MB)
+</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 
-<h3><a href="#dataset=historical_derived_temperature_2km">Historical Derived Temperature Products - 2 km</a></h3>
-<div>
 
+<h3><a href="#dataset=historical_derived_temperature_2km">Historical Derived Temperature Products - 2 km CRU TS 3.1</a></h3>
+<div>
 
 <p>
 Historical (1910-2009) derived temperature products from CRU TS 3.1 climate data, downscaled to 2 km via the delta method.
@@ -1454,7 +1701,6 @@ Historical (1910-2009) derived temperature products from CRU TS 3.1 climate data
 Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a linear change in temperature between consecutive months. Mean monthly temperatures are used to represent daily temperature on the 15th day of each month. When consecutive monthly midpoints have opposite sign temperatures, the day of transition (freeze or thaw) is the day between them on which temperature crosses zero degrees C. The length of growing season (logs) refers to the number of days between the days of freeze and thaw.  More detailed explanations are discussed in the metadata.
 </p>
 
-
 <table class="downloadsTable">
 <thead>
 <tr>
@@ -1480,7 +1726,40 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 
 </div>
 
-<h3><a href="#dataset=historical_derived_precipitation_2km">Historical Derived Precipitation Products - 2 km</a></h3>
+<h3><a href="#dataset=historical_derived_precipitation_2km_CRUTS30">Historical Derived Precipitation Products - 2 km CRU TS 3.0</a></h3>
+<div>
+
+<p>
+Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.0 climate data, downscaled to 2 km via the delta method.
+</p>
+
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990 PRISM</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>2 km</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Decadal</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
+</tbody>
+</table>
+<img src="images/akcanada_extent.png" alt="" />
+
+<h4>Decadal summaries by month, year, and season</h4>
+<h5>Metadata by product</h5>
+
+<ul>
+
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>56">Historical Decadal Averages of Monthly Total Precipitation 2km CRUTS3.0/3.1</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>58">Historical Decadal Averages of Annual Total Precipitation 2km CRUTS3.0/3.1</a></li>
+<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>60">Historical Decadal Averages of Seasonal Total Precipitation 2km CRUTS3.0/3.1</a></li>
+
+</ul>
+
+<h5>All products</h5>
+<pre class="productDownloads">
+<a href="/files/data/CRUTS3.0/pr_decadal_summaries_AK_CAN_2km_CRU_TS30_historical.zip">pr_decadal_summaries_AK_CAN_2km_CRU_TS30_historical.zip</a> (312 MB)
+</div>
+
+<h3><a href="#dataset=historical_derived_precipitation_2km">Historical Derived Precipitation Products - 2 km CRU TS 3.1</a></h3>
 <div>
 
 <p>
@@ -1496,7 +1775,6 @@ Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.1 clima
 </tbody>
 </table>
 <img src="images/akcanada_extent.png" alt="" />
-
 
 <h4>Decadal summaries by month, year, and season</h4>
 <h5>Metadata by product</h5>
@@ -1517,9 +1795,6 @@ Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.1 clima
 
 <br/>
 <div class="dataAccordion">
-
-
-
 
 
 <h3><a href="#dataset=historical_monthly_potential_evapotranspiration_2km">Historical Monthly Potential Evapotranspiration -  2km</a></h3>
