@@ -13,7 +13,7 @@ $page->pageHeader();
 <h2>SNAP web site release notes</h2>
 
 <h3>1.0.11</h3>
-<h4>Released June 6, 2012 at 5:00pm AKDT</h4>
+<h4>Released June 7, 2012 at 5:00pm AKDT</h4>
 <p>This release adds more links to data, as well as updating graphics and text content on different areas of the site.</p>
 <h5>New functionality/features</h5>
 
