@@ -763,7 +763,7 @@ function addMap() {
 	
 	window.snap.map = new google.maps.ImageMapType({
 		getTileUrl: function(tile, zoom) {
-			return tilepath + '&tile=' + tile.x + "+" + tile.y + "+" + zoom;
+			return tilepath + "/" + zoom + "/" + tile.x + "/" + tile.y + ".png";
 		},
 		tileSize: new google.maps.Size(256, 256),
 		opacity: 0.75
@@ -841,7 +841,7 @@ var resize = function() {
 };
 
 snap.mapUrls = {
-	'baseUrl' : 'http://tiles.snap.uaf.edu/cgi-bin/mapserv?map=mapfile.map&mode=tile&tilemode=gmap&layers=',
+	'baseUrl' : 'http://tiles.snap.uaf.edu/tilecache/tilecache.cgi/2.11.0/',
 	'urlSuffix' : '',
 
 	'precipitation' : {
