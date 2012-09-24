@@ -12,6 +12,10 @@ $page->pageHeader();
 <div id="main_content" class="releases methods text">
 <h2>SNAP web site release notes</h2>
 
+<h3>1.0.13</h3>
+<h4>Released September 24, 2012 at 4:00pm AKDT</h4>
+<p>This release updates the page template to include a link to the <a href="http://blog.snap.uaf.edu" rel="external">SNAP technical blog</a>.</p>
+
 <h3>1.0.12</h3>
 <h4>Released June 14, 2012 at 2:00pm AKDT</h4>
 <p>This minor release updates the Map Tool to use SNAP&rsquo;s internal installation of Mapserver.</p>
