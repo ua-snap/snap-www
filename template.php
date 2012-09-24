@@ -162,7 +162,7 @@ class webPage {
 
             </div>
         </div>
-        <div style="color: #999999; width: 975px; margin: auto; text-align: right; padding-top: 10px;" class="contactbar"><a href="/people.php#contact">contact</a></div>
+        <div style="color: #999999; width: 975px; margin: auto; text-align: right; padding-top: 10px;" class="contactbar"><a href="/people.php#contact">contact</a> | <a href="http://blog.snap.uaf.edu" rel="external">blog</a></div>
         <?php
     }
     public function pageFooter(){ ?>
@@ -205,6 +205,8 @@ class webPage {
                     <div><a href="/"><img src="/images/snap_acronym_rgb.png" height="53px" alt="SNAP Acronym Logo" /></a></div>
                     <div class="contactbar" style="text-align: right;">
                         <a href="/people.php#contact">contact</a>
+                        &nbsp;|&nbsp;
+                        <a href="http://blog.snap.uaf.edu" rel="external">blog</a>
                         &nbsp;|&nbsp;
                         <a href="/terms.php">terms of use</a>
                     </div>
