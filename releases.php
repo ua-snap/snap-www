@@ -13,7 +13,7 @@ $page->pageHeader();
 <h2>SNAP web site release notes</h2>
 
 <h3>1.0.13</h3>
-<h4>Released September 24, 2012 at 4:00pm AKDT</h4>
+<h4>Released September 24, 2012 at 5:00pm AKDT</h4>
 <p>This release updates the page template to include a link to the <a href="http://blog.snap.uaf.edu" rel="external">SNAP technical blog</a>.</p>
 
 <h3>1.0.12</h3>
