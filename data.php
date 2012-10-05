@@ -3,6 +3,23 @@ include("template.php");
 $page = new webPage("SNAP: Data", "", "data", 'Data');
 $page->openPage();
 $page->pageHeader();
+
+function getCruts31DataAlert() {
+	return <<<html
+
+<div class="ui-widget" style="margin: 1em 0;">
+	<div class="ui-state-highlight ui-corner-all" style="padding: 1ex;"> 
+		<p style="margin: 0; padding: 1ex;"> 
+		<span class="ui-icon ui-icon-info" style="float: left; margin-right: 1ex;"></span>
+		The Climatic Research Unit (CRU) has discovered a systematic error in their CRUTS v3.1 precipitation data.  The effect was, in some cases, to reduce the gridded values.  The downloads available in this section used CRUTS V3.1 as source data.  As of Oct 3, 2012, SNAP is currently investigating this to determine if it significantly influences our downscaled products.  If you have questions, please <a style="color: #06c" href="people.php?topic=data#contact">contact us</a>.
+		</p>
+	</div>
+</div>
+
+html;
+
+}
+
 ?>
         <div id="main_body">
             <div id="main_content">
@@ -1286,6 +1303,8 @@ Historical (1901&ndash;2009) monthly average temperature and total precipitation
 
 <h4>Downloads</h4>
 
+<?php echo getCruts31DataAlert(); ?>
+
 <table class="downloadsTable">
 <thead>
 <tr>
@@ -1394,6 +1413,8 @@ Historical (1910&ndash;2009) derived temperature products from CRU TS 3.1 climat
 
 <h4>Decadal summaries by month, year, and season</h4>
 
+<?php echo getCruts31DataAlert(); ?>
+
 <h5>Metadata by product</h5>
 <ul>
 <li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>47">Historical Decadal Averages of Monthly Mean Temperatures 771m CRUTS3.1</a></li>
@@ -1493,6 +1514,8 @@ Historical (1910-2009) derived precipitation products from CRU TS 3.1 climate da
 
 <h4>Decadal summaries by month, year, and season</h4>
 
+<?php echo getCruts31DataAlert(); ?>
+
 <h5>Metadata by product</h5>
 <ul>
 <li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>57">Historical Decadal Averages of Monthly Total Precipitation 771m CRUTS3.1</a></li>
@@ -1573,6 +1596,8 @@ Historical (1901-2009) monthly average temperature and total precipitation from 
 </tbody>
 </table>
 <img src="images/akcanada_extent.png" alt="" />
+
+<?php echo getCruts31DataAlert(); ?>
 
 <table class="downloadsTable">
 <thead>
@@ -1683,6 +1708,9 @@ Historical (1910-2009) derived temperature products from CRU TS 3.1 climate data
 <img src="images/akcanada_extent.png" alt="" />
 
 <h4>Decadal summaries by month, year, and season</h4>
+
+<?php echo getCruts31DataAlert(); ?>
+
 <h5>Metadata by product</h5>
 
 <ul>
@@ -1779,6 +1807,9 @@ Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.1 clima
 <img src="images/akcanada_extent.png" alt="" />
 
 <h4>Decadal summaries by month, year, and season</h4>
+
+<?php echo getCruts31DataAlert(); ?>
+
 <h5>Metadata by product</h5>
 
 <ul>
