@@ -78,7 +78,7 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 <div class="dataAccordionWrapper">
 
 <div class="dataAccordion">
-<h3><a href="#dataset=projected_monthly_temperature_and_precipitation_771m">Projected Monthly Temperature and Precipitation - 771m AR4</a></h3>
+<h3><a href="#dataset=projected_monthly_temperature_and_precipitation_771m">Projected Monthly Temperature and Precipitation - 771m CMIP3/AR4</a></h3>
 <div>
 <p>Projected (2001-2100: B1, A1B, and A2 scenarios) monthly average temperature and total precipitation from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771m via the delta method.  A 5-Model Average is also included.</p>
 <table class="overview">
@@ -271,7 +271,7 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 
 </div>
 
-<h3><a href="#dataset=projected_derived_temperature_771m">Projected Derived Temperature Products - 771m AR4</a></h3>
+<h3><a href="#dataset=projected_derived_temperature_771m">Projected Derived Temperature Products - 771m CMIP3/AR4</a></h3>
 <div>
 
 <p>
@@ -492,7 +492,7 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 
 </div>
 
-<h3><a href="#dataset=projected_derived_precipitation_771m">Projected Derived Precipitation Products - 771m AR4</a></h3>
+<h3><a href="#dataset=projected_derived_precipitation_771m">Projected Derived Precipitation Products - 771m CMIP3/AR4</a></h3>
 <div>
 
 <p>
@@ -586,7 +586,7 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 
 <br/>
 <div class="dataAccordion">
-<h3><a href="#dataset=projected_monthly_temperature_and_precipitation_2km">Projected Monthly Temperature and Precipitation - 2 km AR4</a></h3>
+<h3><a href="#dataset=projected_monthly_temperature_and_precipitation_2km">Projected Monthly Temperature and Precipitation - 2 km CMIP3/AR4</a></h3>
 <div>
 
 <p>
@@ -734,7 +734,7 @@ Projected (2001&ndash;2100: B1, A1B, and A2 scenarios) monthly temperature and p
 
 </div>
 
-<h3><a href="#dataset=projected_derived_temperature_2km">Projected Derived Temperature Products - 2 km AR4</a></h3>
+<h3><a href="#dataset=projected_derived_temperature_2km">Projected Derived Temperature Products - 2 km CMIP3/AR4</a></h3>
 <div>
 
 <p>
@@ -961,7 +961,7 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 </table>
 
 </div>
-<h3><a href="#dataset=projected_derived_precipitation_2km">Projected Derived Precipitation Products - 2 km AR4</a></h3>
+<h3><a href="#dataset=projected_derived_precipitation_2km">Projected Derived Precipitation Products - 2 km CMIP3/AR4</a></h3>
 <div>
 
 <p>
@@ -1057,7 +1057,7 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 <div class="dataAccordion">
 
 
-<h3><a href="#dataset=projected_monthly_potential_evapostranspiration_2km">Projected Monthly Potential Evapotranspiration -  2km AR4</a></h3>
+<h3><a href="#dataset=projected_monthly_potential_evapostranspiration_2km">Projected Monthly Potential Evapotranspiration -  2km CMIP3/AR4</a></h3>
 <div>
 	<p>Projected (2001-2099: A1B scenario) monthly total potential evapotranspiration from 5 AR4 GCMs that perform best across Alaska and the Arctic, utilizing 2km downscaled temperature as model inputs.
 </p>
@@ -1138,7 +1138,7 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 
 </div>
 
-<h3><a href="#dataset=projected_derived_potential_evapostranspiration_2km">Projected Derived Potential Evapotranspiration -  2km AR4</a></h3>
+<h3><a href="#dataset=projected_derived_potential_evapostranspiration_2km">Projected Derived Potential Evapotranspiration -  2km CMIP3/AR4</a></h3>
 <div>
 	<p>Projected (2001-2099: A1B scenario) monthly total potential evapotranspiration from 5 AR4 GCMs that perform best across Alaska and the Arctic, utilizing 2km downscaled temperature as model inputs.
 </p>
