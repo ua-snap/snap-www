@@ -287,3 +287,16 @@
 #printMapTitle {
 	display: none;
 }
+
+#link_box {
+	background-color: #fff;
+	padding: 1ex;
+display: none;
+position: absolute;
+z-index: 100;
+right: 10px;
+border: 1px solid #aaa;
+}
+#link_box a {
+	display: none;
+}
