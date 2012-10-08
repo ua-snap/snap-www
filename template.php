@@ -88,7 +88,8 @@ class webPage {
         <meta name="author" content="Tim Glaser" />
 
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
-        <link type="text/css" href="css/custom-theme/jquery-ui-1.8.17.custom.css" rel="Stylesheet" />  
+        <link type="text/css" href="css/custom-theme/jquery-ui-1.8.24.custom.css" rel="Stylesheet" />  
+        <link type="text/css" href="css/customize-jquery-ui.css" rel="Stylesheet" />  
     <?php 
 
         if (isset($this->stylesheet) && !empty($this->stylesheet)) { 
