@@ -635,8 +635,9 @@ td {
 }
 
 .dataAccordion img {
-	display: inline-block;
-	height: 75px;
+display: block;
+height: 75px;
+padding-left: 2em;
 }
 
 .dataAccordion h4 {
@@ -648,11 +649,7 @@ td {
 }
 
 .dataAccordion table.overview {
-	display: inline-block;
-}
-
-.dataAccordion table.overview {
-	
+	float: left;
 }
 
 .dataAccordionWrapper table th[scope="row"] {
@@ -665,7 +662,6 @@ td {
 	padding-right: 1em;
 	text-align: left;
 	font-weight: normal;
-
 }
 
 .dataAccordionWrapper table th[scope="col"] a {
