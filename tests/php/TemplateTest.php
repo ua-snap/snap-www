@@ -17,7 +17,9 @@ class TemplateTest extends PHPUnit_Framework_TestCase
     	$this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/charts.js')), $js,"include objects to manage charts");
     	$this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/exporting.src.js')), $js,"include exporter utility (modified, not minified)");
     	$this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/highcharts.js')), $js,"include highcharts");
-    	$this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/plugins.js')), $js,"include jquery Color plugin");
+            $this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/jquery.ba-bbq.min.js')), $js,"include jquery Color plugin");
+            $this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/jquery.scrollTo-min.js')), $js,"include jquery Color plugin");
+            $this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/jquery.url.js')), $js,"include jquery Color plugin");
 	}
 
     public function testSubmenu() {
