@@ -3,11 +3,11 @@
 // todo: move this (and other common reuse) up into a mixins file
 // Mix in ability to toggle disabled form fields with jQuery
 (function($) {
-    $.fn.toggleDisabled = function(){
-        return this.each(function(){
-            this.disabled = !this.disabled;
-        });
-    };
+	$.fn.toggleDisabled = function(){
+		return this.each(function(){
+			this.disabled = !this.disabled;
+		});
+	};
 })(jQuery);
 
 // Prepare some functionality when page has loaded
@@ -70,56 +70,56 @@ $( function() {
 			primary: 'ui-icon-print'
 		}
 	}).click(
-		function(e) {
-			$('#exportDialog').show().dialog({
+	function(e) {
+		$('#exportDialog').show().dialog({
+			draggable: false,
+			modal: true,
+			title: 'Export chart for '+snapCharts.data.communityName + ', '+snapCharts.data.communityRegion,
+			resizable: false,
+			show: 'fade',
+			hide: 'fade',
+			width: '700px',
+			zindex: 50000,
+			buttons: {
+				'Close': function(e) {
+					$(this).dialog('close');
+				}
+			}
+		});
+
+		$('#export_link').select();
+		$('#export_hires_png').button().click( function(e) {
+			$('#exportDialog').dialog('close');
+			$('#processingExportDialog').show().dialog({
 				draggable: false,
 				modal: true,
-				title: 'Export chart for '+snapCharts.data.communityName + ', '+snapCharts.data.communityRegion,
+				title: 'Processing image export&hellip;',
 				resizable: false,
 				show: 'fade',
 				hide: 'fade',
 				width: '700px',
 				zindex: 50000,
 				buttons: {
-					'Close': function(e) {
+					'OK': function(e) {
 						$(this).dialog('close');
 					}
 				}
 			});
+			snapCharts.exportChart('png/hires');
+		});
+		$('#export_lowres_png').button().click( function(e) {
+			snapCharts.exportChart('png/lowres');
+		});
+		$('#export_svg').button().click( function(e) {
+			snapCharts.exportChart('svg');
+		});
 
-			$('#export_link').select();
-			$('#export_hires_png').button().click( function(e) {
-				$('#exportDialog').dialog('close');
-				$('#processingExportDialog').show().dialog({
-					draggable: false,
-					modal: true,
-					title: 'Processing image export&hellip;',
-					resizable: false,
-					show: 'fade',
-					hide: 'fade',
-					width: '700px',
-					zindex: 50000,
-					buttons: {
-						'OK': function(e) {
-							$(this).dialog('close');
-						}
-					}
-				});
-				snapCharts.exportChart('png/hires');
-			});
-			$('#export_lowres_png').button().click( function(e) {
-				snapCharts.exportChart('png/lowres');
-			});
-			$('#export_svg').button().click( function(e) {
-				snapCharts.exportChart('svg');
-			});
-
-		}
+	}
 	);
 
-	snapCharts.initialize();
-	snapCharts.refreshState();
-	snapCharts.fetchData();
+snapCharts.initialize();
+snapCharts.refreshState();
+snapCharts.fetchData();
 
 });
 
@@ -143,20 +143,25 @@ snapCharts = {
 		subtitle: null
 	},
 
+	// Shorthand to manage rounding consistently
+	round: function(value) {
+		return parseFloat( value.toFixed(4) );
+	},
+
 	// Intended to be called on page ready() event
 	initialize : function() {
 
 		$('#comm_select').focus().autocomplete(
-			{
-				source: function(req, responseFn) {
-					var re = $.ui.autocomplete.escapeRegex(req.term);
-					var matcher = new RegExp( "^" + re, "i" );
-					var a = $.grep( snapCharts.communities, function(item,index){
-						return matcher.test(item.label);
-					});
-					responseFn( a );
-				}
+		{
+			source: function(req, responseFn) {
+				var re = $.ui.autocomplete.escapeRegex(req.term);
+				var matcher = new RegExp( "^" + re, "i" );
+				var a = $.grep( snapCharts.communities, function(item,index){
+					return matcher.test(item.label);
+				});
+				responseFn( a );
 			}
+		}
 		).bind('autocompletechange', function(event, ui) {
 			if( false === _.isUndefined(ui.item) ) {
 				$('#comm_select').val(ui.item.label);
@@ -276,7 +281,7 @@ snapCharts = {
 			false === _.isNull(snapCharts.data.community) &&
 			_.isNumber(snapCharts.data.dataset) &&
 			_.isString(snapCharts.data.scenario)
-		) {
+			) {
 
 			$.get(
 				"charts_fetch_data.php",
@@ -295,19 +300,13 @@ snapCharts = {
 					$('#comm_select').val(snapCharts.data.communityName + ', ' + snapCharts.data.communityRegion);
 					$('#comm_block').hide();
 					$('#chartTools').show();
-					$('#unit_buttons').buttonset();
-					$('#unit_buttons input[type="radio"]').change( function(e) {
-						snapCharts.data.units = $(e.currentTarget).val();
-						snapCharts.changeParams();
-					});
-
 					$('#export_link').val(location.href);
 					snapCharts.render();
 				},
 				'json'
-			);
+				);
 
-		} else {
+	} else {
 			// don't care.  this is the default case, i.e. no params chosen or present in the hashtags.
 		}
 	},
@@ -325,24 +324,26 @@ snapCharts = {
 
 		// Setup the data depending on if showing metric or standard units
 		// Default is standard units
-		snapCharts.sdUnitConversionMapper = function(sd) { return sd; };
-		snapCharts.unitConversionMapper = function(value) { return value; }; // null conversion
+		snapCharts.sdUnitConversionMapper = function(sd) { return snapCharts.round(sd); };
+		snapCharts.unitConversionMapper = function(value) { return snapCharts.round(value); }; // null conversion
 		
 		if( 'metric' === snapCharts.data.units ) {
 
 			if( 1 === snapCharts.data.dataset ) {
 
-				snapCharts.unitConversionMapper = function(value) { return ((value - 32) * (5 / 9)); };
-				snapCharts.sdUnitConversionMapper = function(sd) { return (sd * (5/9)); };
+				snapCharts.unitConversionMapper = function(value) {
+					return snapCharts.round((value - 32) * (5 / 9));
+				};
+				snapCharts.sdUnitConversionMapper = function(sd) { return snapCharts.round(sd * (5/9)); };
 				
 				snapCharts.unitName = '°C';
 				snapCharts.yAxisTitle = 'Temperature (' + snapCharts.unitName + ')';
-	
+
 			} else {
 				
 				// in to mm
-				snapCharts.unitConversionMapper = function(value) { return (value * 25.4); };
-				snapCharts.sdUnitConversionMapper = function(value) { return (value * 25.4); };
+				snapCharts.unitConversionMapper = function(value) { return snapCharts.round(value * 25.4); };
+				snapCharts.sdUnitConversionMapper = function(value) { return snapCharts.round(value * 25.4); };
 				snapCharts.unitName = 'mm';
 				snapCharts.yAxisTitle = 'Total Precipitation (' + snapCharts.unitName + ')';
 
@@ -357,7 +358,7 @@ snapCharts = {
 				snapCharts.unitName = 'in';
 				snapCharts.yAxisTitle = 'Total Precipitation (' + snapCharts.unitName + ')';
 			}
-	
+
 		}
 
 		// This array holds the actual data that will be shown on the chart, after being
@@ -423,18 +424,18 @@ snapCharts = {
 
 			// Add a horizontal line indicating freezing point
 			yAxis.plotBands = [
-				{
-					value: snapCharts.unitConversionMapper(32),
-					color: '#000',
-					width: 1,
-					label: {
-						text: snapCharts.unitConversionMapper(32) + '°',
-						align: 'right',
-						style: {
-							fontSize: '10px'
-						}
+			{
+				value: snapCharts.unitConversionMapper(32),
+				color: '#000',
+				width: 1,
+				label: {
+					text: snapCharts.unitConversionMapper(32) + '°',
+					align: 'right',
+					style: {
+						fontSize: '10px'
 					}
 				}
+			}
 			];
 
 		} else {
@@ -529,55 +530,55 @@ snapCharts = {
 			},
 			
 			series: [
-				{
-					name: '1961-1990',
-					data: snapCharts.unitConvertedData.series.Historical
-				},
-				{
-					name: '2010-2019',
-					data: snapCharts.unitConvertedData.series['2011-2020']
-				},
-				{
-					name: '2010-2019 Standard Deviations',
-					visible: false,
-					showInLegend: false,
-					data: snapCharts.unitConvertedData.standardDeviations['2011-2020']
-				},
-				{
-					name: '2040-2049',
-					data: snapCharts.unitConvertedData.series['2031-2040']
-				},
-				{
-					name: '2040-2049 Standard Deviations',
-					visible: false,
-					showInLegend: false,
-					data: snapCharts.unitConvertedData.standardDeviations['2041-2050']
-				},
-				{
-					name: '2060-2069',
-					data: snapCharts.unitConvertedData.series['2061-2070']
-				},
-				{
-					name: '2060-2069 Standard Deviations',
-					visible: false,
-					showInLegend: false,
-					data: snapCharts.unitConvertedData.standardDeviations['2061-2070']
-				},
-				{
-					name: '2090-2099',
-					data: snapCharts.unitConvertedData.series['2091-2100']
-				},
-				{
-					name: '2090-2099 Standard Deviations',
-					visible: false,
-					showInLegend: false,
-					data: snapCharts.unitConvertedData.standardDeviations['2091-2100']
-				}
+			{
+				name: '1961-1990',
+				data: snapCharts.unitConvertedData.series.Historical
+			},
+			{
+				name: '2010-2019',
+				data: snapCharts.unitConvertedData.series['2011-2020']
+			},
+			{
+				name: '2010-2019 Standard Deviations',
+				visible: false,
+				showInLegend: false,
+				data: snapCharts.unitConvertedData.standardDeviations['2011-2020']
+			},
+			{
+				name: '2040-2049',
+				data: snapCharts.unitConvertedData.series['2031-2040']
+			},
+			{
+				name: '2040-2049 Standard Deviations',
+				visible: false,
+				showInLegend: false,
+				data: snapCharts.unitConvertedData.standardDeviations['2041-2050']
+			},
+			{
+				name: '2060-2069',
+				data: snapCharts.unitConvertedData.series['2061-2070']
+			},
+			{
+				name: '2060-2069 Standard Deviations',
+				visible: false,
+				showInLegend: false,
+				data: snapCharts.unitConvertedData.standardDeviations['2061-2070']
+			},
+			{
+				name: '2090-2099',
+				data: snapCharts.unitConvertedData.series['2091-2100']
+			},
+			{
+				name: '2090-2099 Standard Deviations',
+				visible: false,
+				showInLegend: false,
+				data: snapCharts.unitConvertedData.standardDeviations['2091-2100']
+			}
 			]
 		},  function(chart) {
 			snapCharts.customChartsRenderer(chart);
-        });
-	}
+		});
+}
 };
 
 // This code is responsible for drawing the variability
@@ -596,49 +597,49 @@ snapCharts.customChartsRenderer = function(chart) {
 				// The magic constants 32, 5.75, and 100 here are related to absolute
 				// pixel sizes of the rendered bars.  (32 is confusing because it happens
 				// to be identical to part of the temperature conversions, but it's not).
-				var x = chart.series[i].data[j].plotX + 32 + i * 5.75;
-				var y = chart.series[i].data[j].plotY+100;
-				var y1 = chart.series[i].data[j].plotY+100 - chart.series[i+1].data[j].y * multiplier;
-				var y2 = chart.series[i].data[j].plotY+100 + chart.series[i+1].data[j].y * multiplier;
-				
-				var liney1 = chart.renderer.path(
-					['M', x, y, 'L', x, y, x, y1]
-				).attr(
-					{
-						strokeWidth: 1,
-						zIndex: 5,
-						stroke: 'Black'
-					}
-				).add();
+var x = chart.series[i].data[j].plotX + 32 + i * 5.75;
+var y = chart.series[i].data[j].plotY+100;
+var y1 = chart.series[i].data[j].plotY+100 - chart.series[i+1].data[j].y * multiplier;
+var y2 = chart.series[i].data[j].plotY+100 + chart.series[i+1].data[j].y * multiplier;
 
-				var linex1 = chart.renderer.path(
-					[ 'M', x, y1, 'L', x-2, y1, x+2, y1 ]
+var liney1 = chart.renderer.path(
+	['M', x, y, 'L', x, y, x, y1]
+	).attr(
+	{
+		strokeWidth: 1,
+		zIndex: 5,
+		stroke: 'Black'
+	}
+	).add();
+
+	var linex1 = chart.renderer.path(
+		[ 'M', x, y1, 'L', x-2, y1, x+2, y1 ]
+		).attr(
+		{
+			strokeWidth: 1,
+			zIndex: 5,
+			stroke: 'Black'
+		}
+		).add();
+
+		var liney2 = chart.renderer.path(
+			[ 'M', x, y, 'L', x, y, x, y2 ]
+			).attr(
+			{
+				strokeWidth: 1,
+				zIndex: 5,
+				stroke: 'Black'
+			}
+			).add();
+
+			var linex2 = chart.renderer.path(
+				[ 'M', x, y2, 'L', x-2, y2, x+2, y2]
 				).attr(
-					{
+				{
 					strokeWidth: 1,
 					zIndex: 5,
 					stroke: 'Black'
-					}
-				).add();
-
-				var liney2 = chart.renderer.path(
-					[ 'M', x, y, 'L', x, y, x, y2 ]
-				).attr(
-					{
-						strokeWidth: 1,
-						zIndex: 5,
-						stroke: 'Black'
-					}
-				).add();
-		
-				var linex2 = chart.renderer.path(
-					[ 'M', x, y2, 'L', x-2, y2, x+2, y2]
-				).attr(
-					{
-						strokeWidth: 1,
-						zIndex: 5,
-						stroke: 'Black'
-					}
+				}
 				).add();
 			}
 		}
