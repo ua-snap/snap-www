@@ -7,12 +7,14 @@ $page->pageHeader();
 function getCruts31DataAlert() {
 	return <<<html
 
-<div class="ui-widget" style="margin: 1em 0;">
-	<div class="ui-state-highlight ui-corner-all" style="padding: 1ex;"> 
+<div class="ui-widget cruts-31-data-alert" style="margin: 1em 0;">
+	<div class="ui-state-error ui-corner-all" style="padding: 1ex;"> 
 		<p style="margin: 0; padding: 1ex;"> 
-		<span class="ui-icon ui-icon-info" style="float: left; margin-right: 1ex;"></span>
-		The Climatic Research Unit (CRU) has discovered a systematic error in their CRUTS v3.1 precipitation data.  The effect was, in some cases, to reduce the gridded values.  The downloads available in this section used CRUTS V3.1 as source data.  As of Oct 3, 2012, SNAP is currently investigating this to determine if it significantly influences our downscaled products.  If you have questions, please <a style="color: #06c" href="people.php?topic=data#contact">contact us</a>.
-		</p>
+		<span class="ui-icon ui-icon-alert" style="float: left; margin-right: 1ex;"></span>
+		The Climatic Research Unit (CRU) has <a href="http://badc.nerc.ac.uk/view/badc.nerc.ac.uk__ATOM__dataent_1256223773328276">discovered a systematic error</a> in their CRUTS v3.1 precipitation data, and have addressed those errors with a new update (3.1.01).  Our <a href="/attachments/CRUcomparison.pdf">preliminary analysis</a> (PDF, 160KB) of the old and new product show generally small differences on average, but individual months have the potential to produce much larger differences.</p>
+
+<p>The downloads available in this section used CRUTS V3.1 as source data, and <strong>SNAP urges caution regarding the use of these downloads at this time</strong>.  SNAP is working on downscaling the updated CRUTS v3.1.01 data, and estimate that these files will be available December 15, 2012.  If you have questions, please <a style="color: #06c" href="people.php?topic=data#contact">contact us</a>.</p>
+
 	</div>
 </div>
 

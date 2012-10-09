@@ -912,3 +912,7 @@ a.project p {
 	font-weight: bold;
 	color: #666;
 }
+
+.cruts-31-data-alert p {
+	color: black !important;
+}
