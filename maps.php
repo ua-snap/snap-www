@@ -52,9 +52,10 @@ $page->openPage();
 <div id="map_wrapper">
 
     <div id="link_box">
-    <label for="link_field">Link:</label>
-    <input id="link_field" type="text" style="width: 220px;" value="" />
-    <button>Close</button>
+        <p>You can copy and paste this link to share your current view of this map.</p>
+        <label for="link_field">Link:</label>
+        <input id="link_field" type="text" style="width: 220px;" value="" />
+        <button>Close</button>
     </div>
 
 
@@ -134,10 +135,11 @@ $(document).ready(function() {
     $(window).resize(resize);
 
     $('#export_link').click( function() {
-        $('#link_field').val(window.location.href);
-        $('#link_box').fadeIn();
-        $('#link_field').focus().select();
+        $('#link_box').fadeIn(200, function() {
+            $('#link_field').val(window.location.href).focus().select();
+        });
         $('#link_box button').button().click(function() { $('#link_box').fadeOut(); });
+
     });
     
 });
