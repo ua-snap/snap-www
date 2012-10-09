@@ -13,7 +13,7 @@ function getCruts31DataAlert() {
 		<span class="ui-icon ui-icon-alert" style="float: left; margin-right: 1ex;"></span>
 		The Climatic Research Unit (CRU) has <a href="http://badc.nerc.ac.uk/view/badc.nerc.ac.uk__ATOM__dataent_1256223773328276">discovered a systematic error</a> in their CRUTS v3.1 precipitation data, and have addressed those errors with a new update (3.1.01).  Our <a href="/attachments/CRUcomparison.pdf">preliminary analysis</a> (PDF, 160KB) of the old and new product show generally small differences on average, but individual months have the potential to produce much larger differences.</p>
 
-<p>The downloads available in this section used CRUTS V3.1 as source data, and <strong>SNAP urges caution regarding the use of these downloads at this time</strong>.  SNAP is working on downscaling the updated CRUTS v3.1.01 data, and estimate that these files will be available December 15, 2012.  If you have questions, please <a style="color: #06c" href="people.php?topic=data#contact">contact us</a>.</p>
+<p>The downloads available in this section used CRUTS V3.1 as source data, and <strong>SNAP urges caution regarding the use of these downloads at this time</strong>.  SNAP is working on downscaling the updated CRUTS v3.1.01 data, and estimates that updated files will be available December 15, 2012.  If you have questions, please <a href="people.php?topic=data#contact">contact us</a>.</p>
 
 	</div>
 </div>
