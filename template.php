@@ -178,7 +178,8 @@ class webPage {
             <div id="footbar">
                 <div class="horiz_bar_left" style="color: #eeeeee; relative; font-size: 10px;">
                     <div style="position: absolute; margin-left: 20px; margin-top: 11px; text-align: left; ">
-                        <div id="twitter_update_list"></div>
+                        <ul id="twitter_update_list">
+                        </ul>
                     </div>
                 </div>
                 <div class="horiz_bar_right">

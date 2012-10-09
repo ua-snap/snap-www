@@ -209,8 +209,18 @@ a:hover {
 	margin: auto;
 	width: 975px;
 }
+
 #twitter_update_list {
+	margin: 0;
+	padding: 0;
 	list-style: none;
+}
+
+#twitter_update_list li {
+	display: block;
+	height: 13px;
+	width: 790px;
+	overflow: hidden;
 }
 
 #twitter_update_list li span a {
