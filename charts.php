@@ -26,28 +26,46 @@ $page->pageHeader();
                         </div>
                     </div>
 
-                    <p>Data Set</p>    
-                    <div id="variable_buttons" class="buttonset">
-                        <input type="radio" id="variable_temperature" name="dataset" value="1" checked="checked"/><label for="variable_temperature">Temperature</label>
-                        <input type="radio" id="variable_precipitation" name="dataset" value="2" /><label for="variable_precipitation">Precipitation</label>
+                    <div>
+
+                        <div class="inline-controls">
+                            <p>Data Set</p>
+                            <div id="variable_buttons" class="buttonset">
+                                <input type="radio" id="variable_temperature" name="dataset" value="1" checked="checked"/><label for="variable_temperature">Temperature</label>
+                                <input type="radio" id="variable_precipitation" name="dataset" value="2" /><label for="variable_precipitation">Precipitation</label>
+                            </div>
+                        </div>
+
+                        <div class="inline-controls inline-controls-right">
+                            <p>Units</p>
+                            <div id="unit_buttons" class="buttonset">
+                                <input type="radio" id="unit_standard" name="units" value="standard" checked="checked"/><label for="unit_standard">&deg;F</label>
+                                <input type="radio" id="unit_metric" name="units" value="metric" /><label for="unit_metric">&deg;C</label>
+                            </div>
+                        </div>
                     </div>
+
                     <p>Emissions Scenario</p>
                     <div id="scenario_buttons" class="buttonset">
                         <input type="radio" id="scenario_b1" name="scenario" value="b1"/><label for="scenario_b1">Low (B1)</label>
                         <input type="radio" id="scenario_a1b" name="scenario" value="a1b" checked="checked"/><label for="scenario_a1b">Medium (A1B)</label>
                         <input type="radio" id="scenario_a2" name="scenario" value="a2" /><label for="scenario_a2">High (A2)</label>
                     </div>
+
                     <div class="helpbuttons">
                         <button id="dataset_help">About scenarios&hellip;</button>
                     </div>
+
                     <p>Inter&ndash;Model Variability</p>
                     <div id="variability_buttons" class="buttonset">
                         <input type="radio" id="variability_off" name="variability" value="0" checked="checked"/><label for="variability_off">Off</label>
                         <input type="radio" id="variability_on" name="variability" value="1"/><label for="variability_on">On</label>
                     </div>
+
                     <div class="helpbuttons">
                         <button id="variability_help">About inter&ndash;model variability&hellip;</button>
-                    </div>                    
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -66,13 +84,7 @@ $page->pageHeader();
         <div style="border-top: 1px solid #eee; position: relative; margin-top: 1em; padding-top: 1em">
             
             <div id="chartTools" style="display: none;">
-
                 <button id="export_options" >Export</button>
-                <div id="unit_buttons" class="buttonset">
-                    <input type="radio" id="unit_standard" name="units" value="standard" checked="checked"/><label for="unit_standard">Temperature</label>
-                    <input type="radio" id="unit_metric" name="units" value="metric" /><label for="unit_metric">Precipitation</label>
-                </div>
-
             </div>
 
             <div id="chart_div"></div>
