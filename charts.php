@@ -64,8 +64,18 @@ $page->pageHeader();
         <div class="ui-helper-clearfix"></div>
 
         <div style="border-top: 1px solid #eee; position: relative; margin-top: 1em; padding-top: 1em">
-            <button id="export_options" style="display: none; position: absolute; top: 0right: 0;">Export</button>
-                <div id="chart_div"></div>
+            
+            <div id="chartTools" style="display: none;">
+
+                <button id="export_options" >Export</button>
+                <div id="unit_buttons" class="buttonset">
+                    <input type="radio" id="unit_standard" name="units" value="standard" checked="checked"/><label for="unit_standard">Temperature</label>
+                    <input type="radio" id="unit_metric" name="units" value="metric" /><label for="unit_metric">Precipitation</label>
+                </div>
+
+            </div>
+
+            <div id="chart_div"></div>
         </div>
         <div class="methods text">
 <h4>Interpreting the Community Charts</h4>

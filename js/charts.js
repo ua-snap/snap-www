@@ -115,7 +115,7 @@ $( function() {
 			});
 
 		}
-	).hide();
+	);
 
 	window.snapCharts.initialize();
 	window.snapCharts.refreshState();
@@ -225,10 +225,12 @@ window.snapCharts = {
 		window.snapCharts.data.scenario = params.scenario || 'a1b'; // default scenario a1b
 		window.snapCharts.data.variability = params.variability || 0; // default no variability
 		window.snapCharts.data.dataset = params.dataset || 1; // default temp
+		window.snapCharts.data.units = params.units || 'standard'; // default units
 
 		$('#variable_buttons input[value="' + window.snapCharts.data.dataset + '"]').prop('checked', 'checked').button('refresh');
 		$('#scenario_buttons input[value="' + window.snapCharts.data.scenario + '"]').prop('checked', 'checked').button('refresh');
 		$('#variability_buttons input[value="' + window.snapCharts.data.variability + '"]').prop('checked', 'checked').button('refresh');
+		$('#unit_buttons input[value="' + window.snapCharts.data.units + '"]').prop('checked', 'checked').button('refresh');
 
 		// Flash for the user if no community is selected, and lock out the
 		// controls for changing parameters.
@@ -290,7 +292,8 @@ window.snapCharts = {
 					$('#location').html(": " + snapCharts.data.communityName + ', ' + snapCharts.data.communityRegion);
 					$('#comm_select').val(snapCharts.data.communityName + ', ' + snapCharts.data.communityRegion);
 					$('#comm_block').hide();
-					$('#export_options').show();
+					$('#chartTools').show();
+					$('#unit_buttons').buttonset();
 					$('#export_link').val(window.location.href);
 				},
 				'json'
