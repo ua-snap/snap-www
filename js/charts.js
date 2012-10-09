@@ -252,6 +252,9 @@ window.snapCharts = {
 
 	// Should be called when values change that need to update the hashtag.
 	changeParams : function() {
+		
+		$.scrollTo('#chartsTitle', 400, { offset: -10, axis:'y' });
+
 		$.bbq.pushState({
 			community : snapCharts.data.community,
 			dataset: snapCharts.data.dataset,
@@ -299,7 +302,7 @@ window.snapCharts = {
 	},
 
 	drawChart: function() {
-		
+
 		if( _.isUndefined(snapCharts.data.series)) {
 			alert('Sorry, an error occurred, and the chart could not be loaded.');
 			window.location.assign(snapConfig.url);

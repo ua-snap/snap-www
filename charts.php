@@ -10,7 +10,7 @@ $page->pageHeader();
 ?>
 <div id="main_body">
 
-    <h1>Community Charts<span id="location"></span></h1>
+    <h1 id="chartsTitle">Community Charts<span id="location"></span></h1>
 
     <div>
         <div id="menu_chart_wrapper">
