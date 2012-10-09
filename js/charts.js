@@ -266,6 +266,7 @@ snapCharts = {
 			variability: snapCharts.data.variability,
 			units: snapCharts.data.units
 		});
+		
 	},
 
 	fetchData : function() {
@@ -287,19 +288,17 @@ snapCharts = {
 				},
 
 				function(data) {
+
 					snapCharts.data = data;
 					$('#placeholderImage').remove();
 					$('#location').html(": " + snapCharts.data.communityName + ', ' + snapCharts.data.communityRegion);
 					$('#comm_select').val(snapCharts.data.communityName + ', ' + snapCharts.data.communityRegion);
 					$('#comm_block').hide();
 					$('#chartTools').show();
-
 					$('#unit_buttons').buttonset();
-
 					$('#unit_buttons input[type="radio"]').change( function(e) {
 						snapCharts.data.units = $(e.currentTarget).val();
 						snapCharts.changeParams();
-						snapCharts.render();
 					});
 
 					$('#export_link').val(location.href);
@@ -315,7 +314,7 @@ snapCharts = {
 
 	// Manage steps in rendering the chart itself
 	render: function() {
-		snapCharts.refreshState();		
+		snapCharts.refreshState();
 		snapCharts.transformUnits();
 		snapCharts.drawChart();
 	},
@@ -325,26 +324,31 @@ snapCharts = {
 	transformUnits: function() {
 
 		// Setup the data depending on if showing metric or standard units
+		// Default is standard units
+		snapCharts.sdUnitConversionMapper = function(sd) { return sd; };
+		snapCharts.unitConversionMapper = function(value) { return value; }; // null conversion
+		
 		if( 'metric' === snapCharts.data.units ) {
 
 			if( 1 === snapCharts.data.dataset ) {
-				// F to C
-				snapCharts.unitConversionMapper = function(value) { return Math.round((value - 32) * (5 / 9) * 100) / 100; }
+
+				snapCharts.unitConversionMapper = function(value) { return ((value - 32) * (5 / 9)); };
+				snapCharts.sdUnitConversionMapper = function(sd) { return (sd * (5/9)); };
+				
 				snapCharts.unitName = '°C';
 				snapCharts.yAxisTitle = 'Temperature (' + snapCharts.unitName + ')';
 	
 			} else {
+				
 				// in to mm
-				snapCharts.unitConversionMapper = function(value) { return Math.round(value * 25.4 * 100) / 100; }
+				snapCharts.unitConversionMapper = function(value) { return (value * 25.4); };
+				snapCharts.sdUnitConversionMapper = function(value) { return (value * 25.4); };
 				snapCharts.unitName = 'mm';
 				snapCharts.yAxisTitle = 'Total Precipitation (' + snapCharts.unitName + ')';
 
 			}
 
 		} else {
-
-			// Default is standard units
-			snapCharts.unitConversionMapper = function(value) { return value; } // null conversion
 
 			if( 1 === snapCharts.data.dataset ) {
 				snapCharts.unitName = '°F';
@@ -358,15 +362,25 @@ snapCharts = {
 
 		// This array holds the actual data that will be shown on the chart, after being
 		// transformed from the source data into different units.
-		snapCharts.unitConvertedData = {};
+		snapCharts.unitConvertedData = {
+			series: {},
+			standardDeviations: {}
+		};
 
 		// Transform the units
 		_.each(snapCharts.data.series, function(e, i, l) {
-			snapCharts.unitConvertedData[i] = _.map(e, snapCharts.unitConversionMapper);
+			snapCharts.unitConvertedData.series[i] = _.map(e, snapCharts.unitConversionMapper);
 		});
 
+		_.each(snapCharts.data.standardDeviations, function(e, i, l) {
+			snapCharts.unitConvertedData.standardDeviations[i] = _.map(e, snapCharts.sdUnitConversionMapper);
+		});
+
+		snapCharts.unitConvertedData.minimum = snapCharts.unitConversionMapper(snapCharts.data.minimum);
+		snapCharts.unitConvertedData.maximum = snapCharts.unitConversionMapper(snapCharts.data.maximum);
+
 		// Update the GUI button unit names as appropriate
-		if(1 === snapCharts.data.dataset) {			
+		if(1 === snapCharts.data.dataset) {
 			$('#unit_standard').button('option', 'label', '°F');
 			$('#unit_metric').button('option', 'label', '°C');
 		} else {
@@ -403,6 +417,10 @@ snapCharts = {
 		// by updating the Highcharts global configuration object.
 		if(1 === snapCharts.data.dataset) {
 
+			Highcharts.setOptions({
+				colors: ['#999999', '#FECC5C', '#999999', '#FD8D3C', '#999999', '#F03B20', '#999999', '#BD0026', '#999999']
+			});
+
 			// Add a horizontal line indicating freezing point
 			yAxis.plotBands = [
 				{
@@ -418,21 +436,22 @@ snapCharts = {
 					}
 				}
 			];
-			
-			Highcharts.setOptions({
-				colors: ['#999999', '#FECC5C', '#999999', '#FD8D3C', '#999999', '#F03B20', '#999999', '#BD0026', '#999999'],
-				yAxis: yAxis
-			});
 
 		} else {
 
+			// Precipitation
 			Highcharts.setOptions({
-				colors: ['#999999', '#A1DAB4', '#999999', '#41B6C4', '#999999', '#2C7FB8', '#999999', '#253494', '#999999'],
-				yAxis: yAxis
+				colors: ['#999999', '#BAE4BC', '#999999', '#7BCCC4', '#999999', '#43A2CA', '#999999', '#0868AC', '#999999']
 			});
+
 		}
-		
+
+		// Invoke the chart, interpolating some per-variable configs from above as needed
 		snapCharts.chart = new Highcharts.Chart({
+			
+			'font-family': 'Lucida-Grande',
+
+			yAxis: yAxis, // defined above
 			
 			chart: {
 				height: 400,
@@ -512,47 +531,47 @@ snapCharts = {
 			series: [
 				{
 					name: '1961-1990',
-					data: snapCharts.unitConvertedData.Historical
+					data: snapCharts.unitConvertedData.series.Historical
 				},
 				{
 					name: '2010-2019',
-					data: snapCharts.unitConvertedData['2011-2020']
+					data: snapCharts.unitConvertedData.series['2011-2020']
 				},
 				{
 					name: '2010-2019 Standard Deviations',
 					visible: false,
 					showInLegend: false,
-					data: snapCharts.data.standardDeviations['2011-2020']
+					data: snapCharts.unitConvertedData.standardDeviations['2011-2020']
 				},
 				{
 					name: '2040-2049',
-					data: snapCharts.unitConvertedData['2031-2040']
+					data: snapCharts.unitConvertedData.series['2031-2040']
 				},
 				{
 					name: '2040-2049 Standard Deviations',
 					visible: false,
 					showInLegend: false,
-					data: snapCharts.data.standardDeviations['2041-2050']
+					data: snapCharts.unitConvertedData.standardDeviations['2041-2050']
 				},
 				{
 					name: '2060-2069',
-					data: snapCharts.unitConvertedData['2061-2070']
+					data: snapCharts.unitConvertedData.series['2061-2070']
 				},
 				{
 					name: '2060-2069 Standard Deviations',
 					visible: false,
 					showInLegend: false,
-					data: snapCharts.data.standardDeviations['2061-2070']
+					data: snapCharts.unitConvertedData.standardDeviations['2061-2070']
 				},
 				{
 					name: '2090-2099',
-					data: snapCharts.unitConvertedData['2091-2100']
+					data: snapCharts.unitConvertedData.series['2091-2100']
 				},
 				{
 					name: '2090-2099 Standard Deviations',
 					visible: false,
 					showInLegend: false,
-					data: snapCharts.data.standardDeviations['2091-2100']
+					data: snapCharts.unitConvertedData.standardDeviations['2091-2100']
 				}
 			]
 		},  function(chart) {
@@ -570,7 +589,7 @@ snapCharts.customChartsRenderer = function(chart) {
 
 		var extremes = chart.yAxis[0].getExtremes();
 		var multiplier = chart.plotHeight / (extremes.max - extremes.min);
-		
+
 		for( i = 1; i < chart.series.length; i += 2 ) {
 			for (j = 0; j < chart.series[i].data.length; j++) {
 

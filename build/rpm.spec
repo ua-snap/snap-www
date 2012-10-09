@@ -54,6 +54,7 @@ mkdir -p ${RPM_BUILD_ROOT}/usr/lib64/snapwww/src
 mkdir -p ${RPM_BUILD_ROOT}/usr/bin/snapwww/src
 mkdir -p ${RPM_BUILD_ROOT}/etc/php.d/
 mkdir -p ${RPM_BUILD_ROOT}/tmp
+mkdir -p ${RPM_BUILD_ROOT}/usr/share/fonts/
 
 touch ${RPM_BUILD_ROOT}/var/log/httpd/%{hostname}-error_log
 touch ${RPM_BUILD_ROOT}/var/log/httpd/%{hostname}-access_log
@@ -73,6 +74,7 @@ cp -R logos/* ${RPM_BUILD_ROOT}/%{inst_dir}/logos/
 cp -a build/snap.conf ${RPM_BUILD_ROOT}/etc/httpd/conf.d/
 cp -a build/snap.ini ${RPM_BUILD_ROOT}/etc/php.d/
 cp -a scripts/migrate.php ${RPM_BUILD_ROOT}/usr/bin/snapwww/
+cp -a build/LucidaGrande.ttf ${RPM_BUILD_ROOT}/usr/share/fonts/
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -96,6 +98,7 @@ rm -rf $RPM_BUILD_ROOT
 %ghost %attr(644,apache,apache) /var/log/httpd/%{hostname}-access_log
 %ghost %attr(644,jenkins,jenkins) /var/log/httpd/%{hostname}-update_log
 %attr(700,root,root) /usr/bin/snapwww/migrate.php
+%attr(755,root,root) /usr/share/fonts/LucidaGrande.ttf
 
 %post
 /usr/bin/snapwww/migrate.php up >> /var/log/httpd/%{hostname}-update_log 2>&1
