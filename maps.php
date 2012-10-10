@@ -114,10 +114,10 @@ $(document).ready(function() {
     google.maps.event.addDomListener(window, 'load', function(){
 
         init();
+        resize();          
         
         google.maps.event.addListenerOnce(map, 'idle', function(){
             addMap();
-            resize();          
 
             // When the user finishes dragging the map, update the lat/lon/zoom.  
             google.maps.event.addListener(map, 'idle', function(){
