@@ -42,8 +42,8 @@ $page->openPage();
 
 
 <div id="exportBlock">
-  <span><a href="#" onclick="window.print(); return false;">Print</a></span>
-  <span><a href="#" id="export_link">Link</a></span>
+  <span><a onclick="window.print(); return false;">Print</a></span>
+  <span><a id="export_link">Link</a></span>
 
 </div>
 </div>
@@ -101,32 +101,27 @@ $(document).ready(function() {
         $('.menuSpacer').removeClass('menuSpacerToggle');
     });
 
-    // detect hashchanges and reload the map
-    $(window).hashchange(function() {
-        buildMenus();
-        if( true === addMapIfNecessary() ) {
-           addMap();
-        }
-    });
+    // Merge URL-defined properties into the defaults.
+    snap.state = $.bbq.getState(undefined, true);
 
-    var currenthash = window.location.hash.substring(1).split("/");
-    window.snap.state.variable = currenthash[0] || window.snap.state.defaults.variable;
-    window.snap.state.interval = currenthash[1] || window.snap.state.defaults.interval;
-    window.snap.state.range = currenthash[2] || window.snap.state.defaults.range;
-    window.snap.state.scenario = currenthash[3] || window.snap.state.defaults.scenario;
-    var zoom = window.snap.state.zoom = parseInt(currenthash[4], 10) || window.snap.state.defaults.zoom;
-    var latitude = window.snap.state.latitude = parseFloat(currenthash[5], 10) || window.snap.state.defaults.latitude;
-    var longitude = window.snap.state.longitude = parseFloat(currenthash[6], 10) || window.snap.state.defaults.longitude;
+    // Coerce types so Google Maps can read the values, and
+    // set defaults as required.
+    snap.state.zoom = parseInt(snap.state.zoom) || snap.defaults.zoom;
+    snap.state.latitude = parseFloat(snap.state.latitude) || snap.defaults.latitude;
+    snap.state.longitude = parseFloat(snap.state.longitude) || snap.defaults.longitude;
+    snap.state = _.extend(snap.defaults, snap.state);
 
     google.maps.event.addDomListener(window, 'load', function(){
-        init(zoom, latitude, longitude);
+
+        init();
+        resize();          
+        
         google.maps.event.addListenerOnce(map, 'idle', function(){
-            if( true === addMapIfNecessary() ) {
-                addMap();
-            }
-            resize();            
+            addMap();
+
+            // When the user finishes dragging the map, update the lat/lon/zoom.  
             google.maps.event.addListener(map, 'idle', function(){
-                validateState();
+                writeHash();
             });
         });
     });
@@ -139,7 +134,6 @@ $(document).ready(function() {
             $('#link_field').val(window.location.href).focus().select();
         });
         $('#link_box button').button().click(function() { $('#link_box').fadeOut(); });
-
     });
     
 });
