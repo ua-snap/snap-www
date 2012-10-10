@@ -42,8 +42,8 @@ $page->openPage();
 
 
 <div id="exportBlock">
-  <span><a href="#" onclick="window.print(); return false;">Print</a></span>
-  <span><a href="#" id="export_link">Link</a></span>
+  <span><a onclick="window.print(); return false;">Print</a></span>
+  <span><a id="export_link">Link</a></span>
 
 </div>
 </div>
@@ -101,17 +101,27 @@ $(document).ready(function() {
         $('.menuSpacer').removeClass('menuSpacerToggle');
     });
 
-    // Merge URL-defined properties into the defaults
-    window.snap.state = $.bbq.getState();
-    _.extend(window.snap.state, window.snap.defaults);
+    // Merge URL-defined properties into the defaults.
+    snap.state = $.bbq.getState(undefined, true);
+
+    // Coerce types so Google Maps can read the values, and
+    // set defaults as required.
+    snap.state.zoom = parseInt(snap.state.zoom) || snap.defaults.zoom;
+    snap.state.latitude = parseFloat(snap.state.latitude) || snap.defaults.latitude;
+    snap.state.longitude = parseFloat(snap.state.longitude) || snap.defaults.longitude;
+    snap.state = _.extend(snap.defaults, snap.state);
 
     google.maps.event.addDomListener(window, 'load', function(){
+
         init();
+        
         google.maps.event.addListenerOnce(map, 'idle', function(){
             addMap();
-            resize();            
+            resize();          
+
+            // When the user finishes dragging the map, update the lat/lon/zoom.  
             google.maps.event.addListener(map, 'idle', function(){
-                $.bbq.pushState(snap.state);    
+                writeHash();
             });
         });
     });

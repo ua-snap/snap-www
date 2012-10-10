@@ -531,6 +531,11 @@ function buildMenus() {
 // Manage changes to application state here.
 function writeHash() {
 
+	// Update the lat/lon/zoom.
+	window.snap.state.zoom = map.getZoom();
+	window.snap.state.latitude = map.getCenter().lat();
+	window.snap.state.longitude = map.getCenter().lng();
+	
 	// Update the URL hash.
 	$.bbq.pushState(window.snap.state);
 
