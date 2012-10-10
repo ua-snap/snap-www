@@ -11,33 +11,16 @@ _.mixin({
 	}
 });
 
-// This will be immediately populated by the fragment of code in maps.php that fires after onReady and
-// checks for the hashtag values, and sets defaults.  Possible values are enumerated in the
-// menus.
-snap.state = {
-	interval: null,
-	range: null,
-	scenario: null,
-	variable: null,
-
-	// We'll use this as a way to check if we need to add a new map layer.
-	history: null,
-
-	// for google map:
+snap.defaults = {
+	interval: 'decadalAverages',
+	range: '2050-2059',
+	variable: 'temperature',
+	scenario: 'A1B',
 	zoom: 3,
-	latitude: null,
-	longitude: null,
-
-	defaults: {
-		interval: 'decadalAverages',
-		range: '2050-2059',
-		variable: 'temperature',
-		scenario: 'A1B',
-		zoom: 3,
-		latitude: 65,
-		longitude: -145
-	}
+	latitude: 65,
+	longitude: -145
 };
+
 
 snap.submenus = {
 	'intervals' : {
@@ -378,7 +361,9 @@ snap.menus = {
 };
 
 
-// el = a JQuery object
+// The intent of these 'renderers' is to build up a list of menus from a (possibly)
+// ragged list of suboptions.  This was ported from PHP to JS so that the native
+// GUI client runs faster, and to keep all the domain knowledge in one spot.
 snap.renderers = {
 
 	// for e and i definitions, see the _.each() loop that provides data.
@@ -538,32 +523,19 @@ function buildMenus() {
 		window.snap.renderers.standard($('#mapMenu'), source, e);
 	});
 
+	// Resize the map here?  Why?
+	// TODO BBQ
 	resize();
 }
 
-// Update address to reflect new hash
-// todo: replace with jqueryBBQ / History.js / Backbone
-// this is really an "update state" function.
+// Manage changes to application state here.
 function writeHash() {
 
-	var params = window.snap.state.variable
-	+ "/" + window.snap.state.interval
-	+ "/" + window.snap.state.range
-	+ "/" + window.snap.state.scenario;
+	// Update the URL hash.
+	$.bbq.pushState(window.snap.state);
 
-	window.location.hash = params
-	+ "/" + map.getZoom()
-	+ "/" + (map.getCenter()).lat()
-	+ "/" + (map.getCenter()).lng();
-
+	// Update link field
 	$('#link_field').val(window.location.href);
-
-	if(_.isNull(window.snap.state.history)) {
-		window.snap.state.history = [];
-	}
-
-	// add a token to see if the critical things are different.
-	window.snap.state.history.push(params);
 
 	// update the link to the metadata, if needed
 	var metadataId = false;
@@ -580,12 +552,13 @@ function writeHash() {
 		metadataId = false;
 	}
 
+	// Wire up the modal, if there is metadat to show with this model.
 	if(false === metadataId ) {
 		$('#metadataLink').hide();
 	} else {
 		$('#metadataLink')
 			.show()
-			.click( function(e) {
+			.on('click', function(e) {
 				$('#metadataModal')
 					.html('<iframe height="600px" width="100%" src="http://athena.snap.uaf.edu:8080/geonetwork/srv/en/metadata.show.embedded?id='+metadataId+'"></iframe>')
 					.dialog({
@@ -600,11 +573,12 @@ function writeHash() {
 	}
 }
 
+// Produce an HTML legend for display on the map.
 function drawLegend() {
 
 	try {
 
-// yuck, but, this maintains the 'keys' between the static data.
+		// yuck, but, this maintains the 'keys' between the static data.
 		var legendKey = window.snap.mapUrls[window.snap.state.variable].prefix;
 		if( false === _.isUndefined(window.snap.mapUrls[window.snap.state.variable][window.snap.state.interval]) ) {
 			legendKey += '_'
@@ -640,6 +614,7 @@ function drawLegend() {
 function validateState() {
 
 	switch( window.snap.state.variable ) {
+		
 		// these three data sets don't allow range, scenario, or interval choices
 		case 'observedDayOfThaw': // fallthru
 		case 'observedDayOfFreeze': // fallthru
@@ -697,34 +672,11 @@ function validateState() {
 	}
 }
 
-// If the user has only panned/zoomed around, no need to reload the map.
-// Otherwise, it means a parameter has changed which implies reloading a new layer.
-// This is called when the hashChange event fires.
-// returns true/false.
-function addMapIfNecessary() {
-
-	validateState();
-
-	var h = window.snap.state.history;
-	
-	if ( _.isNull( h )) {
-		return true;
-	}
-
-	var h1 = h.pop();
-	var h2 = h.pop();
-
-	if(h1 === h2) {
-		return false;
-	}
-
-	h.push(h1);
-	return true;
-
-}
-
 // Adds a new map layer overlay, based on current user settings
 function addMap() {
+
+	// Update URL with new map
+	$.bbq.pushState(snap.state);
 
 	var tilepath;
 	switch(window.snap.state.variable) {
@@ -799,7 +751,7 @@ function addMap() {
 * Called on the initial page load.
 * Sets up default map space, values, etc.
 */
-function init(zl, la, ln) {
+function init() {
 
 	map = new google.maps.Map(document.getElementById('map_canvas'), {
 
@@ -830,7 +782,6 @@ var resize = function() {
 	// +21px to get a bit of extra room below the footer.
 	// Because many items are floating, the DOM doesn't quite give us what we expect
 	// for the true wrapped height of the header.  todo/fix
-
 	var availableHeight = bodyHeight - (headerHeight + footerHeight + mapBarHeight + 30);
 	if (availableHeight > 0) {
 		$("#map_canvas").height(availableHeight);
