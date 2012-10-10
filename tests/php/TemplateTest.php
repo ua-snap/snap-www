@@ -10,7 +10,7 @@ class TemplateTest extends PHPUnit_Framework_TestCase
     	$t = new Template();
     	$js = $t->getHeadJavascript();
     	$this->assertTag(array('tag'=>'script','attributes' => array('data-comment'=>'Google Analytics')), $js, "include Google Analytics");
-    	$this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/jquery-1.7.1.min.js')), $js, "include minified JQuery");
+    	$this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/jquery-1.8.2.min.js')), $js, "include minified JQuery");
     	$this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/jquery.cycle.all.js')), $js, "include jquery.cycle plugin");
      	$this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/jquery.blockUI.js')), $js, "include jQuery plugin to block UI during loading");
     	$this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/jquery.hoverIntent.minified.js')), $js, "include jquery hoverIntent");
