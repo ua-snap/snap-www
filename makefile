@@ -24,8 +24,8 @@ javascript :
 --warning_level QUIET \
 --compilation_level WHITESPACE_ONLY \
 --js=./js/underscore-min.js \
---js=./js/jquery-1.7.1.min.js \
---js=./js/jquery-ui-1.8.17.custom.min.js \
+--js=./js/jquery-1.8.2.min.js \
+--js=./js/jquery-ui-1.8.24.custom.min.js \
 --js=./js/jquery.blockUI.js \
 --js=./js/jquery.hoverIntent.minified.js \
 --js=./js/jquery.cycle.all.js \

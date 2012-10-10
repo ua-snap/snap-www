@@ -6,7 +6,7 @@ require_once "src/Template.php";
 class TemplateTest extends PHPUnit_Framework_TestCase
 {
 
-	public function testHeadJavascript() { 
+    public function testHeadJavascript() { 
     	$t = new Template();
     	$js = $t->getHeadJavascript();
     	$this->assertTag(array('tag'=>'script','attributes' => array('data-comment'=>'Google Analytics')), $js, "include Google Analytics");
