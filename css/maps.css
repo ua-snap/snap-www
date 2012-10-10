@@ -109,6 +109,7 @@
 #legend_wrapper td {
 	min-width: 2em;
 	vertical-align: middle;
+	white-space: nowrap;
 }
 
 #legend_wrapper td + td {
