@@ -21,6 +21,7 @@ html;
 }
 
 ?>
+
         <div id="main_body">
             <div id="main_content">
             <div class="methods text">
@@ -78,7 +79,7 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 <div class="dataAccordionWrapper">
 
 <div class="dataAccordion">
-<h3><a href="#dataset=projected_monthly_temperature_and_precipitation_771m">Projected Monthly Temperature and Precipitation - 771m AR4</a></h3>
+<h3><a href="#dataset=projected_monthly_temperature_and_precipitation_771m">Projected Monthly Temperature and Precipitation - 771m CMIP3/AR4</a></h3>
 <div>
 <p>Projected (2001-2100: B1, A1B, and A2 scenarios) monthly average temperature and total precipitation from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771m via the delta method.  A 5-Model Average is also included.</p>
 <table class="overview">
@@ -92,7 +93,7 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 <img src="images/ak_extent.jpg" alt="" />
 
 <h4>Temperature</h4>
-<p><strong>Metadata: </strong><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>34">Projected Monthly Average Temperature 771m AR4</a></p>
+<p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="34">Projected Monthly Average Temperature 771m AR4</a></p>
 
 <table class="downloadsTable">
 <thead>
@@ -181,7 +182,7 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 
 
 <h4>Precipitation</h4>
-<p><strong>Metadata: </strong><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>35">Projected Monthly Total Precipitation 771m AR4</a></p>
+<p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="35">Projected Monthly Total Precipitation 771m AR4</a></p>
 
 <table class="downloadsTable">
 <thead>
@@ -271,7 +272,7 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 
 </div>
 
-<h3><a href="#dataset=projected_derived_temperature_771m">Projected Derived Temperature Products - 771m AR4</a></h3>
+<h3><a href="#dataset=projected_derived_temperature_771m">Projected Derived Temperature Products - 771m CMIP3/AR4</a></h3>
 <div>
 
 <p>
@@ -291,9 +292,9 @@ Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature produ
 
 <h5>Metadata by product</h5>
 <ul>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>39">Projected Decadal Averages of Monthly Mean Temperatures 771m AR4</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>41">Projected Decadal Averages of Annual Mean Temperatures 771m AR4</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>42">Projected Decadal Averages of Seasonal Mean Temperatures 771m AR4</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="39">Projected Decadal Averages of Monthly Mean Temperatures 771m AR4</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="41">Projected Decadal Averages of Annual Mean Temperatures 771m AR4</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="42">Projected Decadal Averages of Seasonal Mean Temperatures 771m AR4</a></li>
 </ul>
 <h5>All products by model and scenario</h5>
 
@@ -364,7 +365,7 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 </p>
 
 <h5>Date of Freeze, Thaw</h5>
-<p><strong>Metadata: </strong><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>38">Projected Day of Freeze or Thaw 771 AR4 </a></p>
+<p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="38">Projected Day of Freeze or Thaw 771 AR4 </a></p>
 
 <table class="downloadsTable">
 <thead>
@@ -427,7 +428,7 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 </table>
 
 <h5>Length of Growing Season</h5>
-<p><strong>Metadata:</strong> <a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>37">Projected Length of Growing Season 771 AR4</a></p>
+<p><strong>Metadata:</strong> <a href="#" class="metadataLink"  data-geonetwork-metadata-id="37">Projected Length of Growing Season 771 AR4</a></p>
 
 <table class="downloadsTable">
 <thead>
@@ -492,7 +493,7 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 
 </div>
 
-<h3><a href="#dataset=projected_derived_precipitation_771m">Projected Derived Precipitation Products - 771m AR4</a></h3>
+<h3><a href="#dataset=projected_derived_precipitation_771m">Projected Derived Precipitation Products - 771m CMIP3/AR4</a></h3>
 <div>
 
 <p>
@@ -513,9 +514,9 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 
 <h5>Metadata by product</h5>
 <ul>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>62">Projected Decadal Averages of Monthly Total Precipitation 771m AR4</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>43">Projected Decadal Averages of Annual Total Precipitation 771m AR4</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>36">Projected Decadal Averages of Seasonal Total Precipitation 771m AR4</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="62">Projected Decadal Averages of Monthly Total Precipitation 771m AR4</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="43">Projected Decadal Averages of Annual Total Precipitation 771m AR4</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="36">Projected Decadal Averages of Seasonal Total Precipitation 771m AR4</a></li>
 </ul>
 
 <h5>All products by model and scenario</h5>
@@ -586,7 +587,7 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 
 <br/>
 <div class="dataAccordion">
-<h3><a href="#dataset=projected_monthly_temperature_and_precipitation_2km">Projected Monthly Temperature and Precipitation - 2 km AR4</a></h3>
+<h3><a href="#dataset=projected_monthly_temperature_and_precipitation_2km">Projected Monthly Temperature and Precipitation - 2 km CMIP3/AR4</a></h3>
 <div>
 
 <p>
@@ -604,7 +605,7 @@ Projected (2001&ndash;2100: B1, A1B, and A2 scenarios) monthly temperature and p
 <img src="images/akcanada_extent.png" alt="" />
 
 <h4>Temperature</h4>
-<p><strong>Metadata: </strong><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>29">Projected Monthly Average Temperature 2 km AR4</a></p>
+<p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="29">Projected Monthly Average Temperature 2 km AR4</a></p>
 
 <table class="downloadsTable">
 <thead>
@@ -668,7 +669,7 @@ Projected (2001&ndash;2100: B1, A1B, and A2 scenarios) monthly temperature and p
 </table>
 
 <h4>Precipitation</h4>
-<p><strong>Metadata: </strong> <a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>32">Projected Monthly Total Precipitation 2 km AR4</a></p>
+<p><strong>Metadata: </strong> <a href="#" class="metadataLink"  data-geonetwork-metadata-id="32">Projected Monthly Total Precipitation 2 km AR4</a></p>
 
 <table class="downloadsTable">
 <thead>
@@ -734,7 +735,7 @@ Projected (2001&ndash;2100: B1, A1B, and A2 scenarios) monthly temperature and p
 
 </div>
 
-<h3><a href="#dataset=projected_derived_temperature_2km">Projected Derived Temperature Products - 2 km AR4</a></h3>
+<h3><a href="#dataset=projected_derived_temperature_2km">Projected Derived Temperature Products - 2 km CMIP3/AR4</a></h3>
 <div>
 
 <p>
@@ -756,13 +757,13 @@ Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature produ
 <h5>Metadata by product</h5>
 <ul>
 <li>
-<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>22">Projected Decadal Averages of Monthly Mean Temperatures 2km AR4</a>
+<a href="#" class="metadataLink"  data-geonetwork-metadata-id="22">Projected Decadal Averages of Monthly Mean Temperatures 2km AR4</a>
 </li>
 <li>
-<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>20">Projected Decadal Averages of Annual Mean Temperatures 2km AR4</a>
+<a href="#" class="metadataLink"  data-geonetwork-metadata-id="20">Projected Decadal Averages of Annual Mean Temperatures 2km AR4</a>
 </li>
 <li>
-<a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>24">Projected Decadal Averages of Seasonal Mean Temperatures 2km AR4</a>
+<a href="#" class="metadataLink"  data-geonetwork-metadata-id="24">Projected Decadal Averages of Seasonal Mean Temperatures 2km AR4</a>
 </li>
 </ul>
 
@@ -835,7 +836,7 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 
 <h5>Day of Freeze, Thaw</h5>
 
-<p><strong>Metadata: </strong><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>19">Projected Day of Freeze or Thaw 2km AR4</a></p>
+<p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="19">Projected Day of Freeze or Thaw 2km AR4</a></p>
 
 <table class="downloadsTable">
 <thead>
@@ -898,7 +899,7 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 </table>
 
 <h5>Length of Growing Season</h5>
-<p><strong>Metadata: </strong><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>26">Projected Length of Growing Season 2km AR4</a></p>
+<p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="26">Projected Length of Growing Season 2km AR4</a></p>
 
 <table class="downloadsTable">
 <thead>
@@ -961,7 +962,7 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 </table>
 
 </div>
-<h3><a href="#dataset=projected_derived_precipitation_2km">Projected Derived Precipitation Products - 2 km AR4</a></h3>
+<h3><a href="#dataset=projected_derived_precipitation_2km">Projected Derived Precipitation Products - 2 km CMIP3/AR4</a></h3>
 <div>
 
 <p>
@@ -982,9 +983,9 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 
 <h5>Metadata by product</h5>
 <ul>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>23">Projected Decadal Averages of Monthly Total Precipitation 2km AR4</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>21">Projected Decadal Averages of Annual Total Precipitation 2km AR4</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>25">Projected Decadal Averages of Seasonal Total Precipitation 2km AR4</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="23">Projected Decadal Averages of Monthly Total Precipitation 2km AR4</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="21">Projected Decadal Averages of Annual Total Precipitation 2km AR4</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="25">Projected Decadal Averages of Seasonal Total Precipitation 2km AR4</a></li>
 </ul>
 
 <h5>All products by model and scenario</h5>
@@ -1057,7 +1058,7 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 <div class="dataAccordion">
 
 
-<h3><a href="#dataset=projected_monthly_potential_evapostranspiration_2km">Projected Monthly Potential Evapotranspiration -  2km AR4</a></h3>
+<h3><a href="#dataset=projected_monthly_potential_evapostranspiration_2km">Projected Monthly Potential Evapotranspiration -  2km CMIP3/AR4</a></h3>
 <div>
 	<p>Projected (2001-2099: A1B scenario) monthly total potential evapotranspiration from 5 AR4 GCMs that perform best across Alaska and the Arctic, utilizing 2km downscaled temperature as model inputs.
 </p>
@@ -1089,7 +1090,7 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 
 <h4>Metadata by product</h4>
 
-<p><strong>Metadata:</strong> <a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>69">Projected Monthly Total Potential Evapotranspiration 2km AR4</a></p>
+<p><strong>Metadata:</strong> <a href="#" class="metadataLink"  data-geonetwork-metadata-id="69">Projected Monthly Total Potential Evapotranspiration 2km AR4</a></p>
 <p><strong>Equations used to derive data:</strong> <a href="attachments/Hamon_PET_equations.pdf">Hamon PET equations</a> (PDF, 597KB)</p>
 
 <h4>Data</h4>
@@ -1138,7 +1139,7 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 
 </div>
 
-<h3><a href="#dataset=projected_derived_potential_evapostranspiration_2km">Projected Derived Potential Evapotranspiration -  2km AR4</a></h3>
+<h3><a href="#dataset=projected_derived_potential_evapostranspiration_2km">Projected Derived Potential Evapotranspiration -  2km CMIP3/AR4</a></h3>
 <div>
 	<p>Projected (2001-2099: A1B scenario) monthly total potential evapotranspiration from 5 AR4 GCMs that perform best across Alaska and the Arctic, utilizing 2km downscaled temperature as model inputs.
 </p>
@@ -1172,9 +1173,9 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 <h5>Metadata by product</h5>
 
 <ul>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>73">Projected Decadal Averages of Monthly Total Potential Evapotranspiration 2km AR4</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>74">Projected Decadal Averages of Annual Total Potential Evapotranspiration 2km AR4</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>75">Projected Decadal Averages of Seasonal Total Potential Evapotranspiration 2km AR4</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="73">Projected Decadal Averages of Monthly Total Potential Evapotranspiration 2km AR4</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="74">Projected Decadal Averages of Annual Total Potential Evapotranspiration 2km AR4</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="75">Projected Decadal Averages of Seasonal Total Potential Evapotranspiration 2km AR4</a></li>
 </ul>
 
 <p><strong>Equations used to derive data:</strong> <a href="attachments/Hamon_PET_equations.pdf">Hamon PET equations</a> (PDF, 597KB)</p>
@@ -1266,14 +1267,14 @@ Historical (1901&ndash;2006) monthly average temperature and total precipitation
 </thead>
 <body>
 <tr>
-<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>45">Historical Monthly Average Temperature 771m CRUTS3.0/3.1</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="45">Historical Monthly Average Temperature 771m CRUTS3.0/3.1</a></td>
 <td>
 <a href="/files/data/CRUTS3.0/tas_AK_771m_CRU_TS30_historical_1901_1949.zip">1901&ndash;1949</a> (2.5 GB)
 <a href="/files/data/CRUTS3.0/tas_AK_771m_CRU_TS30_historical_1950_2006.zip">1950&ndash;2006</a> (2.9 GB)
 </td>
 </tr>
 <tr>
-<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>44">Historical Monthly Total Precipitation 771m CRUTS3.0/3.1</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="44">Historical Monthly Total Precipitation 771m CRUTS3.0/3.1</a></td>
 <td>
 <a href="/files/data/CRUTS3.0/pr_AK_771m_CRU_TS30_historical_1901_1949.zip">1901&ndash;1949</a> (2.1 GB)
 <a href="/files/data/CRUTS3.0/pr_AK_771m_CRU_TS30_historical_1950_2006.zip">1950&ndash;2006</a> (2.4 GB)
@@ -1314,14 +1315,14 @@ Historical (1901&ndash;2009) monthly average temperature and total precipitation
 </thead>
 <body>
 <tr>
-<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>45">Historical Monthly Average Temperature 771m CRUTS3.1</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="45">Historical Monthly Average Temperature 771m CRUTS3.1</a></td>
 <td>
 <a href="/files/data/monthly/tas_AK_771m_CRU_TS31_historical_1901_1949.zip">1901&ndash;1949</a> (2.5 GB)
 <a href="/files/data/monthly/tas_AK_771m_CRU_TS31_historical_1950_2009.zip">1950&ndash;2009</a> (3.0 GB)
 </td>
 </tr>
 <tr>
-<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>44">Historical Monthly Total Precipitation 771m CRUTS3.1</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="44">Historical Monthly Total Precipitation 771m CRUTS3.1</a></td>
 <td>
 <a href="/files/data/monthly/pr_AK_771m_CRU_TS31_historical_1901_1949.zip">1901&ndash;1949</a> (2.1 GB)
 <a href="/files/data/monthly/pr_AK_771m_CRU_TS31_historical_1950_2009.zip">1950&ndash;2009</a> (2.5 GB)
@@ -1352,9 +1353,9 @@ Historical (1910&ndash;1999) derived temperature products from CRU TS 3.0 climat
 
 <h5>Metadata by product</h5>
 <ul>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>47">Historical Decadal Averages of Monthly Mean Temperatures 771m CRUTS3.0/3.1</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>49">Historical Decadal Averages of Annual Mean Temperatures 771m CRUTS3.0/3.1</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>51">Historical Decadal Averages of Seasonal Mean Temperatures 771m CRUTS3.0/3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="47">Historical Decadal Averages of Monthly Mean Temperatures 771m CRUTS3.0/3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="49">Historical Decadal Averages of Annual Mean Temperatures 771m CRUTS3.0/3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="51">Historical Decadal Averages of Seasonal Mean Temperatures 771m CRUTS3.0/3.1</a></li>
 </ul>
 
 <h5>All products</h5>
@@ -1376,13 +1377,13 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 </thead>
 <body>
 <tr>
-<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>53">Historical Day of Freeze or Thaw 771m CRUTS3.0</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="53">Historical Day of Freeze or Thaw 771m CRUTS3.0</a></td>
 <td>
 <a href="/files/data/CRUTS3.0/dof_dot_AK_771m_CRU_TS30_historical.zip">dof_dot_AK_771m_CRU_TS30_historical.zip</a> (52 MB)
 </td>
 </tr>
 <tr>
-<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>55">Historical Length of Growing Season 771m CRUTS3.0</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="55">Historical Length of Growing Season 771m CRUTS3.0</a></td>
 <td>
 <a href="/files/data/CRUTS3.0/logs_AK_771m_CRU_TS30_historical.zip">logs_AK_771m_CRU_TS30_historical.zip</a> (32 MB)
 </td>
@@ -1417,9 +1418,9 @@ Historical (1910&ndash;2009) derived temperature products from CRU TS 3.1 climat
 
 <h5>Metadata by product</h5>
 <ul>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>47">Historical Decadal Averages of Monthly Mean Temperatures 771m CRUTS3.1</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>49">Historical Decadal Averages of Annual Mean Temperatures 771m CRUTS3.1</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>51">Historical Decadal Averages of Seasonal Mean Temperatures 771m CRUTS3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="47">Historical Decadal Averages of Monthly Mean Temperatures 771m CRUTS3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="49">Historical Decadal Averages of Annual Mean Temperatures 771m CRUTS3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="51">Historical Decadal Averages of Seasonal Mean Temperatures 771m CRUTS3.1</a></li>
 </ul>
 
 <h5>All products</h5>
@@ -1442,13 +1443,13 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 </thead>
 <body>
 <tr>
-<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>53">Historical Day of Freeze or Thaw 771m CRUTS3.1</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="53">Historical Day of Freeze or Thaw 771m CRUTS3.1</a></td>
 <td>
 <a href="/files/data/derived/dof_dot_AK_771m_CRU_TS31_historical.zip">dof_dot_AK_771m_CRU_TS31_historical.zip</a> (58 MB)
 </td>
 </tr>
 <tr>
-<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>55">Historical Length of Growing Season 771m CRUTS3.1</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="55">Historical Length of Growing Season 771m CRUTS3.1</a></td>
 <td>
 <a>
 <a href="/files/data/derived/logs_AK_771m_CRU_TS31_historical.zip">logs_AK_771m_CRU_TS31_historical.zip</a> (35 MB)
@@ -1484,9 +1485,9 @@ Historical (1910&ndash;1999) derived precipitation products from CRUTS 3.0 clima
 
 <h5>Metadata by product</h5>
 <ul>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>57">Historical Decadal Averages of Monthly Total Precipitation 771m CRUTS3.0/3.1</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>59">Historical Decadal Averages of Annual Total Precipitation 771m CRUTS3.0/3.1</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>61">Historical Decadal Averages of Seasonal Total Precipitation 771m CRUTS3.0/3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="57">Historical Decadal Averages of Monthly Total Precipitation 771m CRUTS3.0/3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="59">Historical Decadal Averages of Annual Total Precipitation 771m CRUTS3.0/3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="61">Historical Decadal Averages of Seasonal Total Precipitation 771m CRUTS3.0/3.1</a></li>
 </ul>
 
 <h5>All products</h5>
@@ -1518,9 +1519,9 @@ Historical (1910-2009) derived precipitation products from CRU TS 3.1 climate da
 
 <h5>Metadata by product</h5>
 <ul>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>57">Historical Decadal Averages of Monthly Total Precipitation 771m CRUTS3.1</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>59">Historical Decadal Averages of Annual Total Precipitation 771m CRUTS3.1</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>61">Historical Decadal Averages of Seasonal Total Precipitation 771m CRUTS3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="57">Historical Decadal Averages of Monthly Total Precipitation 771m CRUTS3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="59">Historical Decadal Averages of Annual Total Precipitation 771m CRUTS3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="61">Historical Decadal Averages of Seasonal Total Precipitation 771m CRUTS3.1</a></li>
 </ul>
 
 <h5>All products</h5>
@@ -1562,13 +1563,13 @@ Historical (1901-2009) monthly average temperature and total precipitation from 
 </thead>
 <body>
 <tr>
-<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>28">Historical Monthly Average Temperature 2km CRUTS3.0/3.1</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="28">Historical Monthly Average Temperature 2km CRUTS3.0/3.1</a></td>
 <td>
 <a href="/files/data/CRUTS3.0/tas_AK_CAN_2km_CRU_TS30_historical.zip">tas_AK_CAN_2km_CRU_TS30_historical.zip</a> (2.6 GB)
 </td>
 </tr>
 <tr>
-<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>31">Historical Monthly Total Precipitation 2km CRUTS3.0/3.1</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="31">Historical Monthly Total Precipitation 2km CRUTS3.0/3.1</a></td>
 <td>
 <a>
 <a href="/files/data/CRUTS3.0/pr_AK_CAN_2km_CRU_TS30_historical.zip">pr_AK_CAN_2km_CRU_TS30_historical.zip</a> (2.2 GB)
@@ -1608,13 +1609,13 @@ Historical (1901-2009) monthly average temperature and total precipitation from 
 </thead>
 <body>
 <tr>
-<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>28">Historical Monthly Average Temperature 2km CRUTS3.1</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="28">Historical Monthly Average Temperature 2km CRUTS3.1</a></td>
 <td>
 <a href="/files/data/monthly/tas_AK_CAN_2km_CRU_TS31_historical.zip">tas_AK_CAN_2km_CRU_TS31_historical.zip</a> (2.9 GB)
 </td>
 </tr>
 <tr>
-<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>31">Historical Monthly Total Precipitation 2km CRUTS3.1</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="31">Historical Monthly Total Precipitation 2km CRUTS3.1</a></td>
 <td>
 <a>
 <a href="/files/data/monthly/pr_AK_CAN_2km_CRU_TS31_historical.zip">pr_AK_CAN_2km_CRU_TS31_historical.zip</a> (2.5 GB)
@@ -1648,9 +1649,9 @@ Historical (1910-2009) derived temperature products from CRU TS 3.0 climate data
 
 <ul>
 
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>46">Historical Decadal Averages of Monthly Mean Temperatures 2km CRUTS3.0/3.1</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>48">Historical Decadal Averages of Annual Mean Temperatures 2km CRUTS3.0/3.1</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>50">Historical Decadal Averages of Seasonal Mean Temperatures 2km CRUTS3.0/3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="46">Historical Decadal Averages of Monthly Mean Temperatures 2km CRUTS3.0/3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="48">Historical Decadal Averages of Annual Mean Temperatures 2km CRUTS3.0/3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="50">Historical Decadal Averages of Seasonal Mean Temperatures 2km CRUTS3.0/3.1</a></li>
 
 </ul>
 
@@ -1673,13 +1674,13 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 </thead>
 <body>
 <tr>
-<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>52">Historical Day of Freeze or Thaw 2km CRUTS3.0/3.1</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="52">Historical Day of Freeze or Thaw 2km CRUTS3.0/3.1</a></td>
 <td>
 <a href="/files/data/CRUTS3.0/dof_dot_AK_CAN_2km_CRU_TS30_historical.zip">dof_dot_AK_CAN_2km_CRU_TS30_historical.zip</a> (27 MB)
 </td>
 </tr>
 <tr>
-<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>54">Historical Length of Growing Season 2km CRUTS3.0/3.1</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="54">Historical Length of Growing Season 2km CRUTS3.0/3.1</a></td>
 <td>
 <a href="/files/data/CRUTS3.0/logs_AK_CAN_2km_CRU_TS30_historical.zip">logs_AK_CAN_2km_CRU_TS30_historical.zip</a> (17 MB)
 </td>
@@ -1715,9 +1716,9 @@ Historical (1910-2009) derived temperature products from CRU TS 3.1 climate data
 
 <ul>
 
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>46">Historical Decadal Averages of Monthly Mean Temperatures 2km CRUTS3.1</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>48">Historical Decadal Averages of Annual Mean Temperatures 2km CRUTS3.1</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>50">Historical Decadal Averages of Seasonal Mean Temperatures 2km CRUTS3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="46">Historical Decadal Averages of Monthly Mean Temperatures 2km CRUTS3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="48">Historical Decadal Averages of Annual Mean Temperatures 2km CRUTS3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="50">Historical Decadal Averages of Seasonal Mean Temperatures 2km CRUTS3.1</a></li>
 
 </ul>
 
@@ -1740,13 +1741,13 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 </thead>
 <body>
 <tr>
-<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>52">Historical Day of Freeze or Thaw 2km CRUTS3.1</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="52">Historical Day of Freeze or Thaw 2km CRUTS3.1</a></td>
 <td>
 <a href="/files/data/derived/dof_dot_AK_CAN_2km_CRU_TS31_historical.zip">dof_dot_AK_CAN_2km_CRU_TS31_historical.zip</a> (30 MB)
 </td>
 </tr>
 <tr>
-<td><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>54">Historical Length of Growing Season 2km CRUTS3.1</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="54">Historical Length of Growing Season 2km CRUTS3.1</a></td>
 <td>
 <a href="/files/data/derived/logs_AK_CAN_2km_CRU_TS31_historical.zip">logs_AK_CAN_2km_CRU_TS31_historical.zip</a> (19 MB)
 </td>
@@ -1778,9 +1779,9 @@ Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.0 clima
 
 <ul>
 
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>56">Historical Decadal Averages of Monthly Total Precipitation 2km CRUTS3.0/3.1</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>58">Historical Decadal Averages of Annual Total Precipitation 2km CRUTS3.0/3.1</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>60">Historical Decadal Averages of Seasonal Total Precipitation 2km CRUTS3.0/3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="56">Historical Decadal Averages of Monthly Total Precipitation 2km CRUTS3.0/3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="58">Historical Decadal Averages of Annual Total Precipitation 2km CRUTS3.0/3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="60">Historical Decadal Averages of Seasonal Total Precipitation 2km CRUTS3.0/3.1</a></li>
 
 </ul>
 
@@ -1814,9 +1815,9 @@ Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.1 clima
 
 <ul>
 
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>56">Historical Decadal Averages of Monthly Total Precipitation 2km CRUTS3.1</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>58">Historical Decadal Averages of Annual Total Precipitation 2km CRUTS3.1</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>60">Historical Decadal Averages of Seasonal Total Precipitation 2km CRUTS3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="56">Historical Decadal Averages of Monthly Total Precipitation 2km CRUTS3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="58">Historical Decadal Averages of Annual Total Precipitation 2km CRUTS3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="60">Historical Decadal Averages of Seasonal Total Precipitation 2km CRUTS3.1</a></li>
 
 </ul>
 
@@ -1861,7 +1862,7 @@ Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.1 clima
 
 
 <h4>Metadata</h4>
-<p><strong>Metadata:</strong> <a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>67">Historical Monthly Total Potential Evapotranspiration 2km AR4</a></p>
+<p><strong>Metadata:</strong> <a href="#" class="metadataLink"  data-geonetwork-metadata-id="67">Historical Monthly Total Potential Evapotranspiration 2km AR4</a></p>
 <p><strong>Equations used to derive data:</strong> <a href="attachments/Hamon_PET_equations.pdf">Hamon PET equations</a> (PDF, 597KB)</p>
 
 <h4>Data</h4>
@@ -1902,9 +1903,9 @@ Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.1 clima
 
 <h4>Metadata by product</h4>
 <ul>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>70">Historical Decadal Averages of Monthly Total Potential Evapotranspiration 2km</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>71">Historical Decadal Averages of Annual Total Potential Evapotranspiration 2km</a></li>
-<li><a href="<?php echo Config::$geonetworkMetadataUrlBase; ?>72">Historical Decadal Averages of Seasonal Total Potential Evapotranspiration 2km</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="70">Historical Decadal Averages of Monthly Total Potential Evapotranspiration 2km</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="71">Historical Decadal Averages of Annual Total Potential Evapotranspiration 2km</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="72">Historical Decadal Averages of Seasonal Total Potential Evapotranspiration 2km</a></li>
 </ul>
 <p><strong>Equations used to derive data:</strong> <a href="attachments/Hamon_PET_equations.pdf">Hamon PET equations</a> (PDF, 597KB)</p>
 
@@ -1944,3 +1945,23 @@ $(function() {
 <?php
 $page->closePage();
 ?>
+
+<div id="metadataModal"></div>
+
+<script type="text/javascript">
+$('.metadataLink')
+			.click( function(e) {
+
+				$('#metadataModal')
+					.html('<iframe height="600px" width="100%" src="<?php echo Config::$geonetworkMetadataUrlBase; ?>'+$(e.target).data('geonetwork-metadata-id')+'"></iframe>')
+					.dialog({
+						draggable: false,
+						resizable: false,
+						title: 'Metadata',
+						minWidth: 800,
+						minHeight: 600,
+						modal: true
+					});
+				return false; // prevent page reload
+			});
+</script>

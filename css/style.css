@@ -209,8 +209,18 @@ a:hover {
 	margin: auto;
 	width: 975px;
 }
+
 #twitter_update_list {
+	margin: 0;
+	padding: 0;
 	list-style: none;
+}
+
+#twitter_update_list li {
+	display: block;
+	height: 13px;
+	width: 790px;
+	overflow: hidden;
 }
 
 #twitter_update_list li span a {
@@ -635,8 +645,9 @@ td {
 }
 
 .dataAccordion img {
-	display: inline-block;
-	height: 75px;
+display: block;
+height: 75px;
+padding-left: 2em;
 }
 
 .dataAccordion h4 {
@@ -648,11 +659,7 @@ td {
 }
 
 .dataAccordion table.overview {
-	display: inline-block;
-}
-
-.dataAccordion table.overview {
-	
+	float: left;
 }
 
 .dataAccordionWrapper table th[scope="row"] {
@@ -665,7 +672,6 @@ td {
 	padding-right: 1em;
 	text-align: left;
 	font-weight: normal;
-
 }
 
 .dataAccordionWrapper table th[scope="col"] a {

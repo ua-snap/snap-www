@@ -89,6 +89,7 @@ class webPage {
 
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
         <link type="text/css" href="css/custom-theme/jquery-ui-1.8.17.custom.css" rel="Stylesheet" />  
+        <link type="text/css" href="css/customize-jquery-ui.css" rel="Stylesheet" />  
     <?php 
 
         if (isset($this->stylesheet) && !empty($this->stylesheet)) { 
@@ -177,7 +178,8 @@ class webPage {
             <div id="footbar">
                 <div class="horiz_bar_left" style="color: #eeeeee; relative; font-size: 10px;">
                     <div style="position: absolute; margin-left: 20px; margin-top: 11px; text-align: left; ">
-                        <div id="twitter_update_list"></div>
+                        <ul id="twitter_update_list">
+                        </ul>
                     </div>
                 </div>
                 <div class="horiz_bar_right">

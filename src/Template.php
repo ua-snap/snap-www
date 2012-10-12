@@ -36,7 +36,7 @@ are used to determine the region to be replaced with a single script inclusion.
 If you add a file here, you must add it to the makefile for packaging.  See the README in the js/ directory.
 -->
 <script src="js/underscore-min.js" type="text/javascript" ></script>
-<script src="js/jquery-1.7.1.min.js" type="text/javascript" ></script>
+<script src="js/jquery-1.8.2.min.js" type="text/javascript" ></script>
 <script src="js/jquery.blockUI.js" type="text/javascript" ></script>
 <script src="js/jquery.hoverIntent.minified.js" type="text/javascript"></script>
 <script src="js/jquery.cycle.all.js" type="text/javascript"></script>
@@ -44,7 +44,7 @@ If you add a file here, you must add it to the makefile for packaging.  See the 
 <script src="js/plugins.js" type="text/javascript"></script>
 <script src="js/highcharts.js" type="text/javascript"></script>
 <script src="js/exporting.src.js" type="text/javascript"></script>
-<script src="js/jquery-ui-1.8.17.custom.min.js" type="text/javascript"></script>
+<script src="js/jquery-ui-1.8.24.custom.min.js" type="text/javascript"></script>
 <script src="js/jquery.ba-hashchange.min.js" type="text/javascript"></script>
 <script src="js/jquery.validate.min.js" type="text/javascript"></script>
 <script src="js/jquery.ba-bbq.min.js" type="text/javascript"></script>

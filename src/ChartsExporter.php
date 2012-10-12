@@ -100,7 +100,12 @@ class ChartsExporter {
 		
 		// Is the file already in the cache?
 		if( false === $this->fileExistsInCache()) {
-			$this->writeFileToCache();
+
+			// Generate it.
+			$result = $this->writeFileToCache();
+			if($result) {
+				throw new Exception('Err1: '.$result);
+			}
 		}
 
 	}
@@ -117,7 +122,9 @@ class ChartsExporter {
 			// If, for whatever reason, the md5'd SVG exists even though the file isn't in cache, reuse the SVG -- but
 			// if not, then write it out.
 			if( false === @file_exists($tempSvg)) {
-				file_put_contents($tempSvg, $this->svg);
+				if( !file_put_contents($tempSvg, $this->svg) ) {
+					throw new Exception('Err2: Failed to write temporary SVG');
+				}
 			}
 			
 			switch($this->type) {
@@ -131,7 +138,7 @@ class ChartsExporter {
 					break;
 
 				default:
-					throw new Exception('cannot determine type of image processing command to run');
+					throw new Exception('Err3: cannot determine type of image processing command to run');
 			}
 
 			$result = exec( $command );
@@ -142,17 +149,23 @@ class ChartsExporter {
 			
 		} catch (Exception $e) {
 			
-			// Cleanup
-			if(isset($this->handle) && is_resource($this->handle)) {
-				fclose($this->handle);
-			}
+			$error = '';
+			try {
+				// Cleanup
+				if(isset($this->handle) && is_resource($this->handle)) {
+					fclose($this->handle);
+				}
 
-			if(file_exists($tempSvg)) {
-				@unlink($tempSvg);
+				if(file_exists($tempSvg)) {
+					@unlink($tempSvg);
+				}
+
+			} catch (Exception $err) {
+				$error = 'Could not cleanup temp files.';
 			}
 
 			// bubble
-			throw $e;
+			throw new Exception('Err5: '.$error .'/'. $e->getMessage());
 		}
 	}
 

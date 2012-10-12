@@ -50,13 +50,15 @@ $page->openPage();
 </div>
 
 <div id="map_wrapper">
-    <div id="link_box" style="background-color: #f5f5f5; display: none; position: absolute; z-index: 20; right: 0px; width: 300px; height: 50px; border: 1px solid #787878;">
-        <div style="position: absolute; width: 15px; height: 15px; right: 2px; top: 2px; background-color: #ffffff; text-align: center;"><a id="link_close">X</a></div>
-        <div style="margin: 13px;">Link: <input id="link_field" type="text" style="width: 220px;" value="" /></div>
-        <script type="text/javascript">
-        $('#link_close').click( function() { $('#link_box').fadeOut(); });
-        </script>
+
+    <div id="link_box">
+        <p>You can copy and paste this link to share your current view of this map.</p>
+        <label for="link_field">Link:</label>
+        <input id="link_field" type="text" style="width: 220px;" value="" />
+        <button>Close</button>
     </div>
+
+
     <div id="map_canvas"></div>
     <div id="legend_wrapper">
         <div id="legend_background"></div>
@@ -133,9 +135,11 @@ $(document).ready(function() {
     $(window).resize(resize);
 
     $('#export_link').click( function() {
-        $('#link_field').val(window.location.href);
-        $('#link_box').fadeIn();
-        $('#link_field').focus().select();
+        $('#link_box').fadeIn(200, function() {
+            $('#link_field').val(window.location.href).focus().select();
+        });
+        $('#link_box button').button().click(function() { $('#link_box').fadeOut(); });
+
     });
     
 });
