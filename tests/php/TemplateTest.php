@@ -6,18 +6,20 @@ require_once "src/Template.php";
 class TemplateTest extends PHPUnit_Framework_TestCase
 {
 
-	public function testHeadJavascript() { 
+    public function testHeadJavascript() { 
     	$t = new Template();
     	$js = $t->getHeadJavascript();
     	$this->assertTag(array('tag'=>'script','attributes' => array('data-comment'=>'Google Analytics')), $js, "include Google Analytics");
-    	$this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/jquery-1.7.1.min.js')), $js, "include minified JQuery");
+    	$this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/jquery-1.8.2.min.js')), $js, "include minified JQuery");
     	$this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/jquery.cycle.all.js')), $js, "include jquery.cycle plugin");
      	$this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/jquery.blockUI.js')), $js, "include jQuery plugin to block UI during loading");
     	$this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/jquery.hoverIntent.minified.js')), $js, "include jquery hoverIntent");
     	$this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/charts.js')), $js,"include objects to manage charts");
     	$this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/exporting.src.js')), $js,"include exporter utility (modified, not minified)");
     	$this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/highcharts.js')), $js,"include highcharts");
-    	$this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/plugins.js')), $js,"include jquery Color plugin");
+            $this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/jquery.ba-bbq.min.js')), $js,"include jquery Color plugin");
+            $this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/jquery.scrollTo-min.js')), $js,"include jquery Color plugin");
+            $this->assertTag(array('tag'=>'script','attributes' => array('src'=>'js/jquery.url.js')), $js,"include jquery Color plugin");
 	}
 
     public function testSubmenu() {

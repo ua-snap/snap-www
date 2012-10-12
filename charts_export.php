@@ -25,7 +25,7 @@ try {
 	    readfile($file);
 
 	} else {
-		throw new Exception('File was not found: '.$file);
+		throw new Exception('Err6: File was not found: '.$file);
 	}
     
 } catch (SnapException $e) {
