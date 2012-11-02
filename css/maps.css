@@ -113,6 +113,7 @@
 
 #legend_wrapper td + td {
 	padding-left: 1ex;
+	white-space: nowrap;
 }
 
 #map_logo {
