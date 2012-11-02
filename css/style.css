@@ -210,6 +210,10 @@ a:hover {
 	width: 975px;
 }
 
+#footer .logos img {
+margin: 13px 0 0 0; padding: 0 0 0 10px;
+}
+
 #twitter_update_list {
 	margin: 0;
 	padding: 0;

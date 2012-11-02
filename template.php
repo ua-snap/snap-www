@@ -59,7 +59,7 @@ class webPage {
                     //If selected, arrow is displayed for current selection 
                     echo " href=\"".$menu_items[$i][1]."\" >".$menu_items[$i][0]."</a></div><div style=\"text-align: center; height: 22px; ";
                     if (("/".basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || "/".$this->menu == $x)){ 
-                        echo "background-image: url('/images/current_arrow.png'); background-position: center bottom; background-repeat: no-repeat;";
+                        echo "background-image: url('/images/current_arrow.png'); background-position: center bottom; backg.logos-repeat: no-repeat;";
                     }
                     echo "\" ></div>";
                 echo "</div>";
@@ -222,7 +222,17 @@ class webPage {
                     nlfresco@alaska.edu | tel 907.474.2405 | fax 907.474.7151
                 </p>
                 </div>
-                <div style="float: right;"><a href="http://www.uaf.edu"><img src="/images/UAFLogo_A_black_horiz.png" height="55px" style="margin: 13px 0 0 0; padding: 0" alt="UAF Logo" /></a></div>
+                <div class="logos" style="float: right;">
+                    
+                    <a href="http://www.iarc.uaf.edu/">
+                        <img src="/images/IARC_logo_notext_trans.jpg" alt="IARC Logo" />
+                    </a>
+
+                    <a href="http://www.uaf.edu">
+                        <img src="/images/UAFLogo.jpg" style="" alt="UAF Logo" />
+                    </a>
+
+                </div>
             </div>
             <div style="height: 50px;"></div>
         </div>
