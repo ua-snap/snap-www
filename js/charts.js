@@ -144,8 +144,8 @@ snapCharts = {
 	},
 
 	// Shorthand to manage rounding consistently
-	round: function(value) {
-		return parseFloat( value.toFixed(4) );
+	round: function(value, precision) {
+		return parseFloat( value.toFixed(precision) );
 	},
 
 	// Intended to be called on page ready() event
@@ -324,26 +324,23 @@ snapCharts = {
 
 		// Setup the data depending on if showing metric or standard units
 		// Default is standard units
-		snapCharts.sdUnitConversionMapper = function(sd) { return snapCharts.round(sd); };
-		snapCharts.unitConversionMapper = function(value) { return snapCharts.round(value); }; // null conversion
+		snapCharts.sdUnitConversionMapper = function(sd) { return snapCharts.round(sd, 2); }; // default 4 digits precision
+		snapCharts.unitConversionMapper = function(value) { return snapCharts.round(value, 2); }; // null conversion
 		
 		if( 'metric' === snapCharts.data.units ) {
 
 			if( 1 === snapCharts.data.dataset ) {
 
-				snapCharts.unitConversionMapper = function(value) {
-					return snapCharts.round((value - 32) * (5 / 9));
-				};
-				snapCharts.sdUnitConversionMapper = function(sd) { return snapCharts.round(sd * (5/9)); };
-				
+				snapCharts.unitConversionMapper = function(value) { return snapCharts.round((value - 32) * (5 / 9), 1); };
+				snapCharts.sdUnitConversionMapper = function(sd) { return snapCharts.round(sd * (5/9), 1); };
 				snapCharts.unitName = '°C';
 				snapCharts.yAxisTitle = 'Temperature (' + snapCharts.unitName + ')';
 
 			} else {
 				
 				// in to mm
-				snapCharts.unitConversionMapper = function(value) { return snapCharts.round(value * 25.4); };
-				snapCharts.sdUnitConversionMapper = function(value) { return snapCharts.round(value * 25.4); };
+				snapCharts.unitConversionMapper = function(value) { return snapCharts.round(value * 25.4, 0); };
+				snapCharts.sdUnitConversionMapper = function(value) { return snapCharts.round(value * 25.4, 0); };
 				snapCharts.unitName = 'mm';
 				snapCharts.yAxisTitle = 'Total Precipitation (' + snapCharts.unitName + ')';
 
