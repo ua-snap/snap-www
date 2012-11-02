@@ -3,19 +3,19 @@
 // todo: move this (and other common reuse) up into a mixins file
 // Mix in ability to toggle disabled form fields with jQuery
 (function($) {
-    $.fn.toggleDisabled = function(){
-        return this.each(function(){
-            this.disabled = !this.disabled;
-        });
-    };
+	$.fn.toggleDisabled = function(){
+		return this.each(function(){
+			this.disabled = !this.disabled;
+		});
+	};
 })(jQuery);
 
 // Prepare some functionality when page has loaded
 $( function() {
 	
 	$('#variable_selections input[type="radio"]').change( function(e) {
-		window.snapCharts.data[ $(e.currentTarget).attr('name') ] = $(e.currentTarget).val();
-		window.snapCharts.changeParams();
+		snapCharts.data[ $(e.currentTarget).attr('name') ] = $(e.currentTarget).val();
+		snapCharts.changeParams();
 	});
 
 	$('#dataset_help').button({
@@ -70,61 +70,61 @@ $( function() {
 			primary: 'ui-icon-print'
 		}
 	}).click(
-		function(e) {
-			$('#exportDialog').show().dialog({
+	function(e) {
+		$('#exportDialog').show().dialog({
+			draggable: false,
+			modal: true,
+			title: 'Export chart for '+snapCharts.data.communityName + ', '+snapCharts.data.communityRegion,
+			resizable: false,
+			show: 'fade',
+			hide: 'fade',
+			width: '700px',
+			zindex: 50000,
+			buttons: {
+				'Close': function(e) {
+					$(this).dialog('close');
+				}
+			}
+		});
+
+		$('#export_link').select();
+		$('#export_hires_png').button().click( function(e) {
+			$('#exportDialog').dialog('close');
+			$('#processingExportDialog').show().dialog({
 				draggable: false,
 				modal: true,
-				title: 'Export chart for '+window.snapCharts.data.communityName + ', '+window.snapCharts.data.communityRegion,
+				title: 'Processing image export&hellip;',
 				resizable: false,
 				show: 'fade',
 				hide: 'fade',
 				width: '700px',
 				zindex: 50000,
 				buttons: {
-					'Close': function(e) {
+					'OK': function(e) {
 						$(this).dialog('close');
 					}
 				}
 			});
+			snapCharts.exportChart('png/hires');
+		});
+		$('#export_lowres_png').button().click( function(e) {
+			snapCharts.exportChart('png/lowres');
+		});
+		$('#export_svg').button().click( function(e) {
+			snapCharts.exportChart('svg');
+		});
 
-			$('#export_link').select();
-			$('#export_hires_png').button().click( function(e) {
-				$('#exportDialog').dialog('close');
-				$('#processingExportDialog').show().dialog({
-					draggable: false,
-					modal: true,
-					title: 'Processing image export&hellip;',
-					resizable: false,
-					show: 'fade',
-					hide: 'fade',
-					width: '700px',
-					zindex: 50000,
-					buttons: {
-						'OK': function(e) {
-							$(this).dialog('close');
-						}
-					}
-				});
-				window.snapCharts.exportChart('png/hires');
-			});
-			$('#export_lowres_png').button().click( function(e) {
-				window.snapCharts.exportChart('png/lowres');
-			});
-			$('#export_svg').button().click( function(e) {
-				window.snapCharts.exportChart('svg');
-			});
+	}
+	);
 
-		}
-	).hide();
-
-	window.snapCharts.initialize();
-	window.snapCharts.refreshState();
-	window.snapCharts.fetchData();
+snapCharts.initialize();
+snapCharts.refreshState();
+snapCharts.fetchData();
 
 });
 
 // Encapsulate the AJAX functionality
-window.snapCharts = {
+snapCharts = {
 
 	chart: null, // is defined when the chart is drawn
 
@@ -143,44 +143,49 @@ window.snapCharts = {
 		subtitle: null
 	},
 
+	// Shorthand to manage rounding consistently
+	round: function(value) {
+		return parseFloat( value.toFixed(4) );
+	},
+
 	// Intended to be called on page ready() event
 	initialize : function() {
 
 		$('#comm_select').focus().autocomplete(
-			{
-				source: function(req, responseFn) {
-					var re = $.ui.autocomplete.escapeRegex(req.term);
-					var matcher = new RegExp( "^" + re, "i" );
-					var a = $.grep( window.snapCharts.communities, function(item,index){
-						return matcher.test(item.label);
-					});
-					responseFn( a );
-				}
+		{
+			source: function(req, responseFn) {
+				var re = $.ui.autocomplete.escapeRegex(req.term);
+				var matcher = new RegExp( "^" + re, "i" );
+				var a = $.grep( snapCharts.communities, function(item,index){
+					return matcher.test(item.label);
+				});
+				responseFn( a );
 			}
+		}
 		).bind('autocompletechange', function(event, ui) {
 			if( false === _.isUndefined(ui.item) ) {
 				$('#comm_select').val(ui.item.label);
 				$('#comm_select_id').val(ui.item.value);
-				window.snapCharts.data.community = ui.item.value;
+				snapCharts.data.community = ui.item.value;
 			}
 		}).bind('autocompletefocus', function(event, ui) {
 			if( false === _.isUndefined(ui.item) ) {
 				event.preventDefault();
 				$('#comm_select').val(ui.item.label);
 				$('#comm_select_id').val(ui.item.value);
-				window.snapCharts.data.community = ui.item.value;
+				snapCharts.data.community = ui.item.value;
 			}
 		}).bind('autocompleteselect', function(event, ui) {
 			event.preventDefault();
 			$('#comm_select').val(ui.item.label);
 			$('#comm_select_id').val(ui.item.value);
-			window.snapCharts.data.community = ui.item.value;
-			window.snapCharts.changeParams();
+			snapCharts.data.community = ui.item.value;
+			snapCharts.changeParams();
 		}).keypress(function(e) {
 			// if the enter key is pressed, try and search if there's a valid community id.
 			if( 13 === e.which ) {
-				if( false === _.isNull( window.snapCharts.data.community )) {
-					window.snapCharts.data.community = $('#comm_select_id').val();
+				if( false === _.isNull( snapCharts.data.community )) {
+					snapCharts.data.community = $('#comm_select_id').val();
 					snapCharts.changeParams();
 				}
 			}
@@ -207,8 +212,8 @@ window.snapCharts = {
 	// Prepare the chart for export.  The `type` parameter is expected to be a mime-type.
 	exportChart: function(type) {
 
-		window.snapCharts.refreshState();
-		window.snapCharts.chart.exportChart({
+		snapCharts.refreshState();
+		snapCharts.chart.exportChart({
 			type: type
 		});
 
@@ -221,26 +226,30 @@ window.snapCharts = {
 
 		var params = $.bbq.getState(true); // perform type coercion
 
-		window.snapCharts.data.community = params.community || null;
-		window.snapCharts.data.scenario = params.scenario || 'a1b'; // default scenario a1b
-		window.snapCharts.data.variability = params.variability || 0; // default no variability
-		window.snapCharts.data.dataset = params.dataset || 1; // default temp
+		snapCharts.data.community = params.community || null;
+		snapCharts.data.scenario = params.scenario || 'a1b'; // default scenario a1b
+		snapCharts.data.variability = params.variability || 0; // default no variability
+		snapCharts.data.dataset = params.dataset || 1; // default temp
+		snapCharts.data.units = params.units || 'standard'; // default units
 
-		$('#variable_buttons input[value="' + window.snapCharts.data.dataset + '"]').prop('checked', 'checked').button('refresh');
-		$('#scenario_buttons input[value="' + window.snapCharts.data.scenario + '"]').prop('checked', 'checked').button('refresh');
-		$('#variability_buttons input[value="' + window.snapCharts.data.variability + '"]').prop('checked', 'checked').button('refresh');
+		$('#variable_buttons input[value="' + snapCharts.data.dataset + '"]').prop('checked', 'checked').button('refresh');
+		$('#scenario_buttons input[value="' + snapCharts.data.scenario + '"]').prop('checked', 'checked').button('refresh');
+		$('#variability_buttons input[value="' + snapCharts.data.variability + '"]').prop('checked', 'checked').button('refresh');
+		$('#unit_buttons input[value="' + snapCharts.data.units + '"]').prop('checked', 'checked').button('refresh');
 
 		// Flash for the user if no community is selected, and lock out the
 		// controls for changing parameters.
-		if( null === window.snapCharts.data.community) {
+		if( null === snapCharts.data.community) {
 			$('#comm_select_wrapper').effect('highlight', {}, 3000);
 			$('#variable_buttons').buttonset('disable');
 			$('#scenario_buttons').buttonset('disable');
 			$('#variability_buttons').buttonset('disable');
+			$('#unit_buttons').buttonset('disable');
 			$('#dataset_help').button('disable');
 			$('#variability_help').button('disable');
 		} else {
 			// Ensure the controls are enabled if there is a community
+			$('#unit_buttons').buttonset('enable');
 			$('#variable_buttons').buttonset('enable');
 			$('#scenario_buttons').buttonset('enable');
 			$('#variability_buttons').buttonset('enable');
@@ -259,20 +268,20 @@ window.snapCharts = {
 			community : snapCharts.data.community,
 			dataset: snapCharts.data.dataset,
 			scenario : snapCharts.data.scenario,
-			variability: snapCharts.data.variability
+			variability: snapCharts.data.variability,
+			units: snapCharts.data.units
 		});
+		
 	},
 
 	fetchData : function() {
-
-		window.snapCharts.refreshState();
 
 		// Only fetch the data if there are meaningful parameters to send.  Otherwise, ignore.
 		if(
 			false === _.isNull(snapCharts.data.community) &&
 			_.isNumber(snapCharts.data.dataset) &&
 			_.isString(snapCharts.data.scenario)
-		) {
+			) {
 
 			$.get(
 				"charts_fetch_data.php",
@@ -284,37 +293,166 @@ window.snapCharts = {
 				},
 
 				function(data) {
+
 					snapCharts.data = data;
-					snapCharts.drawChart();
 					$('#placeholderImage').remove();
 					$('#location').html(": " + snapCharts.data.communityName + ', ' + snapCharts.data.communityRegion);
 					$('#comm_select').val(snapCharts.data.communityName + ', ' + snapCharts.data.communityRegion);
 					$('#comm_block').hide();
-					$('#export_options').show();
-					$('#export_link').val(window.location.href);
+					$('#chartTools').show();
+					$('#export_link').val(location.href);
+					snapCharts.render();
 				},
 				'json'
-			);
+				);
 
-		} else {
+	} else {
 			// don't care.  this is the default case, i.e. no params chosen or present in the hashtags.
 		}
 	},
 
+	// Manage steps in rendering the chart itself
+	render: function() {
+		snapCharts.refreshState();
+		snapCharts.transformUnits();
+		snapCharts.drawChart();
+	},
+
+	// This function manages the unit conversions.  The system gets input in standard units,
+	// and we need to change the values and the GUI depending on what unit is selected.
+	transformUnits: function() {
+
+		// Setup the data depending on if showing metric or standard units
+		// Default is standard units
+		snapCharts.sdUnitConversionMapper = function(sd) { return snapCharts.round(sd); };
+		snapCharts.unitConversionMapper = function(value) { return snapCharts.round(value); }; // null conversion
+		
+		if( 'metric' === snapCharts.data.units ) {
+
+			if( 1 === snapCharts.data.dataset ) {
+
+				snapCharts.unitConversionMapper = function(value) {
+					return snapCharts.round((value - 32) * (5 / 9));
+				};
+				snapCharts.sdUnitConversionMapper = function(sd) { return snapCharts.round(sd * (5/9)); };
+				
+				snapCharts.unitName = '°C';
+				snapCharts.yAxisTitle = 'Temperature (' + snapCharts.unitName + ')';
+
+			} else {
+				
+				// in to mm
+				snapCharts.unitConversionMapper = function(value) { return snapCharts.round(value * 25.4); };
+				snapCharts.sdUnitConversionMapper = function(value) { return snapCharts.round(value * 25.4); };
+				snapCharts.unitName = 'mm';
+				snapCharts.yAxisTitle = 'Total Precipitation (' + snapCharts.unitName + ')';
+
+			}
+
+		} else {
+
+			if( 1 === snapCharts.data.dataset ) {
+				snapCharts.unitName = '°F';
+				snapCharts.yAxisTitle = 'Temperature (' + snapCharts.unitName + ')';
+			} else {
+				snapCharts.unitName = 'in';
+				snapCharts.yAxisTitle = 'Total Precipitation (' + snapCharts.unitName + ')';
+			}
+
+		}
+
+		// This array holds the actual data that will be shown on the chart, after being
+		// transformed from the source data into different units.
+		snapCharts.unitConvertedData = {
+			series: {},
+			standardDeviations: {}
+		};
+
+		// Transform the units
+		_.each(snapCharts.data.series, function(e, i, l) {
+			snapCharts.unitConvertedData.series[i] = _.map(e, snapCharts.unitConversionMapper);
+		});
+
+		_.each(snapCharts.data.standardDeviations, function(e, i, l) {
+			snapCharts.unitConvertedData.standardDeviations[i] = _.map(e, snapCharts.sdUnitConversionMapper);
+		});
+
+		snapCharts.unitConvertedData.minimum = snapCharts.unitConversionMapper(snapCharts.data.minimum);
+		snapCharts.unitConvertedData.maximum = snapCharts.unitConversionMapper(snapCharts.data.maximum);
+
+		// Update the GUI button unit names as appropriate
+		if(1 === snapCharts.data.dataset) {
+			$('#unit_standard').button('option', 'label', '°F');
+			$('#unit_metric').button('option', 'label', '°C');
+		} else {
+			$('#unit_standard').button('option', 'label', 'in');
+			$('#unit_metric').button('option', 'label', 'mm');
+		}
+	},
+
+	// This draws the chart and also manages the unit buttons
+	// (standard/metric).  Perhaps the button management code
+	// can be removed from this, but it needs to be called whenever
+	// the chart is drawn.
 	drawChart: function() {
 
 		if( _.isUndefined(snapCharts.data.series)) {
 			alert('Sorry, an error occurred, and the chart could not be loaded.');
-			window.location.assign(snapConfig.url);
+			location.assign(snapConfig.url);
 		}
 
+		// Define a baseline configuration for the Highcharts y-axis.
+		// This will be varied depending on dataset (below).
+		yAxis = {
+			min: snapCharts.unitConvertedData.minimum,
+			max: snapCharts.unitConvertedData.maximum,
+			title: {
+				text: snapCharts.yAxisTitle
+			},
+			labels: {
+				enabled: true
+			}
+		};
+
+		// Vary colors and other options depending on dataset,
+		// by updating the Highcharts global configuration object.
 		if(1 === snapCharts.data.dataset) {
-			Highcharts.setOptions({ colors: ['#999999', '#308014', '#999999', '#ffff00', '#999999', '#ff7f00', '#999999', '#cc1100', '#999999'] });
+
+			Highcharts.setOptions({
+				colors: ['#999999', '#FECC5C', '#999999', '#FD8D3C', '#999999', '#F03B20', '#999999', '#BD0026', '#999999']
+			});
+
+			// Add a horizontal line indicating freezing point
+			yAxis.plotBands = [
+			{
+				value: snapCharts.unitConversionMapper(32),
+				color: '#000',
+				width: 1,
+				label: {
+					text: snapCharts.unitConversionMapper(32) + '°',
+					align: 'right',
+					style: {
+						fontSize: '10px'
+					}
+				}
+			}
+			];
+
 		} else {
-			Highcharts.setOptions({ colors: ['#999999', '#00ffff', '#999999', '#00b2ee', '#999999', '#007ca7', '#999999', '#0045b3', '#999999'] });
+
+			// Precipitation
+			Highcharts.setOptions({
+				colors: ['#999999', '#BAE4BC', '#999999', '#7BCCC4', '#999999', '#43A2CA', '#999999', '#0868AC', '#999999']
+			});
+
 		}
 
+		// Invoke the chart, interpolating some per-variable configs from above as needed
 		snapCharts.chart = new Highcharts.Chart({
+			
+			'font-family': 'Lucida-Grande',
+
+			yAxis: yAxis, // defined above
 			
 			chart: {
 				height: 400,
@@ -326,11 +464,7 @@ window.snapCharts = {
 
 			tooltip: {
 				formatter: function() {
-					if( 1 === snapCharts.data.dataset ) {
-						return '<span style="color: #999;">' + this.x + ' </span><br/><span>' + this.y + ' °F (' + ((5/9) * (this.y - 32)).toFixed(1) + ' °C)</span>';
-					} else {
-						return '<span style="color: #999;">' + this.x + ' </span><br/><span>' + this.y + ' in (' + (this.y * 25.4).toFixed(1) + ' mm)</span>';
-					}
+					return '<span style="color: #999;">' + this.x + ' ' + this.series.name + '</span><br/><span>' + this.y + ' ' + snapCharts.unitName + '</span>';
 				}
 			},
 			
@@ -382,32 +516,6 @@ window.snapCharts = {
 				categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 			},
 
-			yAxis: {
-				min: snapCharts.data.minimum,
-				max: snapCharts.data.maximum,
-				// only for temp -- need to remove for precip
-				plotBands: [
-					{
-						value: 32,
-						color: '#000',
-						width: 1.5,
-						label: {
-							text: '32°',
-							align: 'right',
-							style: {
-								fontSize: '10px'
-							}
-						}
-					}
-				],
-				title: {
-					text: snapCharts.data.yAxisTitle
-				},
-				labels: {
-					enabled: true
-				}
-			},
-
 			exporting: {
 				enabled: true,
 				url: './charts_export.php',
@@ -422,110 +530,116 @@ window.snapCharts = {
 			},
 			
 			series: [
-				{
-					name: '1961-1990',
-					data: snapCharts.data.series.Historical
-				},
-				{
-					name: '2010-2019',
-					data: snapCharts.data.series['2011-2020']
-				},
-				{
-					name: '2010-2019 Standard Deviations',
-					visible: false,
-					showInLegend: false,
-					data: snapCharts.data.standardDeviations['2011-2020']
-				},
-				{
-					name: '2040-2049',
-					data: snapCharts.data.series['2031-2040']
-				},
-				{
-					name: '2040-2049 Standard Deviations',
-					visible: false,
-					showInLegend: false,
-					data: snapCharts.data.standardDeviations['2041-2050']
-				},
-				{
-					name: '2060-2069',
-					data: snapCharts.data.series['2061-2070']
-				},
-				{
-					name: '2060-2069 Standard Deviations',
-					visible: false,
-					showInLegend: false,
-					data: snapCharts.data.standardDeviations['2061-2070']
-				},
-				{
-					name: '2090-2099',
-					data: snapCharts.data.series['2091-2100']
-				},
-				{
-					name: '2090-2099 Standard Deviations',
-					visible: false,
-					showInLegend: false,
-					data: snapCharts.data.standardDeviations['2091-2100']
-				}
+			{
+				name: '1961-1990',
+				data: snapCharts.unitConvertedData.series.Historical
+			},
+			{
+				name: '2010-2019',
+				data: snapCharts.unitConvertedData.series['2011-2020']
+			},
+			{
+				name: '2010-2019 Standard Deviations',
+				visible: false,
+				showInLegend: false,
+				data: snapCharts.unitConvertedData.standardDeviations['2011-2020']
+			},
+			{
+				name: '2040-2049',
+				data: snapCharts.unitConvertedData.series['2031-2040']
+			},
+			{
+				name: '2040-2049 Standard Deviations',
+				visible: false,
+				showInLegend: false,
+				data: snapCharts.unitConvertedData.standardDeviations['2041-2050']
+			},
+			{
+				name: '2060-2069',
+				data: snapCharts.unitConvertedData.series['2061-2070']
+			},
+			{
+				name: '2060-2069 Standard Deviations',
+				visible: false,
+				showInLegend: false,
+				data: snapCharts.unitConvertedData.standardDeviations['2061-2070']
+			},
+			{
+				name: '2090-2099',
+				data: snapCharts.unitConvertedData.series['2091-2100']
+			},
+			{
+				name: '2090-2099 Standard Deviations',
+				visible: false,
+				showInLegend: false,
+				data: snapCharts.unitConvertedData.standardDeviations['2091-2100']
+			}
 			]
 		},  function(chart) {
-			window.snapCharts.customChartsRenderer(chart);
-        });
-	}
+			snapCharts.customChartsRenderer(chart);
+		});
+}
 };
 
-window.snapCharts.customChartsRenderer = function(chart) {
+// This code is responsible for drawing the variability
+// bars on the chart.  It's a callback referenced in the
+// invocation of the HighCharts object above.
+snapCharts.customChartsRenderer = function(chart) {
 
 	if( 1 === snapCharts.data.variability ) {
 
 		var extremes = chart.yAxis[0].getExtremes();
 		var multiplier = chart.plotHeight / (extremes.max - extremes.min);
-		
+
 		for( i = 1; i < chart.series.length; i += 2 ) {
 			for (j = 0; j < chart.series[i].data.length; j++) {
 
-				var x = chart.series[i].data[j].plotX + 32 + i * 5.75;
-				var y = chart.series[i].data[j].plotY+100;
-				var y1 = chart.series[i].data[j].plotY+100 - chart.series[i+1].data[j].y * multiplier;
-				var y2 = chart.series[i].data[j].plotY+100 + chart.series[i+1].data[j].y * multiplier;
-				
-				var liney1 = chart.renderer.path(
-					['M', x, y, 'L', x, y, x, y1]
-				).attr(
-					{
-						strokeWidth: 1,
-						zIndex: 5,
-						stroke: 'Black'
-					}
-				).add();
+				// The magic constants 32, 5.75, and 100 here are related to absolute
+				// pixel sizes of the rendered bars.  (32 is confusing because it happens
+				// to be identical to part of the temperature conversions, but it's not).
+var x = chart.series[i].data[j].plotX + 32 + i * 5.75;
+var y = chart.series[i].data[j].plotY+100;
+var y1 = chart.series[i].data[j].plotY+100 - chart.series[i+1].data[j].y * multiplier;
+var y2 = chart.series[i].data[j].plotY+100 + chart.series[i+1].data[j].y * multiplier;
 
-				var linex1 = chart.renderer.path(
-					[ 'M', x, y1, 'L', x-2, y1, x+2, y1 ]
+var liney1 = chart.renderer.path(
+	['M', x, y, 'L', x, y, x, y1]
+	).attr(
+	{
+		strokeWidth: 1,
+		zIndex: 5,
+		stroke: 'Black'
+	}
+	).add();
+
+	var linex1 = chart.renderer.path(
+		[ 'M', x, y1, 'L', x-2, y1, x+2, y1 ]
+		).attr(
+		{
+			strokeWidth: 1,
+			zIndex: 5,
+			stroke: 'Black'
+		}
+		).add();
+
+		var liney2 = chart.renderer.path(
+			[ 'M', x, y, 'L', x, y, x, y2 ]
+			).attr(
+			{
+				strokeWidth: 1,
+				zIndex: 5,
+				stroke: 'Black'
+			}
+			).add();
+
+			var linex2 = chart.renderer.path(
+				[ 'M', x, y2, 'L', x-2, y2, x+2, y2]
 				).attr(
-					{
+				{
 					strokeWidth: 1,
 					zIndex: 5,
 					stroke: 'Black'
-					}
-				).add();
-
-				var liney2 = chart.renderer.path(
-					[ 'M', x, y, 'L', x, y, x, y2 ]
-				).attr(
-					{
-						strokeWidth: 1,
-						zIndex: 5,
-						stroke: 'Black'
-					}
-				).add();
-		
-				var linex2 = chart.renderer.path(
-					[ 'M', x, y2, 'L', x-2, y2, x+2, y2]
-				).attr(
-					{
-						strokeWidth: 1,
-						zIndex: 5,
-						stroke: 'Black'
-					}
+				}
 				).add();
 			}
 		}
