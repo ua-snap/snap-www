@@ -59,7 +59,7 @@ class webPage {
                     //If selected, arrow is displayed for current selection 
                     echo " href=\"".$menu_items[$i][1]."\" >".$menu_items[$i][0]."</a></div><div style=\"text-align: center; height: 22px; ";
                     if (("/".basename($_SERVER['PHP_SELF']) == $menu_items[$i][1] || "/".$this->menu == $x)){ 
-                        echo "background-image: url('/images/current_arrow.png'); background-position: center bottom; backg.logos-repeat: no-repeat;";
+                        echo "background-image: url('/images/current_arrow.png'); background-position: center bottom; background-repeat: no-repeat;";
                     }
                     echo "\" ></div>";
                 echo "</div>";
