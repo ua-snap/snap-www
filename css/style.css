@@ -666,6 +666,11 @@ padding-left: 2em;
 	text-align: left;
 	padding-right: 1em;
 	font-weight: normal;
+	white-space: nowrap;
+}
+
+.dataAccordionWrapper table.overview td {
+	white-space: nowrap;
 }
 
 .dataAccordionWrapper table th[scope="col"] {
@@ -917,6 +922,10 @@ a.project p {
 	font-size: 18px;
 	font-weight: bold;
 	color: #666;
+}
+
+.cruts-31-data-alert {
+	margin: 1em 0;
 }
 
 .cruts-31-data-alert p {
