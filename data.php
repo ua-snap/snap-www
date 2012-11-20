@@ -8,13 +8,9 @@ function getCruts31DataAlert() {
 	return <<<html
 
 <div class="ui-widget cruts-31-data-alert" style="margin: 1em 0;">
-	<div class="ui-state-error ui-corner-all" style="padding: 1ex;"> 
+	<div class="ui-state-warning ui-corner-all" style="padding: 1ex;"> 
 		<p style="margin: 0; padding: 1ex;"> 
-		<span class="ui-icon ui-icon-alert" style="float: left; margin-right: 1ex;"></span>
-		The Climatic Research Unit (CRU) has <a href="http://badc.nerc.ac.uk/view/badc.nerc.ac.uk__ATOM__dataent_1256223773328276">discovered a systematic error</a> in their CRUTS v3.1 precipitation data, and have addressed those errors with a new update (3.1.01).  Our <a href="/attachments/CRUcomparison.pdf">preliminary analysis</a> (PDF, 160KB) of the old and new product show generally small differences on average, but individual months have the potential to produce much larger differences.</p>
-
-<p>The downloads available in this section used CRUTS V3.1.01 as source data, and <strong>SNAP urges caution regarding the use of these downloads at this time</strong>.  SNAP is working on downscaling the updated CRUTS v3.1.01 data, and estimates that updated files will be available December 15, 2012.  If you have questions, please <a href="people.php?topic=data#contact">contact us</a>.</p>
-
+		<span class="ui-icon ui-icon-info" style="float: left; margin-right: 1ex;"></span>
 	</div>
 </div>
 
@@ -1237,7 +1233,7 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 <div class="dataAccordion">
 
 
-<h3><a href="#dataset=projected_monthly_snow_day_fraction_771m">Projected Decadal Averages Of Monthly Snow-day Fraction 771m</a></h3>
+<h3><a href="#dataset=projected_monthly_snow_day_fraction_771m">Projected Decadal Averages Of Monthly Snow-day Fraction 771m CMIP3/AR4</a></h3>
 <div>
   <p>
   These snow-day fraction estimates were produced by applying equations relating decadal average monthly temperature to snow-day fraction to downscaled decadal average monthly temperature. Separate equations were used to model the relationship between decadal monthly average temperature and the fraction of wet days with snow for seven geographic regions in the state: Arctic, western Alaska, Interior, Cook Inlet, SW Islands, SW Interior, and the Gulf of Alaska coast.
@@ -1248,6 +1244,10 @@ Although the equations developed here provide a reasonable fit to the data, mode
 
 <table class="overview">
   <tbody>
+    <tr>
+      <th scope="row">Baseline Reference Climate</th>
+      <td>1971&ndash;2000 PRISM</td>
+    </tr>
     <tr>
       <th scope="row">Spatial Resolution</th>
       <td>771m</td>
@@ -1266,7 +1266,7 @@ Although the equations developed here provide a reasonable fit to the data, mode
 
 <h4>Metadata by product</h4>
 
-<p><strong>Metadata:</strong> <a href="#" class="metadataLink"  data-geonetwork-metadata-id="84">Projected Decadal Averages Of Monthly Snow-day Fraction 771m</a></p>
+<p><strong>Metadata:</strong> <a href="#" class="metadataLink"  data-geonetwork-metadata-id="84">Projected Decadal Averages Of Monthly Snow-day Fraction 771m AR4</a></p>
 
 
 <h4>Data</h4>
@@ -1348,7 +1348,7 @@ Historical (1901&ndash;2006) monthly average temperature and total precipitation
 </thead>
 <body>
 <tr>
-<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="45">Historical Monthly Average Temperature 771m CRUTS3.0/3.1.01</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="45">Historical Monthly Average Temperature 771m CRUTS3.0/3.1</a></td>
 <td>
 <a href="/files/data/CRUTS3.0/tas_AK_771m_CRU_TS30_historical_1901_1949.zip">1901&ndash;1949</a> (2.5 GB)
 <a href="/files/data/CRUTS3.0/tas_AK_771m_CRU_TS30_historical_1950_2006.zip">1950&ndash;2006</a> (2.9 GB)
@@ -1366,7 +1366,7 @@ Historical (1901&ndash;2006) monthly average temperature and total precipitation
 </div>
 
 
-<h3><a href="#dataset=historical_monthly_temperature_and_precipitation_771m">Historical Monthly Temperature and Precipitation - 771m CRU TS 3.1.01</a></h3>
+<h3><a href="#dataset=historical_monthly_temperature_and_precipitation_771m">Historical Monthly Temperature and Precipitation - 771m CRU TS 3.1/3.1.01</a></h3>
 <div>
 
 <p>
@@ -1396,7 +1396,7 @@ Historical (1901&ndash;2009) monthly average temperature and total precipitation
 </thead>
 <body>
 <tr>
-<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="45">Historical Monthly Average Temperature 771m CRUTS3.1.01</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="45">Historical Monthly Average Temperature 771m CRUTS3.1</a></td>
 <td>
 <a href="/files/data/monthly/tas_AK_771m_CRU_TS31_historical_1901_1949.zip">1901&ndash;1949</a> (2.5 GB)
 <a href="/files/data/monthly/tas_AK_771m_CRU_TS31_historical_1950_2009.zip">1950&ndash;2009</a> (3.0 GB)
@@ -1434,9 +1434,9 @@ Historical (1910&ndash;1999) derived temperature products from CRU TS 3.0 climat
 
 <h5>Metadata by product</h5>
 <ul>
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="47">Historical Decadal Averages of Monthly Mean Temperatures 771m CRUTS3.0/3.1.01</a></li>
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="49">Historical Decadal Averages of Annual Mean Temperatures 771m CRUTS3.0/3.1.01</a></li>
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="51">Historical Decadal Averages of Seasonal Mean Temperatures 771m CRUTS3.0/3.1.01</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="47">Historical Decadal Averages of Monthly Mean Temperatures 771m CRUTS3.0</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="49">Historical Decadal Averages of Annual Mean Temperatures 771m CRUTS3.0</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="51">Historical Decadal Averages of Seasonal Mean Temperatures 771m CRUTS3.0</a></li>
 </ul>
 
 <h5>All products</h5>
@@ -1475,12 +1475,12 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 
 </div>
 
-<h3><a href="#dataset=historical_derived_temperature_771m">Historical Derived Temperature Products - 771m CRU TS 3.1.01</a></h3>
+<h3><a href="#dataset=historical_derived_temperature_771m">Historical Derived Temperature Products - 771m CRU TS 3.1</a></h3>
 <div>
 
 
 <p>
-Historical (1910&ndash;2009) derived temperature products from CRU TS 3.1.01 climate data, downscaled to 2 km via the delta method.
+Historical (1910&ndash;2009) derived temperature products from CRU TS 3.1 climate data, downscaled to 2 km via the delta method.
 </p>
 
 <table class="overview">
@@ -1495,13 +1495,11 @@ Historical (1910&ndash;2009) derived temperature products from CRU TS 3.1.01 cli
 
 <h4>Decadal summaries by month, year, and season</h4>
 
-<?php echo getCruts31DataAlert(); ?>
-
 <h5>Metadata by product</h5>
 <ul>
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="47">Historical Decadal Averages of Monthly Mean Temperatures 771m CRUTS3.1.01</a></li>
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="49">Historical Decadal Averages of Annual Mean Temperatures 771m CRUTS3.1.01</a></li>
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="51">Historical Decadal Averages of Seasonal Mean Temperatures 771m CRUTS3.1.01</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="47">Historical Decadal Averages of Monthly Mean Temperatures 771m CRUTS3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="49">Historical Decadal Averages of Annual Mean Temperatures 771m CRUTS3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="51">Historical Decadal Averages of Seasonal Mean Temperatures 771m CRUTS3.1</a></li>
 </ul>
 
 <h5>All products</h5>
@@ -1524,13 +1522,13 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 </thead>
 <body>
 <tr>
-<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="53">Historical Day of Freeze or Thaw 771m CRUTS3.1.01</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="53">Historical Day of Freeze or Thaw 771m CRUTS3.1</a></td>
 <td>
 <a href="/files/data/derived/dof_dot_AK_771m_CRU_TS31_historical.zip">dof_dot_AK_771m_CRU_TS31_historical.zip</a> (58 MB)
 </td>
 </tr>
 <tr>
-<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="55">Historical Length of Growing Season 771m CRUTS3.1.01</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="55">Historical Length of Growing Season 771m CRUTS3.1</a></td>
 <td>
 <a>
 <a href="/files/data/derived/logs_AK_771m_CRU_TS31_historical.zip">logs_AK_771m_CRU_TS31_historical.zip</a> (35 MB)
@@ -1566,9 +1564,9 @@ Historical (1910&ndash;1999) derived precipitation products from CRUTS 3.0 clima
 
 <h5>Metadata by product</h5>
 <ul>
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="57">Historical Decadal Averages of Monthly Total Precipitation 771m CRUTS3.0/3.1.01</a></li>
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="59">Historical Decadal Averages of Annual Total Precipitation 771m CRUTS3.0/3.1.01</a></li>
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="61">Historical Decadal Averages of Seasonal Total Precipitation 771m CRUTS3.0/3.1.01</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="57">Historical Decadal Averages of Monthly Total Precipitation 771m CRUTS3.0</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="59">Historical Decadal Averages of Annual Total Precipitation 771m CRUTS3.0</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="61">Historical Decadal Averages of Seasonal Total Precipitation 771m CRUTS3.0</a></li>
 </ul>
 
 <h5>All products</h5>
@@ -1644,13 +1642,13 @@ Historical (1901-2009) monthly average temperature and total precipitation from 
 </thead>
 <body>
 <tr>
-<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="28">Historical Monthly Average Temperature 2km CRUTS3.0/3.1.01</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="28">Historical Monthly Average Temperature 2km CRUTS3.0</a></td>
 <td>
 <a href="/files/data/CRUTS3.0/tas_AK_CAN_2km_CRU_TS30_historical.zip">tas_AK_CAN_2km_CRU_TS30_historical.zip</a> (2.6 GB)
 </td>
 </tr>
 <tr>
-<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="31">Historical Monthly Total Precipitation 2km CRUTS3.0/3.1.01</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="31">Historical Monthly Total Precipitation 2km CRUTS3.0</a></td>
 <td>
 <a>
 <a href="/files/data/CRUTS3.0/pr_AK_CAN_2km_CRU_TS30_historical.zip">pr_AK_CAN_2km_CRU_TS30_historical.zip</a> (2.2 GB)
@@ -1662,11 +1660,11 @@ Historical (1901-2009) monthly average temperature and total precipitation from 
 
 </div>
 
-<h3><a href="#dataset=historical_monthly_temperature_and_precipitation_2km">Historical Monthly Temperature and Precipitation - 2 km CRU TS 3.1.01</a></h3>
+<h3><a href="#dataset=historical_monthly_temperature_and_precipitation_2km">Historical Monthly Temperature and Precipitation - 2 km CRU TS 3.1/3.1.01</a></h3>
 <div>
 
 <p>
-Historical (1901-2009) monthly average temperature and total precipitation from CRU TS 3.1.01 climate data, downscaled to 2 km via the delta method.
+Historical (1901-2009) monthly average temperature and total precipitation from CRU TS 3.1/3.1.01 climate data, downscaled to 2 km via the delta method.
 </p>
 
 <table class="overview">
@@ -1690,13 +1688,13 @@ Historical (1901-2009) monthly average temperature and total precipitation from 
 </thead>
 <body>
 <tr>
-<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="28">Historical Monthly Average Temperature 2km CRUTS3.1.01</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="28">Historical Monthly Average Temperature 2km CRUTS 3.1</a></td>
 <td>
 <a href="/files/data/monthly/tas_AK_CAN_2km_CRU_TS31_historical.zip">tas_AK_CAN_2km_CRU_TS31_historical.zip</a> (2.9 GB)
 </td>
 </tr>
 <tr>
-<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="31">Historical Monthly Total Precipitation 2km CRUTS3.1.01</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="31">Historical Monthly Total Precipitation 2km CRUTS 3.1.01</a></td>
 <td>
 <a>
 <a href="/files/data/monthly/pr_AK_CAN_2km_CRU_TS31_historical.zip">pr_AK_CAN_2km_CRU_TS31_historical.zip</a> (2.5 GB)
@@ -1730,9 +1728,9 @@ Historical (1910-2009) derived temperature products from CRU TS 3.0 climate data
 
 <ul>
 
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="46">Historical Decadal Averages of Monthly Mean Temperatures 2km CRUTS3.0/3.1.01</a></li>
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="48">Historical Decadal Averages of Annual Mean Temperatures 2km CRUTS3.0/3.1.01</a></li>
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="50">Historical Decadal Averages of Seasonal Mean Temperatures 2km CRUTS3.0/3.1.01</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="46">Historical Decadal Averages of Monthly Mean Temperatures 2km CRUTS3.0</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="48">Historical Decadal Averages of Annual Mean Temperatures 2km CRUTS3.0</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="50">Historical Decadal Averages of Seasonal Mean Temperatures 2km CRUTS3.0</a></li>
 
 </ul>
 
@@ -1755,13 +1753,13 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 </thead>
 <body>
 <tr>
-<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="52">Historical Day of Freeze or Thaw 2km CRUTS3.0/3.1.01</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="52">Historical Day of Freeze or Thaw 2km CRUTS3.0</a></td>
 <td>
 <a href="/files/data/CRUTS3.0/dof_dot_AK_CAN_2km_CRU_TS30_historical.zip">dof_dot_AK_CAN_2km_CRU_TS30_historical.zip</a> (27 MB)
 </td>
 </tr>
 <tr>
-<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="54">Historical Length of Growing Season 2km CRUTS3.0/3.1.01</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="54">Historical Length of Growing Season 2km CRUTS3.0</a></td>
 <td>
 <a href="/files/data/CRUTS3.0/logs_AK_CAN_2km_CRU_TS30_historical.zip">logs_AK_CAN_2km_CRU_TS30_historical.zip</a> (17 MB)
 </td>
@@ -1772,11 +1770,11 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 </div>
 
 
-<h3><a href="#dataset=historical_derived_temperature_2km">Historical Derived Temperature Products - 2 km CRU TS 3.1.01</a></h3>
+<h3><a href="#dataset=historical_derived_temperature_2km">Historical Derived Temperature Products - 2 km CRU TS 3.1</a></h3>
 <div>
 
 <p>
-Historical (1910-2009) derived temperature products from CRU TS 3.1.01 climate data, downscaled to 2 km via the delta method.
+Historical (1910-2009) derived temperature products from CRU TS 3.1 climate data, downscaled to 2 km via the delta method.
 </p>
 
 <table class="overview">
@@ -1797,9 +1795,9 @@ Historical (1910-2009) derived temperature products from CRU TS 3.1.01 climate d
 
 <ul>
 
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="46">Historical Decadal Averages of Monthly Mean Temperatures 2km CRUTS3.1.01</a></li>
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="48">Historical Decadal Averages of Annual Mean Temperatures 2km CRUTS3.1.01</a></li>
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="50">Historical Decadal Averages of Seasonal Mean Temperatures 2km CRUTS3.1.01</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="46">Historical Decadal Averages of Monthly Mean Temperatures 2km CRUTS3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="48">Historical Decadal Averages of Annual Mean Temperatures 2km CRUTS3.1</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="50">Historical Decadal Averages of Seasonal Mean Temperatures 2km CRUTS3.1</a></li>
 
 </ul>
 
@@ -1822,13 +1820,13 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 </thead>
 <body>
 <tr>
-<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="52">Historical Day of Freeze or Thaw 2km CRUTS3.1.01</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="52">Historical Day of Freeze or Thaw 2km CRUTS3.1</a></td>
 <td>
 <a href="/files/data/derived/dof_dot_AK_CAN_2km_CRU_TS31_historical.zip">dof_dot_AK_CAN_2km_CRU_TS31_historical.zip</a> (30 MB)
 </td>
 </tr>
 <tr>
-<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="54">Historical Length of Growing Season 2km CRUTS3.1.01</a></td>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="54">Historical Length of Growing Season 2km CRUTS3.1</a></td>
 <td>
 <a href="/files/data/derived/logs_AK_CAN_2km_CRU_TS31_historical.zip">logs_AK_CAN_2km_CRU_TS31_historical.zip</a> (19 MB)
 </td>
@@ -1860,9 +1858,9 @@ Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.0 clima
 
 <ul>
 
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="56">Historical Decadal Averages of Monthly Total Precipitation 2km CRUTS3.0/3.1.01</a></li>
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="58">Historical Decadal Averages of Annual Total Precipitation 2km CRUTS3.0/3.1.01</a></li>
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="60">Historical Decadal Averages of Seasonal Total Precipitation 2km CRUTS3.0/3.1.01</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="56">Historical Decadal Averages of Monthly Total Precipitation 2km CRUTS3.0</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="58">Historical Decadal Averages of Annual Total Precipitation 2km CRUTS3.0</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="60">Historical Decadal Averages of Seasonal Total Precipitation 2km CRUTS3.0</a></li>
 
 </ul>
 
@@ -1912,7 +1910,7 @@ Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.1.01 cl
 <div class="dataAccordion">
 
 
-<h3><a href="#dataset=historical_monthly_potential_evapotranspiration_2km">Historical Monthly Potential Evapotranspiration -  2km</a></h3>
+<h3><a href="#dataset=historical_monthly_potential_evapotranspiration_2km">Historical Monthly Potential Evapotranspiration -  2km CRUTS3.0</a></h3>
 <div>
 <p>Historical (1901-2006) monthly total potential evapotranspiration utilizing CRU TS 3.0 climate data downscaled to 2 km via the delta method.</p>
 
@@ -1943,7 +1941,7 @@ Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.1.01 cl
 
 
 <h4>Metadata</h4>
-<p><strong>Metadata:</strong> <a href="#" class="metadataLink"  data-geonetwork-metadata-id="67">Historical Monthly Total Potential Evapotranspiration 2km AR4</a></p>
+<p><strong>Metadata:</strong> <a href="#" class="metadataLink"  data-geonetwork-metadata-id="67">Historical Monthly Total Potential Evapotranspiration 2km CRUTS3.0</a></p>
 <p><strong>Equations used to derive data:</strong> <a href="attachments/Hamon_PET_equations.pdf">Hamon PET equations</a> (PDF, 597KB)</p>
 
 <h4>Data</h4>
@@ -1952,7 +1950,7 @@ Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.1.01 cl
 </div>
 
 
-<h3><a href="#dataset=historical_derived_potential_evapotranspiration_2km">Historical Derived Potential Evapotranspiration -  2km</a></h3>
+<h3><a href="#dataset=historical_derived_potential_evapotranspiration_2km">Historical Derived Potential Evapotranspiration -  2km CRUTS3.0</a></h3>
 <div>
 
 <p>Historical (1910-1999) monthly total potential evapotranspiration utilizing CRU TS 3.0 climate data downscaled to 2 km via the delta method.</p>
@@ -1984,9 +1982,9 @@ Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.1.01 cl
 
 <h4>Metadata by product</h4>
 <ul>
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="70">Historical Decadal Averages of Monthly Total Potential Evapotranspiration 2km</a></li>
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="71">Historical Decadal Averages of Annual Total Potential Evapotranspiration 2km</a></li>
-<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="72">Historical Decadal Averages of Seasonal Total Potential Evapotranspiration 2km</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="70">Historical Decadal Averages of Monthly Total Potential Evapotranspiration 2km CRUTS3.0</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="71">Historical Decadal Averages of Annual Total Potential Evapotranspiration 2km CRUTS3.0</a></li>
+<li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="72">Historical Decadal Averages of Seasonal Total Potential Evapotranspiration 2km CRUTS3.0</a></li>
 </ul>
 <p><strong>Equations used to derive data:</strong> <a href="attachments/Hamon_PET_equations.pdf">Hamon PET equations</a> (PDF, 597KB)</p>
 
@@ -2001,7 +1999,7 @@ Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.1.01 cl
 <div class="dataAccordion">
 
 
-<h3><a href="#dataset=historical_monthly_snow_day_fraction_771m">Historical Decadal Averages Of Monthly Snow-day Fraction 771m</a></h3>
+<h3><a href="#dataset=historical_monthly_snow_day_fraction_771m">Historical Decadal Averages Of Monthly Snow-day Fraction 771m CRU TS 3.1</a></h3>
 <div>
   <p>
   These snow-day fraction estimates were produced by applying equations relating decadal average monthly temperature to snow-day fraction to downscaled decadal average monthly temperature. Separate equations were used to model the relationship between decadal monthly average temperature and the fraction of wet days with snow for seven geographic regions in the state: Arctic, western Alaska, Interior, Cook Inlet, SW Islands, SW Interior, and the Gulf of Alaska coast.
@@ -2012,6 +2010,10 @@ Although the equations developed here provide a reasonable fit to the data, mode
   
 <table class="overview">
   <tbody>
+    <tr>
+      <th scope="row">Baseline Reference Climate</th>
+      <td>1971&ndash;2000 PRISM</td>
+    </tr>
     <tr>
       <th scope="row">Spatial Resolution</th>
       <td>771m</td>
@@ -2030,7 +2032,7 @@ Although the equations developed here provide a reasonable fit to the data, mode
 
 <h4>Metadata by product</h4>
 
-<p><strong>Metadata:</strong> <a href="#" class="metadataLink"  data-geonetwork-metadata-id="83">Historical Decadal Averages Of Monthly Snow-day Fraction 771m</a></p>
+<p><strong>Metadata:</strong> <a href="#" class="metadataLink"  data-geonetwork-metadata-id="83">Historical Decadal Averages Of Monthly Snow-day Fraction 771m CRUTS3.1</a></p>
 
 <h4>Data</h4>
 <p><a href="/files/data/snow_day_fraction/fs_decadal_mean_monthly_mean_pct_cru_TS31_historical_1910_2009.zip">1910-2009</a> (250MB)</p>
