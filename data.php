@@ -1231,8 +1231,87 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 </div>
 
 </div>
+
+
+<br/>
+<div class="dataAccordion">
+
+
+<h3><a href="#dataset=projected_monthly_snow_day_fraction_771m">Projected Decadal Averages Of Monthly Snow-day Fraction 771m</a></h3>
+<div>
+  <p>
+  These snow-day fraction estimates were produced by applying equations relating decadal average monthly temperature to snow-day fraction to downscaled decadal average monthly temperature. Separate equations were used to model the relationship between decadal monthly average temperature and the fraction of wet days with snow for seven geographic regions in the state: Arctic, western Alaska, Interior, Cook Inlet, SW Islands, SW Interior, and the Gulf of Alaska coast.
+</p><p>
+Although the equations developed here provide a reasonable fit to the data, model evaluation demonstrated that some stations are consistently less well described by regional models than others. It is unclear why this occurs, but it is like related to localized climate conditions. Very few weather stations with long records are located above 500m elevation in Alaska, so the equations used here were developed primarily from low-elevation weather stations. It is not clear whether the equations will be completely appropriate in the mountains. Finally, these equations summarize a long-term monthly relationship between temperature and precipitation type that is the result of short-term weather variability. In using these equations to make projections of future snow, as assume that these relationships remain stable over time, and we do not know how accurate that assumption is.
+</p>
+  <p>Read the <a href="/files/data/snow_day_fraction/snow_fraction_data_users_guide.pdf">user&rsquo;s guide for this data set</a> (PDF, 1.5MB) for information on methodology and validation.</p>
+
+<table class="overview">
+  <tbody>
+    <tr>
+      <th scope="row">Spatial Resolution</th>
+      <td>771m</td>
+    </tr>
+    <tr>
+      <th scope="row">Temporal Resolution</th>
+      <td>Monthly</td>
+    </tr>
+    <tr>
+      <th scope="row">Spatial Extent</th>
+      <td>Alaska</td>
+    </tr>
+  </tbody>
+</table>
+<img src="images/ak_extent.jpg" alt="" />
+
+<h4>Metadata by product</h4>
+
+<p><strong>Metadata:</strong> <a href="#" class="metadataLink"  data-geonetwork-metadata-id="84">Projected Decadal Averages Of Monthly Snow-day Fraction 771m</a></p>
+
+
+<h4>Data</h4>
+
+<table class="downloadsTable" style="width: auto">
+<thead>
+<tr><th scope="col">Model</th>
+<th scope="col">Data</th></tr>
+</thead>
+<tbody>
+
+<tr>
+<th scope="row">cccma_cgcm31</th>
+<td><a href="files/data/snow_day_fraction/fs_decadal_mean_monthly_mean_pct_cccma_cgcm3_1_2010_2099.zip">2010&ndash;2099</a> (479 MB)</td>
+</tr>
+
+<tr>
+<th scope="row">gfdl_cm2_1</th>
+<td><a href="files/data/snow_day_fraction/fs_decadal_mean_monthly_mean_pct_gfdl_cm2_1_2010_2099.zip">2010&ndash;2099</a> (491MB)</td>
+</tr>
+
+<tr>
+<th scope="row">miroc3_2_medres</th>
+<td><a href="files/data/snow_day_fraction/fs_decadal_mean_monthly_mean_pct_miroc3_2_medres_2010_2099.zip">2010&ndash;2099</a> (461MB)</td>
+</tr>
+
+<tr>
+<th scope="row">mpi_echam5</th>
+<td><a href="files/data/snow_day_fraction/fs_decadal_mean_monthly_mean_pct_mpi_echam5_2010_2099.zip">2010&ndash;2099</a> (476MB)</td>
+</tr>
+
+<tr>
+<th scope="row">ukmo_hadcm3</th>
+<td><a href="files/data/snow_day_fraction/fs_decadal_mean_monthly_mean_pct_ukmo_hadcm3_2010_2099.zip">2010&ndash;2099</a> (470MB)</td>
+</tr>
+
+</tbody>
+</table>
+
+</div>
 </div>
 
+</div>
+
+<!-- HistoricalData -->
 
 <div class="methods text">
 <h3>Historical Data</h3>
@@ -1916,8 +1995,48 @@ Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.1 clima
 
 </div>
 
+</div>
+
+<br/>
+<div class="dataAccordion">
 
 
+<h3><a href="#dataset=historical_monthly_snow_day_fraction_771m">Historical Decadal Averages Of Monthly Snow-day Fraction 771m</a></h3>
+<div>
+  <p>
+  These snow-day fraction estimates were produced by applying equations relating decadal average monthly temperature to snow-day fraction to downscaled decadal average monthly temperature. Separate equations were used to model the relationship between decadal monthly average temperature and the fraction of wet days with snow for seven geographic regions in the state: Arctic, western Alaska, Interior, Cook Inlet, SW Islands, SW Interior, and the Gulf of Alaska coast.
+</p><p>
+Although the equations developed here provide a reasonable fit to the data, model evaluation demonstrated that some stations are consistently less well described by regional models than others. It is unclear why this occurs, but it is like related to localized climate conditions. Very few weather stations with long records are located above 500m elevation in Alaska, so the equations used here were developed primarily from low-elevation weather stations. It is not clear whether the equations will be completely appropriate in the mountains. Finally, these equations summarize a long-term monthly relationship between temperature and precipitation type that is the result of short-term weather variability. In using these equations to make projections of future snow, as assume that these relationships remain stable over time, and we do not know how accurate that assumption is.
+</p>
+<p>Read the <a href="/files/data/snow_day_fraction/snow_fraction_data_users_guide.pdf">user&rsquo;s guide for this data set</a> (PDF, 1.5MB) for information on methodology and validation.</p>
+  
+<table class="overview">
+  <tbody>
+    <tr>
+      <th scope="row">Spatial Resolution</th>
+      <td>771m</td>
+    </tr>
+    <tr>
+      <th scope="row">Temporal Resolution</th>
+      <td>Monthly</td>
+    </tr>
+    <tr>
+      <th scope="row">Spatial Extent</th>
+      <td>Alaska</td>
+    </tr>
+  </tbody>
+</table>
+<img src="images/ak_extent.jpg" alt="" />
+
+<h4>Metadata by product</h4>
+
+<p><strong>Metadata:</strong> <a href="#" class="metadataLink"  data-geonetwork-metadata-id="83">Historical Decadal Averages Of Monthly Snow-day Fraction 771m</a></p>
+
+<h4>Data</h4>
+<p><a href="/files/data/snow_day_fraction/fs_decadal_mean_monthly_mean_pct_cru_TS31_historical_1910_2009.zip">1910-2009</a> (250MB)</p>
+
+
+</div>
 
 </div>
 
