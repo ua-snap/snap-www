@@ -8,9 +8,10 @@ function getCruts31DataAlert() {
 	return <<<html
 
 <div class="ui-widget cruts-31-data-alert" style="margin: 1em 0;">
-	<div class="ui-state-warning ui-corner-all" style="padding: 1ex;"> 
+	<div class="ui-state-highlight ui-corner-all" style="padding: 1ex;"> 
 		<p style="margin: 0; padding: 1ex;"> 
 		<span class="ui-icon ui-icon-info" style="float: left; margin-right: 1ex;"></span>
+The Climatic Research Unit (CRU) <a href="http://badc.nerc.ac.uk/view/badc.nerc.ac.uk__ATOM__dataent_1256223773328276">discovered a systematic error</a> in their CRUTS v3.1 precipitation data, and have addressed those errors with a new update (v3.1.01).  All previous SNAP products based upon CRUTS v3.1 precipitation have been updated to reflect this update to 3.1.01.  <strong>SNAP encourage users to download this new update and discard the previous CRU TS v3.1 precipitation data</strong>.
 	</div>
 </div>
 
