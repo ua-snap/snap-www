@@ -647,10 +647,10 @@ function validateState() {
 		case 'lengthOfGrowingSeason': //fallthru
 
 			if(_.isFalsy(window.snap.state.scenario)) {
-				window.snap.state.scenario = window.snap.state.defaults.scenario;
+				window.snap.state.scenario = window.snap.defaults.scenario;
 			}
 			if(_.isFalsy(window.snap.state.range)) {
-				window.snap.state.range = window.snap.state.defaults.range;
+				window.snap.state.range = window.snap.defaults.range;
 			}
 
 			window.snap.state.interval = 'decadalAverages';
@@ -659,15 +659,17 @@ function validateState() {
 
 		case 'temperature'://fallthru
 		case 'precipitation':
+
 			if(_.isFalsy(window.snap.state.interval)) {
-				window.snap.state.interval = window.snap.state.defaults.interval;
+				window.snap.state.interval = window.snap.defaults.interval;
 			}
 
 			if(_.isFalsy(window.snap.state.scenario)) {
-				window.snap.state.scenario = window.snap.state.defaults.scenario;
+				window.snap.state.scenario = window.snap.defaults.scenario;
 			}
+
 			if(_.isFalsy(window.snap.state.range)) {
-				window.snap.state.range = window.snap.state.defaults.range;
+				window.snap.state.range = window.snap.defaults.range;
 			}
 			writeHash();
 			break;

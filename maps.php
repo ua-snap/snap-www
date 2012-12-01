@@ -109,7 +109,7 @@ $(document).ready(function() {
     snap.state.zoom = parseInt(snap.state.zoom) || snap.defaults.zoom;
     snap.state.latitude = parseFloat(snap.state.latitude) || snap.defaults.latitude;
     snap.state.longitude = parseFloat(snap.state.longitude) || snap.defaults.longitude;
-    snap.state = _.extend(snap.defaults, snap.state);
+    snap.state = _.defaults(snap.state, snap.defaults);
 
     google.maps.event.addDomListener(window, 'load', function(){
 

@@ -11,7 +11,7 @@ function getCruts31DataAlert() {
 	<div class="ui-state-highlight ui-corner-all" style="padding: 1ex;"> 
 		<p style="margin: 0; padding: 1ex;"> 
 		<span class="ui-icon ui-icon-info" style="float: left; margin-right: 1ex;"></span>
-The Climatic Research Unit (CRU) <a href="http://badc.nerc.ac.uk/view/badc.nerc.ac.uk__ATOM__dataent_1256223773328276">discovered a systematic error</a> in their CRUTS v3.1 precipitation data, and have addressed those errors with a new update (v3.1.01).  All previous SNAP products based upon CRUTS v3.1 precipitation have been updated to reflect this update to 3.1.01.  <strong>SNAP encourage users to download this new update and discard the previous CRU TS v3.1 precipitation data</strong>.
+The Climatic Research Unit (CRU) <a href="http://badc.nerc.ac.uk/view/badc.nerc.ac.uk__ATOM__dataent_1256223773328276">discovered a systematic error</a> in their CRUTS v3.1 precipitation data, and have addressed those errors with a new update (v3.1.01).  All previous SNAP products based upon CRUTS v3.1 precipitation have been updated to reflect this update to 3.1.01.  <strong>SNAP encourages users to download this new update and discard the previous CRU TS v3.1 precipitation data</strong>.
 	</div>
 </div>
 
@@ -68,6 +68,8 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 <tr><th scope="row">dot</th><td>day of thaw</td></tr>
 <tr><th scope="row">dof</th><td>day of freeze</td></tr>
 <tr><th scope="row">logs</th><td>length of growing season</td></tr>
+<tr><th scope="row">pet</th><td>potential evapotranspiration</td></tr>
+<tr><th scope="row">fs</th><td>snow-day fraction</td></tr>
 </tbody>
 </table>
 
