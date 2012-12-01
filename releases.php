@@ -12,6 +12,21 @@ $page->pageHeader();
 <div id="main_content" class="releases methods text">
 <h2>SNAP web site release notes</h2>
 
+<h3>1.2.0</h3>
+<h4>Released November 30, 2012 at 6:00pm AKST</h4>
+<ul>
+	<li><strong>New data available for download:</strong> data sets using CRU TS 3.1 have been updated to use CRU TS 3.1.01 instead; snow-fraction day data are now available. (#115, #103)</li>
+	<li><strong>Metric units are now available</strong> on the <a href="/charts.php">community charts tool</a>. (#55, #11)</li>
+	<li>Posted a link to the <a href="https://github.com/ua-snap/potential-evapotranspiration" rel="external">scripts used for doing Harmon and Priestly-Taylor processing</a>. (#99)</li>
+	<li>Improved visual formatting and metadata popups on data page. (#92, #78)</li>
+	<li>Added IARC logo to page footer. (#91)</li>
+	<li>Fixed text, links on some pages. (#82, 81)</li>
+	<li>Fixed bug preventing &lsquo;Link&rsquo; popup from closing on maps tool. (#97)</li>
+	<li>Fixed rendering issues for browsers on data page. (#102)</li>
+	<li>Fixed rendering issue where Twitter feed on home page could overrun block. (#93)</li>
+	<li>Changed internal state management library on maps tool. (#111)</li>
+</ul>
+
 <h3>1.0.15</h3>
 <h4>Released October 10, 2012 at 2:00pm AKDT</h4>
 <p>This release updated the note regarding the status of the CRU TS 3.1 data, and products that SNAP derives from that data, on the data downloads page.</p>
