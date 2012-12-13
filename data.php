@@ -1792,8 +1792,6 @@ Historical (1910-2009) derived temperature products from CRU TS 3.1 climate data
 
 <h4>Decadal summaries by month, year, and season</h4>
 
-<?php echo getCruts31DataAlert(); ?>
-
 <h5>Metadata by product</h5>
 
 <ul>
