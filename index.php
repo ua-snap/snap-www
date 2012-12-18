@@ -13,7 +13,7 @@ $page->pageHeader();
 
                     <div style="position: absolute; display: none;">
                         <div class="news_image"><a href="/maps.php" target="_blank"><img alt="SNAP Maps Tool: Climate Visualizations" src="images/maps.jpg" style="width: 600px;" /></a></div>
-                        <div class="news_content"><div class="news_title">Climate Visualizations</div>SNAP is striving to implement useful climate data visualizations that make sense. The new map tool, with its iteractive titles, forms the basis for future data and mapping enhancements.</div>
+                        <div class="news_content"><div class="news_title">Climate Visualizations</div>SNAP is striving to implement useful climate data visualizations that make sense. The new map tool, with its interactive titles, forms the basis for future data and mapping enhancements.</div>
                         <div class="news_link"><a target="_blank" href="/maps.php">open the map &gt;&gt;</a></div>
                     </div>
 
