@@ -61,6 +61,7 @@
 	box-shadow: 2px 2px 2px #888;
 	z-index: 100;
 	line-height: 36px;
+	position:relative;
 }
 .map_bar a {
 	color: #ddd;
