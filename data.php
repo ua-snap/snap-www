@@ -2041,7 +2041,211 @@ Although the equations developed here provide a reasonable fit to the data, mode
 
 </div>
 
+
 </div>
+
+
+            </div>
+
+<!-- start IEM -->
+
+
+
+<div class="methods text">
+<h3>Research Data: Integrated Ecosystem Model for Alaska and Northwest Canada (IEM)</h3>
+</div>
+
+<p>Data listed in this section are being developed specifically for this broad scale model coupling project.  An overview of the project can be found on the <a href="/projects.php">project page</a> including all collaborators and funding sources.</p>
+
+<p>This broad&ndash;scale modeling project has very specific input data requirements.  These include a 1&times;1km pixel resolution, spatial coverage across data poor regions of Alaska, the Yukon Territories, and parts of northern British Columbia, and temporal coverage of monthly data from the early 1900&rsquo;s to 2100.  In addition, because these datasets are being developed as input to specific models, they also require adherence to model specific requirements in order to produce plausible outputs.  Because existing input data did not already exist at this level of detail, our approach has been to downscale the variables of interest to an intermediate resolution when available and then to apply common raster resampling methods down to 1&times;1km pixel sizes.  Care has also been taken to keep the range of the data within accepted bounds and consistent across related variables.</p>
+
+<div><img src="images/IEM_web_thumbnail.png" style="width: 300px;"/></div>
+
+
+
+
+<div class="dataAccordionWrapper">
+<div class="dataAccordion">
+
+<h3><a href="#dataset=IEM_ancillary">Ancillary Data: Elevation, Slope, Slope Complexity, Aspect, Land Cover, Fire History (Burned Area)</a></h3>
+<div>
+
+<table class="overview iem" style="display: static;">
+<thead>
+  <tr><th scope="col">Data Set</th><th scope="col">Original Spatial Resolution</th><th scope="col">Final Spatial Resolution</th><th scope="col">Temporal Resolution</th></tr>
+</thead>
+<tbody>
+  <tr><td>Elevation, Slope, Slope Complexity, Aspect</td><td>2km</td><td>1km</td><td>&nbsp;</td></tr>
+  <tr><td>Land Cover</td><td>500m</td><td>1km</td><td>2005, but highly modified cases</td></tr>
+  <tr><td>Fire History (Burned Area)</td><td>vector format</td><td>1km</td><td>1917&mdash;2011</td></tr>
+</tbody>
+</table>
+
+<div style="clear: both"></div>
+
+<h3 style="margin-top: 1em">Downloads</h3>
+<p><a href="/files/data/iem/ancillary/iem_ancillary_data.zip">Ancillary IEM Data</a>, 35MB</p>
+
+    </div>
+  </div>
+
+
+<div class="dataAccordionWrapper">
+  <div class="dataAccordion">
+    <h3><a href="#dataset=IEM_historical_temperature">Historical Temperature</a></h3>
+    <div>
+      <table>
+        <tbody>
+          <tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990</td></tr>
+          <tr><th scope="row">Original Spatial Resolution</th><td>0.5&deg;</td></tr>
+          <tr><th scope="row">Final Spatial Resolution</th><td>1 km</td></tr>
+          <tr><th scope="row">Temporal Resolution</th><td>1901 - 2009</td></tr>
+        </tbody>
+      </table>
+      <h3 style="margin-top: 1em">Downloads</h3>
+      <p><a href="/files/data/iem/">Historical Temperature</a>, </p>
+    </div>
+  </div>
+</div>
+
+
+<div class="dataAccordionWrapper">
+  <div class="dataAccordion">
+    <h3><a href="#dataset=IEM_historical_precipitation">Historical Precipitation</a></h3>
+    <div>
+            <table>
+        <tbody>
+          <tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990</td></tr>
+          <tr><th scope="row">Original Spatial Resolution</th><td>0.5&deg;</td></tr>
+          <tr><th scope="row">Final Spatial Resolution</th><td>1 km</td></tr>
+          <tr><th scope="row">Temporal Resolution</th><td>1901 - 2009</td></tr>
+        </tbody>
+      </table>
+      <h3 style="margin-top: 1em">Downloads</h3>
+      <p><a href="/files/data/iem/"></a>, </p>
+    </div>
+  </div>
+</div>
+
+<div class="dataAccordionWrapper">
+  <div class="dataAccordion">
+    <h3><a href="#dataset=IEM_historical_radiation">Historical Surface Downwelling Shortwave Radiation</a></h3>
+    <div>
+            <table>
+        <tbody>
+          <tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990</td></tr>
+          <tr><th scope="row">Original Spatial Resolution</th><td>0.5&deg;</td></tr>
+          <tr><th scope="row">Final Spatial Resolution</th><td>1 km</td></tr>
+          <tr><th scope="row">Temporal Resolution</th><td>1901 - 2009</td></tr>
+        </tbody>
+      </table>
+      <h3 style="margin-top: 1em">Downloads</h3>
+      <p><a href="/files/data/iem/"></a>, </p>
+    </div>
+  </div>
+</div>
+
+<div class="dataAccordionWrapper">
+  <div class="dataAccordion">
+    <h3><a href="#dataset=IEM_historical_vapor">Historical Vapor Pressure</a></h3>
+    <div>      <table>
+        <tbody>
+          <tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990</td></tr>
+          <tr><th scope="row">Original Spatial Resolution</th><td>0.5&deg;</td></tr>
+          <tr><th scope="row">Final Spatial Resolution</th><td>1 km</td></tr>
+          <tr><th scope="row">Temporal Resolution</th><td>1901 - 2009</td></tr>
+        </tbody>
+      </table>
+      <h3 style="margin-top: 1em">Downloads</h3>
+      <p><a href="/files/data/iem/"></a>, </p>
+    </div>
+  </div>
+</div>
+
+<div class="dataAccordionWrapper">
+  <div class="dataAccordion">
+    <h3><a href="#dataset=IEM_projected_temperature">Projected Temperature</a></h3>
+    <div>
+      <table>
+        <tbody>
+          <tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990</td></tr>
+          <tr><th scope="row">Original Spatial Resolution</th><td>1.875&ndash;3.75&deg;</td></tr>
+          <tr><th scope="row">Final Spatial Resolution</th><td>1 km</td></tr>
+          <tr><th scope="row">Temporal Resolution</th><td>2001&ndash;2100</td></tr>
+        </tbody>
+      </table>
+      <h3 style="margin-top: 1em">Downloads</h3>
+      <p><a href="/files/data/iem/"></a>, </p>
+    </div>
+  </div>
+</div>
+
+<div class="dataAccordionWrapper">
+  <div class="dataAccordion">
+    <h3><a href="#dataset=IEM_projected_precipitation">Projected Precipitation</a></h3>
+    <div>
+            <table>
+        <tbody>
+          <tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990</td></tr>
+          <tr><th scope="row">Original Spatial Resolution</th><td>1.875&ndash;3.75&deg;</td></tr>
+          <tr><th scope="row">Final Spatial Resolution</th><td>1 km</td></tr>
+          <tr><th scope="row">Temporal Resolution</th><td>2001&ndash;2100</td></tr>
+        </tbody>
+      </table>
+      <h3 style="margin-top: 1em">Downloads</h3>
+      <p><a href="/files/data/iem/"></a>, </p>
+    </div>
+  </div>
+</div>
+
+<div class="dataAccordionWrapper">
+  <div class="dataAccordion">
+    <h3><a href="#dataset=IEM_projected_radiation">Projected Surface Downswelling Shortwave Radiation</a></h3>
+    <div>
+            <table>
+        <tbody>
+          <tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990</td></tr>
+          <tr><th scope="row">Original Spatial Resolution</th><td>1.875&ndash;3.75&deg;</td></tr>
+          <tr><th scope="row">Final Spatial Resolution</th><td>1 km</td></tr>
+          <tr><th scope="row">Temporal Resolution</th><td>2001&ndash;2100</td></tr>
+        </tbody>
+      </table>
+      <h3 style="margin-top: 1em">Downloads</h3>
+      <p><a href="/files/data/iem/"></a>, </p>
+    </div>
+  </div>
+</div>
+
+<div class="dataAccordionWrapper">
+  <div class="dataAccordion">
+    <h3><a href="#dataset=projected_vapor">Projected Vapor Pressure</a></h3>
+    <div>
+            <table>
+        <tbody>
+          <tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990</td></tr>
+          <tr><th scope="row">Original Spatial Resolution</th><td>1.875&ndash;3.75&deg;</td></tr>
+          <tr><th scope="row">Final Spatial Resolution</th><td>1 km</td></tr>
+          <tr><th scope="row">Temporal Resolution</th><td>2001&ndash;2100</td></tr>
+        </tbody>
+      </table>
+      <h3 style="margin-top: 1em">Downloads</h3>
+      <p><a href="/files/data/iem/"></a>, </p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<?php
+$page->closePage();
+?>
+
+<div id="metadataModal"></div>
 
 <script>
 
@@ -2049,28 +2253,20 @@ $(function() {
         
     $('.dataAccordion').each( function(index) { 
         $(this).accordion({
-        	navigation: true,
-        	autoHeight: false,
-        	collapsible: true,
-        	active: false
-        	});
+          navigation: true,
+          autoHeight: false,
+          collapsible: true,
+          active: false
+          });
     });
 
     if( window.location.hash ) {
-    	$.scrollTo($('a[href="'+window.location.hash+'"]'), 300, { offset: -50 });
-    	window.location.hash = ''; // clear this to prevent user from seeing dissonance between url + opened folds
+      $.scrollTo($('a[href="'+window.location.hash+'"]'), 1000, { offset: -50 });
+      window.location.hash = ''; // clear this to prevent user from seeing dissonance between url + opened folds
     }
 
 });
 </script>
-
-            </div>
-        </div>
-<?php
-$page->closePage();
-?>
-
-<div id="metadataModal"></div>
 
 <script type="text/javascript">
 $('.metadataLink')

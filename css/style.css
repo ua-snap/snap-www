@@ -935,3 +935,7 @@ a.project p {
 .cruts-31-data-alert p {
 	color: black !important;
 }
+
+table.overview.iem th[scope="col"] {
+	font-weight: bold;
+}
