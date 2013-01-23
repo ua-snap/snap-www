@@ -2197,7 +2197,7 @@ Although the equations developed here provide a reasonable fit to the data, mode
       <li><a href="/files/data/iem/a1b/tas_mean_C_iem_ar4_cccma_cgcm3_1_sresa1b_2050_2100.zip">Projected Temperature, AR4 CCCMA/CGCM3.1, 2050&ndash;2100</a>, 3.2 GB</li>
       <li><a href="/files/data/iem/a1b/tas_mean_C_iem_ar4_mpi_echam5_sresa1b_2001_2049.zip
 ">Projected Temperature, AR4 MPI/ECHAM5, 2001&ndash;2049</a>, 3.0 GB</li>
-      <li><a href="/files/data/iem/a1b/tas_mean_C_iem_ar4_mpi_echam5_sresa1b_2050_2100.zi">Projected Temperature, AR4 MPI/ECHAM5, 2050&ndash;2100</a>, 3.2 GB</li></ul>
+      <li><a href="/files/data/iem/a1b/tas_mean_C_iem_ar4_mpi_echam5_sresa1b_2050_2100.zip">Projected Temperature, AR4 MPI/ECHAM5, 2050&ndash;2100</a>, 3.2 GB</li></ul>
     </div>
   </div>
 </div>
