@@ -2076,13 +2076,21 @@ Although the equations developed here provide a reasonable fit to the data, mode
 </thead>
 <tbody>
   <tr><td>Elevation, Slope, Slope Complexity, Aspect</td><td>2km</td><td>1km</td><td>&nbsp;</td></tr>
-  <tr><td>Land Cover</td><td>500m</td><td>1km</td><td>2005, but highly modified cases</td></tr>
+  <tr><td>Land Cover</td><td>500m</td><td>1km</td><td>2005, but highly modified classes</td></tr>
   <tr><td>Fire History (Burned Area)</td><td>vector format</td><td>1km</td><td>1917&mdash;2011</td></tr>
 </tbody>
 </table>
 
 <div style="clear: both"></div>
-
+<h3 style="margin-top: 1em">Metadata</h3>
+<ul>
+  <li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="86">Elevation</a></li>
+  <li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="88">Slope</a></li>
+  <li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="98">Slope Complexity</a></li>
+  <li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="87">Aspect</a></li>
+  <li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="91">Land Cover</a></li>
+  <li><a href="#" class="metadataLink"  data-geonetwork-metadata-id="90">Fire History (Burned Area)</a></li>
+</ul>
 <h3 style="margin-top: 1em">Downloads</h3>
 <p><a href="/files/data/iem/ancillary/iem_ancillary_data.zip">Ancillary IEM Data</a>, 35MB</p>
 
@@ -2102,8 +2110,10 @@ Although the equations developed here provide a reasonable fit to the data, mode
           <tr><th scope="row">Temporal Resolution</th><td>1901 - 2009</td></tr>
         </tbody>
       </table>
+      <h3 style="margin-top: 1em">Metadata</h3>
+      <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="93">Historical Temperature</a></p>
       <h3 style="margin-top: 1em">Downloads</h3>
-      <p><a href="/files/data/iem/">Historical Temperature</a>, </p>
+      <p><a href="/files/data/iem/cru_ts31/tas_mean_C_iem_cru_TS31_historical_1901_2009.zip">Historical Temperature</a>, 6.6 GB</p>
     </div>
   </div>
 </div>
@@ -2121,8 +2131,10 @@ Although the equations developed here provide a reasonable fit to the data, mode
           <tr><th scope="row">Temporal Resolution</th><td>1901 - 2009</td></tr>
         </tbody>
       </table>
+            <h3 style="margin-top: 1em">Metadata</h3>
+      <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="94">Historical Precipitation</a></p>
       <h3 style="margin-top: 1em">Downloads</h3>
-      <p><a href="/files/data/iem/"></a>, </p>
+      <p><a href="/files/data/iem/cru_ts31/pr_total_mm_iem_cru_TS31_historical_1901_2009.zip">Historical Precipitation</a>, 3.0 GB</p>
     </div>
   </div>
 </div>
@@ -2139,8 +2151,10 @@ Although the equations developed here provide a reasonable fit to the data, mode
           <tr><th scope="row">Temporal Resolution</th><td>1901 - 2009</td></tr>
         </tbody>
       </table>
+            <h3 style="margin-top: 1em">Metadata</h3>
+      <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="85">Historical Surface Downswelling Shortware Radiation</a></p>
       <h3 style="margin-top: 1em">Downloads</h3>
-      <p><a href="/files/data/iem/"></a>, </p>
+      <p><a href="/files/data/iem/cru_ts31/rsds_mean_wm-2_iem_cru_TS31_historical_1901_2009.zip">Historical Surface Downswelling Shortware Radiation</a>, 6.3 GB</p>
     </div>
   </div>
 </div>
@@ -2156,8 +2170,10 @@ Although the equations developed here provide a reasonable fit to the data, mode
           <tr><th scope="row">Temporal Resolution</th><td>1901 - 2009</td></tr>
         </tbody>
       </table>
+      <h3 style="margin-top: 1em">Metadata</h3>
+      <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="80">Historical Vapor Pressure</a></p>      
       <h3 style="margin-top: 1em">Downloads</h3>
-      <p><a href="/files/data/iem/"></a>, </p>
+      <p><a href="/files/data/iem/cru_ts31/vap_mean_hPa_iem_cru_TS31_historical_1901_2009.zip">Historical Vapor Pressure</a>, 2.4 GB</p>
     </div>
   </div>
 </div>
@@ -2174,8 +2190,14 @@ Although the equations developed here provide a reasonable fit to the data, mode
           <tr><th scope="row">Temporal Resolution</th><td>2001&ndash;2100</td></tr>
         </tbody>
       </table>
-      <h3 style="margin-top: 1em">Downloads</h3>
-      <p><a href="/files/data/iem/"></a>, </p>
+            <h3 style="margin-top: 1em">Metadata</h3>
+      <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="89">Projected Temperature</a></p>
+      <h3 style="margin-top: 1em">Downloads</h3><ul>
+      <li><a href="/files/data/iem/a1b/tas_mean_C_iem_ar4_cccma_cgcm3_1_sresa1b_2001_2049.zip">Projected Temperature, AR4 CCCMA/CGCM3.1, 2001&ndash;2049</a>, 3.0 GB</li>
+      <li><a href="/files/data/iem/a1b/tas_mean_C_iem_ar4_cccma_cgcm3_1_sresa1b_2050_2100.zip">Projected Temperature, AR4 CCCMA/CGCM3.1, 2050&ndash;2100</a>, 3.2 GB</li>
+      <li><a href="/files/data/iem/a1b/tas_mean_C_iem_ar4_mpi_echam5_sresa1b_2001_2049.zip
+">Projected Temperature, AR4 MPI/ECHAM5, 2001&ndash;2049</a>, 3.0 GB</li>
+      <li><a href="/files/data/iem/a1b/tas_mean_C_iem_ar4_mpi_echam5_sresa1b_2050_2100.zi">Projected Temperature, AR4 MPI/ECHAM5, 2050&ndash;2100</a>, 3.2 GB</li></ul>
     </div>
   </div>
 </div>
@@ -2192,8 +2214,13 @@ Although the equations developed here provide a reasonable fit to the data, mode
           <tr><th scope="row">Temporal Resolution</th><td>2001&ndash;2100</td></tr>
         </tbody>
       </table>
-      <h3 style="margin-top: 1em">Downloads</h3>
-      <p><a href="/files/data/iem/"></a>, </p>
+            <h3 style="margin-top: 1em">Metadata</h3>
+      <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="92">Historical Precipitation</a></p>
+      <h3 style="margin-top: 1em">Downloads</h3><ul>
+     <li><a href="/files/data/iem/a1b/pr_total_mm_iem_ar4_cccma_cgcm3_1_sresa1b_2001_2049.zip">Projected Precipitation, AR4 CCCMA/CGCM3.1, 2001&ndash;2049</a>, 3.0 GB</li>
+      <li><a href="/files/data/iem/a1b/pr_total_mm_iem_ar4_cccma_cgcm3_1_sresa1b_2050_2100.zip">Projected Precipitation, AR4 CCCMA/CGCM3.1, 2050&ndash;2100</a>, 3.1 GB</li>
+      <li><a href="/files/data/iem/a1b/pr_total_mm_iem_ar4_mpi_echam5_sresa1b_2001_2049.zip">Projected Precipitation, AR4 MPI/ECHAM5, 2001&ndash;2049</a>, 2.9 GB</li>
+      <li><a href="/files/data/iem/a1b/pr_total_mm_iem_ar4_mpi_echam5_sresa1b_2050_2100.zip">Projected Precipitation, AR4 MPI/ECHAM5, 2050&ndash;2100</a>, 3.1 GB</li></ul>
     </div>
   </div>
 </div>
@@ -2210,9 +2237,13 @@ Although the equations developed here provide a reasonable fit to the data, mode
           <tr><th scope="row">Temporal Resolution</th><td>2001&ndash;2100</td></tr>
         </tbody>
       </table>
-      <h3 style="margin-top: 1em">Downloads</h3>
-      <p><a href="/files/data/iem/"></a>, </p>
-    </div>
+            <h3 style="margin-top: 1em">Metadata</h3>
+      <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="82">Historical Surface Downswelling Shortwave Radiation</a></p>
+      <h3 style="margin-top: 1em">Downloads</h3><ul>
+     <li><a href="/files/data/iem/a1b/rsds_mean_wm-2_iem_ar4_cccma_cgcm3_1_sresa1b_2001_2049.zip">Projected Surface Downswelling Shortwave Radiation, AR4 CCCMA/CGCM3.1, 2001&ndash;2049</a>, 3.0 GB</li>
+      <li><a href="/files/data/iem/a1b/rsds_mean_wm-2_iem_ar4_cccma_cgcm3_1_sresa1b_2050_2100.zip">Projected Surface Downswelling Shortwave Radiation, AR4 CCCMA/CGCM3.1, 2050&ndash;2100</a>, 3.2 GB</li>
+      <li><a href="/files/data/iem/a1b/rsds_mean_wm-2_iem_ar4_mpi_echam5_sresa1b_2001_2049.zip">Projected Surface Downswelling Shortwave Radiation, AR4 MPI/ECHAM5, 2001&ndash;2049</a>, 3.0 GB</li>
+      <li><a href="/files/data/iem/a1b/rsds_mean_wm-2_iem_ar4_mpi_echam5_sresa1b_2050_2100.zip">Projected Surface Downswelling Shortwave Radiation, AR4 MPI/ECHAM5, 2050&ndash;2100</a>, 3.2 GB</li> </ul>   </div>
   </div>
 </div>
 
@@ -2228,8 +2259,15 @@ Although the equations developed here provide a reasonable fit to the data, mode
           <tr><th scope="row">Temporal Resolution</th><td>2001&ndash;2100</td></tr>
         </tbody>
       </table>
+      <h3 style="margin-top: 1em">Metadata</h3>
+      <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="81">Historical Vapor Pressure</a></p>
       <h3 style="margin-top: 1em">Downloads</h3>
-      <p><a href="/files/data/iem/"></a>, </p>
+      <ul>
+     <li><a href="/files/data/iem/a1b/vap_mean_hPa_iem_ar4_cccma_cgcm3_1_sresa1b_2001_2049.zip">Projected Vapor Pressure, AR4 CCCMA/CGCM3.1, 2001&ndash;2049</a>, 3.0 GB</li>
+      <li><a href="/files/data/iem/a1b/vap_mean_hPa_iem_ar4_cccma_cgcm3_1_sresa1b_2050_2100.zip">Projected Vapor Pressure, AR4 CCCMA/CGCM3.1, 2050&ndash;2100</a>, 3.2 GB</li>
+      <li><a href="/files/data/iem/a1b/vap_mean_hPa_iem_ar4_mpi_echam5_sresa1b_01_2001_2049.zip">Projected Vapor Pressure, AR4 MPI/ECHAM5, 2001&ndash;2049</a>, 3.0 GB</li>
+      <li><a href="/files/data/iem/a1b/vap_mean_hPa_iem_ar4_mpi_echam5_sresa1b_01_2050_2100.zip">Projected Vapor Pressure, AR4 MPI/ECHAM5, 2050&ndash;2100</a>, 3.2 GB</li>    
+    </ul>
     </div>
   </div>
 </div>

@@ -12,6 +12,13 @@ $page->pageHeader();
 <div id="main_content" class="releases methods text">
 <h2>SNAP web site release notes</h2>
 
+<h3>1.2.2</h3>
+<h4>Released January 22, 2013 at 6:00pm AKST</h4>
+<ul>
+	<li><strong>New data available for download:</strong> IEM research data has been added to the <a href="/data.php">data downloads</a> page. (#112)</li>
+	<li>Fixed a minor issue preventing deep-linking to data inside the data page. (#121, #118)</li>
+</ul>
+
 <h3>1.2.1</h3>
 <h4>Released December 17, 2012 at 1:30pm AKST</h4>
 <p>This minor release removed an incorrect note on the data download page, and changed file names for CRU TS 3.1.01 data to bring it into alignment with the scheme used for other filenames.</p>
