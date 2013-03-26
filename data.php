@@ -2052,12 +2052,14 @@ Although the equations developed here provide a reasonable fit to the data, mode
 
 
 <div class="methods text">
-<h3>Research Data: Integrated Ecosystem Model for Alaska and Northwest Canada (IEM)</h3>
+<h3>Research Data</h3>
 </div>
 
-<p>Data listed in this section are being developed specifically for this broad scale model coupling project.  An overview of the project can be found on the <a href="/projects.php">project page</a> including all collaborators and funding sources.</p>
+<p>Data listed in this section are being developed specifically for several broad scale modeling projects. Overviews can be found on their respective project pages including all collaborators and funding sources.</p>
 
-<p>This broad&ndash;scale modeling project has very specific input data requirements.  These include a 1&times;1km pixel resolution, spatial coverage across data poor regions of Alaska, the Yukon Territories, and parts of northern British Columbia, and temporal coverage of monthly data from the early 1900&rsquo;s to 2100.  In addition, because these datasets are being developed as input to specific models, they also require adherence to model specific requirements in order to produce plausible outputs.  Because existing input data did not already exist at this level of detail, our approach has been to downscale the variables of interest to an intermediate resolution when available and then to apply common raster resampling methods down to 1&times;1km pixel sizes.  Care has also been taken to keep the range of the data within accepted bounds and consistent across related variables.</p>
+<p>These broad&ndash;scale modeling projects have very specific input data requirements. These include a 1&times;1km pixel resolution, spatial coverage across data poor regions of Alaska, the Yukon Territories, and parts of northern British Columbia, and temporal coverage of monthly data from the early 1900&rsquo;s to 2100. In addition, because these datasets are being developed as input to specific models, they also require adherence to model specific requirements in order to produce plausible outputs. Because existing input data did not already exist at this level of detail, our approach has been to downscale the variables of interest to an intermediate resolution when available and then to apply common raster resampling methods down to 1&times;1km pixel sizes. Care has also been taken to keep the range of the data within accepted bounds and consistent across related variables.</p>
+
+<p>This data is preliminary and is constantly being vetted and updated by our research group. Use of these datasets should be limited to these modeling projects only, but are shared here for stakeholder review and general communication of our data efforts.</p>
 
 <div><img src="images/IEM_web_thumbnail.png" style="width: 300px;"/></div>
 
@@ -2141,7 +2143,7 @@ Although the equations developed here provide a reasonable fit to the data, mode
 
 <div class="dataAccordionWrapper">
   <div class="dataAccordion">
-    <h3><a href="#dataset=IEM_historical_radiation">Historical Surface Downwelling Shortwave Radiation</a></h3>
+    <h3><a href="#dataset=IEM_historical_radiation">Historical Surface Downwelling Shortwave Radiation (file name and unit update in progress)</a></h3>
     <div>
             <table>
         <tbody>
@@ -2152,9 +2154,10 @@ Although the equations developed here provide a reasonable fit to the data, mode
         </tbody>
       </table>
             <h3 style="margin-top: 1em">Metadata</h3>
-      <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="85">Historical Surface Downswelling Shortware Radiation</a></p>
-      <h3 style="margin-top: 1em">Downloads</h3>
-      <p><a href="/files/data/iem/cru_ts31/rsds_mean_wm-2_iem_cru_TS31_historical_1901_2009.zip">Historical Surface Downswelling Shortware Radiation</a>, 6.3 GB</p>
+      <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="85">Historical Surface Downwelling Shortwave Radiation</a></p>
+      <!--<h3 style="margin-top: 1em">Downloads</h3>
+      <p><a href="/files/data/iem/cru_ts31/rsds_mean_wm-2_iem_cru_TS31_historical_1901_2009.zip">Historical Surface Downwelling Shortwave Radiation</a>, 6.3 GB</p>
+       link disabled 3/26/2013-->
     </div>
   </div>
 </div>
@@ -2217,7 +2220,7 @@ Although the equations developed here provide a reasonable fit to the data, mode
             <h3 style="margin-top: 1em">Metadata</h3>
       <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="92">Historical Precipitation</a></p>
       <h3 style="margin-top: 1em">Downloads</h3><ul>
-     <li><a href="/files/data/iem/a1b/pr_total_mm_iem_ar4_cccma_cgcm3_1_sresa1b_2001_2049.zip">Projected Precipitation, AR4 CCCMA/CGCM3.1, 2001&ndash;2049</a>, 3.0 GB</li>
+      <li><a href="/files/data/iem/a1b/pr_total_mm_iem_ar4_cccma_cgcm3_1_sresa1b_2001_2049.zip">Projected Precipitation, AR4 CCCMA/CGCM3.1, 2001&ndash;2049</a>, 3.0 GB</li>
       <li><a href="/files/data/iem/a1b/pr_total_mm_iem_ar4_cccma_cgcm3_1_sresa1b_2050_2100.zip">Projected Precipitation, AR4 CCCMA/CGCM3.1, 2050&ndash;2100</a>, 3.1 GB</li>
       <li><a href="/files/data/iem/a1b/pr_total_mm_iem_ar4_mpi_echam5_sresa1b_2001_2049.zip">Projected Precipitation, AR4 MPI/ECHAM5, 2001&ndash;2049</a>, 2.9 GB</li>
       <li><a href="/files/data/iem/a1b/pr_total_mm_iem_ar4_mpi_echam5_sresa1b_2050_2100.zip">Projected Precipitation, AR4 MPI/ECHAM5, 2050&ndash;2100</a>, 3.1 GB</li></ul>
@@ -2227,7 +2230,7 @@ Although the equations developed here provide a reasonable fit to the data, mode
 
 <div class="dataAccordionWrapper">
   <div class="dataAccordion">
-    <h3><a href="#dataset=IEM_projected_radiation">Projected Surface Downswelling Shortwave Radiation</a></h3>
+    <h3><a href="#dataset=IEM_projected_radiation">Projected Surface Downwelling Shortwave Radiation (file name and unit update in progress)</a></h3>
     <div>
             <table>
         <tbody>
@@ -2238,12 +2241,13 @@ Although the equations developed here provide a reasonable fit to the data, mode
         </tbody>
       </table>
             <h3 style="margin-top: 1em">Metadata</h3>
-      <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="82">Historical Surface Downswelling Shortwave Radiation</a></p>
-      <h3 style="margin-top: 1em">Downloads</h3><ul>
-     <li><a href="/files/data/iem/a1b/rsds_mean_wm-2_iem_ar4_cccma_cgcm3_1_sresa1b_2001_2049.zip">Projected Surface Downswelling Shortwave Radiation, AR4 CCCMA/CGCM3.1, 2001&ndash;2049</a>, 3.0 GB</li>
-      <li><a href="/files/data/iem/a1b/rsds_mean_wm-2_iem_ar4_cccma_cgcm3_1_sresa1b_2050_2100.zip">Projected Surface Downswelling Shortwave Radiation, AR4 CCCMA/CGCM3.1, 2050&ndash;2100</a>, 3.2 GB</li>
-      <li><a href="/files/data/iem/a1b/rsds_mean_wm-2_iem_ar4_mpi_echam5_sresa1b_2001_2049.zip">Projected Surface Downswelling Shortwave Radiation, AR4 MPI/ECHAM5, 2001&ndash;2049</a>, 3.0 GB</li>
-      <li><a href="/files/data/iem/a1b/rsds_mean_wm-2_iem_ar4_mpi_echam5_sresa1b_2050_2100.zip">Projected Surface Downswelling Shortwave Radiation, AR4 MPI/ECHAM5, 2050&ndash;2100</a>, 3.2 GB</li> </ul>   </div>
+      <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="82">Historical Surface Downwelling Shortwave Radiation</a></p>
+      <!--<h3 style="margin-top: 1em">Downloads</h3><ul>
+      <li><a href="/files/data/iem/a1b/rsds_mean_wm-2_iem_ar4_cccma_cgcm3_1_sresa1b_2001_2049.zip">Projected Surface Downwelling Shortwave Radiation, AR4 CCCMA/CGCM3.1, 2001&ndash;2049</a>, 3.0 GB</li>
+      <li><a href="/files/data/iem/a1b/rsds_mean_wm-2_iem_ar4_cccma_cgcm3_1_sresa1b_2050_2100.zip">Projected Surface Downwelling Shortwave Radiation, AR4 CCCMA/CGCM3.1, 2050&ndash;2100</a>, 3.2 GB</li>
+      <li><a href="/files/data/iem/a1b/rsds_mean_wm-2_iem_ar4_mpi_echam5_sresa1b_2001_2049.zip">Projected Surface Downwelling Shortwave Radiation, AR4 MPI/ECHAM5, 2001&ndash;2049</a>, 3.0 GB</li>
+      <li><a href="/files/data/iem/a1b/rsds_mean_wm-2_iem_ar4_mpi_echam5_sresa1b_2050_2100.zip">Projected Surface Downwelling Shortwave Radiation, AR4 MPI/ECHAM5, 2050&ndash;2100</a>, 3.2 GB</li> </ul>   </div>
+  		disabled link 3/26/2013-->
   </div>
 </div>
 
