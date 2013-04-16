@@ -2115,7 +2115,7 @@ Although the equations developed here provide a reasonable fit to the data, mode
       <h3 style="margin-top: 1em">Metadata</h3>
       <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="93">Historical Temperature</a></p>
       <h3 style="margin-top: 1em">Downloads</h3>
-      <p><a href="/files/data/iem/cru_ts31/tas_mean_C_iem_cru_TS31_historical_1901_2009.zip">Historical Temperature</a>, 6.6 GB</p>
+      <p><a href="/files/data/iem/cru_ts31/tas_mean_C_iem_cru_TS31_1901_2009.zip">Historical Temperature</a>, 6.6 GB</p>
     </div>
   </div>
 </div>
@@ -2136,14 +2136,14 @@ Although the equations developed here provide a reasonable fit to the data, mode
             <h3 style="margin-top: 1em">Metadata</h3>
       <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="94">Historical Precipitation</a></p>
       <h3 style="margin-top: 1em">Downloads</h3>
-      <p><a href="/files/data/iem/cru_ts31/pr_total_mm_iem_cru_TS31_historical_1901_2009.zip">Historical Precipitation</a>, 3.0 GB</p>
+      <p><a href="/files/data/iem/cru_ts31/pr_total_mm_iem_cru_TS31_1901_2009.zip">Historical Precipitation</a>, 3.0 GB</p>
     </div>
   </div>
 </div>
 
 <div class="dataAccordionWrapper">
   <div class="dataAccordion">
-    <h3><a href="#dataset=IEM_historical_radiation">Historical Surface Downwelling Shortwave Radiation (file name and unit update in progress)</a></h3>
+    <h3><a href="#dataset=IEM_historical_radiation">Historical Surface Downwelling Shortwave Radiation</a></h3>
     <div>
             <table>
         <tbody>
@@ -2155,9 +2155,8 @@ Although the equations developed here provide a reasonable fit to the data, mode
       </table>
             <h3 style="margin-top: 1em">Metadata</h3>
       <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="85">Historical Surface Downwelling Shortwave Radiation</a></p>
-      <!--<h3 style="margin-top: 1em">Downloads</h3>
-      <p><a href="/files/data/iem/cru_ts31/rsds_mean_wm-2_iem_cru_TS31_historical_1901_2009.zip">Historical Surface Downwelling Shortwave Radiation</a>, 6.3 GB</p>
-       link disabled 3/26/2013-->
+      <h3 style="margin-top: 1em">Downloads</h3>
+      <p><a href="/files/data/iem/cru_ts31/rsds_mean_MJ-m2-d1_iem_cru_TS31_1901_2009.zip">Historical Surface Downwelling Shortwave Radiation</a>, 6.3 GB</p>
     </div>
   </div>
 </div>
@@ -2176,7 +2175,7 @@ Although the equations developed here provide a reasonable fit to the data, mode
       <h3 style="margin-top: 1em">Metadata</h3>
       <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="80">Historical Vapor Pressure</a></p>      
       <h3 style="margin-top: 1em">Downloads</h3>
-      <p><a href="/files/data/iem/cru_ts31/vap_mean_hPa_iem_cru_TS31_historical_1901_2009.zip">Historical Vapor Pressure</a>, 2.4 GB</p>
+      <p><a href="/files/data/iem/cru_ts31/vap_mean_hPa_iem_cru_TS31_1901_2009.zip">Historical Vapor Pressure</a>, 2.4 GB</p>
     </div>
   </div>
 </div>
@@ -2196,11 +2195,12 @@ Although the equations developed here provide a reasonable fit to the data, mode
             <h3 style="margin-top: 1em">Metadata</h3>
       <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="89">Projected Temperature</a></p>
       <h3 style="margin-top: 1em">Downloads</h3><ul>
-      <li><a href="/files/data/iem/a1b/tas_mean_C_iem_ar4_cccma_cgcm3_1_sresa1b_2001_2049.zip">Projected Temperature, AR4 CCCMA/CGCM3.1, 2001&ndash;2049</a>, 3.0 GB</li>
-      <li><a href="/files/data/iem/a1b/tas_mean_C_iem_ar4_cccma_cgcm3_1_sresa1b_2050_2100.zip">Projected Temperature, AR4 CCCMA/CGCM3.1, 2050&ndash;2100</a>, 3.2 GB</li>
-      <li><a href="/files/data/iem/a1b/tas_mean_C_iem_ar4_mpi_echam5_sresa1b_2001_2049.zip
-">Projected Temperature, AR4 MPI/ECHAM5, 2001&ndash;2049</a>, 3.0 GB</li>
-      <li><a href="/files/data/iem/a1b/tas_mean_C_iem_ar4_mpi_echam5_sresa1b_2050_2100.zip">Projected Temperature, AR4 MPI/ECHAM5, 2050&ndash;2100</a>, 3.2 GB</li></ul>
+      <li><a href="/files/data/iem/a1b/tas_mean_C_iem_cccma_cgcm3_1_sresa1b_2001_2100.zip">tas_mean_C_iem_cccma_cgcm3_1_sresa1b_2001_2100.zip</a>,  6.2 GB</li>
+      <li><a href="/files/data/iem/a1b/tas_mean_C_iem_mpi_echam5_sresa1b_2001_2100.zip">tas_mean_C_iem_mpi_echam5_sresa1b_2001_2100.zip</a>, 6.2 GB</li>
+      <li><a href="/files/data/iem/a2/tas_mean_C_iem_ar4_cccma_cgcm3_1_sresa2_2001_2100.zip">tas_mean_C_iem_ar4_cccma_cgcm3_1_sresa2_2001_2100.zip</a>, 7.0 GB</li>
+      <li><a href="/files/data/iem/a2/tas_mean_C_iem_ar4_mpi_echam5_sresa2_2001_2100.zip">tas_mean_C_iem_ar4_mpi_echam5_sresa2_2001_2100.zip</a>, 6.2 GB</li>
+      <li><a href="/files/data/iem/b1/tas_mean_C_iem_ar4_cccma_cgcm3_1_sresb1_2001_2100.zip">tas_mean_C_iem_ar4_cccma_cgcm3_1_sresb1_2001_2100.zip</a>, 7.0 GB</li>
+      <li><a href="/files/data/iem/b1/tas_mean_C_iem_ar4_mpi_echam5_sresb1_2001_2100.zip">tas_mean_C_iem_ar4_mpi_echam5_sresb1_2001_2100.zip</a>, 7.0 GB</li></ul>
     </div>
   </div>
 </div>
@@ -2220,17 +2220,19 @@ Although the equations developed here provide a reasonable fit to the data, mode
             <h3 style="margin-top: 1em">Metadata</h3>
       <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="92">Historical Precipitation</a></p>
       <h3 style="margin-top: 1em">Downloads</h3><ul>
-      <li><a href="/files/data/iem/a1b/pr_total_mm_iem_ar4_cccma_cgcm3_1_sresa1b_2001_2049.zip">Projected Precipitation, AR4 CCCMA/CGCM3.1, 2001&ndash;2049</a>, 3.0 GB</li>
-      <li><a href="/files/data/iem/a1b/pr_total_mm_iem_ar4_cccma_cgcm3_1_sresa1b_2050_2100.zip">Projected Precipitation, AR4 CCCMA/CGCM3.1, 2050&ndash;2100</a>, 3.1 GB</li>
-      <li><a href="/files/data/iem/a1b/pr_total_mm_iem_ar4_mpi_echam5_sresa1b_2001_2049.zip">Projected Precipitation, AR4 MPI/ECHAM5, 2001&ndash;2049</a>, 2.9 GB</li>
-      <li><a href="/files/data/iem/a1b/pr_total_mm_iem_ar4_mpi_echam5_sresa1b_2050_2100.zip">Projected Precipitation, AR4 MPI/ECHAM5, 2050&ndash;2100</a>, 3.1 GB</li></ul>
+      <li><a href="/files/data/iem/a1b/pr_total_mm_iem_cccma_cgcm3_1_sresa1b_2001_2100.zip">pr_total_mm_iem_cccma_cgcm3_1_sresa1b_2001_2100.zip</a>, 6.1 GB</li>
+      <li><a href="/files/data/iem/a1b/pr_total_mm_iem_mpi_echam5_sresa1b_2001_2100.zip">pr_total_mm_iem_mpi_echam5_sresa1b_2001_2100.zip</a>, 6.0 GB</li>
+      <li><a href="/files/data/iem/a2/pr_total_mm_iem_ar4_cccma_cgcm3_1_sresa2_2001_2100.zip">pr_total_mm_iem_ar4_cccma_cgcm3_1_sresa2_2001_2100.zip</a>, 6.7 GB</li>
+      <li><a href="/files/data/iem/a2/pr_total_mm_iem_ar4_mpi_echam5_sresa2_2001_2100.zip">pr_total_mm_iem_ar4_mpi_echam5_sresa2_2001_2100.zip</a>, 6.0 GB</li>
+      <li><a href="/files/data/iem/b1/pr_total_mm_iem_ar4_cccma_cgcm3_1_sresb1_2001_2100.zip">pr_total_mm_iem_ar4_cccma_cgcm3_1_sresb1_2001_2100.zip</a>, 6.6 GB</li>
+      <li><a href="/files/data/iem/b1/pr_total_mm_iem_ar4_mpi_echam5_sresb1_2001_2100.zip">pr_total_mm_iem_ar4_mpi_echam5_sresb1_2001_2100.zip</a>, 6.0 GB</li></ul>
     </div>
   </div>
 </div>
 
 <div class="dataAccordionWrapper">
   <div class="dataAccordion">
-    <h3><a href="#dataset=IEM_projected_radiation">Projected Surface Downwelling Shortwave Radiation (file name and unit update in progress)</a></h3>
+    <h3><a href="#dataset=IEM_projected_radiation">Projected Surface Downwelling Shortwave Radiation</a></h3>
     <div>
             <table>
         <tbody>
@@ -2242,12 +2244,14 @@ Although the equations developed here provide a reasonable fit to the data, mode
       </table>
             <h3 style="margin-top: 1em">Metadata</h3>
       <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="82">Historical Surface Downwelling Shortwave Radiation</a></p>
-      <!--<h3 style="margin-top: 1em">Downloads</h3><ul>
-      <li><a href="/files/data/iem/a1b/rsds_mean_wm-2_iem_ar4_cccma_cgcm3_1_sresa1b_2001_2049.zip">Projected Surface Downwelling Shortwave Radiation, AR4 CCCMA/CGCM3.1, 2001&ndash;2049</a>, 3.0 GB</li>
-      <li><a href="/files/data/iem/a1b/rsds_mean_wm-2_iem_ar4_cccma_cgcm3_1_sresa1b_2050_2100.zip">Projected Surface Downwelling Shortwave Radiation, AR4 CCCMA/CGCM3.1, 2050&ndash;2100</a>, 3.2 GB</li>
-      <li><a href="/files/data/iem/a1b/rsds_mean_wm-2_iem_ar4_mpi_echam5_sresa1b_2001_2049.zip">Projected Surface Downwelling Shortwave Radiation, AR4 MPI/ECHAM5, 2001&ndash;2049</a>, 3.0 GB</li>
-      <li><a href="/files/data/iem/a1b/rsds_mean_wm-2_iem_ar4_mpi_echam5_sresa1b_2050_2100.zip">Projected Surface Downwelling Shortwave Radiation, AR4 MPI/ECHAM5, 2050&ndash;2100</a>, 3.2 GB</li> </ul>   </div>
-  		disabled link 3/26/2013-->
+      <h3 style="margin-top: 1em">Downloads</h3><ul>
+      <li><a href="/files/data/iem/a1b/rsds_mean_MJ-m2-d1_iem_cccma_cgcm3_1_sresa1b_2001_2100.zip">rsds_mean_MJ-m2-d1_iem_cccma_cgcm3_1_sresa1b_2001_2100.zip</a>, 5.8 GB</li>
+      <li><a href="/files/data/iem/a1b/rsds_mean_MJ-m2-d1_iem_mpi_echam5_sresa1b_2001_2100.zip">rsds_mean_MJ-m2-d1_iem_mpi_echam5_sresa1b_2001_2100.zip</a>, 5.8 GB</li>
+      <li><a href="/files/data/iem/a2/rsds_mean_MJ-m2-d1_iem_ar4_cccma_cgcm3_1_sresa2_2001_2100.zip">rsds_mean_MJ-m2-d1_iem_ar4_cccma_cgcm3_1_sresa2_2001_2100.zip</a>, 5.8 GB</li>
+      <li><a href="/files/data/iem/a2/rsds_mean_MJ-m2-d1_iem_ar4_mpi_echam5_sresa2_2001_2100.zip">rsds_mean_MJ-m2-d1_iem_ar4_mpi_echam5_sresa2_2001_2100.zip</a>, 5.8 GB</li>
+      <li><a href="/files/data/iem/b1/rsds_mean_MJ-m2-d1_iem_ar4_cccma_cgcm3_1_sresb1_2001_2100.zip">rsds_mean_MJ-m2-d1_iem_ar4_cccma_cgcm3_1_sresb1_2001_2100.zip</a>, 5.8 GB</li>
+      <li><a href="/files/data/iem/b1/rsds_mean_MJ-m2-d1_iem_ar4_mpi_echam5_sresb1_2001_2100.zip">rsds_mean_MJ-m2-d1_iem_ar4_mpi_echam5_sresb1_2001_2100.zip</a>, 5.8 GB</li></ul>   
+  	</div>
   </div>
 </div>
 
@@ -2267,11 +2271,12 @@ Although the equations developed here provide a reasonable fit to the data, mode
       <p><a href="#" class="metadataLink"  data-geonetwork-metadata-id="81">Historical Vapor Pressure</a></p>
       <h3 style="margin-top: 1em">Downloads</h3>
       <ul>
-     <li><a href="/files/data/iem/a1b/vap_mean_hPa_iem_ar4_cccma_cgcm3_1_sresa1b_2001_2049.zip">Projected Vapor Pressure, AR4 CCCMA/CGCM3.1, 2001&ndash;2049</a>, 3.0 GB</li>
-      <li><a href="/files/data/iem/a1b/vap_mean_hPa_iem_ar4_cccma_cgcm3_1_sresa1b_2050_2100.zip">Projected Vapor Pressure, AR4 CCCMA/CGCM3.1, 2050&ndash;2100</a>, 3.2 GB</li>
-      <li><a href="/files/data/iem/a1b/vap_mean_hPa_iem_ar4_mpi_echam5_sresa1b_01_2001_2049.zip">Projected Vapor Pressure, AR4 MPI/ECHAM5, 2001&ndash;2049</a>, 3.0 GB</li>
-      <li><a href="/files/data/iem/a1b/vap_mean_hPa_iem_ar4_mpi_echam5_sresa1b_01_2050_2100.zip">Projected Vapor Pressure, AR4 MPI/ECHAM5, 2050&ndash;2100</a>, 3.2 GB</li>    
-    </ul>
+     <li><a href="/files/data/iem/a1b/vap_mean_hPa_iem_cccma_cgcm3_1_sresa1b_2001_2100.zip">vap_mean_hPa_iem_cccma_cgcm3_1_sresa1b_2001_2100.zip</a>, 2.2 GB</li>
+     <li><a href="/files/data/iem/a1b/vap_mean_hPa_iem_mpi_echam5_sresa1b_2001_2100.zip">vap_mean_hPa_iem_mpi_echam5_sresa1b_2001_2100.zip</a>, 2.2 GB</li>
+     <li><a href="/files/data/iem/a2/vap_mean_hPa_iem_ar4_cccma_cgcm3_1_sresa2_2001_2100.zip">vap_mean_hPa_iem_ar4_cccma_cgcm3_1_sresa2_2001_2100.zip</a>, 2.2 GB</li>
+     <li><a href="/files/data/iem/a2/vap_mean_hPa_iem_ar4_mpi_echam5_sresa2_2001_2100.zip">vap_mean_hPa_iem_ar4_mpi_echam5_sresa2_2001_2100.zip</a>, 2.2 GB</li>
+     <li><a href="/files/data/iem/b1/vap_mean_hPa_iem_ar4_cccma_cgcm3_1_sresb1_2001_2100.zip">vap_mean_hPa_iem_ar4_cccma_cgcm3_1_sresb1_2001_2100.zip</a>, 2.2 GB</li>
+     <li><a href="/files/data/iem/b1/vap_mean_hPa_iem_ar4_mpi_echam5_sresb1_2001_2100.zip">vap_mean_hPa_iem_ar4_mpi_echam5_sresb1_2001_2100.zip</a>, 2.2 GB</li></ul>
     </div>
   </div>
 </div>

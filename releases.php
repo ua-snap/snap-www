@@ -12,6 +12,17 @@ $page->pageHeader();
 <div id="main_content" class="releases methods text">
 <h2>SNAP web site release notes</h2>
 
+<h3>1.2.4</h3>
+<h4>Realeased April 26, 2013 at 1:00pm AKDT</h4>
+<ul>
+	<li><strong>New data available for download:</strong> additional IEM research data for scenarios a2 and b1 has been added to the <a href="/data.php">data downloads</a> page.</li>
+	<li>The surface downwelling shortwave radiation data downloads are once again available.
+</ul>
+
+<h3>1.2.3</h3>
+<h4>Released March 27, 2013 at 9:45am AKDT</h4>
+	<p>This release temporarily closed the download links for projected and historical surface downwelling shortwave radiation for an update. It also modified some text on the data download page and corrected some typos there.</p>
+
 <h3>1.2.2</h3>
 <h4>Released January 22, 2013 at 6:00pm AKST</h4>
 <ul>
@@ -21,7 +32,7 @@ $page->pageHeader();
 
 <h3>1.2.1</h3>
 <h4>Released December 17, 2012 at 1:30pm AKST</h4>
-<p>This minor release removed an incorrect note on the data download page, and changed file names for CRU TS 3.1.01 data to bring it into alignment with the scheme used for other filenames.</p>
+	<p>This minor release removed an incorrect note on the data download page, and changed file names for CRU TS 3.1.01 data to bring it into alignment with the scheme used for other filenames.</p>
 
 <h3>1.2.0</h3>
 <h4>Released November 30, 2012 at 6:00pm AKST</h4>
