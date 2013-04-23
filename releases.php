@@ -13,7 +13,7 @@ $page->pageHeader();
 <h2>SNAP web site release notes</h2>
 
 <h3>1.2.4</h3>
-<h4>Realeased April 26, 2013 at 1:00pm AKDT</h4>
+<h4>Released April 26, 2013 at 1:00pm AKDT</h4>
 <ul>
 	<li><strong>New data available for download:</strong> additional IEM research data for scenarios a2 and b1 has been added to the <a href="/data.php">data downloads</a> page.</li>
 	<li>The surface downwelling shortwave radiation data downloads are once again available.
