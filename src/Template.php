@@ -50,6 +50,7 @@ If you add a file here, you must add it to the makefile for packaging.  See the 
 <script src="js/jquery.ba-bbq.min.js" type="text/javascript"></script>
 <script src="js/jquery.scrollTo-min.js" type="text/javascript"></script>
 
+<script src="js/licenseModal.js" type="text/javascript"></script>
 <script src="js/charts.js" type="text/javascript"></script>
 <script src="js/maps.js" type="text/javascript"></script>
 <!-- end-package -->

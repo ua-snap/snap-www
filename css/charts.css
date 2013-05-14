@@ -80,7 +80,7 @@ h1 {
 	position: absolute;
 	top: 0;
 	right: 0;
-	z-index: 4000;
+	z-index: 1000;
 }
 
 .inline-controls {
@@ -90,3 +90,4 @@ h1 {
 .inline-controls-right {
 	float: right;
 }
+
