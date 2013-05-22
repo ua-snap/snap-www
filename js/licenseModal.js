@@ -15,6 +15,31 @@ continue the download process upon the user's acceptance of the agreement.
 
 */
 
+
+function sendFilename( filename ) {
+	var finalData = {
+		'download': filename
+	};
+
+	$.ajax({
+		url: 		"https://script.google.com/macros/s/AKfycbwwVgvDBKR-jEfBK5r9PwA7YvZpNsNy41l9fn3RhkWOz_B7BUXl/exec",
+		type: 		'POST',
+		data: 		finalData.serialize(),
+	});
+}
+
+
+function callback( downloadFunction ) {
+	downloadFunction();
+	var url = document.URL;
+	var filename = url.substring(url.lastIndexOf('/')+1);
+	sendFilename(filename);
+
+}
+
+
+
+
 //TODO: charts exporting window for hires png shows up before this dialog, which makes it so that it says "exporting" even after 'declined', fix?
 		//on that note -- remember that you can close that exporting dialog from anywhere with '#processingExportDialog'.dialog('close'); 
 		//possibly related -- if you click the hires download, cancel it, and then try another one, and cancel IT, the canceled window gives way to an empty download window
@@ -40,9 +65,9 @@ function licenseModal( salutation, licenseAgreement, downloadFunction ) {
 		buttons: {
 			"Accept":function() {
 				$(this).dialog('close');
-				/*var form = document.getElementById( textEntry );	//doesn't work, but wanna do something like it
-				form.submit();*/
-				downloadFunction();
+				// downloadFunction();
+				callback( downloadFunction );
+
 			},
 
 			"Decline":function() {
@@ -50,4 +75,21 @@ function licenseModal( salutation, licenseAgreement, downloadFunction ) {
 			}
 		}
 	});
+
+	
+		$(document).ready(function() { 
+
+			$('#textEntry').submit( function() {	//intercept the click of the "submit" button
+
+
+				$.ajax({
+					url: 		$(this).attr('action'),
+					type: 		$(this).attr('method'),
+					data: 		$(this).serialize(),
+				});
+				$('#textEntry').find("input[type=text], textarea").val("");	//clear form fields TODO: consider changing this to remove the form and display a thank you
+
+				return false;
+			});
+		});
 }
