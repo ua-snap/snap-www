@@ -21,20 +21,14 @@ continue the download process upon the user's acceptance of the agreement.
 		document.cookie = "SNAP_license_agreed=true; expires=" + expirationDate.toUTCString();
 	}
 
-
 	function cookieExpired() {
-		if( document.cookie.indexOf("SNAP_license_agreed") == -1 ) {	//problem here -- atm always returning true
+		if( document.cookie.indexOf("SNAP_license_agreed") == -1 ) {
 			return true;
 		}
-
 		else 
 			return false;
 	}
-//TODO: charts exporting window for hires png shows up before this dialog, which makes it so that it says "exporting" even after 'declined', fix?
-		//on that note -- remember that you can close that exporting dialog from anywhere with '#processingExportDialog'.dialog('close'); 
-		//possibly related -- if you click the hires download, cancel it, and then try another one, and cancel IT, the canceled window gives way to an empty download window
-				//--we'll have to see if that gets fixed when I fix the above issue.
-
+				//if you click the hires download, cancel it, and then try another one, and cancel IT, the canceled window gives way to an empty download window
 
 	function sendData( downloadFunction ) {
 		$.ajax({	//TODO: add validation here, and make this ajax call the submitHandler attribute of the validation call.
@@ -43,18 +37,15 @@ continue the download process upon the user's acceptance of the agreement.
 			data: 		$('#textEntry').serialize(),
 			success: 	downloadFunction(),					//TODO: error handling? ties into above
 		});
-
-
 	}
 function licenseModal( salutation, licenseAgreement, downloadFunction ) {
 	if( cookieExpired() ) {
-
+		
 		$('#textEntry').find("input[type=text], textarea").val("");	//clears input fields
 		var downloadDialog = $(document.createElement('div'));
 		downloadDialog.append( document.getElementById( salutation ) ).append( document.getElementById( "textEntry" ) )
 			.append( document.getElementById( licenseAgreement ) ).append( document.getElementById( "licenseNote" ) );
 
-		
 		downloadDialog.show().dialog({
 			dialogClass: "no-close",
 			closeOnEscape: false,
