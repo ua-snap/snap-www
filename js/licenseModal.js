@@ -18,7 +18,7 @@ continue the download process upon the user's acceptance of the agreement.
 	function setCookie() {
 		var expirationDate = new Date();
 		expirationDate.setSeconds( expirationDate.getSeconds() + 30 );
-		document.cookie = "SNAP_license_agreed=true; expires=" + expirationDate.toUTCString();
+		document.cookie = "SNAP_license_agreed=" + $('#textEntry').serialize() + "; expires=" + expirationDate.toUTCString();
 	}
 
 	function cookieExpired() {
@@ -28,16 +28,68 @@ continue the download process upon the user's acceptance of the agreement.
 		else 
 			return false;
 	}
-				//if you click the hires download, cancel it, and then try another one, and cancel IT, the canceled window gives way to an empty download window
 
 	function sendData( downloadFunction ) {
-		$.ajax({	//TODO: add validation here, and make this ajax call the submitHandler attribute of the validation call.
+	
+		$("#textEntry").validate({
+			debug: true,
+			rules: {
+				email: {
+					required: true,
+					email: true
+
+				}
+			},
+
+			success: function() {
+				setCookie();
+				$.ajax({	
+					url: 		$('#textEntry').attr('action'),
+					type: 		$('#textEntry').attr('method'),
+					data: 		$('#textEntry').serialize(),
+					success: 	downloadFunction(),					//TODO: more error handling?
+				});
+			}
+
+			
+			//add failure function here that sends everything but the email (or alerts the user)
+			
+
+		
+
+		});
+
+	}
+
+	//this is used to send data stored in the cookie if the user has already given their information for this cookie period
+	function sendDataFromCookie( downloadFunction ) {
+		$.ajax({	
 			url: 		$('#textEntry').attr('action'),
 			type: 		$('#textEntry').attr('method'),
-			data: 		$('#textEntry').serialize(),
-			success: 	downloadFunction(),					//TODO: error handling? ties into above
+			data: 		getCookie(),
+			success: 	downloadFunction(),					//TODO: more error handling?
 		});
 	}
+
+	function getCookie() {
+		var thisCookie = document.cookie.substring( document.cookie.indexOf( 'SNAP_license_agreed' ), document.cookie.length );
+
+		return thisCookie.substring( thisCookie.indexOf( '=' )+1, thisCookie.lastIndexOf( cookieEnd() ) );
+	}
+
+	function cookieEnd() {
+		//if browser uses semicolon separators
+		if( document.cookie.indexOf( ';', document.cookie.indexOf( 'SNAP_license_agreed' ) ) != -1 ) {
+			return ';';
+		}
+		//if browser uses comma separators
+		else if (document.cookie.indexOf( ',', document.cookie.indexOf( 'SNAP_license_agreed' ) ) != -1 ) {
+			return ',';
+		}
+		//if cookie is at the end of document.cookie
+		else return "";
+	}
+
 function licenseModal( salutation, licenseAgreement, downloadFunction ) {
 	if( cookieExpired() ) {
 		
@@ -46,7 +98,7 @@ function licenseModal( salutation, licenseAgreement, downloadFunction ) {
 		downloadDialog.append( document.getElementById( salutation ) ).append( document.getElementById( "textEntry" ) )
 			.append( document.getElementById( licenseAgreement ) ).append( document.getElementById( "licenseNote" ) );
 
-		downloadDialog.show().dialog({
+		downloadDialog.dialog({
 			dialogClass: "no-close",
 			closeOnEscape: false,
 			modal: true,
@@ -57,22 +109,21 @@ function licenseModal( salutation, licenseAgreement, downloadFunction ) {
 			width: '1000px',
 			title: 'File Download',
 			zindex: 50001,	//note to self: one more than 1st level download dialogs, doesn't seem to make a difference - at least in relation to other dialogs
-								//this is actually removed in JSUI 1.10.0. in fact, all dialogs seem to be stuck at zindex=1002
+								//this is actually removed in JSUI 1.10.0. in fact, even now all dialogs seem to be stuck at zindex=1002
 			buttons: {
 				"Accept":function() {
-					$(this).dialog('close');
-					setCookie();
+					$(this).dialog('destroy');
 					sendData( downloadFunction );
 
 				},
 
 				"Decline":function() {
-					$(this).dialog('close');
+					$(this).dialog('destroy');
 				}
 			}
 		});
 	}
 	else {
-		sendData( downloadFunction );
+		sendDataFromCookie( downloadFunction );
 	}
 }
