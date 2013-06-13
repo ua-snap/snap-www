@@ -1,7 +1,7 @@
 /*jshint: laxbreak:true */
 
 /*
-Takes as arguments the names of two divs and the function that will 
+licenseModal takes as arguments the names of two divs and the function that will 
 continue the download process upon the user's acceptance of the agreement.
 
 	Of the two div names passed, the first is the top paragraph of text before 
@@ -10,15 +10,15 @@ continue the download process upon the user's acceptance of the agreement.
 	from each respective div, in order to allow for different licences
 	to be used)
 
-	The text content of these divs is stored in src/licenceModal.php, which is where
-	new messages should be added.
-
+	The text content of these divs is stored in src/licenceModal.php, which is 
+	where new messages should be added.
 */
 
 function setCookie() {
 	var expirationDate = new Date();
 	expirationDate.setSeconds( expirationDate.getSeconds() + 30 );
-	document.cookie = "SNAP_license_agreed=" + $('#textEntry').serialize() + "; expires=" + expirationDate.toUTCString();
+	document.cookie = "SNAP_license_agreed=" + $('#textEntry').serialize() + 
+		"; expires=" + expirationDate.toUTCString();
 }
 
 function cookieExpired() {
@@ -31,7 +31,6 @@ function cookieExpired() {
 
 function sendData( downloadFunction ) {	
 	$.ajax ({
-		//async: 	false,	
 		url: 		$('#textEntry').attr('action'),
 		type: 		$('#textEntry').attr('method'),
 		data: 		$('#textEntry').serialize(),
@@ -40,10 +39,10 @@ function sendData( downloadFunction ) {
 
 }
 
-//this is used to send data stored in the cookie if the user has already given their information for this cookie period
+//this is used to send data stored in the cookie if the user has already given 
+//their information for this cookie period
 function sendDataFromCookie( downloadFunction ) {
 	$.ajax({	
-		//async:    false,
 		url: 		$('#textEntry').attr('action'),
 		type: 		$('#textEntry').attr('method'),
 		data: 		getCookie(),
@@ -79,24 +78,13 @@ function setValidation() {
 			}
 		},
 		errorPlacement: function(error, element) {
-			element.parent('p').next('div').append(error);
+			element.parent().after(error);
 		},
-		submitHandler: function() {
-			$.ajax ({
-				//async: 		false,	
-				url: 		$('#textEntry').attr('action'),
-				type: 		$('#textEntry').attr('method'),
-				data: 		$('#textEntry').serialize(),
-				success: 	downloadFunction(),	
-			});
-		}
-
 	});
 }
 
 
 function licenseModal( salutation, licenseAgreement, downloadFunction ) {
-
 	if( cookieExpired() ) {
 		var validator = setValidation();
 		
@@ -116,21 +104,17 @@ function licenseModal( salutation, licenseAgreement, downloadFunction ) {
 			hide: 'fade',
 			width: '1000px',
 			title: 'File Download',
-			zindex: 50001,	//note to self: one more than 1st level download dialogs, doesn't seem to make a difference - at least in relation to other dialogs
-								//this is actually removed in JSUI 1.10.0. in fact, even now all dialogs seem to be stuck at zindex=1002
+			zindex: 50001,
 			buttons: {
 				"Accept":function() {
 					var form = $('#textEntry').validate();
 					if(form.valid()) {
 						$(this).dialog('destroy');
-
 						sendData(downloadFunction);
-						
 						setCookie();
 						validator.resetForm();
 					}
 				},
-
 				"Decline":function() {
 					$(this).dialog('destroy');
 					validator.resetForm();
