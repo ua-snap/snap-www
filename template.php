@@ -86,6 +86,8 @@ class webPage {
         <meta name="author" content="Tracy Rogers (tsrogers@alaska.edu)" />
         <meta name="author" content="Bruce Crevensten (becrevensten@alaska.edu)" />
         <meta name="author" content="Tim Glaser" />
+        <meta name="author" content="Craig Stephenson (cstephen@iarc.uaf.edu)" />
+        <meta name="author" content="Bryce Melegari (bamelegari@alaska.edu)" />
 
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
         <link type="text/css" href="css/custom-theme/jquery-ui-1.8.17.custom.css" rel="Stylesheet" />  
