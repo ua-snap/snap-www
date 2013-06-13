@@ -15,89 +15,97 @@ continue the download process upon the user's acceptance of the agreement.
 
 */
 
-	function setCookie() {
-		var expirationDate = new Date();
-		expirationDate.setSeconds( expirationDate.getSeconds() + 30 );
-		document.cookie = "SNAP_license_agreed=" + $('#textEntry').serialize() + "; expires=" + expirationDate.toUTCString();
+function setCookie() {
+	var expirationDate = new Date();
+	expirationDate.setSeconds( expirationDate.getSeconds() + 30 );
+	document.cookie = "SNAP_license_agreed=" + $('#textEntry').serialize() + "; expires=" + expirationDate.toUTCString();
+}
+
+function cookieExpired() {
+	if( document.cookie.indexOf("SNAP_license_agreed") == -1 ) {
+		return true;
 	}
+	else 
+		return false;
+}
 
-	function cookieExpired() {
-		if( document.cookie.indexOf("SNAP_license_agreed") == -1 ) {
-			return true;
-		}
-		else 
-			return false;
+function sendData( downloadFunction ) {	
+	$.ajax ({
+		//async: 	false,	
+		url: 		$('#textEntry').attr('action'),
+		type: 		$('#textEntry').attr('method'),
+		data: 		$('#textEntry').serialize(),
+		success: 	downloadFunction(),	
+	});
+
+}
+
+//this is used to send data stored in the cookie if the user has already given their information for this cookie period
+function sendDataFromCookie( downloadFunction ) {
+	$.ajax({	
+		//async:    false,
+		url: 		$('#textEntry').attr('action'),
+		type: 		$('#textEntry').attr('method'),
+		data: 		getCookie(),
+		success: 	downloadFunction(),	
+	});
+}
+
+function getCookie() {
+	var thisCookie = document.cookie.substring( document.cookie.indexOf( 'SNAP_license_agreed' ), document.cookie.length );
+
+	return thisCookie.substring( thisCookie.indexOf( '=' )+1, thisCookie.lastIndexOf( cookieEnd() ) );
+}
+
+function cookieEnd() {
+	//if browser uses semicolon separators, find the end of our cookie
+	if( document.cookie.indexOf( ';', document.cookie.indexOf( 'SNAP_license_agreed' ) ) != -1 ) {
+		return ';';
 	}
+	//if browser uses comma separators, find the end of our cookie
+	else if (document.cookie.indexOf( ',', document.cookie.indexOf( 'SNAP_license_agreed' ) ) != -1 ) {
+		return ',';
+	}
+	//if our cookie is at the end of document.cookie
+	else return "";
+}
 
-	function sendData( downloadFunction ) {
-	
-		$("#textEntry").validate({
-			debug: true,
-			rules: {
-				email: {
-					required: true,
-					email: true
 
-				}
-			},
-
-			success: function() {
-				setCookie();
-				$.ajax({	
-					url: 		$('#textEntry').attr('action'),
-					type: 		$('#textEntry').attr('method'),
-					data: 		$('#textEntry').serialize(),
-					success: 	downloadFunction(),					//TODO: more error handling?
-				});
+function setValidation() {
+	return $('#textEntry').validate ({
+		messages: {
+			email: {
+				email: "please enter a valid email address or leave the email field blank.".fontcolor("red")
 			}
-
-			
-			//add failure function here that sends everything but the email (or alerts the user)
-			
-
-		
-
-		});
-
-	}
-
-	//this is used to send data stored in the cookie if the user has already given their information for this cookie period
-	function sendDataFromCookie( downloadFunction ) {
-		$.ajax({	
-			url: 		$('#textEntry').attr('action'),
-			type: 		$('#textEntry').attr('method'),
-			data: 		getCookie(),
-			success: 	downloadFunction(),					//TODO: more error handling?
-		});
-	}
-
-	function getCookie() {
-		var thisCookie = document.cookie.substring( document.cookie.indexOf( 'SNAP_license_agreed' ), document.cookie.length );
-
-		return thisCookie.substring( thisCookie.indexOf( '=' )+1, thisCookie.lastIndexOf( cookieEnd() ) );
-	}
-
-	function cookieEnd() {
-		//if browser uses semicolon separators
-		if( document.cookie.indexOf( ';', document.cookie.indexOf( 'SNAP_license_agreed' ) ) != -1 ) {
-			return ';';
+		},
+		errorPlacement: function(error, element) {
+			element.parent('p').next('div').append(error);
+		},
+		submitHandler: function() {
+			$.ajax ({
+				//async: 		false,	
+				url: 		$('#textEntry').attr('action'),
+				type: 		$('#textEntry').attr('method'),
+				data: 		$('#textEntry').serialize(),
+				success: 	downloadFunction(),	
+			});
 		}
-		//if browser uses comma separators
-		else if (document.cookie.indexOf( ',', document.cookie.indexOf( 'SNAP_license_agreed' ) ) != -1 ) {
-			return ',';
-		}
-		//if cookie is at the end of document.cookie
-		else return "";
-	}
+
+	});
+}
+
 
 function licenseModal( salutation, licenseAgreement, downloadFunction ) {
+
 	if( cookieExpired() ) {
+		var validator = setValidation();
 		
 		$('#textEntry').find("input[type=text], textarea").val("");	//clears input fields
 		var downloadDialog = $(document.createElement('div'));
 		downloadDialog.append( document.getElementById( salutation ) ).append( document.getElementById( "textEntry" ) )
 			.append( document.getElementById( licenseAgreement ) ).append( document.getElementById( "licenseNote" ) );
 
+		
 		downloadDialog.dialog({
 			dialogClass: "no-close",
 			closeOnEscape: false,
@@ -112,18 +120,25 @@ function licenseModal( salutation, licenseAgreement, downloadFunction ) {
 								//this is actually removed in JSUI 1.10.0. in fact, even now all dialogs seem to be stuck at zindex=1002
 			buttons: {
 				"Accept":function() {
-					$(this).dialog('destroy');
-					sendData( downloadFunction );
+					var form = $('#textEntry').validate();
+					if(form.valid()) {
+						$(this).dialog('destroy');
 
+						sendData(downloadFunction);
+						
+						setCookie();
+						validator.resetForm();
+					}
 				},
 
 				"Decline":function() {
 					$(this).dialog('destroy');
+					validator.resetForm();
 				}
 			}
 		});
 	}
 	else {
-		sendDataFromCookie( downloadFunction );
+		sendDataFromCookie(downloadFunction);
 	}
 }

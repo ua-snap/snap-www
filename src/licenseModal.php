@@ -34,10 +34,12 @@ the javascript licenseModal function.-->
 		<fieldset>
 			<p>Full Name: <input type="text" name="name"></p>
 			<p>Organization: <input type="text" name="organization"></p>
-			<p>Email Address: <input type="text" name="email"></p>
+			<p>Email Address: <input type="text" name="email" class="email"></p>
+			<div id="error"></div>
 			<input type="hidden" name="IP" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
-			<p><input type="submit" value="Submit"></p>
 		</fieldset>
 	</form>
+
+
 
 </div>
