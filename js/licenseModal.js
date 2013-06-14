@@ -17,8 +17,7 @@ continue the download process upon the user's acceptance of the agreement.
 function setCookie() {
 	var expirationDate = new Date();
 	expirationDate.setSeconds( expirationDate.getSeconds() + 30 );
-	document.cookie = "SNAP_license_agreed=" + $('#textEntry').serialize() + 
-		"; expires=" + expirationDate.toUTCString();
+	document.cookie = "SNAP_license_agreed=true; expires=" + expirationDate.toUTCString();
 }
 
 function cookieExpired() {
@@ -39,23 +38,6 @@ function sendData( downloadFunction ) {
 
 }
 
-//this is used to send data stored in the cookie if the user has already given 
-//their information for this cookie period
-function sendDataFromCookie( downloadFunction ) {
-	$.ajax({	
-		url: 		$('#textEntry').attr('action'),
-		type: 		$('#textEntry').attr('method'),
-		data: 		getCookie(),
-		success: 	downloadFunction(),	
-	});
-}
-
-function getCookie() {
-	var thisCookie = document.cookie.substring( document.cookie.indexOf( 'SNAP_license_agreed' ), document.cookie.length );
-
-	return thisCookie.substring( thisCookie.indexOf( '=' )+1, thisCookie.lastIndexOf( cookieEnd() ) );
-}
-
 function cookieEnd() {
 	//if browser uses semicolon separators, find the end of our cookie
 	if( document.cookie.indexOf( ';', document.cookie.indexOf( 'SNAP_license_agreed' ) ) != -1 ) {
@@ -69,7 +51,6 @@ function cookieEnd() {
 	else return "";
 }
 
-
 function setValidation() {
 	return $('#textEntry').validate ({
 		messages: {
@@ -82,7 +63,6 @@ function setValidation() {
 		},
 	});
 }
-
 
 function licenseModal( salutation, licenseAgreement, downloadFunction ) {
 	if( cookieExpired() ) {
@@ -106,7 +86,7 @@ function licenseModal( salutation, licenseAgreement, downloadFunction ) {
 			title: 'File Download',
 			zindex: 50001,
 			buttons: {
-				"Accept":function() {
+				"I Agree":function() {
 					var form = $('#textEntry').validate();
 					if(form.valid()) {
 						$(this).dialog('destroy');
@@ -115,7 +95,7 @@ function licenseModal( salutation, licenseAgreement, downloadFunction ) {
 						validator.resetForm();
 					}
 				},
-				"Decline":function() {
+				"No Thanks":function() {
 					$(this).dialog('destroy');
 					validator.resetForm();
 				}
@@ -123,6 +103,6 @@ function licenseModal( salutation, licenseAgreement, downloadFunction ) {
 		});
 	}
 	else {
-		sendDataFromCookie(downloadFunction);
+		downloadFunction();
 	}
 }
