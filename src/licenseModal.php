@@ -1,7 +1,7 @@
 <!--This file contains div elements for each variation of each part of
 the download modal dialog. Whenever a new section of text needs to be added to
 facilitate the creation of a new window for a specific file or type of file, it
-should be added here, with it's own unique id attribute that will be passed to
+should be added here, with it's own unique id that will be passed to
 the javascript licenseModal function.-->
 
 <link rel="stylesheet" href="/css/licenseModal.css" type="text/css" />
