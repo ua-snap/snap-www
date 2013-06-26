@@ -6,7 +6,7 @@ continue the download process upon the user's acceptance of the agreement.
 
 	Of the two div names passed, the first is the top paragraph of text before 
 	optional user information entry, and the second is the light version
-	of the license agreement below that (the legalese for which should be linked
+	of the license agreement below the form (the legalese for which should be linked
 	from each respective div, in order to allow for different licences
 	to be used)
 
