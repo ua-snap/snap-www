@@ -10,8 +10,8 @@ the javascript licenseModal function.-->
 
 <!--************************************** Below here should be placed various introductory text divs -->
 	
-	<div id="foo">
-		<p>SALUTATION</p>
+	<div id="genericIntro">
+		<h2><b>Hello!</b></h2><p>If you’d like to receive notifications of product and data updates, please provide the information below. This also helps us to get to know our users.</p>
 	</div>
 
 
@@ -20,8 +20,9 @@ the javascript licenseModal function.-->
 
 <!--************************************** Below here should be placed various license agreement divs -->
 
-	<div id="bar">
-		<p>LICENSE AGREEMENT</p>
+	<div id="genericLicense">
+		<p>Because we strive to make our products as widely available and useful as possible, all SNAP products have a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a> applied to them. If you’d like to download our products, please read the license link above and click the &quot;Agree&quot; button.</p>
+		<p>If you are part of a for-profit organization, and are interested in commercialization opportunities and/or collaborative R&amp;D activities please <a href="http://www.snap.uaf.edu/people.php#contact">contact us</a>.</p>
 	</div>
 
 
