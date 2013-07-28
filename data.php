@@ -75,7 +75,7 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 
 <?php echo Config::$termsOfUse; ?>
 
-<h3>Projected Data</h3>
+<h3 id="Projected">Projected Data</h3>
 </div>
 <div class="dataAccordionWrapper">
 
@@ -1316,7 +1316,7 @@ Although the equations developed here provide a reasonable fit to the data, mode
 
 <!-- HistoricalData -->
 
-<div class="methods text">
+<div class="methods text" id="Historical">
 <h3>Historical Data</h3>
 </div>
 
@@ -2051,7 +2051,7 @@ Although the equations developed here provide a reasonable fit to the data, mode
 
 
 
-<div class="methods text">
+<div class="methods text" id="Research">
 <h3>Research Data</h3>
 </div>
 
