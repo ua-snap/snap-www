@@ -10,6 +10,11 @@ $page->pageHeader();
                 <div id="news_sticky" style="position: absolute;"><img alt="Sticky Background" src="images/sticky.jpg" /></div>
                 <div id="news_container">
 
+                    <div style="position: absolute; display: none;">
+                        <div class="news_image"><a href="/project_page.php?projectid=26"><img alt="Report to the President" src="images/presReport.jpg" style="width: 600px; height 300px;" /></a></div>
+                        <div class="news_content"><div class="news_title">Managing for the Future in a Rapidly Changing Arctic</div>SNAP and ACCAP contributed to a report to the President of the U.S. The report highlights the need to coordinate and use the best available science to integrate cultural, environmental and economic factors in decision-making about development and conservation in the Arctic.</div>
+                        <div class="news_link"><a href="/project_page.php?projectid=26">read more &gt;&gt;</a></div>
+                    </div>
 
                     <div style="position: absolute; display: none;">
                         <div class="news_image"><a href="/maps.php" target="_blank"><img alt="SNAP Maps Tool: Climate Visualizations" src="images/maps.jpg" style="width: 600px;" /></a></div>
@@ -28,24 +33,20 @@ $page->pageHeader();
                         <div class="news_content"><div class="news_title">SNAP Collaborations</div>Collaborating with others is a large reason SNAP is able to succeed and produce some of the most useful projections of future conditions across the Arctic.</div>
                         <div class="news_link"><a href="/collaborators.php">read more &gt;&gt;</a></div>
                     </div>
-                    
-                    <div style="position: absolute">
-                        <div class="news_image"><a href="/resource_page.php?resourceid=22"><img alt="Climate Change in Forested Ecosystems" src="images/Climate_Change_in_Forested_Ecosystems.jpg" style="width: 600px; height: 300px;" /></a></div>
-                        <div class="news_content"><div class="news_title">Climate Change in Forested Ecosystems</div>A new report summarizes evidence and implications of recent and projected climate change in Alaska's forest ecosystems.</div>
-                        <div class="news_link"><a href="/resource_page.php?resourceid=22">read more &gt;&gt;</a></div>
-                    </div>
 
                     <div style="position: absolute; display: none;">
-                        <div class="news_image"><a href=""><img alt="Landscape Connectivity" src="images/index_images/connectivity.jpg" style="width: 600px; height: 300px;" /></a></div>
+                        <div class="news_image"><a href="/project_page.php?projectid=4"><img alt="Landscape Connectivity" src="images/index_images/connectivity.jpg" style="width: 600px; height: 300px;" /></a></div>
                         <div class="news_content"><div class="news_title">Landscape Connectivity</div>Utilizing climate projection data from SNAP, the Connecting Alaska Landscapes into the Future Project used selected species to identify areas of Alaska that may become important in maintaining landscape-level connectivity given a changing climate.</div>
                         <div class="news_link"><a href="/project_page.php?projectid=4">read more &gt;&gt;</a></div>
                         <div class="news_caption">Photo Courtesy of Chuck Young, U.S. Fish &amp; Wildlife Service</div>
                     </div>
+
                     <div style="position: absolute; display: none;">
                         <div class="news_image"><a href="/downscaling.php"><img alt="Downscaled Climate Projections" src="images/downscaling_figure_web.png" style="width: 600px; height: 300px;" /></a></div>
                         <div class="news_content"><div class="news_title">Downscaled Climate Projections</div>SNAP takes coarse resolution global climate model (GCM) data and downscales it to higher resolution.  This makes it more useful for agencies and decision makers to plan for climate change.</div>
                         <div class="news_link"><a href="/downscaling.php">read more &gt;&gt;</a></div>
                     </div>
+
                 </div>
                 <div id="news_nav"></div>
                 <div id="news_pause"><img alt="Pause Image" style="height: 40px;" src="images/pause.png" /></div>
@@ -53,7 +54,7 @@ $page->pageHeader();
                     $("#news_container").cycle({
                         fx:     'fade', 
                         speed:   1000, 
-                        timeout: 10000, 
+                        timeout: 5000, 
                         pause:   1,
                         pager:  '#news_nav',
                     });
