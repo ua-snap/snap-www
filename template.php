@@ -84,7 +84,6 @@ class webPage {
         <meta name="author" content="Alec Bennett (apbennett@alaska.edu)" />
         <meta name="author" content="Lena Krutikov (lkrutikov@alaska.edu)" />
         <meta name="author" content="Tracy Rogers (tsrogers@alaska.edu)" />
-        <meta name="author" content="Bruce Crevensten (becrevensten@alaska.edu)" />
         <meta name="author" content="Tim Glaser" />
         <meta name="author" content="Craig Stephenson (cstephen@iarc.uaf.edu)" />
         <meta name="author" content="Bryce Melegari (bamelegari@alaska.edu)" />
