@@ -2,6 +2,7 @@
 
 require_once 'src/Config.php';
 require_once 'src/Template.php';
+include("src/licenseModal.php");    //implements the modal download popup used on several pages
 
 // Reused occasionally throughout the site.
 function getFileSize($f){
