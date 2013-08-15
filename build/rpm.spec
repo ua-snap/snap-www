@@ -103,4 +103,4 @@ rm -rf $RPM_BUILD_ROOT
 %post
 /usr/bin/snapwww/migrate.php up >> /var/log/httpd/%{hostname}-update_log 2>&1
 service httpd graceful
-rm -rf ${RPM_BUILD_ROOT}/%{inst_dir}/charts
+rm -rf ${RPM_BUILD_ROOT}/%{inst_dir}/charts/*
