@@ -23,7 +23,7 @@ $page->pageHeader();
                     </div>
 
                     <div style="position: absolute; display: none;">
-                        <div class="news_image"><a href="/charts.php"><img alt="Your Community: Community Climate Projection Charts" src="images/community_chart_example.jpg" style="width: 600px; height: 300px;" /></a></div>
+                        <div class="news_image"><a href="/charts.php"><img alt="Your Community: Community Climate Projection Charts" src="images/community_chart_example.jpg" style="width: 600px; height: auto; margin-top: 16px" /></a></div>
                         <div class="news_content"><div class="news_title">Your Community</div>Change affects people and communities. Our Community Charts tool allows you to look at how temperature and precipitation regimes will be altered over the next 100 years, across Alaska and Western Canada.</div>
                         <div class="news_link"><a href="/charts.php">explore charts &gt;&gt;</a></div>
                     </div>
