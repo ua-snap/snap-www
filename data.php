@@ -740,7 +740,7 @@ Projected (2001&ndash;2100: B1, A1B, and A2 scenarios) monthly temperature and p
 <div>
 
 <p>
-Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771m via the delta method.  A 5-Model Average is also included.
+Projected (2010&ndash;2100: B1, A1B, and A2 scenarios) derived temperature products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 2km via the delta method.  A 5-Model Average is also included.
 </p>
 
 <table class="overview">
@@ -967,7 +967,7 @@ Estimated Julian days of freeze and thaw (dof, dot) are calculated by assuming a
 <div>
 
 <p>
-Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771m via the delta method.  A 5-Model Average is also included.
+Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 2km via the delta method.  A 5-Model Average is also included.
 </p>
 
 <table class="overview">
