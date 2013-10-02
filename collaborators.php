@@ -35,51 +35,12 @@ $page->pageHeader();
                         }
                         $h .= "px";
                         $w .= "px";
-                        echo "<div style=\"display: inline-block; width: 80px; height: 80px; margin-right: 25px; margin-left: 25px; text-align: center;\"><a href=\"#org_".$row['id']."\"><img style=\"vertical-align: middle; width: $w; height: $h;\" src=\"images/collaborators/".$row['image']."\"  /></a></div>";
+                        echo "<div style=\"display: inline-block; width: 80px; height: 80px; margin-right: 25px; margin-left: 25px; text-align: center;\"><a href=\"$row[website]\"><img style=\"vertical-align: middle; width: $w; height: $h;\" src=\"images/collaborators/".$row['image']."\"  /></a></div>";
                         $mime = mime_content_type("images/collaborators/".$row['image']);
                     }
                 ?>
                 </div>
-                <?php
-                    foreach($result as $row) {
-                    ?>
-                        <div style="clear: both; width: 800px; margin: auto; margin-top: 100px;">
-                            <a name="org_<?php echo $row['id']; ?>"></a>
-                            <div style="height: 50px;">&nbsp;</div>
-
-                            <div style="float: left; margin-bottom: 100px;"><img style="width: 150px;" src="/images/collaborators/<?php echo $row['image']; ?>" /></div>
-                            <div style="float: right; width: 600px; font-size: 20px; margin-bottom: 50px;">
-                                <div><?php echo $row['name']; ?></div>
-                                <div style="margin-top: 5px; margin-bottom: 5px; color: #6a7173; font-size: 14px;"><?php echo $row['city'].", ".$row['state']." ".$row['country']; ?></div>
-                                <div style="font-size: 14px;"><a href="<?php echo $row['website']; ?>">go to their website</a></div>
-
-                                <?php 
-
-                                if ($row['description']){
-                                    echo "<div style=\"font-size: 16px; margin-top: 5px;\">".$row['description']."</div>";
-                                }
-
-                                $proj_result = $collaborators->fetchProjects($row['id']);
-
-                                if (count($proj_result) > 0){
-                                    echo "<div style=\"font-size: 16px; color: #999999; margin-top: 20px; margin-bottom: 5px;\">Recent Project Collaborations</div>";
-                                    foreach($proj_result as $proj) {
-                                        echo "<div style=\"clear: both;\">";
-                                        echo "<div style=\"font-size: 14px; margin-bottom: 10px;\"><a href=\"project_page.php?projectid=".$proj['id']."\">".$proj['title']."</a></div>";
-                                        echo "</div>";
-                                    }
-                                }
-                                
-                                ?>
-
-                            </div>
-                        </div>
-                    <?php
-                    }
-                ?>
             </div>
-<?php
-?>
         </div>
     </div>
 <?php
