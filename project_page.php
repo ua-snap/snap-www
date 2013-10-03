@@ -112,7 +112,7 @@ $page->connectToDatabase();
                                         echo "<div style=\"margin-bottom: 15px;\">";
                                         echo "<div style=\"margin-top: 5px;\"><a href=\"people_page.php?id=".$con['id']."\">".$fullname."</a></div>";
 
-                                        echo "<div style=\"margin-top: 5px;\"><a href=\"\">".$con['email']."</a></div>";
+                                        echo "<div style=\"margin-top: 5px;\"><a href=\"mailto:$con[email]\">".$con['email']."</a></div>";
                                         echo "<div style=\"margin-top: 5px;\">".preg_replace("/(\d{3})(\d{3})(\d{4})/", "($1) $2-$3", $con['phone'])."</div>";
                                         echo "</div>";
                                     }
