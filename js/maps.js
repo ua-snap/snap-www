@@ -799,7 +799,7 @@ var resize = function() {
 };
 
 snap.mapUrls = {
-	'baseUrl' : 'http://tiles.snap.uaf.edu/tilecache/tilecache.cgi/2.11.0/',
+	'baseUrl' : 'http://tiles.snap.uaf.edu/tilecache/tilecache.py/2.11.0/',
 	'urlSuffix' : '',
 
 	'precipitation' : {
