@@ -30,7 +30,7 @@ $page->connectToDatabase();
 <h3>SNAP Staff</h3>
 <div class="staff">
 <?php
-    $query = "SELECT id, image, title, first, last, position FROM people WHERE snap='1' AND staffgroup='2' OR staffgroup='3' AND status='1' ORDER BY last";
+    $query = "SELECT id, image, title, first, last, position FROM people WHERE snap='1' AND (staffgroup='2' OR staffgroup='3') AND status='1' ORDER BY last";
     $result = mysql_query($query) or die(mysql_error());
     while ($row = mysql_fetch_array($result)){
         echo People::getPersonThumbnail($row);
