@@ -37,6 +37,19 @@ $page->connectToDatabase();
     }
 ?>
 </div>
+<div class="accordion">
+    <h3>Former Staff</h3>
+    <div class="staff">
+        <?php
+            $query = "SELECT id, image, title, first, last, position FROM people WHERE snap='1' AND status='0' ORDER BY last";
+            $result = mysql_query($query) or die(mysql_error());
+            while ($row = mysql_fetch_array($result)){
+                echo People::getPersonThumbnail($row);
+            }
+        ?>
+    </div>
+</div>
+
 <div id="contactFormWrapper"><a name="contact"></a>
 <h2>Contact Us!</h2>
 <p>
@@ -130,3 +143,23 @@ $('#sendEmailButton').button().click(function(e) {
 <?php
 $page->closePage();
 ?>
+<script>
+
+$(function() {
+        
+    $('.accordion').each( function(index) { 
+        $(this).accordion({
+          navigation: true,
+          autoHeight: false,
+          collapsible: true,
+          active: false
+          });
+    });
+
+    if( window.location.hash ) {
+      $.scrollTo($('a[href="'+window.location.hash+'"]'), 1000, { offset: -50 });
+      window.location.hash = ''; // clear this to prevent user from seeing dissonance between url + opened folds
+    }
+
+});
+</script>

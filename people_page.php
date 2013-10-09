@@ -8,7 +8,7 @@ $page->connectToDatabase();
         <div id="main_body">
             <div id="main_content">
                 <?php
-                    $query = "SELECT id, image, title, first, middle, last, position, organization, staffgroup, email, phone, fax, summary FROM people WHERE id='".$_GET['id']."' LIMIT 1";
+                    $query = "SELECT id, image, title, first, middle, last, position, organization, staffgroup, email, phone, fax, summary, status FROM people WHERE id='".$_GET['id']."' LIMIT 1";
                     $result = mysql_query($query) or die(mysql_error());
                     $row = mysql_fetch_array($result);
                     $fullname = trim($row['title']." ".$row['first']." ".$row['last']);
@@ -21,13 +21,16 @@ $page->connectToDatabase();
                     <div style="float: left; width: 206px; text-align: center;">
                         <div><img style="border: 1px solid #6a7173;padding: 3px;" src="/images/people/<?php echo $row['image']; ?>" /></div>
                         <div style="margin-top: 20px; color: #336699;"><?php echo $row['email']; ?></div>
-                        <?php if ($row['phone']){ ?>
+                        <?php if ($row['phone'] && $row['status'] != '0'){ ?>
                         <div style="margin-top: 5px;">phone: <?php echo preg_replace("/(\d{3})(\d{3})(\d{4})/", "($1) $2-$3", $row['phone']); ?></div>
                         <?php } ?>
-                        <?php if ($row['fax']){ ?>
+                        <?php if ($row['fax'] && $row['status'] != '0'){ ?>
                         <div style="margin-top: 5px;">fax: <?php echo preg_replace("/(\d{3})(\d{3})(\d{4})/", "($1) $2-$3", $row['fax']); ?></div>
                         <?php } ?>
                     </div>
+                        <?php if($row['status'] == '0'){ ?>
+                        <div style="float: right; width: 575px; margin-bottom: 30px; font-size: 14pt; color: #CC0000">Note: This person is no longer employed with SNAP</div>
+                        <?php } ?>
                     <div style="float: right; width: 575px;">
                         <?php
                             $summary_string = preg_replace("/(.*)\r?\n+(.*)/", "$1</p><p>$2", $row['summary']);
