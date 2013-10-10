@@ -37,8 +37,8 @@ $page->connectToDatabase();
     }
 ?>
 </div>
-<div class="accordion">
-    <h3>Former Staff</h3>
+<div class="former_staff">
+    <h4>Former Staff</h4>
     <div class="staff">
         <?php
             $query = "SELECT id, image, title, first, last, position FROM people WHERE snap='1' AND status='0' ORDER BY last";
@@ -147,7 +147,7 @@ $page->closePage();
 
 $(function() {
         
-    $('.accordion').each( function(index) { 
+    $('.former_staff').each( function(index) { 
         $(this).accordion({
           navigation: true,
           autoHeight: false,
