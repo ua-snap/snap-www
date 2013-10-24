@@ -29,7 +29,7 @@ $page->connectToDatabase();
                         <?php } ?>
                     </div>
                         <?php if($row['status'] == '0'){ ?>
-                        <div style="float: right; width: 575px; margin-bottom: 30px; font-size: 14pt; color: #CC0000">Note: This person is no longer employed with SNAP</div>
+                        <div style="float: right; width: 575px; margin-bottom: 30px; font-size: 14pt; color: #CC0000">Former Staff</div>
                         <?php } ?>
                     <div style="float: right; width: 575px;">
                         <?php
