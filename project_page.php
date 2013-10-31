@@ -49,7 +49,7 @@ $page->connectToDatabase();
                             </div>
                             <?php 
 
-                                $query = "SELECT collaborators.id,collaborators.name,collaborators.image FROM collaborators JOIN project_collaborators ON collaborators.id=project_collaborators.collaboratorid WHERE project_collaborators.projectid='".$_GET['projectid']."' ";
+                                $query = "SELECT collaborators.id,collaborators.name,collaborators.image,collaborators.website FROM collaborators JOIN project_collaborators ON collaborators.id=project_collaborators.collaboratorid WHERE project_collaborators.projectid='".$_GET['projectid']."' ";
 
                                 $result = mysql_query($query);
                                 $result = mysql_query($query) or die (mysql_error());
@@ -75,7 +75,7 @@ $page->connectToDatabase();
 
                                             echo "<div style=\"height: 100px; width: 150px; text-align: center;\">";
 
-                                                echo "<a href=\"collaborators.php#org_".$collab['id']."\"><img alt=\"".$collab['name']."\" src=\"/images/collaborators/".$collab['image']."\" style=\"width: $w; height: $h; vertical-align: middle;\" /></a>";
+                                                echo "<a href=\"".$collab['website']."\"target=\"_blank\"><img alt=\"".$collab['name']."\" src=\"/images/collaborators/".$collab['image']."\" style=\"width: $w; height: $h; vertical-align: middle;\" /></a>";
                                             echo "</div>";
                                         echo "</div>";
                                     }
