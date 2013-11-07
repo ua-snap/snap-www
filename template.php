@@ -246,7 +246,29 @@ class webPage {
         <?php $this->pageFooter(); ?>
             </body>
             <script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>
-            <script type="text/javascript" src="https://api.twitter.com/1/statuses/user_timeline.json?include_rts=true&amp;screen_name=SNAPandACCAP&amp;count=1&amp;callback=twitterCallback2"></script>
+            <!--script type="text/javascript" src="https://api.twitter.com/1.1/statuses/user_timeline.json?include_rts=true&amp;screen_name=SNAPandACCAP&amp;count=1&amp;callback=twitterCallback2"></script-->
+            <?php 
+                $oauthConfig = array(
+                    'oauth_consumer_key' => 'cTIlP9dDiZZiAKaG2X4g',
+                    'oauth_nonce' => md5(mt_rand()),
+                    'oauth_signature_method' => 'HMAC-SHA1',
+                    'oauth_timestamp' => time(),
+                    'oauth_token' => '133030738-5vpdunQjW6EcSagCGfbc7T3p10vEkoORDv8xGR5z',
+                    'oauth_version' => '1.0'
+                    //status=>?
+                );
+                    foreach($oauthConfig as $key => $value){
+                        $parameterString .= rawurlencode($key."=".$value);
+                        if( current($oauthConfig) != $oauthConfig[ count($oauthConfig) ] ) {
+                            $parameterString .= "%amp;";
+                        }
+                     }
+                     //'oauth_signature' => 
+
+
+
+
+            ?>
             <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4eb8496858e19dd4"></script>
 
 
