@@ -883,9 +883,15 @@ a.project p {
 	position: absolute; top: 1px; left: 20px;
 }
 
-.toolWrapper {
+.toolsWrapper {
 	width: 100%;
 	text-align: center;
+	left: 475px;
+
+}
+
+.toolpanel:nth-of-type(odd) {
+	clear: left;
 }
 
 .toolPanel {
@@ -898,6 +904,7 @@ a.project p {
 	box-shadow: -2px 4px 10px 1px #eee;
 	min-height: 335px;
 	font-size: 16px;
+	float: left;
 }
 
 .toolPanel:hover {

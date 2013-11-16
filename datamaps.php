@@ -33,6 +33,13 @@ $page->pageHeader();
 <p>Investigate temperature and precipitation projections for thousands of communities across Alaska and Canada.</p>
 </a>
 
+<a href="shiny_apps.php" class="toolPanel">
+<h3>Shiny Apps</h3>
+<img src="images/chart-icon.png"/> <!--PLACEHOLDER-->
+<p>Explore and analyze SNAP climate data with this set of dynamic presentation tools powered by R and Shiny.</p>
+</a>
+
+
 </div>
 
         </div>
