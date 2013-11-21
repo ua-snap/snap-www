@@ -21,7 +21,7 @@ $page->pageHeader();
 <p>Download projected and historical datasets in the GeoTIFF format for your own research purposes.</p>
 </a>
 
-<a href="maps.php" class="toolPanel">
+<a href="/maps.php" class="toolPanel">
 <h3>Map Tool</h3>
 <img src="images/map-icon-multi2.png"/>
 <p>Visually browse and compare scenarios created from SNAP data using the interactive<br/> map tool.</p>
@@ -33,8 +33,8 @@ $page->pageHeader();
 <p>Investigate temperature and precipitation projections for thousands of communities across Alaska and Canada.</p>
 </a>
 
-<a href="shiny_apps.php" class="toolPanel">
-<h3>Shiny Apps</h3>
+<a href="/shiny_apps.php" class="toolPanel">
+<h3>Data Analysis Tools</h3>
 <img src="images/chart-icon.png"/> <!--PLACEHOLDER-->
 <p>Explore and analyze SNAP climate data with this set of dynamic presentation tools powered by R and Shiny.</p>
 </a>
@@ -47,3 +47,4 @@ $page->pageHeader();
 <?php
 $page->closePage();
 ?>
+
