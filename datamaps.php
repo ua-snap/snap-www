@@ -15,10 +15,16 @@ $page->pageHeader();
 
 <div class="toolsWrapper">
 
-<a href="/data.php" class="toolPanel">
-<h3>Download Data</h3>
-<img src="images/download-icon.png"/>
-<p>Download projected and historical datasets in the GeoTIFF format for your own research purposes.</p>
+<a href="/charts.php" class="toolPanel">
+<h3>Community Charts</h3>
+<img src="images/chart-icon.png"/>
+<p>Investigate temperature and precipitation projections for thousands of communities across Alaska and Canada.</p>
+</a>
+
+<a href="/analysis_tools.php" class="toolPanel">
+<h3>Analysis Tools</h3>
+<img src="images/analysis-icon.png"/>
+<p>Explore and analyze SNAP climate data with this set of dynamic presentation tools powered by R and Shiny.</p>
 </a>
 
 <a href="/maps.php" class="toolPanel">
@@ -27,18 +33,11 @@ $page->pageHeader();
 <p>Visually browse and compare scenarios created from SNAP data using the interactive<br/> map tool.</p>
 </a>
 
-<a href="/charts.php" class="toolPanel">
-<h3>Community Charts</h3>
-<img src="images/chart-icon.png"/>
-<p>Investigate temperature and precipitation projections for thousands of communities across Alaska and Canada.</p>
+<a href="/data.php" class="toolPanel">
+<h3>Download Data</h3>
+<img src="images/download-icon.png"/>
+<p>Download projected and historical datasets in the GeoTIFF format for your own research purposes.</p>
 </a>
-
-<a href="/shiny_apps.php" class="toolPanel">
-<h3>Data Analysis Tools</h3>
-<img src="images/chart-icon.png"/> <!--PLACEHOLDER-->
-<p>Explore and analyze SNAP climate data with this set of dynamic presentation tools powered by R and Shiny.</p>
-</a>
-
 
 </div>
 
