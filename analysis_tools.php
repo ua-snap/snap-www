@@ -18,13 +18,13 @@ $page->pageHeader();
 			<a href="http://shiny.snap.uaf.edu/sea_ice_winds/" class="appPanel">
 			<h3>Sea Ice Concentrations and Wind Events</h3>
 			<img src="images/ice-wind-icon.png"/>
-			<p>Examine projected interactions between monthly sea ice concentrations and days exhibiting extreme wind events.</p>
+			<p>Examine projected interactions between monthly sea ice concentrations and extreme wind events.</p>
 			</a>
 
 			<a href="http://shiny.snap.uaf.edu/sea_ice_coverage/" class="appPanel" id="moo">
 			<h3>Modeled Arctic Sea Ice Coverage</h3>
 			<img src="images/sea-ice-icon.png"/>
-			<p>Compare and explore observed and model projections of arctic sea ice extent and concentration through 2099.</p>
+			<p>Explore and visualize various models of historical and projected arctic sea ice extent and concentration through 2099.</p>
 			</a>
 
 			<a href="http://shiny.snap.uaf.edu/temp_wind_events/" class="appPanel">
