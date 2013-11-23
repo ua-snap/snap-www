@@ -210,7 +210,7 @@ While it&rsquo;s hard to have a completely static file naming scheme, we make ev
 <h4>Temperature</h4>
 <p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="34">Projected Monthly Average Temperature 771m AR4</a></p>
 
-<table class="downloadsTable">This set of files includes modeled historical estimates and future projections of monthly sea ice concentration (in percent cover, 0-100) for each month of every year from January 1860 - December 2100* at 0.4 x 0.4 degrees spatial resolution from 5 top ranking CMIP5 global climate models (GCMs). Each file represents a single month in a given year.
+<table class="downloadsTable">
 <thead>
 <tr>
 <td>&nbsp;</td>
