@@ -157,7 +157,7 @@ $(function() {
     });
 
     if( window.location.hash ) {
-      $.scrollTo($('a[href="'+window.location.hash+'"]'), 1000, { offset: -50 });
+      $.scrollTo($('a[name="'+window.location.hash+'"]'), 1000);
       window.location.hash = ''; // clear this to prevent user from seeing dissonance between url + opened folds
     }
 
