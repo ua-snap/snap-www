@@ -82,7 +82,9 @@ js;
       'data' => array(
         array('link', '/data.php','Download Data'),
         array('link', '/maps.php" target="_blank','Map Tool'), // note the embedded double-quote so that it works inline below
-        array('link', '/charts.php','Community Charts')
+        array('link', '/charts.php','Community Charts'),
+        array('link', '/analysis_tools.php','Data Analysis'),
+        array('link', 'http://seaiceatlas.snap.uaf.edu" target="_blank','Sea Ice Atlas')
       ),
       'resources' => array(
         array('label', 'Learn about all of SNAP&rsquo;s resources below.')
