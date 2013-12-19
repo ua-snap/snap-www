@@ -15,19 +15,19 @@ $page->pageHeader();
 
 			<!--if at least one more app is added, we should change this page to use toolsWrapper and toolPanel, and possible name those something more general-->
 
-			<a href="http://shiny.snap.uaf.edu/sea_ice_winds/" class="appPanel">
+			<a target="_blank" href="http://shiny.snap.uaf.edu/sea_ice_winds/" class="appPanel">
 			<h3>Sea Ice Concentrations and Wind Events</h3>
 			<img src="images/ice-wind-icon.png"/>
 			<p>Examine projected interactions between monthly sea ice concentrations and extreme wind events.</p>
 			</a>
 
-			<a href="http://shiny.snap.uaf.edu/sea_ice_coverage/" class="appPanel" id="moo">
+			<a target="_blank" href="http://shiny.snap.uaf.edu/sea_ice_coverage/" class="appPanel" id="moo">
 			<h3>Modeled Arctic Sea Ice Coverage</h3>
 			<img src="images/sea-ice-icon.png"/>
 			<p>Explore and visualize various models of historical and projected arctic sea ice extent and concentration through 2099.</p>
 			</a>
 
-			<a href="http://shiny.snap.uaf.edu/temp_wind_events/" class="appPanel">
+			<a target="_blank" href="http://shiny.snap.uaf.edu/temp_wind_events/" class="appPanel">
 			<h3>CMIP5 Quantile-mapped Daily Data</h3>
 			<img src="images/event-freq-icon.png"/>
 			<p>Analyze the frequency of extreme daily temperature and wind events from 1958 and projected through 2100.</p>
