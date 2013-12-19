@@ -7,7 +7,10 @@ $page->pageHeader();
 ?>
         <div id="main_body">
             <div id="main_content" style="min-height: 200px;" class="methods text">
-            <h2>Tools and Data</h2>
+
+            <?php echo Config::$termsOfUse; ?>
+
+            <h2 style="margin-top: 1em;">Tools and Data</h2>
 
 
 <p>At SNAP, we develop tools that enable you to reveal trends and patterns in climate that are of interest to a wide range of people and organizations. Please explore the tools below, or download raw data for your own analyses, and please let us know any feedback by <a href="people.php#contact">contacting us</a>.
