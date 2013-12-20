@@ -26,52 +26,15 @@ html;
             <div class="methods text">
 
 <h2>Data</h2>
-
-<p>
-Our principal products are downscaled historical and projected monthly climate data, primarily temperature and precipitation across Alaska and large regions of Western Canada.  Projected data are produced for three <a href="/faq.php#faq_4">scenarios</a> (B1, A1B, A2).  Additionally, SNAP produces derived data from the above base datasets through various modeling efforts.  Derived data products include potential evapotranspiration, vegetation, fire, permafrost, day of freeze, day of thaw, and the subsequent length of growing season, as well as decadal, seasonal, and annual averages.
+<p>SNAP data includes downscaled historically observed, modeled historical, as well as modeled projected data out to 2100 across several top ranked GCM's and scenarios (SRES or RCPs). Data is produced on a project specific basis, but when time and feasibility allows, we try and extend analyses to the greatest spatial and temporal extent possible to allow the greatest applicability to other projects as well. In the broadest sense, our data extends from the mid&ndash;1800s to 2100, across multiple spatial extents including: Alaska, Alaska-Western Canada, Polar, and worldwide.
 </p>
+<p>The list of variables is always expanding, so please explore below to see what we currently have available.</p>
 
-<p>
-Please visit our <a href="/methods.php">Methods</a> section for a description of our downscaling procedure.  
-</p>
+<p>All of our downloadable data is provided in GeoTIFF format. We've standardized on geotiff thus far because it is a stable and compressed format that can be easily read by many open source and commercial GIS and data manipulation programs including ArcGIS, QGIS, R (raster package recommended), GDAL, GRASS, and many others.</p>
 
-<p>
-To visualize a selection of datasets, please visit the <a href="maps.php" target="_blank" >map tool</a>.
-</p>
+<p>While it&rsquo;s hard to have a completely static file naming scheme, we make every attempt to keep some consistency across our various datasets. This naming scheme outlined below is our general guide, although it does vary depending upon each dataset. Please refer to the full metadata for details on specific datasets.</p>
 
-<p>
-For a full list of our available data, please see below.
-</p>
-
-<hr/>
-
-<p>
-All of our downloadable data is provided in <a href="http://trac.osgeo.org/geotiff/">GeoTIFF</a> format, georeferenced to the North American Datum of 1983 and projected in Alaska Albers Equal Area Conic in units of meters (NAD83 Alaska Albers).  Geotiffs can be read by many open source and commercial GIS and data manipulation programs including ArcGIS, QGIS, R (raster package recommended), GDAL, GRASS, and many others.
-</p>
-
-<p>
-Our data is currently served through zip files.  Once uncompressed, each file represents one time step (month, decade, season, etc) across the full spatial extent for that product.  Currently, spatial extents are Alaska-wide or Alaska-Western Canada (YT, BC, AB, SK, MB).
-</p>
-<p>
-While it&rsquo;s hard to have a completely static file naming scheme, we make every attempt to keep some consistency across our various datasets.  This naming scheme outlined below is our general guide, although it does vary depending upon each dataset.  Please refer to the full metadata for details on specific datasets.
-</p>
-<p><code>[variable]_[metric]_[units]_[format]_[assessmentReport]_[group]_[model]_[scenario]_[timeFrame].[fileFormat]</code></p>
-
-<table id="key">
-<thead>
-<tr>
-<th scope="col">variable</th><th scope="col">key</th>
-</tr></thead>
-<tbody>
-<tr><th scope="row">tas</th><td>temperature</td></tr>
-<tr><th scope="row">pr</th><td>precipitation</td></tr>
-<tr><th scope="row">dot</th><td>day of thaw</td></tr>
-<tr><th scope="row">dof</th><td>day of freeze</td></tr>
-<tr><th scope="row">logs</th><td>length of growing season</td></tr>
-<tr><th scope="row">pet</th><td>potential evapotranspiration</td></tr>
-<tr><th scope="row">fs</th><td>snow-day fraction</td></tr>
-</tbody>
-</table>
+<p><pre>[variable][metric][units][format][assessmentReport][group][model][scenario][timeFrame].[fileFormat]</pre></p>
 
 <?php echo Config::$termsOfUse; ?>
 

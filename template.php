@@ -220,7 +220,7 @@ class webPage {
                     </div>
                 </div>
                 
-                <div style ="float: left; width: 470px; text-align: left; margin-top: 13px;"><a id="snapWebVersion" href="/releases.php"><?php echo 'V'.SNAPWEB_VERSION; ?></a> Copyright &copy; 2012 <a href="/" style="color: #222222; text-decoration: underline;">Scenarios Network for Alaska &amp; Arctic Planning</a>, a research institute of the <a href="http://www.uaf.edu" style="color: #222222; text-decoration: underline;">University of Alaska Fairbanks</a>.  UAF is an affirmative action/equal opportunity employer and educational institution.
+                <div style ="float: left; width: 470px; text-align: left; margin-top: 13px;"><a id="snapWebVersion" href="/releases.php"><?php echo 'V'.SNAPWEB_VERSION; ?></a> Copyright &copy; 2013 <a href="/" style="color: #222222; text-decoration: underline;">Scenarios Network for Alaska &amp; Arctic Planning</a>, a research institute of the <a href="http://www.uaf.edu" style="color: #222222; text-decoration: underline;">University of Alaska Fairbanks</a>.  UAF is an affirmative action/equal opportunity employer and educational institution.
 
                 <p>
                     Scenarios Network for Alaska &amp; Arctic Planning<br/>
