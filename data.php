@@ -1,6 +1,6 @@
 <?php
 include("template.php");
-$page = new webPage("SNAP: Data Downloads", "", "data", 'Data');
+$page = new webPage("SNAP: Data Downloads", "", "data", 'Download Data');
 $page->openPage();
 $page->pageHeader();
 

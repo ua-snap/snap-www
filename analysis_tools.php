@@ -1,6 +1,6 @@
 <?php
 include("template.php");
-$page = new webPage("SNAP: Data Analysis Tools", "", "data");
+$page = new webPage("SNAP: Data Analysis Tools", "", "data", 'Analysis Tools');
 $page->openPage();
 $page->pageHeader();
 
