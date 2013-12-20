@@ -80,9 +80,11 @@ js;
         array('link', '/sustainability.php', 'Sustainability')
       ),
       'data' => array(
-        array('link', '/data.php','Download Data'),
+        array('link', '/charts.php','Community Charts'),
         array('link', '/maps.php" target="_blank','Map Tool'), // note the embedded double-quote so that it works inline below
-        array('link', '/charts.php','Community Charts')
+        array('link', '/analysis_tools.php','Analysis Tools'),
+        array('link', 'http://seaiceatlas.snap.uaf.edu" target="_blank','Sea Ice Atlas'),
+        array('link', '/data.php','Download Data'),
       ),
       'resources' => array(
         array('label', 'Learn about all of SNAP&rsquo;s resources below.')

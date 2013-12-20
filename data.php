@@ -1,6 +1,6 @@
 <?php
 include("template.php");
-$page = new webPage("SNAP: Data", "", "data", 'Data');
+$page = new webPage("SNAP: Data Downloads", "", "data", 'Download Data');
 $page->openPage();
 $page->pageHeader();
 
@@ -38,14 +38,128 @@ html;
 
 <?php echo Config::$termsOfUse; ?>
 
-<h3 id="Projected">Projected Data</h3>
+<h3 id="Projected">Modeled Historical and Projected Data</h3>
 </div>
 <div class="dataAccordionWrapper">
 
 <div class="dataAccordion">
+<h3><a href="#dataset=Historical_Estimates_and_Projections_of_Sea_Ice_Concentration">Historical Estimates and Projections of Sea Ice Concentration &ndash; 0.4 degrees CMIP5 /AR5</a></h3>
+<div>
+<p>This set of files includes modeled historical estimates and future projections of monthly sea ice concentration (in percent cover, 0&ndash;100) for each month of every year from January 1860&ndash;December 2100* at 0.4 x 0.4 degrees spatial resolution from 5 top ranking CMIP5 global climate models (GCMs). Each file represents a single month in a given year.</p>
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>NA</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>0.4 degrees</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Polar</td></tr>
+</tbody>
+</table>
+<img src="images/polar_extent.png" alt="" />
+
+<h4>Metadata:</h4><p><a href="#" class="metadataLink" data-geonetwork-metadata-id="101">Historical Estimates and Projections of Sea Ice Concentration AR5</a></p>
+<h4>Products:</h4>
+<ul>
+	<li><a href="/files/data/monthly/sic_con_pct_5-Models_historical_01-12_1860-2005.zip">sic_con_pct_5-Models_historical_01-12_1860-2005.zip</a> (1.2 GB)</li>
+	<li><a href="/files/data/monthly/sic_con_pct_5-Models_rcp85_01-12_2006-2100.zip">sic_con_pct_5-Models_rcp85_01-12_2006-2100.zip</a> (621 MB)</li>
+</ul>
+</div>
+</div>
+
+<div class="dataAccordion">
+<h3><a href="#dataset=Historical_Daily_Mean_Quantile_Mapped_Temperatures">Historical Daily Mean Quantile Mapped Temperatures &ndash; 2.5 degrees CMIP5 /AR5</a></h3>
+<div>
+<p>This data includes quantile&ndash;mapped historical model runs of AR5 daily mean temperature (tas, degrees C) for each day of every year from 1958&ndash;2005 at 2.5 x 2.5 degree spatial resolution across 3 AR5 models utilizing the “historical” GCM model run. They are 365 multi&ndash;band geotiff files, one file per year, each band representing one day of the year, with no leap years.</p>
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>1958&ndash;2001 ERA&ndash;40</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>2.5 degrees</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Worldwide</td></tr>
+</tbody>
+</table>
+<img src="images/worldwide_extent.png" alt="" />
+
+<h4>Metadata:</h4><p><a href="#" class="metadataLink" data-geonetwork-metadata-id="114">Historical Daily Mean Quantile Mapped Temperatures &ndash; 2.5 degrees AR5</a></p>
+<h4>Products:</h4><p><a href="/files/data/monthly/tas_mean_C_AR5_3-Models_historical_365_1958-2005.zip">tas_mean_C_AR5_3-Models_historical_365_1958-2005.zip</a> (840 MB)</p>
+</div>
+</div>
+
+<div class="dataAccordion">
+<h3><a href="#dataset=Projected_Daily_Mean_Quantile_Mapped_Temperatures">Projected Daily Mean Quantile Mapped Temperatures &ndash; 2.5 degrees CMIP5 /AR5</a></h3>
+<div>
+<p>This data includes quantile&ndash;mapped historical model runs of AR5 daily mean temperature (tas, degrees C) for each day of every year from 2006&ndash;2100 at 2.5 x 2.5 degree spatial resolution across 3 AR5 models and 2 RCPs. They are 365 multi&ndash;band geotiff files, one file per year, each band representing one day of the year, with no leap years.</p>
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>1958&ndash;2001 ERA&ndash;40</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>2.5 degrees</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Worldwide</td></tr>
+</tbody>
+</table>
+<img src="images/worldwide_extent.png" alt="" />
+
+<h4>Metadata:</h4><p><a href="#" class="metadataLink" data-geonetwork-metadata-id="100">Projected Daily Mean Quantile Mapped Temperatures &ndash; 2.5 degrees AR5</a></p>
+<h4>Products:</h4>
+<ul>
+	<li><a href="/files/data/monthly/tas_mean_C_AR5_3-Models_rcp60_365_2006-2100.zip">tas_mean_C_AR5_3-Models_rcp60_365_2006-2100.zip</a> (1.7 GB)</li>
+	<li><a href="/files/data/monthly/tas_mean_C_AR5_3-Models_rcp85_365_2006-2100.zip">tas_mean_C_AR5_3-Models_rcp85_365_2006-2100.zip</a> (1.7 GB)</li>
+</ul>
+</div>
+</div>
+
+<div class="dataAccordion">
+<h3><a href="#dataset=Historical_Daily_Quantile_Mapped_Near_Surface_Wind_Velocity">Historical Daily Quantile Mapped Near Surface Wind Velocity &ndash; 2.5 degrees CMIP5 /AR5</a></h3>
+<div>
+<p>This data includes quantile&ndash;mapped historical model runs of AR5 daily near surface wind velocity (uas: West/East component of wind, vas: North/South component, m/s) for each day of every year from 1958&ndash;2100 at 2.5 x 2.5 degree spatial resolution across 3 AR5 models utilizing the “historical” GCM model run. They are 365 multi&ndash;band geotiff files, one file per year, each band representing one day of the year, with no leap years.</p>
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>1958&ndash;2001 ERA&ndash;40</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>2.5 degrees</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Worldwide</td></tr>
+</tbody>
+</table>
+<img src="images/worldwide_extent.png" alt="" />
+
+<h4>Metadata:</h4><p><a href="#" class="metadataLink" data-geonetwork-metadata-id="115">Historical Daily Quantile Mapped Near Surface Wind Velocity &ndash; 2.5 degrees AR5</a></p>
+<h4>Products:</h4>
+<ul>
+	<li><a href="/files/data/monthly/uas_mean_mps_AR5_3-Models_historical_365_1958-2005.zip">uas_mean_mps_AR5_3-Models_historical_365_1958-2005.zip</a> (826 MB)</li>
+	<li><a href="/files/data/monthly/vas_mean_mps_AR5_3-Models_historical_365_1958-2005.zip">vas_mean_mps_AR5_3-Models_historical_365_1958-2005.zip</a> (820 MB)</li>
+</ul>
+</div>
+</div>
+
+<div class="dataAccordion">
+<h3><a href="#dataset=Projected_Daily_Quantile_Mapped_Near_Surface_Wind_Velocity">Projected Daily Quantile Mapped Near Surface Wind Velocity &ndash; 2.5 degrees CMIP5 /AR5</a></h3>
+<div>
+<p>This data includes quantile&ndash;mapped projections of AR5 daily near surface wind velocity (uas: West/East component of wind, vas: North/South component, m/s) for each day of every year from 1958&ndash;2100 at 2.5 x 2.5 degree spatial resolution across 3 AR5 models and 2 RCPs. They are 365 multi&ndash;band geotiff files, one file per year, each band representing one day of the year, with no leap years.</p>
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>1958&ndash;2001 ERA&ndash;40</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>2.5 degrees</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Worldwide</td></tr>
+</tbody>
+</table>
+<img src="images/worldwide_extent.png" alt="" />
+
+<h4>Metadata:</h4><p><a href="#" class="metadataLink" data-geonetwork-metadata-id="116">Projected Daily Quantile Mapped Near Surface Wind Velocity &ndash; 2.5 degrees AR5</a></p>
+<h4>Products:</h4>
+<ul>
+	<li><a href="/files/data/monthly/uas_mean_mps_AR5_3-Models_rcp60_365_2006-2100.zip">uas_mean_mps_AR5_3-Models_rcp60_365_2006-2100.zip</a> (1.6 GB)</li>
+	<li><a href="/files/data/monthly/uas_mean_mps_AR5_3-Models_rcp85_365_2006-2100.zip">uas_mean_mps_AR5_3-Models_rcp85_365_2006-2100.zip</a> (1.6 GB)</li>
+	<li><a href="/files/data/monthly/vas_mean_mps_AR5_3-Models_rcp60_365_2006-2100.zip">vas_mean_mps_AR5_3-Models_rcp60_365_2006-2100.zip</a> (1.6 GB)</li>
+	<li><a href="/files/data/monthly/vas_mean_mps_AR5_3-Models_rcp85_365_2006-2100.zip">vas_mean_mps_AR5_3-Models_rcp85_365_2006-2100.zip</a> (1.6 GB)</li>
+</ul>
+</div>
+</div>
+<br/>
+
+<div class="dataAccordion">
 <h3><a href="#dataset=projected_monthly_temperature_and_precipitation_771m">Projected Monthly Temperature and Precipitation - 771m CMIP3/AR4</a></h3>
 <div>
-<p>Projected (2001-2100: B1, A1B, and A2 scenarios) monthly average temperature and total precipitation from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771m via the delta method.  A 5-Model Average is also included.</p>
+<p>Projected (2001-2100: B1, A1B, and A2 scenarios) monthly average temperature and total precipitation from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771m via the delta method. A 5-Model Average is also included.</p>
 <table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
@@ -1281,7 +1395,7 @@ Although the equations developed here provide a reasonable fit to the data, mode
 <!-- HistoricalData -->
 
 <div class="methods text" id="Historical">
-<h3>Historical Data</h3>
+<h3>Historically Observed Data</h3>
 </div>
 
 <div class="dataAccordionWrapper">
