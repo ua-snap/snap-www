@@ -35,7 +35,7 @@ $page->pageHeader();
                         }
                         $h .= "px";
                         $w .= "px";
-                        echo "<div style=\"display: inline-block; width: 80px; height: 80px; margin-right: 25px; margin-left: 25px; text-align: center;\"><a href=\"$row[website]\"><img style=\"vertical-align: middle; width: $w; height: $h;\" src=\"images/collaborators/".$row['image']."\"  /></a></div>";
+                        echo "<div style=\"display: inline-block; width: 80px; height: 80px; margin-right: 25px; margin-left: 25px; text-align: center;\"><a href=\"$row[website]\" target=\"_blank\"><img style=\"vertical-align: middle; width: $w; height: $h;\" src=\"images/collaborators/".$row['image']."\"  /></a></div>";
                         $mime = mime_content_type("images/collaborators/".$row['image']);
                     }
                 ?>

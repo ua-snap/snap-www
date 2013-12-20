@@ -37,7 +37,7 @@ $page->connectToDatabase();
     }
 ?>
 </div>
-<div class="former_staff">
+<div class="accordion">
     <h4>Former Staff</h4>
     <div class="staff">
         <?php
@@ -147,7 +147,7 @@ $page->closePage();
 
 $(function() {
         
-    $('.former_staff').each( function(index) { 
+    $('.accordion').each( function(index) { 
         $(this).accordion({
           navigation: true,
           autoHeight: false,
