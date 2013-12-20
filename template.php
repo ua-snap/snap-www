@@ -2,7 +2,6 @@
 
 require_once 'src/Config.php';
 require_once 'src/Template.php';
-include("src/licenseModal.php");    //implements the modal download popup used on several pages
 
 // Reused occasionally throughout the site.
 function getFileSize($f){
@@ -92,6 +91,8 @@ class webPage {
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
         <link type="text/css" href="css/custom-theme/jquery-ui-1.8.17.custom.css" rel="Stylesheet" />  
         <link type="text/css" href="css/customize-jquery-ui.css" rel="Stylesheet" />  
+        <link rel="stylesheet" href="/css/licenseModal.css" type="text/css" />
+
     <?php 
 
         if (isset($this->stylesheet) && !empty($this->stylesheet)) { 
@@ -109,6 +110,9 @@ class webPage {
     </head>
     <body>
         <?php
+	
+	include("src/licenseModal.php");    //implements the modal download popup used on several pages
+
     }
     public function pageHeader() { ?>    
  
