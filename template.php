@@ -2,7 +2,6 @@
 
 require_once 'src/Config.php';
 require_once 'src/Template.php';
-include("src/licenseModal.php");    //implements the modal download popup used on several pages
 
 // Reused occasionally throughout the site.
 function getFileSize($f){
@@ -92,6 +91,8 @@ class webPage {
         <link rel="stylesheet" href="/css/style.css" type="text/css" />
         <link type="text/css" href="css/custom-theme/jquery-ui-1.8.17.custom.css" rel="Stylesheet" />  
         <link type="text/css" href="css/customize-jquery-ui.css" rel="Stylesheet" />  
+        <link rel="stylesheet" href="/css/licenseModal.css" type="text/css" />
+
     <?php 
 
         if (isset($this->stylesheet) && !empty($this->stylesheet)) { 
@@ -109,6 +110,9 @@ class webPage {
     </head>
     <body>
         <?php
+	
+	include("src/licenseModal.php");    //implements the modal download popup used on several pages
+
     }
     public function pageHeader() { ?>    
  
@@ -216,7 +220,7 @@ class webPage {
                     </div>
                 </div>
                 
-                <div style ="float: left; width: 470px; text-align: left; margin-top: 13px;"><a id="snapWebVersion" href="/releases.php"><?php echo 'V'.SNAPWEB_VERSION; ?></a> Copyright &copy; 2012 <a href="/" style="color: #222222; text-decoration: underline;">Scenarios Network for Alaska &amp; Arctic Planning</a>, a research institute of the <a href="http://www.uaf.edu" style="color: #222222; text-decoration: underline;">University of Alaska Fairbanks</a>.  UAF is an affirmative action/equal opportunity employer and educational institution.
+                <div style ="float: left; width: 470px; text-align: left; margin-top: 13px;"><a id="snapWebVersion" href="/releases.php"><?php echo 'V'.SNAPWEB_VERSION; ?></a> Copyright &copy; 2013 <a href="/" style="color: #222222; text-decoration: underline;">Scenarios Network for Alaska &amp; Arctic Planning</a>, a research institute of the <a href="http://www.uaf.edu" style="color: #222222; text-decoration: underline;">University of Alaska Fairbanks</a>.  UAF is an affirmative action/equal opportunity employer and educational institution.
 
                 <p>
                     Scenarios Network for Alaska &amp; Arctic Planning<br/>

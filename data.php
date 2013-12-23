@@ -1,6 +1,6 @@
 <?php
 include("template.php");
-$page = new webPage("SNAP: Data", "", "data", 'Data');
+$page = new webPage("SNAP: Data Downloads", "", "data", 'Download Data');
 $page->openPage();
 $page->pageHeader();
 
@@ -26,63 +26,140 @@ html;
             <div class="methods text">
 
 <h2>Data</h2>
-
-<p>
-Our principal products are downscaled historical and projected monthly climate data, primarily temperature and precipitation across Alaska and large regions of Western Canada.  Projected data are produced for three <a href="/faq.php#faq_4">scenarios</a> (B1, A1B, A2).  Additionally, SNAP produces derived data from the above base datasets through various modeling efforts.  Derived data products include potential evapotranspiration, vegetation, fire, permafrost, day of freeze, day of thaw, and the subsequent length of growing season, as well as decadal, seasonal, and annual averages.
+<p>SNAP data includes downscaled historically observed, modeled historical, as well as modeled projected data out to 2100 across several top ranked GCM's and scenarios (SRES or RCPs). Data is produced on a project specific basis, but when time and feasibility allows, we try and extend analyses to the greatest spatial and temporal extent possible to allow the greatest applicability to other projects as well. In the broadest sense, our data extends from the mid&ndash;1800s to 2100, across multiple spatial extents including: Alaska, Alaska-Western Canada, Polar, and worldwide.
 </p>
+<p>The list of variables is always expanding, so please explore below to see what we currently have available.</p>
 
-<p>
-Please visit our <a href="/methods.php">Methods</a> section for a description of our downscaling procedure.  
-</p>
+<p>All of our downloadable data is provided in GeoTIFF format. We've standardized on geotiff thus far because it is a stable and compressed format that can be easily read by many open source and commercial GIS and data manipulation programs including ArcGIS, QGIS, R (raster package recommended), GDAL, GRASS, and many others.</p>
 
-<p>
-To visualize a selection of datasets, please visit the <a href="maps.php" target="_blank" >map tool</a>.
-</p>
+<p>While it&rsquo;s hard to have a completely static file naming scheme, we make every attempt to keep some consistency across our various datasets. This naming scheme outlined below is our general guide, although it does vary depending upon each dataset. Please refer to the full metadata for details on specific datasets.</p>
 
-<p>
-For a full list of our available data, please see below.
-</p>
-
-<hr/>
-
-<p>
-All of our downloadable data is provided in <a href="http://trac.osgeo.org/geotiff/">GeoTIFF</a> format, georeferenced to the North American Datum of 1983 and projected in Alaska Albers Equal Area Conic in units of meters (NAD83 Alaska Albers).  Geotiffs can be read by many open source and commercial GIS and data manipulation programs including ArcGIS, QGIS, R (raster package recommended), GDAL, GRASS, and many others.
-</p>
-
-<p>
-Our data is currently served through zip files.  Once uncompressed, each file represents one time step (month, decade, season, etc) across the full spatial extent for that product.  Currently, spatial extents are Alaska-wide or Alaska-Western Canada (YT, BC, AB, SK, MB).
-</p>
-<p>
-While it&rsquo;s hard to have a completely static file naming scheme, we make every attempt to keep some consistency across our various datasets.  This naming scheme outlined below is our general guide, although it does vary depending upon each dataset.  Please refer to the full metadata for details on specific datasets.
-</p>
-<p><code>[variable]_[metric]_[units]_[format]_[assessmentReport]_[group]_[model]_[scenario]_[timeFrame].[fileFormat]</code></p>
-
-<table id="key">
-<thead>
-<tr>
-<th scope="col">variable</th><th scope="col">key</th>
-</tr></thead>
-<tbody>
-<tr><th scope="row">tas</th><td>temperature</td></tr>
-<tr><th scope="row">pr</th><td>precipitation</td></tr>
-<tr><th scope="row">dot</th><td>day of thaw</td></tr>
-<tr><th scope="row">dof</th><td>day of freeze</td></tr>
-<tr><th scope="row">logs</th><td>length of growing season</td></tr>
-<tr><th scope="row">pet</th><td>potential evapotranspiration</td></tr>
-<tr><th scope="row">fs</th><td>snow-day fraction</td></tr>
-</tbody>
-</table>
+<p><pre>[variable][metric][units][format][assessmentReport][group][model][scenario][timeFrame].[fileFormat]</pre></p>
 
 <?php echo Config::$termsOfUse; ?>
 
-<h3 id="Projected">Projected Data</h3>
+<h3 id="Projected">Modeled Historical and Projected Data</h3>
 </div>
 <div class="dataAccordionWrapper">
 
 <div class="dataAccordion">
+<h3><a href="#dataset=Historical_Estimates_and_Projections_of_Sea_Ice_Concentration">Historical Estimates and Projections of Sea Ice Concentration &ndash; 0.4 degrees CMIP5 /AR5</a></h3>
+<div>
+<p>This set of files includes modeled historical estimates and future projections of monthly sea ice concentration (in percent cover, 0&ndash;100) for each month of every year from January 1860&ndash;December 2100* at 0.4 x 0.4 degrees spatial resolution from 5 top ranking CMIP5 global climate models (GCMs). Each file represents a single month in a given year.</p>
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>NA</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>0.4 degrees</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Polar</td></tr>
+</tbody>
+</table>
+<img src="images/polar_extent.png" alt="" />
+
+<h4>Metadata:</h4><p><a href="#" class="metadataLink" data-geonetwork-metadata-id="101">Historical Estimates and Projections of Sea Ice Concentration AR5</a></p>
+<h4>Products:</h4>
+<ul>
+	<li><a href="/files/data/monthly/sic_con_pct_5-Models_historical_01-12_1860-2005.zip">sic_con_pct_5-Models_historical_01-12_1860-2005.zip</a> (1.2 GB)</li>
+	<li><a href="/files/data/monthly/sic_con_pct_5-Models_rcp85_01-12_2006-2100.zip">sic_con_pct_5-Models_rcp85_01-12_2006-2100.zip</a> (621 MB)</li>
+</ul>
+</div>
+</div>
+
+<div class="dataAccordion">
+<h3><a href="#dataset=Historical_Daily_Mean_Quantile_Mapped_Temperatures">Historical Daily Mean Quantile Mapped Temperatures &ndash; 2.5 degrees CMIP5 /AR5</a></h3>
+<div>
+<p>This data includes quantile&ndash;mapped historical model runs of AR5 daily mean temperature (tas, degrees C) for each day of every year from 1958&ndash;2005 at 2.5 x 2.5 degree spatial resolution across 3 AR5 models utilizing the “historical” GCM model run. They are 365 multi&ndash;band geotiff files, one file per year, each band representing one day of the year, with no leap years.</p>
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>1958&ndash;2001 ERA&ndash;40</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>2.5 degrees</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Worldwide</td></tr>
+</tbody>
+</table>
+<img src="images/worldwide_extent.png" alt="" />
+
+<h4>Metadata:</h4><p><a href="#" class="metadataLink" data-geonetwork-metadata-id="114">Historical Daily Mean Quantile Mapped Temperatures &ndash; 2.5 degrees AR5</a></p>
+<h4>Products:</h4><p><a href="/files/data/monthly/tas_mean_C_AR5_3-Models_historical_365_1958-2005.zip">tas_mean_C_AR5_3-Models_historical_365_1958-2005.zip</a> (840 MB)</p>
+</div>
+</div>
+
+<div class="dataAccordion">
+<h3><a href="#dataset=Projected_Daily_Mean_Quantile_Mapped_Temperatures">Projected Daily Mean Quantile Mapped Temperatures &ndash; 2.5 degrees CMIP5 /AR5</a></h3>
+<div>
+<p>This data includes quantile&ndash;mapped historical model runs of AR5 daily mean temperature (tas, degrees C) for each day of every year from 2006&ndash;2100 at 2.5 x 2.5 degree spatial resolution across 3 AR5 models and 2 RCPs. They are 365 multi&ndash;band geotiff files, one file per year, each band representing one day of the year, with no leap years.</p>
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>1958&ndash;2001 ERA&ndash;40</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>2.5 degrees</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Worldwide</td></tr>
+</tbody>
+</table>
+<img src="images/worldwide_extent.png" alt="" />
+
+<h4>Metadata:</h4><p><a href="#" class="metadataLink" data-geonetwork-metadata-id="100">Projected Daily Mean Quantile Mapped Temperatures &ndash; 2.5 degrees AR5</a></p>
+<h4>Products:</h4>
+<ul>
+	<li><a href="/files/data/monthly/tas_mean_C_AR5_3-Models_rcp60_365_2006-2100.zip">tas_mean_C_AR5_3-Models_rcp60_365_2006-2100.zip</a> (1.7 GB)</li>
+	<li><a href="/files/data/monthly/tas_mean_C_AR5_3-Models_rcp85_365_2006-2100.zip">tas_mean_C_AR5_3-Models_rcp85_365_2006-2100.zip</a> (1.7 GB)</li>
+</ul>
+</div>
+</div>
+
+<div class="dataAccordion">
+<h3><a href="#dataset=Historical_Daily_Quantile_Mapped_Near_Surface_Wind_Velocity">Historical Daily Quantile Mapped Near Surface Wind Velocity &ndash; 2.5 degrees CMIP5 /AR5</a></h3>
+<div>
+<p>This data includes quantile&ndash;mapped historical model runs of AR5 daily near surface wind velocity (uas: West/East component of wind, vas: North/South component, m/s) for each day of every year from 1958&ndash;2100 at 2.5 x 2.5 degree spatial resolution across 3 AR5 models utilizing the “historical” GCM model run. They are 365 multi&ndash;band geotiff files, one file per year, each band representing one day of the year, with no leap years.</p>
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>1958&ndash;2001 ERA&ndash;40</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>2.5 degrees</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Worldwide</td></tr>
+</tbody>
+</table>
+<img src="images/worldwide_extent.png" alt="" />
+
+<h4>Metadata:</h4><p><a href="#" class="metadataLink" data-geonetwork-metadata-id="115">Historical Daily Quantile Mapped Near Surface Wind Velocity &ndash; 2.5 degrees AR5</a></p>
+<h4>Products:</h4>
+<ul>
+	<li><a href="/files/data/monthly/uas_mean_mps_AR5_3-Models_historical_365_1958-2005.zip">uas_mean_mps_AR5_3-Models_historical_365_1958-2005.zip</a> (826 MB)</li>
+	<li><a href="/files/data/monthly/vas_mean_mps_AR5_3-Models_historical_365_1958-2005.zip">vas_mean_mps_AR5_3-Models_historical_365_1958-2005.zip</a> (820 MB)</li>
+</ul>
+</div>
+</div>
+
+<div class="dataAccordion">
+<h3><a href="#dataset=Projected_Daily_Quantile_Mapped_Near_Surface_Wind_Velocity">Projected Daily Quantile Mapped Near Surface Wind Velocity &ndash; 2.5 degrees CMIP5 /AR5</a></h3>
+<div>
+<p>This data includes quantile&ndash;mapped projections of AR5 daily near surface wind velocity (uas: West/East component of wind, vas: North/South component, m/s) for each day of every year from 1958&ndash;2100 at 2.5 x 2.5 degree spatial resolution across 3 AR5 models and 2 RCPs. They are 365 multi&ndash;band geotiff files, one file per year, each band representing one day of the year, with no leap years.</p>
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>1958&ndash;2001 ERA&ndash;40</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>2.5 degrees</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Worldwide</td></tr>
+</tbody>
+</table>
+<img src="images/worldwide_extent.png" alt="" />
+
+<h4>Metadata:</h4><p><a href="#" class="metadataLink" data-geonetwork-metadata-id="116">Projected Daily Quantile Mapped Near Surface Wind Velocity &ndash; 2.5 degrees AR5</a></p>
+<h4>Products:</h4>
+<ul>
+	<li><a href="/files/data/monthly/uas_mean_mps_AR5_3-Models_rcp60_365_2006-2100.zip">uas_mean_mps_AR5_3-Models_rcp60_365_2006-2100.zip</a> (1.6 GB)</li>
+	<li><a href="/files/data/monthly/uas_mean_mps_AR5_3-Models_rcp85_365_2006-2100.zip">uas_mean_mps_AR5_3-Models_rcp85_365_2006-2100.zip</a> (1.6 GB)</li>
+	<li><a href="/files/data/monthly/vas_mean_mps_AR5_3-Models_rcp60_365_2006-2100.zip">vas_mean_mps_AR5_3-Models_rcp60_365_2006-2100.zip</a> (1.6 GB)</li>
+	<li><a href="/files/data/monthly/vas_mean_mps_AR5_3-Models_rcp85_365_2006-2100.zip">vas_mean_mps_AR5_3-Models_rcp85_365_2006-2100.zip</a> (1.6 GB)</li>
+</ul>
+</div>
+</div>
+<br/>
+
+<div class="dataAccordion">
 <h3><a href="#dataset=projected_monthly_temperature_and_precipitation_771m">Projected Monthly Temperature and Precipitation - 771m CMIP3/AR4</a></h3>
 <div>
-<p>Projected (2001-2100: B1, A1B, and A2 scenarios) monthly average temperature and total precipitation from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771m via the delta method.  A 5-Model Average is also included.</p>
+<p>Projected (2001-2100: B1, A1B, and A2 scenarios) monthly average temperature and total precipitation from 5 AR4 GCMs that perform best across Alaska and the Arctic, downscaled to 771m via the delta method. A 5-Model Average is also included.</p>
 <table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
@@ -1318,7 +1395,7 @@ Although the equations developed here provide a reasonable fit to the data, mode
 <!-- HistoricalData -->
 
 <div class="methods text" id="Historical">
-<h3>Historical Data</h3>
+<h3>Historically Observed Data</h3>
 </div>
 
 <div class="dataAccordionWrapper">

@@ -37,7 +37,7 @@ $page->connectToDatabase();
     }
 ?>
 </div>
-<div class="former_staff">
+<div class="accordion">
     <h4>Former Staff</h4>
     <div class="staff">
         <?php
@@ -147,7 +147,7 @@ $page->closePage();
 
 $(function() {
         
-    $('.former_staff').each( function(index) { 
+    $('.accordion').each( function(index) { 
         $(this).accordion({
           navigation: true,
           autoHeight: false,
@@ -157,7 +157,7 @@ $(function() {
     });
 
     if( window.location.hash ) {
-      $.scrollTo($('a[href="'+window.location.hash+'"]'), 1000, { offset: -50 });
+      $.scrollTo($('a[name="'+window.location.hash+'"]'), 1000);
       window.location.hash = ''; // clear this to prevent user from seeing dissonance between url + opened folds
     }
 

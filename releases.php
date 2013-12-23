@@ -12,6 +12,32 @@ $page->pageHeader();
 <div id="main_content" class="releases methods text">
 <h2>SNAP web site release notes</h2>
 
+<h3>1.2.8</h3>
+<h4>Released December 23, 2013 at 10:30am AKST</h4>
+<ul>
+<li><a href="/datamaps.php">Added new tools</a> to Data & Tools landing page. (#179, #189)</li>
+<li>New SNAP <a href="/analysis_tools.php">data analysis tools</a> launched. (#178, #184)</li>
+<li>Various minor bugfixes and content adjustments.</li>
+</ul>
+
+<h3>1.2.7</h3>
+<h4>Released October 31, 2013 at 3:12pm AKDT</h4>
+<ul>
+	<li>Fixed some bugs ragarding which staff and faculty members are displayed under certain circumstances. (#170)</li>
+	<li>Changed the tilecache invocation in the <a href="/maps.php">map tool</a> to use mod_python handler to increase performance. (#168)</li>
+	<li>Added a "Former Staff" section to the <a href="/people.php">people page</a>, also updated staff who have left. (#165) (#100)</li>
+	<li>Removed list of collaborators and their information on the <a href="/collaborators.php">collaborators page</a>, as we are no longer tracking other organizations' data. The individual logos in the "cloud" now link directly to each organization's website, as do logos in project pages. (#153)</li>
+	<li>Various content updates.</li>
+</ul>
+
+<h3>1.2.6</h3>
+<h4>Released August 15, 2013 at 2:21pm AKDT</h4>
+<ul>
+	<li>Several project content updates.</li>
+	<li>Added license agreement click-through dialog framework to be integrated with downloads in the future.</li>
+	<li>Pre-cached chart renderings now purge with each update to avoid serving outdated charts. (#136)</li>
+	<li>The project page template now parses any html found in projects' database entries. (#133)</li>
+</ul>
 
 <h3>1.2.5</h3>
 <h4>Released April 23, 2013 at 12:15pm AKDT</h4>
