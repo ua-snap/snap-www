@@ -13,8 +13,12 @@ $page->pageHeader();
 <h2>SNAP web site release notes</h2>
 
 <h3>1.2.8</h3>
-<h4>Released AKST</h4>
-
+<h4>Released December 23, 2013 at 10:30am AKST</h4>
+<ul>
+<li><a href="/datamaps.php">Added new tools</a> to Data & Tools landing page. (#179, #189)</li>
+<li>New SNAP <a href="/analysis_tools.php">data analysis tools</a> launched. (#178, #184)</li>
+<li>Various minor bugfixes and content adjustments.</li>
+</ul>
 
 <h3>1.2.7</h3>
 <h4>Released October 31, 2013 at 3:12pm AKDT</h4>
