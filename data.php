@@ -1401,6 +1401,46 @@ Although the equations developed here provide a reasonable fit to the data, mode
 <div class="dataAccordionWrapper">
 <div class="dataAccordion">
 
+<h3><a href="#dataset=historical_sea_ice_atlas">Historical Sea Ice Atlas: Observed Estimates of Sea Ice Concentration in Alaska Waters</a></h3>
+<div>
+
+<p>
+These data were compiled from several historical sea ice data sources into spatially and temporally standardized data sets that include sea ice concentrations (0&ndash;100%) for the seas surrounding the state of Alaska, USA.</p>
+<table class="overview">
+<tbody>
+<tr><th scope="row">Spatial Resolution</th><td>&frac14;&times;&frac14; degree</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>weekly and monthly</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Alaska marine waters</td></tr>
+<tr><th scope="row">Temporal Extent</th><td>Weekly, 1953&ndash;2013; Monthly, 1850&ndash;2013</td></tr>
+</tbody>
+</table>
+<img src="images/sea-ice-atlas-extent.png" alt="" />
+
+<h4>Downloads</h4>
+
+<table class="downloadsTable smallTable">
+<thead>
+<tr>
+<th scope="col">Metadata</th>
+<th scope="col">Data</th>
+</tr>
+</thead>
+<body>
+<tr>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="106">Monthly Observed Estimates of Sea Ice Concentration in Alaska Waters</a></td>
+<td>
+<a href="/files/data/monthly/sic_con_pct_monthly_historical_01_1850-12_2013.zip">1850&ndash;2013</a> (5.6 MB)
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="dataAccordionWrapper">
+<div class="dataAccordion">
+
 <h3><a href="#dataset=historical_monthly_temperature_and_precipitation_771m_CRUTS30">Historical Monthly Temperature and Precipitation - 771m CRU TS 3.0</a></h3>
 <div>
 
@@ -1420,7 +1460,7 @@ Historical (1901&ndash;2006) monthly average temperature and total precipitation
 
 <h4>Downloads</h4>
 
-<table class="downloadsTable">
+<table class="downloadsTable smallTable">
 <thead>
 <tr>
 <th scope="col">Metadata</th>
@@ -1468,7 +1508,7 @@ Historical (1901&ndash;2009) monthly average temperature and total precipitation
 
 <?php echo getCruts31DataAlert(); ?>
 
-<table class="downloadsTable">
+<table class="downloadsTable smallTable">
 <thead>
 <tr>
 <th scope="col">Metadata</th>

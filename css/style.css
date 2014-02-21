@@ -973,3 +973,7 @@ a.project p {
 table.overview.iem th[scope="col"] {
 	font-weight: bold;
 }
+
+.downloadsTable.smallTable th[scope="col"], .downloadsTable.smallTable td {
+	text-align: left;
+}
