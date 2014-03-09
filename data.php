@@ -779,7 +779,7 @@ html;
 <table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
-<tr><th scope="row">Spatial Resolution</th><td>771 m</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>771m</td></tr>
 <tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
 </tbody>
@@ -788,7 +788,7 @@ html;
 <img src="images/ak_extent.jpg" alt="" />
 
 <h4>Temperature</h4>
-<p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="118">Projected Monthly Average Temperature 771 km AR5</a></p>
+<p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="118">Projected Monthly Average Temperature 771m AR5</a></p>
 
 <table class="downloadsTable">
 <thead>
@@ -809,26 +809,26 @@ html;
 <tr>
 <th scope="row">5&ndash;model Average</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_5modelAvg_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_5modelAvg_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.7 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_5modelAvg_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_5modelAvg_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.7 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_5modelAvg_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_5modelAvg_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
 </td>
 </tr>
 
 <tr>
 <th scope="row">CCSM4</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_CCSM4_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_CCSM4_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_CCSM4_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_CCSM4_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_CCSM4_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_CCSM4_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
 </td>
 </tr>
 
@@ -837,13 +837,13 @@ html;
 <tr>
 <th scope="row">GFDL-CM3</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_GFDL-CM3_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_GFDL-CM3_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_GFDL-CM3_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_GFDL-CM3_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_GFDL-CM3_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_GFDL-CM3_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
 </td>
 </tr>
 
@@ -852,13 +852,13 @@ html;
 <tr>
 <th scope="row">GISS-E2-R</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_GISS-E2-R_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_GISS-E2-R_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_GISS-E2-R_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_GISS-E2-R_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_GISS-E2-R_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_GISS-E2-R_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
 </td>
 </tr>
 
@@ -866,13 +866,13 @@ html;
 <tr>
 <th scope="row">IPSL-CM5A-LR</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_IPSL-CM5A-LR_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_IPSL-CM5A-LR_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_IPSL-CM5A-LR_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_IPSL-CM5A-LR_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_IPSL-CM5A-LR_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_IPSL-CM5A-LR_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
 </td>
 </tr>
 
@@ -880,13 +880,13 @@ html;
 <tr>
 <th scope="row">MRI-CGCM3</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_MRI-CGCM3_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_MRI-CGCM3_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_MRI-CGCM3_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_MRI-CGCM3_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_MRI-CGCM3_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_MRI-CGCM3_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
 </td>
 </tr>
 
@@ -896,7 +896,7 @@ html;
 </table>
 
 <h4>Precipitation</h4>
-<p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="119">Projected Monthly Total Precipitation 771 m AR5</a></p>
+<p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="119">Projected Monthly Total Precipitation 771m AR5</a></p>
 
 <table class="downloadsTable">
 <thead>
@@ -917,13 +917,13 @@ html;
 <tr>
 <th scope="row">5&ndash;model Average</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_5modelAvg_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_5modelAvg_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.1 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_5modelAvg_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_5modelAvg_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.1 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_5modelAvg_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_5modelAvg_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.2 GB)
 </td>
 </tr>
 
@@ -931,13 +931,13 @@ html;
 <tr>
 <th scope="row">CCSM4</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_CCSM4_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_CCSM4_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.1 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_CCSM4_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_CCSM4_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.1 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_CCSM4_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_CCSM4_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.1 GB)
 </td>
 </tr>
 
@@ -946,13 +946,13 @@ html;
 <tr>
 <th scope="row">GFDL-CM3</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_GFDL-CM3_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_GFDL-CM3_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.2 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_GFDL-CM3_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_GFDL-CM3_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.2 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_GFDL-CM3_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.3 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_GFDL-CM3_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.3 GB)
 </td>
 </tr>
 
@@ -961,13 +961,13 @@ html;
 <tr>
 <th scope="row">GISS-E2-R</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_GISS-E2-R_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_GISS-E2-R_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.1 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_GISS-E2-R_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_GISS-E2-R_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.1 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_GISS-E2-R_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_GISS-E2-R_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.2 GB)
 </td>
 </tr>
 
@@ -976,13 +976,13 @@ html;
 <tr>
 <th scope="row">IPSL-CM5A-LR</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_IPSL-CM5A-LR_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_IPSL-CM5A-LR_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.1 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_IPSL-CM5A-LR_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_IPSL-CM5A-LR_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.1 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_IPSL-CM5A-LR_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_IPSL-CM5A-LR_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.2 GB)
 </td>
 </tr>
 
@@ -991,13 +991,13 @@ html;
 <tr>
 <th scope="row">MRI-CGCM3</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_MRI-CGCM3_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_MRI-CGCM3_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.1 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_MRI-CGCM3_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_MRI-CGCM3_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.2 GB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_MRI-CGCM3_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.3 GB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_MRI-CGCM3_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.2 GB)
 </td>
 </tr>
 
@@ -1020,7 +1020,7 @@ html;
 <table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
-<tr><th scope="row">Spatial Resolution</th><td>771 m</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>771m</td></tr>
 <tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
 </tbody>
@@ -1050,13 +1050,13 @@ html;
 <tr>
 <th scope="row">5&ndash;model Average</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_5modelAvg_rcp45.zip">2010&ndash;2100</a> (328 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_5modelAvg_rcp45.zip">2010&ndash;2100</a> (633 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_5modelAvg_rcp60.zip">2010&ndash;2100</a> (327 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_5modelAvg_rcp60.zip">2010&ndash;2100</a> (633 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_5modelAvg_rcp85.zip">2010&ndash;2100</a> (328 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_5modelAvg_rcp85.zip">2010&ndash;2100</a> (633 MB)
 </td>
 </tr>
 
@@ -1064,13 +1064,13 @@ html;
 <tr>
 <th scope="row">CCSM4</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_CCSM4_rcp45.zip">2010&ndash;2100</a> (329 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_CCSM4_rcp45.zip">2010&ndash;2100</a> (635 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_CCSM4_rcp60.zip">2010&ndash;2100</a> (328 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_CCSM4_rcp60.zip">2010&ndash;2100</a> (634 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_CCSM4_rcp85.zip">2010&ndash;2100</a> (330 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_CCSM4_rcp85.zip">2010&ndash;2100</a> (634 MB)
 </td>
 </tr>
 
@@ -1080,13 +1080,13 @@ html;
 <tr>
 <th scope="row">GFDL-CM3</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_GFDL-CM3_rcp45.zip">2010&ndash;2100</a> (326 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_GFDL-CM3_rcp45.zip">2010&ndash;2100</a> (638 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_GFDL-CM3_rcp60.zip">2010&ndash;2100</a> (327 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_GFDL-CM3_rcp60.zip">2010&ndash;2100</a> (637 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_GFDL-CM3_rcp85.zip">2010&ndash;2100</a> (327 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_GFDL-CM3_rcp85.zip">2010&ndash;2100</a> (638 MB)
 </td>
 </tr>
 
@@ -1096,13 +1096,13 @@ html;
 <tr>
 <th scope="row">GISS-E2-R</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_GISS-E2-R_rcp45.zip">2010&ndash;2100</a> (330 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_GISS-E2-R_rcp45.zip">2010&ndash;2100</a> (634 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_GISS-E2-R_rcp60.zip">2010&ndash;2100</a> (329 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_GISS-E2-R_rcp60.zip">2010&ndash;2100</a> (634 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_GISS-E2-R_rcp85.zip">2010&ndash;2100</a> (330 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_GISS-E2-R_rcp85.zip">2010&ndash;2100</a> (634 MB)
 </td>
 </tr>
 
@@ -1110,13 +1110,13 @@ html;
 <tr>
 <th scope="row">IPSL-CM5A-LR</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_IPSL-CM5A-LR_rcp45.zip">2010&ndash;2100</a> (328 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_IPSL-CM5A-LR_rcp45.zip">2010&ndash;2100</a> (635 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_IPSL-CM5A-LR_rcp60.zip">2010&ndash;2100</a> (327 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_IPSL-CM5A-LR_rcp60.zip">2010&ndash;2100</a> (636 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_IPSL-CM5A-LR_rcp85.zip">2010&ndash;2100</a> (328 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_IPSL-CM5A-LR_rcp85.zip">2010&ndash;2100</a> (636 MB)
 </td>
 </tr>
 
@@ -1125,13 +1125,13 @@ html;
 <tr>
 <th scope="row">MRI-CGCM3</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_MRI-CGCM3_rcp45.zip">2010&ndash;2100</a> (329 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_MRI-CGCM3_rcp45.zip">2010&ndash;2100</a> (634 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_MRI-CGCM3_rcp60.zip">2010&ndash;2100</a> (328 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_MRI-CGCM3_rcp60.zip">2010&ndash;2100</a> (634 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_MRI-CGCM3_rcp85.zip">2010&ndash;2100</a> (329 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_2km_MRI-CGCM3_rcp85.zip">2010&ndash;2100</a> (634 MB)
 </td>
 </tr>
 
@@ -1162,26 +1162,26 @@ html;
 <tr>
 <th scope="row">5&ndash;model Average</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_5modelAvg_rcp45.zip">2010&ndash;2100</a> (43 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_5modelAvg_rcp45.zip">2010&ndash;2100</a> (84 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_5modelAvg_rcp60.zip">2010&ndash;2100</a> (43 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_5modelAvg_rcp60.zip">2010&ndash;2100</a> (83 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_5modelAvg_rcp85.zip">2010&ndash;2100</a> (43 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_5modelAvg_rcp85.zip">2010&ndash;2100</a> (79 MB)
 </td>
 </tr>
 
 <tr>
 <th scope="row">CCSM4</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_CCSM4_rcp45.zip">2010&ndash;2100</a> (43 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_CCSM4_rcp45.zip">2010&ndash;2100</a> (82 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_CCSM4_rcp60.zip">2010&ndash;2100</a> (42 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_CCSM4_rcp60.zip">2010&ndash;2100</a> (82 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_CCSM4_rcp85.zip">2010&ndash;2100</a> (42 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_CCSM4_rcp85.zip">2010&ndash;2100</a> (79 MB)
 </td>
 </tr>
 
@@ -1189,13 +1189,13 @@ html;
 <tr>
 <th scope="row">GFDL-CM3</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_GFDL-CM3_rcp45.zip">2010&ndash;2100</a> (41 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_GFDL-CM3_rcp45.zip">2010&ndash;2100</a> (81 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_GFDL-CM3_rcp60.zip">2010&ndash;2100</a> (41 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_GFDL-CM3_rcp60.zip">2010&ndash;2100</a> (80 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_GFDL-CM3_rcp85.zip">2010&ndash;2100</a> (41 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_GFDL-CM3_rcp85.zip">2010&ndash;2100</a> (79 MB)
 </td>
 </tr>
 
@@ -1203,13 +1203,13 @@ html;
 <tr>
 <th scope="row">GISS-E2-R</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_GISS-E2-R_rcp45.zip">2010&ndash;2100</a> (43 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_GISS-E2-R_rcp45.zip">2010&ndash;2100</a> (83 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_GISS-E2-R_rcp60.zip">2010&ndash;2100</a> (43 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_GISS-E2-R_rcp60.zip">2010&ndash;2100</a> (82 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_GISS-E2-R_rcp85.zip">2010&ndash;2100</a> (43 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_GISS-E2-R_rcp85.zip">2010&ndash;2100</a> (80 MB)
 </td>
 </tr>
 
@@ -1217,13 +1217,13 @@ html;
 <tr>
 <th scope="row">IPSL-CM5A-LR</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_IPSL-CM5A-LR_rcp45.zip">2010&ndash;2100</a> (43 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_IPSL-CM5A-LR_rcp45.zip">2010&ndash;2100</a> (81 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_IPSL-CM5A-LR_rcp60.zip">2010&ndash;2100</a> (42 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_IPSL-CM5A-LR_rcp60.zip">2010&ndash;2100</a> (80 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_IPSL-CM5A-LR_rcp85.zip">2010&ndash;2100</a> (42 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_IPSL-CM5A-LR_rcp85.zip">2010&ndash;2100</a> (79 MB)
 </td>
 </tr>
 
@@ -1231,13 +1231,13 @@ html;
 <tr>
 <th scope="row">MRI-CGCM3</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_MRI-CGCM3_rcp45.zip">2010&ndash;2100</a> (42 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_MRI-CGCM3_rcp45.zip">2010&ndash;2100</a> (81 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_MRI-CGCM3_rcp60.zip">2010&ndash;2100</a> (42 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_MRI-CGCM3_rcp60.zip">2010&ndash;2100</a> (81 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_MRI-CGCM3_rcp85.zip">2010&ndash;2100</a> (42 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_2km_MRI-CGCM3_rcp85.zip">2010&ndash;2100</a> (79 MB)
 </td>
 </tr>
 
@@ -1262,7 +1262,7 @@ html;
 <table class="overview">
 <tbody>
 <tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
-<tr><th scope="row">Spatial Resolution</th><td>771 m</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>771m</td></tr>
 <tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
 <tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
 </tbody>
@@ -1292,13 +1292,13 @@ html;
 <tr>
 <th scope="row">5&ndash;model Average</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_5modelAvg_rcp45.zip">2010&ndash;2100</a> (314 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_5modelAvg_rcp45.zip">2010&ndash;2100</a> (613 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_5modelAvg_rcp60.zip">2010&ndash;2100</a> (314 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_5modelAvg_rcp60.zip">2010&ndash;2100</a> (613 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_5modelAvg_rcp85.zip">2010&ndash;2100</a> (316 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_5modelAvg_rcp85.zip">2010&ndash;2100</a> (621 MB)
 </td>
 </tr>
 
@@ -1306,13 +1306,13 @@ html;
 <tr>
 <th scope="row">CCSM4</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_CCSM4_rcp45.zip">2010&ndash;2100</a> (315 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_CCSM4_rcp45.zip">2010&ndash;2100</a> (609 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_CCSM4_rcp60.zip">2010&ndash;2100</a> (315 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_CCSM4_rcp60.zip">2010&ndash;2100</a> (609 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_CCSM4_rcp85.zip">2010&ndash;2100</a> (318 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_CCSM4_rcp85.zip">2010&ndash;2100</a> (617 MB)
 </td>
 </tr>
 
@@ -1322,13 +1322,13 @@ html;
 <tr>
 <th scope="row">GFDL-CM3</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_GFDL-CM3_rcp45.zip">2010&ndash;2100</a> (321 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_GFDL-CM3_rcp45.zip">2010&ndash;2100</a> (625 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_GFDL-CM3_rcp60.zip">2010&ndash;2100</a> (322 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_GFDL-CM3_rcp60.zip">2010&ndash;2100</a> (628 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_GFDL-CM3_rcp85.zip">2010&ndash;2100</a> (325 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_GFDL-CM3_rcp85.zip">2010&ndash;2100</a> (636 MB)
 </td>
 </tr>
 
@@ -1338,13 +1338,13 @@ html;
 <tr>
 <th scope="row">GISS-E2-R</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_GISS-E2-R_rcp45.zip">2010&ndash;2100</a> (316 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_GISS-E2-R_rcp45.zip">2010&ndash;2100</a> (611 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_GISS-E2-R_rcp60.zip">2010&ndash;2100</a> (315 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_GISS-E2-R_rcp60.zip">2010&ndash;2100</a> (610 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_GISS-E2-R_rcp85.zip">2010&ndash;2100</a> (317 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_GISS-E2-R_rcp85.zip">2010&ndash;2100</a> (618 MB)
 </td>
 </tr>
 
@@ -1352,13 +1352,13 @@ html;
 <tr>
 <th scope="row">IPSL-CM5A-LR</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_IPSL-CM5A-LR_rcp45.zip">2010&ndash;2100</a> (314 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_IPSL-CM5A-LR_rcp45.zip">2010&ndash;2100</a> (616 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_IPSL-CM5A-LR_rcp60.zip">2010&ndash;2100</a> (314 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_IPSL-CM5A-LR_rcp60.zip">2010&ndash;2100</a> (612 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_IPSL-CM5A-LR_rcp85.zip">2010&ndash;2100</a> (317 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_IPSL-CM5A-LR_rcp85.zip">2010&ndash;2100</a> (622 MB)
 </td>
 </tr>
 
@@ -1367,13 +1367,13 @@ html;
 <tr>
 <th scope="row">MRI-CGCM3</th>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_MRI-CGCM3_rcp45.zip">2010&ndash;2100</a> (317 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_MRI-CGCM3_rcp45.zip">2010&ndash;2100</a> (613 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_MRI-CGCM3_rcp60.zip">2010&ndash;2100</a> (318 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_MRI-CGCM3_rcp60.zip">2010&ndash;2100</a> (615 MB)
 </td>
 <td>
-<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_MRI-CGCM3_rcp85.zip">2010&ndash;2100</a> (319 MB)
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_2km_MRI-CGCM3_rcp85.zip">2010&ndash;2100</a> (619 MB)
 </td>
 </tr>
 
