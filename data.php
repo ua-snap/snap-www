@@ -400,7 +400,7 @@ html;
 <!-- second block -->
 
 <div class="dataAccordion">
-<h3><a href="#dataset=projected_derived_temperature_products_2km_ar5">Projected Derived Temperature Products - 2km CMIP5/AR5 Decadal Summaries by Month, Year, or Season Day of Freeze, Thaw, Length of Growing Season</a></h3>
+<h3><a href="#dataset=projected_derived_temperature_products_2km_ar5">Projected Derived Temperature Products - 2km CMIP5/AR5</a></h3>
 <div>
 <p>Projected (2010&ndash;2100: RCP 4.5, 6.0. 8.5 scenarios) derived temperature products from 5 AR5 GCMs that perform best across Alaska and the Arctic, downscaled to 2km via the delta method. A 5&ndash;Model Average is also included.</p>
 <table class="overview">
@@ -639,7 +639,7 @@ html;
 
 
 <div class="dataAccordion">
-<h3><a href="#dataset=projected_derived_precipitation_products_2km_ar5">Projected Derived Precipitation Products - 2km CMIP5/AR5 Decadal Summaries by Month, Year, or Season</a></h3>
+<h3><a href="#dataset=projected_derived_precipitation_products_2km_ar5">Projected Derived Precipitation Products - 2km CMIP5/AR5</a></h3>
 <div>
 <p>Projected (2010&ndash;2100: historical run and RCP 4.5, 6.0. 8.5 scenarios) derived precipitation products from 5 AR5 GCMs that perform best across Alaska and the Arctic, downscaled to 2km via the delta method. A 5&ndash;Model Average is also included.</p>
 <table class="overview">
@@ -1013,7 +1013,7 @@ html;
 <!-- second 771m block -->
 
 <div class="dataAccordion">
-<h3><a href="#dataset=projected_derived_temperature_products_771km_ar5">Projected Derived Temperature Products &ndash; 771m CMIP5/AR5 Decadal Summaries by Month, Year, or Season Day of Freeze, Thaw, Length of Growing Season</a></h3>
+<h3><a href="#dataset=projected_derived_temperature_products_771km_ar5">Projected Derived Temperature Products &ndash; 771m CMIP5/AR5</a></h3>
 <div>
 <p>Projected (2010&ndash;2100: historical run and RCP 4.5, 6.0. 8.5 scenarios) derived temperature products from 5 AR5 GCMs that perform best across Alaska and the Arctic, downscaled to 771m via the delta method. A 5&ndash;Model Average is also included.</p>
 
@@ -1254,7 +1254,7 @@ html;
 
 
 <div class="dataAccordion">
-<h3><a href="#dataset=projected_derived_precipitation_products_771m_ar5">Projected Derived Precipitation Products &ndash; 771m CMIP5/AR5 Decadal Summaries by Month, Year, or Season</a></h3>
+<h3><a href="#dataset=projected_derived_precipitation_products_771m_ar5">Projected Derived Precipitation Products &ndash; 771m CMIP5/AR5</a></h3>
 <div>
 <p>Projected (2010&ndash;2100: historical run and RCP 4.5, 6.0. 8.5 scenarios) derived precipitation products from 5 AR5 GCMs that perform best across Alaska and the Arctic, downscaled to 771m via the delta method. A 5&ndash;Model Average is also included.</p>
 
