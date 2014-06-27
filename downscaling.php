@@ -112,7 +112,7 @@ $page->pageHeader();
 
       <p><a href="#top">Back to top</a></p>
 
-      <h3>Model Selection</h3>
+      <h3><a name="model_selection">Model Selection</a></h3>
 
       <p>Each GCM has different strengths and weaknesses, and some can be
       expected to perform better than others for northern regions of the globe.
@@ -245,7 +245,7 @@ $page->pageHeader();
 
       <p><a href="#top">Back to top</a></p>
 
-      <h3>Delta Method Downscaling Procedure</h3><img src=
+      <h3><a name="delta_method">Delta Method Downscaling Procedure</a></h3><img src=
       "images/SNAP_delta_method_graphic.png" alt="" style="width: 250px;">
 
       <p>SNAP currently employs a statistical downscaling approach often
