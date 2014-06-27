@@ -43,7 +43,7 @@ html;
 <div class="dataAccordionWrapper">
 
 <div class="dataAccordion">
-<h3><a href="#dataset=Historical_Estimates_and_Projections_of_Sea_Ice_Concentration">Historical Estimates and Projections of Sea Ice Concentration &ndash; 0.4 degrees CMIP5 /AR5</a></h3>
+<h3><a href="#dataset=Historical_Estimates_and_Projections_of_Sea_Ice_Concentration">Historical Estimates and Projections of Sea Ice Concentration &ndash; 0.4 degrees CMIP5/AR5</a></h3>
 <div>
 <p>This set of files includes modeled historical estimates and future projections of monthly sea ice concentration (in percent cover, 0&ndash;100) for each month of every year from January 1860&ndash;December 2100* at 0.4 x 0.4 degrees spatial resolution from 5 top ranking CMIP5 global climate models (GCMs). Each file represents a single month in a given year.</p>
 <table class="overview">
@@ -66,7 +66,7 @@ html;
 </div>
 
 <div class="dataAccordion">
-<h3><a href="#dataset=Historical_Daily_Mean_Quantile_Mapped_Temperatures">Historical Daily Mean Quantile Mapped Temperatures &ndash; 2.5 degrees CMIP5 /AR5</a></h3>
+<h3><a href="#dataset=Historical_Daily_Mean_Quantile_Mapped_Temperatures">Historical Daily Mean Quantile Mapped Temperatures &ndash; 2.5 degrees CMIP5/AR5</a></h3>
 <div>
 <p>This data includes quantile&ndash;mapped historical model runs of AR5 daily mean temperature (tas, degrees C) for each day of every year from 1958&ndash;2005 at 2.5 x 2.5 degree spatial resolution across 3 AR5 models utilizing the “historical” GCM model run. They are 365 multi&ndash;band geotiff files, one file per year, each band representing one day of the year, with no leap years.</p>
 <table class="overview">
@@ -85,7 +85,7 @@ html;
 </div>
 
 <div class="dataAccordion">
-<h3><a href="#dataset=Projected_Daily_Mean_Quantile_Mapped_Temperatures">Projected Daily Mean Quantile Mapped Temperatures &ndash; 2.5 degrees CMIP5 /AR5</a></h3>
+<h3><a href="#dataset=Projected_Daily_Mean_Quantile_Mapped_Temperatures">Projected Daily Mean Quantile Mapped Temperatures &ndash; 2.5 degrees CMIP5/AR5</a></h3>
 <div>
 <p>This data includes quantile&ndash;mapped historical model runs of AR5 daily mean temperature (tas, degrees C) for each day of every year from 2006&ndash;2100 at 2.5 x 2.5 degree spatial resolution across 3 AR5 models and 2 RCPs. They are 365 multi&ndash;band geotiff files, one file per year, each band representing one day of the year, with no leap years.</p>
 <table class="overview">
@@ -108,7 +108,7 @@ html;
 </div>
 
 <div class="dataAccordion">
-<h3><a href="#dataset=Historical_Daily_Quantile_Mapped_Near_Surface_Wind_Velocity">Historical Daily Quantile Mapped Near Surface Wind Velocity &ndash; 2.5 degrees CMIP5 /AR5</a></h3>
+<h3><a href="#dataset=Historical_Daily_Quantile_Mapped_Near_Surface_Wind_Velocity">Historical Daily Quantile Mapped Near Surface Wind Velocity &ndash; 2.5 degrees CMIP5/AR5</a></h3>
 <div>
 <p>This data includes quantile&ndash;mapped historical model runs of AR5 daily near surface wind velocity (uas: West/East component of wind, vas: North/South component, m/s) for each day of every year from 1958&ndash;2100 at 2.5 x 2.5 degree spatial resolution across 3 AR5 models utilizing the “historical” GCM model run. They are 365 multi&ndash;band geotiff files, one file per year, each band representing one day of the year, with no leap years.</p>
 <table class="overview">
@@ -131,7 +131,7 @@ html;
 </div>
 
 <div class="dataAccordion">
-<h3><a href="#dataset=Projected_Daily_Quantile_Mapped_Near_Surface_Wind_Velocity">Projected Daily Quantile Mapped Near Surface Wind Velocity &ndash; 2.5 degrees CMIP5 /AR5</a></h3>
+<h3><a href="#dataset=Projected_Daily_Quantile_Mapped_Near_Surface_Wind_Velocity">Projected Daily Quantile Mapped Near Surface Wind Velocity &ndash; 2.5 degrees CMIP5/AR5</a></h3>
 <div>
 <p>This data includes quantile&ndash;mapped projections of AR5 daily near surface wind velocity (uas: West/East component of wind, vas: North/South component, m/s) for each day of every year from 1958&ndash;2100 at 2.5 x 2.5 degree spatial resolution across 3 AR5 models and 2 RCPs. They are 365 multi&ndash;band geotiff files, one file per year, each band representing one day of the year, with no leap years.</p>
 <table class="overview">
@@ -154,6 +154,1242 @@ html;
 </ul>
 </div>
 </div>
+
+
+<!-- AR5-uploads -->
+<br/>
+
+<div class="dataAccordion">
+<h3><a href="#dataset=projected_monthly_temperature_and_precipitation_2km_ar5">Projected Monthly Temperature and Precipitation - 2km CMIP5/AR5</a></h3>
+<div>
+<p>Projected (2006&ndash;2100: RCP 4.5, 6.0. 8.5 scenarios) monthly average temperature and total precipitation from 5 AR5 GCMs that perform best across Alaska and the Arctic, downscaled to 2km via the delta method. A 5&ndash;Model Average is also included.</p>
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990 PRISM</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>2km</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
+</tbody>
+</table>
+<img src="images/akcanada_extent.png" alt="" />
+
+<h4>Temperature</h4>
+<p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="120">Projected Monthly Average Temperature 2km AR5</a></p>
+
+<table class="downloadsTable">
+<thead>
+<tr>
+<td>&nbsp;</td>
+<th scope="col" colspan="3">Scenario</th>
+</tr>
+<tr>
+<th scope="col" style="text-align: left;">Model</th>
+<th scope="col">RCP 4.5</th>
+<th scope="col">RCP 6.0</th>
+<th scope="col">RCP 8.5</th>
+</tr>
+</thead>
+
+<tbody>
+
+
+<tr>
+<th scope="row">5&ndash;model Average</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_mean_C_AK_CAN_AR5_5modelAvg_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_mean_C_AK_CAN_AR5_5modelAvg_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_mean_C_AK_CAN_AR5_5modelAvg_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+</td>
+</tr>
+
+<tr>
+<th scope="row">CCSM4</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_mean_C_AK_CAN_AR5_CCSM4_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_mean_C_AK_CAN_AR5_CCSM4_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_mean_C_AK_CAN_AR5_CCSM4_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+</td>
+</tr>
+
+
+
+<tr>
+<th scope="row">GFDL-CM3</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_mean_C_AK_CAN_AR5_GFDL-CM3_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_mean_C_AK_CAN_AR5_GFDL-CM3_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_mean_C_AK_CAN_AR5_GFDL-CM3_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+</td>
+</tr>
+
+
+
+<tr>
+<th scope="row">GISS-E2-R</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_mean_C_AK_CAN_AR5_GISS-E2-R_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_mean_C_AK_CAN_AR5_GISS-E2-R_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_mean_C_AK_CAN_AR5_GISS-E2-R_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">IPSL-CM5A-LR</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_mean_C_AK_CAN_AR5_IPSL-CM5A-LR_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_mean_C_AK_CAN_AR5_IPSL-CM5A-LR_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_mean_C_AK_CAN_AR5_IPSL-CM5A-LR_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">MRI-CGCM3</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_mean_C_AK_CAN_AR5_MRI-CGCM3_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_mean_C_AK_CAN_AR5_MRI-CGCM3_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_mean_C_AK_CAN_AR5_MRI-CGCM3_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.5 GB)
+</td>
+</tr>
+
+
+
+</tbody>
+</table>
+
+<h4>Precipitation</h4>
+<p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="121">Projected Monthly Total Precipitation 2km AR5</a></p>
+
+<table class="downloadsTable">
+<thead>
+<tr>
+<td>&nbsp;</td>
+<th scope="col" colspan="3">Scenario</th>
+</tr>
+<tr>
+<th scope="col" style="text-align: left;">Model</th>
+<th scope="col">RCP 4.5</th>
+<th scope="col">RCP 6.0</th>
+<th scope="col">RCP 8.5</th>
+</tr>
+</thead>
+<tbody>
+
+
+<tr>
+<th scope="row">5&ndash;model Average</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_total_mm_AK_CAN_AR5_5modelAvg_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_total_mm_AK_CAN_AR5_5modelAvg_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_total_mm_AK_CAN_AR5_5modelAvg_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">CCSM4</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_total_mm_AK_CAN_AR5_CCSM4_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_total_mm_AK_CAN_AR5_CCSM4_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_total_mm_AK_CAN_AR5_CCSM4_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+</td>
+</tr>
+
+
+
+<tr>
+<th scope="row">GFDL-CM3</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_total_mm_AK_CAN_AR5_GFDL-CM3_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_total_mm_AK_CAN_AR5_GFDL-CM3_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_total_mm_AK_CAN_AR5_GFDL-CM3_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.3 GB)
+</td>
+</tr>
+
+
+
+<tr>
+<th scope="row">GISS-E2-R</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_total_mm_AK_CAN_AR5_GISS-E2-R_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_total_mm_AK_CAN_AR5_GISS-E2-R_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_total_mm_AK_CAN_AR5_GISS-E2-R_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+</td>
+</tr>
+
+
+
+<tr>
+<th scope="row">IPSL-CM5A-LR</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_total_mm_AK_CAN_AR5_IPSL-CM5A-LR_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_total_mm_AK_CAN_AR5_IPSL-CM5A-LR_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_total_mm_AK_CAN_AR5_IPSL-CM5A-LR_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+</td>
+</tr>
+
+
+
+<tr>
+<th scope="row">MRI-CGCM3</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_total_mm_AK_CAN_AR5_MRI-CGCM3_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_total_mm_AK_CAN_AR5_MRI-CGCM3_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (2.2 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_total_mm_AK_CAN_AR5_MRI-CGCM3_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (2.3 GB)
+</td>
+</tr>
+
+
+
+</tbody>
+</table>
+
+</div>
+</div>
+
+<!-- end first AR5 block -->
+<!-- second block -->
+
+<div class="dataAccordion">
+<h3><a href="#dataset=projected_derived_temperature_products_2km_ar5">Projected Derived Temperature Products - 2km CMIP5/AR5</a></h3>
+<div>
+<p>Projected (2010&ndash;2100: RCP 4.5, 6.0. 8.5 scenarios) derived temperature products from 5 AR5 GCMs that perform best across Alaska and the Arctic, downscaled to 2km via the delta method. A 5&ndash;Model Average is also included.</p>
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990 PRISM</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>2km</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
+</tbody>
+</table>
+<img src="images/akcanada_extent.png" alt="" />
+
+<h4>Temperature</h4>
+<p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="122">Projected Derived Temperature Products - 2km CMIP5/AR5 Decadal Summaries by Month, Year</a></p>
+
+<table class="downloadsTable">
+<thead>
+<tr>
+<td>&nbsp;</td>
+<th scope="col" colspan="3">Scenario</th>
+</tr>
+<tr>
+<th scope="col" style="text-align: left;">Model</th>
+<th scope="col">RCP 4.5</th>
+<th scope="col">RCP 6.0</th>
+<th scope="col">RCP 8.5</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<th scope="row">5&ndash;model Average</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_decadal_summaries_AK_CAN_2km_5modelAvg_rcp45.zip">2010&ndash;2100</a> (328 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_decadal_summaries_AK_CAN_2km_5modelAvg_rcp60.zip">2010&ndash;2100</a> (327 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_decadal_summaries_AK_CAN_2km_5modelAvg_rcp85.zip">2010&ndash;2100</a> (328 MB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">CCSM4</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_decadal_summaries_AK_CAN_2km_CCSM4_rcp45.zip">2010&ndash;2100</a> (329 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_decadal_summaries_AK_CAN_2km_CCSM4_rcp60.zip">2010&ndash;2100</a> (328 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_decadal_summaries_AK_CAN_2km_CCSM4_rcp85.zip">2010&ndash;2100</a> (330 MB)
+</td>
+</tr>
+
+
+
+
+<tr>
+<th scope="row">GFDL-CM3</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_decadal_summaries_AK_CAN_2km_GFDL-CM3_rcp45.zip">2010&ndash;2100</a> (326 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_decadal_summaries_AK_CAN_2km_GFDL-CM3_rcp60.zip">2010&ndash;2100</a> (327 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_decadal_summaries_AK_CAN_2km_GFDL-CM3_rcp85.zip">2010&ndash;2100</a> (327 MB)
+</td>
+</tr>
+
+
+
+
+<tr>
+<th scope="row">GISS-E2-R</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_decadal_summaries_AK_CAN_2km_GISS-E2-R_rcp45.zip">2010&ndash;2100</a> (330 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_decadal_summaries_AK_CAN_2km_GISS-E2-R_rcp60.zip">2010&ndash;2100</a> (329 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_decadal_summaries_AK_CAN_2km_GISS-E2-R_rcp85.zip">2010&ndash;2100</a> (330 MB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">IPSL-CM5A-LR</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_decadal_summaries_AK_CAN_2km_IPSL-CM5A-LR_rcp45.zip">2010&ndash;2100</a> (328 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_decadal_summaries_AK_CAN_2km_IPSL-CM5A-LR_rcp60.zip">2010&ndash;2100</a> (327 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_decadal_summaries_AK_CAN_2km_IPSL-CM5A-LR_rcp85.zip">2010&ndash;2100</a> (328 MB)
+</td>
+</tr>
+
+
+
+<tr>
+<th scope="row">MRI-CGCM3</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_decadal_summaries_AK_CAN_2km_MRI-CGCM3_rcp45.zip">2010&ndash;2100</a> (329 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_decadal_summaries_AK_CAN_2km_MRI-CGCM3_rcp60.zip">2010&ndash;2100</a> (328 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/tas_decadal_summaries_AK_CAN_2km_MRI-CGCM3_rcp85.zip">2010&ndash;2100</a> (329 MB)
+</td>
+</tr>
+
+
+
+</tbody>
+</table>
+
+<h4>Season Day of Freeze, Thaw, Length of Growing Season</h4>
+<p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="127">Projected Derived Temperature Products - 2km CMIP5/AR5 Decadal Summaries by Season Day of Freeze, Thaw, Length of Growing Season</a></p>
+
+<table class="downloadsTable">
+<thead>
+<tr>
+<td>&nbsp;</td>
+<th scope="col" colspan="3">Scenario</th>
+</tr>
+<tr>
+<th scope="col" style="text-align: left;">Model</th>
+<th scope="col">RCP 4.5</th>
+<th scope="col">RCP 6.0</th>
+<th scope="col">RCP 8.5</th>
+</tr>
+</thead>
+<tbody>
+
+
+<tr>
+<th scope="row">5&ndash;model Average</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/dot_dof_logs_AK_CAN_2km_5modelAvg_rcp45.zip">2010&ndash;2100</a> (43 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/dot_dof_logs_AK_CAN_2km_5modelAvg_rcp60.zip">2010&ndash;2100</a> (43 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/dot_dof_logs_AK_CAN_2km_5modelAvg_rcp85.zip">2010&ndash;2100</a> (43 MB)
+</td>
+</tr>
+
+<tr>
+<th scope="row">CCSM4</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/dot_dof_logs_AK_CAN_2km_CCSM4_rcp45.zip">2010&ndash;2100</a> (43 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/dot_dof_logs_AK_CAN_2km_CCSM4_rcp60.zip">2010&ndash;2100</a> (42 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/dot_dof_logs_AK_CAN_2km_CCSM4_rcp85.zip">2010&ndash;2100</a> (42 MB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">GFDL-CM3</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/dot_dof_logs_AK_CAN_2km_GFDL-CM3_rcp45.zip">2010&ndash;2100</a> (41 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/dot_dof_logs_AK_CAN_2km_GFDL-CM3_rcp60.zip">2010&ndash;2100</a> (41 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/dot_dof_logs_AK_CAN_2km_GFDL-CM3_rcp85.zip">2010&ndash;2100</a> (41 MB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">GISS-E2-R</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/dot_dof_logs_AK_CAN_2km_GISS-E2-R_rcp45.zip">2010&ndash;2100</a> (43 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/dot_dof_logs_AK_CAN_2km_GISS-E2-R_rcp60.zip">2010&ndash;2100</a> (43 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/dot_dof_logs_AK_CAN_2km_GISS-E2-R_rcp85.zip">2010&ndash;2100</a> (43 MB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">IPSL-CM5A-LR</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/dot_dof_logs_AK_CAN_2km_IPSL-CM5A-LR_rcp45.zip">2010&ndash;2100</a> (43 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/dot_dof_logs_AK_CAN_2km_IPSL-CM5A-LR_rcp60.zip">2010&ndash;2100</a> (42 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/dot_dof_logs_AK_CAN_2km_IPSL-CM5A-LR_rcp85.zip">2010&ndash;2100</a> (42 MB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">MRI-CGCM3</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/dot_dof_logs_AK_CAN_2km_MRI-CGCM3_rcp45.zip">2010&ndash;2100</a> (42 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/dot_dof_logs_AK_CAN_2km_MRI-CGCM3_rcp60.zip">2010&ndash;2100</a> (42 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/dot_dof_logs_AK_CAN_2km_MRI-CGCM3_rcp85.zip">2010&ndash;2100</a> (42 MB)
+</td>
+</tr>
+
+
+
+</tbody>
+</table>
+
+</div>
+</div>
+
+<!-- end second block -->
+<!-- start third ar5 block -->
+
+
+<div class="dataAccordion">
+<h3><a href="#dataset=projected_derived_precipitation_products_2km_ar5">Projected Derived Precipitation Products - 2km CMIP5/AR5</a></h3>
+<div>
+<p>Projected (2010&ndash;2100: historical run and RCP 4.5, 6.0. 8.5 scenarios) derived precipitation products from 5 AR5 GCMs that perform best across Alaska and the Arctic, downscaled to 2km via the delta method. A 5&ndash;Model Average is also included.</p>
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>1961&ndash;1990 PRISM</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>2km</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Alaska and Western Canada (YT, BC, AB, SK, MB)</td></tr>
+</tbody>
+</table>
+<img src="images/akcanada_extent.png" alt="" />
+
+<h4>Precipitation</h4>
+<p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="126">Projected Derived Precipitation Products - 2km CMIP5/AR5 Decadal Summaries by Month, Year, or Season</a></p>
+
+<table class="downloadsTable">
+<thead>
+<tr>
+<td>&nbsp;</td>
+<th scope="col" colspan="3">Scenario</th>
+</tr>
+<tr>
+<th scope="col" style="text-align: left;">Model</th>
+<th scope="col">RCP 4.5</th>
+<th scope="col">RCP 6.0</th>
+<th scope="col">RCP 8.5</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<th scope="row">5&ndash;model Average</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_decadal_summaries_AK_CAN_2km_5modelAvg_rcp45.zip">2010&ndash;2100</a> (314 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_decadal_summaries_AK_CAN_2km_5modelAvg_rcp60.zip">2010&ndash;2100</a> (314 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_decadal_summaries_AK_CAN_2km_5modelAvg_rcp85.zip">2010&ndash;2100</a> (316 MB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">CCSM4</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_decadal_summaries_AK_CAN_2km_CCSM4_rcp45.zip">2010&ndash;2100</a> (315 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_decadal_summaries_AK_CAN_2km_CCSM4_rcp60.zip">2010&ndash;2100</a> (315 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_decadal_summaries_AK_CAN_2km_CCSM4_rcp85.zip">2010&ndash;2100</a> (318 MB)
+</td>
+</tr>
+
+
+
+
+<tr>
+<th scope="row">GFDL-CM3</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_decadal_summaries_AK_CAN_2km_GFDL-CM3_rcp45.zip">2010&ndash;2100</a> (321 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_decadal_summaries_AK_CAN_2km_GFDL-CM3_rcp60.zip">2010&ndash;2100</a> (322 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_decadal_summaries_AK_CAN_2km_GFDL-CM3_rcp85.zip">2010&ndash;2100</a> (325 MB)
+</td>
+</tr>
+
+
+
+
+<tr>
+<th scope="row">GISS-E2-R</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_decadal_summaries_AK_CAN_2km_GISS-E2-R_rcp45.zip">2010&ndash;2100</a> (316 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_decadal_summaries_AK_CAN_2km_GISS-E2-R_rcp60.zip">2010&ndash;2100</a> (315 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_decadal_summaries_AK_CAN_2km_GISS-E2-R_rcp85.zip">2010&ndash;2100</a> (317 MB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">IPSL-CM5A-LR</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_decadal_summaries_AK_CAN_2km_IPSL-CM5A-LR_rcp45.zip">2010&ndash;2100</a> (314 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_decadal_summaries_AK_CAN_2km_IPSL-CM5A-LR_rcp60.zip">2010&ndash;2100</a> (314 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_decadal_summaries_AK_CAN_2km_IPSL-CM5A-LR_rcp85.zip">2010&ndash;2100</a> (317 MB)
+</td>
+</tr>
+
+
+
+<tr>
+<th scope="row">MRI-CGCM3</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_decadal_summaries_AK_CAN_2km_MRI-CGCM3_rcp45.zip">2010&ndash;2100</a> (317 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_decadal_summaries_AK_CAN_2km_MRI-CGCM3_rcp60.zip">2010&ndash;2100</a> (318 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_CAN_2km/pr_decadal_summaries_AK_CAN_2km_MRI-CGCM3_rcp85.zip">2010&ndash;2100</a> (319 MB)
+</td>
+</tr>
+
+
+
+</tbody>
+</table>
+
+
+</div>
+</div>
+
+<!-- Start 771km AR5 -->
+<br/>
+
+<div class="dataAccordion">
+<h3><a href="#dataset=projected_monthly_temperature_and_precipitation_771m_ar5">Projected Monthly Temperature and Precipitation &ndash; 771m CMIP5/AR5</a></h3>
+<div>
+<p>Projected (2006&ndash;2100: RCP 4.5, 6.0. 8.5 scenarios) monthly average temperature and total precipitation from 5 AR5 GCMs that perform best across Alaska and the Arctic, downscaled to 771m via the delta method. A 5&ndash;Model Average is also included.</p>
+
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>771m</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
+</tbody>
+</table>
+
+<img src="images/ak_extent.jpg" alt="" />
+
+<h4>Temperature</h4>
+<p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="118">Projected Monthly Average Temperature 771m AR5</a></p>
+
+<table class="downloadsTable">
+<thead>
+<tr>
+<td>&nbsp;</td>
+<th scope="col" colspan="3">Scenario</th>
+</tr>
+<tr>
+<th scope="col" style="text-align: left;">Model</th>
+<th scope="col">RCP 4.5</th>
+<th scope="col">RCP 6.0</th>
+<th scope="col">RCP 8.5</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<th scope="row">5&ndash;model Average</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_5modelAvg_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.7 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_5modelAvg_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.7 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_5modelAvg_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
+</td>
+</tr>
+
+<tr>
+<th scope="row">CCSM4</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_CCSM4_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_CCSM4_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_CCSM4_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
+</td>
+</tr>
+
+
+
+<tr>
+<th scope="row">GFDL-CM3</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_GFDL-CM3_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_GFDL-CM3_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_GFDL-CM3_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
+</td>
+</tr>
+
+
+
+<tr>
+<th scope="row">GISS-E2-R</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_GISS-E2-R_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_GISS-E2-R_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_GISS-E2-R_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">IPSL-CM5A-LR</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_IPSL-CM5A-LR_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_IPSL-CM5A-LR_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_IPSL-CM5A-LR_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">MRI-CGCM3</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_MRI-CGCM3_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_MRI-CGCM3_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_mean_C_AK_AR5_MRI-CGCM3_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.8 GB)
+</td>
+</tr>
+
+
+
+</tbody>
+</table>
+
+<h4>Precipitation</h4>
+<p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="119">Projected Monthly Total Precipitation 771m AR5</a></p>
+
+<table class="downloadsTable">
+<thead>
+<tr>
+<td>&nbsp;</td>
+<th scope="col" colspan="3">Scenario</th>
+</tr>
+<tr>
+<th scope="col" style="text-align: left;">Model</th>
+<th scope="col">RCP 4.5</th>
+<th scope="col">RCP 6.0</th>
+<th scope="col">RCP 8.5</th>
+</tr>
+</thead>
+<tbody>
+
+
+<tr>
+<th scope="row">5&ndash;model Average</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_5modelAvg_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.1 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_5modelAvg_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.1 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_5modelAvg_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.2 GB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">CCSM4</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_CCSM4_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.1 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_CCSM4_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.1 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_CCSM4_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.1 GB)
+</td>
+</tr>
+
+
+
+<tr>
+<th scope="row">GFDL-CM3</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_GFDL-CM3_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.2 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_GFDL-CM3_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.2 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_GFDL-CM3_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.3 GB)
+</td>
+</tr>
+
+
+
+<tr>
+<th scope="row">GISS-E2-R</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_GISS-E2-R_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.1 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_GISS-E2-R_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.1 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_GISS-E2-R_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.2 GB)
+</td>
+</tr>
+
+
+
+<tr>
+<th scope="row">IPSL-CM5A-LR</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_IPSL-CM5A-LR_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.1 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_IPSL-CM5A-LR_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.1 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_IPSL-CM5A-LR_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.2 GB)
+</td>
+</tr>
+
+
+
+<tr>
+<th scope="row">MRI-CGCM3</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_MRI-CGCM3_rcp45_01_2006-12_2100.zip">2006&ndash;2100</a> (4.1 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_MRI-CGCM3_rcp60_01_2006-12_2100.zip">2006&ndash;2100</a> (4.2 GB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_total_mm_AK_AR5_MRI-CGCM3_rcp85_01_2006-12_2100.zip">2006&ndash;2100</a> (4.2 GB)
+</td>
+</tr>
+
+
+
+</tbody>
+</table>
+
+</div>
+</div>
+
+<!-- end first 771m AR5 block -->
+<!-- second 771m block -->
+
+<div class="dataAccordion">
+<h3><a href="#dataset=projected_derived_temperature_products_771km_ar5">Projected Derived Temperature Products &ndash; 771m CMIP5/AR5</a></h3>
+<div>
+<p>Projected (2010&ndash;2100: historical run and RCP 4.5, 6.0. 8.5 scenarios) derived temperature products from 5 AR5 GCMs that perform best across Alaska and the Arctic, downscaled to 771m via the delta method. A 5&ndash;Model Average is also included.</p>
+
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>771m</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
+</tbody>
+</table>
+
+<img src="images/ak_extent.jpg" alt="" />
+
+<h4>Temperature</h4>
+<p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="125">Projected Derived Temperature Products &ndash; 771m CMIP5/AR5 Decadal Summaries by Month, Year</a></p>
+
+<table class="downloadsTable">
+<thead>
+<tr>
+<td>&nbsp;</td>
+<th scope="col" colspan="3">Scenario</th>
+</tr>
+<tr>
+<th scope="col" style="text-align: left;">Model</th>
+<th scope="col">RCP 4.5</th>
+<th scope="col">RCP 6.0</th>
+<th scope="col">RCP 8.5</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<th scope="row">5&ndash;model Average</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_771m_5modelAvg_rcp45.zip">2010&ndash;2100</a> (633 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_771m_5modelAvg_rcp60.zip">2010&ndash;2100</a> (633 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_771m_5modelAvg_rcp85.zip">2010&ndash;2100</a> (633 MB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">CCSM4</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_771m_CCSM4_rcp45.zip">2010&ndash;2100</a> (635 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_771m_CCSM4_rcp60.zip">2010&ndash;2100</a> (634 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_771m_CCSM4_rcp85.zip">2010&ndash;2100</a> (634 MB)
+</td>
+</tr>
+
+
+
+
+<tr>
+<th scope="row">GFDL-CM3</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_771m_GFDL-CM3_rcp45.zip">2010&ndash;2100</a> (638 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_771m_GFDL-CM3_rcp60.zip">2010&ndash;2100</a> (637 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_771m_GFDL-CM3_rcp85.zip">2010&ndash;2100</a> (638 MB)
+</td>
+</tr>
+
+
+
+
+<tr>
+<th scope="row">GISS-E2-R</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_771m_GISS-E2-R_rcp45.zip">2010&ndash;2100</a> (634 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_771m_GISS-E2-R_rcp60.zip">2010&ndash;2100</a> (634 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_771m_GISS-E2-R_rcp85.zip">2010&ndash;2100</a> (634 MB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">IPSL-CM5A-LR</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_771m_IPSL-CM5A-LR_rcp45.zip">2010&ndash;2100</a> (635 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_771m_IPSL-CM5A-LR_rcp60.zip">2010&ndash;2100</a> (636 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_771m_IPSL-CM5A-LR_rcp85.zip">2010&ndash;2100</a> (636 MB)
+</td>
+</tr>
+
+
+
+<tr>
+<th scope="row">MRI-CGCM3</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_771m_MRI-CGCM3_rcp45.zip">2010&ndash;2100</a> (634 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_771m_MRI-CGCM3_rcp60.zip">2010&ndash;2100</a> (634 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/tas_decadal_summaries_AK_771m_MRI-CGCM3_rcp85.zip">2010&ndash;2100</a> (634 MB)
+</td>
+</tr>
+
+
+
+</tbody>
+</table>
+
+<h4>Season Day of Freeze, Thaw, Length of Growing Season</h4>
+<p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="123">Projected Derived Temperature Products &ndash; 771m CMIP5/AR5 Decadal Summaries by Season Day of Freeze, Thaw, Length of Growing Season</a></p>
+
+<table class="downloadsTable">
+<thead>
+<tr>
+<td>&nbsp;</td>
+<th scope="col" colspan="3">Scenario</th>
+</tr>
+<tr>
+<th scope="col" style="text-align: left;">Model</th>
+<th scope="col">RCP 4.5</th>
+<th scope="col">RCP 6.0</th>
+<th scope="col">RCP 8.5</th>
+</tr>
+</thead>
+<tbody>
+
+
+<tr>
+<th scope="row">5&ndash;model Average</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_771m_5modelAvg_rcp45.zip">2010&ndash;2100</a> (84 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_771m_5modelAvg_rcp60.zip">2010&ndash;2100</a> (83 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_771m_5modelAvg_rcp85.zip">2010&ndash;2100</a> (79 MB)
+</td>
+</tr>
+
+<tr>
+<th scope="row">CCSM4</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_771m_CCSM4_rcp45.zip">2010&ndash;2100</a> (82 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_771m_CCSM4_rcp60.zip">2010&ndash;2100</a> (82 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_771m_CCSM4_rcp85.zip">2010&ndash;2100</a> (79 MB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">GFDL-CM3</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_771m_GFDL-CM3_rcp45.zip">2010&ndash;2100</a> (81 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_771m_GFDL-CM3_rcp60.zip">2010&ndash;2100</a> (80 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_771m_GFDL-CM3_rcp85.zip">2010&ndash;2100</a> (79 MB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">GISS-E2-R</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_771m_GISS-E2-R_rcp45.zip">2010&ndash;2100</a> (83 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_771m_GISS-E2-R_rcp60.zip">2010&ndash;2100</a> (82 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_771m_GISS-E2-R_rcp85.zip">2010&ndash;2100</a> (80 MB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">IPSL-CM5A-LR</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_771m_IPSL-CM5A-LR_rcp45.zip">2010&ndash;2100</a> (81 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_771m_IPSL-CM5A-LR_rcp60.zip">2010&ndash;2100</a> (80 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_771m_IPSL-CM5A-LR_rcp85.zip">2010&ndash;2100</a> (79 MB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">MRI-CGCM3</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_771m_MRI-CGCM3_rcp45.zip">2010&ndash;2100</a> (81 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_771m_MRI-CGCM3_rcp60.zip">2010&ndash;2100</a> (81 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/dot_dof_logs_AK_771m_MRI-CGCM3_rcp85.zip">2010&ndash;2100</a> (79 MB)
+</td>
+</tr>
+
+
+
+</tbody>
+</table>
+
+</div>
+</div>
+
+<!-- end second block -->
+<!-- start third ar5 block -->
+
+
+<div class="dataAccordion">
+<h3><a href="#dataset=projected_derived_precipitation_products_771m_ar5">Projected Derived Precipitation Products &ndash; 771m CMIP5/AR5</a></h3>
+<div>
+<p>Projected (2010&ndash;2100: historical run and RCP 4.5, 6.0. 8.5 scenarios) derived precipitation products from 5 AR5 GCMs that perform best across Alaska and the Arctic, downscaled to 771m via the delta method. A 5&ndash;Model Average is also included.</p>
+
+
+<table class="overview">
+<tbody>
+<tr><th scope="row">Baseline Reference Climate</th><td>1971&ndash;2000 PRISM</td></tr>
+<tr><th scope="row">Spatial Resolution</th><td>771m</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>Monthly</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Alaska</td></tr>
+</tbody>
+</table>
+
+<img src="images/ak_extent.jpg" alt="" />
+
+<h4>Precipitation</h4>
+<p><strong>Metadata: </strong><a href="#" class="metadataLink"  data-geonetwork-metadata-id="124">Projected Derived Precipitation Products &ndash; 771m CMIP5/AR5 Decadal Summaries by Month, Year, or Season</a></p>
+
+<table class="downloadsTable">
+<thead>
+<tr>
+<td>&nbsp;</td>
+<th scope="col" colspan="3">Scenario</th>
+</tr>
+<tr>
+<th scope="col" style="text-align: left;">Model</th>
+<th scope="col">RCP 4.5</th>
+<th scope="col">RCP 6.0</th>
+<th scope="col">RCP 8.5</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<th scope="row">5&ndash;model Average</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_771m_5modelAvg_rcp45.zip">2010&ndash;2100</a> (613 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_771m_5modelAvg_rcp60.zip">2010&ndash;2100</a> (613 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_771m_5modelAvg_rcp85.zip">2010&ndash;2100</a> (621 MB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">CCSM4</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_771m_CCSM4_rcp45.zip">2010&ndash;2100</a> (609 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_771m_CCSM4_rcp60.zip">2010&ndash;2100</a> (609 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_771m_CCSM4_rcp85.zip">2010&ndash;2100</a> (617 MB)
+</td>
+</tr>
+
+
+
+
+<tr>
+<th scope="row">GFDL-CM3</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_771m_GFDL-CM3_rcp45.zip">2010&ndash;2100</a> (625 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_771m_GFDL-CM3_rcp60.zip">2010&ndash;2100</a> (628 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_771m_GFDL-CM3_rcp85.zip">2010&ndash;2100</a> (636 MB)
+</td>
+</tr>
+
+
+
+
+<tr>
+<th scope="row">GISS-E2-R</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_771m_GISS-E2-R_rcp45.zip">2010&ndash;2100</a> (611 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_771m_GISS-E2-R_rcp60.zip">2010&ndash;2100</a> (610 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_771m_GISS-E2-R_rcp85.zip">2010&ndash;2100</a> (618 MB)
+</td>
+</tr>
+
+
+<tr>
+<th scope="row">IPSL-CM5A-LR</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_771m_IPSL-CM5A-LR_rcp45.zip">2010&ndash;2100</a> (616 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_771m_IPSL-CM5A-LR_rcp60.zip">2010&ndash;2100</a> (612 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_771m_IPSL-CM5A-LR_rcp85.zip">2010&ndash;2100</a> (622 MB)
+</td>
+</tr>
+
+
+
+<tr>
+<th scope="row">MRI-CGCM3</th>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_771m_MRI-CGCM3_rcp45.zip">2010&ndash;2100</a> (613 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_771m_MRI-CGCM3_rcp60.zip">2010&ndash;2100</a> (615 MB)
+</td>
+<td>
+<a href="/files/data/monthly/AR5/monthly/AK_771m/pr_decadal_summaries_AK_771m_MRI-CGCM3_rcp85.zip">2010&ndash;2100</a> (619 MB)
+</td>
+</tr>
+
+
+
+</tbody>
+</table>
+
+
+</div>
+</div>
+
+
+<!-- end AR5 update -->
+
+
 <br/>
 
 <div class="dataAccordion">
@@ -1320,7 +2556,6 @@ Projected (2010-2100: B1, A1B, and A2 scenarios) derived precipitation products 
 </p><p>
 Although the equations developed here provide a reasonable fit to the data, model evaluation demonstrated that some stations are consistently less well described by regional models than others. It is unclear why this occurs, but it is like related to localized climate conditions. Very few weather stations with long records are located above 500m elevation in Alaska, so the equations used here were developed primarily from low-elevation weather stations. It is not clear whether the equations will be completely appropriate in the mountains. Finally, these equations summarize a long-term monthly relationship between temperature and precipitation type that is the result of short-term weather variability. In using these equations to make projections of future snow, as assume that these relationships remain stable over time, and we do not know how accurate that assumption is.
 </p>
-  <p>Read the <a href="/files/data/snow_day_fraction/snow_fraction_data_users_guide.pdf">user&rsquo;s guide for this data set</a> (PDF, 1.5MB) for information on methodology and validation.</p>
   <p>Detailed information on the construction of this data and its implications is available in <a href="/attachments/McAfee2013_snowDay.pdf">this paper.</a> (PDF, 3.27MB)</p>
 
 <table class="overview">
@@ -1401,6 +2636,46 @@ Although the equations developed here provide a reasonable fit to the data, mode
 <div class="dataAccordionWrapper">
 <div class="dataAccordion">
 
+<h3><a href="#dataset=historical_sea_ice_atlas">Historical Sea Ice Atlas: Observed Estimates of Sea Ice Concentration in Alaska Waters</a></h3>
+<div>
+
+<p>
+These data were compiled from several historical sea ice data sources into spatially and temporally standardized data sets that include sea ice concentrations (0&ndash;100%) for the seas surrounding the state of Alaska, USA.</p>
+<table class="overview">
+<tbody>
+<tr><th scope="row">Spatial Resolution</th><td>&frac14;&times;&frac14; degree</td></tr>
+<tr><th scope="row">Temporal Resolution</th><td>weekly and monthly</td></tr>
+<tr><th scope="row">Spatial Extent</th><td>Alaska marine waters</td></tr>
+<tr><th scope="row">Temporal Extent</th><td>Weekly, 1953&ndash;2013; Monthly, 1850&ndash;2013</td></tr>
+</tbody>
+</table>
+<img src="images/sea-ice-atlas-extent.png" alt="" />
+
+<h4>Downloads</h4>
+
+<table class="downloadsTable smallTable">
+<thead>
+<tr>
+<th scope="col">Metadata</th>
+<th scope="col">Data</th>
+</tr>
+</thead>
+<body>
+<tr>
+<td><a href="#" class="metadataLink"  data-geonetwork-metadata-id="106">Monthly Observed Estimates of Sea Ice Concentration in Alaska Waters</a></td>
+<td>
+<a href="/files/data/monthly/sic_con_pct_monthly_historical_01_1850-12_2013.zip">1850&ndash;2013</a> (5.6 MB)
+
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="dataAccordionWrapper">
+<div class="dataAccordion">
+
 <h3><a href="#dataset=historical_monthly_temperature_and_precipitation_771m_CRUTS30">Historical Monthly Temperature and Precipitation - 771m CRU TS 3.0</a></h3>
 <div>
 
@@ -1420,7 +2695,7 @@ Historical (1901&ndash;2006) monthly average temperature and total precipitation
 
 <h4>Downloads</h4>
 
-<table class="downloadsTable">
+<table class="downloadsTable smallTable">
 <thead>
 <tr>
 <th scope="col">Metadata</th>
@@ -1468,7 +2743,7 @@ Historical (1901&ndash;2009) monthly average temperature and total precipitation
 
 <?php echo getCruts31DataAlert(); ?>
 
-<table class="downloadsTable">
+<table class="downloadsTable smallTable">
 <thead>
 <tr>
 <th scope="col">Metadata</th>
@@ -2085,7 +3360,6 @@ Historical (1910&ndash;2009) derived precipitation products from CRUTS 3.1.01 cl
 </p><p>
 Although the equations developed here provide a reasonable fit to the data, model evaluation demonstrated that some stations are consistently less well described by regional models than others. It is unclear why this occurs, but it is like related to localized climate conditions. Very few weather stations with long records are located above 500m elevation in Alaska, so the equations used here were developed primarily from low-elevation weather stations. It is not clear whether the equations will be completely appropriate in the mountains. Finally, these equations summarize a long-term monthly relationship between temperature and precipitation type that is the result of short-term weather variability. In using these equations to make projections of future snow, as assume that these relationships remain stable over time, and we do not know how accurate that assumption is.
 </p>
-<p>Read the <a href="/files/data/snow_day_fraction/snow_fraction_data_users_guide.pdf">user&rsquo;s guide for this data set</a> (PDF, 1.5MB) for information on methodology and validation.</p>
 <p>Detailed information on the construction of this data and its implications is available in <a href="/attachments/McAfee2013_snowDay.pdf">this paper.</a> (PDF, 3.27MB)</p>  
   
 <table class="overview">

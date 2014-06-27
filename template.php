@@ -223,9 +223,17 @@ class webPage {
                 <div style ="float: left; width: 470px; text-align: left; margin-top: 13px;"><a id="snapWebVersion" href="/releases.php"><?php echo 'V'.SNAPWEB_VERSION; ?></a> Copyright &copy; 2013 <a href="/" style="color: #222222; text-decoration: underline;">Scenarios Network for Alaska &amp; Arctic Planning</a>, a research institute of the <a href="http://www.uaf.edu" style="color: #222222; text-decoration: underline;">University of Alaska Fairbanks</a>.  UAF is an affirmative action/equal opportunity employer and educational institution.
 
                 <p>
-                    Scenarios Network for Alaska &amp; Arctic Planning<br/>
-                    3352 College Road, Fairbanks AK 99709<br/>
-                    nlfresco@alaska.edu | tel 907.474.2405 | fax 907.474.7151
+                                    nlfresco@alaska.edu | tel 907.474.2405 | fax 907.474.7151<br/><br/>
+
+                    <b>Mailing address:</b><br/>
+                                        Scenarios Network for Alaska &amp; Arctic Planning<br/>
+PO Box 757245<br/>
+Fairbanks, Alaska 99775-7245<br/><br/>
+                    <b>Physical address:</b><br/>
+                                        International Arctic Research Center<br/>
+                    930 Koyukuk Drive<br/>
+Fairbanks, Alaska<br/>
+<br/>
                 </p>
                 </div>
                 <div class="logos" style="float: right;">
